@@ -504,7 +504,6 @@ def county_lookup():
 # merged association cells; the text parser keeps doing names/limits/values
 # and contract detection, and this overlay re-assigns row -> block.
 # --------------------------------------------------------------------------
-ROW_HEIGHT_THRESHOLD = 1.5  # empty cell taller than 1.5x a row = continuation
 
 # sentinel for rows whose assoc cell is empty and we have no block context
 # (county starts at a page bottom; the cell's name text is on the next page).

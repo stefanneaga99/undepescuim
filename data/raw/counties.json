@@ -100,7 +100,8 @@
     "name": "Cluj",
     "name_ascii": "Cluj",
     "region": "Transilvania",
-    "has_contracted_waters": false
+    "has_contracted_waters": true,
+    "anpa_section_order": 13
   },
   {
     "id": "constanta",
@@ -108,7 +109,7 @@
     "name_ascii": "Constanta",
     "region": "Dobrogea",
     "has_contracted_waters": true,
-    "anpa_section_order": 13
+    "anpa_section_order": 14
   },
   {
     "id": "covasna",
@@ -116,7 +117,7 @@
     "name_ascii": "Covasna",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 14
+    "anpa_section_order": 15
   },
   {
     "id": "dambovita",
@@ -124,7 +125,7 @@
     "name_ascii": "Dambovita",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 15
+    "anpa_section_order": 16
   },
   {
     "id": "dolj",
@@ -132,7 +133,7 @@
     "name_ascii": "Dolj",
     "region": "Oltenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 16
+    "anpa_section_order": 17
   },
   {
     "id": "galati",
@@ -140,7 +141,7 @@
     "name_ascii": "Galati",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 17
+    "anpa_section_order": 18
   },
   {
     "id": "giurgiu",
@@ -148,7 +149,7 @@
     "name_ascii": "Giurgiu",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 18
+    "anpa_section_order": 19
   },
   {
     "id": "gorj",
@@ -156,7 +157,7 @@
     "name_ascii": "Gorj",
     "region": "Oltenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 19
+    "anpa_section_order": 20
   },
   {
     "id": "harghita",
@@ -164,7 +165,7 @@
     "name_ascii": "Harghita",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 20
+    "anpa_section_order": 21
   },
   {
     "id": "hunedoara",
@@ -172,7 +173,7 @@
     "name_ascii": "Hunedoara",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 21
+    "anpa_section_order": 22
   },
   {
     "id": "ialomita",
@@ -180,7 +181,7 @@
     "name_ascii": "Ialomita",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 22
+    "anpa_section_order": 23
   },
   {
     "id": "iasi",
@@ -188,7 +189,7 @@
     "name_ascii": "Iasi",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 23
+    "anpa_section_order": 24
   },
   {
     "id": "ilfov",
@@ -196,7 +197,7 @@
     "name_ascii": "Ilfov",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 24
+    "anpa_section_order": 25
   },
   {
     "id": "maramures",
@@ -204,14 +205,15 @@
     "name_ascii": "Maramures",
     "region": "Maramureș",
     "has_contracted_waters": true,
-    "anpa_section_order": 25
+    "anpa_section_order": 26
   },
   {
     "id": "mehedinti",
     "name": "Mehedinți",
     "name_ascii": "Mehedinti",
     "region": "Oltenia",
-    "has_contracted_waters": false
+    "has_contracted_waters": true,
+    "anpa_section_order": 27
   },
   {
     "id": "mures",
@@ -219,7 +221,7 @@
     "name_ascii": "Mures",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 26
+    "anpa_section_order": 28
   },
   {
     "id": "neamt",
@@ -227,7 +229,7 @@
     "name_ascii": "Neamt",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 27
+    "anpa_section_order": 29
   },
   {
     "id": "olt",
@@ -235,7 +237,7 @@
     "name_ascii": "Olt",
     "region": "Oltenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 28
+    "anpa_section_order": 30
   },
   {
     "id": "prahova",
@@ -243,7 +245,7 @@
     "name_ascii": "Prahova",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 29
+    "anpa_section_order": 31
   },
   {
     "id": "satu-mare",
@@ -251,7 +253,7 @@
     "name_ascii": "Satu Mare",
     "region": "Crișana",
     "has_contracted_waters": true,
-    "anpa_section_order": 30
+    "anpa_section_order": 32
   },
   {
     "id": "salaj",
@@ -259,7 +261,7 @@
     "name_ascii": "Salaj",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 31
+    "anpa_section_order": 33
   },
   {
     "id": "sibiu",
@@ -267,7 +269,7 @@
     "name_ascii": "Sibiu",
     "region": "Transilvania",
     "has_contracted_waters": true,
-    "anpa_section_order": 32
+    "anpa_section_order": 34
   },
   {
     "id": "suceava",
@@ -275,7 +277,7 @@
     "name_ascii": "Suceava",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 33
+    "anpa_section_order": 35
   },
   {
     "id": "teleorman",
@@ -283,7 +285,7 @@
     "name_ascii": "Teleorman",
     "region": "Muntenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 34
+    "anpa_section_order": 36
   },
   {
     "id": "timis",
@@ -291,7 +293,7 @@
     "name_ascii": "Timis",
     "region": "Banat",
     "has_contracted_waters": true,
-    "anpa_section_order": 35
+    "anpa_section_order": 37
   },
   {
     "id": "tulcea",
@@ -306,7 +308,7 @@
     "name_ascii": "Vaslui",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 36
+    "anpa_section_order": 38
   },
   {
     "id": "valcea",
@@ -314,7 +316,7 @@
     "name_ascii": "Valcea",
     "region": "Oltenia",
     "has_contracted_waters": true,
-    "anpa_section_order": 37
+    "anpa_section_order": 39
   },
   {
     "id": "vrancea",
@@ -322,13 +324,13 @@
     "name_ascii": "Vrancea",
     "region": "Moldova",
     "has_contracted_waters": true,
-    "anpa_section_order": 38
+    "anpa_section_order": 40
   },
   {
     "id": "bucuresti",
     "name": "București",
     "name_ascii": "Bucuresti",
     "region": "Muntenia",
-    "has_contracted_waters": false
+    "has_contracted_waters": true
   }
 ]
