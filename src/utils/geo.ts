@@ -1,4 +1,4 @@
-import type { Water, WaterFeature, WaterFeatureCollection } from '@/types/data';
+import type { Water, WaterFeature, WaterFeatureCollection, WaterFeatureProperties } from '@/types/data';
 
 /**
  * Convert a Water to a GeoJSON Feature.
@@ -23,7 +23,25 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     };
   }
 
-  // Fallback: bbox rectangle (un-geocoded waters)
+  // Fallback: bbox rectangle (un-geocoded waters). Skip if no bbox at all.
+  if (!water.bbox) {
+    return {
+      type: 'Feature',
+      properties: {
+        slug: water.slug,
+        name: water.name,
+        subtype: water.subtype,
+        judet: water.judet,
+        asociatieSlug: water.asociatie?.slug ?? null,
+        // marker for non-renderable waters (no geometry, no bbox)
+        _hidden: true,
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: water.coordinates ?? [25, 45.8],
+      },
+    };
+  }
   const [minLon, minLat, maxLon, maxLat] = water.bbox;
   const coordinates: GeoJSON.Polygon['coordinates'] = [
     [
@@ -55,6 +73,8 @@ export function waterToGeoJSON(water: Water): WaterFeature {
 export function watersToFeatureCollection(waters: Water[]): WaterFeatureCollection {
   return {
     type: 'FeatureCollection',
-    features: waters.map(waterToGeoJSON),
+    features: waters
+      .map(waterToGeoJSON)
+      .filter((f) => !(f.properties as WaterFeatureProperties)._hidden),
   };
 }

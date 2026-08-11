@@ -70,6 +70,8 @@ export interface WaterFeatureProperties {
   subtype: WaterSubtype;
   judet: County;
   asociatieSlug: string | null;
+  /** marker for non-renderable waters (no geometry, no bbox) */
+  _hidden?: boolean;
 }
 
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;
