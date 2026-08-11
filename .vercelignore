@@ -1,0 +1,5 @@
+# Large re-fetchable geodata sources — not tracked in git, see data/sources/README.md
+/data/sources
+
+# Vercel local config
+.vercel
