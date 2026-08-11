@@ -133,22 +133,44 @@ def nominatim_search(query, countrycodes=None, limit=5):
     return []
 
 
-def overpass_query(q, timeout=20, mirrors=None):
+_last_good_mirror = 0  # index of the most recently working Overpass mirror
+
+
+def overpass_query(q, timeout=8, mirrors=None, retries=2, min_elements=0):
     """POST an Overpass QL query; return parsed JSON or None.
 
-    Mirrors are tried in order; each has a short timeout because the public
-    endpoints are flaky (504/read timeouts observed on overpass-api.de and
-    kumi in 2026-08). maps.mail.ru has been the reliable one. Pass mirrors=1
-    to try only the first mirror (used by the tier-3 fallback to bound cost)."""
+    The public Overpass endpoints are flaky (504/read timeouts observed on all
+    mirrors in 2026-08) and their health flips within minutes, and the fleet
+    throttles busy IPs with dynamic slots. We rotate the last-working mirror
+    to the front, give each mirror a short timeout, and retry the whole
+    rotation with a 5s/10s backoff when every mirror fails. Pass mirrors=1 to
+    try only the first mirror (tier-3 fallback, bounding cost).
+
+    min_elements: when >0, a response with fewer than this many elements is
+    treated as a mirror failure (some mirrors return fast EMPTY results for
+    regional data they do not carry — e.g. overpass.osm.ch had no Romanian
+    features — which must not poison the sticky-mirror pointer)."""
+    global _last_good_mirror
     data = urllib.parse.urlencode({"data": q}).encode()
-    urls = OVERPASS_URLS if mirrors is None else OVERPASS_URLS[:mirrors]
-    for url in urls:
-        try:
-            req = urllib.request.Request(url, data=data, headers={"User-Agent": USER_AGENT})
-            with urllib.request.urlopen(req, timeout=timeout) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except Exception:
-            continue
+    for attempt in range(retries + 1):
+        urls = list(OVERPASS_URLS)
+        urls = urls[_last_good_mirror:] + urls[:_last_good_mirror]
+        if mirrors is not None:
+            urls = urls[:mirrors]
+        for url in urls:
+            try:
+                req = urllib.request.Request(url, data=data, headers={"User-Agent": USER_AGENT})
+                with urllib.request.urlopen(req, timeout=timeout) as resp:
+                    body = resp.read().decode("utf-8")
+                parsed = json.loads(body)
+                if min_elements and len(parsed.get("elements", [])) < min_elements:
+                    continue  # regional/empty mirror — do NOT mark as good
+                _last_good_mirror = OVERPASS_URLS.index(url)
+                return parsed
+            except Exception:
+                continue
+        if attempt < retries:
+            time.sleep(5 * (attempt + 1))
     return None
 
 

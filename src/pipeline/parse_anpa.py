@@ -506,15 +506,21 @@ def county_lookup():
 # --------------------------------------------------------------------------
 ROW_HEIGHT_THRESHOLD = 1.5  # empty cell taller than 1.5x a row = continuation
 
+# sentinel for rows whose assoc cell is empty and we have no block context
+# (county starts at a page bottom; the cell's name text is on the next page).
+# apply_pdf_blocks keeps the text-parser assignment for these.
+PDF_UNKNOWN = "\x00unknown\x00"
+
 
 def pdf_row_blocks(pdf_path):
-    """Return {county: [(name_normalized, block_name_or_None), ...]} in document
-    order, derived from the PDF's table cell geometry.
+    """Return {county: [(name_normalized, block_name_or_None, contract_or_None), ...]}
+    in document order, derived from the PDF's table cell geometry.
 
     A row is assigned the block of the association cell whose y-range contains
-    the row's y-center. Empty cells that span >=2 rows are cross-page/continued
-    cells (same block). An empty single-row cell (or no cell) = orphan -> None.
-    Returns None when pymupdf is unavailable.
+    the row's y-center. Contract numbers are read from the PDF's contract
+    column and carried forward within a block (each contract sits on the first
+    row of its group inside the merged cell). Returns None when pymupdf is
+    unavailable.
     """
     try:
         import pymupdf  # optional
@@ -525,6 +531,7 @@ def pdf_row_blocks(pdf_path):
     county_rows = {}
     cur_county = None
     cur_block = None
+    cur_contract = None
 
     for pno in range(doc.page_count):
         page = doc[pno]
@@ -535,48 +542,80 @@ def pdf_row_blocks(pdf_path):
         ext = t.extract()
         rows = t.rows
 
-        # collect assoc-column cells: (y0, y1, text) for cells with x0 > 540
+        # find the association column index: the column whose cells contain
+        # assoc-prefix text (column 3 in 5-col tables, 4 in the 6-col Prahova
+        # page, etc.)
+        assoc_col = None
+        for ci in range(t.col_count):
+            for ri in range(t.row_count):
+                if len(ext[ri]) > ci and ext[ri][ci]:
+                    if block_name_of(" ".join(str(ext[ri][ci]).split())):
+                        assoc_col = ci
+                        break
+            if assoc_col is not None:
+                break
+
+        # find the contract column: the column whose cells carry contract
+        # numbers ("N/DD.MM.YYYY"); usually the rightmost one
+        contract_col = None
+        for ci in range(t.col_count - 1, -1, -1):
+            for ri in range(t.row_count):
+                if len(ext[ri]) > ci and ext[ri][ci]:
+                    if contract_token_of(" ".join(str(ext[ri][ci]).split())):
+                        contract_col = ci
+                        break
+            if contract_col is not None:
+                break
+
+        # per-row name text, county header detection and y-center
+        row_names = []
+        row_centers = []
+        for ri, row in enumerate(rows):
+            ok = [c for c in row.cells if c is not None]
+            name = " ".join((ext[ri][0] or "").split()) if len(ext[ri]) > 0 else ""
+            yc = None
+            if ok:
+                yc = (row.bbox[1] + row.bbox[3]) / 2
+            row_names.append(name)
+            row_centers.append(yc)
+
+        # collect assoc-column cells: (y0, y1, text)
         assoc_cells = []
         for ri, row in enumerate(rows):
             for c in row.cells:
-                if c is None or c[0] <= 540:
+                if c is None:
                     continue
-                txt = ''
-                if len(ext[ri]) > 3 and ext[ri][3]:
+                # prefer text from the detected assoc column; fall back to col 3
+                txt = ""
+                if assoc_col is not None and len(ext[ri]) > assoc_col and ext[ri][assoc_col]:
+                    txt = " ".join(str(ext[ri][assoc_col]).split())
+                if not txt and len(ext[ri]) > 3 and ext[ri][3]:
                     txt = " ".join(str(ext[ri][3]).split())
+                # keep the cell if it is in the right-hand assoc region OR
+                # carries assoc-prefix text (defensive for odd table grids)
+                if c[0] <= 400 and not block_name_of(txt):
+                    continue
                 assoc_cells.append((c[1], c[3], txt))
         # dedupe identical y-spans
         seen = set()
         uniq = []
         for y0, y1, txt in assoc_cells:
-            key = (round(y0, 1), round(y1, 1))
+            key = (round(y0, 1), round(y1, 1), txt)
             if key in seen:
                 continue
             seen.add(key)
             uniq.append((y0, y1, txt))
         assoc_cells = uniq
 
-        # per-row centers for the tall-cell heuristic
-        row_centers = []
         for ri, row in enumerate(rows):
-            ok = [c for c in row.cells if c is not None]
-            if not ok:
-                row_centers.append(None)
-                continue
-            yc = (row.bbox[1] + row.bbox[3]) / 2
-            row_centers.append(yc)
-
-        for ri, row in enumerate(rows):
-            ok = [c for c in row.cells if c is not None]
-            if not ok:
-                continue
-            name = " ".join((ext[ri][0] or "").split()) if len(ext[ri]) > 0 else ""
+            name = row_names[ri]
             if not name:
                 continue
             cm = COUNTY_RE.match(name)
             if cm:
                 cur_county = cm.group(1).strip()
                 cur_block = None
+                cur_contract = None
                 continue
             if name.strip("-").strip() == "":
                 continue
@@ -584,26 +623,37 @@ def pdf_row_blocks(pdf_path):
             if yc is None:
                 continue
 
-            covering = [c for c in assoc_cells if c[0] - 0.5 <= yc <= c[1] + 0.5]
+            covering = [
+                (y0, y1, txt)
+                for (y0, y1, txt) in assoc_cells
+                if y0 - 0.5 <= yc <= y1 + 0.5
+            ]
             if covering:
                 named = [c for c in covering if block_name_of(c[2])]
                 if named:
-                    cur_block = block_name_of(named[0][2])
-                else:
-                    # empty cell: tall -> continuation; single-row -> orphan
-                    tall = any(
-                        (c[1] - c[0]) > 2.0 * (row.bbox[3] - row.bbox[1])
-                        for c in covering
-                    )
-                    if not tall:
-                        cur_block = None
+                    new_block = block_name_of(named[0][2])
+                    if new_block != cur_block:
+                        cur_block = new_block
+                        cur_contract = None  # fresh block: reset carried contract
+                # else: empty continuation cell -> keep cur_block (None here
+                # means "no context yet": emit PDF_UNKNOWN so apply_pdf_blocks
+                # falls back to the text parser instead of orphaning)
             else:
                 cur_block = None
 
+            # contract from the PDF's contract column, carried forward
+            if contract_col is not None and len(ext[ri]) > contract_col and ext[ri][contract_col]:
+                tok = contract_token_of(" ".join(str(ext[ri][contract_col]).split()))
+                if tok:
+                    cur_contract = tok
+
             if cur_county is None:
                 continue
+            emitted = cur_block
+            if emitted is None and covering:
+                emitted = PDF_UNKNOWN
             county_rows.setdefault(cur_county, []).append(
-                (name_normalized(name), cur_block)
+                (name_normalized(name), emitted, cur_contract)
             )
 
     return county_rows
@@ -645,7 +695,7 @@ def apply_pdf_blocks(rows, blocks, pdf_map):
             matched = None
             k = j
             while k < len(pdf_rows) and k < j + 3:
-                pdf_name, pdf_block = pdf_rows[k]
+                pdf_name = pdf_rows[k][0]
                 if pdf_name == rn:
                     matched = pdf_rows[k]
                     j = k + 1
@@ -665,7 +715,13 @@ def apply_pdf_blocks(rows, blocks, pdf_map):
                     r.flags.append("pdf_row_unmatched")
                     continue
 
-            _, pdf_block = matched
+            _, pdf_block, pdf_contract = matched
+            if pdf_block is PDF_UNKNOWN:
+                # no authoritative cell text (county starts at page bottom;
+                # name is on the next page) — keep the text-parser block but
+                # flag for review
+                r.flags.append("block_pdf_ambiguous")
+                continue
             if pdf_block is None:
                 r.block = None
                 r.contract = None
@@ -680,21 +736,46 @@ def apply_pdf_blocks(rows, blocks, pdf_map):
                 r.flags.append("pdf_block_unmatched")
                 continue
             r.block = b
-            # re-resolve contract & addendum from the new block
-            before = [c for c in b.contracts if c[0] <= r.idx]
-            if before:
-                r.contract, r.contract_date = before[-1][1], before[-1][2]
-            elif b.contracts:
-                r.contract, r.contract_date = b.contracts[0][1], b.contracts[0][2]
+            # re-resolve contract & addendum from the new block; a contract
+            # read directly from the PDF's contract column wins (the text
+            # layer can mis-order contracts relative to block names)
+            if pdf_contract:
+                r.contract = pdf_contract
+                r.contract_date = None
+                m = CONTRACT_RE.search(pdf_contract)
+                if m:
+                    r.contract_date = iso_date(m.group(2), m.group(3), m.group(4))
             else:
-                r.contract, r.contract_date = None, None
-                if "no_contract_number" not in r.flags:
-                    r.flags.append("no_contract_number")
+                before = [c for c in b.contracts if c[0] <= r.idx]
+                if before:
+                    r.contract, r.contract_date = before[-1][1], before[-1][2]
+                elif b.contracts:
+                    r.contract, r.contract_date = b.contracts[0][1], b.contracts[0][2]
+                else:
+                    r.contract, r.contract_date = None, None
+                    if "no_contract_number" not in r.flags:
+                        r.flags.append("no_contract_number")
             if b.addenda:
                 ab = [a for a in b.addenda if a[0] <= r.idx]
                 r.act_aditional = (ab[-1] if ab else b.addenda[0])[1]
             else:
                 r.act_aditional = None
+
+    # reconcile each block's contract list with the contracts its rows
+    # actually resolved to (the text layer can attach a contract to the wrong
+    # block when the number text appears before the next block's name line)
+    from collections import OrderedDict
+
+    for b in blocks:
+        seen = OrderedDict()
+        for r in rows:
+            if r.block is b and r.contract:
+                key = (r.contract, r.contract_date)
+                seen.setdefault(key, r.idx)
+        if seen:
+            b.contracts = [
+                (idx, num, date) for (num, date), idx in seen.items()
+            ]
     return rows
 
 
@@ -707,11 +788,33 @@ def block_name_of(text):
     return None
 
 
+def contract_token_of(text):
+    """Contract number token ("664/598/1982" or "N/DD.MM.YYYY") from a cell's
+    text, or None. Used by the PDF-geometry overlay to read the contract
+    column authoritatively."""
+    t = re.sub(r"\s+", " ", (text or "").strip())
+    if not t:
+        return None
+    m = CONTRACT_RE.search(t)
+    if m:
+        return f"{m.group(1)}/{m.group(2)}.{m.group(3)}.{m.group(4)}"
+    my = CONTRACT_YEAR_RE.search(t)
+    if my:
+        return f"{my.group(1)}/{my.group(2)}"
+    return None
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Parse ANPA contracted-waters PDF text.")
     ap.add_argument("--input", default=None, help="pdftotext -layout txt file")
     ap.add_argument("--out", default=None, help="output directory (default data/processed)")
     ap.add_argument("--schema-version", default="1.0.0")
+    ap.add_argument(
+        "--pdf",
+        default=None,
+        help="optional source PDF for authoritative block boundaries "
+        "(defaults to the same basename with .pdf next to --input)",
+    )
     args = ap.parse_args(argv)
 
     repo = Path(__file__).resolve().parents[2]
@@ -729,6 +832,19 @@ def main(argv=None):
     lines = src.read_text(encoding="utf-8").split("\n")
 
     parser = AnpaParser().parse(lines).assemble()
+
+    # authoritative block-boundary overlay from the PDF cell geometry
+    pdf_path = Path(args.pdf) if args.pdf else src.with_suffix(".pdf")
+    if pdf_path.exists():
+        pdf_map = pdf_row_blocks(pdf_path)
+        if pdf_map is not None:
+            apply_pdf_blocks(parser.rows, parser.blocks, pdf_map)
+        else:
+            print("warning: pymupdf not installed — using text-only block heuristics",
+                  file=sys.stderr)
+    else:
+        print(f"warning: PDF not found at {pdf_path} — using text-only block heuristics",
+              file=sys.stderr)
 
     county_id_of = {}
     for c in parser.counties:
@@ -814,7 +930,9 @@ def main(argv=None):
             }
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
-    # ---------------- sources.jsonl (append) ----------------
+    # ---------------- sources.jsonl (idempotent append) ----------------
+    # One row per ingested PDF: on re-run, replace the row for this file
+    # instead of duplicating it.
     sources_out = out_dir / "sources.jsonl"
     src_date = None
     m = re.search(r"(\d{2})\.(\d{2})\.(\d{4})", fname)
@@ -830,11 +948,23 @@ def main(argv=None):
         "record_count": len(rows),
         "schema_version": schema_version,
     }
-    existing = sources_out.read_text(encoding="utf-8").strip() if sources_out.exists() else ""
-    with sources_out.open("a", encoding="utf-8") as f:
-        if existing:
-            f.write("\n")
-        f.write(json.dumps(src_rec, ensure_ascii=False) + "\n")
+    rows_out = []
+    if sources_out.exists():
+        for line in sources_out.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r0 = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if r0.get("raw_file_path") == src_rec["raw_file_path"]:
+                continue  # replaced below
+            rows_out.append(r0)
+    rows_out.append(src_rec)
+    with sources_out.open("w", encoding="utf-8") as f:
+        for r0 in rows_out:
+            f.write(json.dumps(r0, ensure_ascii=False) + "\n")
 
     # ---------------- validation report ----------------
     report = validate(parser, rows)

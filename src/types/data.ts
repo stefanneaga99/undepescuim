@@ -54,8 +54,13 @@ export interface Water {
     adresa?: string;
     siteUrl?: string;
   } | null;
-  // FUTURE: true polygon/polyline geometry (geocoding pipeline t_04163c8f)
-  // geojson?: GeoJSON.Geometry;
+  // Real polygon/polyline geometry from the geocoding pipeline (t_04163c8f).
+  // When present, the map renders the true shape of the water; otherwise
+  // it falls back to the bbox rectangle.
+  geometry?: {
+    type: 'MultiLineString' | 'LineString' | 'Polygon' | 'MultiPolygon';
+    coordinates: GeoJSON.Position[][][] | GeoJSON.Position[][] | GeoJSON.Position[];
+  };
 }
 
 /** GeoJSON feature properties for Leaflet rendering */

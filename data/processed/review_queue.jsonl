@@ -12,6 +12,7 @@
 {"id": "anpa-0197", "source_row": 420, "county": "BRAȘOV", "water_name": "Lac acumulare Arpașu", "limits_text": "până la limita jud. Sibiu", "flags": ["missing_value"]}
 {"id": "anpa-0212", "source_row": 458, "county": "BUZĂU", "water_name": "Pârâul Valea Sibiciului", "limits_text": "limita cu jud. Covasna-până la conf. cu pârâul Sibiciu", "flags": ["missing_value"]}
 {"id": "anpa-0218", "source_row": 476, "county": "BUZĂU", "water_name": "Lac acumulare Siriu", "limits_text": "Județ Buzău", "flags": ["missing_value"]}
+{"id": "anpa-0228", "source_row": 501, "county": "CĂLĂRAȘI", "water_name": "Canalul Siderurgic", "limits_text": "toata lungimea canalului", "flags": ["block_pdf_ambiguous"]}
 {"id": "anpa-0229", "source_row": 514, "county": "CĂLĂRAȘI", "water_name": "Rețeaua de canale de irigații cu excepția canalelor        Rasa și Gălățui", "limits_text": "jud. Călărași", "flags": ["missing_value"]}
 {"id": "anpa-0247", "source_row": 559, "county": "CONSTANȚA", "water_name": "Canal Dunăre – Marea Neagră", "limits_text": "", "flags": ["missing_value"]}
 {"id": "anpa-0248", "source_row": 560, "county": "CONSTANȚA", "water_name": "Canal Poarta Albă – Midia Năvodari", "limits_text": "", "flags": ["missing_value"]}
@@ -25,9 +26,9 @@
 {"id": "anpa-0299", "source_row": 659, "county": "GIURGIU", "water_name": "Râul Neajlov", "limits_text": "izvor – Comana", "flags": ["missing_value"]}
 {"id": "anpa-0300", "source_row": 660, "county": "GIURGIU", "water_name": "Râul Câlniștea", "limits_text": "Leica Veche – Călugăreni", "flags": ["missing_value"]}
 {"id": "anpa-0301", "source_row": 662, "county": "GIURGIU", "water_name": "Râul Comasca", "limits_text": "Cetatea – Gherla", "flags": ["missing_value"]}
-{"id": "anpa-0355", "source_row": 797, "county": "HUNEDOARA", "water_name": "Râul Steiul montan inferior", "limits_text": "Conf. cu râul Bărbat – Subcetate", "flags": ["missing_value"]}
-{"id": "anpa-0356", "source_row": 798, "county": "HUNEDOARA", "water_name": "Râul Mare inf. II", "limits_text": "Lac Hațeg – Lac Subcetate", "flags": ["missing_value"]}
-{"id": "anpa-0357", "source_row": 799, "county": "HUNEDOARA", "water_name": "Valea Polatiște", "limits_text": "Izvoare – conf. cu râul Jiu", "flags": ["missing_value"]}
+{"id": "anpa-0355", "source_row": 797, "county": "HUNEDOARA", "water_name": "Râul Steiul montan inferior", "limits_text": "Conf. cu râul Bărbat – Subcetate", "flags": ["block_pdf_ambiguous", "missing_value"]}
+{"id": "anpa-0356", "source_row": 798, "county": "HUNEDOARA", "water_name": "Râul Mare inf. II", "limits_text": "Lac Hațeg – Lac Subcetate", "flags": ["block_pdf_ambiguous", "missing_value"]}
+{"id": "anpa-0357", "source_row": 799, "county": "HUNEDOARA", "water_name": "Valea Polatiște", "limits_text": "Izvoare – conf. cu râul Jiu", "flags": ["block_pdf_ambiguous", "missing_value"]}
 {"id": "anpa-0358", "source_row": 812, "county": "HUNEDOARA", "water_name": "Râul Jiul inferior", "limits_text": "conf. Jiul de est cu Jiul de vest – conf. cu valea Polatişte", "flags": ["missing_value"]}
 {"id": "anpa-0359", "source_row": 814, "county": "HUNEDOARA", "water_name": "Râul Jiul de vest – superior cu afluenții", "limits_text": "Izvoare – conf. cu valea Braia", "flags": ["missing_value"]}
 {"id": "anpa-0360", "source_row": 817, "county": "HUNEDOARA", "water_name": "Râul Jiul de vest mijlociu", "limits_text": "De la valea Braia – până la conf. cu Jiul de est", "flags": ["missing_value"]}
@@ -42,9 +43,16 @@
 {"id": "anpa-0395", "source_row": 903, "county": "ILFOV", "water_name": "Râul Colentina", "limits_text": "Amonte intravilan Buftea – mun. București – Cernica – aval intravilan Cernica", "flags": ["missing_value"]}
 {"id": "anpa-0396", "source_row": 908, "county": "ILFOV", "water_name": "Râul Dâmbovița", "limits_text": "Limita județ Ilfov, zona satului Zurbaua, comuna Dragomirești-Vale – limită județ Ilfov, zona satului Bălăceanca, comuna Cernica", "flags": ["missing_value"]}
 {"id": "anpa-0397", "source_row": 912, "county": "ILFOV", "water_name": "Râul Snagov", "limits_text": "Periș – Gruiu", "flags": ["missing_value"]}
+{"id": "anpa-0426", "source_row": 974, "county": "MUREȘ", "water_name": "Râul Mureș", "limits_text": "CFR comuna Deda – limită jud. comuna Chețani", "flags": ["block_pdf_ambiguous"]}
 {"id": "anpa-0483", "source_row": 1114, "county": "PRAHOVA", "water_name": "Râul Teleajen superior", "limits_text": "Izvoare – Baraj Măneciu Baraj Măneciu – Pod Zamfira", "flags": ["multi_sector_value"]}
 {"id": "anpa-0484", "source_row": 1116, "county": "PRAHOVA", "water_name": "Râul Teleajen inferior", "limits_text": "pod Bucov – conf. cu râul Prahova", "flags": ["multi_sector_value"]}
-{"id": "anpa-0496", "source_row": 1138, "county": "SATU MARE", "water_name": "Râul Someș", "limits_text": "mal stâng mal drept", "flags": ["multi_sector_value"]}
+{"id": "anpa-0494", "source_row": 1135, "county": "SATU MARE", "water_name": "Râul Tur", "limits_text": "între km 43-49-Turlung - pod CFR Tur (Porumbești)", "flags": ["block_pdf_ambiguous"]}
+{"id": "anpa-0495", "source_row": 1136, "county": "SATU MARE", "water_name": "Râul Crasna", "limits_text": "Supur Moftin", "flags": ["block_pdf_ambiguous"]}
+{"id": "anpa-0496", "source_row": 1138, "county": "SATU MARE", "water_name": "Râul Someș", "limits_text": "mal stâng mal drept", "flags": ["block_pdf_ambiguous", "multi_sector_value"]}
+{"id": "anpa-0497", "source_row": 1140, "county": "SATU MARE", "water_name": "CCRM Ruseni", "limits_text": "Moftin", "flags": ["block_pdf_ambiguous"]}
+{"id": "anpa-0498", "source_row": 1141, "county": "SATU MARE", "water_name": "CCPFB Paulian", "limits_text": "Frontiera cu Ungaria, Berveni", "flags": ["block_pdf_ambiguous"]}
+{"id": "anpa-0499", "source_row": 1142, "county": "SATU MARE", "water_name": "CP 9 stația mică", "limits_text": "", "flags": ["block_pdf_ambiguous"]}
+{"id": "anpa-0519", "source_row": 1186, "county": "SIBIU", "water_name": "Râul Olt", "limits_text": "Limită jud. Brașov – limită Jud. Vâlcea pe teritoriu. Jud. Sibiu", "flags": ["block_pdf_ambiguous"]}
 {"id": "anpa-0522", "source_row": 1203, "county": "SIBIU", "water_name": "Lac acumulare Avrig", "limits_text": "aval de Mediaș Județ Sibiu", "flags": ["missing_value"]}
 {"id": "anpa-0523", "source_row": 1204, "county": "SIBIU", "water_name": "Lac acumulare Scoreiu", "limits_text": "Județ Sibiu", "flags": ["missing_value"]}
 {"id": "anpa-0524", "source_row": 1205, "county": "SIBIU", "water_name": "Lac acumulare Racovița", "limits_text": "Județ Sibiu", "flags": ["missing_value"]}

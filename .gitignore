@@ -51,9 +51,10 @@ next-env.d.ts
 # geocoding pipeline — SQLite cache (rebuilt by scripts/geocode_batch.py)
 /data/cache/
 
-# python bytecode
+# python bytecode + venv
 __pycache__/
 *.pyc
+.venv/
 
 # geocoding pipeline — Natural Earth supplement (downloaded by geocode_batch.py)
 /data/sources/ne_10m_rivers_europe.geojson

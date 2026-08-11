@@ -28,31 +28,55 @@ def parse_osmid(osmid):
 def fetch_geometry(osmid):
     """Overpass {type}(id); out geom; -> Polygon/MultiPolygon geometry or None.
 
-    By-ID lookups are fast on the first mirror; a miss costs at most ~10s
-    (mirrors=1) instead of up to 60s trying every flaky mirror."""
+    Full mirror rotation with the sticky last-good pointer and min_elements=1
+    (a mirror that answers fast with ZERO elements for data it does not carry
+    — e.g. the Swiss regional extract — is skipped, not recorded as good).
+    Relations: 'out geom' returns member geometries (role='outer'); we build
+    one ring per outer member -> Polygon, or MultiPolygon for multiple rings.
+
+    Falls back to bbox rect in make_feature when Overpass is down."""
     parsed = parse_osmid(osmid)
     if not parsed:
         return None
     otype, oid = parsed
     q = f'[out:json][timeout:10];{otype}({oid});out geom;'
-    data = gc.overpass_query(q, timeout=10, mirrors=1)
+    data = gc.overpass_query(q, timeout=10, min_elements=1)
     if not data:
         return None
     for el in data.get("elements", []):
         if el.get("type") != otype:
             continue
-        geom = el.get("geometry")
-        if not geom:
-            continue
-        coords = [[p["lon"], p["lat"]] for p in geom]
-        if not coords:
-            continue
-        if coords[0] != coords[-1]:
-            coords.append(coords[0])
-        if len(coords) < 4:
-            continue
-        return {"type": "Polygon", "coordinates": [coords]}
+        if otype == "relation":
+            rings = []
+            for m in el.get("members", []):
+                if m.get("role") != "outer":
+                    continue
+                ring = _closed_ring(m.get("geometry"))
+                if ring:
+                    rings.append(ring)
+            if not rings:
+                continue
+            if len(rings) == 1:
+                return {"type": "Polygon", "coordinates": rings}
+            return {"type": "MultiPolygon", "coordinates": [[r] for r in rings]}
+        ring = _closed_ring(el.get("geometry"))
+        if ring:
+            return {"type": "Polygon", "coordinates": [ring]}
     return None
+
+
+def _closed_ring(pts):
+    """[[{lat,lon},...]] -> closed [[lng,lat],...] ring, or None."""
+    if not pts:
+        return None
+    coords = [[p["lon"], p["lat"]] for p in pts]
+    if not coords:
+        return None
+    if coords[0] != coords[-1]:
+        coords.append(coords[0])
+    if len(coords) < 4:
+        return None
+    return coords
 
 
 def make_feature(lake, geometry):

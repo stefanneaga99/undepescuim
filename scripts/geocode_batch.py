@@ -163,10 +163,34 @@ def overpass_exact_name(water, timeout=8):
         + f'relation["name"="{name}"]({minlat},{minlon},{maxlat},{maxlon});'
         + ');out geom;'
     )
-    data = gc.overpass_query(q, timeout=timeout, mirrors=1)
+    data = gc.overpass_query(q, timeout=timeout, mirrors=1, min_elements=1)
     if not data:
         return None, None
     for el in data.get("elements", []):
+        if el.get("type") == "relation":
+            # 'out geom' puts geometry on the members; take all member lines
+            lines = []
+            for m in el.get("members", []):
+                g = m.get("geometry")
+                if not g or len(g) < 2:
+                    continue
+                lines.append([[p["lon"], p["lat"]] for p in g])
+            if not lines:
+                continue
+            if water["subtype"] == "rau":
+                return {"type": "MultiLineString", "coordinates": lines}, f"relation/{el['id']}"
+            # lake: close each member ring into a polygon
+            polygons = []
+            for line in lines:
+                if line[0] != line[-1]:
+                    line.append(line[0])
+                if len(line) >= 4:
+                    polygons.append([line])
+            if polygons:
+                geom = {"type": "Polygon", "coordinates": polygons[0]} if len(polygons) == 1 \
+                    else {"type": "MultiPolygon", "coordinates": polygons}
+                return geom, f"relation/{el['id']}"
+            continue
         geom = el.get("geometry")
         if not geom:
             continue
