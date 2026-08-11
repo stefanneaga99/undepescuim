@@ -40,8 +40,11 @@ function run(cmd, args, cwd, timeoutMs) {
 export const name = 'geocoder';
 
 export async function collect() {
-  // Give the batch plenty of headroom (Nominatim 1 req/s for ~400 waters).
-  const stageTimeout = 20 * 60 * 1000;
+  // Generous per-stage headroom: Nominatim 1 req/s for ~400 waters with
+  // multi-query fallback chains plus Overpass tier-3 fallbacks can take
+  // 30-60+ minutes on a cold cache. A warm cache (data/cache/geocode.db)
+  // makes repeat runs fast again.
+  const stageTimeout = 2 * 60 * 60 * 1000;
   for (const script of SCRIPTS) {
     const out = await run('python3', [path.join('scripts', script)], ROOT, stageTimeout);
     // echo the script's own progress lines into the refresh log

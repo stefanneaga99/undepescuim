@@ -59,3 +59,5 @@ __pycache__/
 # geocoding pipeline — Natural Earth supplement (downloaded by geocode_batch.py)
 /data/sources/ne_10m_rivers_europe.geojson
 
+data/rivers_osm.geojson
+data/matched_small_geocoded.geojson

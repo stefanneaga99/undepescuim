@@ -28,6 +28,7 @@ def premap_metadata(p, water):
     props["judet"] = water.get("judet") if water else None
     props["asociatie"] = (water.get("asociatie") or {}).get("name") if water else None
     props["dimensiune"] = water.get("dimensiune") if water else None
+    props.setdefault("importance", None)  # s7.1: field present even for manual premaps
     return props
 
 
