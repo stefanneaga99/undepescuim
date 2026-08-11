@@ -138,7 +138,11 @@ export function WaterDetailSheet() {
                   key={water.slug}
                   className="min-h-0 flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)] animate-in fade-in-0 duration-200"
                 >
-                  <WaterDetailCard water={water} association={association} />
+                  <WaterDetailCard
+                    water={water}
+                    association={association}
+                    relatedWaters={waters}
+                  />
                 </div>
               )}
             </Drawer.Content>
@@ -161,7 +165,11 @@ export function WaterDetailSheet() {
             </button>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto p-4">
-            <WaterDetailCard water={water} association={association} />
+            <WaterDetailCard
+              water={water}
+              association={association}
+              relatedWaters={waters}
+            />
           </div>
         </aside>
       )}
