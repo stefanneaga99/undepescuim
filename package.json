@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "data:refresh": "node scripts/refresh-data.mjs"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.22",
