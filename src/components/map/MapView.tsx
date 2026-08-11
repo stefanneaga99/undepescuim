@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { MapContainer, TileLayer, ZoomControl, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
-import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
+import { WaterFeatureLayer, waterKey, sameRiver, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
 import { COVERED_COLOR } from '@/utils/colors';
 
 /**
@@ -22,10 +22,38 @@ export function MapView() {
   const allWaters = useMapStore((s) => s.waters);
 
   // Focus: when a water/contract is selected from the detail card, highlight
-  // the river on the map in the color of ITS association.
+  // only ITS sector of the river — sliced from the shared course geometry by
+  // the contract km share of the main-course contracts.
   const selected = allWaters.find((w) => w.slug === selectedWaterSlug) ?? null;
   const focusKey = selected?.name ? selected.name : null;
   const focusColor = selected?.asociatie?.slug ? COVERED_COLOR : null;
+
+  // Compute the contract's [start, end] fraction of the river course.
+  const focusRange = useMemo<[number, number] | null>(() => {
+    if (!selected) return null;
+    const key = waterKey(selected.name);
+    const group = allWaters.filter(
+      (w) => isMainCourse(w.name) && sameRiver(key, waterKey(w.name)),
+    );
+    if (group.length <= 1) return [0, 1]; // whole course
+    const ranked = [...group].sort(
+      (a, b) => courseRank(a.name) - courseRank(b.name),
+    );
+    const km = ranked.map((w) => {
+      const m = /([\d.]+)\s*km/i.exec(w.dimensiune ?? '');
+      return m ? parseFloat(m[1]) : 0;
+    });
+    const total = km.reduce((a, b) => a + b, 0);
+    if (total <= 0) return [0, 1];
+    let acc = 0;
+    for (let i = 0; i < ranked.length; i++) {
+      if (ranked[i].slug === selected.slug) {
+        return [acc / total, (acc + km[i]) / total];
+      }
+      acc += km[i];
+    }
+    return [0, 1];
+  }, [selected, allWaters]);
 
   return (
     <MapContainer
@@ -44,6 +72,7 @@ export function MapView() {
         coverageSlug={coverageSlug}
         focusKey={focusKey}
         focusColor={focusColor}
+        focusRange={focusRange}
       />
       <FlyToController />
     </MapContainer>
