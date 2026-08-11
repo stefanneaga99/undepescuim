@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# geodata sources — large HOTOSM/HDX downloads, re-fetchable (see data/sources/README.md)
+/data/sources/hotosm_rou_waterways_osm_geojson.zip
+/data/sources/waterways.geojson
+/data/sources/hotosm_rou_waterways_osm_gpkg.zip
+/data/sources/README.txt
+/data/sources/config.yaml
+/data/sources/metadata.json
+
