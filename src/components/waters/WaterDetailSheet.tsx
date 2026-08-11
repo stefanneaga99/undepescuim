@@ -142,6 +142,7 @@ export function WaterDetailSheet() {
                     water={water}
                     association={association}
                     relatedWaters={waters}
+                    onSelectContract={selectWater}
                   />
                 </div>
               )}
@@ -169,6 +170,7 @@ export function WaterDetailSheet() {
               water={water}
               association={association}
               relatedWaters={waters}
+              onSelectContract={selectWater}
             />
           </div>
         </aside>

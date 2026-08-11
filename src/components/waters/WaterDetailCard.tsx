@@ -10,6 +10,8 @@ interface WaterDetailCardProps {
   association: Association | null;
   /** All waters sharing the same river (multiple contracts per river). */
   relatedWaters?: Water[];
+  /** Called when the user clicks another contract/sector of the same river. */
+  onSelectContract?: (slug: string) => void;
 }
 
 /**
@@ -42,6 +44,7 @@ export function WaterDetailCard({
   water,
   association,
   relatedWaters = [],
+  onSelectContract,
 }: WaterDetailCardProps) {
   const isLake = water.subtype === 'lac';
   const telefon = association?.telefon ?? water.asociatie?.telefon;
@@ -106,18 +109,41 @@ export function WaterDetailCard({
         <div className="border-t pt-3">
           <h3 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             <Layers className="h-3.5 w-3.5" />
-            {contracts.length} sectoare contractate
+            {contracts.length + 1} sectoare contractate
           </h3>
           <ul className="flex flex-col gap-2">
+            {/* Current (clicked) water first */}
+            <li
+              key={water.slug}
+              className="cursor-pointer rounded-md border border-primary/40 bg-primary/5 px-3 py-2 text-xs transition-colors hover:bg-primary/10"
+              onClick={() => onSelectContract?.(water.slug)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onSelectContract?.(water.slug);
+              }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium">{water.asociatie?.name ?? '—'}</span>
+                <Badge variant="outline" className="text-[10px] uppercase tracking-wide">
+                  {water.judet}
+                </Badge>
+              </div>
+              {water.limite && <p className="mt-1 text-muted-foreground">{water.limite}</p>}
+              {water.dimensiune && (
+                <p className="mt-0.5 text-muted-foreground">{water.dimensiune}</p>
+              )}
+            </li>
             {contracts.map((c) => (
               <li
                 key={c.slug}
-                className={cn(
-                  'rounded-md border px-3 py-2 text-xs',
-                  c.slug === water.slug
-                    ? 'border-primary/40 bg-primary/5'
-                    : 'border-border',
-                )}
+                className="cursor-pointer rounded-md border border-border px-3 py-2 text-xs transition-colors hover:border-primary/40 hover:bg-primary/5"
+                onClick={() => onSelectContract?.(c.slug)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') onSelectContract?.(c.slug);
+                }}
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-medium">{c.asociatie?.name ?? '—'}</span>

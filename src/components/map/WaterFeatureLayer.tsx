@@ -12,6 +12,27 @@ interface WaterFeatureLayerProps {
   waters: Water[];
   /** selected association slug — colors features green/grey (or all blue when null) */
   coverageSlug: string | null;
+  /** contract selected from the detail card — highlight the river in its association color */
+  focusKey?: string | null;
+  focusColor?: string | null;
+}
+
+/** Normalize a water name to a group key (same as WaterDetailCard). */
+function waterKey(name: string): string {
+  const lower = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return (
+    lower
+      .replace(/^(raul|paraul|parau|valea|lacul|balta|acumularea|acumulare)\s+/, '')
+      .replace(/[()]/g, '')
+      .trim()
+      .split(/\s+/)[0] ?? ''
+  );
+}
+
+/** True when two water keys name the same river (shared 5-char prefix). */
+function sameRiver(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  return a.slice(0, 5) === b.slice(0, 5);
 }
 
 /**
@@ -23,7 +44,12 @@ interface WaterFeatureLayerProps {
  * 2. the visible thin line (weight 2-3) on top.
  * This makes clicking a river reliable on both desktop and mobile.
  */
-export function WaterFeatureLayer({ waters, coverageSlug }: WaterFeatureLayerProps) {
+export function WaterFeatureLayer({
+  waters,
+  coverageSlug,
+  focusKey,
+  focusColor,
+}: WaterFeatureLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
 
   const featureCollection = useMemo(() => watersToFeatureCollection(waters), [waters]);
@@ -43,19 +69,31 @@ export function WaterFeatureLayer({ waters, coverageSlug }: WaterFeatureLayerPro
       const style = getFeatureStyle(f.properties?.asociatieSlug ?? null, coverageSlug);
       const isLine = f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString';
 
+      // River match for focus highlighting (contract selected from the card)
+      const inFocus =
+        !!focusKey && sameRiver(focusKey, waterKey(f.properties?.name ?? ''));
+
       if (isLine) {
-        // Visible thin line
-        layer.setStyle({ ...style, weight: 3 });
+        // Visible thin line; thick + colored when this river is in focus
+        layer.setStyle({
+          ...style,
+          weight: inFocus ? 6 : 3,
+          color: inFocus && focusColor ? focusColor : style.color,
+          opacity: inFocus ? 1 : style.opacity ?? 1,
+        });
         layer.on('click', () => handleClick(f));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       } else {
-        // Polygon: keep normal style, add a slightly thicker invisible hit ring
-        layer.setStyle(style);
+        layer.setStyle({
+          ...style,
+          weight: inFocus ? 4 : style.weight ?? 2,
+          color: inFocus && focusColor ? focusColor : style.color,
+        });
         layer.on('click', () => handleClick(f));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       }
     },
-    [handleClick, coverageSlug],
+    [handleClick, coverageSlug, focusKey, focusColor],
   );
 
   // Invisible wide hit layers for lines (added after the visible layer).

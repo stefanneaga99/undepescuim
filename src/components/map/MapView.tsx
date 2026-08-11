@@ -6,6 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
+import { COVERED_COLOR } from '@/utils/colors';
 
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
@@ -17,6 +18,14 @@ import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
 export function MapView() {
   const filteredWaters = useFilteredWaters();
   const coverageSlug = useMapStore((s) => s.selectedAssociationSlug);
+  const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  const allWaters = useMapStore((s) => s.waters);
+
+  // Focus: when a water/contract is selected from the detail card, highlight
+  // the river on the map in the color of ITS association.
+  const selected = allWaters.find((w) => w.slug === selectedWaterSlug) ?? null;
+  const focusKey = selected?.name ? selected.name : null;
+  const focusColor = selected?.asociatie?.slug ? COVERED_COLOR : null;
 
   return (
     <MapContainer
@@ -30,7 +39,12 @@ export function MapView() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="topright" />
-      <WaterFeatureLayer waters={filteredWaters} coverageSlug={coverageSlug} />
+      <WaterFeatureLayer
+        waters={filteredWaters}
+        coverageSlug={coverageSlug}
+        focusKey={focusKey}
+        focusColor={focusColor}
+      />
       <FlyToController />
     </MapContainer>
   );
