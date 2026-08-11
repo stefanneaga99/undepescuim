@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Flag, MapPin, Phone, Ruler, Layers } from 'lucide-react';
+import { ExternalLink, Flag, MapPin, Phone, Ruler } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { Association, Water } from '@/types/data';
@@ -8,55 +8,23 @@ import type { Association, Water } from '@/types/data';
 interface WaterDetailCardProps {
   water: Water;
   association: Association | null;
-  /** All waters sharing the same river (multiple contracts per river). */
-  relatedWaters?: Water[];
-  /** Called when the user clicks another contract/sector of the same river. */
-  onSelectContract?: (slug: string) => void;
-}
-
-/**
- * Normalize a water name to a group key: the first significant word,
- * diacritic-free. "Râul Buzău", "Râul Buzăul superior", "Pârâu Buzăul Mijlociu",
- * "Valea Buzăului inferior" all → "buzau(lui)" — grouped by 5-char prefix.
- */
-function waterKey(name: string): string {
-  const lower = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  return lower
-    .replace(/^(raul|paraul|parau|valea|lacul|balta|acumularea|acumulare)\s+/, '')
-    .replace(/[()]/g, '')
-    .trim()
-    .split(/\s+/)[0] ?? '';
-}
-
-/** True when two water keys name the same river (shared 5-char prefix). */
-function sameRiver(a: string, b: string): boolean {
-  if (!a || !b) return false;
-  return a.slice(0, 5) === b.slice(0, 5);
 }
 
 /**
  * Pure presentational card (component_structure_plan.md §3.12).
- * Shows name, subtype + county badges, sector (limite), size (dimensiune),
- * association contact, legal reference. Missing fields simply don't render
- * (no "—"/"N/A" placeholders). "Raportează o problemă" is a placeholder.
+ * Shows the SINGLE resolved contract for the clicked sector: name, subtype +
+ * county badges, sector (limite), size (dimensiune), association contact,
+ * legal reference. The map click already resolves which contract owns the
+ * clicked fraction of the river (contractAtFraction), so only that contract
+ * is shown — never the full list of contracts on the river.
+ * Missing fields simply don't render (no "—"/"N/A" placeholders).
+ * "Raportează o problemă" is a placeholder.
  */
-export function WaterDetailCard({
-  water,
-  association,
-  relatedWaters = [],
-  onSelectContract,
-}: WaterDetailCardProps) {
+export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const isLake = water.subtype === 'lac';
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
   const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
-
-  // Group contracts for the same river: this water + all others sharing its key
-  const key = waterKey(water.name);
-  const contracts = relatedWaters.filter(
-    (w) => sameRiver(key, waterKey(w.name)) && w.slug !== water.slug,
-  );
-  const showContracts = contracts.length > 0;
 
   return (
     <div className="flex flex-col gap-3">
@@ -104,64 +72,7 @@ export function WaterDetailCard({
         )}
       </dl>
 
-      {/* Multiple contracts on the same river — show all sectors */}
-      {showContracts && (
-        <div className="border-t pt-3">
-          <h3 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            <Layers className="h-3.5 w-3.5" />
-            {contracts.length + 1} sectoare contractate
-          </h3>
-          <ul className="flex flex-col gap-2">
-            {/* Current (clicked) water first */}
-            <li
-              key={water.slug}
-              className="cursor-pointer rounded-md border border-primary/40 bg-primary/5 px-3 py-2 text-xs transition-colors hover:bg-primary/10"
-              onClick={() => onSelectContract?.(water.slug)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') onSelectContract?.(water.slug);
-              }}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-medium">{water.asociatie?.name ?? '—'}</span>
-                <Badge variant="outline" className="text-[10px] uppercase tracking-wide">
-                  {water.judet}
-                </Badge>
-              </div>
-              {water.limite && <p className="mt-1 text-muted-foreground">{water.limite}</p>}
-              {water.dimensiune && (
-                <p className="mt-0.5 text-muted-foreground">{water.dimensiune}</p>
-              )}
-            </li>
-            {contracts.map((c) => (
-              <li
-                key={c.slug}
-                className="cursor-pointer rounded-md border border-border px-3 py-2 text-xs transition-colors hover:border-primary/40 hover:bg-primary/5"
-                onClick={() => onSelectContract?.(c.slug)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onSelectContract?.(c.slug);
-                }}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-medium">{c.asociatie?.name ?? '—'}</span>
-                  <Badge variant="outline" className="text-[10px] uppercase tracking-wide">
-                    {c.judet}
-                  </Badge>
-                </div>
-                {c.limite && <p className="mt-1 text-muted-foreground">{c.limite}</p>}
-                {c.dimensiune && (
-                  <p className="mt-0.5 text-muted-foreground">{c.dimensiune}</p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Association */}
+      {/* Association (the resolved one for this clicked sector) */}
       <div className="border-t pt-3">
         <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Asociație

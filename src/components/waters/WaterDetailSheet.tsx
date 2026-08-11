@@ -141,8 +141,6 @@ export function WaterDetailSheet() {
                   <WaterDetailCard
                     water={water}
                     association={association}
-                    relatedWaters={waters}
-                    onSelectContract={selectWater}
                   />
                 </div>
               )}
@@ -169,8 +167,6 @@ export function WaterDetailSheet() {
             <WaterDetailCard
               water={water}
               association={association}
-              relatedWaters={waters}
-              onSelectContract={selectWater}
             />
           </div>
         </aside>
