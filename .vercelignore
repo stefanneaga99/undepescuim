@@ -1,5 +1,8 @@
-# Large re-fetchable geodata sources — not tracked in git, see data/sources/README.md
-/data/sources
-
-# Vercel local config
-.vercel
+data/sources/
+data/raw/
+data/rivers_osm.geojson
+data/matched_small_geocoded.geojson
+*.pdf
+*.html
+node_modules
+.next
