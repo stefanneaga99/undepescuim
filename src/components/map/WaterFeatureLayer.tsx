@@ -416,7 +416,7 @@ export function WaterFeatureLayer({
           })}
           onEachFeature={(feature, layer: L.Path) => {
             const f = feature as WaterFeature;
-            layer.on('click', () => handleClick(f));
+            layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
             layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
           }}
         />
@@ -431,7 +431,7 @@ function GeoJSONHits({
   onFeatureClick,
 }: {
   data: GeoJSON.FeatureCollection;
-  onFeatureClick: (f: WaterFeature) => void;
+  onFeatureClick: (f: WaterFeature, latlng?: L.LatLng) => void;
 }) {
   return (
     <LeafletGeoJSON
@@ -439,7 +439,7 @@ function GeoJSONHits({
       style={() => ({ color: '#000', weight: 16, opacity: 0, fillOpacity: 0 })}
       onEachFeature={(feature, layer: L.Path) => {
         const f = feature as WaterFeature;
-        layer.on('click', () => onFeatureClick(f));
+        layer.on('click', (e: L.LeafletMouseEvent) => onFeatureClick(f, e.latlng));
       }}
     />
   );
