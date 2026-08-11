@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { WaterFeatureLayer, waterKey, sameRiver, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
-import { COVERED_COLOR } from '@/utils/colors';
+import { FOCUS_COLOR } from '@/utils/colors';
 
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
@@ -26,7 +26,7 @@ export function MapView() {
   // the contract km share of the main-course contracts.
   const selected = allWaters.find((w) => w.slug === selectedWaterSlug) ?? null;
   const focusKey = selected?.name ? selected.name : null;
-  const focusColor = selected?.asociatie?.slug ? COVERED_COLOR : null;
+  const focusColor = selected?.asociatie?.slug ? FOCUS_COLOR : null;
 
   // Compute the contract's [start, end] fraction of the river course.
   const focusRange = useMemo<[number, number] | null>(() => {
@@ -69,6 +69,7 @@ export function MapView() {
       <ZoomControl position="topright" />
       <WaterFeatureLayer
         waters={filteredWaters}
+        allWaters={allWaters}
         coverageSlug={coverageSlug}
         focusKey={focusKey}
         focusColor={focusColor}

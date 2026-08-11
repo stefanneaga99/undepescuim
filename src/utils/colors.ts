@@ -28,3 +28,5 @@ export const NEUTRAL_COLOR = '#3b82f6';
 export const COVERED_COLOR = '#16a34a';
 /** Not-covered color. */
 export const UNCOVERED_COLOR = '#9ca3af';
+/** Contract sector highlight color (user-requested orange). */
+export const FOCUS_COLOR = '#f97316';

@@ -10,6 +10,8 @@ import type { Water, WaterFeature } from '@/types/data';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
+  /** all waters (unfiltered) — needed to resolve which contract a click belongs to */
+  allWaters: Water[];
   /** selected association slug — colors features green/grey (or all blue when null) */
   coverageSlug: string | null;
   /** contract selected from the detail card — highlight the river in its association color */
@@ -59,27 +61,40 @@ function partLength(coords: [number, number][]): number {
 
 /**
  * Order MultiLineString parts along the river course (source → mouth).
- * OSM splits long rivers into many ways in arbitrary order; we project each
- * part's midpoint onto the source→mouth axis (first part start → last part
- * end as approximation) and sort by that projection.
+ * OSM splits long rivers into many ways in arbitrary order. We sort parts by
+ * their centroid projected onto the river's principal direction (PCA on the
+ * part midpoints), then orient so the source end (higher latitude — rivers
+ * in Romania flow from the mountains in the N/center toward the S/E) starts
+ * at fraction 0.
  */
 function orderParts(parts: [number, number][][]): [number, number][][] {
   if (parts.length <= 1) return parts;
-  // Axis: from the westernmost-ish start to the easternmost-ish end — use the
-  // first part's start and last part's end as a coarse source→mouth vector.
-  const src = parts[0][0];
-  const mth = parts[parts.length - 1][parts[parts.length - 1].length - 1];
-  const dx = mth[0] - src[0];
-  const dy = mth[1] - src[1];
-  const axisLen = Math.hypot(dx, dy) || 1;
+  const mids = parts.map((p) => p[Math.floor(p.length / 2)]);
+  const mx = mids.reduce((a, m) => a + m[0], 0) / mids.length;
+  const my = mids.reduce((a, m) => a + m[1], 0) / mids.length;
+  // 2x2 covariance, principal eigenvector
+  let cxx = 0, cyy = 0, cxy = 0;
+  for (const m of mids) {
+    cxx += (m[0] - mx) ** 2;
+    cyy += (m[1] - my) ** 2;
+    cxy += (m[0] - mx) * (m[1] - my);
+  }
+  const theta = 0.5 * Math.atan2(2 * cxy, cxx - cyy);
+  const vx = Math.cos(theta), vy = Math.sin(theta);
 
   const scored = parts.map((p) => {
-    const mid = p[Math.floor(p.length / 2)];
-    const t = ((mid[0] - src[0]) * dx + (mid[1] - src[1]) * dy) / (axisLen * axisLen);
-    return { p, t };
+    const m = p[Math.floor(p.length / 2)];
+    return { p, t: (m[0] - mx) * vx + (m[1] - my) * vy };
   });
   scored.sort((a, b) => a.t - b.t);
-  return scored.map((s) => s.p);
+  const ordered = scored.map((s) => s.p);
+
+  // Orient: the source (first half of parts) sits at higher latitude in
+  // Romania's geography (mountains N/center → plains S/E).
+  const half = Math.max(1, Math.floor(ordered.length / 2));
+  const latFirst = ordered.slice(0, half).reduce((a, p) => a + p[Math.floor(p.length / 2)][1], 0) / half;
+  const latLast = ordered.slice(-half).reduce((a, p) => a + p[Math.floor(p.length / 2)][1], 0) / half;
+  return latFirst < latLast ? [...ordered].reverse() : ordered;
 }
 
 /**
@@ -133,6 +148,63 @@ function sliceMultiLine(
   return out;
 }
 
+/**
+ * Find the fraction [0,1] along an ordered MultiLineString nearest to a point.
+ * Returns null when the geometry can't be measured.
+ */
+function fractionAtPoint(
+  parts: [number, number][][],
+  pt: [number, number],
+): number | null {
+  const ordered = orderParts(parts);
+  const lengths = ordered.map(partLength);
+  const total = lengths.reduce((a, b) => a + b, 0);
+  if (total <= 0) return null;
+
+  // Distance from point to a segment (2D, lon/lat as planar — good enough for
+  // picking the nearest river point; km-level accuracy not needed here).
+  function distToSeg(a: [number, number], b: [number, number], p: [number, number]): number {
+    const abx = b[0] - a[0], aby = b[1] - a[1];
+    const apx = p[0] - a[0], apy = p[1] - a[1];
+    const len2 = abx * abx + aby * aby;
+    let t = len2 ? (apx * abx + apy * aby) / len2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    const cx = a[0] + t * abx, cy = a[1] + t * aby;
+    return Math.hypot(p[0] - cx, p[1] - cy);
+  }
+
+  let bestFrac: number | null = null;
+  let bestDist = Infinity;
+  let walked = 0;
+  for (let i = 0; i < ordered.length; i++) {
+    const coords = ordered[i];
+    const len = lengths[i];
+    for (let j = 1; j < coords.length; j++) {
+      const d = distToSeg(coords[j - 1], coords[j], pt);
+      if (d < bestDist) {
+        bestDist = d;
+        // fraction = walked + partial distance along this segment
+        const segLen = haversineKm(coords[j - 1], coords[j]);
+        const abx = coords[j][0] - coords[j - 1][0];
+        const aby = coords[j][1] - coords[j - 1][1];
+        const apx = pt[0] - coords[j - 1][0];
+        const apy = pt[1] - coords[j - 1][1];
+        const len2 = abx * abx + aby * aby;
+        let t = len2 ? (apx * abx + apy * aby) / len2 : 0;
+        t = Math.max(0, Math.min(1, t));
+        bestFrac = (walked + (j - 1 > 0 ? 0 : 0) + t * segLen) / total;
+        // walked-so-far = lengths of previous parts + length within this part
+        // up to segment j-1's start; approximate by adding partial lengths.
+        let within = 0;
+        for (let k = 1; k < j; k++) within += haversineKm(coords[k - 1], coords[k]);
+        bestFrac = (walked + within + t * segLen) / total;
+      }
+    }
+    walked += len;
+  }
+  return bestFrac;
+}
+
 /** True when the water's name marks it as on the main course (not a valley tributary). */
 export function isMainCourse(name: string): boolean {
   return !/^(valea|paraul|parau)\s/i.test(name);
@@ -147,6 +219,43 @@ export function courseRank(name: string): number {
   return 3;
 }
 
+/** Parse "126 Km" → 126 (0 when missing). */
+function parseKm(dimensiune: string | undefined): number {
+  const m = /([\d.]+)\s*km/i.exec(dimensiune ?? '');
+  return m ? parseFloat(m[1]) : 0;
+}
+
+/**
+ * Pick the contract (water) whose km-range covers the given fraction of the
+ * river course. Contracts are the main-course waters of the same river,
+ * ordered superior→mouth; each owns a slice proportional to its km.
+ * Returns the water, or null when no grouping applies.
+ */
+export function contractAtFraction(
+  riverName: string,
+  frac: number,
+  allWaters: Water[],
+): Water | null {
+  const key = waterKey(riverName);
+  const group = allWaters.filter(
+    (w) => isMainCourse(w.name) && sameRiver(key, waterKey(w.name)),
+  );
+  if (group.length <= 1) return null;
+  const ranked = [...group].sort((a, b) => courseRank(a.name) - courseRank(b.name));
+  const km = ranked.map((w) => parseKm(w.dimensiune));
+  const total = km.reduce((a, b) => a + b, 0);
+  if (total <= 0) return null;
+  let acc = 0;
+  for (let i = 0; i < ranked.length; i++) {
+    const f0 = acc / total;
+    const f1 = (acc + km[i]) / total;
+    if (frac >= f0 && frac < f1) return ranked[i];
+    acc += km[i];
+  }
+  // Rounding: last contract also owns the very end
+  return frac >= 1 ? ranked[ranked.length - 1] : null;
+}
+
 /**
  * Pure prop-driven renderer: waters[] → FeatureCollection → GeoJSON layers.
  *
@@ -158,6 +267,7 @@ export function courseRank(name: string): number {
  */
 export function WaterFeatureLayer({
   waters,
+  allWaters,
   coverageSlug,
   focusKey,
   focusColor,
@@ -169,11 +279,32 @@ export function WaterFeatureLayer({
 
   const layerKey = `${coverageSlug ?? 'neutral'}|${waters.map((w) => w.slug).join(',')}`;
 
+  // Click on a river: resolve the fraction along the course, then select the
+  // contract (association) that owns that sector — not just the first one.
   const handleClick = useCallback(
-    (feature: WaterFeature) => {
+    (feature: WaterFeature, latlng?: L.LatLng) => {
+      const g = feature.geometry;
+      if (latlng && (g.type === 'MultiLineString' || g.type === 'LineString')) {
+        const parts =
+          g.type === 'MultiLineString'
+            ? (g.coordinates as [number, number][][])
+            : [g.coordinates as [number, number][]];
+        const frac = fractionAtPoint(parts, [latlng.lng, latlng.lat]);
+        if (frac !== null) {
+          const contract = contractAtFraction(
+            feature.properties.name,
+            frac,
+            allWaters,
+          );
+          if (contract) {
+            selectWater(contract.slug);
+            return;
+          }
+        }
+      }
       selectWater(feature.properties.slug);
     },
-    [selectWater],
+    [selectWater, allWaters],
   );
 
   const handleEachFeature = useCallback(
@@ -196,7 +327,7 @@ export function WaterFeatureLayer({
           color: inFocus && !sliceActive && focusColor ? focusColor : style.color,
           opacity: inFocus && !sliceActive ? 1 : style.opacity ?? 1,
         });
-        layer.on('click', () => handleClick(f));
+        layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       } else {
         layer.setStyle({
@@ -204,7 +335,7 @@ export function WaterFeatureLayer({
           weight: inFocus ? 4 : style.weight ?? 2,
           color: inFocus && focusColor ? focusColor : style.color,
         });
-        layer.on('click', () => handleClick(f));
+        layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       }
     },
