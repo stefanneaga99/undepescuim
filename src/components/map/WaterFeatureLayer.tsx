@@ -325,7 +325,7 @@ export function WaterFeatureLayer({
 
       // River match for focus highlighting (contract selected from the card)
       const inFocus =
-        !!focusKey && sameRiver(focusKey, waterKey(f.properties?.name ?? ''));
+        !!focusKey && sameRiver(waterKey(focusKey), waterKey(f.properties?.name ?? ''));
 
       if (isLine) {
         // Visible thin line; thick + colored ONLY when this river is focused
@@ -358,10 +358,11 @@ export function WaterFeatureLayer({
   const focusFeatures = useMemo(() => {
     if (!focusKey || !focusRange) return null;
     const [f0, f1] = focusRange;
+    const focusKeyKey = waterKey(focusKey);
     const features: GeoJSON.Feature[] = [];
     for (const f of featureCollection.features) {
       const name = f.properties?.name ?? '';
-      if (!sameRiver(focusKey, waterKey(name))) continue;
+      if (!sameRiver(focusKeyKey, waterKey(name))) continue;
       const g = f.geometry;
       if (g.type === 'MultiLineString') {
         const sliced = sliceMultiLine(g.coordinates as [number, number][][], f0, f1);
