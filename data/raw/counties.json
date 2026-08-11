@@ -1,0 +1,334 @@
+[
+  {
+    "id": "alba",
+    "name": "Alba",
+    "name_ascii": "Alba",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 1
+  },
+  {
+    "id": "arad",
+    "name": "Arad",
+    "name_ascii": "Arad",
+    "region": "Crișana",
+    "has_contracted_waters": true,
+    "anpa_section_order": 2
+  },
+  {
+    "id": "arges",
+    "name": "Argeș",
+    "name_ascii": "Arges",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 3
+  },
+  {
+    "id": "bacau",
+    "name": "Bacău",
+    "name_ascii": "Bacau",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 4
+  },
+  {
+    "id": "bihor",
+    "name": "Bihor",
+    "name_ascii": "Bihor",
+    "region": "Crișana",
+    "has_contracted_waters": true,
+    "anpa_section_order": 5
+  },
+  {
+    "id": "bistrita-nasaud",
+    "name": "Bistrița-Năsăud",
+    "name_ascii": "Bistrita-Nasaud",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 6
+  },
+  {
+    "id": "botosani",
+    "name": "Botoșani",
+    "name_ascii": "Botosani",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 7
+  },
+  {
+    "id": "brasov",
+    "name": "Brașov",
+    "name_ascii": "Brasov",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 8
+  },
+  {
+    "id": "braila",
+    "name": "Brăila",
+    "name_ascii": "Braila",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 9
+  },
+  {
+    "id": "buzau",
+    "name": "Buzău",
+    "name_ascii": "Buzau",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 10
+  },
+  {
+    "id": "caras-severin",
+    "name": "Caraș-Severin",
+    "name_ascii": "Caras-Severin",
+    "region": "Banat",
+    "has_contracted_waters": true,
+    "anpa_section_order": 11
+  },
+  {
+    "id": "calarasi",
+    "name": "Călărași",
+    "name_ascii": "Calarasi",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 12
+  },
+  {
+    "id": "cluj",
+    "name": "Cluj",
+    "name_ascii": "Cluj",
+    "region": "Transilvania",
+    "has_contracted_waters": false
+  },
+  {
+    "id": "constanta",
+    "name": "Constanța",
+    "name_ascii": "Constanta",
+    "region": "Dobrogea",
+    "has_contracted_waters": true,
+    "anpa_section_order": 13
+  },
+  {
+    "id": "covasna",
+    "name": "Covasna",
+    "name_ascii": "Covasna",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 14
+  },
+  {
+    "id": "dambovita",
+    "name": "Dâmbovița",
+    "name_ascii": "Dambovita",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 15
+  },
+  {
+    "id": "dolj",
+    "name": "Dolj",
+    "name_ascii": "Dolj",
+    "region": "Oltenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 16
+  },
+  {
+    "id": "galati",
+    "name": "Galați",
+    "name_ascii": "Galati",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 17
+  },
+  {
+    "id": "giurgiu",
+    "name": "Giurgiu",
+    "name_ascii": "Giurgiu",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 18
+  },
+  {
+    "id": "gorj",
+    "name": "Gorj",
+    "name_ascii": "Gorj",
+    "region": "Oltenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 19
+  },
+  {
+    "id": "harghita",
+    "name": "Harghita",
+    "name_ascii": "Harghita",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 20
+  },
+  {
+    "id": "hunedoara",
+    "name": "Hunedoara",
+    "name_ascii": "Hunedoara",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 21
+  },
+  {
+    "id": "ialomita",
+    "name": "Ialomița",
+    "name_ascii": "Ialomita",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 22
+  },
+  {
+    "id": "iasi",
+    "name": "Iași",
+    "name_ascii": "Iasi",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 23
+  },
+  {
+    "id": "ilfov",
+    "name": "Ilfov",
+    "name_ascii": "Ilfov",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 24
+  },
+  {
+    "id": "maramures",
+    "name": "Maramureș",
+    "name_ascii": "Maramures",
+    "region": "Maramureș",
+    "has_contracted_waters": true,
+    "anpa_section_order": 25
+  },
+  {
+    "id": "mehedinti",
+    "name": "Mehedinți",
+    "name_ascii": "Mehedinti",
+    "region": "Oltenia",
+    "has_contracted_waters": false
+  },
+  {
+    "id": "mures",
+    "name": "Mureș",
+    "name_ascii": "Mures",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 26
+  },
+  {
+    "id": "neamt",
+    "name": "Neamț",
+    "name_ascii": "Neamt",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 27
+  },
+  {
+    "id": "olt",
+    "name": "Olt",
+    "name_ascii": "Olt",
+    "region": "Oltenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 28
+  },
+  {
+    "id": "prahova",
+    "name": "Prahova",
+    "name_ascii": "Prahova",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 29
+  },
+  {
+    "id": "satu-mare",
+    "name": "Satu Mare",
+    "name_ascii": "Satu Mare",
+    "region": "Crișana",
+    "has_contracted_waters": true,
+    "anpa_section_order": 30
+  },
+  {
+    "id": "salaj",
+    "name": "Sălaj",
+    "name_ascii": "Salaj",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 31
+  },
+  {
+    "id": "sibiu",
+    "name": "Sibiu",
+    "name_ascii": "Sibiu",
+    "region": "Transilvania",
+    "has_contracted_waters": true,
+    "anpa_section_order": 32
+  },
+  {
+    "id": "suceava",
+    "name": "Suceava",
+    "name_ascii": "Suceava",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 33
+  },
+  {
+    "id": "teleorman",
+    "name": "Teleorman",
+    "name_ascii": "Teleorman",
+    "region": "Muntenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 34
+  },
+  {
+    "id": "timis",
+    "name": "Timiș",
+    "name_ascii": "Timis",
+    "region": "Banat",
+    "has_contracted_waters": true,
+    "anpa_section_order": 35
+  },
+  {
+    "id": "tulcea",
+    "name": "Tulcea",
+    "name_ascii": "Tulcea",
+    "region": "Dobrogea",
+    "has_contracted_waters": false
+  },
+  {
+    "id": "vaslui",
+    "name": "Vaslui",
+    "name_ascii": "Vaslui",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 36
+  },
+  {
+    "id": "valcea",
+    "name": "Vâlcea",
+    "name_ascii": "Valcea",
+    "region": "Oltenia",
+    "has_contracted_waters": true,
+    "anpa_section_order": 37
+  },
+  {
+    "id": "vrancea",
+    "name": "Vrancea",
+    "name_ascii": "Vrancea",
+    "region": "Moldova",
+    "has_contracted_waters": true,
+    "anpa_section_order": 38
+  },
+  {
+    "id": "bucuresti",
+    "name": "București",
+    "name_ascii": "Bucuresti",
+    "region": "Muntenia",
+    "has_contracted_waters": false
+  }
+]
