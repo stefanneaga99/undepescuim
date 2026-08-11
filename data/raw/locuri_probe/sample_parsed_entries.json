@@ -11,18 +11,15 @@
     "counties_contract": "Sibiu",
     "description": "Asociatia Judeteana a Vanatorilor si Pescarilor Sportivi Sibiu - AJVPS Sibiu, este o asociatie non-profit, cu sediul social in mun. Sibiu. Activitatea o desfasuram in fondurile cinegetice si pe apele naturale colinare si de ses din jud. Sibiu. Pentru ca ne dorim sa fim diferiti, pe langa munca de combatere si prevenire a braconajului pe toate fondurile cinegetice si zonele de pescuit gestionate de noi, oferim posibilitatea ca vanatorii si pescarii din toata tara sa vâneze/pescuiasca legal la noi in judet. Asadar NU OBLIGAM pe nimeni sa devina membru ca sa poata vana/pescui legal si oferim posibilitatea de achitare a unor tarife de acces. Pentru informatii, nu ezitati sa ne contactati in intervalul luni-vineri, orele 8.00 - 16.00 la urmatoarele numere de telefon:- vanatoare 0728 138 162- pescuit 0728 138 161Sesizarile privind actiuni de braconaj sau poluare, va rugam sa le comunicati de la fata locului, fara intarziere!Va multumim!",
     "contracted_waters": [
-      "Sibiu",
       "Lac acumulare Arpașu (limită jud. Brașov)",
       "Lac acumulare Avrig",
       "Lac acumulare Racovița",
       "Lac acumulare Scoreiu",
       "Pârâul Hârtibaciu (Loc. Brădeni – conf. cu râul Olt)",
       "Râul Olt (Limită jud. Brașov – limită Jud. Vâlcea pe teritoriu. Jud. Sibiu)",
-      "Râul Târnava Mare (limită jud. Mureș, Dumbrăveni – limită jud. Alba în aval de Mediaș)",
-      "Alba",
-      "+5"
+      "Râul Târnava Mare (limită jud. Mureș, Dumbrăveni – limită jud. Alba în aval de Mediaș)"
     ],
-    "contracted_waters_count": 10
+    "contracted_waters_count": 7
   },
   {
     "url": "https://locuridepescuit.ro/asociatie-pescari/arad/avps-diana-turnu-arad/",
@@ -32,10 +29,9 @@
     "address": "Calea Aurel Vlaicu 150, Arad, Romania",
     "counties_contract": "Arad",
     "contracted_waters": [
-      "Arad",
       "Canalele din zona Turnu"
     ],
-    "contracted_waters_count": 2
+    "contracted_waters_count": 1
   },
   {
     "url": "https://locuridepescuit.ro/asociatie-pescari/alba/ajvps-alba/",
@@ -48,7 +44,6 @@
     "website": "https://ajvpsab.ro/",
     "counties_contract": "Alba",
     "contracted_waters": [
-      "Alba",
       "Mihoești (Mihoești, comuna Câmpeni )",
       "Râul Ampoi (Zlatna - conf. râul Mureș)",
       "Râul Arieș (Baia de Arieș – Vidolm )",
@@ -68,10 +63,9 @@
       "Valea Bistricioarei (Izvoare – vărsare în râul Arieș)",
       "Valea Caselor (Izvoare – vărsare în râul Arieș)",
       "Valea Morilor (Huda lui Papară - Izvoare – vărsare în râul Arieș)",
-      "Valea Sartășului (Izvoare – vărsare în râul Arieș)",
-      "+5"
+      "Valea Sartășului (Izvoare – vărsare în râul Arieș)"
     ],
-    "contracted_waters_count": 22
+    "contracted_waters_count": 20
   },
   {
     "url": "https://locuridepescuit.ro/asociatie-pescari/brasov/ajps-brasov/",
@@ -82,7 +76,6 @@
     "phone": "0268414631",
     "counties_contract": "Brașov",
     "contracted_waters": [
-      "Brașov",
       "Dopca (Izvoare – conf. cu râul Olt)",
       "Râul Bârsa (Izvoare – conf. cu Bârsa Fierarului și toți afluenții)",
       "Râul Doftana Gârcin (Izvoare – conf. cu râul Tărlungeni)",
@@ -94,11 +87,9 @@
       "Râul Tărlungul superior (Izvoare Tărlungeni)",
       "Valea Homorod (Izvoare – sat Vlădeni - vărsare)",
       "Valea Mare – Crizbav (Izvoare – conf. cu râul Olt)",
-      "Valea Sebeșului (Izvoare – Drum N.I. – vărsare )",
-      "Alba",
-      "+5"
+      "Valea Sebeșului (Izvoare – Drum N.I. – vărsare )"
     ],
-    "contracted_waters_count": 15
+    "contracted_waters_count": 12
   },
   {
     "url": "https://locuridepescuit.ro/asociatie-pescari/teleorman/ajvps-teleorman/",
@@ -110,7 +101,6 @@
     "email": "ajvpsteleorman@gmail.com",
     "counties_contract": "Teleorman",
     "contracted_waters": [
-      "Teleorman",
       "Râul Călmățui (pe raza județului Teleorman)",
       "Râul Câlniștea (pe raza județului Teleorman)",
       "Râul Olt (pe raza județului Teleorman)",
@@ -118,7 +108,7 @@
       "Râul Urlui (partea neamenajată pe raza județului Teleorman)",
       "Râul Vedea (pe raza județului Teleorman)"
     ],
-    "contracted_waters_count": 7
+    "contracted_waters_count": 6
   },
   {
     "url": "https://locuridepescuit.ro/asociatie-pescari/valcea/ajvps-valcea/",
@@ -131,7 +121,6 @@
     "website": "https://ajvpsrmvl.wixsite.com/asociatia",
     "counties_contract": "Vâlcea",
     "contracted_waters": [
-      "Vâlcea",
       "Acumularea Băbeni cu bălțile adiacente",
       "Acumularea Călimănești cu bălțile adiacente",
       "Acumularea Câineni",
@@ -162,6 +151,6 @@
       "Valea Robești (izvoare - conf. Râul Olt)",
       "Valea Urii cu pâraiele Uria și Murgoci (izvoare - conf. Râul Olt)"
     ],
-    "contracted_waters_count": 30
+    "contracted_waters_count": 29
   }
 ]
