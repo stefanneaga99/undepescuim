@@ -25,9 +25,11 @@ def parse_osmid(osmid):
     return t, int(i)
 
 
-def fetch_geometry(osmid):
+def fetch_geometry(db, osmid):
     """Overpass {type}(id); out geom; -> Polygon/MultiPolygon geometry or None.
 
+    Cache-first (private_cache table): a successful geometry is stored under
+    its osmid so re-runs and monthly refreshes never touch Overpass again.
     Full mirror rotation with the sticky last-good pointer and min_elements=1
     (a mirror that answers fast with ZERO elements for data it does not carry
     — e.g. the Swiss regional extract — is skipped, not recorded as good).
@@ -35,6 +37,9 @@ def fetch_geometry(osmid):
     one ring per outer member -> Polygon, or MultiPolygon for multiple rings.
 
     Falls back to bbox rect in make_feature when Overpass is down."""
+    row = db.execute("SELECT geojson FROM private_cache WHERE osmid=?", (osmid,)).fetchone()
+    if row and row[0]:
+        return json.loads(row[0])
     parsed = parse_osmid(osmid)
     if not parsed:
         return None
@@ -57,11 +62,20 @@ def fetch_geometry(osmid):
             if not rings:
                 continue
             if len(rings) == 1:
-                return {"type": "Polygon", "coordinates": rings}
-            return {"type": "MultiPolygon", "coordinates": [[r] for r in rings]}
+                geom = {"type": "Polygon", "coordinates": rings}
+            else:
+                geom = {"type": "MultiPolygon", "coordinates": [[r] for r in rings]}
+            db.execute("INSERT OR REPLACE INTO private_cache(osmid, geojson) VALUES (?,?)",
+                       (osmid, json.dumps(geom)))
+            db.commit()
+            return geom
         ring = _closed_ring(el.get("geometry"))
         if ring:
-            return {"type": "Polygon", "coordinates": [ring]}
+            geom = {"type": "Polygon", "coordinates": [ring]}
+            db.execute("INSERT OR REPLACE INTO private_cache(osmid, geojson) VALUES (?,?)",
+                       (osmid, json.dumps(geom)))
+            db.commit()
+            return geom
     return None
 
 
@@ -112,28 +126,37 @@ def main():
     if args.limit:
         lakes = lakes[: args.limit]
 
+    db = gc.get_db()
     print(f"[private] {len(lakes)} lakes")
     features = []
     ok = 0
+    cached = 0
     for i, lake in enumerate(lakes, 1):
-        geom = fetch_geometry(lake.get("osmid"))
+        osmid = lake.get("osmid")
+        from_cache = db.execute("SELECT 1 FROM private_cache WHERE osmid=? AND geojson IS NOT NULL", (osmid,)).fetchone()
+        geom = fetch_geometry(db, osmid)
         if geom:
             ok += 1
+            if from_cache:
+                cached += 1
         features.append(make_feature(lake, geom))
-        time.sleep(1.0)  # be gentle with Overpass dynamic slots
+        if not from_cache:
+            time.sleep(2.0)  # be gentle with Overpass dynamic slots
         if i % 25 == 0 or i == len(lakes):
-            print(f"  [{i}/{len(lakes)}] geometry ok={ok}")
+            print(f"  [{i}/{len(lakes)}] geometry ok={ok} (cached={cached})")
 
     fc = {
         "type": "FeatureCollection",
         "metadata": {"pipeline": "private_lakes", "pipeline_version": "1.0",
                      "generated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
-                     "input": len(lakes), "geometry_ok": ok, "geometry_missing": len(lakes) - ok},
+                     "input": len(lakes), "geometry_ok": ok, "geometry_missing": len(lakes) - ok,
+                     "geometry_cached": cached},
         "features": features,
     }
     with open(gc.OUT_PRIVATE, "w", encoding="utf-8") as fh:
         json.dump(fc, fh, ensure_ascii=False)
-    print(f"[private] wrote {gc.OUT_PRIVATE} ({len(features)} features, {ok} with real geometry)")
+    print(f"[private] wrote {gc.OUT_PRIVATE} ({len(features)} features, {ok} with real geometry, {cached} cached)")
+    db.close()
 
 
 if __name__ == "__main__":

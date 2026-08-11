@@ -256,13 +256,15 @@ def tier3_fallback(db, water, skip_ne=False):
             _cache_tier3(db, cache_key, water, res)
             return res
         if not skip_ne:
-            geom, _ = natural_earth_match(water)
-            if geom:
-                res = {"geometry": {"type": "MultiLineString", "coordinates": geom},
-                       "osm_id": None, "geocode_tier": "tier3_ne",
-                       "source": "natural_earth", "confidence": "low"}
-                _cache_tier3(db, cache_key, water, res)
-                return res
+            ne_result = natural_earth_match(water)
+            if ne_result is not None:
+                geom, _ = ne_result
+                if geom:
+                    res = {"geometry": {"type": "MultiLineString", "coordinates": geom},
+                           "osm_id": None, "geocode_tier": "tier3_ne",
+                           "source": "natural_earth", "confidence": "low"}
+                    _cache_tier3(db, cache_key, water, res)
+                    return res
     else:
         geom, src = overpass_exact_name(water)
         if geom:

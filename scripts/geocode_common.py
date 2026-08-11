@@ -236,5 +236,12 @@ def get_db():
     )""")
     db.execute("CREATE INDEX IF NOT EXISTS idx_water_name ON geocode_cache(water_name)")
     db.execute("CREATE INDEX IF NOT EXISTS idx_slug ON geocode_cache(arebaltapeste_slug)")
+    # Private-lakes cache (proposal s8): osmid -> GeoJSON geometry, so the
+    # Overpass lookups are one-time even across monthly refresh runs.
+    db.execute("""CREATE TABLE IF NOT EXISTS private_cache (
+        osmid        TEXT PRIMARY KEY,
+        geojson      TEXT,
+        created_at   TEXT DEFAULT (datetime('now'))
+    )""")
     db.commit()
     return db
