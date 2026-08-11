@@ -1,0 +1,1892 @@
+[
+ {
+  "name": "AJVPS CÂMPINA",
+  "name_long": "Asociația Județeana a Vânătorilor si Pescarilor Sportivi  CÂMPINA",
+  "slug": "ajvps-campina",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Bulevardul Carol I 46, Câmpina 105600, Romania",
+     "nume": "",
+     "telefon": "+40 244 336 931",
+     "coordinates": [
+      25.734,
+      45.124
+     ]
+    },
+    "id": "671e9a50b671e10009efc231"
+   }
+  ],
+  "siteUrl": "https://ajvpsph.ro/",
+  "bbox": [
+   25.8011667,
+   44.74332234911,
+   26.4284529,
+   45.50210598801
+  ],
+  "createdAt": "2024-10-27T19:53:52.400Z",
+  "updatedAt": "2024-10-27T19:53:52.400Z",
+  "id": "671e9a500732c482a8043edd"
+ },
+ {
+  "name": "AJVPS VRANCEA",
+  "name_long": "Asociatia judeteana a Pescarilor si Vanatorilor Sportivi Vrancea",
+  "slug": "ajvps-vrancea",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Focșani, str. Peneș Curcanul, nr. 2 bis  ",
+     "telefon": "0237221058",
+     "coordinates": [
+      27.18301870188475,
+      45.701360701568625
+     ]
+    },
+    "id": "65fc11341d49040009eefe12"
+   },
+   {
+    "adresa": {
+     "adresa": "Adjud, str. Vasile Alecsandri, bloc 95, parter",
+     "telefon": "0237641010",
+     "coordinates": [
+      27.184306367885398,
+      46.09777540223919
+     ]
+    },
+    "id": "65fc11341d49040009eefe13"
+   }
+  ],
+  "siteUrl": "https://ajvpsvrancea.ro/ro/descriere/",
+  "createdAt": "2024-03-21T10:51:32.449Z",
+  "updatedAt": "2024-03-21T10:51:32.449Z",
+  "id": "65fc1134743aa3d2fbbe8d0e"
+ },
+ {
+  "name": "AJVPS VÂLCEA",
+  "name_long": "Asociaţia Judeţeană a Vânătorilor şi Pescarilor Sportivi Vâlcea",
+  "slug": "ajvps-valcea",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Râmnicu Vâlcea, Strada Regina Maria 5",
+     "telefon": "0250737040",
+     "coordinates": [
+      24.366131486357112,
+      45.103167514571
+     ]
+    },
+    "id": "65fc0fd61d49040009eefe11"
+   }
+  ],
+  "createdAt": "2024-03-21T10:45:42.394Z",
+  "updatedAt": "2024-10-25T20:03:40.857Z",
+  "bbox": [
+   23.7005871,
+   44.5350182,
+   24.51637740612,
+   45.5643651
+  ],
+  "id": "65fc0fd6743aa3d2fbbe8cb6"
+ },
+ {
+  "name": "AJVPS VASLUI",
+  "name_long": "Asociaţia Judeţeană a Vânătorilor şi Pescarilor Sportivi Vaslui",
+  "slug": "ajvps-vaslui",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Vaslui, str. Mihail Kogălniceanu, nr.26",
+     "nume": "",
+     "telefon": "0235311502",
+     "coordinates": [
+      27.728531706628036,
+      46.64343619083928
+     ]
+    },
+    "id": "65fc0f661d49040009eefe10"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/groups/324373971603987/",
+  "createdAt": "2024-03-21T10:43:50.286Z",
+  "updatedAt": "2024-03-21T10:43:50.286Z",
+  "id": "65fc0f66743aa3d2fbbe8c97"
+ },
+ {
+  "name": "AJVPS TELEORMAN",
+  "name_long": "Asociatia Judeteana a Vanatorilor si Pescarilor Sportivi Teleorman",
+  "slug": "ajvps-teleorman",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Libertății 181-183, Alexandria",
+     "telefon": "0247317475",
+     "coordinates": [
+      25.33012735272231,
+      43.97045394771464
+     ]
+    },
+    "id": "65fc0b9d1d49040009eefe0f"
+   }
+  ],
+  "createdAt": "2024-03-21T10:27:41.036Z",
+  "updatedAt": "2024-03-21T10:27:41.036Z",
+  "id": "65fc0b9d743aa3d2fbbe8ab1"
+ },
+ {
+  "name": "A.LUCIOPERCA CLUB PESCAR MODERN",
+  "name_long": "ASOCIAȚIA LUCIOPERCA CLUB PESCAR MODERN",
+  "slug": "a-lucioperca-club-pescar-modern",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Bistrița, str. V. Lucaciu, nr. 5",
+     "coordinates": [
+      24.49943406528626,
+      47.146848886777775
+     ]
+    },
+    "id": "65fc0b191d49040009eefe0e"
+   }
+  ],
+  "createdAt": "2024-03-21T10:25:29.980Z",
+  "updatedAt": "2024-03-21T10:25:29.980Z",
+  "id": "65fc0b19743aa3d2fbbe8a95"
+ },
+ {
+  "name": "APP FILIALA SUCEAVA",
+  "name_long": "Asociația Prieteni Pescari Filiala Suceava",
+  "slug": "app-filiala-suceava",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "str. Depoului, nr. 16, Suceava",
+     "coordinates": [
+      26.2361143965092,
+      47.677766358182936
+     ]
+    },
+    "id": "65fc0a8c1d49040009eefe0d"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/prietenipescari.suceava/?locale=ro_RO",
+  "createdAt": "2024-03-21T10:23:08.813Z",
+  "updatedAt": "2024-03-21T10:23:08.813Z",
+  "id": "65fc0a8c743aa3d2fbbe8a78"
+ },
+ {
+  "name": "AJVPS SATU MARE",
+  "name_long": "Asociatia Judeteana a Vanatorilor si Pescarilor Sportivi Satu Mare",
+  "slug": "ajvps-satu-mare",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Satu Mare, str. Petofi Șandor, nr. 38",
+     "coordinates": [
+      22.869920224104835,
+      47.789445162863075
+     ]
+    },
+    "id": "65fc09e81d49040009eefe0c"
+   }
+  ],
+  "siteUrl": "https://ajvpssm.ro/",
+  "createdAt": "2024-03-21T10:20:24.530Z",
+  "updatedAt": "2024-03-21T10:20:24.530Z",
+  "id": "65fc09e8743aa3d2fbbe8a59"
+ },
+ {
+  "name": "AVPS Câmpina",
+  "name_long": "Asociației Vânătorilor și Pescarilor Sportivi Câmpina",
+  "slug": "avps-campina",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Câmpina. Bulevardul Carol 46,bl. 12/e, parter",
+     "coordinates": [
+      25.7350649901328,
+      45.124111296410206
+     ]
+    },
+    "id": "65fc091c1d49040009eefe0b"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/p/AVPS-Campina-100064482768566/?locale=ro_RO",
+  "createdAt": "2024-03-21T10:17:00.028Z",
+  "updatedAt": "2024-10-27T19:59:06.062Z",
+  "bbox": [
+   25.5363885,
+   44.96825939437,
+   25.80984588146,
+   45.4868519
+  ],
+  "id": "65fc091c743aa3d2fbbe8a08"
+ },
+ {
+  "name": "AVPS ROMAN",
+  "name_long": "Asociaţia Vânătorilor şi Pescarilor Sportivi Roman",
+  "slug": "avps-roman",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Eternităţii , Nr. 21 , Roman",
+     "telefon": "0233742577",
+     "coordinates": [
+      26.925643599821758,
+      46.931736365629725
+     ]
+    },
+    "id": "65fc07641d49040009eefe0a"
+   }
+  ],
+  "siteUrl": "https://avpsroman.wordpress.com/contact/",
+  "createdAt": "2024-03-21T10:09:40.139Z",
+  "updatedAt": "2024-03-21T10:09:40.139Z",
+  "id": "65fc0764743aa3d2fbbe898d"
+ },
+ {
+  "name": "AVPS BRADUL PIATRA NEAMȚ",
+  "name_long": " Asociației Vânătorilor și Pescarilor Sportivi Piatra Neamț",
+  "slug": "avps-bradul-piatra-neamt",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Piatra Neamț, Str. Lt. Drăghescu, nr. 7,bl. E5, sc. B. ap. 23",
+     "telefon": "",
+     "coordinates": [
+      26.365354400987233,
+      46.92722761985437
+     ]
+    },
+    "id": "65fc07041d49040009eefe09"
+   }
+  ],
+  "createdAt": "2024-03-21T10:08:04.143Z",
+  "updatedAt": "2024-03-21T10:08:04.143Z",
+  "id": "65fc0704743aa3d2fbbe8950"
+ },
+ {
+  "name": "AJVPS MARAMUREȘ",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Maramureș",
+  "slug": "ajvps-maramures",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Baia Mare, Bulevardul Unirii 12",
+     "telefon": "0262206303",
+     "coordinates": [
+      23.56852944272128,
+      47.652578536970275
+     ]
+    },
+    "id": "65fc053e1d49040009eefe08"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/ajvps.maramures/",
+  "createdAt": "2024-03-21T10:00:30.419Z",
+  "updatedAt": "2024-03-28T06:35:16.494Z",
+  "id": "65fc053e743aa3d2fbbe88e2"
+ },
+ {
+  "name": "AVPS ACVILA",
+  "name_long": "Asociația Vânătorilor și Pescarilor Sportivi Acvila",
+  "slug": "avps-acvila",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Bd. Ion Mihalache nr.275",
+     "telefon": " 0212241799",
+     "coordinates": [
+      26.06188853086338,
+      44.467360547224025
+     ]
+    },
+    "id": "65fc045c1d49040009eefe07"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/acvilahunting/",
+  "createdAt": "2024-03-21T09:56:44.904Z",
+  "updatedAt": "2024-10-26T10:56:13.904Z",
+  "bbox": [
+   25.87619300365,
+   44.3940103,
+   26.2815856,
+   44.60458507425
+  ],
+  "id": "65fc045c743aa3d2fbbe88c7"
+ },
+ {
+  "name": "A.V.P.S. IAȘI",
+  "name_long": "Asociația Vânătorilor Și Pescarilor Sportivi Iași",
+  "slug": "a-v-p-s--iasi",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Iasi, str. Zimbrului, nr. 11-13-15, demisol, ap. 4, ",
+     "telefon": "0232267585",
+     "coordinates": [
+      27.593040909923502,
+      47.15534626232158
+     ]
+    },
+    "id": "65fbff391d49040009eefe06"
+   }
+  ],
+  "siteUrl": "https://avpsiasi.ro/",
+  "createdAt": "2024-03-21T09:34:49.082Z",
+  "updatedAt": "2024-03-21T09:34:49.082Z",
+  "id": "65fbff39743aa3d2fbbe860f"
+ },
+ {
+  "name": "APS SALMO CARPATICA LUPENI ",
+  "name_long": "Așociația de Pescuit Salmo Carpatica Lupeni",
+  "slug": "aps-salmo-carpatica-lupeni-",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Lupeni, str. Parângului, nr.4, bl.D6/15",
+     "coordinates": [
+      23.212933187447216,
+      45.355218691788174
+     ]
+    },
+    "id": "65fbfe501d49040009eefe05"
+   }
+  ],
+  "createdAt": "2024-03-21T09:30:56.236Z",
+  "updatedAt": "2024-03-21T09:30:56.236Z",
+  "id": "65fbfe50743aa3d2fbbe85dc"
+ },
+ {
+  "name": "ACVPS FĂGEȚEL MORTONCA ",
+  "name_long": "ASOCIAȚIA ACVPS FĂGEȚEL MORTONCA",
+  "slug": "acvps-fagetel-mortonca-",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "str. Profesor Andrei Cotfaș, nr. 9, Subcetate",
+     "nume": "SZÁSZ Attila",
+     "telefon": "0743931681",
+     "coordinates": [
+      25.43039491009713,
+      46.85372648282343
+     ]
+    },
+    "id": "65fbfac41d49040009eefe04"
+   }
+  ],
+  "createdAt": "2024-03-21T09:15:48.731Z",
+  "updatedAt": "2024-03-21T09:15:48.731Z",
+  "id": "65fbfac4743aa3d2fbbe8503"
+ },
+ {
+  "name": "APS SOVATA 2008",
+  "name_long": "Asociația Pescarilor Sportivi Sovata 2008",
+  "slug": "a-p-s--sovata-2008",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Vanatorilor nr. 10G, Sovata, jud. Mures",
+     "nume": "Haican Nicolae",
+     "coordinates": [
+      25.069779272605334,
+      46.61774127713145
+     ]
+    },
+    "id": "65fbf9ff1d49040009eefe03"
+   }
+  ],
+  "createdAt": "2024-03-21T09:12:31.095Z",
+  "updatedAt": "2024-03-21T10:01:01.215Z",
+  "id": "65fbf9ff743aa3d2fbbe84de"
+ },
+ {
+  "name": "AVPS GHEORGHIENI",
+  "name_long": "Așociația Vânătorilor și Pescarilor Sportivi Gheorgheni",
+  "slug": "avps-gheorghieni",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "str. cart. Revoluției, bl. I/40, sc. A, ap. 4, Gheorgheni",
+     "telefon": " 0742816546",
+     "coordinates": [
+      25.602833093936574,
+      46.72490335470815
+     ]
+    },
+    "id": "65fbf6871d49040009eefe02"
+   }
+  ],
+  "createdAt": "2024-03-21T08:57:43.894Z",
+  "updatedAt": "2024-03-21T08:57:43.894Z",
+  "id": "65fbf687743aa3d2fbbe84bc"
+ },
+ {
+  "name": "AVPS TOPLIȚA",
+  "name_long": "Asociația Vânătorilor și Pescarilor Sportivi Toplița",
+  "slug": "avps-toplita",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Sportivilor, Nr.2, Toplita",
+     "telefon": "0266341928",
+     "coordinates": [
+      25.34968766068499,
+      46.922071605362234
+     ]
+    },
+    "id": "65fbf5281d49040009eefe01"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/profile.php?id=100067590011727",
+  "createdAt": "2024-03-21T08:51:52.997Z",
+  "updatedAt": "2024-03-21T08:51:52.997Z",
+  "id": "65fbf528743aa3d2fbbe849b"
+ },
+ {
+  "name": "AVPS HUBERTUS",
+  "name_long": "A.V.P.S. „HUBERTUS” CRISTURU SECUIESC",
+  "slug": "avps-hubertus",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Kossuth Lajos 12, Cristuru Secuiesc",
+     "telefon": "0266243976",
+     "coordinates": [
+      25.035156423545715,
+      46.28964289025812
+     ]
+    },
+    "id": "65fbf40c1d49040009eefe00"
+   }
+  ],
+  "createdAt": "2024-03-21T08:47:08.576Z",
+  "updatedAt": "2024-03-21T08:47:08.576Z",
+  "id": "65fbf40c743aa3d2fbbe846c"
+ },
+ {
+  "name": "AJVPS GORJ",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi Gorj",
+  "slug": "ajvps-gorj",
+  "regulament": "https://www.ajvpsgorj.com/pescuit/regulament-propriu/",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Christian Tell, nr.28A, (Traian nr. 9), Târgu Jiu",
+     "telefon": "0353801888",
+     "coordinates": [
+      23.276435912703118,
+      45.04050125939336
+     ]
+    },
+    "id": "65fbf17e1d49040009eefdff"
+   }
+  ],
+  "siteUrl": "https://www.ajvpsgorj.com/",
+  "createdAt": "2024-03-21T08:36:14.693Z",
+  "updatedAt": "2024-10-26T10:29:56.109Z",
+  "bbox": [
+   22.8514963,
+   44.6010177,
+   23.72888083935,
+   45.18469871645
+  ],
+  "id": "65fbf17e743aa3d2fbbe844d"
+ },
+ {
+  "name": "A.CERBUL CARPATIN",
+  "name_long": "Asociația Cerbul Carpatin",
+  "slug": "a-cerbul-carpatin",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Macului 5, Târgu Jiu, Romania",
+     "coordinates": [
+      23.28512729500321,
+      45.05303531174687
+     ]
+    },
+    "id": "65fbf0dc1d49040009eefdfe"
+   }
+  ],
+  "createdAt": "2024-03-21T08:33:32.563Z",
+  "updatedAt": "2024-10-26T10:19:59.355Z",
+  "bbox": [
+   22.8514963,
+   44.6025913,
+   23.4544104,
+   45.2548135
+  ],
+  "id": "65fbf0dc743aa3d2fbbe842b"
+ },
+ {
+  "name": "AJVPS GIURGIU",
+  "name_long": "Asociatia Judeteana a Vanatorilor Si Pescarilor Sportivi Giurgiu",
+  "slug": "ajvps-giurgiu",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Vlad Tepes, bl. MUV 5, parter, Giurgiu",
+     "nume": "",
+     "telefon": "",
+     "coordinates": [
+      25.971473148775896,
+      43.8959953228542
+     ]
+    },
+    "id": "65fbedb31d49040009eefdfd"
+   }
+  ],
+  "createdAt": "2024-03-21T08:20:03.192Z",
+  "updatedAt": "2024-06-27T09:41:19.738Z",
+  "id": "65fbedb3743aa3d2fbbe83c1"
+ },
+ {
+  "name": "AJVPS GALAȚI",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi",
+  "slug": "ajvps-galati",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Brăilei 86, Galați ",
+     "telefon": "0236412110",
+     "coordinates": [
+      28.043269486869242,
+      45.42996737703934
+     ]
+    },
+    "id": "65fbecd51d49040009eefdfc"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/profile.php?id=100011502287012&locale=ro_RO",
+  "createdAt": "2024-03-21T08:16:21.535Z",
+  "updatedAt": "2024-03-21T08:16:21.535Z",
+  "id": "65fbecd5743aa3d2fbbe83b1"
+ },
+ {
+  "name": "AJVPS Covasna",
+  "name_long": "Asociația Județeană Vânătorilor și Pescarilor Sportivi Covasna",
+  "slug": "ajvps-covasna",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Kós Károly 5/A, Sfântu Gheorghe 520055",
+     "telefon": "0267352683",
+     "coordinates": [
+      25.786,
+      45.861
+     ]
+    },
+    "id": "65f9a0f5594c7e00096bdcfa"
+   }
+  ],
+  "createdAt": "2024-03-19T14:28:05.220Z",
+  "updatedAt": "2024-03-19T14:28:05.220Z",
+  "id": "65f9a0f5b28159e06fc479d0"
+ },
+ {
+  "name": "AJVPS CONSTANȚA",
+  "name_long": "Asociaţia Judeţeană a Vânătorilor Şi Pescarilor Sportivi Constanța",
+  "slug": "ajvps-constanta",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Constanța, str. Baba Novac nr. 1, bl L 118, parter",
+     "telefon": "0241635651",
+     "coordinates": [
+      28.633,
+      44.18
+     ]
+    },
+    "id": "65f9a012594c7e00096bdcf9"
+   }
+  ],
+  "siteUrl": "https://www.ajvpsconstanta.ro/",
+  "createdAt": "2024-03-19T14:24:18.815Z",
+  "updatedAt": "2024-03-19T14:24:18.815Z",
+  "id": "65f9a012b28159e06fc4799f"
+ },
+ {
+  "name": "AJVPS Călărași",
+  "name_long": "Asociatia Judeteana a Vanatorilor si Pescarilor Sportivi Calarasi",
+  "slug": "ajvps-calarasi",
+  "regulament": "https://ajvps-calarasi.ro/legislatie_pescuit.php",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Portului nr. 7, Călărași",
+     "telefon": "0242315131",
+     "coordinates": [
+      27.339,
+      44.188
+     ]
+    },
+    "id": "65f99c68594c7e00096bdcf8"
+   }
+  ],
+  "siteUrl": "https://ajvps-calarasi.ro/",
+  "createdAt": "2024-03-19T14:08:40.298Z",
+  "updatedAt": "2024-03-19T14:08:40.298Z",
+  "id": "65f99c68b28159e06fc47965"
+ },
+ {
+  "name": "APS Bega Poieni",
+  "name_long": "Asociația Pescarilor Sportivi Bega Poieni",
+  "slug": "aps-bega-poieni",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Muncitorilor 8,Timișoara,Timiș",
+     "telefon": "0728667788",
+     "coordinates": [
+      21.231,
+      45.724
+     ]
+    },
+    "id": "65f99ad4594c7e00096bdcf7"
+   }
+  ],
+  "siteUrl": "http://www.begapoieni.ro/",
+  "createdAt": "2024-03-19T14:01:56.112Z",
+  "updatedAt": "2024-03-19T14:01:56.112Z",
+  "id": "65f99ad4b28159e06fc47940"
+ },
+ {
+  "name": "AJVPS Brăila",
+  "name_long": "Asociația Pescarilor Sportivi Brăila - Galați ",
+  "slug": "ajvps-braila",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Bulevardul Independenţei 10, Brăila",
+     "telefon": " 0239619805",
+     "coordinates": [
+      27.968,
+      45.265
+     ]
+    },
+    "id": "65f9996e594c7e00096bdcf6"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/APSBraila/?locale=ro_RO",
+  "createdAt": "2024-03-19T13:55:58.162Z",
+  "updatedAt": "2024-10-15T13:25:54.887Z",
+  "bbox": [
+   27.2195987,
+   44.8149295,
+   27.9097214,
+   45.4822205
+  ],
+  "id": "65f9996eb28159e06fc4789e"
+ },
+ {
+  "name": "AJPS Brașov",
+  "name_long": "Asociația Pescarilor Sportivi Brașov",
+  "slug": "ajps-brasov",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Nicolae Bălcescu Nicolae, 14, Brașov",
+     "telefon": "0268414631",
+     "coordinates": [
+      25.592,
+      45.641
+     ]
+    },
+    "id": "65f99879594c7e00096bdcf5"
+   }
+  ],
+  "createdAt": "2024-03-19T13:51:53.222Z",
+  "updatedAt": "2024-11-12T18:00:01.039Z",
+  "bbox": [
+   25.1653197,
+   45.6614834,
+   25.7832825,
+   46.0525472
+  ],
+  "id": "65f99879b28159e06fc4785b"
+ },
+ {
+  "name": "AVPS RUPEA",
+  "name_long": "Asociația Vânătorilor și Pescarilor Sportivi Rupea",
+  "slug": "avps-rupea",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Republicii 119, Rupea 505500",
+     "telefon": "0268260952",
+     "coordinates": [
+      25.224,
+      46.039
+     ]
+    },
+    "id": "65f996c2594c7e00096bdcf4"
+   }
+  ],
+  "createdAt": "2024-03-19T13:44:34.751Z",
+  "updatedAt": "2024-11-12T17:55:05.198Z",
+  "bbox": [
+   25.1853946,
+   45.8778532,
+   25.5471524,
+   46.0518861
+  ],
+  "id": "65f996c2b28159e06fc477ee"
+ },
+ {
+  "name": "AJVPS BIHOR",
+  "name_long": "Asociatia Judeteana Vanatorilor si Pescarilor Sportivi Bihor",
+  "slug": "ajvps-bihor",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": " Jud. Bihor, Mun. Oradea, Str. Piata Emanuil Gojdu, Nr. 53, Bl. A10, Oradea, Romania",
+     "telefon": "0359446646",
+     "coordinates": [
+      21.9406,
+      47.0532
+     ]
+    },
+    "id": "65f99507594c7e00096bdcf3"
+   }
+  ],
+  "siteUrl": "https://www.facebook.com/AJVPSBihor/",
+  "createdAt": "2024-03-19T13:37:11.900Z",
+  "updatedAt": "2025-09-21T18:41:36.157Z",
+  "bbox": [
+   21.4275941,
+   46.4801657,
+   22.6876923,
+   47.4463171
+  ],
+  "id": "65f99507b28159e06fc477c9"
+ },
+ {
+  "name": "Centrul Regional de Ecologie Bacău",
+  "name_long": "Centrul Regional de Ecologie Bacău",
+  "slug": "centrul-regional-de-ecologie-bacau",
+  "regulament": "https://naturabacau.ro/pescuit-recreativ/regulament-pescuit/",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Livezilor 4F, Bacău, Bacău",
+     "nume": "Centrul Regional de Ecologie",
+     "telefon": "0748695963",
+     "coordinates": [
+      26.9203,
+      46.5644
+     ]
+    },
+    "id": "65f993f5594c7e00096bdcf2"
+   }
+  ],
+  "siteUrl": "https://naturabacau.ro/pescuit-recreativ/",
+  "createdAt": "2024-03-19T13:32:37.494Z",
+  "updatedAt": "2024-08-28T14:49:49.138Z",
+  "bbox": [
+   26.9147183,
+   46.454334,
+   26.98162510689,
+   46.5945173
+  ],
+  "id": "65f993f5b28159e06fc477b0"
+ },
+ {
+  "name": "AVPS DIANA TURNU ARAD ",
+  "name_long": "Asociatia Vanatorilor si Pescarilor Sportivi Diana Turnu Arad",
+  "slug": "avps-diana-turnu-arad-",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Arad, str. Calea Aurel Vlaicu, nr. 150, bl. Z 27 B, parter",
+     "coordinates": [
+      21.3001,
+      46.195
+     ]
+    },
+    "id": "65f98973594c7e00096bdcf1"
+   }
+  ],
+  "createdAt": "2024-03-19T12:47:47.348Z",
+  "updatedAt": "2024-03-19T12:47:47.348Z",
+  "id": "65f98973b28159e06fc4770f"
+ },
+ {
+  "name": "APS HUNEDOARA",
+  "name_long": "Asociatia Pescuit Sportiv Hunedoara",
+  "slug": "aps-hunedoara",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "str. Victoriei, nr. 8, Hunedoara",
+     "nume": "Asociatia Pescuit Sportiv Hunedoara",
+     "coordinates": [
+      22.901,
+      45.7514
+     ]
+    },
+    "id": "65f9877f594c7e00096bdcf0"
+   }
+  ],
+  "createdAt": "2024-03-19T12:39:27.900Z",
+  "updatedAt": "2024-03-19T12:39:27.900Z",
+  "id": "65f9877fb28159e06fc476ba"
+ },
+ {
+  "name": "AJVPS ALBA",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi Alba",
+  "slug": "ajvps-alba",
+  "regulament": "https://ajvpsab.ro/regulament-pescuit/",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Sat Hapria Nr. 265, Ciugud, Alba",
+     "nume": "Sediu Central",
+     "telefon": "0723354404",
+     "coordinates": [
+      23.66868546174925,
+      46.08090060662062
+     ]
+    },
+    "id": "65f98619594c7e00096bdcef"
+   }
+  ],
+  "siteUrl": "https://ajvpsab.ro/",
+  "createdAt": "2024-03-19T12:33:29.705Z",
+  "updatedAt": "2025-02-17T18:39:25.993Z",
+  "bbox": [
+   23.0027768,
+   45.8244555,
+   24.1685206,
+   46.8727473
+  ],
+  "id": "65f98619b28159e06fc47666"
+ },
+ {
+  "name": "Direcția Silvică Vâlcea",
+  "name_long": "Direcția Silvică Vâlcea",
+  "slug": "directia-silvica-valcea",
+  "adresa": "STR.CAROL I,NR.37, RM.VALCEA",
+  "telefon": "0764617854",
+  "siteUrl": "http://valcea.rosilva.ro/articole/pescuit_sportiv__p_896.htm",
+  "bbox": [
+   23.6745067,
+   45.2790852,
+   24.1075455,
+   45.47740975932
+  ],
+  "createdAt": "2023-12-07T10:09:42.789Z",
+  "updatedAt": "2024-02-20T14:12:43.333Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Râmnicu Vâlcea, Str. Carol I, Nr. 37, Jud. Vâlcea, CP 240591",
+     "telefon": "0250 735 840",
+     "coordinates": [
+      24.36151,
+      45.10718
+     ]
+    },
+    "id": "65d4acf26cd45da8d860c9a6"
+   },
+   {
+    "adresa": {
+     "adresa": "Com. Voineasa, str. M. Eminescu, nr. 1, Jud. Vâlcea, CP 247750",
+     "nume": "Marius CARSTEA",
+     "telefon": "0764 617 854",
+     "coordinates": [
+      23.962143,
+      45.41629
+     ]
+    },
+    "id": "65d4ae1d6cd45da8d860c9a7"
+   },
+   {
+    "adresa": {
+     "adresa": "Romanii de Jos, str. Romanii de Jos, nr. 167, Jud. Vâlcea, CP 245800",
+     "nume": "Claudiu CRACANA",
+     "telefon": "0735 309 986",
+     "coordinates": [
+      24.00512,
+      45.1666
+     ]
+    },
+    "id": "65d4b01f15298481a00f4a27"
+   }
+  ],
+  "id": "64f82ae13f7fd40009b76f70"
+ },
+ {
+  "name": "Direcția Silvică Sibiu",
+  "name_long": "Direcția Silvică Sibiu",
+  "slug": "directia-silvica-sibiu",
+  "adresa": "Calea Dumbrăvii nr.140, Sibiu ",
+  "telefon": "0269242411",
+  "siteUrl": "https://www.dssibiu.ro/",
+  "bbox": [
+   23.5961582,
+   45.531499,
+   24.6923661,
+   45.6437268
+  ],
+  "createdAt": "2023-12-07T10:09:42.786Z",
+  "updatedAt": "2024-02-12T11:57:27.921Z",
+  "adrese": [],
+  "id": "64f82a663f7fd40009b76f6f"
+ },
+ {
+  "name": "Direcția Silvică Neamț",
+  "name_long": "Direcția Silvică Neamț",
+  "slug": "directia-silvica-neamt",
+  "adresa": "Str. V.A. Urechia Nr. 24, Piatra Neamț",
+  "telefon": "+40233211696",
+  "siteUrl": "https://neamt.rosilva.ro/",
+  "bbox": [
+   26.2135933,
+   47.0315854,
+   26.2201541,
+   47.0389465
+  ],
+  "createdAt": "2023-12-07T10:09:42.782Z",
+  "updatedAt": "2024-02-12T12:01:37.133Z",
+  "adrese": [],
+  "id": "64f829ee3f7fd40009b76f6e"
+ },
+ {
+  "name": "Direcția Silvică Mehedinți",
+  "name_long": "Direcția Silvică Mehedinți",
+  "slug": "directia-silvica-mehedinti",
+  "adresa": "STR. EROII DE LA CERNA, NR. 22",
+  "telefon": "0252317970",
+  "siteUrl": "http://drobeta.rosilva.ro/",
+  "bbox": [
+   22.7179241,
+   45.1596972,
+   22.7802158,
+   45.1929595
+  ],
+  "createdAt": "2023-12-07T10:09:42.779Z",
+  "updatedAt": "2024-02-12T11:58:03.045Z",
+  "adrese": [],
+  "id": "64f829923f7fd40009b76f6d"
+ },
+ {
+  "name": "Direcția Silvica Maramureș",
+  "name_long": "Directia Silvica Maramureș",
+  "slug": "directia-silvica-maramures",
+  "adresa": "Str. 22 Decembrie, nr. 36, Baia Mare",
+  "telefon": "+40262211963",
+  "siteUrl": "http://baiamare.rosilva.ro/",
+  "bbox": [
+   23.5992517,
+   47.0933217,
+   25.2618728,
+   47.9102728
+  ],
+  "createdAt": "2023-12-07T10:09:42.776Z",
+  "updatedAt": "2024-02-12T11:58:13.516Z",
+  "adrese": [],
+  "id": "64f829383f7fd40009b76f6c"
+ },
+ {
+  "name": "Direcția Silvică Hunedoara",
+  "name_long": "Direcția Silvică Hunedoara",
+  "slug": "directia-silvica-hunedoara",
+  "adresa": "Str. Mihai Viteazu, Nr. 10",
+  "telefon": "0254205100",
+  "siteUrl": "http://deva.rosilva.ro/",
+  "bbox": [
+   22.6684427,
+   45.26482,
+   23.5735101,
+   45.3865632
+  ],
+  "createdAt": "2023-12-07T10:09:42.772Z",
+  "updatedAt": "2024-01-11T07:56:27.252Z",
+  "adrese": [],
+  "id": "64f828133f7fd40009b76f6b"
+ },
+ {
+  "name": "Direcția Silvica Gorj",
+  "name_long": "Direcția Silvica Gorj",
+  "slug": "directia-silvica-gorj",
+  "adresa": "Str.Lt. col D-tru Petrescu , nr. 22",
+  "telefon": "0253216351",
+  "siteUrl": "http://targujiu.rosilva.ro/",
+  "bbox": [
+   22.9809307,
+   45.1738009,
+   22.9930972,
+   45.1785581
+  ],
+  "createdAt": "2023-12-07T10:09:42.769Z",
+  "updatedAt": "2024-02-12T11:58:33.983Z",
+  "adrese": [],
+  "id": "64f827b13f7fd40009b76f6a"
+ },
+ {
+  "name": "Direcția Silvică Dâmbovița",
+  "name_long": "Direcția Silvică Dâmbovița",
+  "slug": "directia-silvica-dambovita",
+  "adresa": "B-dul Regele Carol I, nr.68, Târgoviște",
+  "telefon": "0245611004",
+  "siteUrl": "http://targoviste.rosilva.ro/articole/tarife_sezoane_de_vanatoare_si_regulament_de_pescuit_recreativ__p_1091.htm",
+  "bbox": [
+   25.4180024,
+   45.309393,
+   25.434739,
+   45.3619105
+  ],
+  "createdAt": "2023-12-07T10:09:42.766Z",
+  "updatedAt": "2023-12-07T10:09:42.766Z",
+  "id": "64f8275d3f7fd40009b76f69",
+  "adrese": []
+ },
+ {
+  "name": "Direcția Silvică Harghita",
+  "name_long": "Direcția Silvică Harghita",
+  "slug": "directia-silvica-harghita",
+  "adresa": "str. Márton Áron nr. 78, Miercurea-Ciuc",
+  "telefon": "02660313222",
+  "siteUrl": "http://mciuc.rosilva.ro/",
+  "bbox": [
+   25.2610693,
+   46.7833631,
+   25.7882456,
+   47.0937511
+  ],
+  "createdAt": "2023-12-07T10:09:42.762Z",
+  "updatedAt": "2023-12-07T10:09:42.762Z",
+  "id": "64f8238a3f7fd40009b76f68",
+  "adrese": []
+ },
+ {
+  "name": "Direcția Silvică Caraș-Severin",
+  "name_long": "Direcția Silvică Caraș-Severin",
+  "slug": "directia-silvica-caras-severin",
+  "adresa": "Strada Petru Maior, nr 69A, Reșita",
+  "telefon": "0255216533",
+  "siteUrl": "http://resita.rosilva.ro/",
+  "bbox": [
+   21.8853651,
+   44.9308766,
+   22.5354336,
+   45.4288329
+  ],
+  "createdAt": "2023-12-07T10:09:42.759Z",
+  "updatedAt": "2024-01-11T07:56:00.361Z",
+  "adrese": [],
+  "id": "64f8230e3f7fd40009b76f67"
+ },
+ {
+  "name": "Direcția Silvică Bihor",
+  "name_long": "Direcția Silvică Bihor",
+  "slug": "directia-silvica-bihor",
+  "link_permis": "https://magazin-online.dsoradea.ro/categorie-produs/pescuit-recreativ/",
+  "adresa": "str. M. Eminescu nr. 15, Oradea",
+  "telefon": "0730653790",
+  "siteUrl": "http://oradea.rosilva.ro/",
+  "bbox": [
+   22.6769126,
+   46.7386647,
+   22.7287674,
+   46.7977998
+  ],
+  "createdAt": "2023-12-07T10:09:42.755Z",
+  "updatedAt": "2023-12-07T10:09:42.755Z",
+  "id": "64f81fd83f7fd40009b76f66",
+  "adrese": []
+ },
+ {
+  "name": "Direcția Silvică Argeș",
+  "name_long": "Direcția Silvică Argeș",
+  "slug": "directia-silvica-arges",
+  "adresa": "str. Trivale nr. 82, Pitești",
+  "telefon": "0248213434",
+  "siteUrl": "http://pitesti.rosilva.ro/",
+  "createdAt": "2023-12-07T10:09:42.752Z",
+  "updatedAt": "2023-12-07T10:09:42.752Z",
+  "id": "64f81f313f7fd40009b76f64",
+  "adrese": []
+ },
+ {
+  "name": "Direcția Silvică Alba",
+  "name_long": "Direcția Silvică Alba",
+  "slug": "directia-silvica-alba",
+  "adresa": "Strada Basarabiei 9, Alba Iulia",
+  "telefon": "0258812138",
+  "siteUrl": "http://alba.rosilva.ro/",
+  "bbox": [
+   23.3618629,
+   45.58051267449,
+   23.62474491177,
+   46.1825091
+  ],
+  "createdAt": "2023-12-07T10:09:42.748Z",
+  "updatedAt": "2023-12-07T10:09:42.748Z",
+  "id": "64f81eb63f7fd40009b76f63",
+  "adrese": []
+ },
+ {
+  "name": "ANPA - Ape Necontractate",
+  "name_long": "Agenția Națională pentru Pescuit și Acvacultură",
+  "slug": "anpa",
+  "link_permis": "https://permise.anpa.ro:12443/portal-public/permis",
+  "adresa": "Strada  Sf.Vineri, nr.29, sectorul 3, Bucuresti",
+  "siteUrl": "https://www.anpa.ro/",
+  "bbox": [
+   21.0326619093,
+   44.3402968,
+   26.76096755122,
+   48.02649263057
+  ],
+  "createdAt": "2023-12-07T10:09:42.744Z",
+  "updatedAt": "2024-07-26T12:44:19.876Z",
+  "adrese": [],
+  "id": "64eddaee60bcdf000a02522b"
+ },
+ {
+  "name": "AJVPS TIMIȘ",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi Timiș",
+  "slug": "ajvps-timis",
+  "adresa": "Strada Béla Bartók 17, Timișoara",
+  "telefon": "0256495167",
+  "siteUrl": "https://ajvpstimis.ro/",
+  "bbox": [
+   21.49459261113,
+   45.19481350055,
+   25.5124289,
+   45.78978012194
+  ],
+  "createdAt": "2023-12-07T10:09:42.741Z",
+  "updatedAt": "2023-12-07T10:09:42.741Z",
+  "id": "64ec5b7f60bcdf000a02522a",
+  "adrese": []
+ },
+ {
+  "name": "FLY FISHING CLUB SIBIU",
+  "name_long": "Fly Fishing Club Sibiu",
+  "slug": "fly-fishing-club-sibiu",
+  "link_permis": "https://flyfishingclubsibiu.ro/tarife/",
+  "adresa": "str Islazului nr 44 Sibiu",
+  "telefon": "0745804295",
+  "siteUrl": "https://flyfishingclubsibiu.ro/",
+  "bbox": [
+   23.6382991,
+   45.53948136511,
+   24.6142987,
+   45.8209828
+  ],
+  "createdAt": "2023-12-07T10:09:42.737Z",
+  "updatedAt": "2025-02-04T13:38:10.953Z",
+  "adrese": [],
+  "id": "64ec526f60bcdf000a025229"
+ },
+ {
+  "name": "AJVPS SIBIU",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi Sibiu",
+  "slug": "ajvps-sibiu",
+  "adresa": "str. Constitutiei nr. 23, bl. 20, Sibiu",
+  "telefon": "0728138161",
+  "siteUrl": "https://www.facebook.com/ajvpssibiu/?locale=ro_RO",
+  "bbox": [
+   24.3181527,
+   45.6840687,
+   24.6747373,
+   45.8028843
+  ],
+  "createdAt": "2023-12-07T10:09:42.733Z",
+  "updatedAt": "2024-02-12T11:59:11.738Z",
+  "adrese": [],
+  "id": "64ec502160bcdf000a025228"
+ },
+ {
+  "name": "AJVPS SĂLAJ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Sălaj",
+  "slug": "ajvps-salaj",
+  "adresa": "str. Corneliu Coposu , bl. k20-21, parter, Zalău",
+  "telefon": "0260644350",
+  "siteUrl": "http://www.ajvpssj.ro/",
+  "bbox": [
+   22.8957039,
+   47.1688159,
+   23.12892833275,
+   47.36722826186
+  ],
+  "createdAt": "2023-12-07T10:09:42.729Z",
+  "updatedAt": "2024-02-12T12:01:59.535Z",
+  "adrese": [],
+  "id": "64ec47f060bcdf000a025227"
+ },
+ {
+  "name": "AJVPS CLUJ",
+  "name_long": "Asociația Județeană a Vânătorilor și Pescarilor Sportivi Cluj",
+  "slug": "ajvps-cluj",
+  "adresa": "Strada Cuza Vodă Street, Cluj-Napoca",
+  "telefon": "0264596578",
+  "createdAt": "2023-12-07T10:09:42.724Z",
+  "updatedAt": "2024-08-27T11:29:23.250Z",
+  "adrese": [],
+  "bbox": [
+   23.5296692,
+   46.4352626,
+   23.9879835,
+   47.24190302774
+  ],
+  "id": "64e8567a60bcdf000a025118"
+ },
+ {
+  "name": "A.PENEȘ CURCANUL",
+  "name_long": "Asociația de Vânătoare și Pescuit ''Peneș Curcanul''",
+  "slug": "a-penes-curcanul",
+  "link_permis": "",
+  "adresa": " George Cosbuc nr.5, Ploiesti",
+  "telefon": "0244 544 577",
+  "siteUrl": "https://www.facebook.com/AVPSPrahova?locale=ro_RO",
+  "bbox": [
+   25.720693,
+   45.2444237,
+   25.7538163,
+   45.2751445
+  ],
+  "createdAt": "2023-12-07T10:09:42.720Z",
+  "updatedAt": "2023-12-07T10:09:42.720Z",
+  "id": "64e710708e7d310009b09db8",
+  "adrese": []
+ },
+ {
+  "name": "AJVPS PRAHOVA",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Prahova",
+  "slug": "ajvps-prahova",
+  "adresa": "Ploiesti, str Toma Caragiu nr. 1",
+  "telefon": "0244519521",
+  "siteUrl": "https://www.ajvpsph.ro/",
+  "bbox": [
+   25.54789066046,
+   44.74332234911,
+   26.4284529,
+   45.50210598801
+  ],
+  "createdAt": "2023-12-07T10:09:42.717Z",
+  "updatedAt": "2024-10-27T20:00:30.668Z",
+  "adrese": [],
+  "id": "64e70f708e7d310009b09db7"
+ },
+ {
+  "name": "AJVPS OLT",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Olt",
+  "slug": "ajvps-olt",
+  "adresa": "str. N. Titulescu, nr. 39, Slatina",
+  "telefon": "0249415633",
+  "siteUrl": "https://www.facebook.com/ajvpsolt1/",
+  "bbox": [
+   23.9055819,
+   43.788854,
+   24.7341114,
+   44.6823801
+  ],
+  "createdAt": "2023-12-07T10:09:42.714Z",
+  "updatedAt": "2024-10-20T12:12:29.953Z",
+  "adrese": [],
+  "id": "64e5df438e7d310009b09db0"
+ },
+ {
+  "name": "AJVPS NEAMȚ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Neamț",
+  "slug": "ajvps-neamt",
+  "adresa": "B-dul Decebal, nr.35, Piatra-Neamț",
+  "telefon": "0233211876",
+  "siteUrl": "https://ajvpsneamt.ro/",
+  "bbox": [
+   25.9154135,
+   46.91647551171,
+   26.3742932838,
+   47.1153974
+  ],
+  "createdAt": "2023-12-07T10:09:42.711Z",
+  "updatedAt": "2024-02-12T12:05:18.767Z",
+  "adrese": [],
+  "id": "64e5d7378e7d310009b09da8"
+ },
+ {
+  "name": "AJVPS MUREȘ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Mureș",
+  "slug": "ajvps-mures",
+  "link_permis": "https://ajvpsmures.ro/plata-online.php",
+  "adresa": "B-dul 1 Decembrie 1918 nr. 23 Targu Mures",
+  "telefon": "0265267621",
+  "siteUrl": "https://ajvpsmures.ro/",
+  "bbox": [
+   24.8663925,
+   46.4094066,
+   24.913306,
+   46.4255239
+  ],
+  "createdAt": "2023-12-07T10:09:42.708Z",
+  "updatedAt": "2024-02-12T12:05:26.649Z",
+  "adrese": [],
+  "id": "64e5c6d38e7d310009b09da7"
+ },
+ {
+  "name": "APS CHEILE LĂPUȘULUI",
+  "name_long": "Asociația de Pescuit Sportiv Cheile Lăpușului",
+  "slug": "aps-cheile-lapusului",
+  "adresa": "Piața Eroilor, nr. 2, bl. TL1A, Târgu Lăpuș",
+  "bbox": [
+   23.8754753,
+   47.4389746,
+   23.8773732,
+   47.4411781
+  ],
+  "createdAt": "2023-12-07T10:09:42.705Z",
+  "updatedAt": "2023-12-07T10:09:42.705Z",
+  "id": "64e5c6308e7d310009b09da6",
+  "adrese": []
+ },
+ {
+  "name": "AVPS IALOMIȚA",
+  "name_long": "Asociaţia Vânătorilor Şi Pescarilor Sportivi Ialomița",
+  "slug": "avps-ialomita",
+  "adresa": "Slobozia, b-dul. Matei Basarab, nr. 26, bloc D6, scara A, parter",
+  "telefon": "0243215813",
+  "siteUrl": "http://www.avpsialomita.ro/",
+  "bbox": [
+   27.90717419956,
+   44.49070516969,
+   27.92896604378,
+   44.52059791843
+  ],
+  "createdAt": "2023-12-07T10:09:42.702Z",
+  "updatedAt": "2023-12-07T10:09:42.702Z",
+  "id": "64e499f88e7d310009b09da5",
+  "adrese": []
+ },
+ {
+  "name": "APS DEVA",
+  "name_long": "Asociația Pescuit Sportiv Deva",
+  "slug": "aps-deva",
+  "adresa": "str. Calea Zarandului, nr 23, Deva",
+  "bbox": [
+   22.8830556,
+   45.7206579,
+   22.9536606,
+   45.9962644
+  ],
+  "createdAt": "2023-12-07T10:09:42.700Z",
+  "updatedAt": "2023-12-07T10:09:42.700Z",
+  "id": "64e496ee8e7d310009b09da4",
+  "adrese": []
+ },
+ {
+  "name": "AJVPS HUNEDOARA",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Hunedoara",
+  "slug": "ajvps-hunedoara",
+  "adresa": " str. George Coșbuc, nr. 21, Deva",
+  "telefon": "0254215422",
+  "bbox": [
+   22.8241647,
+   45.8686982,
+   22.8293145,
+   45.8780767
+  ],
+  "createdAt": "2023-12-07T10:09:42.697Z",
+  "updatedAt": "2024-02-12T12:06:57.005Z",
+  "adrese": [],
+  "id": "64e496528e7d310009b09da3"
+ },
+ {
+  "name": "AVPS MIERCUREA-CIUC",
+  "name_long": "Asociaţia Vânătorilor Şi Pescarilor Sportivi Miercurea-Ciuc",
+  "slug": "avps-miercurea-ciuc",
+  "adresa": "str. Kossuth Lajos, nr 10, Miercurea-Ciuc",
+  "telefon": "0744390596",
+  "bbox": [
+   25.8788645,
+   46.4392902,
+   25.8946118,
+   46.450736
+  ],
+  "createdAt": "2023-12-07T10:09:42.694Z",
+  "updatedAt": "2023-12-07T10:09:42.694Z",
+  "id": "64e495188e7d310009b09da2",
+  "adrese": []
+ },
+ {
+  "name": "AVPS TÂRNAVA MARE ",
+  "name_long": "Asociaţia Vânătorilor Şi Pescarilor Sportivi Târnava Mare",
+  "slug": "avps-tarnava-mare-",
+  "link_permis": "https://vizpart.ro/ro/permise-cu-plata-online/",
+  "adresa": "str. Taberei, nr. 18, Odorheiul Secuiesc",
+  "telefon": "0746145314",
+  "siteUrl": "https://vizpart.ro/ro/home/",
+  "bbox": [
+   25.3983001,
+   46.4633098,
+   25.42374522402,
+   46.4880258
+  ],
+  "createdAt": "2023-12-07T10:09:42.691Z",
+  "updatedAt": "2023-12-07T10:09:42.691Z",
+  "id": "64e494618e7d310009b09da1",
+  "adrese": []
+ },
+ {
+  "name": "AJVPS DOLJ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Dolj",
+  "slug": "ajvps-dolj",
+  "adresa": "str. Vasile Conta, bl. U1, Craiova",
+  "telefon": "0251 412 388",
+  "siteUrl": "https://ajvpsdolj.ro/",
+  "bbox": [
+   23.25346,
+   44.0272973,
+   23.3289903,
+   44.0552477
+  ],
+  "createdAt": "2023-12-07T10:09:42.686Z",
+  "updatedAt": "2024-02-12T12:05:55.901Z",
+  "adrese": [],
+  "id": "64e493868e7d310009b09da0"
+ },
+ {
+  "name": "AJVPS DÂMBOVIȚA",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Dâmbovița",
+  "slug": "ajvps-dambovita",
+  "adresa": "Str. Alexandru Ioan Cuza , nr. 6, Târgoviște",
+  "telefon": "0245 611 935",
+  "siteUrl": "https://www.facebook.com/AJVPS.Dambovita/",
+  "bbox": [
+   25.18319409092,
+   44.5172873,
+   25.9255354,
+   45.1488196
+  ],
+  "createdAt": "2023-12-07T10:09:42.681Z",
+  "updatedAt": "2024-10-27T20:04:10.587Z",
+  "adrese": [],
+  "id": "64e35ba98e7d310009b09d9f"
+ },
+ {
+  "name": "AJVPS CARAȘ-SEVERIN ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Caraș-Severin",
+  "slug": "ajvps-caras-severin-",
+  "adresa": "str. I.L. Caragiale, nr.1-2, localitatea Reșița",
+  "telefon": "0255 215 931",
+  "siteUrl": "https://ajvpscs.eu/",
+  "bbox": [
+   21.91026443832,
+   45.0122704969,
+   21.91811335422,
+   45.01577634405
+  ],
+  "createdAt": "2023-12-07T10:09:42.677Z",
+  "updatedAt": "2024-02-12T12:08:37.452Z",
+  "adrese": [],
+  "id": "64e35ae48e7d310009b09d9e"
+ },
+ {
+  "name": "AP BANATUL",
+  "name_long": "Asociaţia Pescarilor Banatul",
+  "slug": "ap-banatul",
+  "adresa": "str. Orșova, nr. 11, bl.122, sc. A, ap.9, Timișoara",
+  "bbox": [
+   21.4640171,
+   44.6456524,
+   22.1290711,
+   45.4510038
+  ],
+  "createdAt": "2023-12-07T10:09:42.672Z",
+  "updatedAt": "2024-09-25T16:50:36.039Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Bulevardul Muncii 14A, Reșița",
+     "coordinates": [
+      21.867854,
+      45.327691
+     ]
+    },
+    "id": "66c608d606ccf647d677bb8a"
+   }
+  ],
+  "id": "64e34f008e7d310009b09d9d"
+ },
+ {
+  "name": "AJVPS BUZĂU ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Buzău",
+  "slug": "ajvps-buzau-",
+  "adresa": "str. Unirii, Bl. 12F, Buzău",
+  "telefon": "0238/710608",
+  "siteUrl": "https://www.ajvpsbuzau.ro/ro/descriere/",
+  "bbox": [
+   26.1981709,
+   45.491368,
+   26.254928,
+   45.5301105
+  ],
+  "createdAt": "2023-12-07T10:09:42.668Z",
+  "updatedAt": "2024-02-12T12:08:41.342Z",
+  "adrese": [],
+  "id": "64e34e1e8e7d310009b09d9c"
+ },
+ {
+  "name": "AVPS FĂGĂRAȘ",
+  "name_long": "Asociaţia Vânătorilor Şi Pescarilor Sportivi Făgăraș",
+  "slug": "avps-fagaras",
+  "adresa": "str. Livezii, nr. 32, Făgăraș",
+  "telefon": "0268211068",
+  "bbox": [
+   24.7490752,
+   45.8056595,
+   24.9355951,
+   45.8517057
+  ],
+  "createdAt": "2023-12-07T10:09:42.665Z",
+  "updatedAt": "2023-12-07T10:09:42.665Z",
+  "id": "64e345968e7d310009b09d9b",
+  "adrese": []
+ },
+ {
+  "name": "AJVPS BOTOȘANI ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Botoșani",
+  "slug": "ajvps-botosani-",
+  "adresa": "Str. Pietonalul Transilvaniei , nr. 4, Botoșani",
+  "telefon": "0757 577 252",
+  "siteUrl": "https://www.facebook.com/vanatoare.pescuit.96",
+  "bbox": [
+   26.0276354,
+   47.4861635243,
+   27.39126901105,
+   48.26548891829
+  ],
+  "createdAt": "2023-12-07T10:09:42.661Z",
+  "updatedAt": "2024-10-15T13:20:35.982Z",
+  "adrese": [],
+  "id": "64e342a18e7d310009b09d9a"
+ },
+ {
+  "name": "AJVPS BISTRIŢA NĂSĂUD",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Bistrița-Năsăud",
+  "slug": "ajvps-bistrita-nasaud",
+  "adresa": "str. Făzănăriei,nr.7, Bistrița",
+  "telefon": "0263238195",
+  "bbox": [
+   24.2157789,
+   46.9752378,
+   25.0180149,
+   47.5787875
+  ],
+  "createdAt": "2023-12-07T10:09:42.646Z",
+  "updatedAt": "2024-10-03T09:41:28.991Z",
+  "adrese": [],
+  "id": "64e340bc8e7d310009b09d99"
+ },
+ {
+  "name": "AV VIDA SURDUCEL DOBREȘTI",
+  "name_long": "AV VIDA SURDUCEL DOBREȘTI",
+  "slug": "av-vida-surducel-dobresti",
+  "adresa": "localitatea Dobrești, sat Dobrești, nr.70c, judet Bihor",
+  "bbox": [
+   22.3060629,
+   46.59301575142,
+   26.42197503826,
+   46.863925
+  ],
+  "createdAt": "2023-12-07T10:09:42.641Z",
+  "updatedAt": "2024-09-09T12:45:26.785Z",
+  "adrese": [],
+  "id": "64e33fe68e7d310009b09d98"
+ },
+ {
+  "name": "AJVPS BACĂU",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Bacău",
+  "slug": "ajvps-bacau-",
+  "adresa": "str. Mihai Viteazu, nr. 4, Bacău",
+  "siteUrl": "https://ajvpsbc.ro/",
+  "bbox": [
+   25.9939183,
+   46.0923196,
+   27.1965759,
+   46.7008566
+  ],
+  "createdAt": "2023-12-07T10:09:42.636Z",
+  "updatedAt": "2025-02-19T18:44:18.086Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Mihai Viteazu, Nr. 4, Bacău, Bacău",
+     "nume": "AJPS BACĂU",
+     "coordinates": [
+      26.913252,
+      46.566685
+     ]
+    },
+    "id": "66cee6ef3cfd3935836081ce"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Republicii, bl. 38, sc. B, apt. 23 (parter), Oneşti, Bacău",
+     "nume": "CLUBUL VÂNĂTORILOR ŞI PESCARILOR SPORTIVI  ONEȘTI",
+     "telefon": "0748118833",
+     "coordinates": [
+      26.769425,
+      46.25046
+     ]
+    },
+    "id": "66cee7e03cfd3935836081cf"
+   }
+  ],
+  "id": "64e33f2f8e7d310009b09d97"
+ },
+ {
+  "name": "AJVPS ARGEȘ",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Argeș",
+  "slug": "ajvps-arges",
+  "adresa": "Strada Mihai Viteazul 29, Pitesti",
+  "telefon": "0756652853",
+  "siteUrl": "https://ajvps-arges.ro/",
+  "bbox": [
+   24.64858473669,
+   44.73430445736,
+   25.2205825,
+   45.4304101
+  ],
+  "createdAt": "2023-12-07T10:09:42.627Z",
+  "updatedAt": "2025-02-19T11:23:57.141Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Strada Mihai Viteazul 29, Pitești, Argeș",
+     "nume": "Sediul Central",
+     "telefon": "0248216399",
+     "coordinates": [
+      24.882136,
+      44.857603
+     ]
+    },
+    "id": "66cf50b5934a7400d9a068f4"
+   },
+   {
+    "adresa": {
+     "adresa": "Strada Unirii Nr. 7, Bl. D7, Sc. A, Ap. 1, Parter, Curtea de Argeș, Argeș",
+     "nume": "Filiala Curtea de Argeș",
+     "telefon": "0756652853",
+     "coordinates": [
+      24.673094764173555,
+      45.162184262492616
+     ]
+    },
+    "id": "66cf5117934a7400d9a068f5"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Parcului Nr. 7, Bl. P28 A , Sc. A, Parter, Topoloveni, Argeș",
+     "nume": "Filiala Topoloveni",
+     "coordinates": [
+      25.080903,
+      44.809286
+     ]
+    },
+    "id": "66cf5204934a7400d9a068f6"
+   }
+  ],
+  "id": "64e3217f8e7d310009b09d96"
+ },
+ {
+  "name": "AJVPS ARAD",
+  "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Arad",
+  "slug": "ajvps-arad",
+  "adresa": "str. Mărășești, nr. 6, Arad",
+  "telefon": "0744 556 887",
+  "bbox": [
+   20.7041117,
+   45.987961,
+   22.5632019,
+   46.693885
+  ],
+  "createdAt": "2023-12-07T10:09:42.611Z",
+  "updatedAt": "2025-02-18T09:58:14.230Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Mărăşeşti Nr. 6, Arad, Arad",
+     "nume": "Sediu Arad",
+     "telefon": "0248 216 399",
+     "coordinates": [
+      21.311775,
+      46.175433
+     ]
+    },
+    "id": "66cf554d934a7400d9a068f7"
+   }
+  ],
+  "siteUrl": "https://avpsro.eu/ajvpsarad/",
+  "id": "64e3201a8e7d310009b09d95"
+ },
+ {
+  "name": "APS AQUA CRISIUS",
+  "name_long": "APS AQUA CRISIUS",
+  "slug": "aps-aqua-crisius",
+  "link_permis": "https://www.aquacrisius.ro/tarif-permis-de-pescuit/",
+  "adresa": "strada Mihai Eminescu 15, Oradea, județ Bihor",
+  "telefon": " 0752270142",
+  "siteUrl": "https://www.aquacrisius.ro/",
+  "bbox": [
+   23.2753452,
+   45.1326456,
+   25.3038642,
+   47.7161167
+  ],
+  "createdAt": "2023-12-07T10:09:42.606Z",
+  "updatedAt": "2025-02-19T11:25:40.581Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Valea Mănăstirii nr. 20, Cheile Râmețului",
+     "coordinates": [
+      23.51555958358719,
+      46.303114888958135
+     ]
+    },
+    "id": "65ae80f9e39835850e84b325"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Oborului nr. 5, Aleșd",
+     "coordinates": [
+      22.401241,
+      47.056507
+     ]
+    },
+    "id": "65ae82016eb2fec9afdf72b7"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Fratii Crăciun nr. 70, Domnesti",
+     "coordinates": [
+      24.831121,
+      45.20616
+     ]
+    },
+    "id": "65ae82256eb2fec9afdf72b8"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Spitalului nr.14 (Broker Asigurări), Rucăr",
+     "coordinates": [
+      25.167159,
+      45.381346
+     ]
+    },
+    "id": "65ae824b6eb2fec9afdf72b9"
+   },
+   {
+    "adresa": {
+     "adresa": "Magazin „Bibanu”, Vatra Dornei",
+     "coordinates": [
+      25.359396,
+      47.345245
+     ]
+    },
+    "id": "65ae82bc6eb2fec9afdf72ba"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Constantin Brâncoveanu  nr. 47 (Magazin Pescuit Câmpulung), Câmpulung Muscel",
+     "coordinates": [
+      25.045244,
+      45.26973
+     ]
+    },
+    "id": "65ae83156eb2fec9afdf72bb"
+   },
+   {
+    "adresa": {
+     "adresa": "Dorna Candrenilor, Suceava",
+     "coordinates": [
+      25.240862,
+      47.35421429
+     ]
+    },
+    "id": "65ae83406eb2fec9afdf72bc"
+   },
+   {
+    "adresa": {
+     "adresa": "Str. Strada Popa Șapcă 7A (magazin asigurări), Pitești",
+     "coordinates": [
+      24.878818,
+      44.863363
+     ]
+    },
+    "id": "65ae83646eb2fec9afdf72bd"
+   }
+  ],
+  "id": "6490432a679ad900092e5f4d"
+ },
+ {
+  "name": "Pro Pescar",
+  "name_long": "APS Pro Pescar",
+  "slug": "pro-pescar",
+  "link_permis": "https://propescar.ro/membru-propescar/",
+  "adresa": "",
+  "telefon": "+40 736 435 215",
+  "siteUrl": "https://propescar.ro/",
+  "bbox": [
+   22.5344851,
+   45.2625748,
+   23.43830108374,
+   45.7673012
+  ],
+  "createdAt": "2023-12-07T10:09:42.600Z",
+  "updatedAt": "2024-01-11T07:51:12.869Z",
+  "adrese": [],
+  "id": "647dbcada8567a00096481ca"
+ },
+ {
+  "name": "D.S. Cluj",
+  "name_long": "Direcția Silvică Cluj - Romsilva",
+  "slug": "d-s--cluj",
+  "adresa": "Strada Bartók Béla, Nr. 27, Cluj-Napoca",
+  "telefon": "0264 420 908",
+  "siteUrl": "http://cluj.rosilva.ro/",
+  "bbox": [
+   22.65016077876,
+   46.4794305,
+   23.5301749,
+   46.9602736
+  ],
+  "createdAt": "2023-12-07T10:09:42.595Z",
+  "updatedAt": "2024-01-11T07:54:10.230Z",
+  "adrese": [],
+  "id": "6440f473476607000974d494"
+ },
+ {
+  "name": "AJPS Cluj",
+  "name_long": "Asociaţia Judeţeană a Pescarilor Sportivi Cluj",
+  "slug": "ajps-cluj",
+  "adresa": "Str. Cuza Vodă, Nr. FN, Bl. A, Cluj-Napoca",
+  "telefon": "0745 515 208",
+  "siteUrl": "http://ajpscluj.ro/",
+  "bbox": [
+   23.0569618,
+   46.7029011,
+   24.1435933,
+   47.0504272
+  ],
+  "createdAt": "2023-12-07T10:09:42.583Z",
+  "updatedAt": "2024-08-27T11:34:57.253Z",
+  "adrese": [
+   {
+    "adresa": {
+     "adresa": "Str. Cuza Vodă, Nr. FN, Bl. A, Cluj-Napoca",
+     "coordinates": [
+      23.594386156955977,
+      46.77295604989459
+     ]
+    },
+    "id": "65f982328d098f4cfc336641"
+   }
+  ],
+  "regulament": "https://ajpscluj.ro/regulament-general/",
+  "id": "6440f463476607000974d493"
+ }
+]
