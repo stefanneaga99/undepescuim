@@ -128,3 +128,31 @@
     @apply font-sans;
   }
 }
+/* ── Map UI (UndePescuim core map milestone) ────────────────────────────── */
+
+/* Hide scrollbars on horizontally scrolling chip rows (mobile filter bar) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Leaflet: full-bleed container, inherit app font */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font: inherit;
+}
+
+/* Prevent iOS double-tap zoom / 300ms delay on interactive elements */
+.map-touch {
+  touch-action: manipulation;
+}
+
+/* Bottom sheet snap height, set by WaterDetailSheet via vaul snap change.
+   Used by ColorLegend to float above the open sheet (mobile-layout-spec §6.1). */
+:root {
+  --sheet-snap-h: 0vh;
+}

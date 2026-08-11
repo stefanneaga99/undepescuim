@@ -494,6 +494,219 @@ def county_lookup():
         return {}
 
 
+# --------------------------------------------------------------------------
+# PDF-geometry block overlay (authoritative block boundaries)
+#
+# The text layer alone cannot locate block boundaries reliably: the
+# association NAME text can sit mid-cell (e.g. "AJVPS BACĂU" at y=179.1 while
+# its merged cell starts at y=124.1 with Râul Bistrița). The PDF's table cell
+# geometry is the source of truth. pymupdf (optional dependency) extracts the
+# merged association cells; the text parser keeps doing names/limits/values
+# and contract detection, and this overlay re-assigns row -> block.
+# --------------------------------------------------------------------------
+ROW_HEIGHT_THRESHOLD = 1.5  # empty cell taller than 1.5x a row = continuation
+
+
+def pdf_row_blocks(pdf_path):
+    """Return {county: [(name_normalized, block_name_or_None), ...]} in document
+    order, derived from the PDF's table cell geometry.
+
+    A row is assigned the block of the association cell whose y-range contains
+    the row's y-center. Empty cells that span >=2 rows are cross-page/continued
+    cells (same block). An empty single-row cell (or no cell) = orphan -> None.
+    Returns None when pymupdf is unavailable.
+    """
+    try:
+        import pymupdf  # optional
+    except ImportError:
+        return None
+
+    doc = pymupdf.open(pdf_path)
+    county_rows = {}
+    cur_county = None
+    cur_block = None
+
+    for pno in range(doc.page_count):
+        page = doc[pno]
+        tabs = page.find_tables()
+        if not tabs.tables:
+            continue
+        t = tabs.tables[0]
+        ext = t.extract()
+        rows = t.rows
+
+        # collect assoc-column cells: (y0, y1, text) for cells with x0 > 540
+        assoc_cells = []
+        for ri, row in enumerate(rows):
+            for c in row.cells:
+                if c is None or c[0] <= 540:
+                    continue
+                txt = ''
+                if len(ext[ri]) > 3 and ext[ri][3]:
+                    txt = " ".join(str(ext[ri][3]).split())
+                assoc_cells.append((c[1], c[3], txt))
+        # dedupe identical y-spans
+        seen = set()
+        uniq = []
+        for y0, y1, txt in assoc_cells:
+            key = (round(y0, 1), round(y1, 1))
+            if key in seen:
+                continue
+            seen.add(key)
+            uniq.append((y0, y1, txt))
+        assoc_cells = uniq
+
+        # per-row centers for the tall-cell heuristic
+        row_centers = []
+        for ri, row in enumerate(rows):
+            ok = [c for c in row.cells if c is not None]
+            if not ok:
+                row_centers.append(None)
+                continue
+            yc = (row.bbox[1] + row.bbox[3]) / 2
+            row_centers.append(yc)
+
+        for ri, row in enumerate(rows):
+            ok = [c for c in row.cells if c is not None]
+            if not ok:
+                continue
+            name = " ".join((ext[ri][0] or "").split()) if len(ext[ri]) > 0 else ""
+            if not name:
+                continue
+            cm = COUNTY_RE.match(name)
+            if cm:
+                cur_county = cm.group(1).strip()
+                cur_block = None
+                continue
+            if name.strip("-").strip() == "":
+                continue
+            yc = row_centers[ri]
+            if yc is None:
+                continue
+
+            covering = [c for c in assoc_cells if c[0] - 0.5 <= yc <= c[1] + 0.5]
+            if covering:
+                named = [c for c in covering if block_name_of(c[2])]
+                if named:
+                    cur_block = block_name_of(named[0][2])
+                else:
+                    # empty cell: tall -> continuation; single-row -> orphan
+                    tall = any(
+                        (c[1] - c[0]) > 2.0 * (row.bbox[3] - row.bbox[1])
+                        for c in covering
+                    )
+                    if not tall:
+                        cur_block = None
+            else:
+                cur_block = None
+
+            if cur_county is None:
+                continue
+            county_rows.setdefault(cur_county, []).append(
+                (name_normalized(name), cur_block)
+            )
+
+    return county_rows
+
+
+def apply_pdf_blocks(rows, blocks, pdf_map):
+    """Override row->block assignment using the PDF-authoritative map.
+
+    Walks each county's rows in document order, matching by normalized name
+    (with a small lookahead for rows the text parser merged). Sets r.block to
+    the parser's Block whose normalized name matches, or None for orphans.
+    Re-resolves contract/addendum from the (possibly new) block.
+    """
+    from collections import defaultdict
+
+    by_county = defaultdict(list)
+    for r in rows:
+        by_county[r.county].append(r)
+    blocks_by_county = defaultdict(list)
+    for b in blocks:
+        blocks_by_county[b.county].append(b)
+
+    for county, pdf_rows in pdf_map.items():
+        county_blocks = blocks_by_county.get(county, [])
+        if not county_blocks:
+            continue
+
+        block_by_name = {}
+        for b in county_blocks:
+            key = name_normalized(b.name)
+            block_by_name.setdefault(key, b)
+
+        pr = by_county.get(county, [])
+        j = 0
+        for r in pr:
+            rn = name_normalized(r.name)
+            # find the matching pdf row starting at j (or the next few rows
+            # that the text parser may have merged)
+            matched = None
+            k = j
+            while k < len(pdf_rows) and k < j + 3:
+                pdf_name, pdf_block = pdf_rows[k]
+                if pdf_name == rn:
+                    matched = pdf_rows[k]
+                    j = k + 1
+                    break
+                k += 1
+            if matched is None:
+                # merged row: rn may be pdf_name + ' ' + pdf_name_next
+                if (
+                    j + 1 < len(pdf_rows)
+                    and rn.startswith(pdf_rows[j][0])
+                    and rn.endswith(pdf_rows[j + 1][0])
+                ):
+                    matched = pdf_rows[j]
+                    j += 2
+                else:
+                    # keep text-heuristic block but flag
+                    r.flags.append("pdf_row_unmatched")
+                    continue
+
+            _, pdf_block = matched
+            if pdf_block is None:
+                r.block = None
+                r.contract = None
+                r.contract_date = None
+                r.act_aditional = None
+                if "no_association_block" not in r.flags:
+                    r.flags.append("no_association_block")
+                continue
+
+            b = block_by_name.get(name_normalized(pdf_block))
+            if b is None:
+                r.flags.append("pdf_block_unmatched")
+                continue
+            r.block = b
+            # re-resolve contract & addendum from the new block
+            before = [c for c in b.contracts if c[0] <= r.idx]
+            if before:
+                r.contract, r.contract_date = before[-1][1], before[-1][2]
+            elif b.contracts:
+                r.contract, r.contract_date = b.contracts[0][1], b.contracts[0][2]
+            else:
+                r.contract, r.contract_date = None, None
+                if "no_contract_number" not in r.flags:
+                    r.flags.append("no_contract_number")
+            if b.addenda:
+                ab = [a for a in b.addenda if a[0] <= r.idx]
+                r.act_aditional = (ab[-1] if ab else b.addenda[0])[1]
+            else:
+                r.act_aditional = None
+    return rows
+
+
+def block_name_of(text):
+    """Association name from a cell's text (strip address after 'cu sediul')."""
+    t = re.sub(r"\s+", " ", (text or "").strip())
+    nm = t.split("cu sediul")[0].strip()
+    if ASSOC_PREFIX_RE.match(nm):
+        return nm
+    return None
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Parse ANPA contracted-waters PDF text.")
     ap.add_argument("--input", default=None, help="pdftotext -layout txt file")

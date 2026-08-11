@@ -48,3 +48,13 @@ next-env.d.ts
 /data/sources/config.yaml
 /data/sources/metadata.json
 
+# geocoding pipeline — SQLite cache (rebuilt by scripts/geocode_batch.py)
+/data/cache/
+
+# python bytecode
+__pycache__/
+*.pyc
+
+# geocoding pipeline — Natural Earth supplement (downloaded by geocode_batch.py)
+/data/sources/ne_10m_rivers_europe.geojson
+

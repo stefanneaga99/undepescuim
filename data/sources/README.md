@@ -34,3 +34,18 @@ The proposal suggested the GPKG (43 MB). ogr2ogr/GDAL is not installed in this
 environment, so the HDX **GeoJSON export (30.6 MB, identical OSM data)** was
 used instead — it parses with Python stdlib only (`json`), no GDAL/venv needed.
 The GPKG remains a drop-in alternative if future steps require it.
+
+## Geocoding pipeline (Tiers 2-3)
+
+`scripts/geocode_batch.py` (public waters via Nominatim) and
+`scripts/geocode_private.py` (private lakes via Overpass) run the automated
+geocoding stages; `scripts/merge_geocoded.py` merges premapped + batch +
+private into `data/waters_geocoded.geojson` (and `public/data/`). Design:
+`data/raw/geocoding-pipeline-proposal.md` sections 4-8.
+
+- **Cache:** `data/cache/geocode.db` (SQLite, gitignored) — cache-first on
+  every run, negative cache for misses; re-running the batch makes no API calls
+  for already-cached waters.
+- **Natural Earth supplement:** `ne_10m_rivers_europe.geojson` is downloaded
+  once by `geocode_batch.py` (Tier 3 fallback) from the nvkelso
+  natural-earth-vector GitHub mirror (public domain). Gitignored, re-fetchable.
