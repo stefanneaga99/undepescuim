@@ -121,6 +121,7 @@ def build_name_index(data: dict) -> tuple[dict, dict]:
                 coords.append(ways[m["ref"]]["geometry"]["coordinates"])
         if coords:
             rel_geoms[el["id"]] = {
+                "kind": "relation",
                 "geometry": {"type": "MultiLineString", "coordinates": coords},
                 "name": el.get("tags", {}).get("name", ""),
                 "waterway": el.get("tags", {}).get("waterway", ""),
@@ -142,7 +143,12 @@ def similarity(a: str, b: str) -> float:
 
 
 def match_water(water: dict, name_index: dict, geoms: dict) -> dict | None:
-    """Find the best OSM geometry for a water. Returns feature dict or None."""
+    """Find the best OSM geometry for a water. Returns feature dict or None.
+
+    Long rivers are split into many OSM ways; a relation groups the full
+    course. Prefer the relation; otherwise merge all same-name ways into a
+    MultiLineString so the whole river renders, not just one segment.
+    """
     name = water.get("name", "")
     nm = norm(name)
     # Strip generic prefixes like 'Raul', 'Parau', 'Valea', 'Lacul'
@@ -150,11 +156,31 @@ def match_water(water: dict, name_index: dict, geoms: dict) -> dict | None:
     if not core:
         return None
 
+    def combine(ids: list[int]) -> dict | None:
+        """Merge all matching geometries into one MultiLineString feature."""
+        # Prefer a relation (full course in OSM semantics)
+        for gid in ids:
+            g = geoms.get(gid)
+            if g and g.get("kind") == "relation":
+                return g
+        # Otherwise merge all ways with that name
+        parts = []
+        for gid in ids:
+            g = geoms.get(gid)
+            if g and g["geometry"]["type"] == "LineString":
+                parts.append(g["geometry"]["coordinates"])
+        if len(parts) == 1:
+            return {"geometry": {"type": "LineString", "coordinates": parts[0]},
+                    "name": geoms[ids[0]].get("name", "")}
+        if len(parts) > 1:
+            return {"geometry": {"type": "MultiLineString", "coordinates": parts},
+                    "name": geoms[ids[0]].get("name", "")}
+        return None
+
     # Exact normalized match first
     exact = name_index.get(nm) or name_index.get(core)
     if exact:
-        gid = exact[0]
-        g = geoms.get(gid)
+        g = combine(exact)
         if g:
             return make_feature(water, g, "osm_exact")
 
@@ -164,9 +190,9 @@ def match_water(water: dict, name_index: dict, geoms: dict) -> dict | None:
         sc = similarity(core, idx_name)
         if sc > best_score:
             best_score = sc
-            best = ids[0]
+            best = ids
     if best is not None and best_score >= 0.6:
-        g = geoms.get(best)
+        g = combine(best)
         if g:
             return make_feature(water, g, f"osm_fuzzy_{best_score:.2f}")
 

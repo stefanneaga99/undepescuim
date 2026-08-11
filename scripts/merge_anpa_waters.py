@@ -60,6 +60,7 @@ def load_osm_index() -> dict:
                   if m["type"] == "way" and m["ref"] in ways]
         if coords:
             rel_geoms[el["id"]] = {
+                "kind": "relation",
                 "type": "MultiLineString",
                 "coordinates": coords,
                 "name": el.get("tags", {}).get("name", ""),
@@ -69,7 +70,10 @@ def load_osm_index() -> dict:
     for g in {**ways, **rel_geoms}.values():
         n = norm(g["name"])
         if n and len(n) > 3:
-            index.setdefault(n, g)
+            # Prefer relation (full course) over a single way segment
+            existing = index.get(n)
+            if existing is None or (g.get("kind") == "relation" and existing.get("kind") != "relation"):
+                index[n] = g
     return index
 
 
@@ -104,15 +108,29 @@ def main() -> None:
     osm_index = load_osm_index()
     print(f"[merge] frontend: {len(fe)} waters, ANPA: {len(anpa)}")
 
-    added, skipped = 0, 0
+    added, skipped, updated = 0, 0, 0
     for w in anpa:
         name = w["water_name"]
         n = norm(name)
-        if n in fe_by_name:
+        geom = osm_geometry_for(name, osm_index)
+
+        existing = fe_by_name.get(n)
+        if existing is not None:
+            # Already present — upgrade geometry when the new one is better:
+            # full river course (MultiLineString from OSM relation) beats a
+            # single LineString segment, and any geometry beats none.
+            if geom and (
+                existing.get("geometry") is None
+                or (
+                    geom["type"] == "MultiLineString"
+                    and existing["geometry"].get("type") != "MultiLineString"
+                )
+            ):
+                existing["geometry"] = geom
+                updated += 1
             skipped += 1
             continue
 
-        geom = osm_geometry_for(name, osm_index)
         entry = {
             "slug": f"anpa-{w['id']}",
             "name": name,
@@ -138,7 +156,7 @@ def main() -> None:
 
     FE_WATERS.write_text(json.dumps(fe, ensure_ascii=False, indent=1), encoding="utf-8")
     with_geom = sum(1 for x in fe if x.get("geometry"))
-    print(f"[merge] added {added} ANPA waters, skipped {skipped} duplicates")
+    print(f"[merge] added {added} ANPA waters, skipped {skipped} dupes, upgraded {updated} geometries")
     print(f"[merge] total: {len(fe)} waters, {with_geom} with real geometry")
 
 
