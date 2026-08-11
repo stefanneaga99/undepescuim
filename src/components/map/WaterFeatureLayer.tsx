@@ -226,9 +226,10 @@ function parseKm(dimensiune: string | undefined): number {
 }
 
 /**
- * Pick the contract (water) whose km-range covers the given fraction of the
- * river course. Contracts are the main-course waters of the same river,
- * ordered superior→mouth; each owns a slice proportional to its km.
+ * Pick the contract (water) whose position covers the given fraction of the
+ * river course. Uses `course_frac` (geocoded real position) when available,
+ * else falls back to name-rank + uniform spread. Each contract owns the
+ * Voronoi interval between the midpoints to its neighbours.
  * Returns the water, or null when no grouping applies.
  */
 export function contractAtFraction(
@@ -241,19 +242,28 @@ export function contractAtFraction(
     (w) => isMainCourse(w.name) && sameRiver(key, waterKey(w.name)),
   );
   if (group.length <= 1) return null;
+
+  // Position each contract along the course: geocoded fraction, or fallback
+  // to name-rank spread evenly across [0,1].
   const ranked = [...group].sort((a, b) => courseRank(a.name) - courseRank(b.name));
-  const km = ranked.map((w) => parseKm(w.dimensiune));
-  const total = km.reduce((a, b) => a + b, 0);
-  if (total <= 0) return null;
-  let acc = 0;
-  for (let i = 0; i < ranked.length; i++) {
-    const f0 = acc / total;
-    const f1 = (acc + km[i]) / total;
-    if (frac >= f0 && frac < f1) return ranked[i];
-    acc += km[i];
+  const rankedFrac = (i: number) => ranked.length <= 1 ? 0.5 : i / (ranked.length - 1);
+
+  const positioned = ranked.map((w, i) => {
+    const f = typeof w.course_frac === 'number' ? w.course_frac : rankedFrac(i);
+    return { w, f };
+  });
+  positioned.sort((a, b) => a.f - b.f);
+
+  // Voronoi: a contract owns from the midpoint to its left neighbour to the
+  // midpoint to its right neighbour.
+  const n = positioned.length;
+  for (let i = 0; i < n; i++) {
+    const f = positioned[i].f;
+    const left = i > 0 ? (positioned[i - 1].f + f) / 2 : -Infinity;
+    const right = i < n - 1 ? (f + positioned[i + 1].f) / 2 : Infinity;
+    if (frac >= left && frac < right) return positioned[i].w;
   }
-  // Rounding: last contract also owns the very end
-  return frac >= 1 ? ranked[ranked.length - 1] : null;
+  return null;
 }
 
 /**

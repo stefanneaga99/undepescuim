@@ -39,20 +39,16 @@ export function MapView() {
     const ranked = [...group].sort(
       (a, b) => courseRank(a.name) - courseRank(b.name),
     );
-    const km = ranked.map((w) => {
-      const m = /([\d.]+)\s*km/i.exec(w.dimensiune ?? '');
-      return m ? parseFloat(m[1]) : 0;
-    });
-    const total = km.reduce((a, b) => a + b, 0);
-    if (total <= 0) return [0, 1];
-    let acc = 0;
-    for (let i = 0; i < ranked.length; i++) {
-      if (ranked[i].slug === selected.slug) {
-        return [acc / total, (acc + km[i]) / total];
-      }
-      acc += km[i];
-    }
-    return [0, 1];
+    const rankedFrac = (i: number) => (ranked.length <= 1 ? 0.5 : i / (ranked.length - 1));
+    const positioned = ranked
+      .map((w, i) => ({ w, f: typeof w.course_frac === 'number' ? w.course_frac : rankedFrac(i) }))
+      .sort((a, b) => a.f - b.f);
+    const idx = positioned.findIndex((p) => p.w.slug === selected.slug);
+    if (idx < 0) return [0, 1];
+    const f = positioned[idx].f;
+    const left = idx > 0 ? (positioned[idx - 1].f + f) / 2 : 0;
+    const right = idx < positioned.length - 1 ? (f + positioned[idx + 1].f) / 2 : 1;
+    return [left, right];
   }, [selected, allWaters]);
 
   return (

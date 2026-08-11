@@ -61,6 +61,8 @@ export interface Water {
     type: 'MultiLineString' | 'LineString' | 'Polygon' | 'MultiPolygon';
     coordinates: GeoJSON.Position[][][] | GeoJSON.Position[][] | GeoJSON.Position[];
   };
+  /** Geocoded position of the contract along the river course (0=source, 1=mouth). */
+  course_frac?: number;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */
