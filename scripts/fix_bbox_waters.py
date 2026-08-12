@@ -106,6 +106,66 @@ def geom_bbox(g):
     return [round(min(lons), 6), round(min(lats), 6), round(max(lons), 6), round(max(lats), 6)]
 
 
+def bbox_overlap_area(b1, b2):
+    """Overlap area of two [lng_min, lat_min, lng_max, lat_max] boxes (deg^2)."""
+    if not b1 or not b2:
+        return 0.0
+    dx = max(0.0, min(b1[2], b2[2]) - max(b1[0], b2[0]))
+    dy = max(0.0, min(b1[3], b2[3]) - max(b1[1], b2[1]))
+    return dx * dy
+
+
+def bbox_gap_km(b1, b2):
+    """Approx gap between two bboxes (0 when they overlap), in km."""
+    if not b1 or not b2:
+        return 1e9
+    dx = max(0.0, max(b1[0], b2[0]) - min(b1[2], b2[2]))
+    dy = max(0.0, max(b1[1], b2[1]) - min(b1[3], b2[3]))
+    return 111.0 * (dx ** 2 + dy ** 2) ** 0.5
+
+
+def is_tiny_bbox(bb):
+    """True when a geometry bbox is a degenerate sliver (a node fragment)."""
+    if not bb:
+        return True
+    return (bb[2] - bb[0]) < 0.003 and (bb[3] - bb[1]) < 0.003
+
+
+def pick_cluster_by_bbox(water, geoms_list):
+    """Choose the OSM cluster whose extent best matches the water's own bbox.
+
+    best_osm_match picks clusters by proximity to the COUNTY centroid, which
+    is right for distinguishing same-name rivers in different counties but
+    can pick the WRONG cluster for a multi-cluster river: e.g. 'Râul Cibinul
+    Inferior' (bbox 23.93–24.03) gets the east-Cibin cluster (24.17–24.29)
+    because that one is nearer the Sibiu county centroid, and 'Teleajen'
+    sometimes collapses onto a tiny node fragment. Here we re-rank by overlap
+    with the water's bbox: the segment(s) that actually cover the reported
+    area win, tiny slivers are skipped when a real cluster exists.
+    """
+    wb = water.get("bbox")
+    if not wb:
+        return None
+    # drop tiny slivers unless that's all we have
+    real = [g for g in geoms_list if not is_tiny_bbox(geom_bbox(g))]
+    pool = real or geoms_list
+    best, best_key = None, None
+    for g in pool:
+        gb = geom_bbox(g)
+        if not gb:
+            continue
+        ov = bbox_overlap_area(wb, gb)
+        gap = bbox_gap_km(wb, gb)
+        garea = (gb[2] - gb[0]) * (gb[3] - gb[1])
+        # prefer: any overlap (larger overlap better), then smaller gap, then
+        # larger course extent (the full river beats a short fragment)
+        key = (ov > 0.0, ov, -gap, garea)
+        if best_key is None or key > best_key:
+            best_key = key
+            best = g
+    return best
+
+
 # ---------------------------------------------------------------------------
 # Lake matching (HOTOSM polygons)
 # ---------------------------------------------------------------------------
@@ -380,6 +440,32 @@ def load_hotosm_lakes():
                 "geom": g, "centroid": c, "area": 0.0,
                 "water": tags.get("water"), "nc": None, "src": "overpass",
             })
+    # merge the full Overpass named-lake extract (data/processed/overpass_named_lakes.json)
+    # — a broad Romania-wide pull of named water polygons from overpass_water_all.json.
+    # These fill reservoirs HOTOSM draws only as dam walls (Măneciu, Beliș-Fântânele...).
+    opnl = ROOT / "data" / "processed" / "overpass_named_lakes.json"
+    if opnl.exists():
+        for l in json.loads(opnl.read_text(encoding="utf-8")):
+            g = l.get("geom")
+            if g is None or g["type"] not in ("Polygon", "MultiPolygon"):
+                continue
+            c = l.get("centroid")
+            if c is None:
+                continue
+            area = 0.0
+            if g["type"] == "Polygon":
+                ring = g["coordinates"][0]
+                s = 0.0
+                for (x1, y1), (x2, y2) in zip(ring, ring[1:]):
+                    s += x1 * y2 - x2 * y1
+                area = abs(s) / 2.0
+            out.append({
+                "name": l.get("name", ""), "norm": l.get("norm") or norm(l.get("name", "")),
+                "core": l.get("core") or lake_core(l.get("name", "")),
+                "geom": g, "centroid": c, "area": area,
+                "water": (l.get("tags") or {}).get("water"), "nc": None,
+                "src": "overpass_all",
+            })
     # dedupe by (norm, rounded centroid)
     seen = set()
     dedup = []
@@ -471,6 +557,13 @@ LAKE_OVERRIDES = {
     "iezerul pietrosu": "lacul iezer",
     # Lac Făerag (Hunedoara) == OSM 'Tău Făerag' (0.0 km)
     "faerag": "tau faerag",
+    # Lacul Bentu lui Cotoi (Ialomița) == OSM 'Lacul Bentu Mic' (0.7 km, same
+    # Bentu pond complex as Bentu Mic Bordușani). NB: 'lui' is stripped by
+    # LAKE_SECTOR_WORDS so lake_core is 'bentu cotoi'.
+    "bentu cotoi": "lacul bentu mic",
+    # Lac Cilieni I,II,III (Dolj) == OSM 'Bălăsan' — the OSM polygon is tagged
+    # 'Balasan (Cilieni, Moțăței)', i.e. the Cilieni ponds (0.9 km)
+    "cilieni": "balasan",
 }
 
 
@@ -478,6 +571,93 @@ def is_dam_name(name):
     """True when a lake polygon name denotes the dam structure, not the water."""
     n = norm(name)
     return n.startswith("baraj") or n.startswith("deversor") or " baraj" in n or "captarea" in n
+
+
+def load_unnamed_reservoirs():
+    """Unnamed reservoir/lake polygons from the Overpass water dump.
+
+    OSM often draws reservoir outlines as closed ways WITHOUT a name tag
+    (water=reservoir / natural=water). Contracted waters that name the
+    reservoir ('Lac acumulare Cerbureni', 'Acumulare Căpâlna'...) then have
+    no named polygon to match — but the unnamed outline sits right on the
+    water's anchor. Return them for a position-based fallback.
+
+    Returns list of {geom, centroid, area_deg2}.
+    """
+    over = ROOT / "data" / "raw" / "overpass_water_all.json"
+    if not over.exists():
+        return []
+    data = json.loads(over.read_text(encoding="utf-8"))
+    els = data.get("elements", [])
+    nodes = {el["id"]: (el.get("lat"), el.get("lon"))
+             for el in els if el["type"] == "node" and "lat" in el}
+    out = []
+    for el in els:
+        if el["type"] != "way":
+            continue
+        t = el.get("tags", {})
+        if t.get("name"):
+            continue
+        tag_hit = t.get("water") or t.get("natural") or t.get("landuse")
+        if tag_hit not in ("reservoir", "lake", "pond", "basin", "water"):
+            continue
+        coords = [[nodes[n][1], nodes[n][0]] for n in el.get("nodes", []) if n in nodes]
+        if len(coords) < 4:
+            continue
+        if abs(coords[0][0] - coords[-1][0]) > 1e-9 or abs(coords[0][1] - coords[-1][1]) > 1e-9:
+            continue  # not closed
+        s = 0.0
+        for (x1, y1), (x2, y2) in zip(coords, coords[1:]):
+            s += x1 * y2 - x2 * y1
+        area = abs(s) / 2.0
+        if area < 0.00001:
+            continue  # skip tiny ditches/puddles
+        c = geom_centroid({"type": "Polygon", "coordinates": [coords]})
+        if c is None:
+            continue
+        out.append({
+            "geom": {"type": "Polygon", "coordinates": [coords]},
+            "centroid": c,
+            "area": area,
+            "name": "",
+            "norm": "",
+            "core": "",
+        })
+    # dedupe by rounded centroid
+    seen = set()
+    dedup = []
+    for l in out:
+        key = (round(l["centroid"][0], 3), round(l["centroid"][1], 3))
+        if key in seen:
+            continue
+        seen.add(key)
+        dedup.append(l)
+    return dedup
+
+
+def match_lake_unnamed(water, unnamed, max_dist_km=2.0):
+    """Closest unnamed reservoir polygon to the water's anchor.
+
+    Position-based last resort for contracted lakes whose reservoir OSM keeps
+    unnamed. The arebaltapeste coordinate anchor usually sits ON the reservoir,
+    so a single close unnamed outline is strong evidence. Returns the closest
+    polygon within max_dist_km that is not tiny.
+    """
+    anchor = None
+    c = water.get("coordinates")
+    if c and len(c) >= 2:
+        anchor = (c[0], c[1])
+    elif water.get("bbox"):
+        b = water["bbox"]
+        anchor = ((b[0] + b[2]) / 2, (b[1] + b[3]) / 2)
+    if not anchor:
+        return None
+    best, bd = None, 1e9
+    for l in unnamed:
+        d = geo_dist_km(anchor, l["centroid"])
+        if d < bd and d <= max_dist_km:
+            bd, best = d, l
+    return best
 
 
 def match_lake_override(water, lakes):
@@ -567,8 +747,11 @@ def match_lake(water, lakes, max_dist_km=12.0):
         if d > max_dist_km:
             continue
         # tie-break: prefer real water polygons over dam-structure polygons
-        # ('Lacul de acumulare X' beats 'Barajul X' at the same name+score)
-        key = (sc, -d, 0 if is_dam_name(lk["name"]) else 1, lk["area"])
+        # ('Lacul de acumulare X' beats 'Barajul X' at the same name+score),
+        # THEN closest centroid, then largest area. Dam walls are tiny point
+        # features that sit next to the actual reservoir — distance alone is a
+        # bad arbiter (the dam is always closer than the reservoir outline).
+        key = (sc, 0 if is_dam_name(lk["name"]) else 1, -d, lk["area"])
         if best_key is None or key > best_key:
             best_key = key
             best = lk
@@ -680,7 +863,8 @@ def main() -> None:
     print("[fix] loading HOTOSM lake polygons + lines...")
     lakes = load_hotosm_lakes()
     hot_lines = load_hotosm_lines()
-    print(f"[fix] HOTOSM named polygons: {len(lakes)}, named lines: {len(hot_lines)}")
+    unnamed = load_unnamed_reservoirs()
+    print(f"[fix] HOTOSM named polygons: {len(lakes)}, named lines: {len(hot_lines)}, unnamed reservoirs: {len(unnamed)}")
 
     # merge curated river overrides into the global override table
     merged_overrides = dict(MANUAL_OVERRIDES)
@@ -709,6 +893,26 @@ def main() -> None:
                         c = geom_centroid(geom)
                         if c and geo_dist_km(anchor, c) > 40.0:
                             best, geom, score, how = None, None, 0.0, "override-anchor-reject"
+            if best and geom:
+                # re-rank the matched name's clusters by overlap with the
+                # water's OWN bbox (county-centroid ranking can pick a distant
+                # cluster of the same river, or a tiny node fragment)
+                gs_list = osm_geo_by_norm.get(best) or []
+                repick = pick_cluster_by_bbox(w, gs_list)
+                if repick:
+                    geom = repick
+                # reject a same-name cluster that does NOT touch the water's
+                # bbox at all — it is a DIFFERENT river in another county
+                # ('Râul Geoagiu Superior' Alba vs OSM Geoagiu in Hunedoara,
+                # 21 km gap, zero overlap). Overrides (try_manual_override /
+                # hotosm) carry their own documented validation and skip this.
+                wb = w.get("bbox")
+                gb = geom_bbox(geom) if geom else None
+                if (how in ("prefix", "token", "exact", "char", "no-match")
+                        and wb and gb
+                        and bbox_overlap_area(wb, gb) == 0.0
+                        and bbox_gap_km(wb, gb) > 15.0):
+                    best, geom, score, how = None, None, 0.0, "far-cluster-reject"
             if not best:
                 # HOTOSM line fallback (Sabasa, Canalul colector Criș, Topa Mică...)
                 hname, hgeom, hscore = match_river_hotosm(w, hot_lines, county_centroids)
@@ -720,6 +924,8 @@ def main() -> None:
                 lk = match_lake(w, lakes)
                 if not lk:
                     lk = match_lake_override(w, lakes)
+                if not lk:
+                    lk = match_lake_unnamed(w, unnamed)
                 if lk:
                     best, geom, score, how = lk["name"], lk["geom"], 0.0, "lake"
             if best and geom:
@@ -736,7 +942,13 @@ def main() -> None:
             lk = match_lake(w, lakes)
             if not lk:
                 lk = match_lake_override(w, lakes)
+            if not lk:
+                # last resort: unnamed reservoir outline sitting on the anchor
+                unlk = match_lake_unnamed(w, unnamed)
+                if unlk:
+                    lk = unlk
             if lk:
+                how_lake = "lake" if lk.get("name") else "lake-unnamed"
                 # A "Barajul X" polygon can be the dam WALL, not the reservoir:
                 # if it's tiny (a few hundred metres), attaching it would make
                 # the reservoir disappear from the map — keep the bbox fallback
@@ -756,8 +968,8 @@ def main() -> None:
                     if bb:
                         w["bbox"] = bb
                     w["source"] = w.get("source") or "hotosm"
-                    w["source_detail"] = f"bbox_fix:lake:{lk['name']}"
-                    matched.append((name, w["judet"], lk["name"], 0.0, "lake", kind))
+                    w["source_detail"] = f"bbox_fix:{how_lake}:{lk['name']}"
+                    matched.append((name, w["judet"], lk["name"], 0.0, how_lake, kind))
             else:
                 unmatched.append((name, w["judet"], sub, kind, "no-lake-polygon"))
         else:
