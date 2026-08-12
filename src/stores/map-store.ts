@@ -119,5 +119,15 @@ export const useMapStore = create<MapStore>((set, get) => ({
     });
   },
 
-  setContractFilter: (filter) => set({ contractFilter: filter }),
+  setContractFilter: (filter) => {
+    // R9: a filter change that hides the selected water dismisses the sheet.
+    const { selectedWaterSlug, uncontracted } = get();
+    let nextSlug = selectedWaterSlug;
+    if (selectedWaterSlug) {
+      const isUnc = uncontracted.some((w) => w.slug === selectedWaterSlug);
+      if (filter === 'contractate' && isUnc) nextSlug = null;
+      if (filter === 'necontractate' && !isUnc) nextSlug = null;
+    }
+    set({ contractFilter: filter, selectedWaterSlug: nextSlug });
+  },
 }));
