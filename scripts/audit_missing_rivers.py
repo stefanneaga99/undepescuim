@@ -251,8 +251,30 @@ MANUAL_OVERRIDES = {
     "plescioara": "valea plescioarei",
     # Rudărie (Caraș-Severin) == OSM Valea Rudăriei (genitive of same name)
     "rudarie": "valea rudariei",
-    # ---- t_242be1eb: ANPA stream-type rows whose OSM twin uses a different
+    # --- Follow-up (t_bfb3d53e): names present in the bulk extract under a
+    # spelling/article form the generic ladder cannot connect ---
+    # Râul Uzul (Bacău) == OSM relation 18012663 named bare 'Uz' ('uzul' is a
+    # 4-char definite-article form the len>=5 strip guard refuses to cut)
+    "uzul": "uz",
+    # Râul Jiul Inferior (Hunedoara) == OSM 'Jiu' (same guard blocks 'jiul')
+    "jiul inferior": "jiu",
+    # Râul Baranca Hudești (Botoșani) == OSM 'Baranca' (qualifier 'Hudești'
+    # is a commune name, not a sector word, so the prefix rule rejects it)
+    "baranca hudesti": "baranca",
+    # Râul Olănești cu pâraiele Cheia, Bacea și Mânza (Vâlcea) == OSM
+    # 'Olănești' (the tributary enumeration blocks the prefix rule)
+    "olanesti cu paraiele cheia bacea si manza": "olanesti",
+    # Valea Dobricionești (Bihor) == OSM 'Pârâul Dobricionești' (cross-type:
+    # ANPA says 'valea', OSM 'paraul' — exact core after strip)
+    "dobricionesti": "paraul dobricionesti",
+    # Valea Polatiște (Hunedoara) == OSM 'Pârâul Polatiște'
+    "polatiste": "paraul polatiste",
+    # Râul Bordușelu (Bistrița-Năsăud) == OSM 'Budușelu' (vowel variant)
+    "borduselu": "buduselu",
+    # Râul Vâslan mijlociu (Argeș) == OSM 'Vâlsan' (ANPA typo 'Vâslan')
+    "vaslan mijlociu": "valsan",
     # ---- type prefix (Pârâul vs Valea vs Canalul) — same watercourse.
+    # (t_242be1eb: ANPA stream-type rows whose OSM twin uses a different type)
     # Valea Morilor (Alba) == OSM Pârâul Morii (Huda lui Papară – Arieș)
     "morilor": "paraul morii",
     # Pârâul Meleș (Bistrița-Năsăud) == OSM Valea Meleș
