@@ -364827,7 +364827,7 @@
     ]
    ]
   },
-  "course_frac": 0.0047
+  "course_frac": 0.5336
  },
  {
   "slug": "hmd3pa0v",
@@ -721481,7 +721481,7 @@
    "slug": "ajvps-buzau"
   },
   "geometry": null,
-  "course_frac": 0.4841
+  "course_frac": 0.176
  },
  {
   "slug": "anpa-anpa-0208",
@@ -721539,7 +721539,8 @@
    "slug": "ajvps-buzau"
   },
   "geometry": null,
-  "course_frac": 0.4841
+  "course_frac": 0.154,
+  "mainCourse": true
  },
  {
   "slug": "anpa-anpa-0211",
@@ -721559,7 +721560,8 @@
    "slug": "ajvps-buzau"
   },
   "geometry": null,
-  "course_frac": 0.4841
+  "course_frac": 0.2004,
+  "mainCourse": true
  },
  {
   "slug": "anpa-anpa-0212",
@@ -721619,7 +721621,7 @@
    "slug": "ajvps-buzau"
   },
   "geometry": null,
-  "course_frac": 0.4841
+  "course_frac": 0.277
  },
  {
   "slug": "anpa-anpa-0215",
@@ -735610,7 +735612,8 @@
    "slug": "ajvps-covasna"
   },
   "geometry": null,
-  "course_frac": 0.094
+  "course_frac": 0.094,
+  "mainCourse": true
  },
  {
   "slug": "anpa-anpa-0262",
@@ -768171,7 +768174,7 @@
    "slug": "avps-toplita"
   },
   "geometry": null,
-  "course_frac": 0.0
+  "course_frac": 0.1362
  },
  {
   "slug": "anpa-anpa-0324",
@@ -833193,7 +833196,7 @@
    "slug": "avps-tarnava-mare"
   },
   "geometry": null,
-  "course_frac": 0.0
+  "course_frac": 0.0415
  },
  {
   "slug": "anpa-anpa-0338",
@@ -849936,7 +849939,7 @@
    "slug": "ajvps-hunedoara"
   },
   "geometry": null,
-  "course_frac": 0.8734
+  "course_frac": 0.5811
  },
  {
   "slug": "anpa-anpa-0378",
@@ -913109,7 +913112,7 @@
    "slug": "ajvps-mures"
   },
   "geometry": null,
-  "course_frac": 0.0
+  "course_frac": 0.1639
  },
  {
   "slug": "anpa-anpa-0455",

@@ -205,9 +205,16 @@ function fractionAtPoint(
   return bestFrac;
 }
 
-/** True when the water's name marks it as on the main course (not a valley tributary). */
+/**
+ * True when a name starts with a tributary-looking prefix ('Valea X',
+ * 'Pârâul X') — such contracts are usually separate streams, not sectors of
+ * the clicked river's main course. Note the diacritics: 'Pârâu'/'Pârâul'
+ * must be matched explicitly or they slip through (pârâu != paraul).
+ * Prefix-named SECTORS (e.g. 'Pârâu Buzăul Mijlociu') opt back in via the
+ * water's `mainCourse` flag — see contractAtFraction.
+ */
 export function isMainCourse(name: string): boolean {
-  return !/^(valea|paraul|parau)\s/i.test(name);
+  return !/^(valea|paraul|parau|pârâu|pârâul)\s/i.test(name);
 }
 
 /** River-course order rank: superior < mijlociu < inferior < (plain, i.e. mouth section). */
@@ -239,7 +246,9 @@ export function contractAtFraction(
 ): Water | null {
   const key = waterKey(riverName);
   const group = allWaters.filter(
-    (w) => isMainCourse(w.name) && sameRiver(key, waterKey(w.name)),
+    (w) =>
+      (isMainCourse(w.name) || w.mainCourse === true) &&
+      sameRiver(key, waterKey(w.name)),
   );
   if (group.length <= 1) return null;
 

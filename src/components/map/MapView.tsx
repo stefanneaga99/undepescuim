@@ -33,7 +33,9 @@ export function MapView() {
     if (!selected) return null;
     const key = waterKey(selected.name);
     const group = allWaters.filter(
-      (w) => isMainCourse(w.name) && sameRiver(key, waterKey(w.name)),
+      (w) =>
+        (isMainCourse(w.name) || w.mainCourse === true) &&
+        sameRiver(key, waterKey(w.name)),
     );
     if (group.length <= 1) return [0, 1]; // whole course
     const ranked = [...group].sort(

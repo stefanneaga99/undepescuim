@@ -63,6 +63,14 @@ export interface Water {
   };
   /** Geocoded position of the contract along the river course (0=source, 1=mouth). */
   course_frac?: number;
+  /**
+   * True when a contract is a SECTOR of the river main course even though its
+   * name starts with a tributary-looking prefix ('Pârâu X', 'Valea X').
+   * E.g. 'Pârâu Buzăul Mijlociu' (Covasna headwater) and
+   * 'Valea Buzăului superior/inferior' are sectors of the Râul Buzău and must
+   * participate in click resolution alongside the 'Râul' contracts.
+   */
+  mainCourse?: boolean;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */
