@@ -147,6 +147,13 @@ def build_clusters(reload: bool = False) -> tuple[list[dict], dict[tuple[int, in
     cell_index: dict[tuple[int, int], list[int]] = defaultdict(list)
 
     for name, ids in sorted(name_index.items()):
+        # raw (un-normalized) OSM name of the first geometry for this key —
+        # needed by build_uncontracted_rivers.py for the FE card title.
+        raw_name = ""
+        for gid in ids:
+            raw_name = (geoms.get(gid) or {}).get("name") or ""
+            if raw_name:
+                break
         for g in make_cluster_geoms(ids, geoms):
             coords = g["coordinates"] if g["type"] == "LineString" else [
                 p for part in g["coordinates"] for p in part
@@ -173,7 +180,7 @@ def build_clusters(reload: bool = False) -> tuple[list[dict], dict[tuple[int, in
             if not cells:
                 continue
             cidx = len(clusters)
-            clusters.append({"name": name, "norm": norm(name), "geom": g, "bbox": bbox,
+            clusters.append({"name": name, "raw_name": raw_name, "norm": norm(name), "geom": g, "bbox": bbox,
                              "cells": sorted(cells)})
             for c in cells:
                 cell_index[c].append(cidx)
