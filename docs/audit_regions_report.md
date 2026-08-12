@@ -3,9 +3,9 @@
 Total grupuri de râuri OSM cu nume: **7699**  
 Clasificare globală:
 - **uncontracted**: 6755
-- **present**: 911
-- **present-bbox**: 26
+- **present**: 936
 - **present-hidden**: 6
+- **present-bbox**: 1
 - **anpa-missing**: 1
 
 ## Zona raportată: Covasna / Târgu Secuiesc (DN11, DN13E)
@@ -19,39 +19,39 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 ## Pe județ
 | Județ | total | prezent | anpa-missing | areba-missing | romsilva | uncontracted |
 |---|---|---|---|---|---|---|
-| Alba | 209 | 57 | 0 | 0 | 0 | 152 |
-| Arad | 244 | 7 | 0 | 0 | 0 | 237 |
-| Argeș | 175 | 36 | 0 | 0 | 0 | 139 |
+| Alba | 207 | 57 | 0 | 0 | 0 | 150 |
+| Arad | 245 | 7 | 0 | 0 | 0 | 238 |
+| Argeș | 160 | 36 | 0 | 0 | 0 | 124 |
 | Bacău | 83 | 21 | 0 | 0 | 0 | 62 |
 | Bihor | 282 | 34 | 0 | 0 | 0 | 246 |
 | Bistrița - Năsăud | 55 | 6 | 0 | 0 | 0 | 47 |
-| Bistrița-Năsăud | 127 | 18 | 0 | 0 | 0 | 109 |
+| Bistrița-Năsăud | 119 | 18 | 0 | 0 | 0 | 101 |
 | Botoșani | 89 | 37 | 0 | 0 | 0 | 52 |
-| Brașov | 366 | 30 | 0 | 0 | 0 | 335 |
+| Brașov | 384 | 31 | 0 | 0 | 0 | 353 |
 | Brăila | 60 | 9 | 0 | 0 | 0 | 51 |
 | Buzău | 84 | 3 | 0 | 0 | 0 | 81 |
-| Caraș-Severin | 724 | 38 | 0 | 0 | 0 | 683 |
-| Cluj | 163 | 32 | 0 | 0 | 0 | 129 |
-| Constanța | 145 | 1 | 0 | 0 | 0 | 144 |
-| Covasna | 257 | 37 | 0 | 0 | 0 | 220 |
+| Caraș-Severin | 724 | 41 | 0 | 0 | 0 | 683 |
+| Cluj | 164 | 34 | 0 | 0 | 0 | 130 |
+| Constanța | 143 | 1 | 0 | 0 | 0 | 142 |
+| Covasna | 260 | 37 | 0 | 0 | 0 | 223 |
 | Călărași | 75 | 0 | 0 | 0 | 0 | 75 |
 | Dolj | 192 | 19 | 0 | 0 | 0 | 173 |
-| Dâmbovița | 68 | 32 | 0 | 0 | 0 | 34 |
+| Dâmbovița | 90 | 34 | 0 | 0 | 0 | 56 |
 | Giurgiu | 63 | 7 | 0 | 0 | 0 | 56 |
-| Gorj | 85 | 25 | 0 | 0 | 0 | 56 |
-| Harghita | 363 | 56 | 0 | 0 | 0 | 307 |
-| Hunedoara | 133 | 24 | 0 | 0 | 0 | 100 |
+| Gorj | 85 | 29 | 0 | 0 | 0 | 56 |
+| Harghita | 364 | 56 | 0 | 0 | 0 | 308 |
+| Hunedoara | 133 | 33 | 0 | 0 | 0 | 100 |
 | Ialomița | 214 | 3 | 0 | 0 | 0 | 211 |
 | Iași | 81 | 22 | 0 | 0 | 0 | 59 |
-| Ilfov | 16 | 6 | 0 | 0 | 0 | 10 |
-| Maramureș | 295 | 38 | 0 | 0 | 0 | 256 |
+| Ilfov | 12 | 6 | 0 | 0 | 0 | 6 |
+| Maramureș | 297 | 38 | 0 | 0 | 0 | 258 |
 | Mehedinți | 374 | 5 | 0 | 0 | 0 | 369 |
 | Mureș | 175 | 41 | 0 | 0 | 0 | 134 |
-| Neamț | 445 | 10 | 0 | 0 | 0 | 435 |
+| Neamț | 443 | 10 | 0 | 0 | 0 | 433 |
 | Olt | 95 | 8 | 0 | 0 | 0 | 87 |
-| Prahova | 213 | 23 | 0 | 0 | 0 | 190 |
-| Satu Mare | 78 | 4 | 0 | 0 | 0 | 74 |
-| Sibiu | 145 | 35 | 0 | 0 | 0 | 109 |
+| Prahova | 182 | 23 | 0 | 0 | 0 | 159 |
+| Satu Mare | 85 | 4 | 0 | 0 | 0 | 81 |
+| Sibiu | 155 | 36 | 0 | 0 | 0 | 119 |
 | Suceava | 236 | 24 | 0 | 0 | 0 | 210 |
 | Sălaj | 133 | 8 | 0 | 0 | 0 | 125 |
 | TIMIȘ | 1 | 0 | 1 | 0 | 0 | 0 |
@@ -59,7 +59,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Timiș | 281 | 54 | 0 | 0 | 0 | 227 |
 | Vaslui | 441 | 16 | 0 | 0 | 0 | 425 |
 | Vrancea | 36 | 15 | 0 | 0 | 0 | 21 |
-| Vâlcea | 349 | 54 | 0 | 0 | 0 | 292 |
+| Vâlcea | 348 | 57 | 0 | 0 | 0 | 291 |
 
 ## Pe celulă (0.5°×0.5°)
 
@@ -1120,7 +1120,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | drincea | present | AJVPS DOLJ |  |
 | drincea 1 | uncontracted |  |  |
 | dunarea дунав | uncontracted |  |  |
-| paraul cilieni | present | AJVPS DOLJ |  |
+| paraul cilieni | present | AJVPS DOLJ | bbox_fix:lake:Bălăsan |
 | paraul clielieni / balasan | uncontracted |  |  |
 | raul baboia | present | AJVPS DOLJ |  |
 | raul brabova | uncontracted |  |  |
@@ -2272,7 +2272,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | stircovat | uncontracted |  |  |
 | stredneg | uncontracted |  |  |
 | sumbrac | uncontracted |  |  |
-| taria mare | present-bbox | Direcția Silvică Caraș-Severin |  |
+| taria mare | present | Direcția Silvică Caraș-Severin | bbox_fix:lake:Taria Mare |
 | tau | present | Direcția Silvică Alba | romsilva_map:exact |
 | terova | uncontracted |  |  |
 | timis | present | AJVPS TIMIȘ |  |
@@ -2305,7 +2305,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | crivaia mica | uncontracted |  |  |
 | cuntu | uncontracted |  |  |
 | danube | uncontracted |  |  |
-| gozna | present | Direcția Silvică Caraș-Severin |  |
+| gozna | present | Direcția Silvică Caraș-Severin | bbox_fix:lake:Lacul Gozna |
 | goznuta | uncontracted |  |  |
 | mehadica | uncontracted |  |  |
 | minis | uncontracted |  |  |
@@ -2334,7 +2334,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | sebesel | uncontracted |  |  |
 | sfragin | uncontracted |  |  |
 | sipu | uncontracted |  |  |
-| taria mare | present-bbox | Direcția Silvică Caraș-Severin |  |
+| taria mare | present | Direcția Silvică Caraș-Severin | bbox_fix:lake:Taria Mare |
 | tasna | uncontracted |  |  |
 | timis | present | AJVPS TIMIȘ |  |
 | valea craiului | uncontracted |  |  |
@@ -2375,7 +2375,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | izvorul gugu | uncontracted |  |  |
 | izvorul morarului | uncontracted |  |  |
 | jdimir | uncontracted |  |  |
-| jiul de vest | present | Pro Pescar |  |
+| jiul de vest | present | Pro Pescar | bbox_fix:prefix |
 | judele | uncontracted |  |  |
 | judele mic | uncontracted |  |  |
 | lapusnicu mic | uncontracted |  |  |
@@ -2411,7 +2411,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul ses | present | Direcția Silvică Hunedoara | romsilva_map:sweep:raul ses |
 | paraul tapului | uncontracted |  |  |
 | peceneaga | uncontracted |  |  |
-| peleaga | present-bbox | Direcția Silvică Hunedoara |  |
+| peleaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Peleaga |
 | peleguta | uncontracted |  |  |
 | pietrele | uncontracted |  |  |
 | pocruia | uncontracted |  |  |
@@ -2422,7 +2422,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul cerna | present | Direcția Silvică Mehedinți | sweep:hidden:group-shares-course |
 | raul mare | present | CS HUNEDOARA |  |
 | raul ses | present | Direcția Silvică Hunedoara | romsilva_map:sweep:raul ses |
-| raul tismana | present-bbox | ANPA - Ape Necontractate |  |
+| raul tismana | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul De Acumulare Tismana |
 | rovine | uncontracted |  |  |
 | scarisoara | uncontracted |  |  |
 | scarita | uncontracted |  |  |
@@ -2433,7 +2433,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ses | present | Direcția Silvică Hunedoara | romsilva_map:sweep:raul ses |
 | stana mare | uncontracted |  |  |
 | stanisoara | uncontracted |  |  |
-| stevia | present-bbox | Direcția Silvică Hunedoara |  |
+| stevia | present | Direcția Silvică Hunedoara | bbox_fix:lake:Ștevia |
 | sucu | present | Direcția Silvică Caraș-Severin | romsilva_map:exact |
 | suculetu | uncontracted |  |  |
 | tasna | uncontracted |  |  |
@@ -2450,7 +2450,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | vlasia | uncontracted |  |  |
 | vlasia mare | uncontracted |  |  |
 | vlasia mica | uncontracted |  |  |
-| zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 | zanoguta | uncontracted |  |  |
 | zlata | uncontracted |  |  |
 
@@ -2471,7 +2471,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | izvorul | present-hidden | AJVPS BISTRIȚA-NĂSĂUD |  |
 | jiu | present | AJVPS GORJ |  |
 | jiul de est | present | Pro Pescar |  |
-| jiul de vest | present | Pro Pescar |  |
+| jiul de vest | present | Pro Pescar | bbox_fix:prefix |
 | lapuselul | uncontracted |  |  |
 | motru | present | AJVPS GORJ |  |
 | oproni | uncontracted |  |  |
@@ -2484,7 +2484,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul scurta | uncontracted |  |  |
 | pilug | uncontracted |  |  |
 | raul jiu | present | AJVPS GORJ |  |
-| raul tismana | present-bbox | ANPA - Ape Necontractate |  |
+| raul tismana | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul De Acumulare Tismana |
 | sadu | present | FLY FISHING CLUB SIBIU | audit_match:prefix |
 | sadu lui san | uncontracted |  |  |
 | sohodol | present | A.CERBUL CARPATIN | audit_match:char0.88 |
@@ -2527,12 +2527,12 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | lotru | present | AJVPS VÂLCEA | audit_match:prefix |
 | luncavat | present | AJVPS VÂLCEA |  |
 | luncavicioara | uncontracted |  |  |
-| malaia | present | AJVPS VÂLCEA |  |
+| malaia | present | AJVPS VÂLCEA | bbox_fix:lake:Lacul Mălaia |
 | malaiul | uncontracted |  |  |
 | marita | uncontracted |  |  |
 | matca | uncontracted |  |  |
 | mieru | uncontracted |  |  |
-| mija mica | present-bbox | Direcția Silvică Hunedoara |  |
+| mija mica | present | Direcția Silvică Hunedoara | bbox_fix:lake:Mija |
 | mioarele | uncontracted |  |  |
 | mohorul cu apa | uncontracted |  |  |
 | musetoaia | uncontracted |  |  |
@@ -2548,7 +2548,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul polatiste | present | Pro Pescar | audit_match:override |
 | paraul repedea | present | AJVPS VÂLCEA |  |
 | petreasa | uncontracted |  |  |
-| petrimanu | present-bbox | Direcția Silvică Vâlcea |  |
+| petrimanu | present | Direcția Silvică Vâlcea | bbox_fix:lake:Petrimanu |
 | plescoaia | uncontracted |  |  |
 | purul | uncontracted |  |  |
 | raul cernazoara | uncontracted |  |  |
@@ -2575,7 +2575,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | urliesu | uncontracted |  |  |
 | ursani | present | AJVPS VÂLCEA |  |
 | v dracului | uncontracted |  |  |
-| zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 
 ### Celulă 44.9-45.4N, 24.0-24.5E
 | Râu | Clasă | Asociație | Detalii |
@@ -2623,7 +2623,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | luncavat | present | AJVPS VÂLCEA |  |
 | lunget | uncontracted |  |  |
 | luntrisoara | uncontracted |  |  |
-| malaia | present | AJVPS VÂLCEA |  |
+| malaia | present | AJVPS VÂLCEA | bbox_fix:lake:Lacul Mălaia |
 | muereasca | uncontracted |  |  |
 | oboadele mari | uncontracted |  |  |
 | oboadele mici | uncontracted |  |  |
@@ -2831,7 +2831,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | arges | present | AJVPS DÂMBOVIȚA |  |
 | argesel | present | AJVPS ARGEȘ | audit_match:prefix |
 | barbuletu | uncontracted |  |  |
-| bolboci | present | Direcția Silvică Dâmbovița |  |
+| bolboci | present | Direcția Silvică Dâmbovița | bbox_fix:lake:Lacul Bolboci |
 | bughea | present | APS AQUA CRISIUS |  |
 | carcinov | uncontracted |  |  |
 | carpenis | uncontracted |  |  |
@@ -2880,7 +2880,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | rausor | present | Direcția Silvică Argeș | romsilva_map:exact |
 | rausorul | uncontracted |  |  |
 | rudarita mare | uncontracted |  |  |
-| scropoasa | present-bbox | Direcția Silvică Dâmbovița |  |
+| scropoasa | present | Direcția Silvică Dâmbovița | bbox_fix:lake:Lacul Scropoasa |
 | secaruia mare | uncontracted |  |  |
 | secaruia mica | uncontracted |  |  |
 | urlatoarea mare | uncontracted |  |  |
@@ -2931,7 +2931,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea tancavei | uncontracted |  |  |
 | valea tatarului | uncontracted |  |  |
 | valea vaca | uncontracted |  |  |
-| valea vaja | present-bbox | Direcția Silvica Gorj |  |
+| valea vaja | present | Direcția Silvica Gorj | bbox_fix:lake:Lacul de Acumulare Vâja |
 | valea valcea | uncontracted |  |  |
 
 ### Celulă 44.9-45.4N, 25.5-26.0E
@@ -3043,7 +3043,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea soarelui | uncontracted |  |  |
 | valea tufa | uncontracted |  |  |
 | valea zamora | uncontracted |  |  |
-| valea zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| valea zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 | valea zgarburei | uncontracted |  |  |
 | varbilau | present | AJVPS PRAHOVA |  |
 | vornicu | uncontracted |  |  |
@@ -3341,7 +3341,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul lacului | present | AJVPS TIMIȘ |  |
 | poganis | present | AJVPS TIMIȘ |  |
 | potoc | uncontracted |  |  |
-| surduc | present | ANPA - Ape Necontractate |  |
+| surduc | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul Surduc |
 | surgani | present | AJVPS TIMIȘ |  |
 | timis | present | AJVPS TIMIȘ |  |
 | timisul mort | uncontracted |  |  |
@@ -3403,9 +3403,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | saraz | uncontracted |  |  |
 | sasa | present | AJVPS VÂLCEA |  |
 | sebes | present | AJVPS ALBA |  |
-| soimu | present-bbox | D.S. Cluj |  |
+| soimu | present | D.S. Cluj | bbox_fix:lake:Lacul Șoimu |
 | sudrias | uncontracted |  |  |
-| surduc | present | ANPA - Ape Necontractate |  |
+| surduc | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul Surduc |
 | timis | present | AJVPS TIMIȘ |  |
 | timisul mort | uncontracted |  |  |
 | toplita | present | AV VIDA SURDUCEL DOBREȘTI |  |
@@ -3430,7 +3430,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bistra | present | Direcția Silvică Sibiu | romsilva_map:exact |
 | bistra marului | present | Direcția Silvică Caraș-Severin | romsilva_map:prefix |
 | bordul | uncontracted |  |  |
-| breazova | present | Direcția Silvică Caraș-Severin |  |
+| breazova | present | Direcția Silvică Caraș-Severin | bbox_fix:lake:Lacul Breazova (Văliug) |
 | cerna | present | Direcția Silvică Mehedinți | sweep:hidden:group-shares-course |
 | danube | uncontracted |  |  |
 | dobra | present | FLY FISHING CLUB SIBIU |  |
@@ -3459,7 +3459,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | sibisel | present | Direcția Silvică Hunedoara | romsilva_map:exact |
 | sohodol | present | A.CERBUL CARPATIN | audit_match:char0.88 |
 | stanisoara | uncontracted |  |  |
-| stevia | present-bbox | Direcția Silvică Hunedoara |  |
+| stevia | present | Direcția Silvică Hunedoara | bbox_fix:lake:Ștevia |
 | strei | present | AJVPS HUNEDOARA |  |
 | sucu | present | Direcția Silvică Caraș-Severin | romsilva_map:exact |
 | valea mare | present | Direcția Silvică Alba | romsilva_map:group-shares-course |
@@ -3575,7 +3575,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | halangioasa | uncontracted |  |  |
 | hanes | uncontracted |  |  |
 | hoteag | uncontracted |  |  |
-| iezerul mare | present | FLY FISHING CLUB SIBIU |  |
+| iezerul mare | present | FLY FISHING CLUB SIBIU | bbox_fix:lake:Iezerul Mare |
 | iezerul mic | present | FLY FISHING CLUB SIBIU |  |
 | izvorul contului | uncontracted |  |  |
 | izvorul goatelor | uncontracted |  |  |
@@ -3586,7 +3586,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | mag | uncontracted |  |  |
 | manaileasa | uncontracted |  |  |
 | mieru | uncontracted |  |  |
-| mija mica | present-bbox | Direcția Silvică Hunedoara |  |
+| mija mica | present | Direcția Silvică Hunedoara | bbox_fix:lake:Mija |
 | nedeiu | uncontracted |  |  |
 | paraul barbesului | uncontracted |  |  |
 | paraul bumbii | uncontracted |  |  |
@@ -3606,9 +3606,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul sibiel | uncontracted |  |  |
 | paraul sibielas | uncontracted |  |  |
 | paraul vale | uncontracted |  |  |
-| paraul valea | present-bbox | ANPA - Ape Necontractate |  |
+| paraul valea | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul Valea Mare |
 | paraul valea garbovii | uncontracted |  |  |
-| paraul valea mare | present-bbox | ANPA - Ape Necontractate |  |
+| paraul valea mare | present | ANPA - Ape Necontractate | bbox_fix:lake:Lacul Valea Mare |
 | paraul valea mica | uncontracted |  |  |
 | paraul valea popii | uncontracted |  |  |
 | paraul valea vlasinului | uncontracted |  |  |
@@ -3863,7 +3863,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | galasescu mic | uncontracted |  |  |
 | gostaia | uncontracted |  |  |
 | hartibaciu | present | AJVPS SIBIU |  |
-| iezerul mare | present | FLY FISHING CLUB SIBIU |  |
+| iezerul mare | present | FLY FISHING CLUB SIBIU | bbox_fix:lake:Iezerul Mare |
 | izorul groapele | uncontracted |  |  |
 | izvorul caprei | uncontracted |  |  |
 | izvorul cremenei | uncontracted |  |  |
@@ -3885,7 +3885,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | olt | present | AJVPS OLT |  |
 | oltet | present | AJVPS VÂLCEA |  |
 | opatu | uncontracted |  |  |
-| paltinu | present | A.PENEȘ CURCANUL |  |
+| paltinu | present | A.PENEȘ CURCANUL | bbox_fix:lake:Lacul Paltinu |
 | paraul caltun | uncontracted |  |  |
 | paraul calului | uncontracted |  |  |
 | paraul crintei | uncontracted |  |  |
@@ -3907,7 +3907,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul vladului | uncontracted |  |  |
 | piscanu | uncontracted |  |  |
 | piscul | uncontracted |  |  |
-| podragu | present-bbox | Direcția Silvică Sibiu |  |
+| podragu | present | Direcția Silvică Sibiu | bbox_fix:lake:Lacul Podragu |
 | pojorta | uncontracted |  |  |
 | porumbacel | uncontracted |  |  |
 | porumbacu | uncontracted |  |  |
@@ -3926,7 +3926,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | topolog | present | AJVPS VÂLCEA |  |
 | ucea | present | AVPS FĂGĂRAȘ | audit_match:prefix |
 | ucisoara | uncontracted |  |  |
-| urlea | present-bbox | APS AQUA CRISIUS |  |
+| urlea | present | APS AQUA CRISIUS | bbox_fix:lake:Lacul Urlea |
 | valea cu pesti | uncontracted |  |  |
 | valea izvorul sec | uncontracted |  |  |
 | valea leaota | uncontracted |  |  |
@@ -4438,7 +4438,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | vladet | uncontracted |  |  |
 | vulcanita | uncontracted |  |  |
 | zaganu | uncontracted |  |  |
-| zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 | zizin | uncontracted |  |  |
 
 ### Celulă 45.4-45.9N, 26.0-26.5E
@@ -5445,7 +5445,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | lepsa | present | Direcția Silvică Vrancea | romsilva_map:exact |
 | oituz | present | AJVPS COVASNA |  |
 | putna | present | AJVPS VRANCEA |  |
-| racaciuni | present | AJVPS BACĂU |  |
+| racaciuni | present | AJVPS BACĂU | bbox_fix:lake:Lacul Răcăciuni |
 | raul tazlau | present | AJVPS BACĂU |  |
 | raul trotus | present | AJVPS BACĂU |  |
 | siret | present | Centrul Regional de Ecologie Bacău |  |
@@ -5458,7 +5458,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | tisita mica | present | Direcția Silvică Vrancea | romsilva_map:exact |
 | trotus | present | AJVPS BACĂU |  |
 | uz | uncontracted |  |  |
-| vidra | present-bbox | Direcția Silvică Vâlcea |  |
+| vidra | present | Direcția Silvică Vâlcea | bbox_fix:lake:Lacul Vidra |
 | vizauti | uncontracted |  |  |
 
 ### Celulă 45.9-46.4N, 27.0-27.5E
@@ -5474,7 +5474,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | pereschiv | uncontracted |  |  |
 | pereschivul mic | uncontracted |  |  |
 | putna | present | AJVPS VRANCEA |  |
-| racaciuni | present | AJVPS BACĂU |  |
+| racaciuni | present | AJVPS BACĂU | bbox_fix:lake:Lacul Răcăciuni |
 | raul trotus | present | AJVPS BACĂU |  |
 | raul zeletin | uncontracted |  |  |
 | repedea | present | AJVPS VÂLCEA |  |
@@ -5787,7 +5787,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | sighistel | uncontracted |  |  |
 | sohodol | present | A.CERBUL CARPATIN | audit_match:char0.88 |
 | soimus | uncontracted |  |  |
-| somesul cald | present | D.S. Cluj |  |
+| somesul cald | present | D.S. Cluj | bbox_fix:lake:Lacul de acumulare Someșul Cald |
 | spurcatu | uncontracted |  |  |
 | stana de izvor | uncontracted |  |  |
 | storhasu | uncontracted |  |  |
@@ -5861,7 +5861,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | visag | uncontracted |  |  |
 | vulturu | uncontracted |  |  |
 | zanda | uncontracted |  |  |
-| zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 | zarna | uncontracted |  |  |
 
 ### Celulă 46.4-46.9N, 23.0-23.5E
@@ -5923,9 +5923,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul nadas | present | AJPS Cluj |  |
 | saliste | present | FLY FISHING CLUB SIBIU |  |
 | sardu | uncontracted |  |  |
-| soimu | present-bbox | D.S. Cluj |  |
+| soimu | present | D.S. Cluj | bbox_fix:lake:Lacul Șoimu |
 | somesu rece | present | D.S. Cluj |  |
-| somesul cald | present | D.S. Cluj |  |
+| somesul cald | present | D.S. Cluj | bbox_fix:lake:Lacul de acumulare Someșul Cald |
 | somesul mic | present | AJVPS CLUJ |  |
 | somesul rece | present | D.S. Cluj |  |
 | somtelec | uncontracted |  |  |
@@ -6311,7 +6311,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | berecz | uncontracted |  |  |
 | bernat patak | uncontracted |  |  |
 | bicajel | present | AJVPS NEAMȚ |  |
-| bicaz | present | AJVPS NEAMȚ |  |
+| bicaz | present | AJVPS NEAMȚ | bbox_fix:lake:Lacul Izvorul Muntelui |
 | bistra | present | AJVPS MUREȘ |  |
 | boros | uncontracted |  |  |
 | borvizul | uncontracted |  |  |
@@ -6593,7 +6593,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | asau | present | AJVPS BACĂU |  |
 | barnisul | uncontracted |  |  |
 | batca | uncontracted |  |  |
-| bicaz | present | AJVPS NEAMȚ |  |
+| bicaz | present | AJVPS NEAMȚ | bbox_fix:lake:Lacul Izvorul Muntelui |
 | bistrita | present | AJVPS NEAMȚ | anpa_map:bistrita-basin |
 | boros | uncontracted |  |  |
 | borta ursului | uncontracted |  |  |
@@ -6773,7 +6773,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul rupturei | uncontracted |  |  |
 | paraul valea seaca | uncontracted |  |  |
 | paraul verde | uncontracted |  |  |
-| paraul zanoaga | present-bbox | Direcția Silvică Hunedoara |  |
+| paraul zanoaga | present | Direcția Silvică Hunedoara | bbox_fix:lake:Lacul Zănoaga Mare |
 | precista | uncontracted |  |  |
 | rachitis | uncontracted |  |  |
 | raul tazlau | present | AJVPS BACĂU |  |
@@ -7040,7 +7040,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea fagetului | uncontracted |  |  |
 | valea huta | uncontracted |  |  |
 | valea maguricii | uncontracted |  |  |
-| valea negreni | present | ANPA - Ape Necontractate |  |
+| valea negreni | present | ANPA - Ape Necontractate | bbox_fix:lake-unnamed: |
 
 ### Celulă 46.9-47.4N, 23.0-23.5E
 | Râu | Clasă | Asociație | Detalii |
@@ -7106,7 +7106,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bunesti | uncontracted |  |  |
 | canal | uncontracted |  |  |
 | canalul morii | uncontracted |  |  |
-| canciu | present | Direcția Silvică Alba |  |
+| canciu | present | Direcția Silvică Alba | bbox_fix:lake:Canciu |
 | ceaca | uncontracted |  |  |
 | chidea | uncontracted |  |  |
 | ciepega | uncontracted |  |  |
@@ -7186,7 +7186,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bungard | uncontracted |  |  |
 | caciu | uncontracted |  |  |
 | canci | uncontracted |  |  |
-| canciu | present | Direcția Silvică Alba |  |
+| canciu | present | Direcția Silvică Alba | bbox_fix:lake:Canciu |
 | chirales | uncontracted |  |  |
 | cotior | uncontracted |  |  |
 | dipsa | uncontracted |  |  |
@@ -7207,7 +7207,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | magura | uncontracted |  |  |
 | malin | uncontracted |  |  |
 | pintic | uncontracted |  |  |
-| pucioasa | present-bbox | AJVPS DÂMBOVIȚA |  |
+| pucioasa | present | AJVPS DÂMBOVIȚA | bbox_fix:lake:Lacul de acumulare Pucioasa |
 | puini | uncontracted |  |  |
 | raul fizes | present | AJPS Cluj |  |
 | rebra | present | Direcția Silvică Bistrița-Năsăud | romsilva_map:exact |
@@ -7423,7 +7423,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul mesterhazul | uncontracted |  |  |
 | paraul neagra calin | uncontracted |  |  |
 | paraul neamtului | uncontracted |  |  |
-| paraul paltinu | present | A.PENEȘ CURCANUL |  |
+| paraul paltinu | present | A.PENEȘ CURCANUL | bbox_fix:lake:Lacul Paltinu |
 | paraul pescoasa mare | uncontracted |  |  |
 | paraul pestelui | uncontracted |  |  |
 | paraul popii | uncontracted |  |  |
@@ -7461,7 +7461,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | saracinul mare | uncontracted |  |  |
 | sarmas | uncontracted |  |  |
 | scurtu | uncontracted |  |  |
-| secu | present-bbox | AP BANATUL |  |
+| secu | present | AP BANATUL | bbox_fix:lake:Lacul Secu |
 | secul | uncontracted |  |  |
 | sihla | uncontracted |  |  |
 | silhoasa | uncontracted |  |  |
@@ -7674,7 +7674,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bahna | present | AJVPS BOTOȘANI |  |
 | balmes | uncontracted |  |  |
 | barbunti | uncontracted |  |  |
-| bicaz | present | AJVPS NEAMȚ |  |
+| bicaz | present | AJVPS NEAMȚ | bbox_fix:lake:Lacul Izvorul Muntelui |
 | bistrita | present | AJVPS NEAMȚ | anpa_map:bistrita-basin |
 | blaga | uncontracted |  |  |
 | bolatau | uncontracted |  |  |
@@ -8290,7 +8290,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | cosau | present | AJVPS MARAMUREȘ |  |
 | criva | uncontracted |  |  |
 | darasca | uncontracted |  |  |
-| firiza | present | Direcția Silvica Maramureș |  |
+| firiza | present | Direcția Silvica Maramureș | bbox_fix:lake:Baraj Firiza |
 | hopsia | uncontracted |  |  |
 | iza | present | AJVPS MARAMUREȘ | audit_match:exact |
 | izvorul alb | present | AJVPS CARAȘ-SEVERIN |  |
@@ -8342,7 +8342,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea vicleanul mare | uncontracted |  |  |
 | valea vidrisca | uncontracted |  |  |
 | vicleanu mare | uncontracted |  |  |
-| vidra | present-bbox | Direcția Silvică Vâlcea |  |
+| vidra | present | Direcția Silvică Vâlcea | bbox_fix:lake:Lacul Vidra |
 | vlasinescu | uncontracted |  |  |
 | zavoaie | uncontracted |  |  |
 
@@ -8375,7 +8375,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | leurda | uncontracted |  |  |
 | lunca | uncontracted |  |  |
 | marza | uncontracted |  |  |
-| mesteacan | present | ANPA - Ape Necontractate |  |
+| mesteacan | present | ANPA - Ape Necontractate | bbox_fix:lake:Mesteacănul |
 | miclusa | uncontracted |  |  |
 | misica | uncontracted |  |  |
 | paraul repede | uncontracted |  |  |

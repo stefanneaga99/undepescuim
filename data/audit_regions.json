@@ -14653,7 +14653,7 @@
      "river": "paraul cilieni",
      "class": "present",
      "association": "AJVPS DOLJ",
-     "detail": "",
+     "detail": "bbox_fix:lake:Bălăsan",
      "geometry": true,
      "slug": "aersxf9e",
      "county": "Dolj",
@@ -25626,7 +25626,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "Argeș",
      "bbox": [
       24.4490496,
       44.8641636,
@@ -27117,7 +27117,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Ilfov",
+     "county": "Prahova",
      "bbox": [
       25.9223293,
       44.8876389,
@@ -27469,7 +27469,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Ilfov",
+     "county": "Prahova",
      "bbox": [
       26.0215014,
       44.7619866,
@@ -27484,7 +27484,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Ilfov",
+     "county": "Prahova",
      "bbox": [
       26.0215014,
       44.7619866,
@@ -27574,7 +27574,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Ilfov",
+     "county": "Prahova",
      "bbox": [
       26.1140145,
       44.6441868,
@@ -30129,10 +30129,10 @@
     },
     {
      "river": "taria mare",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Caraș-Severin",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Taria Mare",
+     "geometry": true,
      "slug": "7o5ejg1w",
      "county": "Caraș-Severin",
      "bbox": [
@@ -30573,7 +30573,7 @@
      "river": "gozna",
      "class": "present",
      "association": "Direcția Silvică Caraș-Severin",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Gozna",
      "geometry": true,
      "slug": "0li3pzev",
      "county": "Caraș-Severin",
@@ -31006,10 +31006,10 @@
     },
     {
      "river": "taria mare",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Caraș-Severin",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Taria Mare",
+     "geometry": true,
      "slug": "7o5ejg1w",
      "county": "Caraș-Severin",
      "bbox": [
@@ -31570,7 +31570,7 @@
      "river": "jiul de vest",
      "class": "present",
      "association": "Pro Pescar",
-     "detail": "",
+     "detail": "bbox_fix:prefix",
      "geometry": true,
      "slug": "6vsle29k",
      "county": "Hunedoara",
@@ -32108,10 +32108,10 @@
     },
     {
      "river": "peleaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Peleaga",
+     "geometry": true,
      "slug": "6shjqjol",
      "county": "Hunedoara",
      "bbox": [
@@ -32273,10 +32273,10 @@
     },
     {
      "river": "raul tismana",
-     "class": "present-bbox",
+     "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul De Acumulare Tismana",
+     "geometry": true,
      "slug": "n4unwsj0",
      "county": "Gorj",
      "bbox": [
@@ -32438,10 +32438,10 @@
     },
     {
      "river": "stevia",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Ștevia",
+     "geometry": true,
      "slug": "9i5v04zt",
      "county": "Hunedoara",
      "bbox": [
@@ -32693,10 +32693,10 @@
     },
     {
      "river": "zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -32957,7 +32957,7 @@
      "river": "jiul de vest",
      "class": "present",
      "association": "Pro Pescar",
-     "detail": "",
+     "detail": "bbox_fix:prefix",
      "geometry": true,
      "slug": "6vsle29k",
      "county": "Hunedoara",
@@ -33150,10 +33150,10 @@
     },
     {
      "river": "raul tismana",
-     "class": "present-bbox",
+     "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul De Acumulare Tismana",
+     "geometry": true,
      "slug": "n4unwsj0",
      "county": "Gorj",
      "bbox": [
@@ -33744,7 +33744,7 @@
      "river": "malaia",
      "class": "present",
      "association": "AJVPS VÂLCEA",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Mălaia",
      "geometry": true,
      "slug": "1v83tpdy",
      "county": "Vâlcea",
@@ -33817,10 +33817,10 @@
     },
     {
      "river": "mija mica",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Mija",
+     "geometry": true,
      "slug": "b9m0ts0e",
      "county": "Hunedoara",
      "bbox": [
@@ -34057,10 +34057,10 @@
     },
     {
      "river": "petrimanu",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Vâlcea",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Petrimanu",
+     "geometry": true,
      "slug": "sc2dvrmj",
      "county": "Vâlcea",
      "bbox": [
@@ -34462,10 +34462,10 @@
     },
     {
      "river": "zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -35104,7 +35104,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "Argeș",
      "bbox": [
       24.4490496,
       44.8641636,
@@ -35131,7 +35131,7 @@
      "river": "malaia",
      "class": "present",
      "association": "AJVPS VÂLCEA",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Mălaia",
      "geometry": true,
      "slug": "1v83tpdy",
      "county": "Vâlcea",
@@ -37219,7 +37219,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "Argeș",
      "bbox": [
       24.4652311,
       44.9435946,
@@ -38145,7 +38145,7 @@
      "river": "bolboci",
      "class": "present",
      "association": "Direcția Silvică Dâmbovița",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Bolboci",
      "geometry": true,
      "slug": "g7h8e4nw",
      "county": "Dâmbovița",
@@ -38208,7 +38208,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4992415,
       45.3952723,
@@ -38223,7 +38223,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4995742,
       45.3962858,
@@ -38388,7 +38388,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4676942,
       45.3236253,
@@ -38613,7 +38613,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.3287139,
       45.355955,
@@ -38878,10 +38878,10 @@
     },
     {
      "river": "scropoasa",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Dâmbovița",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Scropoasa",
+     "geometry": true,
      "slug": "38dttacd",
      "county": "Dâmbovița",
      "bbox": [
@@ -38928,7 +38928,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4898349,
       45.3872821,
@@ -38943,7 +38943,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4991469,
       45.392957,
@@ -39138,7 +39138,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.2539717,
       45.3879569,
@@ -39153,7 +39153,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.499702,
       45.3550715,
@@ -39168,7 +39168,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4931228,
       45.3681506,
@@ -39378,7 +39378,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Dâmbovița",
      "bbox": [
       25.3654045,
       45.3330063,
@@ -39483,7 +39483,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4941014,
       45.3559157,
@@ -39643,10 +39643,10 @@
     },
     {
      "river": "valea vaja",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvica Gorj",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul de Acumulare Vâja",
+     "geometry": true,
      "slug": "8a8nlp4g",
      "county": "Gorj",
      "bbox": [
@@ -39865,7 +39865,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4992415,
       45.3952723,
@@ -39880,7 +39880,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5015061,
       45.3972742,
@@ -39895,7 +39895,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4995742,
       45.3962858,
@@ -40045,7 +40045,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.500281,
       45.3371351,
@@ -40165,7 +40165,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4676942,
       45.3236253,
@@ -40285,7 +40285,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5709675,
       45.2297138,
@@ -40345,7 +40345,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5547314,
       45.2214841,
@@ -40615,7 +40615,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4898349,
       45.3872821,
@@ -40630,7 +40630,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4991469,
       45.392957,
@@ -40645,7 +40645,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5599724,
       45.2776794,
@@ -40690,7 +40690,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.502248,
       45.3816129,
@@ -40720,7 +40720,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5647876,
       45.2692985,
@@ -40735,7 +40735,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5568335,
       45.2680701,
@@ -40780,7 +40780,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5374953,
       45.3535754,
@@ -40825,7 +40825,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.499702,
       45.3550715,
@@ -40840,7 +40840,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4931228,
       45.3681506,
@@ -40855,7 +40855,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.575974,
       45.2802801,
@@ -40870,7 +40870,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5672722,
       45.2834907,
@@ -40930,7 +40930,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5305021,
       45.3236253,
@@ -40945,7 +40945,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5564032,
       45.3001309,
@@ -40975,7 +40975,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5862308,
       45.2798857,
@@ -41065,7 +41065,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.4941014,
       45.3559157,
@@ -41080,7 +41080,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5012805,
       45.3620677,
@@ -41140,7 +41140,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5030217,
       45.3989432,
@@ -41155,7 +41155,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.541471,
       45.3107504,
@@ -41185,7 +41185,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.5128148,
       45.3550857,
@@ -41270,10 +41270,10 @@
     },
     {
      "river": "valea zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -41290,7 +41290,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Dâmbovița",
      "bbox": [
       25.520976,
       45.3336213,
@@ -41672,7 +41672,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.3886724,
       45.0347251,
@@ -41867,7 +41867,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.1810668,
       45.3121671,
@@ -41912,7 +41912,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.3891748,
       45.0047208,
@@ -45159,7 +45159,7 @@
      "river": "surduc",
      "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Surduc",
      "geometry": true,
      "slug": "h6qpjeu1",
      "county": "Timiș",
@@ -45981,10 +45981,10 @@
     },
     {
      "river": "soimu",
-     "class": "present-bbox",
+     "class": "present",
      "association": "D.S. Cluj",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Șoimu",
+     "geometry": true,
      "slug": "s6g9wjca",
      "county": "Cluj",
      "bbox": [
@@ -46013,7 +46013,7 @@
      "river": "surduc",
      "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Surduc",
      "geometry": true,
      "slug": "h6qpjeu1",
      "county": "Timiș",
@@ -46335,7 +46335,7 @@
      "river": "breazova",
      "class": "present",
      "association": "Direcția Silvică Caraș-Severin",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Breazova (Văliug)",
      "geometry": true,
      "slug": "io48tj8z",
      "county": "Caraș-Severin",
@@ -46768,10 +46768,10 @@
     },
     {
      "river": "stevia",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Ștevia",
+     "geometry": true,
      "slug": "9i5v04zt",
      "county": "Hunedoara",
      "bbox": [
@@ -48404,7 +48404,7 @@
      "river": "iezerul mare",
      "class": "present",
      "association": "FLY FISHING CLUB SIBIU",
-     "detail": "",
+     "detail": "bbox_fix:lake:Iezerul Mare",
      "geometry": true,
      "slug": "m2771k04",
      "county": "Sibiu",
@@ -48567,10 +48567,10 @@
     },
     {
      "river": "mija mica",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Mija",
+     "geometry": true,
      "slug": "b9m0ts0e",
      "county": "Hunedoara",
      "bbox": [
@@ -48867,10 +48867,10 @@
     },
     {
      "river": "paraul valea",
-     "class": "present-bbox",
+     "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Valea Mare",
+     "geometry": true,
      "slug": "mgu3ahbo",
      "county": "Gorj",
      "bbox": [
@@ -48897,10 +48897,10 @@
     },
     {
      "river": "paraul valea mare",
-     "class": "present-bbox",
+     "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Valea Mare",
+     "geometry": true,
      "slug": "mgu3ahbo",
      "county": "Gorj",
      "bbox": [
@@ -49292,7 +49292,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Alba",
+     "county": "Vâlcea",
      "bbox": [
       23.823555,
       45.726317,
@@ -52306,7 +52306,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       24.8264998,
       45.6204873,
@@ -52456,7 +52456,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.6226358,
       45.5113544,
@@ -52618,7 +52618,7 @@
      "river": "iezerul mare",
      "class": "present",
      "association": "FLY FISHING CLUB SIBIU",
-     "detail": "",
+     "detail": "bbox_fix:lake:Iezerul Mare",
      "geometry": true,
      "slug": "m2771k04",
      "county": "Sibiu",
@@ -52711,7 +52711,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7113311,
       45.5844348,
@@ -52948,7 +52948,7 @@
      "river": "paltinu",
      "class": "present",
      "association": "A.PENEȘ CURCANUL",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Paltinu",
      "geometry": true,
      "slug": "lzjrvci3",
      "county": "Prahova",
@@ -52996,7 +52996,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7803341,
       45.6272574,
@@ -53026,7 +53026,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7756827,
       45.6160899,
@@ -53056,7 +53056,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7777748,
       45.6339438,
@@ -53071,7 +53071,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7778443,
       45.6229599,
@@ -53146,7 +53146,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7934092,
       45.6279048,
@@ -53161,7 +53161,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7816151,
       45.6203743,
@@ -53206,7 +53206,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7932869,
       45.6350425,
@@ -53221,7 +53221,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.6845198,
       45.5482803,
@@ -53266,7 +53266,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.793765,
       45.6287373,
@@ -53276,10 +53276,10 @@
     },
     {
      "river": "podragu",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Sibiu",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Podragu",
+     "geometry": true,
      "slug": "acfnf1vr",
      "county": "Sibiu",
      "bbox": [
@@ -53561,10 +53561,10 @@
     },
     {
      "river": "urlea",
-     "class": "present-bbox",
+     "class": "present",
      "association": "APS AQUA CRISIUS",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Urlea",
+     "geometry": true,
      "slug": "4s86ejf1",
      "county": "Brașov",
      "bbox": [
@@ -54248,7 +54248,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.0164601,
       45.5191666,
@@ -56003,7 +56003,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.2033157,
       45.4291312,
@@ -56288,7 +56288,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.2539717,
       45.3879569,
@@ -56588,7 +56588,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4733941,
       45.4052371,
@@ -57900,7 +57900,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5708517,
       45.4476178,
@@ -58635,7 +58635,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5979308,
       45.4758619,
@@ -59190,7 +59190,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Covasna",
      "bbox": [
       25.7429763,
       45.4488349,
@@ -59430,7 +59430,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Covasna",
      "bbox": [
       25.7429763,
       45.4488349,
@@ -59580,7 +59580,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.998382,
       45.5420524,
@@ -59655,7 +59655,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5631044,
       45.4694172,
@@ -59670,7 +59670,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5633138,
       45.4623468,
@@ -60060,7 +60060,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5395001,
       45.444288,
@@ -60225,7 +60225,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.4733941,
       45.4052371,
@@ -60720,7 +60720,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Brașov",
      "bbox": [
       25.5030217,
       45.3989432,
@@ -61135,10 +61135,10 @@
     },
     {
      "river": "zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -61882,7 +61882,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.998382,
       45.5420524,
@@ -69846,7 +69846,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "Brașov",
      "bbox": [
       24.7945573,
       46.1136253,
@@ -75076,7 +75076,7 @@
      "river": "racaciuni",
      "class": "present",
      "association": "AJVPS BACĂU",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Răcăciuni",
      "geometry": true,
      "slug": "ltggtdmp",
      "county": "Bacău",
@@ -75269,10 +75269,10 @@
     },
     {
      "river": "vidra",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Vâlcea",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Vidra",
+     "geometry": true,
      "slug": "7z7cq445",
      "county": "Vâlcea",
      "bbox": [
@@ -75458,7 +75458,7 @@
      "river": "racaciuni",
      "class": "present",
      "association": "AJVPS BACĂU",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Răcăciuni",
      "geometry": true,
      "slug": "ltggtdmp",
      "county": "Bacău",
@@ -79570,7 +79570,7 @@
      "river": "somesul cald",
      "class": "present",
      "association": "D.S. Cluj",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul de acumulare Someșul Cald",
      "geometry": true,
      "slug": "0yftnvx2",
      "county": "Cluj",
@@ -79993,7 +79993,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "Bihor",
      "bbox": [
       22.5990735,
       46.5436848,
@@ -80338,7 +80338,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "Bihor",
      "bbox": [
       22.5990735,
       46.5407526,
@@ -80678,10 +80678,10 @@
     },
     {
      "river": "zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -81555,10 +81555,10 @@
     },
     {
      "river": "soimu",
-     "class": "present-bbox",
+     "class": "present",
      "association": "D.S. Cluj",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Șoimu",
+     "geometry": true,
      "slug": "s6g9wjca",
      "county": "Cluj",
      "bbox": [
@@ -81587,7 +81587,7 @@
      "river": "somesul cald",
      "class": "present",
      "association": "D.S. Cluj",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul de acumulare Someșul Cald",
      "geometry": true,
      "slug": "0yftnvx2",
      "county": "Cluj",
@@ -83547,7 +83547,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Alba",
+     "county": "Cluj",
      "bbox": [
       23.5788988,
       46.4690198,
@@ -87112,7 +87112,7 @@
      "river": "bicaz",
      "class": "present",
      "association": "AJVPS NEAMȚ",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Izvorul Muntelui",
      "geometry": true,
      "slug": "dvuloxj7",
      "county": "Neamț",
@@ -87370,7 +87370,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "Harghita",
      "bbox": [
       25.7309058,
       46.8050611,
@@ -91289,7 +91289,7 @@
      "river": "bicaz",
      "class": "present",
      "association": "AJVPS NEAMȚ",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Izvorul Muntelui",
      "geometry": true,
      "slug": "dvuloxj7",
      "county": "Neamț",
@@ -92192,7 +92192,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "Covasna",
      "bbox": [
       26.0415883,
       46.4951946,
@@ -93934,10 +93934,10 @@
     },
     {
      "river": "paraul zanoaga",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Hunedoara",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Zănoaga Mare",
+     "geometry": true,
      "slug": "61eil5a7",
      "county": "Hunedoara",
      "bbox": [
@@ -97305,7 +97305,7 @@
      "river": "valea negreni",
      "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
+     "detail": "bbox_fix:lake-unnamed:",
      "geometry": true,
      "slug": "mkp5r52j",
      "county": "Botoșani",
@@ -98189,7 +98189,7 @@
      "river": "canciu",
      "class": "present",
      "association": "Direcția Silvică Alba",
-     "detail": "",
+     "detail": "bbox_fix:lake:Canciu",
      "geometry": true,
      "slug": "hdqe290r",
      "county": "Alba",
@@ -99336,7 +99336,7 @@
      "river": "canciu",
      "class": "present",
      "association": "Direcția Silvică Alba",
-     "detail": "",
+     "detail": "bbox_fix:lake:Canciu",
      "geometry": true,
      "slug": "hdqe290r",
      "county": "Alba",
@@ -99649,10 +99649,10 @@
     },
     {
      "river": "pucioasa",
-     "class": "present-bbox",
+     "class": "present",
      "association": "AJVPS DÂMBOVIȚA",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul de acumulare Pucioasa",
+     "geometry": true,
      "slug": "arrd8tai",
      "county": "Dâmbovița",
      "bbox": [
@@ -100351,7 +100351,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Satu Mare",
+     "county": "Bistrița-Năsăud",
      "bbox": [
       24.5280955,
       47.0413088,
@@ -102785,7 +102785,7 @@
      "river": "paraul paltinu",
      "class": "present",
      "association": "A.PENEȘ CURCANUL",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Paltinu",
      "geometry": true,
      "slug": "lzjrvci3",
      "county": "Prahova",
@@ -103353,10 +103353,10 @@
     },
     {
      "river": "secu",
-     "class": "present-bbox",
+     "class": "present",
      "association": "AP BANATUL",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Secu",
+     "geometry": true,
      "slug": "468bn6nc",
      "county": "Caraș-Severin",
      "bbox": [
@@ -106444,7 +106444,7 @@
      "river": "bicaz",
      "class": "present",
      "association": "AJVPS NEAMȚ",
-     "detail": "",
+     "detail": "bbox_fix:lake:Lacul Izvorul Muntelui",
      "geometry": true,
      "slug": "dvuloxj7",
      "county": "Neamț",
@@ -114286,7 +114286,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bihor",
+     "county": "Sălaj",
      "bbox": [
       22.176977,
       47.8172677,
@@ -114889,7 +114889,7 @@
      "river": "firiza",
      "class": "present",
      "association": "Direcția Silvica Maramureș",
-     "detail": "",
+     "detail": "bbox_fix:lake:Baraj Firiza",
      "geometry": true,
      "slug": "4qty5vzq",
      "county": "Maramureș",
@@ -115667,10 +115667,10 @@
     },
     {
      "river": "vidra",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Direcția Silvică Vâlcea",
-     "detail": "",
-     "geometry": false,
+     "detail": "bbox_fix:lake:Lacul Vidra",
+     "geometry": true,
      "slug": "7z7cq445",
      "county": "Vâlcea",
      "bbox": [
@@ -116111,7 +116111,7 @@
      "river": "mesteacan",
      "class": "present",
      "association": "ANPA - Ape Necontractate",
-     "detail": "",
+     "detail": "bbox_fix:lake:Mesteacănul",
      "geometry": true,
      "slug": "0a5yq94z",
      "county": "Harghita",
@@ -117021,7 +117021,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.7637594,
       47.6246147,
@@ -117231,7 +117231,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.7345825,
       47.5447568,
@@ -117456,7 +117456,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.7615909,
       47.5969682,
@@ -118071,7 +118071,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.82295,
       47.8321983,
@@ -118131,7 +118131,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.8409965,
       47.8803557,
@@ -118416,7 +118416,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.8447311,
       47.8049113,
@@ -127415,7 +127415,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Sălaj",
+     "county": "Maramureș",
      "bbox": [
       23.2629461,
       48.2858507,
@@ -129656,7 +129656,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Maramureș",
      "bbox": [
       24.7186354,
       48.08224,
@@ -129776,7 +129776,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.8409965,
       47.8803557,
@@ -129791,7 +129791,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.8322478,
       47.9018683,
@@ -135125,45 +135125,45 @@
   "total_clusters": 7699,
   "class_counts": {
    "uncontracted": 6755,
-   "present": 911,
+   "present": 936,
    "present-hidden": 6,
-   "present-bbox": 26,
+   "present-bbox": 1,
    "anpa-missing": 1
   },
   "county_counts": {
-   "Alba": 209,
-   "Arad": 244,
-   "Argeș": 175,
+   "Alba": 207,
+   "Arad": 245,
+   "Argeș": 160,
    "Bacău": 83,
    "Bihor": 282,
    "Bistrița - Năsăud": 55,
-   "Bistrița-Năsăud": 127,
+   "Bistrița-Năsăud": 119,
    "Botoșani": 89,
-   "Brașov": 366,
+   "Brașov": 384,
    "Brăila": 60,
    "Buzău": 84,
    "Caraș-Severin": 724,
-   "Cluj": 163,
-   "Constanța": 145,
-   "Covasna": 257,
+   "Cluj": 164,
+   "Constanța": 143,
+   "Covasna": 260,
    "Călărași": 75,
    "Dolj": 192,
-   "Dâmbovița": 68,
+   "Dâmbovița": 90,
    "Giurgiu": 63,
    "Gorj": 85,
-   "Harghita": 363,
+   "Harghita": 364,
    "Hunedoara": 133,
    "Ialomița": 214,
    "Iași": 81,
-   "Ilfov": 16,
-   "Maramureș": 295,
+   "Ilfov": 12,
+   "Maramureș": 297,
    "Mehedinți": 374,
    "Mureș": 175,
-   "Neamț": 445,
+   "Neamț": 443,
    "Olt": 95,
-   "Prahova": 213,
-   "Satu Mare": 78,
-   "Sibiu": 145,
+   "Prahova": 182,
+   "Satu Mare": 85,
+   "Sibiu": 155,
    "Suceava": 236,
    "Sălaj": 133,
    "TIMIȘ": 1,
@@ -135171,19 +135171,19 @@
    "Timiș": 281,
    "Vaslui": 441,
    "Vrancea": 36,
-   "Vâlcea": 349
+   "Vâlcea": 348
   },
   "class_by_county": {
    "Alba": {
-    "uncontracted": 152,
+    "uncontracted": 150,
     "present": 57
    },
    "Arad": {
-    "uncontracted": 237,
+    "uncontracted": 238,
     "present": 7
    },
    "Argeș": {
-    "uncontracted": 139,
+    "uncontracted": 124,
     "present": 36
    },
    "Bacău": {
@@ -135202,16 +135202,15 @@
    },
    "Bistrița-Năsăud": {
     "present": 18,
-    "uncontracted": 109
+    "uncontracted": 101
    },
    "Botoșani": {
     "uncontracted": 52,
     "present": 37
    },
    "Brașov": {
-    "uncontracted": 335,
-    "present": 30,
-    "present-bbox": 1
+    "uncontracted": 353,
+    "present": 31
    },
    "Brăila": {
     "uncontracted": 51,
@@ -135223,21 +135222,19 @@
    },
    "Caraș-Severin": {
     "uncontracted": 683,
-    "present": 38,
-    "present-bbox": 3
+    "present": 41
    },
    "Cluj": {
-    "uncontracted": 129,
-    "present": 32,
-    "present-bbox": 2
+    "uncontracted": 130,
+    "present": 34
    },
    "Constanța": {
-    "uncontracted": 144,
+    "uncontracted": 142,
     "present": 1
    },
    "Covasna": {
     "present": 37,
-    "uncontracted": 220
+    "uncontracted": 223
    },
    "Călărași": {
     "uncontracted": 75
@@ -135247,9 +135244,8 @@
     "present": 19
    },
    "Dâmbovița": {
-    "present": 32,
-    "uncontracted": 34,
-    "present-bbox": 2
+    "present": 34,
+    "uncontracted": 56
    },
    "Giurgiu": {
     "present": 7,
@@ -135257,17 +135253,15 @@
    },
    "Gorj": {
     "uncontracted": 56,
-    "present": 25,
-    "present-bbox": 4
+    "present": 29
    },
    "Harghita": {
-    "uncontracted": 307,
+    "uncontracted": 308,
     "present": 56
    },
    "Hunedoara": {
     "uncontracted": 100,
-    "present": 24,
-    "present-bbox": 9
+    "present": 33
    },
    "Ialomița": {
     "uncontracted": 211,
@@ -135278,11 +135272,11 @@
     "present": 22
    },
    "Ilfov": {
-    "uncontracted": 10,
+    "uncontracted": 6,
     "present": 6
    },
    "Maramureș": {
-    "uncontracted": 256,
+    "uncontracted": 258,
     "present": 38,
     "present-hidden": 1
    },
@@ -135295,7 +135289,7 @@
     "present": 41
    },
    "Neamț": {
-    "uncontracted": 435,
+    "uncontracted": 433,
     "present": 10
    },
    "Olt": {
@@ -135303,17 +135297,16 @@
     "present": 8
    },
    "Prahova": {
-    "uncontracted": 190,
+    "uncontracted": 159,
     "present": 23
    },
    "Satu Mare": {
-    "uncontracted": 74,
+    "uncontracted": 81,
     "present": 4
    },
    "Sibiu": {
-    "uncontracted": 109,
-    "present": 35,
-    "present-bbox": 1
+    "uncontracted": 119,
+    "present": 36
    },
    "Suceava": {
     "uncontracted": 210,
@@ -135345,9 +135338,8 @@
     "present": 15
    },
    "Vâlcea": {
-    "uncontracted": 292,
-    "present": 54,
-    "present-bbox": 3
+    "uncontracted": 291,
+    "present": 57
    }
   }
  }
