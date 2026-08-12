@@ -71,7 +71,30 @@ ROMSILVA_ROW_RE = re.compile(
 
 
 def parse_romsilva(path: Path) -> list[dict]:
-    """Parse the Romsilva txt into rows {county, name, km, manager}."""
+    """Load Romsilva-administered mountain waters.
+
+    Prefers the cleanly-parsed processed JSONL (scripts/parse_anpa_romsilva.py,
+    289 rows, water_name WITHOUT the limits text). Falls back to the raw txt
+    regex only when the processed file is missing (kept for reference; the
+    regex form wrongly captured the limits text into the name, which broke
+    name-matching — e.g. 'Dofteana de la izvoare - la confl. cu raul Trotuș').
+    """
+    processed = ROOT / "data" / "processed" / "anpa_romsilva_waters.jsonl"
+    if processed.exists():
+        out = []
+        for line in processed.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            out.append({
+                "county": r.get("county", ""),
+                "name": r.get("water_name", ""),
+                "km": r.get("sector_km"),
+                "manager": r.get("gestionar_ocol") or r.get("gestionar_ds") or "",
+                "kind": "rau" if r.get("water_type") == "rau" else "lac",
+            })
+        return out
+
     rows = []
     county = None
     section = None
@@ -257,7 +280,15 @@ def match_waters(clusters, waters, county_centroids) -> dict[int, dict]:
 # --------------------------------------------------------------------------
 def _county_dist(row_county: str, cluster: dict, county_centroids: dict) -> float:
     """Distance in degrees from cluster centroid to a county centroid (1e9 if unknown)."""
-    cc = county_centroids.get(row_county)
+    # Sources spell counties 'BACĂU' / 'Bistrița - Năsăud' / 'Bistrița-Năsăud'
+    # while waters.json uses title case 'Bacău' — match case-insensitively and
+    # ignore separator differences so the county proximity bonus actually works.
+    key = norm(row_county).replace(" - ", " ").replace("-", " ")
+    cc = None
+    for k, v in county_centroids.items():
+        if norm(k).replace(" - ", " ").replace("-", " ") == key:
+            cc = v
+            break
     if not cc:
         return 1e9
     bbox = cluster["bbox"]

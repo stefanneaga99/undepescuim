@@ -1,74 +1,115 @@
 {
   "total_clusters": 7699,
   "class_counts": {
-    "uncontracted": 6860,
-    "present": 806,
+    "uncontracted": 6764,
+    "present": 808,
+    "romsilva": 95,
     "present-hidden": 5,
-    "present-bbox": 28
+    "present-bbox": 26,
+    "anpa-missing": 1
   },
   "county_counts": {
-    "Alba": 185,
-    "Arad": 271,
-    "Argeș": 168,
-    "Bacău": 70,
-    "Bihor": 253,
+    "ALBA": 6,
+    "ARAD": 4,
+    "ARGEȘ": 17,
+    "Alba": 183,
+    "Arad": 268,
+    "Argeș": 160,
+    "BACĂU": 3,
+    "BIHOR": 4,
+    "BISTRIȚA-NĂSĂUD": 2,
+    "BRAȘOV": 3,
+    "Bacău": 69,
+    "Bihor": 251,
     "Bistrița - Năsăud": 50,
-    "Bistrița-Năsăud": 178,
-    "Botoșani": 141,
-    "Brașov": 237,
-    "Brăila": 282,
+    "Bistrița-Năsăud": 174,
+    "Botoșani": 140,
+    "Brașov": 238,
+    "Brăila": 277,
     "Buzău": 82,
-    "Caraș-Severin": 892,
-    "Cluj": 161,
-    "Constanța": 158,
-    "Covasna": 224,
-    "Călărași": 62,
+    "CARAȘ-SEVERIN": 4,
+    "COVASNA": 4,
+    "Caraș-Severin": 890,
+    "Cluj": 159,
+    "Constanța": 153,
+    "Covasna": 218,
+    "Călărași": 61,
     "Dolj": 222,
     "Dâmbovița": 63,
-    "Giurgiu": 57,
-    "Gorj": 88,
-    "Harghita": 415,
-    "Hunedoara": 122,
+    "Giurgiu": 56,
+    "Gorj": 87,
+    "HUNEDOARA": 7,
+    "Harghita": 411,
+    "Hunedoara": 118,
     "Ialomița": 247,
-    "Iași": 158,
+    "Iași": 151,
     "Ilfov": 16,
-    "Maramureș": 228,
-    "Mehedinți": 207,
-    "Mureș": 104,
-    "Neamț": 414,
+    "MARAMUREȘ": 8,
+    "MUREȘ": 6,
+    "Maramureș": 222,
+    "Mehedinți": 201,
+    "Mureș": 103,
+    "NEAMȚ": 4,
+    "Neamț": 411,
     "Olt": 95,
+    "PRAHOVA": 1,
     "Prahova": 109,
-    "Satu Mare": 87,
-    "Sibiu": 144,
-    "Suceava": 221,
+    "SIBIU": 2,
+    "SUCEAVA": 11,
+    "Satu Mare": 84,
+    "Sibiu": 140,
+    "Suceava": 218,
     "Sălaj": 125,
+    "TIMIȘ": 3,
     "Teleorman": 45,
     "Timiș": 268,
-    "Vaslui": 443,
-    "Vrancea": 50,
-    "Vâlcea": 357
+    "VRANCEA": 4,
+    "Vaslui": 442,
+    "Vrancea": 47,
+    "VÂLCEA": 3,
+    "Vâlcea": 349
   },
   "class_by_county": {
+    "ALBA": {
+      "romsilva": 6
+    },
+    "ARAD": {
+      "romsilva": 4
+    },
+    "ARGEȘ": {
+      "romsilva": 17
+    },
     "Alba": {
-      "uncontracted": 150,
+      "uncontracted": 148,
       "present": 35
     },
     "Arad": {
-      "uncontracted": 268,
+      "uncontracted": 265,
       "present": 3
     },
     "Argeș": {
-      "uncontracted": 149,
+      "uncontracted": 141,
       "present": 19
     },
+    "BACĂU": {
+      "romsilva": 3
+    },
+    "BIHOR": {
+      "romsilva": 4
+    },
+    "BISTRIȚA-NĂSĂUD": {
+      "romsilva": 2
+    },
+    "BRAȘOV": {
+      "romsilva": 3
+    },
     "Bacău": {
-      "present": 19,
+      "present": 18,
       "uncontracted": 51
     },
     "Bihor": {
-      "uncontracted": 223,
-      "present": 29,
-      "present-bbox": 1
+      "uncontracted": 221,
+      "present": 30
     },
     "Bistrița - Năsăud": {
       "uncontracted": 42,
@@ -77,19 +118,19 @@
     },
     "Bistrița-Năsăud": {
       "present": 19,
-      "uncontracted": 159
+      "uncontracted": 155
     },
     "Botoșani": {
-      "uncontracted": 103,
+      "uncontracted": 102,
       "present": 38
     },
     "Brașov": {
-      "uncontracted": 209,
+      "uncontracted": 210,
       "present": 27,
       "present-bbox": 1
     },
     "Brăila": {
-      "uncontracted": 273,
+      "uncontracted": 268,
       "present": 7,
       "present-hidden": 2
     },
@@ -97,26 +138,32 @@
       "uncontracted": 78,
       "present": 4
     },
+    "CARAȘ-SEVERIN": {
+      "romsilva": 4
+    },
+    "COVASNA": {
+      "romsilva": 4
+    },
     "Caraș-Severin": {
-      "uncontracted": 845,
+      "uncontracted": 843,
       "present": 44,
       "present-bbox": 3
     },
     "Cluj": {
-      "uncontracted": 126,
+      "uncontracted": 124,
       "present": 33,
       "present-bbox": 2
     },
     "Constanța": {
-      "uncontracted": 157,
+      "uncontracted": 152,
       "present": 1
     },
     "Covasna": {
-      "uncontracted": 192,
+      "uncontracted": 186,
       "present": 32
     },
     "Călărași": {
-      "uncontracted": 62
+      "uncontracted": 61
     },
     "Dolj": {
       "uncontracted": 202,
@@ -129,68 +176,89 @@
     },
     "Giurgiu": {
       "present": 4,
-      "uncontracted": 53
+      "uncontracted": 52
     },
     "Gorj": {
-      "uncontracted": 58,
+      "uncontracted": 57,
       "present": 26,
       "present-bbox": 4
     },
+    "HUNEDOARA": {
+      "romsilva": 7
+    },
     "Harghita": {
-      "uncontracted": 351,
+      "uncontracted": 347,
       "present": 64
     },
     "Hunedoara": {
-      "uncontracted": 101,
-      "present": 11,
-      "present-bbox": 10
+      "uncontracted": 97,
+      "present": 12,
+      "present-bbox": 9
     },
     "Ialomița": {
       "uncontracted": 244,
       "present": 3
     },
     "Iași": {
-      "uncontracted": 133,
+      "uncontracted": 126,
       "present": 25
     },
     "Ilfov": {
       "uncontracted": 10,
       "present": 6
     },
+    "MARAMUREȘ": {
+      "romsilva": 8
+    },
+    "MUREȘ": {
+      "romsilva": 6
+    },
     "Maramureș": {
-      "uncontracted": 199,
+      "uncontracted": 193,
       "present": 29
     },
     "Mehedinți": {
-      "uncontracted": 207
+      "uncontracted": 201
     },
     "Mureș": {
-      "uncontracted": 72,
+      "uncontracted": 71,
       "present": 32
     },
+    "NEAMȚ": {
+      "romsilva": 4
+    },
     "Neamț": {
-      "uncontracted": 411,
+      "uncontracted": 408,
       "present": 3
     },
     "Olt": {
       "uncontracted": 87,
       "present": 8
     },
+    "PRAHOVA": {
+      "romsilva": 1
+    },
     "Prahova": {
       "uncontracted": 87,
       "present": 22
     },
+    "SIBIU": {
+      "romsilva": 2
+    },
+    "SUCEAVA": {
+      "romsilva": 11
+    },
     "Satu Mare": {
-      "uncontracted": 77,
+      "uncontracted": 74,
       "present": 10
     },
     "Sibiu": {
-      "uncontracted": 111,
+      "uncontracted": 107,
       "present": 32,
       "present-bbox": 1
     },
     "Suceava": {
-      "uncontracted": 212,
+      "uncontracted": 209,
       "present": 7,
       "present-hidden": 1,
       "present-bbox": 1
@@ -198,6 +266,10 @@
     "Sălaj": {
       "present": 7,
       "uncontracted": 118
+    },
+    "TIMIȘ": {
+      "romsilva": 2,
+      "anpa-missing": 1
     },
     "Teleorman": {
       "uncontracted": 31,
@@ -207,16 +279,22 @@
       "present": 52,
       "uncontracted": 216
     },
+    "VRANCEA": {
+      "romsilva": 4
+    },
     "Vaslui": {
-      "uncontracted": 432,
+      "uncontracted": 431,
       "present": 11
     },
     "Vrancea": {
-      "uncontracted": 37,
-      "present": 13
+      "uncontracted": 33,
+      "present": 14
+    },
+    "VÂLCEA": {
+      "romsilva": 3
     },
     "Vâlcea": {
-      "uncontracted": 296,
+      "uncontracted": 288,
       "present": 58,
       "present-bbox": 3
     }

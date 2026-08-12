@@ -2,10 +2,12 @@
 
 Total grupuri de râuri OSM cu nume: **7699**  
 Clasificare globală:
-- **uncontracted**: 6860
-- **present**: 806
-- **present-bbox**: 28
+- **uncontracted**: 6764
+- **present**: 808
+- **romsilva**: 95
+- **present-bbox**: 26
 - **present-hidden**: 5
+- **anpa-missing**: 1
 
 ## Zona raportată: Covasna / Târgu Secuiesc (DN11, DN13E)
 
@@ -18,46 +20,65 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 ## Pe județ
 | Județ | total | prezent | anpa-missing | areba-missing | romsilva | uncontracted |
 |---|---|---|---|---|---|---|
-| Alba | 185 | 35 | 0 | 0 | 0 | 150 |
-| Arad | 271 | 3 | 0 | 0 | 0 | 268 |
-| Argeș | 168 | 19 | 0 | 0 | 0 | 149 |
-| Bacău | 70 | 19 | 0 | 0 | 0 | 51 |
-| Bihor | 253 | 29 | 0 | 0 | 0 | 223 |
+| ALBA | 6 | 0 | 0 | 0 | 6 | 0 |
+| ARAD | 4 | 0 | 0 | 0 | 4 | 0 |
+| ARGEȘ | 17 | 0 | 0 | 0 | 17 | 0 |
+| Alba | 183 | 35 | 0 | 0 | 0 | 148 |
+| Arad | 268 | 3 | 0 | 0 | 0 | 265 |
+| Argeș | 160 | 19 | 0 | 0 | 0 | 141 |
+| BACĂU | 3 | 0 | 0 | 0 | 3 | 0 |
+| BIHOR | 4 | 0 | 0 | 0 | 4 | 0 |
+| BISTRIȚA-NĂSĂUD | 2 | 0 | 0 | 0 | 2 | 0 |
+| BRAȘOV | 3 | 0 | 0 | 0 | 3 | 0 |
+| Bacău | 69 | 18 | 0 | 0 | 0 | 51 |
+| Bihor | 251 | 30 | 0 | 0 | 0 | 221 |
 | Bistrița - Năsăud | 50 | 6 | 0 | 0 | 0 | 42 |
-| Bistrița-Năsăud | 178 | 19 | 0 | 0 | 0 | 159 |
-| Botoșani | 141 | 38 | 0 | 0 | 0 | 103 |
-| Brașov | 237 | 27 | 0 | 0 | 0 | 209 |
-| Brăila | 282 | 7 | 0 | 0 | 0 | 273 |
+| Bistrița-Năsăud | 174 | 19 | 0 | 0 | 0 | 155 |
+| Botoșani | 140 | 38 | 0 | 0 | 0 | 102 |
+| Brașov | 238 | 27 | 0 | 0 | 0 | 210 |
+| Brăila | 277 | 7 | 0 | 0 | 0 | 268 |
 | Buzău | 82 | 4 | 0 | 0 | 0 | 78 |
-| Caraș-Severin | 892 | 44 | 0 | 0 | 0 | 845 |
-| Cluj | 161 | 33 | 0 | 0 | 0 | 126 |
-| Constanța | 158 | 1 | 0 | 0 | 0 | 157 |
-| Covasna | 224 | 32 | 0 | 0 | 0 | 192 |
-| Călărași | 62 | 0 | 0 | 0 | 0 | 62 |
+| CARAȘ-SEVERIN | 4 | 0 | 0 | 0 | 4 | 0 |
+| COVASNA | 4 | 0 | 0 | 0 | 4 | 0 |
+| Caraș-Severin | 890 | 44 | 0 | 0 | 0 | 843 |
+| Cluj | 159 | 33 | 0 | 0 | 0 | 124 |
+| Constanța | 153 | 1 | 0 | 0 | 0 | 152 |
+| Covasna | 218 | 32 | 0 | 0 | 0 | 186 |
+| Călărași | 61 | 0 | 0 | 0 | 0 | 61 |
 | Dolj | 222 | 20 | 0 | 0 | 0 | 202 |
 | Dâmbovița | 63 | 33 | 0 | 0 | 0 | 28 |
-| Giurgiu | 57 | 4 | 0 | 0 | 0 | 53 |
-| Gorj | 88 | 26 | 0 | 0 | 0 | 58 |
-| Harghita | 415 | 64 | 0 | 0 | 0 | 351 |
-| Hunedoara | 122 | 11 | 0 | 0 | 0 | 101 |
+| Giurgiu | 56 | 4 | 0 | 0 | 0 | 52 |
+| Gorj | 87 | 26 | 0 | 0 | 0 | 57 |
+| HUNEDOARA | 7 | 0 | 0 | 0 | 7 | 0 |
+| Harghita | 411 | 64 | 0 | 0 | 0 | 347 |
+| Hunedoara | 118 | 12 | 0 | 0 | 0 | 97 |
 | Ialomița | 247 | 3 | 0 | 0 | 0 | 244 |
-| Iași | 158 | 25 | 0 | 0 | 0 | 133 |
+| Iași | 151 | 25 | 0 | 0 | 0 | 126 |
 | Ilfov | 16 | 6 | 0 | 0 | 0 | 10 |
-| Maramureș | 228 | 29 | 0 | 0 | 0 | 199 |
-| Mehedinți | 207 | 0 | 0 | 0 | 0 | 207 |
-| Mureș | 104 | 32 | 0 | 0 | 0 | 72 |
-| Neamț | 414 | 3 | 0 | 0 | 0 | 411 |
+| MARAMUREȘ | 8 | 0 | 0 | 0 | 8 | 0 |
+| MUREȘ | 6 | 0 | 0 | 0 | 6 | 0 |
+| Maramureș | 222 | 29 | 0 | 0 | 0 | 193 |
+| Mehedinți | 201 | 0 | 0 | 0 | 0 | 201 |
+| Mureș | 103 | 32 | 0 | 0 | 0 | 71 |
+| NEAMȚ | 4 | 0 | 0 | 0 | 4 | 0 |
+| Neamț | 411 | 3 | 0 | 0 | 0 | 408 |
 | Olt | 95 | 8 | 0 | 0 | 0 | 87 |
+| PRAHOVA | 1 | 0 | 0 | 0 | 1 | 0 |
 | Prahova | 109 | 22 | 0 | 0 | 0 | 87 |
-| Satu Mare | 87 | 10 | 0 | 0 | 0 | 77 |
-| Sibiu | 144 | 32 | 0 | 0 | 0 | 111 |
-| Suceava | 221 | 7 | 0 | 0 | 0 | 212 |
+| SIBIU | 2 | 0 | 0 | 0 | 2 | 0 |
+| SUCEAVA | 11 | 0 | 0 | 0 | 11 | 0 |
+| Satu Mare | 84 | 10 | 0 | 0 | 0 | 74 |
+| Sibiu | 140 | 32 | 0 | 0 | 0 | 107 |
+| Suceava | 218 | 7 | 0 | 0 | 0 | 209 |
 | Sălaj | 125 | 7 | 0 | 0 | 0 | 118 |
+| TIMIȘ | 3 | 0 | 1 | 0 | 2 | 0 |
 | Teleorman | 45 | 14 | 0 | 0 | 0 | 31 |
 | Timiș | 268 | 52 | 0 | 0 | 0 | 216 |
-| Vaslui | 443 | 11 | 0 | 0 | 0 | 432 |
-| Vrancea | 50 | 13 | 0 | 0 | 0 | 37 |
-| Vâlcea | 357 | 58 | 0 | 0 | 0 | 296 |
+| VRANCEA | 4 | 0 | 0 | 0 | 4 | 0 |
+| Vaslui | 442 | 11 | 0 | 0 | 0 | 431 |
+| Vrancea | 47 | 14 | 0 | 0 | 0 | 33 |
+| VÂLCEA | 3 | 0 | 0 | 0 | 3 | 0 |
+| Vâlcea | 349 | 58 | 0 | 0 | 0 | 288 |
 
 ## Pe celulă (0.5°×0.5°)
 
@@ -1269,7 +1290,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | arges | present | AJVPS DÂMBOVIȚA |  |
-| botiza | uncontracted |  |  |
+| botiza | romsilva | RNP Romsilva — MARAMUREȘ | Botiza |
 | bratul smarda | uncontracted |  |  |
 | calinstea | uncontracted |  |  |
 | calnistea | present | AJVPS GIURGIU |  |
@@ -1913,7 +1934,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 |---|---|---|---|
 | beica | present | AJVPS MUREȘ |  |
 | cerna | present | AJVPS VÂLCEA |  |
-| cernisoara | uncontracted |  |  |
+| cernisoara | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Cernișoara (Iardaștrița) |
 | cungra | uncontracted |  |  |
 | cungrea mica | uncontracted |  |  |
 | dalga | uncontracted |  |  |
@@ -2346,18 +2367,18 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | barbat | uncontracted |  |  |
-| bistra marului | uncontracted |  |  |
+| bistra marului | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Bistra Mărului inferior |
 | bistrita | present | AJVPS GORJ |  |
 | boboroaia mare | uncontracted |  |  |
-| borascu mare | uncontracted |  |  |
-| borascu mic | uncontracted |  |  |
+| borascu mare | romsilva | RNP Romsilva — HUNEDOARA | Borăscu |
+| borascu mic | romsilva | RNP Romsilva — HUNEDOARA | Borăscu |
 | brebina | uncontracted |  |  |
 | bucura | present | Direcția Silvică Hunedoara |  |
 | bucurusul mare | uncontracted |  |  |
 | carbunele | uncontracted |  |  |
 | carligu | uncontracted |  |  |
 | cerna | present | AJVPS VÂLCEA |  |
-| cernisoara | uncontracted |  |  |
+| cernisoara | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Cernișoara (Iardaștrița) |
 | cioaca radesului | uncontracted |  |  |
 | cosustea | uncontracted |  |  |
 | crainici | uncontracted |  |  |
@@ -2377,7 +2398,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | judele | uncontracted |  |  |
 | judele mic | uncontracted |  |  |
 | lapusnicu mic | uncontracted |  |  |
-| lapusnicul mare | uncontracted |  |  |
+| lapusnicul mare | romsilva | RNP Romsilva — HUNEDOARA | Lăpuşnicul Mare |
 | mihocul | uncontracted |  |  |
 | mocirliul | uncontracted |  |  |
 | motru | present | AJVPS GORJ |  |
@@ -2432,7 +2453,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | stana mare | uncontracted |  |  |
 | stanisoara | uncontracted |  |  |
 | stevia | present-bbox | Direcția Silvică Hunedoara |  |
-| sucu | uncontracted |  |  |
+| sucu | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Șucu |
 | suculetu | uncontracted |  |  |
 | tasna | uncontracted |  |  |
 | topolnita | uncontracted |  |  |
@@ -2476,7 +2497,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
 | paraul argelii | uncontracted |  |  |
 | paraul crucii1 | uncontracted |  |  |
-| paraul polatiste | present-bbox | Pro Pescar |  |
+| paraul polatiste | present | Pro Pescar | audit_match:override |
 | paraul prislopului | uncontracted |  |  |
 | paraul salatruc | uncontracted |  |  |
 | paraul scurta | uncontracted |  |  |
@@ -2508,7 +2529,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | carpanoasa | uncontracted |  |  |
 | casaria | uncontracted |  |  |
 | cerna | present | AJVPS VÂLCEA |  |
-| cernisoara | uncontracted |  |  |
+| cernisoara | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Cernișoara (Iardaștrița) |
 | dalbanul | uncontracted |  |  |
 | dancila | uncontracted |  |  |
 | danube | uncontracted |  |  |
@@ -2519,7 +2540,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | iezerul | uncontracted |  |  |
 | izvorul | present-hidden | AJVPS BISTRIȚA-NĂSĂUD |  |
 | izvorul purului | uncontracted |  |  |
-| latorita | uncontracted |  |  |
+| latorita | romsilva | RNP Romsilva — VÂLCEA | Latorița Superioară |
 | latorita de jos | present | FLY FISHING CLUB SIBIU |  |
 | latorita de mijloc | uncontracted |  |  |
 | lotru | present | AJVPS VÂLCEA | audit_match:prefix |
@@ -2537,13 +2558,13 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | oltet | present | AJVPS OLT |  |
 | paisul mare | uncontracted |  |  |
 | paisul mic | uncontracted |  |  |
-| papusa | uncontracted |  |  |
+| papusa | romsilva | RNP Romsilva — HUNEDOARA | Păpuşa |
 | paraul ciocadia | uncontracted |  |  |
 | paraul galbenu | present | Direcția Silvică Vâlcea |  |
 | paraul lazul | uncontracted |  |  |
 | paraul muset | uncontracted |  |  |
 | paraul plopilor | uncontracted |  |  |
-| paraul polatiste | present-bbox | Pro Pescar |  |
+| paraul polatiste | present | Pro Pescar | audit_match:override |
 | paraul repedea | present | AJVPS VÂLCEA |  |
 | petreasa | uncontracted |  |  |
 | petrimanu | present-bbox | Direcția Silvică Vâlcea |  |
@@ -2594,7 +2615,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | calinesti | uncontracted |  |  |
 | carpanoasa | uncontracted |  |  |
 | cerna | present | AJVPS VÂLCEA |  |
-| cernisoara | uncontracted |  |  |
+| cernisoara | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Cernișoara (Iardaștrița) |
 | cheia | present | AJVPS VÂLCEA |  |
 | cheile sterpei | uncontracted |  |  |
 | ciutesti | uncontracted |  |  |
@@ -2614,7 +2635,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | izvorul otasaului | uncontracted |  |  |
 | izvourl bulzului | uncontracted |  |  |
 | jilistea | uncontracted |  |  |
-| latorita | uncontracted |  |  |
+| latorita | romsilva | RNP Romsilva — VÂLCEA | Latorița Superioară |
 | lotrisor | present | AJVPS VÂLCEA |  |
 | lotrisorul de cozia | uncontracted |  |  |
 | lotru | present | AJVPS VÂLCEA | audit_match:prefix |
@@ -2737,8 +2758,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea mare | present | AVPS MIERCUREA-CIUC |  |
 | valea mesteacanului | uncontracted |  |  |
 | valea muntisoru | uncontracted |  |  |
-| valea neagra | uncontracted |  |  |
-| valea paraul alb | uncontracted |  |  |
+| valea neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
+| valea paraul alb | anpa-missing | AJVPS TIMIȘ | Pârâul Pământ Alb |
 | valea perisani | uncontracted |  |  |
 | valea pesterii | uncontracted |  |  |
 | valea piatra taiata | uncontracted |  |  |
@@ -2803,7 +2824,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul cotmeana | uncontracted |  |  |
 | raul doamnei | present | AJVPS ARGEȘ | audit_match:prefix |
 | raul targului | present | AJVPS ARGEȘ | audit_match:prefix |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | robaia | uncontracted |  |  |
 | slanic | uncontracted |  |  |
 | soptana | uncontracted |  |  |
@@ -2875,7 +2896,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul sticlariei | uncontracted |  |  |
 | raul targului | present | AJVPS ARGEȘ | audit_match:prefix |
 | raul vulcana | uncontracted |  |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | rausorul | uncontracted |  |  |
 | rudarita mare | uncontracted |  |  |
 | scropoasa | present-bbox | Direcția Silvică Dâmbovița |  |
@@ -2995,7 +3016,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | secaria | uncontracted |  |  |
 | slanic | uncontracted |  |  |
 | teleajen | present | AJVPS PRAHOVA | audit_match:prefix |
-| telejenel | uncontracted |  |  |
+| telejenel | romsilva | RNP Romsilva — PRAHOVA | Telejenel |
 | urlatoarea | uncontracted |  |  |
 | urlatoarea mare | uncontracted |  |  |
 | urlatoarea mica | uncontracted |  |  |
@@ -3024,7 +3045,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea magarului | uncontracted |  |  |
 | valea mare | present | AVPS MIERCUREA-CIUC |  |
 | valea marului | uncontracted |  |  |
-| valea neagra | uncontracted |  |  |
+| valea neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | valea obielei | uncontracted |  |  |
 | valea oratii | uncontracted |  |  |
 | valea pelesului | uncontracted |  |  |
@@ -3086,7 +3107,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | stalpul | uncontracted |  |  |
 | stamnic | uncontracted |  |  |
 | teleajen | present | AJVPS PRAHOVA | audit_match:prefix |
-| telejenel | uncontracted |  |  |
+| telejenel | romsilva | RNP Romsilva — PRAHOVA | Telejenel |
 | tohaneanca | uncontracted |  |  |
 | valea crangului | uncontracted |  |  |
 | valea mare | present | AVPS MIERCUREA-CIUC |  |
@@ -3375,8 +3396,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | bega | present | AJVPS TIMIȘ |  |
-| bega luncani | uncontracted |  |  |
-| bega poieni | uncontracted |  |  |
+| bega luncani | romsilva | RNP Romsilva — TIMIȘ | Bega superior - Luncani |
+| bega poieni | romsilva | RNP Romsilva — TIMIȘ | Bega Poieni |
 | bistra | present | AJVPS MUREȘ |  |
 | bratoane | uncontracted |  |  |
 | danube | uncontracted |  |  |
@@ -3426,7 +3447,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bargau | uncontracted |  |  |
 | bilea | uncontracted |  |  |
 | bistra | present | AJVPS MUREȘ |  |
-| bistra marului | uncontracted |  |  |
+| bistra marului | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Bistra Mărului inferior |
 | bordul | uncontracted |  |  |
 | breazova | present | Direcția Silvică Caraș-Severin |  |
 | cerna | present | AJVPS VÂLCEA |  |
@@ -3448,18 +3469,18 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul mare | present | CS HUNEDOARA |  |
 | raul mures | present | AJVPS ALBA |  |
 | raul strei | present | AJVPS HUNEDOARA |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | retisoara | uncontracted |  |  |
 | runc | uncontracted |  |  |
 | sacamas | uncontracted |  |  |
 | salas | uncontracted |  |  |
 | scorila | uncontracted |  |  |
-| sibisel | uncontracted |  |  |
+| sibisel | romsilva | RNP Romsilva — HUNEDOARA | Sibişel |
 | sohodol | present | A.CERBUL CARPATIN | audit_match:char0.88 |
 | stanisoara | uncontracted |  |  |
 | stevia | present-bbox | Direcția Silvică Hunedoara |  |
 | strei | present | AJVPS HUNEDOARA |  |
-| sucu | uncontracted |  |  |
+| sucu | romsilva | RNP Romsilva — CARAȘ-SEVERIN | Șucu |
 | valea mare | present | CS HUNEDOARA |  |
 | valea rachitelii | uncontracted |  |  |
 | valea rea | uncontracted |  |  |
@@ -3524,11 +3545,11 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul romosului | uncontracted |  |  |
 | raul strei | present | AJVPS HUNEDOARA |  |
 | raul vaidei | uncontracted |  |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | romos | uncontracted |  |  |
 | rosia | present | AJVPS BIHOR |  |
 | rusor | uncontracted |  |  |
-| sibisel | uncontracted |  |  |
+| sibisel | romsilva | RNP Romsilva — HUNEDOARA | Sibişel |
 | stramtosu | uncontracted |  |  |
 | strei | present | AJVPS HUNEDOARA |  |
 | taia | uncontracted |  |  |
@@ -3736,7 +3757,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul scorei | uncontracted |  |  |
 | raul sec | uncontracted |  |  |
 | raul valea sapunului | uncontracted |  |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | reussbach | uncontracted |  |  |
 | robesti | present | AJVPS VÂLCEA |  |
 | rosbav | uncontracted |  |  |
@@ -3749,7 +3770,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | sasa mandrei | uncontracted |  |  |
 | sebes | present | AJVPS ALBA |  |
 | sevis | uncontracted |  |  |
-| sibisel | uncontracted |  |  |
+| sibisel | romsilva | RNP Romsilva — HUNEDOARA | Sibişel |
 | silistea | uncontracted |  |  |
 | sipotul | uncontracted |  |  |
 | stanisoara | uncontracted |  |  |
@@ -3829,7 +3850,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | arges | present | AJVPS DÂMBOVIȚA |  |
-| arpas | uncontracted |  |  |
+| arpas | romsilva | RNP Romsilva — SIBIU | Arpaș |
 | arpasel | uncontracted |  |  |
 | arpaselul | uncontracted |  |  |
 | arpasu mare | uncontracted |  |  |
@@ -3841,8 +3862,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bratia | present | AJVPS ARGEȘ | audit_match:prefix |
 | bratila | uncontracted |  |  |
 | brescioara | uncontracted |  |  |
-| buda | uncontracted |  |  |
-| capra | uncontracted |  |  |
+| buda | romsilva | RNP Romsilva — ARGEȘ | Buda |
+| capra | romsilva | RNP Romsilva — ARGEȘ | Capra |
 | carligele | uncontracted |  |  |
 | cartisoara | uncontracted |  |  |
 | cernatu | uncontracted |  |  |
@@ -3875,7 +3896,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | izvorul rausorului | uncontracted |  |  |
 | izvorul rosu | present | Direcția Silvică Harghita |  |
 | izvorul scarii | uncontracted |  |  |
-| laita | uncontracted |  |  |
+| laita | romsilva | RNP Romsilva — SIBIU | Laita |
 | lisa | uncontracted |  |  |
 | manastirii lake | uncontracted |  |  |
 | mircea | uncontracted |  |  |
@@ -3974,11 +3995,11 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ciocracu | uncontracted |  |  |
 | coltii lui andrei mari | uncontracted |  |  |
 | coltii lui andrei mici | uncontracted |  |  |
-| comana | uncontracted |  |  |
+| comana | romsilva | RNP Romsilva — BRAȘOV | Comana |
 | cretu | uncontracted |  |  |
 | crizbav | uncontracted |  |  |
 | cuca | uncontracted |  |  |
-| dambovicioara | uncontracted |  |  |
+| dambovicioara | romsilva | RNP Romsilva — ARGEȘ | Dambovicioara |
 | dambovita | present | AJVPS DÂMBOVIȚA |  |
 | felmer | uncontracted |  |  |
 | fracea | uncontracted |  |  |
@@ -4016,7 +4037,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | panicel | uncontracted |  |  |
 | panicelul | uncontracted |  |  |
 | parau | uncontracted |  |  |
-| paraul bogata | uncontracted |  |  |
+| paraul bogata | romsilva | RNP Romsilva — BRAȘOV | Bogata |
 | paraul caldarilor | uncontracted |  |  |
 | paraul calul balan | uncontracted |  |  |
 | paraul mare | present | AVPS MIERCUREA-CIUC |  |
@@ -4041,7 +4062,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul targului | present | AJVPS ARGEȘ | audit_match:prefix |
 | raul venetia | present | AVPS FĂGĂRAȘ |  |
 | raul zarnestilor | uncontracted |  |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | rausorul | uncontracted |  |  |
 | rudarita mare | uncontracted |  |  |
 | rudarita mica | uncontracted |  |  |
@@ -4217,9 +4238,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | buzau | present | AJVPS Brăila |  |
 | canal drenaj | uncontracted |  |  |
 | canalul timis | present | AJVPS TIMIȘ |  |
-| capra | uncontracted |  |  |
-| capra mare | uncontracted |  |  |
-| capra mica | uncontracted |  |  |
+| capra | romsilva | RNP Romsilva — ARGEȘ | Capra |
+| capra mare | romsilva | RNP Romsilva — ARGEȘ | Capra |
+| capra mica | romsilva | RNP Romsilva — ARGEȘ | Capra |
 | casaria | uncontracted |  |  |
 | cazacul | uncontracted |  |  |
 | cenuseroaia | uncontracted |  |  |
@@ -4324,7 +4345,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | tampa | uncontracted |  |  |
 | tarlung | uncontracted |  |  |
 | teleajen | present | AJVPS PRAHOVA | audit_match:prefix |
-| telejenel | uncontracted |  |  |
+| telejenel | romsilva | RNP Romsilva — PRAHOVA | Telejenel |
 | teliu | uncontracted |  |  |
 | timis | present | AJVPS TIMIȘ |  |
 | timisul sec de sus | uncontracted |  |  |
@@ -4389,7 +4410,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea maturarului | uncontracted |  |  |
 | valea mocarlicea | uncontracted |  |  |
 | valea morarului | uncontracted |  |  |
-| valea neagra | uncontracted |  |  |
+| valea neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | valea neamtului | uncontracted |  |  |
 | valea nisipului | uncontracted |  |  |
 | valea ograda | uncontracted |  |  |
@@ -4482,12 +4503,12 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul cernat | uncontracted |  |  |
 | raul negru | present | AJVPS COVASNA | audit_match:prefix |
 | siriu | uncontracted |  |  |
-| siriul mic | present | AJVPS BUZĂU | audit_match:char0.91 |
+| siriul mic | present | AJVPS BUZĂU | siriul_mic_attach (t_8c4b2d08) |
 | strambu | uncontracted |  |  |
 | telciu | uncontracted |  |  |
-| telejenel | uncontracted |  |  |
+| telejenel | romsilva | RNP Romsilva — PRAHOVA | Telejenel |
 | tisita aurie | uncontracted |  |  |
-| tisita mare | uncontracted |  |  |
+| tisita mare | romsilva | RNP Romsilva — VRANCEA | Tișița |
 | urlatoarea | uncontracted |  |  |
 | urlatoarea mare | uncontracted |  |  |
 | valea milea | uncontracted |  |  |
@@ -4562,7 +4583,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | saratel | uncontracted |  |  |
 | slanic | uncontracted |  |  |
 | tichiris | uncontracted |  |  |
-| tisita mare | uncontracted |  |  |
+| tisita mare | romsilva | RNP Romsilva — VRANCEA | Tișița |
 | valea sarii | uncontracted |  |  |
 | zabala | present | AJVPS VRANCEA | audit_match:prefix |
 
@@ -4822,16 +4843,16 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | mures | present | AJVPS TIMIȘ |  |
 | ohaba | uncontracted |  |  |
 | paraul glodghilesti | uncontracted |  |  |
-| paraul julita | uncontracted |  |  |
+| paraul julita | romsilva | RNP Romsilva — ARAD | Julița |
 | pestis | uncontracted |  |  |
-| petris | uncontracted |  |  |
+| petris | romsilva | RNP Romsilva — ARAD | Petriș |
 | plisca | uncontracted |  |  |
 | salciva | uncontracted |  |  |
 | saratura | uncontracted |  |  |
 | sebis | uncontracted |  |  |
 | somonita | uncontracted |  |  |
 | sulinis | uncontracted |  |  |
-| troas | uncontracted |  |  |
+| troas | romsilva | RNP Romsilva — ARAD | Troaș |
 | valea almasului | present | AJVPS SĂLAJ |  |
 | valea chilodia | uncontracted |  |  |
 | valea dulcelui | uncontracted |  |  |
@@ -4844,8 +4865,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | abucea | uncontracted |  |  |
-| ariesul mare | uncontracted |  |  |
-| ariesul mic | uncontracted |  |  |
+| ariesul mare | romsilva | RNP Romsilva — ALBA | Ariesul Mare Superior |
+| ariesul mic | romsilva | RNP Romsilva — ALBA | Ariesul Mic |
 | bacisoara | uncontracted |  |  |
 | barasti | uncontracted |  |  |
 | blejoaia | uncontracted |  |  |
@@ -4900,11 +4921,11 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | acmariu | uncontracted |  |  |
 | almasel | uncontracted |  |  |
 | ampoi | present | AJVPS ALBA |  |
-| ampoita | uncontracted |  |  |
+| ampoita | romsilva | RNP Romsilva — ALBA | Ampoita |
 | ardeu | uncontracted |  |  |
 | aries | present | AJVPS CLUJ |  |
-| ariesul mare | uncontracted |  |  |
-| ariesul mic | uncontracted |  |  |
+| ariesul mare | romsilva | RNP Romsilva — ALBA | Ariesul Mare Superior |
+| ariesul mic | romsilva | RNP Romsilva — ALBA | Ariesul Mic |
 | bacainti | uncontracted |  |  |
 | balsa | uncontracted |  |  |
 | blandiana | uncontracted |  |  |
@@ -4925,7 +4946,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | hermaneasa | uncontracted |  |  |
 | iezer | present | Direcția Silvică Harghita |  |
 | iezeru mic | uncontracted |  |  |
-| ighiel | uncontracted |  |  |
+| ighiel | romsilva | RNP Romsilva — ALBA | Ighiel |
 | ighiu | uncontracted |  |  |
 | lunca metesului | uncontracted |  |  |
 | mlaca | uncontracted |  |  |
@@ -5102,7 +5123,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bozom | uncontracted |  |  |
 | bradesti | uncontracted |  |  |
 | budvar | uncontracted |  |  |
-| comana | uncontracted |  |  |
+| comana | romsilva | RNP Romsilva — BRAȘOV | Comana |
 | danube | uncontracted |  |  |
 | feernic | uncontracted |  |  |
 | feheres patak | uncontracted |  |  |
@@ -5129,7 +5150,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraue mare | uncontracted |  |  |
 | paraul archita | uncontracted |  |  |
 | paraul bailor | uncontracted |  |  |
-| paraul bogata | uncontracted |  |  |
+| paraul bogata | romsilva | RNP Romsilva — BRAȘOV | Bogata |
 | paraul fiser | uncontracted |  |  |
 | paraul goagiu | present | AVPS HUBERTUS | audit_match:exact |
 | paraul homorod | present | AJPS Brașov |  |
@@ -5158,7 +5179,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 ### Celulă 45.9-46.4N, 25.5-26.0E
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
-| aita | uncontracted |  |  |
+| aita | romsilva | RNP Romsilva — COVASNA | Aita |
 | arcus | uncontracted |  |  |
 | bajoz pataka | uncontracted |  |  |
 | baraolt | present | AJVPS COVASNA | audit_match:prefix |
@@ -5276,7 +5297,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul seceni | uncontracted |  |  |
 | paraul silos | uncontracted |  |  |
 | paraul stairul mare | uncontracted |  |  |
-| paraul sugo | uncontracted |  |  |
+| paraul sugo | romsilva | RNP Romsilva — COVASNA | Șugo |
 | paraul sumuleu | uncontracted |  |  |
 | paraul surpat | uncontracted |  |  |
 | paraul szenegeto | uncontracted |  |  |
@@ -5316,7 +5337,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea crisului | uncontracted |  |  |
 | valea lunga | uncontracted |  |  |
 | valea morii | uncontracted |  |  |
-| valea neagra | uncontracted |  |  |
+| valea neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | valea ursilor | uncontracted |  |  |
 | valea zalanului | uncontracted |  |  |
 | varghis | present | AJVPS COVASNA | audit_match:exact |
@@ -5327,7 +5348,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 |---|---|---|---|
 | bajoz pataka | uncontracted |  |  |
 | banko vogye | uncontracted |  |  |
-| barzauta | uncontracted |  |  |
+| barzauta | romsilva | RNP Romsilva — BACĂU | Bărzăuța |
 | basca | present | Direcția Silvică Covasna | romsilva_sector_split |
 | bogas patak | uncontracted |  |  |
 | bretcu | uncontracted |  |  |
@@ -5339,7 +5360,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | csobanyos patak | uncontracted |  |  |
 | danube | uncontracted |  |  |
 | dobru | uncontracted |  |  |
-| dofteana | uncontracted |  |  |
+| dofteana | romsilva | RNP Romsilva — BACĂU | Dofteana |
 | doftenita | uncontracted |  |  |
 | dumbrava | uncontracted |  |  |
 | dеbrеce pataka | uncontracted |  |  |
@@ -5393,7 +5414,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul valos | uncontracted |  |  |
 | putna | present | AJVPS VRANCEA |  |
 | rac pataka | uncontracted |  |  |
-| raul barzauta | uncontracted |  |  |
+| raul barzauta | romsilva | RNP Romsilva — BACĂU | Bărzăuța |
 | raul cernat | uncontracted |  |  |
 | raul chilisca | uncontracted |  |  |
 | raul ciobanus | present | AJVPS BACĂU |  |
@@ -5436,11 +5457,11 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | cremenet | uncontracted |  |  |
 | cucuieti | uncontracted |  |  |
 | danube | uncontracted |  |  |
-| dofteana | uncontracted |  |  |
+| dofteana | romsilva | RNP Romsilva — BACĂU | Dofteana |
 | doftenita | uncontracted |  |  |
 | dragomira | present-hidden | AJVPS BOTOȘANI |  |
 | larguta | uncontracted |  |  |
-| lepsa | uncontracted |  |  |
+| lepsa | romsilva | RNP Romsilva — VRANCEA | Lepșa |
 | oituz | present | AJVPS COVASNA |  |
 | putna | present | AJVPS VRANCEA |  |
 | racaciuni | present | AJVPS BACĂU |  |
@@ -5451,9 +5472,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | susita | present | AJVPS GORJ |  |
 | tazlau | present | AJVPS BACĂU |  |
 | tichiris | uncontracted |  |  |
-| tisita | uncontracted |  |  |
-| tisita mare | uncontracted |  |  |
-| tisita mica | uncontracted |  |  |
+| tisita | romsilva | RNP Romsilva — VRANCEA | Tișița |
+| tisita mare | romsilva | RNP Romsilva — VRANCEA | Tișița |
+| tisita mica | romsilva | RNP Romsilva — VRANCEA | Tișița |
 | trotus | present | AJVPS BACĂU |  |
 | uz | uncontracted |  |  |
 | vidra | present-bbox | Direcția Silvică Vâlcea |  |
@@ -5634,7 +5655,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | crisul baita | present | AJVPS BIHOR |  |
 | crisul baitei | uncontracted |  |  |
 | crisul negru | present | AJVPS BIHOR |  |
-| crisul pietros | uncontracted |  |  |
+| crisul pietros | romsilva | RNP Romsilva — BIHOR | Crişul Pietros |
 | danube | uncontracted |  |  |
 | feher koros | uncontracted |  |  |
 | fekete koros | uncontracted |  |  |
@@ -5681,8 +5702,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | apa calda | present | AJVPS CONSTANȚA | audit_match:override |
 | apa rapii | uncontracted |  |  |
 | aria vulturilor | uncontracted |  |  |
-| ariesul mare | uncontracted |  |  |
-| ariesul mic | uncontracted |  |  |
+| ariesul mare | romsilva | RNP Romsilva — ALBA | Ariesul Mare Superior |
+| ariesul mic | romsilva | RNP Romsilva — ALBA | Ariesul Mic |
 | batrana | uncontracted |  |  |
 | boga | uncontracted |  |  |
 | bohodei | uncontracted |  |  |
@@ -5698,7 +5719,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | craiasa | uncontracted |  |  |
 | crisul baitei | uncontracted |  |  |
 | crisul negru | present | AJVPS BIHOR |  |
-| crisul pietros | uncontracted |  |  |
+| crisul pietros | romsilva | RNP Romsilva — BIHOR | Crişul Pietros |
 | crisul repede | present | AJVPS BIHOR |  |
 | culdesti | uncontracted |  |  |
 | danube | uncontracted |  |  |
@@ -5706,7 +5727,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | demberke | uncontracted |  |  |
 | dizdit | uncontracted |  |  |
 | dobrus | uncontracted |  |  |
-| dragan | uncontracted |  |  |
+| dragan | romsilva | RNP Romsilva — BIHOR | Drăgan |
 | dragateanu | uncontracted |  |  |
 | fantana rece | uncontracted |  |  |
 | fantanele | uncontracted |  |  |
@@ -5727,7 +5748,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | iadolina | uncontracted |  |  |
 | iedutul | uncontracted |  |  |
 | izbucul mic | uncontracted |  |  |
-| lesu | uncontracted |  |  |
+| lesu | romsilva | RNP Romsilva — BIHOR | Leșu |
 | luncsoara | uncontracted |  |  |
 | magura rosianului | uncontracted |  |  |
 | margauta | uncontracted |  |  |
@@ -5888,7 +5909,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | irisoara | uncontracted |  |  |
 | jebuc | uncontracted |  |  |
 | leghia | uncontracted |  |  |
-| lesu | uncontracted |  |  |
+| lesu | romsilva | RNP Romsilva — BIHOR | Leșu |
 | macau | uncontracted |  |  |
 | marton | uncontracted |  |  |
 | mera | uncontracted |  |  |
@@ -6123,7 +6144,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | gurghiu | uncontracted |  |  |
 | iara | uncontracted |  |  |
 | idicel | present | AJVPS MUREȘ |  |
-| isticeu | uncontracted |  |  |
+| isticeu | romsilva | RNP Romsilva — MUREȘ | Isticeu |
 | lut | present | AJVPS MUREȘ | audit_match:exact |
 | mures | present | AJVPS MUREȘ |  |
 | nadasa | uncontracted |  |  |
@@ -6180,7 +6201,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | eszak vize | uncontracted |  |  |
 | eszenyo pataka | uncontracted |  |  |
 | fagul inalt | uncontracted |  |  |
-| fancel | uncontracted |  |  |
+| fancel | romsilva | RNP Romsilva — MUREȘ | Fâncel |
 | feernic | uncontracted |  |  |
 | femesul | uncontracted |  |  |
 | filipea | uncontracted |  |  |
@@ -6188,7 +6209,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | gurghiu | uncontracted |  |  |
 | hideg patak | uncontracted |  |  |
 | homorodul mare | present | AVPS TÂRNAVA MARE |  |
-| isticeu | uncontracted |  |  |
+| isticeu | romsilva | RNP Romsilva — MUREȘ | Isticeu |
 | isuica | uncontracted |  |  |
 | iuhod | present | AJVPS MUREȘ |  |
 | iuhodul cald | uncontracted |  |  |
@@ -6238,7 +6259,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul oberet | uncontracted |  |  |
 | paraul pavel | uncontracted |  |  |
 | paraul pietrei | uncontracted |  |  |
-| paraul salard | uncontracted |  |  |
+| paraul salard | romsilva | RNP Romsilva — MUREȘ | Sălard |
 | paraul sarmasului | uncontracted |  |  |
 | paraul sestina | uncontracted |  |  |
 | paraul solea | uncontracted |  |  |
@@ -6279,7 +6300,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | sineu | uncontracted |  |  |
 | sovata | uncontracted |  |  |
 | sugau | uncontracted |  |  |
-| sugo | uncontracted |  |  |
+| sugo | romsilva | RNP Romsilva — COVASNA | Șugo |
 | tarnava mare | present | AJVPS MUREȘ |  |
 | tarnava mica | present | AJVPS ALBA |  |
 | tifanpataka | uncontracted |  |  |
@@ -6316,7 +6337,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bradesti | uncontracted |  |  |
 | busciuhan | uncontracted |  |  |
 | calul | uncontracted |  |  |
-| capra | uncontracted |  |  |
+| capra | romsilva | RNP Romsilva — ARGEȘ | Capra |
 | carbunele negru | uncontracted |  |  |
 | cealca | uncontracted |  |  |
 | cetatea mica | uncontracted |  |  |
@@ -6622,7 +6643,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | hanul | uncontracted |  |  |
 | herman | uncontracted |  |  |
 | hotarul | uncontracted |  |  |
-| iapa | uncontracted |  |  |
+| iapa | romsilva | RNP Romsilva — NEAMȚ | Iapa |
 | izvorul alb | present | AJVPS CARAȘ-SEVERIN |  |
 | jancsik | uncontracted |  |  |
 | janik | uncontracted |  |  |
@@ -6726,7 +6747,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | stuhuletul | uncontracted |  |  |
 | sulta | present | AJVPS BACĂU |  |
 | tapu | uncontracted |  |  |
-| tarcau | uncontracted |  |  |
+| tarcau | romsilva | RNP Romsilva — NEAMȚ | Tarcău Superior |
 | tarcaul | uncontracted |  |  |
 | tarcuta | uncontracted |  |  |
 | tarhaos | uncontracted |  |  |
@@ -6996,7 +7017,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ghepes | uncontracted |  |  |
 | ier | present | AJVPS TIMIȘ | audit_match:exact |
 | inot | uncontracted |  |  |
-| paraul dobricionesti | present-bbox | AJVPS BIHOR |  |
+| paraul dobricionesti | present | AJVPS BIHOR | audit_match:override |
 | paraul iacoboaia | uncontracted |  |  |
 | paraul mniera | uncontracted |  |  |
 | paraul vida | present | AJVPS BIHOR |  |
@@ -7016,7 +7037,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bistra | present | AJVPS MUREȘ |  |
 | crasna | present | AJVPS SATU MARE |  |
 | crisul repede | present | AJVPS BIHOR |  |
-| dragan | uncontracted |  |  |
+| dragan | romsilva | RNP Romsilva — BIHOR | Drăgan |
 | iada | uncontracted |  |  |
 | kraszna | uncontracted |  |  |
 | mihaesti | uncontracted |  |  |
@@ -7050,7 +7071,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bezded | uncontracted |  |  |
 | borsa | uncontracted |  |  |
 | briglez | uncontracted |  |  |
-| buda | uncontracted |  |  |
+| buda | romsilva | RNP Romsilva — ARGEȘ | Buda |
 | ceaca | uncontracted |  |  |
 | cernuc | uncontracted |  |  |
 | clit | uncontracted |  |  |
@@ -7100,7 +7121,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bandau | uncontracted |  |  |
 | bobalna | uncontracted |  |  |
 | borsa | uncontracted |  |  |
-| buda | uncontracted |  |  |
+| buda | romsilva | RNP Romsilva — ARGEȘ | Buda |
 | bunesti | uncontracted |  |  |
 | canal | uncontracted |  |  |
 | canalul morii | uncontracted |  |  |
@@ -7123,7 +7144,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | guga | uncontracted |  |  |
 | hosu | uncontracted |  |  |
 | husuer | uncontracted |  |  |
-| iapa | uncontracted |  |  |
+| iapa | romsilva | RNP Romsilva — NEAMȚ | Iapa |
 | ileanda | present | AJVPS SĂLAJ |  |
 | jichis | uncontracted |  |  |
 | lelesti | uncontracted |  |  |
@@ -7197,7 +7218,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | halmas | uncontracted |  |  |
 | hasmas | uncontracted |  |  |
 | husuer | uncontracted |  |  |
-| ilisua | uncontracted |  |  |
+| ilisua | romsilva | RNP Romsilva — BISTRIȚA-NĂSĂUD | Ilișua |
 | intre hotare | uncontracted |  |  |
 | lechinta | present | AJVPS BISTRIȚA-NĂSĂUD |  |
 | lunca | uncontracted |  |  |
@@ -7208,7 +7229,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | pucioasa | present-bbox | AJVPS DÂMBOVIȚA |  |
 | puini | uncontracted |  |  |
 | raul fizes | present | AJPS Cluj |  |
-| rebra | uncontracted |  |  |
+| rebra | romsilva | RNP Romsilva — BISTRIȚA-NĂSĂUD | Rebra |
 | rituria | uncontracted |  |  |
 | rosua | present | AJVPS BISTRIŢA NĂSĂUD |  |
 | runc | uncontracted |  |  |
@@ -7271,7 +7292,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | gersa | present | AJVPS BISTRIŢA NĂSĂUD |  |
 | ghinda | uncontracted |  |  |
 | iad | uncontracted |  |  |
-| ilva | uncontracted |  |  |
+| ilva | romsilva | RNP Romsilva — MUREȘ | Ilva |
 | ivaneasa | uncontracted |  |  |
 | izvorul lung | present | AJVPS CARAȘ-SEVERIN | audit_match:exact |
 | jisa | uncontracted |  |  |
@@ -7291,14 +7312,14 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul lut | present | AJVPS MUREȘ | audit_match:exact |
 | paraul plotonului | uncontracted |  |  |
 | paraul stegii | present | A.FLY FISHING CLUB SIBIU | audit_match:override |
-| petris | uncontracted |  |  |
+| petris | romsilva | RNP Romsilva — ARAD | Petriș |
 | pietris | uncontracted |  |  |
 | pietroasa | uncontracted |  |  |
 | pintic | uncontracted |  |  |
 | poiana | present | AJVPS BIHOR |  |
 | rapa | uncontracted |  |  |
 | rastolita | present | AJVPS MUREȘ |  |
-| rebra | uncontracted |  |  |
+| rebra | romsilva | RNP Romsilva — BISTRIȚA-NĂSĂUD | Rebra |
 | repedea | present | AJVPS VÂLCEA |  |
 | sacal | uncontracted |  |  |
 | secul | uncontracted |  |  |
@@ -7366,7 +7387,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | cucureasa | uncontracted |  |  |
 | doamna | uncontracted |  |  |
 | dorna | present | AJVPS BOTOȘANI | audit_match:prefix |
-| dornisoara | uncontracted |  |  |
+| dornisoara | romsilva | RNP Romsilva — SUCEAVA | Dornişoara |
 | dragus | uncontracted |  |  |
 | dusa | uncontracted |  |  |
 | ferigelor | uncontracted |  |  |
@@ -7377,7 +7398,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ilisoara | uncontracted |  |  |
 | ilisoara mare | uncontracted |  |  |
 | ilisoara mica | uncontracted |  |  |
-| ilva | uncontracted |  |  |
+| ilva | romsilva | RNP Romsilva — MUREȘ | Ilva |
 | izvorul lung | present | AJVPS CARAȘ-SEVERIN | audit_match:exact |
 | jingul cadarenilor | uncontracted |  |  |
 | jnepenisul | uncontracted |  |  |
@@ -7388,7 +7409,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | mihailet | uncontracted |  |  |
 | moldisul | uncontracted |  |  |
 | mures | present | AJVPS MUREȘ |  |
-| neagra | uncontracted |  |  |
+| neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | neagra sarului | uncontracted |  |  |
 | negoiul | uncontracted |  |  |
 | negrisoara | uncontracted |  |  |
@@ -7428,7 +7449,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul puturos | uncontracted |  |  |
 | paraul rau | uncontracted |  |  |
 | paraul repede | uncontracted |  |  |
-| paraul salard | uncontracted |  |  |
+| paraul salard | romsilva | RNP Romsilva — MUREȘ | Sălard |
 | paraul sarmasului | uncontracted |  |  |
 | paraul saros | uncontracted |  |  |
 | paraul strungii | uncontracted |  |  |
@@ -7479,13 +7500,13 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ursul mica | uncontracted |  |  |
 | valea fantanel | uncontracted |  |  |
 | valea toplitei | uncontracted |  |  |
-| zebrac | uncontracted |  |  |
+| zebrac | romsilva | RNP Romsilva — MUREȘ | Zebrac |
 
 ### Celulă 46.9-47.4N, 25.5-26.0E
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
 | armenilor | uncontracted |  |  |
-| baicu | uncontracted |  |  |
+| baicu | romsilva | RNP Romsilva — MARAMUREȘ | Baicu |
 | baisescu | uncontracted |  |  |
 | balaj | uncontracted |  |  |
 | balatau | uncontracted |  |  |
@@ -7497,14 +7518,14 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | bistrita | present | AJVPS BISTRIŢA NĂSĂUD |  |
 | boina | uncontracted |  |  |
 | bolatau | uncontracted |  |  |
-| borca | uncontracted |  |  |
+| borca | romsilva | RNP Romsilva — NEAMȚ | Borca |
 | bordeiului | uncontracted |  |  |
 | borvizul | uncontracted |  |  |
 | brateasa | uncontracted |  |  |
 | breaza | uncontracted |  |  |
-| buda | uncontracted |  |  |
+| buda | romsilva | RNP Romsilva — ARGEȘ | Buda |
 | budacu | uncontracted |  |  |
-| capra | uncontracted |  |  |
+| capra | romsilva | RNP Romsilva — ARGEȘ | Capra |
 | capriorul | uncontracted |  |  |
 | carja | uncontracted |  |  |
 | cazatura | uncontracted |  |  |
@@ -7541,7 +7562,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | lutu rosu | uncontracted |  |  |
 | mitropolitul | uncontracted |  |  |
 | moldova | present | AVPS IAȘI |  |
-| neagra | uncontracted |  |  |
+| neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | neamt | uncontracted |  |  |
 | neamtul cel mare | uncontracted |  |  |
 | neamtul cel mic | uncontracted |  |  |
@@ -7566,7 +7587,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul branza | uncontracted |  |  |
 | paraul caboaiei | uncontracted |  |  |
 | paraul calugarului | uncontracted |  |  |
-| paraul capra | uncontracted |  |  |
+| paraul capra | romsilva | RNP Romsilva — ARGEȘ | Capra |
 | paraul capriorul | uncontracted |  |  |
 | paraul capritei | uncontracted |  |  |
 | paraul casei | uncontracted |  |  |
@@ -7719,7 +7740,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | dranitei | uncontracted |  |  |
 | eufrosin | uncontracted |  |  |
 | fagetul | uncontracted |  |  |
-| fantana | uncontracted |  |  |
+| fantana | romsilva | RNP Romsilva — MARAMUREȘ | Fântâna |
 | fartagi | uncontracted |  |  |
 | frasinelul | uncontracted |  |  |
 | frasinul | uncontracted |  |  |
@@ -8281,7 +8302,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | baita | uncontracted |  |  |
 | bloaja | present | AJVPS MARAMUREȘ |  |
 | breboaia | uncontracted |  |  |
-| cavnic | uncontracted |  |  |
+| cavnic | romsilva | RNP Romsilva — MARAMUREȘ | Cavnic |
 | chechisel | uncontracted |  |  |
 | cioncas | uncontracted |  |  |
 | cornesita | uncontracted |  |  |
@@ -8301,7 +8322,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paraul sfantul ioan | uncontracted |  |  |
 | poiana | present | AJVPS BIHOR |  |
 | raul porcului | uncontracted |  |  |
-| rausor | uncontracted |  |  |
+| rausor | romsilva | RNP Romsilva — ARGEȘ | Râușor |
 | ronisoara | uncontracted |  |  |
 | runcu | present | AJVPS MARAMUREȘ |  |
 | sapanta | uncontracted |  |  |
@@ -8363,8 +8384,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | gersa | present | AJVPS BISTRIŢA NĂSĂUD |  |
 | hodea | uncontracted |  |  |
 | ialinc | uncontracted |  |  |
-| ieud | uncontracted |  |  |
-| ilisua | uncontracted |  |  |
+| ieud | romsilva | RNP Romsilva — MARAMUREȘ | Ieud |
+| ilisua | romsilva | RNP Romsilva — BISTRIȚA-NĂSĂUD | Ilișua |
 | ivancic | uncontracted |  |  |
 | iza | present | AJVPS MARAMUREȘ | audit_match:exact |
 | izvorul baicului | uncontracted |  |  |
@@ -8391,7 +8412,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ronisoara | uncontracted |  |  |
 | runc | uncontracted |  |  |
 | runcu mare | present | AJVPS MARAMUREȘ |  |
-| ruscova | uncontracted |  |  |
+| ruscova | romsilva | RNP Romsilva — MARAMUREȘ | Ruscova Superioară |
 | salauta | present | AJVPS BISTRIŢA NĂSĂUD | audit_match:prefix |
 | seradia | uncontracted |  |  |
 | slatioara | uncontracted |  |  |
@@ -8409,7 +8430,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea lunga | uncontracted |  |  |
 | valea morii | uncontracted |  |  |
 | valea muntelui | uncontracted |  |  |
-| valea neagra | uncontracted |  |  |
+| valea neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | valea parusului | uncontracted |  |  |
 | valea pestilor | uncontracted |  |  |
 | valea plaiului | uncontracted |  |  |
@@ -8444,7 +8465,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | cucureasa | uncontracted |  |  |
 | dragos | uncontracted |  |  |
 | dragovata | uncontracted |  |  |
-| fantana | uncontracted |  |  |
+| fantana | romsilva | RNP Romsilva — MARAMUREȘ | Fântâna |
 | furul | uncontracted |  |  |
 | gagi | uncontracted |  |  |
 | gersa | present | AJVPS BISTRIŢA NĂSĂUD |  |
@@ -8470,14 +8491,14 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | parcalabul | uncontracted |  |  |
 | paulic | uncontracted |  |  |
 | pietrosu | uncontracted |  |  |
-| rebra | uncontracted |  |  |
+| rebra | romsilva | RNP Romsilva — BISTRIȚA-NĂSĂUD | Rebra |
 | repede | uncontracted |  |  |
 | reviaca mare | uncontracted |  |  |
 | reviaca mica | uncontracted |  |  |
 | rica | uncontracted |  |  |
 | rosu | present | Direcția Silvică Harghita |  |
 | rosusul | uncontracted |  |  |
-| ruscova | uncontracted |  |  |
+| ruscova | romsilva | RNP Romsilva — MARAMUREȘ | Ruscova Superioară |
 | sarata | present | AJVPS BOTOȘANI |  |
 | sec | uncontracted |  |  |
 | socolau | uncontracted |  |  |
@@ -8546,13 +8567,13 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | cirlibaba | uncontracted |  |  |
 | cucureasa | uncontracted |  |  |
 | dubul | uncontracted |  |  |
-| giumalau | uncontracted |  |  |
+| giumalau | romsilva | RNP Romsilva — SUCEAVA | Giumalău |
 | iezeru | uncontracted |  |  |
 | lucina | uncontracted |  |  |
 | maria | uncontracted |  |  |
 | maria mica | uncontracted |  |  |
 | moldova | present | AVPS IAȘI |  |
-| moldovita | uncontracted |  |  |
+| moldovita | romsilva | RNP Romsilva — SUCEAVA | Moldoviţa Superioară |
 | paraul negrei | uncontracted |  |  |
 | paraul strajii | uncontracted |  |  |
 | petac | uncontracted |  |  |
@@ -8613,9 +8634,9 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | mesteacanul | uncontracted |  |  |
 | moara dracului | uncontracted |  |  |
 | moldova | present | AVPS IAȘI |  |
-| moldovita | uncontracted |  |  |
+| moldovita | romsilva | RNP Romsilva — SUCEAVA | Moldoviţa Superioară |
 | morii | uncontracted |  |  |
-| neagra | uncontracted |  |  |
+| neagra | romsilva | RNP Romsilva — SUCEAVA | Neagra Inferioară |
 | negrileasa | uncontracted |  |  |
 | p boului | uncontracted |  |  |
 | paraul ciurgaului | uncontracted |  |  |
@@ -8654,7 +8675,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 ### Celulă 47.4-47.9N, 26.0-26.5E
 | Râu | Clasă | Asociație | Detalii |
 |---|---|---|---|
-| bogata | uncontracted |  |  |
+| bogata | romsilva | RNP Romsilva — BRAȘOV | Bogata |
 | cotargaci | uncontracted |  |  |
 | dragomirna | uncontracted |  |  |
 | moldova | present | AVPS IAȘI |  |
@@ -9334,7 +9355,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | rosusul | uncontracted |  |  |
 | rosusul mare | uncontracted |  |  |
 | rosusul mic | uncontracted |  |  |
-| ruscova | uncontracted |  |  |
+| ruscova | romsilva | RNP Romsilva — MARAMUREȘ | Ruscova Superioară |
 | socolau | uncontracted |  |  |
 | альбін | uncontracted |  |  |
 | бальзатул | uncontracted |  |  |

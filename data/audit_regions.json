@@ -16651,12 +16651,12 @@
     },
     {
      "river": "botiza",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Botiza",
      "geometry": false,
      "slug": "",
-     "county": "Giurgiu",
+     "county": "MARAMUREȘ",
      "bbox": [
       25.7970312,
       44.2818386,
@@ -25516,12 +25516,12 @@
     },
     {
      "river": "cernisoara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Cernișoara (Iardaștrița)",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       23.9593457,
       44.8980066,
@@ -31163,12 +31163,12 @@
     },
     {
      "river": "bistra marului",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Bistra Mărului inferior",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       22.5406201,
       45.3482029,
@@ -31208,12 +31208,12 @@
     },
     {
      "river": "borascu mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Borăscu",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "HUNEDOARA",
      "bbox": [
       22.7234816,
       45.2944403,
@@ -31223,12 +31223,12 @@
     },
     {
      "river": "borascu mic",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Borăscu",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "HUNEDOARA",
      "bbox": [
       22.7182509,
       45.2712883,
@@ -31328,12 +31328,12 @@
     },
     {
      "river": "cernisoara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Cernișoara (Iardaștrița)",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       22.7878515,
       45.1971955,
@@ -31628,12 +31628,12 @@
     },
     {
      "river": "lapusnicul mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Lăpuşnicul Mare",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "HUNEDOARA",
      "bbox": [
       22.7152372,
       45.2969765,
@@ -32453,12 +32453,12 @@
     },
     {
      "river": "sucu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Șucu",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       22.5199414,
       45.312451,
@@ -33060,10 +33060,10 @@
     },
     {
      "river": "paraul polatiste",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Pro Pescar",
-     "detail": "",
-     "geometry": false,
+     "detail": "audit_match:override",
+     "geometry": true,
      "slug": "mbt9h9rq",
      "county": "Hunedoara",
      "bbox": [
@@ -33487,12 +33487,12 @@
     },
     {
      "river": "cernisoara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Cernișoara (Iardaștrița)",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       23.9593457,
       44.8980066,
@@ -33652,12 +33652,12 @@
     },
     {
      "river": "latorita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VÂLCEA",
+     "detail": "Latorița Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "VÂLCEA",
      "bbox": [
       23.6503053,
       45.3521478,
@@ -33922,12 +33922,12 @@
     },
     {
      "river": "papusa",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Păpuşa",
      "geometry": false,
      "slug": "",
-     "county": "Gorj",
+     "county": "HUNEDOARA",
      "bbox": [
       23.6577056,
       45.3151794,
@@ -34012,10 +34012,10 @@
     },
     {
      "river": "paraul polatiste",
-     "class": "present-bbox",
+     "class": "present",
      "association": "Pro Pescar",
-     "detail": "",
-     "geometry": false,
+     "detail": "audit_match:override",
+     "geometry": true,
      "slug": "mbt9h9rq",
      "county": "Hunedoara",
      "bbox": [
@@ -34724,12 +34724,12 @@
     },
     {
      "river": "cernisoara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Cernișoara (Iardaștrița)",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       23.9593457,
       44.8980066,
@@ -35024,12 +35024,12 @@
     },
     {
      "river": "latorita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VÂLCEA",
+     "detail": "Latorița Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "VÂLCEA",
      "bbox": [
       23.6503053,
       45.3521478,
@@ -36869,12 +36869,12 @@
     },
     {
      "river": "valea neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "SUCEAVA",
      "bbox": [
       24.0707258,
       45.3832965,
@@ -36884,12 +36884,12 @@
     },
     {
      "river": "valea paraul alb",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "anpa-missing",
+     "association": "AJVPS TIMIȘ",
+     "detail": "Pârâul Pământ Alb",
      "geometry": false,
      "slug": "",
-     "county": "Vâlcea",
+     "county": "TIMIȘ",
      "bbox": [
       24.441187,
       45.330944,
@@ -37806,12 +37806,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "ARGEȘ",
      "bbox": [
       24.8783847,
       45.2648676,
@@ -38833,12 +38833,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "ARGEȘ",
      "bbox": [
       25.1133541,
       45.3857463,
@@ -40580,12 +40580,12 @@
     },
     {
      "river": "telejenel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — PRAHOVA",
+     "detail": "Telejenel",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "PRAHOVA",
      "bbox": [
       25.982894,
       45.3319467,
@@ -41015,12 +41015,12 @@
     },
     {
      "river": "valea neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "SUCEAVA",
      "bbox": [
       25.7913888,
       45.3976883,
@@ -41892,12 +41892,12 @@
     },
     {
      "river": "telejenel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — PRAHOVA",
+     "detail": "Telejenel",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "PRAHOVA",
      "bbox": [
       25.982894,
       45.3319467,
@@ -45591,12 +45591,12 @@
     },
     {
      "river": "bega luncani",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — TIMIȘ",
+     "detail": "Bega superior - Luncani",
      "geometry": false,
      "slug": "",
-     "county": "Caraș-Severin",
+     "county": "TIMIȘ",
      "bbox": [
       22.3057208,
       45.6663807,
@@ -45606,12 +45606,12 @@
     },
     {
      "river": "bega poieni",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — TIMIȘ",
+     "detail": "Bega Poieni",
      "geometry": false,
      "slug": "",
-     "county": "Caraș-Severin",
+     "county": "TIMIȘ",
      "bbox": [
       22.3146645,
       45.7756437,
@@ -46303,12 +46303,12 @@
     },
     {
      "river": "bistra marului",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Bistra Mărului inferior",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       22.5406201,
       45.3482029,
@@ -46633,12 +46633,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Hunedoara",
+     "county": "ARGEȘ",
      "bbox": [
       22.8358915,
       45.4144599,
@@ -46723,12 +46723,12 @@
     },
     {
      "river": "sibisel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Sibişel",
      "geometry": false,
      "slug": "",
-     "county": "Hunedoara",
+     "county": "HUNEDOARA",
      "bbox": [
       22.8860814,
       45.4073602,
@@ -46798,12 +46798,12 @@
     },
     {
      "river": "sucu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — CARAȘ-SEVERIN",
+     "detail": "Șucu",
      "geometry": false,
      "slug": "",
-     "county": "Mehedinți",
+     "county": "CARAȘ-SEVERIN",
      "bbox": [
       22.5199414,
       45.312451,
@@ -47720,12 +47720,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Hunedoara",
+     "county": "ARGEȘ",
      "bbox": [
       23.2683455,
       45.7018487,
@@ -47780,12 +47780,12 @@
     },
     {
      "river": "sibisel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Sibişel",
      "geometry": false,
      "slug": "",
-     "county": "Hunedoara",
+     "county": "HUNEDOARA",
      "bbox": [
       23.2065797,
       45.67332,
@@ -50794,12 +50794,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "ARGEȘ",
      "bbox": [
       24.2261438,
       45.6326878,
@@ -50989,12 +50989,12 @@
     },
     {
      "river": "sibisel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — HUNEDOARA",
+     "detail": "Sibişel",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "HUNEDOARA",
      "bbox": [
       24.0527123,
       45.6576346,
@@ -52136,12 +52136,12 @@
     },
     {
      "river": "arpas",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SIBIU",
+     "detail": "Arpaș",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "SIBIU",
      "bbox": [
       24.6177328,
       45.6409492,
@@ -52316,12 +52316,12 @@
     },
     {
      "river": "buda",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Buda",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "ARGEȘ",
      "bbox": [
       24.6143317,
       45.4312865,
@@ -52331,12 +52331,12 @@
     },
     {
      "river": "capra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "ARGEȘ",
      "bbox": [
       24.5812655,
       45.4312865,
@@ -52711,7 +52711,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Sibiu",
      "bbox": [
       24.7113311,
       45.5844348,
@@ -52826,12 +52826,12 @@
     },
     {
      "river": "laita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SIBIU",
+     "detail": "Laita",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "SIBIU",
      "bbox": [
       24.5501411,
       45.5923381,
@@ -53206,7 +53206,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       24.7932869,
       45.6350425,
@@ -53236,7 +53236,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       24.9622089,
       45.5287579,
@@ -54248,7 +54248,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.0164601,
       45.5191666,
@@ -54258,12 +54258,12 @@
     },
     {
      "river": "comana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BRAȘOV",
+     "detail": "Comana",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "BRAȘOV",
      "bbox": [
       25.2150291,
       45.8783909,
@@ -54318,12 +54318,12 @@
     },
     {
      "river": "dambovicioara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Dambovicioara",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "ARGEȘ",
      "bbox": [
       25.1996324,
       45.4118165,
@@ -54888,12 +54888,12 @@
     },
     {
      "river": "paraul bogata",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BRAȘOV",
+     "detail": "Bogata",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "BRAȘOV",
      "bbox": [
       25.3414448,
       45.8843662,
@@ -55263,12 +55263,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "ARGEȘ",
      "bbox": [
       25.1133541,
       45.3857463,
@@ -56423,7 +56423,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       25.2154379,
       45.4391379,
@@ -57850,12 +57850,12 @@
     },
     {
      "river": "capra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "ARGEȘ",
      "bbox": [
       25.9090774,
       45.483382,
@@ -57865,12 +57865,12 @@
     },
     {
      "river": "capra mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "ARGEȘ",
      "bbox": [
       25.8364773,
       45.4361366,
@@ -57880,12 +57880,12 @@
     },
     {
      "river": "capra mica",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "ARGEȘ",
      "bbox": [
       25.8370586,
       45.4420938,
@@ -59455,12 +59455,12 @@
     },
     {
      "river": "telejenel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — PRAHOVA",
+     "detail": "Telejenel",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "PRAHOVA",
      "bbox": [
       25.982894,
       45.3319467,
@@ -60430,12 +60430,12 @@
     },
     {
      "river": "valea neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "SUCEAVA",
      "bbox": [
       25.7913888,
       45.3976883,
@@ -61774,7 +61774,7 @@
      "river": "siriul mic",
      "class": "present",
      "association": "AJVPS BUZĂU",
-     "detail": "audit_match:char0.91",
+     "detail": "siriul_mic_attach (t_8c4b2d08)",
      "geometry": true,
      "slug": "anpa-anpa-0208",
      "county": "Buzău",
@@ -61817,12 +61817,12 @@
     },
     {
      "river": "telejenel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — PRAHOVA",
+     "detail": "Telejenel",
      "geometry": false,
      "slug": "",
-     "county": "Brăila",
+     "county": "PRAHOVA",
      "bbox": [
       25.982894,
       45.3319467,
@@ -61847,12 +61847,12 @@
     },
     {
      "river": "tisita mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Tișița",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.4674604,
       45.8625425,
@@ -62919,12 +62919,12 @@
     },
     {
      "river": "tisita mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Tișița",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.4674604,
       45.8625425,
@@ -66236,12 +66236,12 @@
     },
     {
      "river": "paraul julita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARAD",
+     "detail": "Julița",
      "geometry": false,
      "slug": "",
-     "county": "Arad",
+     "county": "ARAD",
      "bbox": [
       22.1277898,
       46.0141164,
@@ -66266,12 +66266,12 @@
     },
     {
      "river": "petris",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARAD",
+     "detail": "Petriș",
      "geometry": false,
      "slug": "",
-     "county": "Arad",
+     "county": "ARAD",
      "bbox": [
       22.3874591,
       46.0089615,
@@ -66371,12 +66371,12 @@
     },
     {
      "river": "troas",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARAD",
+     "detail": "Troaș",
      "geometry": false,
      "slug": "",
-     "county": "Arad",
+     "county": "ARAD",
      "bbox": [
       22.2348797,
       46.0029575,
@@ -66513,12 +66513,12 @@
     },
     {
      "river": "ariesul mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mare Superior",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6747353,
       46.3717035,
@@ -66528,12 +66528,12 @@
     },
     {
      "river": "ariesul mic",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mic",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6809178,
       46.3536386,
@@ -67300,12 +67300,12 @@
     },
     {
      "river": "ampoita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ampoita",
      "geometry": false,
      "slug": "",
-     "county": "Alba",
+     "county": "ALBA",
      "bbox": [
       23.313117,
       46.1125792,
@@ -67345,12 +67345,12 @@
     },
     {
      "river": "ariesul mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mare Superior",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6747353,
       46.3717035,
@@ -67360,12 +67360,12 @@
     },
     {
      "river": "ariesul mic",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mic",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6809178,
       46.3536386,
@@ -67675,12 +67675,12 @@
     },
     {
      "river": "ighiel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ighiel",
      "geometry": false,
      "slug": "",
-     "county": "Alba",
+     "county": "ALBA",
      "bbox": [
       23.438451,
       46.1409263,
@@ -70118,12 +70118,12 @@
     },
     {
      "river": "comana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BRAȘOV",
+     "detail": "Comana",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "BRAȘOV",
      "bbox": [
       25.2150291,
       45.8783909,
@@ -70523,12 +70523,12 @@
     },
     {
      "river": "paraul bogata",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BRAȘOV",
+     "detail": "Bogata",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "BRAȘOV",
      "bbox": [
       25.3414448,
       45.8843662,
@@ -70905,12 +70905,12 @@
    "rivers": [
     {
      "river": "aita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — COVASNA",
+     "detail": "Aita",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "COVASNA",
      "bbox": [
       25.5420792,
       45.9673505,
@@ -72675,12 +72675,12 @@
     },
     {
      "river": "paraul sugo",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — COVASNA",
+     "detail": "Șugo",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "COVASNA",
      "bbox": [
       25.928142,
       46.1313679,
@@ -73275,12 +73275,12 @@
     },
     {
      "river": "valea neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "SUCEAVA",
      "bbox": [
       25.7572135,
       46.283537,
@@ -73387,12 +73387,12 @@
     },
     {
      "river": "barzauta",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BACĂU",
+     "detail": "Bărzăuța",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "BACĂU",
      "bbox": [
       26.2287542,
       46.1625249,
@@ -73567,12 +73567,12 @@
     },
     {
      "river": "dofteana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BACĂU",
+     "detail": "Dofteana",
      "geometry": false,
      "slug": "",
-     "county": "Bacău",
+     "county": "BACĂU",
      "bbox": [
       26.3701796,
       46.2223876,
@@ -74377,12 +74377,12 @@
     },
     {
      "river": "raul barzauta",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BACĂU",
+     "detail": "Bărzăuța",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "BACĂU",
      "bbox": [
       26.2529948,
       46.246349,
@@ -74969,12 +74969,12 @@
     },
     {
      "river": "dofteana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BACĂU",
+     "detail": "Dofteana",
      "geometry": false,
      "slug": "",
-     "county": "Bacău",
+     "county": "BACĂU",
      "bbox": [
       26.3701796,
       46.2223876,
@@ -75029,12 +75029,12 @@
     },
     {
      "river": "lepsa",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Lepșa",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.5333762,
       45.9483694,
@@ -75194,12 +75194,12 @@
     },
     {
      "river": "tisita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Tișița",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.5598989,
       45.9124037,
@@ -75209,12 +75209,12 @@
     },
     {
      "river": "tisita mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Tișița",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.4674604,
       45.8625425,
@@ -75224,12 +75224,12 @@
     },
     {
      "river": "tisita mica",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — VRANCEA",
+     "detail": "Tișița",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "VRANCEA",
      "bbox": [
       26.5132105,
       45.9005068,
@@ -77356,12 +77356,12 @@
     },
     {
      "river": "crisul pietros",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Crişul Pietros",
      "geometry": false,
      "slug": "",
-     "county": "Bihor",
+     "county": "BIHOR",
      "bbox": [
       22.3775561,
       46.5865748,
@@ -78008,12 +78008,12 @@
     },
     {
      "river": "ariesul mare",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mare Superior",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6747353,
       46.3717035,
@@ -78023,12 +78023,12 @@
     },
     {
      "river": "ariesul mic",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ALBA",
+     "detail": "Ariesul Mic",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "ALBA",
      "bbox": [
       22.6809178,
       46.3536386,
@@ -78263,12 +78263,12 @@
     },
     {
      "river": "crisul pietros",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Crişul Pietros",
      "geometry": false,
      "slug": "",
-     "county": "Bihor",
+     "county": "BIHOR",
      "bbox": [
       22.3775561,
       46.5865748,
@@ -78383,12 +78383,12 @@
     },
     {
      "river": "dragan",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Drăgan",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "BIHOR",
      "bbox": [
       22.66652,
       46.6431433,
@@ -78698,12 +78698,12 @@
     },
     {
      "river": "lesu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Leșu",
      "geometry": false,
      "slug": "",
-     "county": "Bihor",
+     "county": "BIHOR",
      "bbox": [
       22.5417417,
       46.8210888,
@@ -81060,12 +81060,12 @@
     },
     {
      "river": "lesu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Leșu",
      "geometry": false,
      "slug": "",
-     "county": "Cluj",
+     "county": "BIHOR",
      "bbox": [
       23.1285439,
       46.6651765,
@@ -84426,12 +84426,12 @@
     },
     {
      "river": "isticeu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Isticeu",
      "geometry": false,
      "slug": "",
-     "county": "Mureș",
+     "county": "MUREȘ",
      "bbox": [
       24.9460446,
       46.7712904,
@@ -85228,12 +85228,12 @@
     },
     {
      "river": "fancel",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Fâncel",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "MUREȘ",
      "bbox": [
       25.0840383,
       46.7513044,
@@ -85348,12 +85348,12 @@
     },
     {
      "river": "isticeu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Isticeu",
      "geometry": false,
      "slug": "",
-     "county": "Mureș",
+     "county": "MUREȘ",
      "bbox": [
       24.9460446,
       46.7712904,
@@ -86098,12 +86098,12 @@
     },
     {
      "river": "paraul salard",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Sălard",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "MUREȘ",
      "bbox": [
       25.0751621,
       46.859673,
@@ -86713,12 +86713,12 @@
     },
     {
      "river": "sugo",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — COVASNA",
+     "detail": "Șugo",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "COVASNA",
      "bbox": [
       25.1752904,
       46.4521056,
@@ -87215,12 +87215,12 @@
     },
     {
      "river": "capra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "ARGEȘ",
      "bbox": [
       25.791136,
       46.8712693,
@@ -91752,12 +91752,12 @@
     },
     {
      "river": "iapa",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — NEAMȚ",
+     "detail": "Iapa",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "NEAMȚ",
      "bbox": [
       26.2291178,
       46.7949466,
@@ -92957,7 +92957,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "Bacău",
      "bbox": [
       26.3940051,
       46.6653658,
@@ -93312,12 +93312,12 @@
     },
     {
      "river": "tarcau",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — NEAMȚ",
+     "detail": "Tarcău Superior",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "NEAMȚ",
      "bbox": [
       26.1310164,
       46.6443379,
@@ -96726,10 +96726,10 @@
     },
     {
      "river": "paraul dobricionesti",
-     "class": "present-bbox",
+     "class": "present",
      "association": "AJVPS BIHOR",
-     "detail": "",
-     "geometry": false,
+     "detail": "audit_match:override",
+     "geometry": true,
      "slug": "kc8rset6",
      "county": "Bihor",
      "bbox": [
@@ -96973,12 +96973,12 @@
     },
     {
      "river": "dragan",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BIHOR",
+     "detail": "Drăgan",
      "geometry": false,
      "slug": "",
-     "county": "Constanța",
+     "county": "BIHOR",
      "bbox": [
       22.66652,
       46.6431433,
@@ -97430,12 +97430,12 @@
     },
     {
      "river": "buda",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Buda",
      "geometry": false,
      "slug": "",
-     "county": "Cluj",
+     "county": "ARGEȘ",
      "bbox": [
       23.4973214,
       46.9030852,
@@ -98127,12 +98127,12 @@
     },
     {
      "river": "buda",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Buda",
      "geometry": false,
      "slug": "",
-     "county": "Cluj",
+     "county": "ARGEȘ",
      "bbox": [
       23.4973214,
       46.9030852,
@@ -98472,12 +98472,12 @@
     },
     {
      "river": "iapa",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — NEAMȚ",
+     "detail": "Iapa",
      "geometry": false,
      "slug": "",
-     "county": "Maramureș",
+     "county": "NEAMȚ",
      "bbox": [
       23.5117205,
       47.2485358,
@@ -99529,12 +99529,12 @@
     },
     {
      "river": "ilisua",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BISTRIȚA-NĂSĂUD",
+     "detail": "Ilișua",
      "geometry": false,
      "slug": "",
-     "county": "Călărași",
+     "county": "BISTRIȚA-NĂSĂUD",
      "bbox": [
       24.0789812,
       47.1847266,
@@ -99694,12 +99694,12 @@
     },
     {
      "river": "rebra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BISTRIȚA-NĂSĂUD",
+     "detail": "Rebra",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "BISTRIȚA-NĂSĂUD",
      "bbox": [
       24.4767027,
       47.2854555,
@@ -100351,7 +100351,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Satu Mare",
+     "county": "Bistrița-Năsăud",
      "bbox": [
       24.5280955,
       47.0413088,
@@ -100586,12 +100586,12 @@
     },
     {
      "river": "ilva",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Ilva",
      "geometry": false,
      "slug": "",
-     "county": "Satu Mare",
+     "county": "MUREȘ",
      "bbox": [
       24.6491606,
       47.2408826,
@@ -100886,12 +100886,12 @@
     },
     {
      "river": "petris",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARAD",
+     "detail": "Petriș",
      "geometry": false,
      "slug": "",
-     "county": "Satu Mare",
+     "county": "ARAD",
      "bbox": [
       24.6144864,
       47.0945276,
@@ -100991,12 +100991,12 @@
     },
     {
      "river": "rebra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BISTRIȚA-NĂSĂUD",
+     "detail": "Rebra",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "BISTRIȚA-NĂSĂUD",
      "bbox": [
       24.4767027,
       47.2854555,
@@ -101958,12 +101958,12 @@
     },
     {
      "river": "dornisoara",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Dornişoara",
      "geometry": false,
      "slug": "",
-     "county": "Suceava",
+     "county": "SUCEAVA",
      "bbox": [
       25.107541,
       47.2957182,
@@ -102123,12 +102123,12 @@
     },
     {
      "river": "ilva",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Ilva",
      "geometry": false,
      "slug": "",
-     "county": "Satu Mare",
+     "county": "MUREȘ",
      "bbox": [
       24.6491606,
       47.2408826,
@@ -102288,12 +102288,12 @@
     },
     {
      "river": "neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "SUCEAVA",
      "bbox": [
       25.3948971,
       47.1110011,
@@ -102888,12 +102888,12 @@
     },
     {
      "river": "paraul salard",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Sălard",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "MUREȘ",
      "bbox": [
       25.0751621,
       46.859673,
@@ -103653,12 +103653,12 @@
     },
     {
      "river": "zebrac",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MUREȘ",
+     "detail": "Zebrac",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "MUREȘ",
      "bbox": [
       25.2189756,
       46.9595822,
@@ -103690,12 +103690,12 @@
     },
     {
      "river": "baicu",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Baicu",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "MARAMUREȘ",
      "bbox": [
       25.9218964,
       47.1878545,
@@ -103870,12 +103870,12 @@
     },
     {
      "river": "borca",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — NEAMȚ",
+     "detail": "Borca",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "NEAMȚ",
      "bbox": [
       25.7170188,
       47.0854971,
@@ -103945,12 +103945,12 @@
     },
     {
      "river": "buda",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Buda",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "ARGEȘ",
      "bbox": [
       25.9482972,
       46.9253897,
@@ -103975,12 +103975,12 @@
     },
     {
      "river": "capra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "ARGEȘ",
      "bbox": [
       25.791136,
       46.8712693,
@@ -104530,12 +104530,12 @@
     },
     {
      "river": "neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "SUCEAVA",
      "bbox": [
       25.3948971,
       47.1110011,
@@ -104905,12 +104905,12 @@
     },
     {
      "river": "paraul capra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Capra",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "ARGEȘ",
      "bbox": [
       25.6192056,
       47.2511339,
@@ -106612,7 +106612,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Botoșani",
+     "county": "Neamț",
      "bbox": [
       26.2550934,
       47.1946925,
@@ -106627,7 +106627,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Botoșani",
+     "county": "Neamț",
      "bbox": [
       26.278727,
       47.1964904,
@@ -107147,12 +107147,12 @@
     },
     {
      "river": "fantana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Fântâna",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "MARAMUREȘ",
      "bbox": [
       26.0980279,
       47.2047855,
@@ -108577,7 +108577,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Botoșani",
+     "county": "Neamț",
      "bbox": [
       26.1636874,
       47.2480587,
@@ -114782,12 +114782,12 @@
     },
     {
      "river": "cavnic",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Cavnic",
      "geometry": false,
      "slug": "",
-     "county": "Maramureș",
+     "county": "MARAMUREȘ",
      "bbox": [
       23.5933158,
       47.4994527,
@@ -115082,12 +115082,12 @@
     },
     {
      "river": "rausor",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — ARGEȘ",
+     "detail": "Râușor",
      "geometry": false,
      "slug": "",
-     "county": "Maramureș",
+     "county": "ARGEȘ",
      "bbox": [
       23.782795,
       47.7259467,
@@ -115959,12 +115959,12 @@
     },
     {
      "river": "ieud",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Ieud",
      "geometry": false,
      "slug": "",
-     "county": "Maramureș",
+     "county": "MARAMUREȘ",
      "bbox": [
       24.1952789,
       47.6195446,
@@ -115974,12 +115974,12 @@
     },
     {
      "river": "ilisua",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BISTRIȚA-NĂSĂUD",
+     "detail": "Ilișua",
      "geometry": false,
      "slug": "",
-     "county": "Călărași",
+     "county": "BISTRIȚA-NĂSĂUD",
      "bbox": [
       24.0789812,
       47.1847266,
@@ -116379,12 +116379,12 @@
     },
     {
      "river": "ruscova",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Ruscova Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "MARAMUREȘ",
      "bbox": [
       24.2707161,
       47.7829975,
@@ -116649,12 +116649,12 @@
     },
     {
      "river": "valea neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Maramureș",
+     "county": "SUCEAVA",
      "bbox": [
       24.155283,
       47.8521987,
@@ -116886,7 +116886,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "Satu Mare",
      "bbox": [
       24.8220893,
       47.6875489,
@@ -117121,12 +117121,12 @@
     },
     {
      "river": "fantana",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Fântâna",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "MARAMUREȘ",
      "bbox": [
       24.7785489,
       47.5797248,
@@ -117511,12 +117511,12 @@
     },
     {
      "river": "rebra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BISTRIȚA-NĂSĂUD",
+     "detail": "Rebra",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "BISTRIȚA-NĂSĂUD",
      "bbox": [
       24.4767027,
       47.2854555,
@@ -117616,12 +117616,12 @@
     },
     {
      "river": "ruscova",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Ruscova Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "MARAMUREȘ",
      "bbox": [
       24.2707161,
       47.7829975,
@@ -118598,12 +118598,12 @@
     },
     {
      "river": "giumalau",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Giumalău",
      "geometry": false,
      "slug": "",
-     "county": "Suceava",
+     "county": "SUCEAVA",
      "bbox": [
       25.4666194,
       47.4791585,
@@ -118688,12 +118688,12 @@
     },
     {
      "river": "moldovita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Moldoviţa Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Suceava",
+     "county": "SUCEAVA",
      "bbox": [
       25.330046,
       47.5695328,
@@ -119550,12 +119550,12 @@
     },
     {
      "river": "moldovita",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Moldoviţa Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Suceava",
+     "county": "SUCEAVA",
      "bbox": [
       25.330046,
       47.5695328,
@@ -119580,12 +119580,12 @@
     },
     {
      "river": "neagra",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — SUCEAVA",
+     "detail": "Neagra Inferioară",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "SUCEAVA",
      "bbox": [
       25.8737919,
       47.6538062,
@@ -120112,12 +120112,12 @@
    "rivers": [
     {
      "river": "bogata",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — BRAȘOV",
+     "detail": "Bogata",
      "geometry": false,
      "slug": "",
-     "county": "Botoșani",
+     "county": "BRAȘOV",
      "bbox": [
       26.1325552,
       47.4000894,
@@ -129411,12 +129411,12 @@
     },
     {
      "river": "ruscova",
-     "class": "uncontracted",
-     "association": "",
-     "detail": "",
+     "class": "romsilva",
+     "association": "RNP Romsilva — MARAMUREȘ",
+     "detail": "Ruscova Superioară",
      "geometry": false,
      "slug": "",
-     "county": "Bistrița-Năsăud",
+     "county": "MARAMUREȘ",
      "bbox": [
       24.5934218,
       47.890134,
@@ -132415,7 +132415,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "Botoșani",
      "bbox": [
       25.9180528,
       48.1842519,
@@ -132782,7 +132782,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "Botoșani",
      "bbox": [
       26.1088747,
       48.2236934,
@@ -133007,7 +133007,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Iași",
+     "county": "Botoșani",
      "bbox": [
       25.9180528,
       48.1842519,
@@ -133740,7 +133740,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vaslui",
+     "county": "Botoșani",
      "bbox": [
       28.0052207,
       48.2099415,
@@ -135058,7 +135058,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vaslui",
+     "county": "Botoșani",
      "bbox": [
       28.0052207,
       48.2099415,
@@ -135124,74 +135124,115 @@
  "summary": {
   "total_clusters": 7699,
   "class_counts": {
-   "uncontracted": 6860,
-   "present": 806,
+   "uncontracted": 6764,
+   "present": 808,
+   "romsilva": 95,
    "present-hidden": 5,
-   "present-bbox": 28
+   "present-bbox": 26,
+   "anpa-missing": 1
   },
   "county_counts": {
-   "Alba": 185,
-   "Arad": 271,
-   "Argeș": 168,
-   "Bacău": 70,
-   "Bihor": 253,
+   "ALBA": 6,
+   "ARAD": 4,
+   "ARGEȘ": 17,
+   "Alba": 183,
+   "Arad": 268,
+   "Argeș": 160,
+   "BACĂU": 3,
+   "BIHOR": 4,
+   "BISTRIȚA-NĂSĂUD": 2,
+   "BRAȘOV": 3,
+   "Bacău": 69,
+   "Bihor": 251,
    "Bistrița - Năsăud": 50,
-   "Bistrița-Năsăud": 178,
-   "Botoșani": 141,
-   "Brașov": 237,
-   "Brăila": 282,
+   "Bistrița-Năsăud": 174,
+   "Botoșani": 140,
+   "Brașov": 238,
+   "Brăila": 277,
    "Buzău": 82,
-   "Caraș-Severin": 892,
-   "Cluj": 161,
-   "Constanța": 158,
-   "Covasna": 224,
-   "Călărași": 62,
+   "CARAȘ-SEVERIN": 4,
+   "COVASNA": 4,
+   "Caraș-Severin": 890,
+   "Cluj": 159,
+   "Constanța": 153,
+   "Covasna": 218,
+   "Călărași": 61,
    "Dolj": 222,
    "Dâmbovița": 63,
-   "Giurgiu": 57,
-   "Gorj": 88,
-   "Harghita": 415,
-   "Hunedoara": 122,
+   "Giurgiu": 56,
+   "Gorj": 87,
+   "HUNEDOARA": 7,
+   "Harghita": 411,
+   "Hunedoara": 118,
    "Ialomița": 247,
-   "Iași": 158,
+   "Iași": 151,
    "Ilfov": 16,
-   "Maramureș": 228,
-   "Mehedinți": 207,
-   "Mureș": 104,
-   "Neamț": 414,
+   "MARAMUREȘ": 8,
+   "MUREȘ": 6,
+   "Maramureș": 222,
+   "Mehedinți": 201,
+   "Mureș": 103,
+   "NEAMȚ": 4,
+   "Neamț": 411,
    "Olt": 95,
+   "PRAHOVA": 1,
    "Prahova": 109,
-   "Satu Mare": 87,
-   "Sibiu": 144,
-   "Suceava": 221,
+   "SIBIU": 2,
+   "SUCEAVA": 11,
+   "Satu Mare": 84,
+   "Sibiu": 140,
+   "Suceava": 218,
    "Sălaj": 125,
+   "TIMIȘ": 3,
    "Teleorman": 45,
    "Timiș": 268,
-   "Vaslui": 443,
-   "Vrancea": 50,
-   "Vâlcea": 357
+   "VRANCEA": 4,
+   "Vaslui": 442,
+   "Vrancea": 47,
+   "VÂLCEA": 3,
+   "Vâlcea": 349
   },
   "class_by_county": {
+   "ALBA": {
+    "romsilva": 6
+   },
+   "ARAD": {
+    "romsilva": 4
+   },
+   "ARGEȘ": {
+    "romsilva": 17
+   },
    "Alba": {
-    "uncontracted": 150,
+    "uncontracted": 148,
     "present": 35
    },
    "Arad": {
-    "uncontracted": 268,
+    "uncontracted": 265,
     "present": 3
    },
    "Argeș": {
-    "uncontracted": 149,
+    "uncontracted": 141,
     "present": 19
    },
+   "BACĂU": {
+    "romsilva": 3
+   },
+   "BIHOR": {
+    "romsilva": 4
+   },
+   "BISTRIȚA-NĂSĂUD": {
+    "romsilva": 2
+   },
+   "BRAȘOV": {
+    "romsilva": 3
+   },
    "Bacău": {
-    "present": 19,
+    "present": 18,
     "uncontracted": 51
    },
    "Bihor": {
-    "uncontracted": 223,
-    "present": 29,
-    "present-bbox": 1
+    "uncontracted": 221,
+    "present": 30
    },
    "Bistrița - Năsăud": {
     "uncontracted": 42,
@@ -135200,19 +135241,19 @@
    },
    "Bistrița-Năsăud": {
     "present": 19,
-    "uncontracted": 159
+    "uncontracted": 155
    },
    "Botoșani": {
-    "uncontracted": 103,
+    "uncontracted": 102,
     "present": 38
    },
    "Brașov": {
-    "uncontracted": 209,
+    "uncontracted": 210,
     "present": 27,
     "present-bbox": 1
    },
    "Brăila": {
-    "uncontracted": 273,
+    "uncontracted": 268,
     "present": 7,
     "present-hidden": 2
    },
@@ -135220,26 +135261,32 @@
     "uncontracted": 78,
     "present": 4
    },
+   "CARAȘ-SEVERIN": {
+    "romsilva": 4
+   },
+   "COVASNA": {
+    "romsilva": 4
+   },
    "Caraș-Severin": {
-    "uncontracted": 845,
+    "uncontracted": 843,
     "present": 44,
     "present-bbox": 3
    },
    "Cluj": {
-    "uncontracted": 126,
+    "uncontracted": 124,
     "present": 33,
     "present-bbox": 2
    },
    "Constanța": {
-    "uncontracted": 157,
+    "uncontracted": 152,
     "present": 1
    },
    "Covasna": {
-    "uncontracted": 192,
+    "uncontracted": 186,
     "present": 32
    },
    "Călărași": {
-    "uncontracted": 62
+    "uncontracted": 61
    },
    "Dolj": {
     "uncontracted": 202,
@@ -135252,68 +135299,89 @@
    },
    "Giurgiu": {
     "present": 4,
-    "uncontracted": 53
+    "uncontracted": 52
    },
    "Gorj": {
-    "uncontracted": 58,
+    "uncontracted": 57,
     "present": 26,
     "present-bbox": 4
    },
+   "HUNEDOARA": {
+    "romsilva": 7
+   },
    "Harghita": {
-    "uncontracted": 351,
+    "uncontracted": 347,
     "present": 64
    },
    "Hunedoara": {
-    "uncontracted": 101,
-    "present": 11,
-    "present-bbox": 10
+    "uncontracted": 97,
+    "present": 12,
+    "present-bbox": 9
    },
    "Ialomița": {
     "uncontracted": 244,
     "present": 3
    },
    "Iași": {
-    "uncontracted": 133,
+    "uncontracted": 126,
     "present": 25
    },
    "Ilfov": {
     "uncontracted": 10,
     "present": 6
    },
+   "MARAMUREȘ": {
+    "romsilva": 8
+   },
+   "MUREȘ": {
+    "romsilva": 6
+   },
    "Maramureș": {
-    "uncontracted": 199,
+    "uncontracted": 193,
     "present": 29
    },
    "Mehedinți": {
-    "uncontracted": 207
+    "uncontracted": 201
    },
    "Mureș": {
-    "uncontracted": 72,
+    "uncontracted": 71,
     "present": 32
    },
+   "NEAMȚ": {
+    "romsilva": 4
+   },
    "Neamț": {
-    "uncontracted": 411,
+    "uncontracted": 408,
     "present": 3
    },
    "Olt": {
     "uncontracted": 87,
     "present": 8
    },
+   "PRAHOVA": {
+    "romsilva": 1
+   },
    "Prahova": {
     "uncontracted": 87,
     "present": 22
    },
+   "SIBIU": {
+    "romsilva": 2
+   },
+   "SUCEAVA": {
+    "romsilva": 11
+   },
    "Satu Mare": {
-    "uncontracted": 77,
+    "uncontracted": 74,
     "present": 10
    },
    "Sibiu": {
-    "uncontracted": 111,
+    "uncontracted": 107,
     "present": 32,
     "present-bbox": 1
    },
    "Suceava": {
-    "uncontracted": 212,
+    "uncontracted": 209,
     "present": 7,
     "present-hidden": 1,
     "present-bbox": 1
@@ -135321,6 +135389,10 @@
    "Sălaj": {
     "present": 7,
     "uncontracted": 118
+   },
+   "TIMIȘ": {
+    "romsilva": 2,
+    "anpa-missing": 1
    },
    "Teleorman": {
     "uncontracted": 31,
@@ -135330,16 +135402,22 @@
     "present": 52,
     "uncontracted": 216
    },
+   "VRANCEA": {
+    "romsilva": 4
+   },
    "Vaslui": {
-    "uncontracted": 432,
+    "uncontracted": 431,
     "present": 11
    },
    "Vrancea": {
-    "uncontracted": 37,
-    "present": 13
+    "uncontracted": 33,
+    "present": 14
+   },
+   "VÂLCEA": {
+    "romsilva": 3
    },
    "Vâlcea": {
-    "uncontracted": 296,
+    "uncontracted": 288,
     "present": 58,
     "present-bbox": 3
    }
