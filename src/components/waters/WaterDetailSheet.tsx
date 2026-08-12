@@ -23,13 +23,18 @@ import type { Association } from '@/types/data';
 export function WaterDetailSheet() {
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
   const waters = useMapStore((s) => s.waters);
+  const uncontracted = useMapStore((s) => s.uncontracted);
   const associations = useMapStore((s) => s.associations);
   const selectWater = useMapStore((s) => s.selectWater);
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
   const [snap, setSnap] = useState<number | string | null>(0.35);
 
-  const water = waters.find((w) => w.slug === selectedWaterSlug) ?? null;
+  // Contracted waters first, then uncontracted OSM rivers (t_471dad64).
+  const water =
+    waters.find((w) => w.slug === selectedWaterSlug) ??
+    uncontracted.find((w) => w.slug === selectedWaterSlug) ??
+    null;
 
   // Card association: prefer the canonical 82-association record; fall back to
   // the water's embedded asociatie object (same shape for the fields we need).

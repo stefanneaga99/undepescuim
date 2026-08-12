@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
-import { NEUTRAL_COLOR, COVERED_COLOR, UNCOVERED_COLOR } from '@/utils/colors';
+import { NEUTRAL_COLOR, COVERED_COLOR, UNCOVERED_COLOR, UNCONTRACTED_COLOR } from '@/utils/colors';
 
 interface LegendRow {
   color: string;
@@ -14,11 +14,13 @@ interface LegendRow {
  * Coverage legend (component_structure_plan.md §3.10).
  * - No association selected → single "Vedere neutră" (blue) row.
  * - Association selected → "Acoperit" (green) + "Neacoperit" (grey).
+ * - Uncontracted overlay visible (t_471dad64) → teal "Necontractate" row.
  * - Mobile: collapsible dots (auto-collapse after 5s), floats above the open
  *   bottom sheet via --sheet-snap-h. Desktop: full labels, always visible.
  */
 export function ColorLegend() {
   const coverageSlug = useMapStore((s) => s.selectedAssociationSlug);
+  const contractFilter = useMapStore((s) => s.contractFilter);
   const [expanded, setExpanded] = useState(false);
 
   // Auto-collapse 5s after manual expansion (mobile-layout-spec §6.1).
@@ -28,13 +30,16 @@ export function ColorLegend() {
     return () => clearTimeout(t);
   }, [expanded]);
 
-  const rows: LegendRow[] =
-    coverageSlug === null
+  const showUncontracted = contractFilter !== 'contractate';
+  const rows: LegendRow[] = [
+    ...(coverageSlug === null
       ? [{ color: NEUTRAL_COLOR, label: 'Vedere neutră' }]
       : [
           { color: COVERED_COLOR, label: 'Acoperit' },
           { color: UNCOVERED_COLOR, label: 'Neacoperit' },
-        ];
+        ]),
+    ...(showUncontracted ? [{ color: UNCONTRACTED_COLOR, label: 'Necontractate' }] : []),
+  ];
 
   return (
     <div

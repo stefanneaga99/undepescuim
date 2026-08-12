@@ -30,3 +30,19 @@ export const COVERED_COLOR = '#16a34a';
 export const UNCOVERED_COLOR = '#9ca3af';
 /** Contract sector highlight color (user-requested orange). */
 export const FOCUS_COLOR = '#f97316';
+/** Uncontracted OSM river overlay (t_471dad64) — thin muted teal. */
+export const UNCONTRACTED_COLOR = '#14b8a6';
+
+/**
+ * Style for the uncontracted overlay (t_471dad64): thin, muted teal, clearly
+ * distinct from contracted rivers (blue/orange/green) so users can tell at a
+ * glance that fishing there is NOT covered by any permit on this site.
+ */
+export function getUncontractedStyle(): PathOptions {
+  return {
+    color: UNCONTRACTED_COLOR,
+    weight: 1.5,
+    opacity: 0.8,
+    dashArray: '4 4',
+  };
+}

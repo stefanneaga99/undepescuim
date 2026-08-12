@@ -16,6 +16,9 @@ export type WaterSubtype = 'lac' | 'rau';
 /** Water type filter state */
 export type WaterTypeFilter = 'all' | WaterSubtype;
 
+/** Contract-status filter (t_471dad64): show everything / only contracted / only uncontracted. */
+export type ContractFilter = 'all' | 'contractate' | 'necontractate';
+
 /** County name as stored in water.judet (e.g. "Cluj", "Bihor") */
 export type County = string;
 
@@ -39,12 +42,12 @@ export interface Water {
   judet: County;
   type: 'ape'; // always "ape" for public waters
   subtype: WaterSubtype;
-  limite: string; // sector boundary description
-  dimensiune: string; // size with unit ("240 Ha" | "35 km")
-  pescuit_interzis: boolean;
-  referinta: string; // legal reference — MVP stand-in for "permit note"
+  limite?: string; // sector boundary description (absent for uncontracted)
+  dimensiune?: string; // size with unit ("240 Ha" | "35 km")
+  pescuit_interzis?: boolean;
+  referinta?: string; // legal reference — MVP stand-in for "permit note"
   coordinates: LngLat;
-  driving: LngLat;
+  driving?: LngLat;
   bbox: BBox;
   asociatie: {
     name: string;
@@ -87,6 +90,13 @@ export interface Water {
    */
   sectorStart?: number;
   sectorEnd?: number;
+  /**
+   * True for OSM rivers with NO contract (t_471dad64) — rendered as a thin
+   * teal overlay, click opens a 'Necontractat' card instead of an association.
+   */
+  uncontracted?: boolean;
+  /** Simplified-course length in km (uncontracted rivers; used for zoom LOD). */
+  lengthKm?: number;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */
@@ -100,6 +110,10 @@ export interface WaterFeatureProperties {
   riverGroup?: string | null;
   /** marker for non-renderable waters (no geometry, no bbox) */
   _hidden?: boolean;
+  /** uncontracted OSM river (t_471dad64) */
+  uncontracted?: boolean;
+  /** simplified-course length in km (uncontracted rivers; zoom LOD) */
+  lengthKm?: number;
 }
 
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Association, Water, WaterTypeFilter } from '@/types/data';
+import type { Association, ContractFilter, Water, WaterTypeFilter } from '@/types/data';
 
 /**
  * Single source of truth for all cross-component map UI state.
@@ -8,12 +8,18 @@ import type { Association, Water, WaterTypeFilter } from '@/types/data';
  * Rules:
  * - Selection and filters are INDEPENDENT (R10) — no action clears another's state.
  * - R9: if a filter change removes the selected water, the sheet auto-dismisses.
+ *
+ * t_471dad64: `waters` are the CONTRACTED waters (association cards);
+ * `uncontracted` are the OSM rivers with NO contract (teal overlay,
+ * 'Necontractat' cards). They stay separate so contract-resolution logic
+ * (contractAtFraction over `waters`) never sees the uncontracted entries.
  */
 
 interface MapStore {
   // Data layer (loaded once, never mutated after load)
   associations: Association[];
   waters: Water[];
+  uncontracted: Water[];
   dataLoaded: boolean;
 
   // Selection layer (mutually independent)
@@ -23,6 +29,7 @@ interface MapStore {
   // Filter layer
   countyFilter: string[]; // empty [] = all counties
   waterTypeFilter: WaterTypeFilter; // 'all' | 'lac' | 'rau'
+  contractFilter: ContractFilter; // 'all' | 'contractate' | 'necontractate'
 
   // Actions
   loadData: () => Promise<void>;
@@ -30,17 +37,18 @@ interface MapStore {
   selectWater: (slug: string | null) => void;
   toggleCounty: (county: string) => void;
   setWaterTypeFilter: (type: WaterTypeFilter) => void;
+  setContractFilter: (filter: ContractFilter) => void;
 }
 
-/** R9: would `slug` survive the given filters? */
+/** R9: would `slug` survive the given filters? (checked across both pools) */
 function isFilteredOut(
   slug: string | null,
-  waters: Water[],
+  allWaters: Water[],
   countyFilter: string[],
   waterTypeFilter: WaterTypeFilter,
 ): boolean {
   if (!slug) return false;
-  const water = waters.find((w) => w.slug === slug);
+  const water = allWaters.find((w) => w.slug === slug);
   if (!water) return true;
   if (countyFilter.length > 0 && !countyFilter.includes(water.judet)) return true;
   if (waterTypeFilter !== 'all' && water.subtype !== waterTypeFilter) return true;
@@ -50,6 +58,7 @@ function isFilteredOut(
 export const useMapStore = create<MapStore>((set, get) => ({
   associations: [],
   waters: [],
+  uncontracted: [],
   dataLoaded: false,
 
   selectedAssociationSlug: null,
@@ -57,19 +66,25 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   countyFilter: [],
   waterTypeFilter: 'all',
+  contractFilter: 'all',
 
   loadData: async () => {
     try {
-      const [assocRes, watersRes] = await Promise.all([
+      const [assocRes, watersRes, uncRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
+        fetch('/data/uncontracted_rivers.json'),
       ]);
       if (!assocRes.ok || !watersRes.ok) throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status}`);
       const [associations, waters] = (await Promise.all([
         assocRes.json(),
         watersRes.json(),
       ])) as [Association[], Water[]];
-      set({ associations, waters, dataLoaded: true });
+      let uncontracted: Water[] = [];
+      if (uncRes.ok) {
+        uncontracted = (await uncRes.json()) as Water[];
+      }
+      set({ associations, waters, uncontracted, dataLoaded: true });
     } catch (err) {
       // Never leave the skeleton spinning forever — render an empty map instead.
       console.error('[map-store] loadData failed:', err);
@@ -82,25 +97,27 @@ export const useMapStore = create<MapStore>((set, get) => ({
   selectWater: (slug) => set({ selectedWaterSlug: slug }),
 
   toggleCounty: (county) => {
-    const { countyFilter, waters, selectedWaterSlug, waterTypeFilter } = get();
+    const { countyFilter, waters, uncontracted, selectedWaterSlug, waterTypeFilter } = get();
     const next = countyFilter.includes(county)
       ? countyFilter.filter((c) => c !== county)
       : [...countyFilter, county];
     set({
       countyFilter: next,
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, waters, next, waterTypeFilter)
+      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], next, waterTypeFilter)
         ? null
         : selectedWaterSlug,
     });
   },
 
   setWaterTypeFilter: (type) => {
-    const { countyFilter, waters, selectedWaterSlug } = get();
+    const { countyFilter, waters, uncontracted, selectedWaterSlug } = get();
     set({
       waterTypeFilter: type,
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, waters, countyFilter, type)
+      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, type)
         ? null
         : selectedWaterSlug,
     });
   },
+
+  setContractFilter: (filter) => set({ contractFilter: filter }),
 }));

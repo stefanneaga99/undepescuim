@@ -4,6 +4,7 @@ import { useCounties } from '@/hooks/use-counties';
 import { useMapStore } from '@/stores/map-store';
 import { CountyFilter } from '@/components/map/CountyFilter';
 import { WaterTypeFilter } from '@/components/map/WaterTypeFilter';
+import { ContractFilter } from '@/components/map/ContractFilter';
 
 /**
  * Filter overlay container (component_structure_plan.md §3.7).
@@ -15,13 +16,18 @@ export function FilterBar() {
   const counties = useCounties();
   const countyFilter = useMapStore((s) => s.countyFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
+  const contractFilter = useMapStore((s) => s.contractFilter);
   const toggleCounty = useMapStore((s) => s.toggleCounty);
   const setWaterTypeFilter = useMapStore((s) => s.setWaterTypeFilter);
+  const setContractFilter = useMapStore((s) => s.setContractFilter);
 
   const content = (
     <>
       <CountyFilter counties={counties} selected={countyFilter} onToggle={toggleCounty} />
-      <WaterTypeFilter selected={waterTypeFilter} onChange={setWaterTypeFilter} />
+      <div className="flex flex-wrap gap-x-4 gap-y-2 md:flex-col md:items-start md:gap-y-2.5">
+        <WaterTypeFilter selected={waterTypeFilter} onChange={setWaterTypeFilter} />
+        <ContractFilter selected={contractFilter} onChange={setContractFilter} />
+      </div>
     </>
   );
 

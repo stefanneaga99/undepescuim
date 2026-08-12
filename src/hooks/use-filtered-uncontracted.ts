@@ -5,20 +5,19 @@ import { useMapStore } from '@/stores/map-store';
 import type { Water } from '@/types/data';
 
 /**
- * Derived: CONTRACTED waters filtered by countyFilter[] + waterTypeFilter +
- * contractFilter (AND). Read-only — never mutates the store. Association
- * selection does NOT filter (R3/R10) — it only colors via coverageSlug.
- * The uncontracted overlay is filtered separately (use-filtered-uncontracted).
+ * Derived: UNCONTRACTED OSM rivers (t_471dad64) filtered by countyFilter[] +
+ * waterTypeFilter + contractFilter (AND). Read-only. Hidden entirely when the
+ * contract filter is 'contractate'.
  */
-export function useFilteredWaters(): Water[] {
-  const waters = useMapStore((s) => s.waters);
+export function useFilteredUncontracted(): Water[] {
+  const uncontracted = useMapStore((s) => s.uncontracted);
   const countyFilter = useMapStore((s) => s.countyFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
   const contractFilter = useMapStore((s) => s.contractFilter);
 
   return useMemo(() => {
-    if (contractFilter === 'necontractate') return [];
-    let result = waters;
+    if (contractFilter === 'contractate') return [];
+    let result = uncontracted;
     if (countyFilter.length > 0) {
       result = result.filter((w) => countyFilter.includes(w.judet));
     }
@@ -26,5 +25,5 @@ export function useFilteredWaters(): Water[] {
       result = result.filter((w) => w.subtype === waterTypeFilter);
     }
     return result;
-  }, [waters, countyFilter, waterTypeFilter, contractFilter]);
+  }, [uncontracted, countyFilter, waterTypeFilter, contractFilter]);
 }

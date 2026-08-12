@@ -22,6 +22,7 @@ interface WaterDetailCardProps {
  */
 export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const isLake = water.subtype === 'lac';
+  const isUncontracted = water.uncontracted === true;
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
   const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
@@ -43,12 +44,28 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         <Badge variant="outline" className="text-[10px] uppercase tracking-wide">
           {water.judet}
         </Badge>
+        {isUncontracted && (
+          <Badge variant="outline" className="bg-slate-100 text-[10px] uppercase tracking-wide text-slate-600">
+            Necontractat
+          </Badge>
+        )}
         {water.pescuit_interzis && (
           <Badge variant="destructive" className="text-[10px] uppercase tracking-wide">
             Pescuit interzis
           </Badge>
         )}
       </div>
+
+      {/* Uncontracted notice (t_471dad64): no permit on this site covers it */}
+      {isUncontracted && (
+        <div className="rounded-md border border-teal-200 bg-teal-50 px-3 py-2.5 text-sm text-teal-900 dark:border-teal-900 dark:bg-teal-950/40 dark:text-teal-100">
+          <p className="font-medium">Apă necontractată</p>
+          <p className="mt-0.5 text-xs leading-relaxed opacity-90">
+            Pescuitul aici <strong>nu este acoperit</strong> de niciun permis afișat pe acest site.
+            Verifică legislația locală înainte de a pescui.
+          </p>
+        </div>
+      )}
 
       {/* Sector + size */}
       <dl className="flex flex-col gap-2 text-sm">
@@ -73,44 +90,46 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
       </dl>
 
       {/* Association (the resolved one for this clicked sector) */}
-      <div className="border-t pt-3">
-        <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Asociație
-        </h3>
-        {association ? (
-          <div className="flex flex-col gap-1.5 text-sm">
-            <p className="font-medium">{association.name}</p>
-            {telefon && (
-              <a
-                href={`tel:${telefon.replace(/\s+/g, '')}`}
-                className="flex items-center gap-2 text-primary hover:underline"
-              >
-                <Phone className="h-3.5 w-3.5 shrink-0" />
-                {telefon}
-              </a>
-            )}
-            {adresa && (
-              <p className="flex items-start gap-2 text-muted-foreground">
-                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-                {adresa}
-              </p>
-            )}
-            {siteUrl && (
-              <a
-                href={siteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-primary hover:underline"
-              >
-                <ExternalLink className="h-3.5 w-3.5 shrink-0" />
-                {siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
-              </a>
-            )}
-          </div>
-        ) : (
-          <p className="text-sm text-muted-foreground">Fără asociație</p>
-        )}
-      </div>
+      {!isUncontracted && (
+        <div className="border-t pt-3">
+          <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Asociație
+          </h3>
+          {association ? (
+            <div className="flex flex-col gap-1.5 text-sm">
+              <p className="font-medium">{association.name}</p>
+              {telefon && (
+                <a
+                  href={`tel:${telefon.replace(/\s+/g, '')}`}
+                  className="flex items-center gap-2 text-primary hover:underline"
+                >
+                  <Phone className="h-3.5 w-3.5 shrink-0" />
+                  {telefon}
+                </a>
+              )}
+              {adresa && (
+                <p className="flex items-start gap-2 text-muted-foreground">
+                  <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  {adresa}
+                </p>
+              )}
+              {siteUrl && (
+                <a
+                  href={siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:underline"
+                >
+                  <ExternalLink className="h-3.5 w-3.5 shrink-0" />
+                  {siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                </a>
+              )}
+            </div>
+          ) : (
+            <p className="text-sm text-muted-foreground">Fără asociație</p>
+          )}
+        </div>
+      )}
 
       {/* Legal reference (permit-note stand-in) */}
       {water.referinta && (

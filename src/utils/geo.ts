@@ -8,18 +8,21 @@ import type { Water, WaterFeature, WaterFeatureCollection, WaterFeaturePropertie
  * bbox rectangle for waters that haven't been geocoded yet.
  */
 export function waterToGeoJSON(water: Water): WaterFeature {
+  const commonProps: WaterFeatureProperties = {
+    slug: water.slug,
+    name: water.name,
+    subtype: water.subtype,
+    judet: water.judet,
+    asociatieSlug: water.asociatie?.slug ?? null,
+    riverGroup: water.riverGroup ?? null,
+    uncontracted: water.uncontracted ?? false,
+    lengthKm: water.lengthKm,
+  };
   // Real geometry from the geocoding pipeline takes priority
   if (water.geometry && water.geometry.coordinates?.length) {
     return {
       type: 'Feature',
-      properties: {
-        slug: water.slug,
-        name: water.name,
-        subtype: water.subtype,
-        judet: water.judet,
-        asociatieSlug: water.asociatie?.slug ?? null,
-        riverGroup: water.riverGroup ?? null,
-      },
+      properties: commonProps,
       geometry: water.geometry as GeoJSON.Geometry,
     };
   }
@@ -29,12 +32,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     return {
       type: 'Feature',
       properties: {
-        slug: water.slug,
-        name: water.name,
-        subtype: water.subtype,
-        judet: water.judet,
-        asociatieSlug: water.asociatie?.slug ?? null,
-        riverGroup: water.riverGroup ?? null,
+        ...commonProps,
         // marker for non-renderable waters (no geometry, no bbox)
         _hidden: true,
       },
@@ -57,14 +55,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
 
   return {
     type: 'Feature',
-    properties: {
-      slug: water.slug,
-      name: water.name,
-      subtype: water.subtype,
-      judet: water.judet,
-      asociatieSlug: water.asociatie?.slug ?? null,
-      riverGroup: water.riverGroup ?? null,
-    },
+    properties: commonProps,
     geometry: {
       type: 'Polygon',
       coordinates,

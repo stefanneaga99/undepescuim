@@ -5,7 +5,9 @@ import { MapContainer, TileLayer, ZoomControl, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
+import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
 import { WaterFeatureLayer, groupKeyOf, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
+import { UncontractedRiverLayer } from '@/components/map/UncontractedRiverLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 
 /**
@@ -17,6 +19,7 @@ import { FOCUS_COLOR } from '@/utils/colors';
  */
 export function MapView() {
   const filteredWaters = useFilteredWaters();
+  const filteredUncontracted = useFilteredUncontracted();
   const coverageSlug = useMapStore((s) => s.selectedAssociationSlug);
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
   const allWaters = useMapStore((s) => s.waters);
@@ -70,6 +73,9 @@ export function MapView() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <ZoomControl position="topright" />
+      {/* Uncontracted overlay renders BELOW contracted waters so clicks on a
+          contracted river always win over the teal background layer. */}
+      <UncontractedRiverLayer waters={filteredUncontracted} />
       <WaterFeatureLayer
         waters={filteredWaters}
         allWaters={allWaters}
