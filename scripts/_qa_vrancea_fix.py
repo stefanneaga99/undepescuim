@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Verify the t_9a7cf783 fix: geometry stats + FE click-resolution simulation.
+"""Verify the t_ebd873fe Siret group refactor: shared full-course geometry on
+the owner (9m2irr6m) + per-county sectorStart/sectorEnd intervals.
 
 Ports the FE logic from src/components/map/WaterFeatureLayer.tsx
 (orderParts / fractionAtPoint / contractAtFraction / groupKeyOf /
 isMainCourse / courseRank) so we can check what association a tap on the
-Siret / Râmnicu Sărat / Zăbala resolves to, without running the browser.
+Siret resolves to per county, without running the browser.
 """
 import json
 import math
@@ -35,10 +36,6 @@ def group_key_of(w):
     if w.get("riverGroup"):
         return w["riverGroup"]
     return water_key(w.get("name") or "")
-
-
-def same_river(a, b):
-    return a[:5] == b[:5]
 
 
 def haversine_km(a, b):
@@ -178,26 +175,35 @@ def click_test(slug, label, pt):
     return res
 
 
-print("=== 1. changed waters geometry ===")
-for slug in ["anpa-anpa-0674", "anpa-vrancea-ramnicu-sarat", "anpa-anpa-0215", "anpa-anpa-0676"]:
-    w = by_slug[slug]
+print("=== 1. Siret group members (refactored) ===")
+siret = [w for w in waters if w.get("riverGroup") == "siret"]
+for w in sorted(siret, key=lambda x: x["sectorStart"] or 0):
     g = w.get("geometry")
     gt = g.get("type") if g else None
-    n = len(g["coordinates"]) if gt == "LineString" else (len(g["coordinates"]) if gt == "MultiLineString" else 0)
-    print(f"  {slug:28s} {w['name']:24s} {w['judet']:8s} {gt} pts={n} bbox={w.get('bbox')} "
-          f"sStart={w.get('sectorStart')} sEnd={w.get('sectorEnd')} group={w.get('riverGroup')}")
+    n = len(g["coordinates"]) if gt == "LineString" else 0
+    print(f"  {w['slug']:20s} {w['judet']:8s} {gt or 'None':12s} pts={n:5d} "
+          f"sStart={w.get('sectorStart')} sEnd={w.get('sectorEnd')} assoc={w['asociatie']['slug']}")
 
-print("\n=== 2. Siret (Vrancea sector) click resolution — reported area ===")
-# sample points ON the Siret sector: interpolate along the geometry
-ws = by_slug["anpa-anpa-0674"]
-sc = ws["geometry"]["coordinates"]
-# pick river points near Focșani (45.70), Odobești (45.76), Panciu (45.91), south end (45.55)
-targets = [("Focșani lat 45.70", 45.70), ("Odobești lat 45.76", 45.76), ("Panciu lat 45.91", 45.91),
-           ("south end 45.55", 45.55), ("north end 46.15", 46.15)]
-for label, lat in targets:
-    pt = min(sc, key=lambda p: abs(p[1] - lat))
-    print(f"  river point at {label}: ({pt[0]:.4f},{pt[1]:.4f})")
-    click_test("anpa-anpa-0674", f"click Siret {label}", pt)
+print("\n=== 2. Siret click resolution per county (shared course owner 9m2irr6m) ===")
+owner = by_slug["9m2irr6m"]
+oc = owner["geometry"]["coordinates"]
+# pick points near each county's stretch by latitude (using the course, not the owner's tooltip)
+# county -> approx lat band from sector table
+checks = [
+    ("Suceava source 47.98", 47.98, "AJVPS BOTOȘANI"),
+    ("Botoșani mid 47.60", 47.60, "AJVPS BOTOȘANI"),
+    ("Iași mid 47.20", 47.20, "AVPS IAȘI"),
+    ("Neamț mid 46.90", 46.90, "AVPS ROMAN"),
+    ("Bacău mid 46.50", 46.50, "Centrul Regional de Ecologie BACĂU"),
+    ("Vrancea/Focșani 45.70", 45.70, "AJVPS VRANCEA"),
+    ("Galați 45.50", 45.50, "AJVPS GALAȚI"),
+    ("Brăila mouth 45.42", 45.42, "AJVPS Brăila"),
+]
+for label, lat, expect in checks:
+    pt = min(oc, key=lambda p: abs(p[1] - lat))
+    res = click_test("9m2irr6m", f"click Siret {label} ({pt[0]:.4f},{pt[1]:.4f})", pt)
+    ok = expect.lower() in res.lower()
+    print(f"      expect: {expect}  {'OK' if ok else '!! MISMATCH'}")
 
 print("\n=== 3. Râmnicu Sărat (Vrancea) click resolution ===")
 wr = by_slug["anpa-vrancea-ramnicu-sarat"]
@@ -216,9 +222,6 @@ for label, lat in [("source 45.83", 45.834), ("upper-mid 45.72", 45.72), ("mid 4
     print(f"  river point at {label}: ({pt[0]:.4f},{pt[1]:.4f})")
     click_test("anpa-anpa-0676", f"click Zăbala {label}", pt)
 
-print("\n=== 5. Sanity: Siret group members (unchanged) ===")
-siret = [w for w in waters if norm(w.get("name", "")) == "raul siret"]
-print("  siret entries:", len(siret))
-for w in sorted(siret, key=lambda x: x.get("course_frac") or 0):
-    g = w.get("geometry")
-    print(f"  {w['judet']:10s} cfrac={w.get('course_frac')} geom={bool(g)} bbox={bool(w.get('bbox'))}")
+print("\n=== 5. Sanity: no other water lost geometry ===")
+withg = sum(1 for w in waters if w.get("geometry"))
+print("  waters with geometry:", withg)
