@@ -2163,7 +2163,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Caraș-Severin",
+     "county": "Mehedinți",
      "bbox": [
       21.8812128,
       43.8311896,
@@ -2958,7 +2958,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Caraș-Severin",
+     "county": "Mehedinți",
      "bbox": [
       21.8542728,
       43.6174797,
@@ -3295,7 +3295,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Caraș-Severin",
+     "county": "Mehedinți",
      "bbox": [
       21.8812128,
       43.8311896,
@@ -5899,7 +5899,7 @@
      "river": "raul vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -5944,7 +5944,7 @@
      "river": "vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -6116,7 +6116,7 @@
      "river": "raul vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -6131,7 +6131,7 @@
      "river": "vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -15997,7 +15997,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Olt",
+     "county": "Teleorman",
      "bbox": [
       24.8476224,
       44.3582474,
@@ -16234,7 +16234,7 @@
      "river": "raul vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -16354,7 +16354,7 @@
      "river": "vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -16556,7 +16556,7 @@
      "river": "raul vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -16616,7 +16616,7 @@
      "river": "vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -26545,7 +26545,7 @@
      "river": "raul vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -26680,7 +26680,7 @@
      "river": "vedea",
      "class": "present",
      "association": "AJVPS TELEORMAN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0578",
      "county": "Teleorman",
@@ -27394,7 +27394,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.4411649,
       44.8679452,
@@ -27656,7 +27656,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.4411649,
       44.8679452,
@@ -30056,7 +30056,7 @@
      "river": "raul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -30888,7 +30888,7 @@
      "river": "raul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -33017,7 +33017,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -38208,7 +38208,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4992415,
       45.3952723,
@@ -38223,7 +38223,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4995742,
       45.3962858,
@@ -38538,7 +38538,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.3368131,
       45.3534904,
@@ -38613,7 +38613,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.3287139,
       45.355955,
@@ -38715,7 +38715,7 @@
      "river": "raul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -38928,7 +38928,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4898349,
       45.3872821,
@@ -38943,7 +38943,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4991469,
       45.392957,
@@ -38973,7 +38973,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.362725,
       45.339149,
@@ -39048,7 +39048,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4362196,
       45.3672264,
@@ -39138,7 +39138,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.2539717,
       45.3879569,
@@ -39348,7 +39348,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.3645659,
       45.3491868,
@@ -39423,7 +39423,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4019941,
       45.3505406,
@@ -39618,7 +39618,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4004661,
       45.3605105,
@@ -39865,7 +39865,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4992415,
       45.3952723,
@@ -39880,7 +39880,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.5015061,
       45.3972742,
@@ -39895,7 +39895,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4995742,
       45.3962858,
@@ -40615,7 +40615,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4898349,
       45.3872821,
@@ -40630,7 +40630,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.4991469,
       45.392957,
@@ -41140,7 +41140,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.5030217,
       45.3989432,
@@ -41567,7 +41567,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.4411649,
       44.8679452,
@@ -42047,7 +42047,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.1462555,
       45.2483458,
@@ -42099,7 +42099,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Vrancea",
      "bbox": [
       26.8337441,
       45.1698757,
@@ -42144,7 +42144,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Prahova",
      "bbox": [
       26.4411649,
       44.8679452,
@@ -47482,7 +47482,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -47587,7 +47587,7 @@
      "river": "raul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -49079,7 +49079,7 @@
      "river": "raul cibin",
      "class": "present",
      "association": "APS AQUA CRISIUS",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "n0810toy",
      "county": "Sibiu",
@@ -49881,7 +49881,7 @@
      "river": "cibin",
      "class": "present",
      "association": "APS AQUA CRISIUS",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "n0810toy",
      "county": "Sibiu",
@@ -50721,7 +50721,7 @@
      "river": "raul cibin",
      "class": "present",
      "association": "APS AQUA CRISIUS",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "n0810toy",
      "county": "Sibiu",
@@ -53236,7 +53236,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Argeș",
+     "county": "Brașov",
      "bbox": [
       24.9622089,
       45.5287579,
@@ -53341,7 +53341,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "Brașov",
      "bbox": [
       24.7980173,
       45.7743705,
@@ -53461,7 +53461,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "Brașov",
      "bbox": [
       24.7838128,
       45.6110455,
@@ -56003,7 +56003,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.2033157,
       45.4291312,
@@ -56288,7 +56288,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Argeș",
      "bbox": [
       25.2539717,
       45.3879569,
@@ -57900,7 +57900,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Prahova",
      "bbox": [
       25.5708517,
       45.4476178,
@@ -57945,7 +57945,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Covasna",
      "bbox": [
       25.6917124,
       45.6120911,
@@ -57975,7 +57975,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9296779,
       45.523124,
@@ -57990,7 +57990,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9952063,
       45.529299,
@@ -58080,7 +58080,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.8988224,
       45.5264512,
@@ -58440,7 +58440,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Covasna",
      "bbox": [
       25.5790356,
       45.8299159,
@@ -58515,7 +58515,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9523449,
       45.4690829,
@@ -58635,7 +58635,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Prahova",
      "bbox": [
       25.5979308,
       45.4758619,
@@ -58845,7 +58845,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Covasna",
      "bbox": [
       25.6677284,
       45.7232881,
@@ -58857,7 +58857,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -58875,7 +58875,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9177622,
       45.476274,
@@ -58890,7 +58890,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9814523,
       45.5128517,
@@ -58905,7 +58905,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9701441,
       45.5142575,
@@ -59010,7 +59010,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9359954,
       45.548943,
@@ -59055,7 +59055,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9839039,
       45.4767952,
@@ -59100,7 +59100,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9341864,
       45.5150751,
@@ -59325,7 +59325,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.933701,
       45.5292693,
@@ -59370,7 +59370,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9717669,
       45.5221434,
@@ -59565,7 +59565,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9607853,
       45.5521726,
@@ -59595,7 +59595,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9632039,
       45.5464624,
@@ -59670,7 +59670,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Prahova",
      "bbox": [
       25.5633138,
       45.4623468,
@@ -60570,7 +60570,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9123809,
       45.5427746,
@@ -60720,7 +60720,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Brașov",
+     "county": "Dâmbovița",
      "bbox": [
       25.5030217,
       45.3989432,
@@ -60900,7 +60900,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.8390296,
       45.5354552,
@@ -61252,7 +61252,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.0172343,
       45.4710674,
@@ -61312,7 +61312,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.0295977,
       45.4561671,
@@ -61327,7 +61327,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9952063,
       45.529299,
@@ -61387,7 +61387,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "Buzău",
      "bbox": [
       26.0138837,
       45.6694513,
@@ -61534,7 +61534,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -61552,7 +61552,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.022697,
       45.4674246,
@@ -61567,7 +61567,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.0303187,
       45.4804903,
@@ -61657,7 +61657,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Vrancea",
+     "county": "Buzău",
      "bbox": [
       26.4268578,
       45.8476761,
@@ -61792,7 +61792,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9717669,
       45.5221434,
@@ -61807,7 +61807,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "Buzău",
      "bbox": [
       26.1131526,
       45.7460582,
@@ -61912,7 +61912,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       25.9732007,
       45.4719042,
@@ -61957,7 +61957,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "Buzău",
      "bbox": [
       26.1375318,
       45.7447629,
@@ -61972,7 +61972,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Covasna",
+     "county": "Buzău",
      "bbox": [
       26.1375318,
       45.7660824,
@@ -61987,7 +61987,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Prahova",
+     "county": "Buzău",
      "bbox": [
       26.0078758,
       45.4519826,
@@ -62084,7 +62084,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Buzău",
+     "county": "Vrancea",
      "bbox": [
       26.8337441,
       45.1698757,
@@ -62306,7 +62306,7 @@
      "river": "naruja",
      "class": "present",
      "association": "AJVPS VRANCEA",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0678",
      "county": "Vrancea",
@@ -69666,7 +69666,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Sibiu",
+     "county": "Brașov",
      "bbox": [
       24.770075,
       45.9967087,
@@ -69786,7 +69786,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Mureș",
+     "county": "Brașov",
      "bbox": [
       24.9228975,
       46.1847069,
@@ -70483,7 +70483,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Harghita",
+     "county": "Brașov",
      "bbox": [
       25.1260751,
       46.2689531,
@@ -71492,7 +71492,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -72992,7 +72992,7 @@
      "river": "raul fisag",
      "class": "present",
      "association": "AVPS GHEORGHIENI",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0340",
      "county": "Harghita",
@@ -73824,7 +73824,7 @@
      "river": "izvorul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -74439,7 +74439,7 @@
      "river": "raul fisag",
      "class": "present",
      "association": "AVPS GHEORGHIENI",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0340",
      "county": "Harghita",
@@ -91769,7 +91769,7 @@
      "river": "izvorul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -105390,7 +105390,7 @@
      "detail": "",
      "geometry": false,
      "slug": "",
-     "county": "Neamț",
+     "county": "Harghita",
      "bbox": [
       25.7054953,
       46.9294654,
@@ -107749,7 +107749,7 @@
      "river": "paraul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -114934,7 +114934,7 @@
      "river": "izvorul alb",
      "class": "present",
      "association": "AJVPS CARAȘ-SEVERIN",
-     "detail": "",
+     "detail": "multiway_chain",
      "geometry": true,
      "slug": "anpa-anpa-0223",
      "county": "Caraș-Severin",
@@ -135133,22 +135133,22 @@
   "county_counts": {
    "Alba": 207,
    "Arad": 245,
-   "Argeș": 160,
+   "Argeș": 164,
    "Bacău": 83,
    "Bihor": 282,
    "Bistrița - Năsăud": 55,
    "Bistrița-Năsăud": 119,
    "Botoșani": 89,
-   "Brașov": 384,
-   "Brăila": 60,
-   "Buzău": 84,
-   "Caraș-Severin": 724,
+   "Brașov": 369,
+   "Brăila": 59,
+   "Buzău": 110,
+   "Caraș-Severin": 722,
    "Cluj": 164,
    "Constanța": 143,
-   "Covasna": 260,
+   "Covasna": 259,
    "Călărași": 75,
    "Dolj": 192,
-   "Dâmbovița": 90,
+   "Dâmbovița": 99,
    "Giurgiu": 63,
    "Gorj": 85,
    "Harghita": 364,
@@ -135157,20 +135157,20 @@
    "Iași": 81,
    "Ilfov": 12,
    "Maramureș": 297,
-   "Mehedinți": 374,
-   "Mureș": 175,
-   "Neamț": 443,
-   "Olt": 95,
-   "Prahova": 182,
+   "Mehedinți": 376,
+   "Mureș": 174,
+   "Neamț": 442,
+   "Olt": 93,
+   "Prahova": 163,
    "Satu Mare": 85,
-   "Sibiu": 155,
+   "Sibiu": 152,
    "Suceava": 236,
    "Sălaj": 133,
    "TIMIȘ": 1,
-   "Teleorman": 49,
+   "Teleorman": 52,
    "Timiș": 281,
    "Vaslui": 441,
-   "Vrancea": 36,
+   "Vrancea": 37,
    "Vâlcea": 348
   },
   "class_by_county": {
@@ -135183,7 +135183,7 @@
     "present": 7
    },
    "Argeș": {
-    "uncontracted": 124,
+    "uncontracted": 128,
     "present": 36
    },
    "Bacău": {
@@ -135209,19 +135209,19 @@
     "present": 37
    },
    "Brașov": {
-    "uncontracted": 353,
+    "uncontracted": 338,
     "present": 31
    },
    "Brăila": {
     "uncontracted": 51,
-    "present": 9
+    "present": 8
    },
    "Buzău": {
-    "uncontracted": 81,
+    "uncontracted": 107,
     "present": 3
    },
    "Caraș-Severin": {
-    "uncontracted": 683,
+    "uncontracted": 681,
     "present": 41
    },
    "Cluj": {
@@ -135234,7 +135234,7 @@
    },
    "Covasna": {
     "present": 37,
-    "uncontracted": 223
+    "uncontracted": 222
    },
    "Călărași": {
     "uncontracted": 75
@@ -135245,7 +135245,7 @@
    },
    "Dâmbovița": {
     "present": 34,
-    "uncontracted": 56
+    "uncontracted": 65
    },
    "Giurgiu": {
     "present": 7,
@@ -135281,23 +135281,23 @@
     "present-hidden": 1
    },
    "Mehedinți": {
-    "uncontracted": 369,
+    "uncontracted": 371,
     "present": 5
    },
    "Mureș": {
-    "uncontracted": 134,
+    "uncontracted": 133,
     "present": 41
    },
    "Neamț": {
-    "uncontracted": 433,
+    "uncontracted": 432,
     "present": 10
    },
    "Olt": {
-    "uncontracted": 87,
+    "uncontracted": 85,
     "present": 8
    },
    "Prahova": {
-    "uncontracted": 159,
+    "uncontracted": 140,
     "present": 23
    },
    "Satu Mare": {
@@ -135305,7 +135305,7 @@
     "present": 4
    },
    "Sibiu": {
-    "uncontracted": 119,
+    "uncontracted": 116,
     "present": 36
    },
    "Suceava": {
@@ -135322,7 +135322,7 @@
     "anpa-missing": 1
    },
    "Teleorman": {
-    "uncontracted": 33,
+    "uncontracted": 36,
     "present": 16
    },
    "Timiș": {
@@ -135335,7 +135335,7 @@
    },
    "Vrancea": {
     "uncontracted": 21,
-    "present": 15
+    "present": 16
    },
    "Vâlcea": {
     "uncontracted": 291,

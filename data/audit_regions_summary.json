@@ -10,22 +10,22 @@
   "county_counts": {
     "Alba": 207,
     "Arad": 245,
-    "Argeș": 160,
+    "Argeș": 164,
     "Bacău": 83,
     "Bihor": 282,
     "Bistrița - Năsăud": 55,
     "Bistrița-Năsăud": 119,
     "Botoșani": 89,
-    "Brașov": 384,
-    "Brăila": 60,
-    "Buzău": 84,
-    "Caraș-Severin": 724,
+    "Brașov": 369,
+    "Brăila": 59,
+    "Buzău": 110,
+    "Caraș-Severin": 722,
     "Cluj": 164,
     "Constanța": 143,
-    "Covasna": 260,
+    "Covasna": 259,
     "Călărași": 75,
     "Dolj": 192,
-    "Dâmbovița": 90,
+    "Dâmbovița": 99,
     "Giurgiu": 63,
     "Gorj": 85,
     "Harghita": 364,
@@ -34,20 +34,20 @@
     "Iași": 81,
     "Ilfov": 12,
     "Maramureș": 297,
-    "Mehedinți": 374,
-    "Mureș": 175,
-    "Neamț": 443,
-    "Olt": 95,
-    "Prahova": 182,
+    "Mehedinți": 376,
+    "Mureș": 174,
+    "Neamț": 442,
+    "Olt": 93,
+    "Prahova": 163,
     "Satu Mare": 85,
-    "Sibiu": 155,
+    "Sibiu": 152,
     "Suceava": 236,
     "Sălaj": 133,
     "TIMIȘ": 1,
-    "Teleorman": 49,
+    "Teleorman": 52,
     "Timiș": 281,
     "Vaslui": 441,
-    "Vrancea": 36,
+    "Vrancea": 37,
     "Vâlcea": 348
   },
   "class_by_county": {
@@ -60,7 +60,7 @@
       "present": 7
     },
     "Argeș": {
-      "uncontracted": 124,
+      "uncontracted": 128,
       "present": 36
     },
     "Bacău": {
@@ -86,19 +86,19 @@
       "present": 37
     },
     "Brașov": {
-      "uncontracted": 353,
+      "uncontracted": 338,
       "present": 31
     },
     "Brăila": {
       "uncontracted": 51,
-      "present": 9
+      "present": 8
     },
     "Buzău": {
-      "uncontracted": 81,
+      "uncontracted": 107,
       "present": 3
     },
     "Caraș-Severin": {
-      "uncontracted": 683,
+      "uncontracted": 681,
       "present": 41
     },
     "Cluj": {
@@ -111,7 +111,7 @@
     },
     "Covasna": {
       "present": 37,
-      "uncontracted": 223
+      "uncontracted": 222
     },
     "Călărași": {
       "uncontracted": 75
@@ -122,7 +122,7 @@
     },
     "Dâmbovița": {
       "present": 34,
-      "uncontracted": 56
+      "uncontracted": 65
     },
     "Giurgiu": {
       "present": 7,
@@ -158,23 +158,23 @@
       "present-hidden": 1
     },
     "Mehedinți": {
-      "uncontracted": 369,
+      "uncontracted": 371,
       "present": 5
     },
     "Mureș": {
-      "uncontracted": 134,
+      "uncontracted": 133,
       "present": 41
     },
     "Neamț": {
-      "uncontracted": 433,
+      "uncontracted": 432,
       "present": 10
     },
     "Olt": {
-      "uncontracted": 87,
+      "uncontracted": 85,
       "present": 8
     },
     "Prahova": {
-      "uncontracted": 159,
+      "uncontracted": 140,
       "present": 23
     },
     "Satu Mare": {
@@ -182,7 +182,7 @@
       "present": 4
     },
     "Sibiu": {
-      "uncontracted": 119,
+      "uncontracted": 116,
       "present": 36
     },
     "Suceava": {
@@ -199,7 +199,7 @@
       "anpa-missing": 1
     },
     "Teleorman": {
-      "uncontracted": 33,
+      "uncontracted": 36,
       "present": 16
     },
     "Timiș": {
@@ -212,7 +212,7 @@
     },
     "Vrancea": {
       "uncontracted": 21,
-      "present": 15
+      "present": 16
     },
     "Vâlcea": {
       "uncontracted": 291,

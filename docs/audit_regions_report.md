@@ -21,22 +21,22 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 |---|---|---|---|---|---|---|
 | Alba | 207 | 57 | 0 | 0 | 0 | 150 |
 | Arad | 245 | 7 | 0 | 0 | 0 | 238 |
-| Argeș | 160 | 36 | 0 | 0 | 0 | 124 |
+| Argeș | 164 | 36 | 0 | 0 | 0 | 128 |
 | Bacău | 83 | 21 | 0 | 0 | 0 | 62 |
 | Bihor | 282 | 34 | 0 | 0 | 0 | 246 |
 | Bistrița - Năsăud | 55 | 6 | 0 | 0 | 0 | 47 |
 | Bistrița-Năsăud | 119 | 18 | 0 | 0 | 0 | 101 |
 | Botoșani | 89 | 37 | 0 | 0 | 0 | 52 |
-| Brașov | 384 | 31 | 0 | 0 | 0 | 353 |
-| Brăila | 60 | 9 | 0 | 0 | 0 | 51 |
-| Buzău | 84 | 3 | 0 | 0 | 0 | 81 |
-| Caraș-Severin | 724 | 41 | 0 | 0 | 0 | 683 |
+| Brașov | 369 | 31 | 0 | 0 | 0 | 338 |
+| Brăila | 59 | 8 | 0 | 0 | 0 | 51 |
+| Buzău | 110 | 3 | 0 | 0 | 0 | 107 |
+| Caraș-Severin | 722 | 41 | 0 | 0 | 0 | 681 |
 | Cluj | 164 | 34 | 0 | 0 | 0 | 130 |
 | Constanța | 143 | 1 | 0 | 0 | 0 | 142 |
-| Covasna | 260 | 37 | 0 | 0 | 0 | 223 |
+| Covasna | 259 | 37 | 0 | 0 | 0 | 222 |
 | Călărași | 75 | 0 | 0 | 0 | 0 | 75 |
 | Dolj | 192 | 19 | 0 | 0 | 0 | 173 |
-| Dâmbovița | 90 | 34 | 0 | 0 | 0 | 56 |
+| Dâmbovița | 99 | 34 | 0 | 0 | 0 | 65 |
 | Giurgiu | 63 | 7 | 0 | 0 | 0 | 56 |
 | Gorj | 85 | 29 | 0 | 0 | 0 | 56 |
 | Harghita | 364 | 56 | 0 | 0 | 0 | 308 |
@@ -45,20 +45,20 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Iași | 81 | 22 | 0 | 0 | 0 | 59 |
 | Ilfov | 12 | 6 | 0 | 0 | 0 | 6 |
 | Maramureș | 297 | 38 | 0 | 0 | 0 | 258 |
-| Mehedinți | 374 | 5 | 0 | 0 | 0 | 369 |
-| Mureș | 175 | 41 | 0 | 0 | 0 | 134 |
-| Neamț | 443 | 10 | 0 | 0 | 0 | 433 |
-| Olt | 95 | 8 | 0 | 0 | 0 | 87 |
-| Prahova | 182 | 23 | 0 | 0 | 0 | 159 |
+| Mehedinți | 376 | 5 | 0 | 0 | 0 | 371 |
+| Mureș | 174 | 41 | 0 | 0 | 0 | 133 |
+| Neamț | 442 | 10 | 0 | 0 | 0 | 432 |
+| Olt | 93 | 8 | 0 | 0 | 0 | 85 |
+| Prahova | 163 | 23 | 0 | 0 | 0 | 140 |
 | Satu Mare | 85 | 4 | 0 | 0 | 0 | 81 |
-| Sibiu | 155 | 36 | 0 | 0 | 0 | 119 |
+| Sibiu | 152 | 36 | 0 | 0 | 0 | 116 |
 | Suceava | 236 | 24 | 0 | 0 | 0 | 210 |
 | Sălaj | 133 | 8 | 0 | 0 | 0 | 125 |
 | TIMIȘ | 1 | 0 | 1 | 0 | 0 | 0 |
-| Teleorman | 49 | 16 | 0 | 0 | 0 | 33 |
+| Teleorman | 52 | 16 | 0 | 0 | 0 | 36 |
 | Timiș | 281 | 54 | 0 | 0 | 0 | 227 |
 | Vaslui | 441 | 16 | 0 | 0 | 0 | 425 |
-| Vrancea | 36 | 15 | 0 | 0 | 0 | 21 |
+| Vrancea | 37 | 16 | 0 | 0 | 0 | 21 |
 | Vâlcea | 348 | 57 | 0 | 0 | 0 | 291 |
 
 ## Pe celulă (0.5°×0.5°)
@@ -494,10 +494,10 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul pasarea | uncontracted |  |  |
 | raul teleorman | present | AJVPS TELEORMAN |  |
 | raul urlui | present | AJVPS TELEORMAN |  |
-| raul vedea | present | AJVPS TELEORMAN |  |
+| raul vedea | present | AJVPS TELEORMAN | multiway_chain |
 | teleorman | present | AJVPS TELEORMAN |  |
 | urlui | present | AJVPS TELEORMAN |  |
-| vedea | present | AJVPS TELEORMAN |  |
+| vedea | present | AJVPS TELEORMAN | multiway_chain |
 | vidrosu | uncontracted |  |  |
 | дунав | uncontracted |  |  |
 | осъм | uncontracted |  |  |
@@ -512,8 +512,8 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | dunarea | uncontracted |  |  |
 | dunarea дунав | uncontracted |  |  |
 | raul pasarea | uncontracted |  |  |
-| raul vedea | present | AJVPS TELEORMAN |  |
-| vedea | present | AJVPS TELEORMAN |  |
+| raul vedea | present | AJVPS TELEORMAN | multiway_chain |
+| vedea | present | AJVPS TELEORMAN | multiway_chain |
 | дунав | uncontracted |  |  |
 | русенски лом | uncontracted |  |  |
 | студената река | uncontracted |  |  |
@@ -1236,7 +1236,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul iminog | uncontracted |  |  |
 | raul redea | uncontracted |  |  |
 | raul urlui | present | AJVPS TELEORMAN |  |
-| raul vedea | present | AJVPS TELEORMAN |  |
+| raul vedea | present | AJVPS TELEORMAN | multiway_chain |
 | raul vladila | uncontracted |  |  |
 | redisoara | uncontracted |  |  |
 | sai | uncontracted |  |  |
@@ -1244,7 +1244,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | urlui | present | AJVPS TELEORMAN |  |
 | valea bungetului | uncontracted |  |  |
 | valea dracsenulului | uncontracted |  |  |
-| vedea | present | AJVPS TELEORMAN |  |
+| vedea | present | AJVPS TELEORMAN | multiway_chain |
 
 ### Celulă 43.9-44.4N, 25.0-25.5E
 | Râu | Clasă | Asociație | Detalii |
@@ -1261,11 +1261,11 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul milcovat | uncontracted |  |  |
 | raul teleorman | present | AJVPS TELEORMAN |  |
 | raul urlui | present | AJVPS TELEORMAN |  |
-| raul vedea | present | AJVPS TELEORMAN |  |
+| raul vedea | present | AJVPS TELEORMAN | multiway_chain |
 | teleorman | present | AJVPS TELEORMAN |  |
 | tinoasa | uncontracted |  |  |
 | urlui | present | AJVPS TELEORMAN |  |
-| vedea | present | AJVPS TELEORMAN |  |
+| vedea | present | AJVPS TELEORMAN | multiway_chain |
 
 ### Celulă 43.9-44.4N, 25.5-26.0E
 | Râu | Clasă | Asociație | Detalii |
@@ -1987,7 +1987,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul neajlov | present | AJVPS DÂMBOVIȚA |  |
 | raul plapcea | uncontracted |  |  |
 | raul teleorman | present | AJVPS TELEORMAN |  |
-| raul vedea | present | AJVPS TELEORMAN |  |
+| raul vedea | present | AJVPS TELEORMAN | multiway_chain |
 | raul vedita | uncontracted |  |  |
 | scroafele | uncontracted |  |  |
 | teleorman | present | AJVPS TELEORMAN |  |
@@ -1996,7 +1996,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | valea zeama rece | uncontracted |  |  |
 | valeni | uncontracted |  |  |
 | vartej | uncontracted |  |  |
-| vedea | present | AJVPS TELEORMAN |  |
+| vedea | present | AJVPS TELEORMAN | multiway_chain |
 
 ### Celulă 44.4-44.9N, 25.0-25.5E
 | Râu | Clasă | Asociație | Detalii |
@@ -2267,7 +2267,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ponicova | uncontracted |  |  |
 | rachitova | uncontracted |  |  |
 | rafnic | uncontracted |  |  |
-| raul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| raul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | sareniac | uncontracted |  |  |
 | stircovat | uncontracted |  |  |
 | stredneg | uncontracted |  |  |
@@ -2326,7 +2326,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | poganis | present | AJVPS TIMIȘ |  |
 | prigor | uncontracted |  |  |
 | ranica | uncontracted |  |  |
-| raul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| raul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | raul cerna | present | Direcția Silvică Mehedinți | sweep:hidden:group-shares-course |
 | raul lung | present | AJVPS CARAȘ-SEVERIN | audit_match:exact |
 | scorila | uncontracted |  |  |
@@ -2475,7 +2475,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | lapuselul | uncontracted |  |  |
 | motru | present | AJVPS GORJ |  |
 | oproni | uncontracted |  |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul argelii | uncontracted |  |  |
 | paraul crucii1 | uncontracted |  |  |
 | paraul polatiste | present | Pro Pescar | audit_match:override |
@@ -2869,7 +2869,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | poienari | uncontracted |  |  |
 | radia | uncontracted |  |  |
 | ratei | uncontracted |  |  |
-| raul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| raul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | raul bizdidel | uncontracted |  |  |
 | raul bughea | present | APS AQUA CRISIUS |  |
 | raul grecilor | uncontracted |  |  |
@@ -3510,14 +3510,14 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ocolis | present | AJVPS ALBA |  |
 | ohaba | uncontracted |  |  |
 | orastie | uncontracted |  |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul maleia | uncontracted |  |  |
 | paraul vanatorului | uncontracted |  |  |
 | parvei | uncontracted |  |  |
 | pianu | uncontracted |  |  |
 | porcaret | uncontracted |  |  |
 | pustiosu | uncontracted |  |  |
-| raul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| raul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | raul jiet | present | Direcția Silvică Hunedoara | romsilva_map:exact |
 | raul mare | present | Direcția Silvică Alba | romsilva_map:group-shares-course |
 | raul mare cugir | uncontracted |  |  |
@@ -3620,7 +3620,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | ranjeu | uncontracted |  |  |
 | ranjeul mare | uncontracted |  |  |
 | rau negru | present | AJVPS COVASNA | audit_match:prefix |
-| raul cibin | present | APS AQUA CRISIUS |  |
+| raul cibin | present | APS AQUA CRISIUS | multiway_chain |
 | raul jiet | present | Direcția Silvică Hunedoara | romsilva_map:exact |
 | raul mare | present | Direcția Silvică Alba | romsilva_map:group-shares-course |
 | raul mare cugir | uncontracted |  |  |
@@ -3677,7 +3677,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | boia mica | present | AJVPS VÂLCEA |  |
 | boisoara | uncontracted |  |  |
 | calinesti | uncontracted |  |  |
-| cibin | present | APS AQUA CRISIUS |  |
+| cibin | present | APS AQUA CRISIUS | multiway_chain |
 | cisnadie | uncontracted |  |  |
 | clabuceasa | uncontracted |  |  |
 | curpanu | uncontracted |  |  |
@@ -3733,7 +3733,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | priboiasa | uncontracted |  |  |
 | priporul | uncontracted |  |  |
 | randibou | uncontracted |  |  |
-| raul cibin | present | APS AQUA CRISIUS |  |
+| raul cibin | present | APS AQUA CRISIUS | multiway_chain |
 | raul racovita | uncontracted |  |  |
 | raul scorei | uncontracted |  |  |
 | raul sec | uncontracted |  |  |
@@ -4286,7 +4286,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | orjogoaia | uncontracted |  |  |
 | paraie | uncontracted |  |  |
 | parau | uncontracted |  |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul berii | uncontracted |  |  |
 | paraul hotilor | uncontracted |  |  |
 | paraul laptelui | uncontracted |  |  |
@@ -4468,7 +4468,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | nehoiu sec | uncontracted |  |  |
 | papauti | uncontracted |  |  |
 | parau mare | present | AVPS MIERCUREA-CIUC |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul cetatii | uncontracted |  |  |
 | paraul fetei | uncontracted |  |  |
 | paraul mreaja | uncontracted |  |  |
@@ -4523,7 +4523,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | milcov | uncontracted |  |  |
 | motnau | uncontracted |  |  |
 | motocina | uncontracted |  |  |
-| naruja | present | AJVPS VRANCEA |  |
+| naruja | present | AJVPS VRANCEA | multiway_chain |
 | paraul bahna tisei | uncontracted |  |  |
 | paraul brebu | uncontracted |  |  |
 | paraul clajna | uncontracted |  |  |
@@ -5199,7 +5199,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | oroci | uncontracted |  |  |
 | orsovaj pataka | uncontracted |  |  |
 | p rosu | uncontracted |  |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul albastru | uncontracted |  |  |
 | paraul altarului | uncontracted |  |  |
 | paraul angyos | uncontracted |  |  |
@@ -5299,7 +5299,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | pustnicul | uncontracted |  |  |
 | rakottyas patak | uncontracted |  |  |
 | raul cernat | uncontracted |  |  |
-| raul fisag | present | AVPS GHEORGHIENI |  |
+| raul fisag | present | AVPS GHEORGHIENI | multiway_chain |
 | raul turia | uncontracted |  |  |
 | rege | uncontracted |  |  |
 | remetea | uncontracted |  |  |
@@ -5358,7 +5358,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | hosszu patak | uncontracted |  |  |
 | hotarul | uncontracted |  |  |
 | imper | uncontracted |  |  |
-| izvorul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| izvorul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | janos pataka | uncontracted |  |  |
 | kecskes patak | uncontracted |  |  |
 | kicsi vesz sarok patak | uncontracted |  |  |
@@ -5399,7 +5399,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | raul cernat | uncontracted |  |  |
 | raul chilisca | uncontracted |  |  |
 | raul ciobanus | present | AJVPS BACĂU |  |
-| raul fisag | present | AVPS GHEORGHIENI |  |
+| raul fisag | present | AVPS GHEORGHIENI | multiway_chain |
 | raul negru | present | AJVPS COVASNA | audit_match:prefix |
 | raul soveto | uncontracted |  |  |
 | raul trotus | present | AJVPS BACĂU |  |
@@ -6625,7 +6625,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | herman | uncontracted |  |  |
 | hotarul | uncontracted |  |  |
 | iapa | present | Direcția Silvică Neamț | romsilva_map:exact |
-| izvorul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| izvorul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | jancsik | uncontracted |  |  |
 | janik | uncontracted |  |  |
 | jgheabu mare | uncontracted |  |  |
@@ -7761,7 +7761,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | paltinisul | uncontracted |  |  |
 | pangaracior | uncontracted |  |  |
 | paraul adanc | uncontracted |  |  |
-| paraul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| paraul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | paraul argelea | uncontracted |  |  |
 | paraul arinului | uncontracted |  |  |
 | paraul balaurului | uncontracted |  |  |
@@ -8293,7 +8293,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | firiza | present | Direcția Silvica Maramureș | bbox_fix:lake:Baraj Firiza |
 | hopsia | uncontracted |  |  |
 | iza | present | AJVPS MARAMUREȘ | audit_match:exact |
-| izvorul alb | present | AJVPS CARAȘ-SEVERIN |  |
+| izvorul alb | present | AJVPS CARAȘ-SEVERIN | multiway_chain |
 | izvorul cu scari | uncontracted |  |  |
 | izvorul negru | present | AJVPS COVASNA | audit_match:prefix |
 | lapus | present | AJVPS MARAMUREȘ |  |

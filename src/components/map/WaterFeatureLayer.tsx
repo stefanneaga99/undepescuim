@@ -229,12 +229,16 @@ export function isMainCourse(name: string): boolean {
   return !/^(valea|paraul|parau|pârâu|pârâul)\s/i.test(name);
 }
 
-/** River-course order rank: superior < mijlociu < inferior < (plain, i.e. mouth section). */
+/** River-course order rank: superior < mijlociu < inferior < (plain, i.e. mouth section).
+ * Sector names come in both genders — 'Superioară'/'mijlocie'/'inferioara'
+ * (Romsilva lists, e.g. 'Râul Zăbala Superioară', 'Râul Putna Mijlocie') and
+ * masculine 'superior'/'mijlociu'/'inferior' — match the shared stem so both
+ * rank correctly (t_9a7cf783). */
 export function courseRank(name: string): number {
   const n = name.toLowerCase();
-  if (n.includes('superior')) return 0;
-  if (n.includes('mijlociu')) return 1;
-  if (n.includes('inferior')) return 2;
+  if (n.includes('superior') || n.includes('superioar')) return 0;
+  if (n.includes('mijloci')) return 1;
+  if (n.includes('inferior') || n.includes('inferioar')) return 2;
   return 3;
 }
 
