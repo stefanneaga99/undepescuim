@@ -172,6 +172,30 @@ def find_group_key(name: str, waters: list[dict], by_norm: dict) -> str | None:
     return None
 
 
+def group_key_for(name: str) -> str:
+    """Shared riverGroup for a Romsilva river name.
+
+    Multi-sector rivers ('Vișeul superior/mijlociu/inferior', 'Barcăul
+    Superior/Mijlociu/Inferior') must share ONE group so a click on the
+    shared course resolves to the right sector. The group key is the core
+    name with sector words stripped AND the definite-article suffix removed
+    ('barcaul' -> 'barcau'), so it also aligns with the ANPA water
+    ('Râul Barcău' -> 'barcau').
+    """
+    c = core(name)
+    tokens = [t for t in c.split() if t not in SECTOR_WORDS]
+    base = " ".join(tokens) if tokens else c
+    # strip definite article on the first token: 'barcaul' -> 'barcau',
+    # 'viseul' -> 'viseu'
+    parts = base.split()
+    t0 = parts[0]
+    if len(t0) >= 5 and t0.endswith("ul"):
+        parts[0] = t0[:-2]
+    elif len(t0) >= 5 and t0.endswith("l") and t0[-2] in "aeiou":
+        parts[0] = t0[:-1]
+    return slugify(" ".join(parts))
+
+
 def build_new_assocs(rows: list[dict]) -> dict[str, dict]:
     """Direcția Silvică associations needed by the rows (missing from FE)."""
     fe = json.loads(FE_ASSOC.read_text(encoding="utf-8"))
@@ -281,6 +305,8 @@ def main() -> None:
     group_members: dict[str, list[dict]] = defaultdict(list)
     for w in new_waters:
         gk = find_group_key(w["name"], waters, by_norm) or w.get("riverGroup")
+        if not gk:
+            gk = group_key_for(w["name"]) if is_sector_name(w["name"]) else None
         if not gk:
             c = core(w["name"])
             gk = slugify(c) if c else w["slug"]
