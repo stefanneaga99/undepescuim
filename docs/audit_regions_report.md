@@ -7,6 +7,14 @@ Clasificare globală:
 - **present-bbox**: 28
 - **present-hidden**: 5
 
+## Zona raportată: Covasna / Târgu Secuiesc (DN11, DN13E)
+
+Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit:
+- **Pârâu Cașin, Ghelința, Pădureni, Vârghiș, Baraolt inferior** — erau `subtype=lac` și fără geometrie → invizibile; acum `rau` + curs OSM complet (fixate).
+- **Râul Negru I / Râul Olt / Pârâu Buzăul Mijlociu** — nu au geometrie proprie, dar sunt grup-rendered: cursul e desenat de partenerul de grup (Râul Negru II / Râul Olt și afluenții / Râul Buzău) → click funcționează.
+- **Pârâu Szaldoboș / Pârâu Șomko / Brațele secundare ale Râului Negru** — contractate dar fără curs OSM identificabil (pâraie mici / brațe secundare) → raportate doar, nu se inventează geometrie.
+- Râurile vizibile fără card în zonă (Turia, Cernat, Estelnic etc.) sunt **necontractate** — nu apar în ANPA/arebaltapeste/Romsilva → corect să nu aibă card.
+
 ## Pe județ
 | Județ | total | prezent | anpa-missing | areba-missing | romsilva | uncontracted |
 |---|---|---|---|---|---|---|
