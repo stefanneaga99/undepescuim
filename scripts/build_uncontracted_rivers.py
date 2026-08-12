@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from audit_missing_rivers import build_county_centroids  # noqa: E402
+from audit_missing_rivers import build_county_centroids, norm  # noqa: E402
 from audit_regions import build_clusters  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -123,6 +123,7 @@ COUNTY_SLUG_TO_NAME = {
     "iasi": "Iași", "ilfov": "Ilfov", "maramures": "Maramureș",
     "mehedinti": "Mehedinți", "mures": "Mureș", "neamt": "Neamț", "olt": "Olt",
     "prahova": "Prahova", "satu_mare": "Satu Mare", "salaj": "Sălaj",
+    "satu mare": "Satu Mare",  # slugify() keeps the space — legacy cache name
     "sibiu": "Sibiu", "suceava": "Suceava", "teleorman": "Teleorman",
     "timis": "Timiș", "tulcea": "Tulcea", "vaslui": "Vaslui",
     "valcea": "Vâlcea", "vrancea": "Vrancea", "bucuresti": "București",
@@ -154,11 +155,13 @@ def assign_county(
     coords: list[tuple[float, float]],
     polygons: list[tuple[str, object, tuple[float, float, float, float]]],
     fallback: dict[str, tuple[float, float]],
-) -> str:
+) -> tuple[str, int]:
     """County whose polygon contains the most sample points along the course.
 
-    Falls back to the nearest county centroid when no point lands inside any
-    polygon (river outside Romania / boundary noise).
+    Returns (county, total_hits). total_hits == 0 means the river is entirely
+    OUTSIDE Romania (the bulk OSM extract includes foreign border rivers:
+    Dniester/Nistru, Hungarian Tisza, Ukrainian/Hungarian/Serbian streams) —
+    callers should drop those; a majority-county is meaningless there.
     """
     from shapely.geometry import Point
     from shapely.prepared import prep
@@ -177,16 +180,18 @@ def assign_county(
                 break  # counties are disjoint; first bbox hit is fine
         if best:
             counts[best] = counts.get(best, 0) + 1
+    total = sum(counts.values())
     if counts:
-        return max(counts, key=lambda k: (counts[k], k))
-    # fallback: nearest county centroid
+        return max(counts, key=lambda k: (counts[k], k)), total
+    # fallback: nearest county centroid (used only for display of foreign rivers
+    # that slip through; callers normally drop total_hits == 0 entries).
     cpt = (sum(p[0] for p in sample) / len(sample), sum(p[1] for p in sample) / len(sample))
     best, bd = "", 1e9
     for j, cc in fallback.items():
         d = (cpt[0] - cc[0]) ** 2 + (cpt[1] - cc[1]) ** 2
         if d < bd:
             bd, best = d, j
-    return best or "?"
+    return best or "?", total
 
 
 def main() -> None:
@@ -232,8 +237,12 @@ def main() -> None:
             continue
         bbox = cl["bbox"]
         # county: majority of sample points along the course inside the county
-        # polygon (falls back to nearest county centroid).
-        county = assign_county(coords, polygons, county_centroids)
+        # polygon. total_hits == 0 → river is entirely OUTSIDE Romania (the OSM
+        # extract leaks foreign border rivers) — drop it.
+        county, total_hits = assign_county(coords, polygons, county_centroids)
+        if total_hits == 0:
+            skipped_short += 1
+            continue
         slug = "unc-" + hashlib.md5(
             f"{cl['name']}|{bbox[0]:.4f}|{bbox[1]:.4f}".encode()
         ).hexdigest()[:10]
@@ -255,11 +264,11 @@ def main() -> None:
     OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     size_mb = OUT_FILE.stat().st_size / 1e6
     print(f"[write] {len(out)} uncontracted rivers → {OUT_FILE} ({size_mb:.1f} MB)")
-    print(f"[skip] {skipped_short} too short (< {MIN_LENGTH_KM} km)")
+    print(f"[skip] {skipped_short} dropped (too short or entirely outside Romania)")
 
     # sanity: Râmna must be present (user-reported example)
-    ramna = [w for w in out if "ramna" in w["name"].lower() and "sat" not in w["name"].lower()]
-    print(f"[check] Râmna-like: {[(w['name'], w['judet'], w['lengthKm']) for w in ramna[:5]]}")
+    ramna = [w for w in out if norm(w["name"]) == "ramna"]
+    print(f"[check] Râmna: {[(w['name'], w['judet'], w['lengthKm']) for w in ramna]}")
 
 
 if __name__ == "__main__":
