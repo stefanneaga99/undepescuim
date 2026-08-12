@@ -71,6 +71,22 @@ export interface Water {
    * participate in click resolution alongside the 'Râul' contracts.
    */
   mainCourse?: boolean;
+  /**
+   * Exact river group key (t_ac697770). When present, click resolution groups
+   * contracts by THIS key instead of the fuzzy 5-char waterKey prefix — fixes
+   * collisions (Siret/Sirețel, Someș/Someșul Mic, Crișul Repede/Alb/Negru)
+   * and the 'oltul'/'olt' mismatch. Set on every member of a multi-contract
+   * river (and on collision-prone singletons).
+   */
+  riverGroup?: string;
+  /**
+   * Exact sector boundaries [0..1] along the river course (Olt contracts).
+   * When present, click resolution prefers the smallest interval containing
+   * the clicked fraction over the Voronoi fallback, and the focus highlight
+   * covers exactly [sectorStart, sectorEnd].
+   */
+  sectorStart?: number;
+  sectorEnd?: number;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */
@@ -80,6 +96,8 @@ export interface WaterFeatureProperties {
   subtype: WaterSubtype;
   judet: County;
   asociatieSlug: string | null;
+  /** exact river-group key (t_ac697770) — used to match focus slices */
+  riverGroup?: string | null;
   /** marker for non-renderable waters (no geometry, no bbox) */
   _hidden?: boolean;
 }

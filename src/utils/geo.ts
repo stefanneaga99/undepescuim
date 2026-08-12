@@ -18,6 +18,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
         subtype: water.subtype,
         judet: water.judet,
         asociatieSlug: water.asociatie?.slug ?? null,
+        riverGroup: water.riverGroup ?? null,
       },
       geometry: water.geometry as GeoJSON.Geometry,
     };
@@ -33,6 +34,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
         subtype: water.subtype,
         judet: water.judet,
         asociatieSlug: water.asociatie?.slug ?? null,
+        riverGroup: water.riverGroup ?? null,
         // marker for non-renderable waters (no geometry, no bbox)
         _hidden: true,
       },
@@ -61,6 +63,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
       subtype: water.subtype,
       judet: water.judet,
       asociatieSlug: water.asociatie?.slug ?? null,
+      riverGroup: water.riverGroup ?? null,
     },
     geometry: {
       type: 'Polygon',

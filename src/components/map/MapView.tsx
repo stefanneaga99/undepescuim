@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, ZoomControl, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
-import { WaterFeatureLayer, waterKey, sameRiver, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
+import { WaterFeatureLayer, groupKeyOf, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 
 /**
@@ -29,13 +29,18 @@ export function MapView() {
   const focusColor = selected?.asociatie?.slug ? FOCUS_COLOR : null;
 
   // Compute the contract's [start, end] fraction of the river course.
+  // Exact sector intervals (Olt) win; otherwise the Voronoi interval over
+  // course_frac (matched by exact riverGroup, t_ac697770).
   const focusRange = useMemo<[number, number] | null>(() => {
     if (!selected) return null;
-    const key = waterKey(selected.name);
+    if (typeof selected.sectorStart === 'number' && typeof selected.sectorEnd === 'number') {
+      return [selected.sectorStart, selected.sectorEnd];
+    }
+    const gk = groupKeyOf(selected);
     const group = allWaters.filter(
       (w) =>
         (isMainCourse(w.name) || w.mainCourse === true) &&
-        sameRiver(key, waterKey(w.name)),
+        groupKeyOf(w) === gk,
     );
     if (group.length <= 1) return [0, 1]; // whole course
     const ranked = [...group].sort(

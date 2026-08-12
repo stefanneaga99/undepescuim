@@ -33,6 +33,18 @@ export function waterKey(name: string): string {
   );
 }
 
+/**
+ * Exact river-group key (t_ac697770): waters carrying `riverGroup` (set by
+ * the data pipeline on every member of a multi-contract river and on
+ * collision-prone singletons) group EXACTLY by it; everything else falls back
+ * to the fuzzy waterKey prefix. Accepts a Water or a feature-properties-like
+ * object ({ riverGroup?, name }).
+ */
+export function groupKeyOf(w: { riverGroup?: string | null; name?: string }): string {
+  if (w.riverGroup) return w.riverGroup;
+  return waterKey(w.name ?? '');
+}
+
 /** True when two water keys name the same river (shared 5-char prefix). */
 export function sameRiver(a: string, b: string): boolean {
   if (!a || !b) return false;
@@ -226,34 +238,55 @@ export function courseRank(name: string): number {
   return 3;
 }
 
-/** Parse "126 Km" → 126 (0 when missing). */
-function parseKm(dimensiune: string | undefined): number {
-  const m = /([\d.]+)\s*km/i.exec(dimensiune ?? '');
-  return m ? parseFloat(m[1]) : 0;
-}
-
 /**
  * Pick the contract (water) whose position covers the given fraction of the
- * river course. Uses `course_frac` (geocoded real position) when available,
- * else falls back to name-rank + uniform spread. Each contract owns the
- * Voronoi interval between the midpoints to its neighbours.
- * Returns the water, or null when no grouping applies.
+ * river course. Resolution order (t_ac697770):
+ *  1. EXACT sector intervals: when a contract declares [sectorStart,
+ *     sectorEnd], the SMALLEST interval containing `frac` wins (overlapping
+ *     county-wide vs sub-club contracts resolve to the most specific one).
+ *  2. Voronoi over `course_frac` (geocoded real position), else name-rank +
+ *     uniform spread. Each contract owns the interval between the midpoints
+ *     to its neighbours.
+ * The group is matched EXACTLY by `riverGroup` when available (fixes
+ * Siret/Sirețel, Someș/Someșul Mic, Crișul Repede/Alb/Negru collisions,
+ * the 'oltul'/'olt' mismatch, and same-name distinct rivers like the Gorj
+ * vs Moldavian Bistrița); otherwise the fuzzy waterKey prefix is used.
+ * The clicked river is identified by slug first (unambiguous), falling back
+ * to name. Returns the water, or null when no grouping applies.
  */
 export function contractAtFraction(
-  riverName: string,
+  clickedRef: { slug?: string; name?: string; riverGroup?: string },
   frac: number,
   allWaters: Water[],
 ): Water | null {
-  const key = waterKey(riverName);
+  const clicked =
+    (clickedRef.slug && allWaters.find((w) => w.slug === clickedRef.slug)) ||
+    (clickedRef.name && allWaters.find((w) => w.name === clickedRef.name)) ||
+    ({ name: clickedRef.name } as Water);
+  const gk = groupKeyOf(clicked);
   const group = allWaters.filter(
     (w) =>
       (isMainCourse(w.name) || w.mainCourse === true) &&
-      sameRiver(key, waterKey(w.name)),
+      groupKeyOf(w) === gk,
   );
   if (group.length <= 1) return null;
 
-  // Position each contract along the course: geocoded fraction, or fallback
-  // to name-rank spread evenly across [0,1].
+  // 1. exact sector intervals — smallest containing interval wins
+  let best: Water | null = null;
+  let bestLen = Infinity;
+  for (const w of group) {
+    const s = w.sectorStart;
+    const e = w.sectorEnd;
+    if (typeof s !== 'number' || typeof e !== 'number') continue;
+    if (frac >= s && frac < e && e - s < bestLen) {
+      bestLen = e - s;
+      best = w;
+    }
+  }
+  if (best) return best;
+
+  // 2. Voronoi: position each contract along the course (geocoded fraction,
+  // or fallback to name-rank spread evenly across [0,1]).
   const ranked = [...group].sort((a, b) => courseRank(a.name) - courseRank(b.name));
   const rankedFrac = (i: number) => ranked.length <= 1 ? 0.5 : i / (ranked.length - 1);
 
@@ -298,6 +331,14 @@ export function WaterFeatureLayer({
 
   const layerKey = `${coverageSlug ?? 'neutral'}|${waters.map((w) => w.slug).join(',')}`;
 
+  // Exact river-group key of the focused contract (t_ac697770) — matches
+  // focus slices across name variants ('Râul Oltul superior' / 'Râul Olt').
+  const focusGroupKey = useMemo(() => {
+    if (!focusKey) return null;
+    const w = allWaters.find((x) => x.name === focusKey);
+    return w ? groupKeyOf(w) : waterKey(focusKey);
+  }, [allWaters, focusKey]);
+
   // Click on a river: resolve the fraction along the course, then select the
   // contract (association) that owns that sector — not just the first one.
   const handleClick = useCallback(
@@ -311,7 +352,7 @@ export function WaterFeatureLayer({
         const frac = fractionAtPoint(parts, [latlng.lng, latlng.lat]);
         if (frac !== null) {
           const contract = contractAtFraction(
-            feature.properties.name,
+            { slug: feature.properties.slug, name: feature.properties.name },
             frac,
             allWaters,
           );
@@ -334,7 +375,7 @@ export function WaterFeatureLayer({
 
       // River match for focus highlighting (contract selected from the card)
       const inFocus =
-        !!focusKey && sameRiver(waterKey(focusKey), waterKey(f.properties?.name ?? ''));
+        !!focusGroupKey && groupKeyOf(f.properties ?? {}) === focusGroupKey;
 
       if (isLine) {
         // Visible thin line; thick + colored ONLY when this river is focused
@@ -358,20 +399,18 @@ export function WaterFeatureLayer({
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       }
     },
-    [handleClick, coverageSlug, focusKey, focusColor, focusRange],
+    [handleClick, coverageSlug, focusKey, focusGroupKey, focusColor, focusRange],
   );
 
   // Focus slice: when a contract owns a km-range of a multi-contract river,
   // render ONLY that sector as a thick colored line (the shared course is
   // sliced by fraction). Single-contract rivers use the full-course style above.
   const focusFeatures = useMemo(() => {
-    if (!focusKey || !focusRange) return null;
+    if (!focusGroupKey || !focusRange) return null;
     const [f0, f1] = focusRange;
-    const focusKeyKey = waterKey(focusKey);
     const features: GeoJSON.Feature[] = [];
     for (const f of featureCollection.features) {
-      const name = f.properties?.name ?? '';
-      if (!sameRiver(focusKeyKey, waterKey(name))) continue;
+      if (groupKeyOf(f.properties ?? {}) !== focusGroupKey) continue;
       const g = f.geometry;
       if (g.type === 'MultiLineString') {
         const sliced = sliceMultiLine(g.coordinates as [number, number][][], f0, f1);
@@ -392,7 +431,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusKey, focusRange, featureCollection]);
+  }, [focusGroupKey, focusRange, featureCollection]);
 
   // Invisible wide hit layers for lines (added after the visible layer).
   // react-leaflet's GeoJSON doesn't expose each layer for extra additions, so
