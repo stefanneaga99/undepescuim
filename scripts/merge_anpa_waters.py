@@ -100,6 +100,20 @@ def osm_geometry_for(name: str, osm_index: dict) -> dict | None:
     return None
 
 
+OTHER_LAKE_RE = re.compile(
+    r"^(?:baraj\s|fondul piscicol|ccrm\s|ccpfb\s|cp\s+\d|potcoava)", re.I
+)
+
+
+def anpa_subtype(w: dict) -> str:
+    wt = w.get("water_type")
+    if wt in ("river", "stream"):
+        return "rau"
+    if wt == "other":
+        return "lac" if OTHER_LAKE_RE.match(w.get("water_name", "") or "") else "rau"
+    return "lac"
+
+
 def main() -> None:
     fe = json.loads(FE_WATERS.read_text(encoding="utf-8"))
     fe_by_name = {norm(x["name"]): x for x in fe}
@@ -136,7 +150,7 @@ def main() -> None:
             "name": name,
             "judet": (w.get("county") or "").title(),
             "type": "ape",
-            "subtype": "rau" if w.get("water_type") == "river" else "lac",
+            "subtype": anpa_subtype(w),
             "limite": w.get("limits_text") or "",
             "dimensiune": w.get("sector_raw") or "",
             "pescuit_interzis": False,

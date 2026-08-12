@@ -251,6 +251,30 @@ MANUAL_OVERRIDES = {
     "plescioara": "valea plescioarei",
     # Rudărie (Caraș-Severin) == OSM Valea Rudăriei (genitive of same name)
     "rudarie": "valea rudariei",
+    # ---- t_242be1eb: ANPA stream-type rows whose OSM twin uses a different
+    # ---- type prefix (Pârâul vs Valea vs Canalul) — same watercourse.
+    # Valea Morilor (Alba) == OSM Pârâul Morii (Huda lui Papară – Arieș)
+    "morilor": "paraul morii",
+    # Pârâul Meleș (Bistrița-Năsăud) == OSM Valea Meleș
+    "meles": "valea meles",
+    # Japșa Stanca (Brăila) == OSM Valea Stânca (japșa = side channel)
+    "stanca": "valea stanca",
+    # Japșa Veriga (Brăila) == OSM Veriga
+    "veriga": "veriga",
+    # Canal apă caldă Cernavodă (Constanța) == OSM Apa Caldă
+    "apa calda cernavoda": "apa calda",
+    # Bălțile Preajba (Dolj) == OSM Valea Preajba
+    "preajba": "valea preajba",
+    # Grădiștea inferioară (Hunedoara) == OSM Pârâul Grădiștei
+    "gradistea inferioara": "paraul gradistei",
+    # Valea Stegii (Sibiu) == OSM Pârâul Stegii
+    "stegii": "paraul stegii",
+    # Valea Zalău (Sălaj) == OSM Pârâul Zalău
+    "zalau": "paraul zalau",
+    # Canal Aranca (Timiș) == OSM Aranca
+    "aranca": "aranca",
+    # Pârâul Timisat (Timiș) == OSM Canalul Timișat (Timiș county)
+    "timisat": "canalul timisat",
 }
 
 
@@ -636,7 +660,14 @@ def main() -> None:
     print(f"[match] county centroids: {len(county_centroids)} counties")
 
     candidates, skipped = group_geometry_targets(fe)
-    candidates = [x for x in candidates if x.get("subtype") == "rau" and not x.get("geometry")]
+    # rau rivers without geometry; ALSO curated override targets regardless of
+    # subtype (ponds like Bălțile Preajba have a clear OSM stream course)
+    override_keys = set(MANUAL_OVERRIDES.keys())
+    candidates = [
+        x for x in candidates
+        if not x.get("geometry")
+        and (x.get("subtype") == "rau" or core(x.get("name", "")) in override_keys)
+    ]
     print(f"[match] {len(candidates)} river candidates to try ({len(skipped)} skipped as grouped copies)")
 
     matched, unmatched = [], []
