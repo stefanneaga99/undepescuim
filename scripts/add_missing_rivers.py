@@ -41,6 +41,7 @@ NEW_RIVERS = [
         "osm_name": "Bâsca Mare",
         "referinta": "Afluent principal al râului Bâsca (bazin AJVPS BUZĂU, contract 22/19.09.2017)",
         "limite": "Izvoare – confluența cu Bâsca Mică",
+        "riverGroup": "basca-mare",
     },
     {
         "slug": "basca-mica",
@@ -50,6 +51,7 @@ NEW_RIVERS = [
         "osm_name": "Bâsca Mică",
         "referinta": "Afluent principal al râului Bâsca (bazin AJVPS BUZĂU, contract 22/19.09.2017)",
         "limite": "Izvoare – confluența cu Bâsca Mare",
+        "riverGroup": "basca-mica",
     },
 ]
 
@@ -135,7 +137,7 @@ def main() -> None:
             "geometry": geometry,
             "source": "osm_bulk",
             "source_detail": "manual_audit_add",
-            "riverGroup": None,
+            "riverGroup": spec.get("riverGroup"),
         }
         fe.append(entry)
         existing_names.add(norm(spec["name"]))

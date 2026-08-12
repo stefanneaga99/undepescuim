@@ -1336098,7 +1336098,7 @@
   },
   "source": "osm_bulk",
   "source_detail": "manual_audit_add",
-  "riverGroup": null
+  "riverGroup": "basca-mare"
  },
  {
   "slug": "basca-mica",
@@ -1337953,6 +1337953,6 @@
   },
   "source": "osm_bulk",
   "source_detail": "manual_audit_add",
-  "riverGroup": null
+  "riverGroup": "basca-mica"
  }
 ]
