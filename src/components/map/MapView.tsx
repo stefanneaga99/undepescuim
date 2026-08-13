@@ -79,7 +79,10 @@ export function MapView() {
 
 /**
  * User-confirmed behavior: auto-center/zoom on association select.
- * Selecting an association → fly to its bbox center (zoom 9).
+ * Selecting an association → fit its bbox with padding (maxZoom 12 cap —
+ * t_d987cdb7: a hardcoded zoom 9 ignored how big/small the association's
+ * area actually is; fitBounds shows the waters with padding and never
+ * over-zooms).
  * Clearing → fly back to the full-Romania default view.
  *
  * t_697ba939: EXCEPT when the association was cleared by CLICKING a water
@@ -88,6 +91,9 @@ export function MapView() {
  * stays put and just shows the clicked water's card. Only an explicit
  * "Toate asociațiile" clear (selectAssociation(null)) flies to the national
  * view. Sibling of t_abccfd6c (covered clicks keep the association entirely).
+ *
+ * NOTE: this controller ONLY reacts to selectedAssociationSlug changes —
+ * focusing/typing in the association search never touches it (t_d987cdb7).
  */
 function FlyToController() {
   const map = useMap();
@@ -122,7 +128,17 @@ function FlyToController() {
     // the whole app, so stay on the current view instead (t_b6a0e2fe).
     if (!assoc || !assoc.bbox) return;
     const [minLon, minLat, maxLon, maxLat] = assoc.bbox;
-    map.flyTo([(minLat + maxLat) / 2, (minLon + maxLon) / 2], 9, { duration: 0.8 });
+    // t_d987cdb7: fit the association's area with padding instead of a
+    // hardcoded zoom — a large association (whole county) still gets the
+    // overview, a small one gets a close-but-sane view, and the maxZoom cap
+    // guarantees the map never lands over-zoomed (the iPhone complaint).
+    map.fitBounds(
+      [
+        [minLat, minLon],
+        [maxLat, maxLon],
+      ],
+      { padding: [48, 48], maxZoom: 12, animate: true, duration: 0.8 },
+    );
   }, [slug, associations, dataLoaded, map, consumeSuppression]);
 
   return null;

@@ -72,10 +72,14 @@ function CommandInput({
   return (
     <div data-slot="command-input-wrapper" className="p-1 pb-0">
       <InputGroup className="h-8! rounded-lg! border-input/30 bg-input/30 shadow-none! *:data-[slot=input-group-addon]:pl-2!">
+        {/* text-base (16px) is MANDATORY: iOS Safari auto-zooms the whole
+            page (map included) on focus of any input with font-size < 16px,
+            and the page stays zoomed after searching until the user pinches
+            out manually (t_d987cdb7). 16px is the documented cutoff. */}
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
-            "w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+            "w-full text-base outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           {...props}
