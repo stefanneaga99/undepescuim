@@ -3,7 +3,7 @@
   "slug": "a-cerbul-carpatin",
   "name": "A.CERBUL CARPATIN",
   "name_long": "Asociația Cerbul Carpatin",
-  "ape": 1,
+  "ape": 3,
   "adresa": "Str. Macului 5, Târgu Jiu, Romania",
   "bbox": [
    22.8514963,
@@ -17,7 +17,7 @@
   "slug": "a-lucioperca-club-pescar-modern",
   "name": "A.LUCIOPERCA CLUB PESCAR MODERN",
   "name_long": "ASOCIAȚIA LUCIOPERCA CLUB PESCAR MODERN",
-  "ape": 0,
+  "ape": 1,
   "adresa": "Bistrița, str. V. Lucaciu, nr. 5",
   "id": "65fc0b19743aa3d2fbbe8a95"
  },
@@ -38,10 +38,10 @@
   "id": "64e710708e7d310009b09db8"
  },
  {
-  "slug": "a-v-p-s--iasi",
+  "slug": "avps-iasi",
   "name": "A.V.P.S. IAȘI",
   "name_long": "Asociația Vânătorilor Și Pescarilor Sportivi Iași",
-  "ape": 0,
+  "ape": 6,
   "adresa": "Iasi, str. Zimbrului, nr. 11-13-15, demisol, ap. 4, ",
   "telefon": "0232267585",
   "siteUrl": "https://avpsiasi.ro/",
@@ -49,7 +49,7 @@
  },
  {
   "slug": "acvps-fagetel-mortonca-",
-  "name": "ACVPS FĂGEȚEL MORTONCA ",
+  "name": "ACVPS FĂGEȚEL MORTONCA",
   "name_long": "ASOCIAȚIA ACVPS FĂGEȚEL MORTONCA",
   "ape": 0,
   "adresa": "str. Profesor Andrei Cotfaș, nr. 9, Subcetate",
@@ -182,10 +182,10 @@
   "id": "64e340bc8e7d310009b09d99"
  },
  {
-  "slug": "ajvps-botosani-",
-  "name": "AJVPS BOTOȘANI ",
+  "slug": "ajvps-botosani",
+  "name": "AJVPS BOTOȘANI",
   "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Botoșani",
-  "ape": 11,
+  "ape": 42,
   "adresa": "Str. Pietonalul Transilvaniei , nr. 4, Botoșani",
   "telefon": "0757 577 252",
   "siteUrl": "https://www.facebook.com/vanatoare.pescuit.96",
@@ -214,10 +214,10 @@
   "id": "65f9996eb28159e06fc4789e"
  },
  {
-  "slug": "ajvps-buzau-",
-  "name": "AJVPS BUZĂU ",
+  "slug": "ajvps-buzau",
+  "name": "AJVPS BUZĂU",
   "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Buzău",
-  "ape": 1,
+  "ape": 12,
   "adresa": "str. Unirii, Bl. 12F, Buzău",
   "telefon": "0238/710608",
   "siteUrl": "https://www.ajvpsbuzau.ro/ro/descriere/",
@@ -230,10 +230,10 @@
   "id": "64e34e1e8e7d310009b09d9c"
  },
  {
-  "slug": "ajvps-caras-severin-",
-  "name": "AJVPS CARAȘ-SEVERIN ",
+  "slug": "ajvps-caras-severin",
+  "name": "AJVPS CARAȘ-SEVERIN",
   "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Caraș-Severin",
-  "ape": 1,
+  "ape": 7,
   "adresa": "str. I.L. Caragiale, nr.1-2, localitatea Reșița",
   "telefon": "0255 215 931",
   "siteUrl": "https://ajvpscs.eu/",
@@ -664,7 +664,7 @@
  },
  {
   "slug": "aps-salmo-carpatica-lupeni-",
-  "name": "APS SALMO CARPATICA LUPENI ",
+  "name": "APS SALMO CARPATICA LUPENI",
   "name_long": "Așociația de Pescuit Salmo Carpatica Lupeni",
   "ape": 0,
   "adresa": "Lupeni, str. Parângului, nr.4, bl.D6/15",
@@ -733,10 +733,10 @@
   "id": "65fc091c743aa3d2fbbe8a08"
  },
  {
-  "slug": "avps-diana-turnu-arad-",
-  "name": "AVPS DIANA TURNU ARAD ",
+  "slug": "avps-diana-turnu-arad",
+  "name": "AVPS DIANA TURNU ARAD",
   "name_long": "Asociatia Vanatorilor si Pescarilor Sportivi Diana Turnu Arad",
-  "ape": 0,
+  "ape": 3,
   "adresa": "Arad, str. Calea Aurel Vlaicu, nr. 150, bl. Z 27 B, parter",
   "id": "65f98973b28159e06fc4770f"
  },
@@ -830,10 +830,10 @@
   "id": "65f996c2b28159e06fc477ee"
  },
  {
-  "slug": "avps-tarnava-mare-",
-  "name": "AVPS TÂRNAVA MARE ",
+  "slug": "avps-tarnava-mare",
+  "name": "AVPS TÂRNAVA MARE",
   "name_long": "Asociaţia Vânătorilor Şi Pescarilor Sportivi Târnava Mare",
-  "ape": 2,
+  "ape": 14,
   "adresa": "str. Taberei, nr. 18, Odorheiul Secuiesc",
   "telefon": "0746145314",
   "siteUrl": "https://vizpart.ro/ro/home/",

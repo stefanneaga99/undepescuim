@@ -20,7 +20,10 @@ const errors = [];
 const watersResp = {};
 const uncResp = {};
 
-const browser = await chromium.launch();
+const CDP = process.env.PLAYWRIGHT_CDP;
+const browser = CDP
+  ? await chromium.connectOverCDP(CDP)
+  : await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
 page.on('console', (msg) => {

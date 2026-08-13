@@ -5,7 +5,7 @@ import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
-import { getFeatureStyle } from '@/utils/colors';
+import { getFeatureStyle, COVERED_COLOR } from '@/utils/colors';
 import { countyRenderGeometry } from '@/utils/county-clip';
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 
@@ -314,7 +314,41 @@ export function contractAtFraction(
 }
 
 /**
- * Pure prop-driven renderer: waters[] → FeatureCollection → GeoJSON layers.
+ * Contract interval [start, end] fraction of a multi-contract river owned by
+ * `selected` (t_b6a0e2fe — extracted from MapView.focusRange so association
+ * highlighting reuses the exact same geometry math). Resolution order:
+ *  1. EXACT sector intervals when the water declares [sectorStart, sectorEnd]
+ *     (e.g. Râul Buzăul superior D.S. Brașov 0.0–0.081).
+ *  2. Voronoi interval over `course_frac` within the water's riverGroup
+ *     (matched exactly by riverGroup, else the fuzzy waterKey prefix) —
+ *     each contract owns the midpoint-to-midpoint span around its position.
+ * Single-contract rivers return [0, 1] (whole course).
+ */
+export function contractInterval(selected: Water, allWaters: Water[]): [number, number] {
+  if (typeof selected.sectorStart === 'number' && typeof selected.sectorEnd === 'number') {
+    return [selected.sectorStart, selected.sectorEnd];
+  }
+  const gk = groupKeyOf(selected);
+  const group = allWaters.filter(
+    (w) =>
+      (isMainCourse(w.name) || w.mainCourse === true) &&
+      groupKeyOf(w) === gk,
+  );
+  if (group.length <= 1) return [0, 1];
+  const ranked = [...group].sort((a, b) => courseRank(a.name) - courseRank(b.name));
+  const rankedFrac = (i: number) => (ranked.length <= 1 ? 0.5 : i / (ranked.length - 1));
+  const positioned = ranked
+    .map((w, i) => ({ w, f: typeof w.course_frac === 'number' ? w.course_frac : rankedFrac(i) }))
+    .sort((a, b) => a.f - b.f);
+  const idx = positioned.findIndex((p) => p.w.slug === selected.slug);
+  if (idx < 0) return [0, 1];
+  const f = positioned[idx].f;
+  const left = idx > 0 ? (positioned[idx - 1].f + f) / 2 : 0;
+  const right = idx < positioned.length - 1 ? (f + positioned[idx + 1].f) / 2 : 1;
+  return [left, right];
+}
+
+/**
  *
  * Hitbox strategy: rivers/lakes are drawn TWICE —
  * 1. an invisible 16px-wide "hit" polyline/polygon underneath (weight 16,
@@ -388,10 +422,9 @@ export function WaterFeatureLayer({
       const f = feature as WaterFeature;
       const isLine = f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString';
       if (isLine) {
-        // Visible thin line (focus styling is handled by the style prop below —
-        // per-feature setStyle here would be wiped by react-leaflet v5's
-        // style-prop re-apply on the next render).
-        layer.setStyle({ weight: 3 });
+        // All styling (incl. the association coverage weights) lives in the
+        // `style` prop — react-leaflet v5 re-applies it on every re-render,
+        // while per-feature setStyle here would be wiped (t_b6a0e2fe).
         layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       } else {
@@ -451,6 +484,51 @@ export function WaterFeatureLayer({
     }
     return features.length ? features : null;
   }, [focusGroupKey, focusRange, featureCollection, countyFilter, allWaters, selectedWaterSlug, focusKey]);
+
+  // Association highlight slices (t_b6a0e2fe): geometry-less sector members of
+  // the selected association (e.g. Pârâu Buzăul Mijlociu / AJVPS Covasna,
+  // Râul Buzăul superior / D.S. Brașov) are INVISIBLE in the base layer —
+  // they carry no own geometry and no bbox, only a riverGroup + fraction. This
+  // layer slices the group's geometry owner course to the member's contract
+  // interval (contractInterval — same math as the click focus) and draws it in
+  // the covered color, so the association's sectors light up too. Members with
+  // their own geometry are already colored by getFeatureStyle — only the
+  // missing slices are added here. Skipped under a county filter: the rendered
+  // geometry is a per-county clip, which full-course fractions must not slice.
+  const assocHighlightFeatures = useMemo(() => {
+    if (!coverageSlug) return null;
+    if (countyFilter.length > 0) return null;
+    const out: GeoJSON.Feature[] = [];
+    for (const w of waters) {
+      if ((w.asociatie?.slug ?? null) !== coverageSlug) continue;
+      if (w.geometry) continue; // has own geometry → base layer colors it covered
+      const gk = groupKeyOf(w);
+      if (!gk) continue;
+      const owner = allWaters.find(
+        (x) =>
+          x.slug !== w.slug &&
+          (isMainCourse(x.name) || x.mainCourse === true) &&
+          groupKeyOf(x) === gk &&
+          !!x.geometry &&
+          (x.geometry.type === 'LineString' || x.geometry.type === 'MultiLineString'),
+      );
+      if (!owner) continue;
+      const [f0, f1] = contractInterval(w, allWaters);
+      const g = owner.geometry as GeoJSON.LineString | GeoJSON.MultiLineString;
+      const parts =
+        g.type === 'MultiLineString'
+          ? (g.coordinates as [number, number][][])
+          : [g.coordinates as [number, number][]];
+      const sliced = sliceMultiLine(parts, f0, f1);
+      if (!sliced.length) continue;
+      out.push({
+        type: 'Feature',
+        properties: { slug: w.slug, name: w.name, asociatieSlug: coverageSlug },
+        geometry: { type: 'MultiLineString', coordinates: sliced },
+      });
+    }
+    return out.length ? out : null;
+  }, [coverageSlug, waters, allWaters, countyFilter]);
 
   // Focus-aware style (t_b1547e24): the orange highlight for ALL waters.
   // react-leaflet v5 re-applies the `style` prop on every re-render
@@ -523,6 +601,33 @@ export function WaterFeatureLayer({
           onEachFeature={(feature, layer: L.Path) => {
             const f = feature as WaterFeature;
             layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
+            layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
+          }}
+        />
+      )}
+      {/* Association highlight: the selected association's geometry-less sector
+          slices (Pârâu Buzăul Mijlociu, Râul Buzăul superior, …) in bold
+          covered green — rendered UNDER the click-focus slice so a focused
+          sector's orange still wins (t_b6a0e2fe). Click selects the sector's
+          water directly (the slice is a sub-course, fraction resolution would
+          mis-map it). */}
+      {assocHighlightFeatures && (
+        <LeafletGeoJSON
+          data={
+            {
+              type: 'FeatureCollection',
+              features: assocHighlightFeatures,
+            } as GeoJSON.FeatureCollection
+          }
+          style={() => ({
+            color: COVERED_COLOR,
+            weight: 5,
+            opacity: 1,
+            fillOpacity: 0,
+          })}
+          onEachFeature={(feature, layer: L.Path) => {
+            const f = feature as WaterFeature;
+            layer.on('click', () => selectWater(f.properties.slug));
             layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
           }}
         />

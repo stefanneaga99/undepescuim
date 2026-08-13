@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
-import { WaterFeatureLayer, groupKeyOf, isMainCourse, courseRank } from '@/components/map/WaterFeatureLayer';
+import { WaterFeatureLayer, contractInterval } from '@/components/map/WaterFeatureLayer';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 
@@ -38,37 +38,15 @@ export function MapView() {
   const focusKey = selected?.name ? selected.name : null;
   const focusColor = selected ? FOCUS_COLOR : null;
 
-  // Compute the contract's [start, end] fraction of the river course.
-  // Exact sector intervals (Olt) win; otherwise the Voronoi interval over
-  // course_frac (matched by exact riverGroup, t_ac697770).
+  // Compute the contract's [start, end] fraction of the river course
+  // (t_b6a0e2fe: shared helper — exact sector intervals win, else the
+  // Voronoi interval over course_frac; single-contract rivers = [0, 1]).
   const focusRange = useMemo<[number, number] | null>(() => {
     if (!selected) return null;
     // Uncontracted waters have no contracts/sectors — highlight the whole
     // feature, never slice (t_b1547e24).
     if (selected.uncontracted) return null;
-    if (typeof selected.sectorStart === 'number' && typeof selected.sectorEnd === 'number') {
-      return [selected.sectorStart, selected.sectorEnd];
-    }
-    const gk = groupKeyOf(selected);
-    const group = allWaters.filter(
-      (w) =>
-        (isMainCourse(w.name) || w.mainCourse === true) &&
-        groupKeyOf(w) === gk,
-    );
-    if (group.length <= 1) return [0, 1]; // whole course
-    const ranked = [...group].sort(
-      (a, b) => courseRank(a.name) - courseRank(b.name),
-    );
-    const rankedFrac = (i: number) => (ranked.length <= 1 ? 0.5 : i / (ranked.length - 1));
-    const positioned = ranked
-      .map((w, i) => ({ w, f: typeof w.course_frac === 'number' ? w.course_frac : rankedFrac(i) }))
-      .sort((a, b) => a.f - b.f);
-    const idx = positioned.findIndex((p) => p.w.slug === selected.slug);
-    if (idx < 0) return [0, 1];
-    const f = positioned[idx].f;
-    const left = idx > 0 ? (positioned[idx - 1].f + f) / 2 : 0;
-    const right = idx < positioned.length - 1 ? (f + positioned[idx + 1].f) / 2 : 1;
-    return [left, right];
+    return contractInterval(selected, allWaters);
   }, [selected, allWaters]);
 
   return (
@@ -123,7 +101,10 @@ function FlyToController() {
       return;
     }
     const assoc = associations.find((a) => a.slug === slug);
-    if (!assoc) return;
+    // bbox can be null (associations without a geocoded bbox — e.g.
+    // AJVPS Covasna, Direcția Silvică Brașov): destructuring null crashes
+    // the whole app, so stay on the current view instead (t_b6a0e2fe).
+    if (!assoc || !assoc.bbox) return;
     const [minLon, minLat, maxLon, maxLat] = assoc.bbox;
     map.flyTo([(minLat + maxLat) / 2, (minLon + maxLon) / 2], 9, { duration: 0.8 });
   }, [slug, associations, dataLoaded, map]);

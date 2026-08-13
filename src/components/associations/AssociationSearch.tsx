@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowLeft, Check, ChevronDown, Search } from 'lucide-react';
 import {
@@ -27,6 +27,15 @@ export function AssociationSearch() {
   const selectedSlug = useMapStore((s) => s.selectedAssociationSlug);
   const selectAssociation = useMapStore((s) => s.selectAssociation);
   const [open, setOpen] = useState(false);
+  // Desktop trigger ref — the dropdown panel is portaled to <body> so it can
+  // escape the header's backdrop-blur stacking context (t_b6a0e2fe): the
+  // panel used to render inside the header (z-50) BELOW the click-outside
+  // catcher (z-99), so clicking any item hit the catcher and the dropdown
+  // closed WITHOUT selecting — the desktop association search was dead.
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  // Panel anchor measured in the open click handler (never during render —
+  // react-hooks/refs forbids ref reads in render).
+  const [panelPos, setPanelPos] = useState<{ top: number; left: number; width: number } | null>(null);
   // Only one Command instance renders per breakpoint — otherwise cmdk typing
   // would target the hidden duplicate input.
   const isMobile = useMediaQuery('(max-width: 767px)');
@@ -107,8 +116,15 @@ export function AssociationSearch() {
       {/* ── Tablet/desktop: inline trigger + dropdown ─────────────────── */}
       <div className="relative hidden w-full max-w-[280px] md:block lg:max-w-[480px]">
         <button
+          ref={triggerRef}
           type="button"
-          onClick={() => setOpen((o) => !o)}
+          onClick={() => {
+            if (!open && triggerRef.current) {
+              const r = triggerRef.current.getBoundingClientRect();
+              setPanelPos({ top: r.bottom + 6, left: r.left, width: r.width });
+            }
+            setOpen((o) => !o);
+          }}
           className={cn(
             'map-touch flex h-9 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm shadow-sm transition-colors hover:bg-accent',
             open && 'ring-2 ring-ring',
@@ -128,12 +144,25 @@ export function AssociationSearch() {
 
         {!isMobile && open && (
           <>
-            {/* click-outside catcher (portaled — header backdrop-filter traps fixed) */}
+            {/* Both catcher AND panel portaled to <body>: the panel must
+                escape the header's backdrop-blur stacking context (see
+                triggerRef note) or it renders below the catcher and is
+                unclickable. Positioned from the trigger's bounding rect. */}
             {createPortal(
               <div className="fixed inset-0 z-[99]" onClick={() => setOpen(false)} />,
               document.body,
             )}
-            <div className="absolute left-0 right-0 top-full z-[100] mt-1.5">{panel}</div>
+            {createPortal(
+              <div
+                className="fixed z-[200] mt-1.5"
+                style={
+                  panelPos ?? { top: 0, left: 0, width: 280 }
+                }
+              >
+                {panel}
+              </div>,
+              document.body,
+            )}
           </>
         )}
       </div>
