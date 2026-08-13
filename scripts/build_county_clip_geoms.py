@@ -337,6 +337,17 @@ def process_pool(pool: list, waters_by_slug: dict, county_polys: dict, buffered:
         )
         if res is None:
             stats["skips"] += 1
+            # skip = geometry lies (≥99.5%) INSIDE its own county → no clip
+            # needed, the FE falls back to the full geometry. A stale
+            # geometryByCounty entry from a previous (wrong-geometry) run
+            # would make countyRenderGeometry return null and HIDE the water
+            # — drop the own-county key so the fallback applies.
+            own_key = norm_county(w.get("judet", ""))
+            gbc = w.get("geometryByCounty")
+            if gbc and own_key in gbc:
+                del gbc[own_key]
+                if not gbc:
+                    w["geometryByCounty"] = {}
             continue
         key, gj = res
         if gj is None:
