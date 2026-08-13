@@ -102,7 +102,36 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   selectAssociation: (slug) => set({ selectedAssociationSlug: slug }),
 
-  selectWater: (slug) => set({ selectedWaterSlug: slug }),
+  selectWater: (slug) => {
+    // t_7a7192ea Bug 2: clicking a river/lake takes over from any active
+    // association filter — clear selectedAssociationSlug so the map stops
+    // showing the association's green/grey coverage, then select the clicked
+    // water (existing orange focus + detail card behavior takes over).
+    // Also drop a county/type filter that would hide the clicked water (a
+    // defensive "as needed" — normally only waters that pass the filters are
+    // rendered/clickable, but never leave a selection invisible).
+    if (slug === null) {
+      set({ selectedWaterSlug: null });
+      return;
+    }
+    const { countyFilter, waterTypeFilter, waters, uncontracted } = get();
+    const water =
+      waters.find((w) => w.slug === slug) ??
+      uncontracted.find((w) => w.slug === slug) ??
+      null;
+    set({
+      selectedWaterSlug: slug,
+      selectedAssociationSlug: null,
+      countyFilter:
+        water && countyFilter.length > 0 && !countyFilter.includes(water.judet)
+          ? []
+          : countyFilter,
+      waterTypeFilter:
+        water && waterTypeFilter !== 'all' && water.subtype !== waterTypeFilter
+          ? 'all'
+          : waterTypeFilter,
+    });
+  },
 
   toggleCounty: (county) => {
     const { countyFilter, waters, uncontracted, selectedWaterSlug, waterTypeFilter } = get();

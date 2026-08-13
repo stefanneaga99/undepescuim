@@ -147,14 +147,22 @@ export function AssociationSearch() {
             {/* Both catcher AND panel portaled to <body>: the panel must
                 escape the header's backdrop-blur stacking context (see
                 triggerRef note) or it renders below the catcher and is
-                unclickable. Positioned from the trigger's bounding rect. */}
+                unclickable. Positioned from the trigger's bounding rect.
+                t_7a7192ea: the desktop filter panel (FilterBar, z-1000)
+                used to sit ABOVE the dropdown (z-200), covering the left
+                strip of every row — clicking an association's NAME (the
+                left-aligned text) hit the filter panel and nothing was
+                selected. The panel now floats above the filter bar
+                (z-1500) and the catcher above it as well (z-1050) so
+                outside clicks anywhere (incl. on the filter panel) close
+                the dropdown. */}
             {createPortal(
-              <div className="fixed inset-0 z-[99]" onClick={() => setOpen(false)} />,
+              <div className="fixed inset-0 z-[1050]" onClick={() => setOpen(false)} />,
               document.body,
             )}
             {createPortal(
               <div
-                className="fixed z-[200] mt-1.5"
+                className="fixed z-[1500] mt-1.5"
                 style={
                   panelPos ?? { top: 0, left: 0, width: 280 }
                 }
