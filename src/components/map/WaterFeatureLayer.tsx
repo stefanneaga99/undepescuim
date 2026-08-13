@@ -340,11 +340,14 @@ export function WaterFeatureLayer({
 
   // Exact river-group key of the focused contract (t_ac697770) — matches
   // focus slices across name variants ('Râul Oltul superior' / 'Râul Olt').
+  // t_f9d81184: focus highlighting is ONLY for contracted waters — require a
+  // focusColor (set by MapView only when the selected water has an asociatie)
+  // so an uncontracted selection can never enter the focus path.
   const focusGroupKey = useMemo(() => {
-    if (!focusKey) return null;
+    if (!focusKey || !focusColor) return null;
     const w = allWaters.find((x) => x.name === focusKey);
     return w ? groupKeyOf(w) : waterKey(focusKey);
-  }, [allWaters, focusKey]);
+  }, [allWaters, focusKey, focusColor]);
 
   // Click on a river: resolve the fraction along the course, then select the
   // contract (association) that owns that sector — not just the first one.

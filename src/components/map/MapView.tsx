@@ -27,15 +27,21 @@ export function MapView() {
   // Focus: when a water/contract is selected from the detail card, highlight
   // only ITS sector of the river — sliced from the shared course geometry by
   // the contract km share of the main-course contracts.
+  // t_f9d81184: the orange focus highlight is ONLY for CONTRACTED waters —
+  // clicking an uncontracted water (teal overlay / private pond) opens its
+  // 'Necontractat' card but must NOT highlight anything on the map. Gate ALL
+  // focus props on the presence of an asociatie (contracted) so a water
+  // without one can never render the orange sector line.
   const selected = allWaters.find((w) => w.slug === selectedWaterSlug) ?? null;
-  const focusKey = selected?.name ? selected.name : null;
-  const focusColor = selected?.asociatie?.slug ? FOCUS_COLOR : null;
+  const isContracted = !!selected?.asociatie?.slug;
+  const focusKey = isContracted && selected?.name ? selected.name : null;
+  const focusColor = isContracted ? FOCUS_COLOR : null;
 
   // Compute the contract's [start, end] fraction of the river course.
   // Exact sector intervals (Olt) win; otherwise the Voronoi interval over
   // course_frac (matched by exact riverGroup, t_ac697770).
   const focusRange = useMemo<[number, number] | null>(() => {
-    if (!selected) return null;
+    if (!isContracted || !selected) return null;
     if (typeof selected.sectorStart === 'number' && typeof selected.sectorEnd === 'number') {
       return [selected.sectorStart, selected.sectorEnd];
     }
@@ -59,7 +65,7 @@ export function MapView() {
     const left = idx > 0 ? (positioned[idx - 1].f + f) / 2 : 0;
     const right = idx < positioned.length - 1 ? (f + positioned[idx + 1].f) / 2 : 1;
     return [left, right];
-  }, [selected, allWaters]);
+  }, [isContracted, selected, allWaters]);
 
   return (
     <MapContainer
