@@ -1,0 +1,623 @@
+{
+ "fixed": [
+  {
+   "slug": "romsilva-caras-severin-bistrita-marului-superior",
+   "name": "Râul Bistrița Mărului superior",
+   "judet": "Caraș-Severin",
+   "source": "river",
+   "osmc": "Bistra Mărului",
+   "in_county_pts": 75,
+   "majority": "Caraș-Severin"
+  },
+  {
+   "slug": "romsilva-caras-severin-plesu-rusca",
+   "name": "Râul Pleșu Rusca",
+   "judet": "Caraș-Severin",
+   "source": "river",
+   "osmc": "Rusca",
+   "in_county_pts": 61,
+   "majority": "Caraș-Severin"
+  },
+  {
+   "slug": "romsilva-caras-severin-ponesca",
+   "name": "Râul Ponesca",
+   "judet": "Caraș-Severin",
+   "source": "river",
+   "osmc": "Poneasca",
+   "in_county_pts": 69,
+   "majority": "Caraș-Severin"
+  },
+  {
+   "slug": "romsilva-caras-severin-sirinia",
+   "name": "Râul Șirinia",
+   "judet": "Caraș-Severin",
+   "source": "river",
+   "osmc": "Sirina",
+   "in_county_pts": 14,
+   "majority": "Caraș-Severin"
+  },
+  {
+   "slug": "romsilva-caras-severin-valea-beiului",
+   "name": "Valea Beiului",
+   "judet": "Caraș-Severin",
+   "source": "river",
+   "osmc": "Beu",
+   "in_county_pts": 61,
+   "majority": "Caraș-Severin"
+  },
+  {
+   "slug": "romsilva-cluj-1-lacul-fantanele",
+   "name": "1 Lacul Fântânele",
+   "judet": "Cluj",
+   "source": "lake",
+   "osmc": "Lacul de acumulare Beliș-Fântânele",
+   "in_county_pts": 61,
+   "majority": "Cluj"
+  },
+  {
+   "slug": "romsilva-cluj-lacul-gilau",
+   "name": "Lacul Gilău",
+   "judet": "Cluj",
+   "source": "lake",
+   "osmc": "Lacul de acumulare Gilău",
+   "in_county_pts": 75,
+   "majority": "Cluj"
+  },
+  {
+   "slug": "nalohz4y",
+   "name": "Valea Lonei",
+   "judet": "Cluj",
+   "source": "river",
+   "osmc": "Feneș",
+   "in_county_pts": 61,
+   "majority": "Cluj"
+  },
+  {
+   "slug": "1i81o3wj",
+   "name": "Valea Vadului",
+   "judet": "Cluj",
+   "source": "river",
+   "osmc": "Ocolișel",
+   "in_county_pts": 54,
+   "majority": "Cluj"
+  },
+  {
+   "slug": "anpa-anpa-0432",
+   "name": "Pârâul Ațintiș",
+   "judet": "Mureș",
+   "source": "river",
+   "osmc": "Ațântiș",
+   "in_county_pts": 42,
+   "majority": "Mureș"
+  },
+  {
+   "slug": "anpa-anpa-0438",
+   "name": "Pârâul Ghergheș (Vădeș)",
+   "judet": "Mureș",
+   "source": "river",
+   "osmc": "Ghegheș",
+   "in_county_pts": 74,
+   "majority": "Mureș"
+  },
+  {
+   "slug": "romsilva-mures-gudea",
+   "name": "Râul Gudea",
+   "judet": "Mureș",
+   "source": "river",
+   "osmc": "pr gudea+pr gudea mare",
+   "in_county_pts": 67,
+   "majority": "Mureș",
+   "multi_chain": true
+  },
+  {
+   "slug": "romsilva-mures-valea-sovetii",
+   "name": "Valea Soveții",
+   "judet": "Mureș",
+   "source": "river",
+   "osmc": "Sovata",
+   "in_county_pts": 64,
+   "majority": "Mureș"
+  }
+ ],
+ "unmatchable": [
+  {
+   "slug": "anpa-anpa-0168",
+   "name": "Bajura",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0158",
+   "name": "Pietroaia",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "pgabr5sd",
+   "name": "Râul Bahna",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": [
+    26.21958015203,
+    47.88365032831,
+    26.26932977557,
+    47.98940469075
+   ],
+   "candidates": [
+    {
+     "kind": "river",
+     "name": "Bahna",
+     "bb": [
+      26.5030332,
+      46.9340965,
+      26.5105462,
+      46.9468434
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Bahna",
+     "bb": [
+      28.5546209,
+      47.2859068,
+      28.5597537,
+      47.2946468
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Bahna",
+     "bb": [
+      26.3751864,
+      46.9656276,
+      26.3811682,
+      46.9729688
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Râul Bahna",
+     "bb": [
+      22.4677588,
+      44.7138887,
+      22.5537924,
+      44.9250052
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0161",
+   "name": "Râul Balinți",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0160",
+   "name": "Râul Bodeasa",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0154",
+   "name": "Râul Corogea",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0152",
+   "name": "Râul Ghireni",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0162",
+   "name": "Râul Podriga",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0156",
+   "name": "Râul Podul Plopii",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0159",
+   "name": "Râul Sărata",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [
+    {
+     "kind": "river",
+     "name": "Sărata",
+     "bb": [
+      25.9835361,
+      45.0578154,
+      25.9906502,
+      45.0709786
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Sărata",
+     "bb": [
+      28.2366921,
+      46.3857967,
+      28.4958283,
+      46.5414375
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Sărata",
+     "bb": [
+      28.4598192,
+      46.5394294,
+      28.4918401,
+      46.6370925
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Sărata",
+     "bb": [
+      26.5672596,
+      45.0040533,
+      26.6483696,
+      45.1546661
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0157",
+   "name": "Râul Ursoiu",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "eebjo69e",
+   "name": "Râul Volovăț",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": [
+    26.71996234775,
+    47.96855388294,
+    27.14536308976,
+    48.18727667612
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "w9ifusdl",
+   "name": "Râul Vorona",
+   "judet": "Botoșani",
+   "action": "keep-bbox",
+   "old_bbox": [
+    26.58590554118,
+    47.55300507149,
+    26.63689969897,
+    47.57292844803
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-caras-severin-higeg",
+   "name": "Râul Higeg",
+   "judet": "Caraș-Severin",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-caras-severin-higigel",
+   "name": "Râul Higigel",
+   "judet": "Caraș-Severin",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-caras-severin-izvoarele-timisului",
+   "name": "Râul Izvoarele Timișului",
+   "judet": "Caraș-Severin",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Timiș course already drawn under 'Râul Timiș' (timis group); the 7 km headwater sector (Vadul Rău–Lac Trei Ape) needs a group-join — deferred to merge task"
+  },
+  {
+   "slug": "anpa-anpa-0227",
+   "name": "Valea Mare",
+   "judet": "Caraș-Severin",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Valea Mare (CS) contract = 3 km 'Izvoare–pod sat Ilidia' (21.71E,44.97N); no OSM 'Valea Mare' near Ilidia — the matcher auto-pick is a DIFFERENT Valea Mare (Reșița area) and would misdraw"
+  },
+  {
+   "slug": "romsilva-cluj-8-lacul-valea-calului",
+   "name": "8 Lacul Valea Calului",
+   "judet": "Cluj",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no separate Valea Calului reservoir polygon in OSM dump (0.2 Ha pond, D.S. Cluj); the Fântânele reservoir arm covers the area"
+  },
+  {
+   "slug": "anpa-anpa-0246",
+   "name": "Lac Săcălaia",
+   "judet": "Cluj",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no named Săcălaia lake polygon in OSM dump (48 Ha, AJPS Cluj)"
+  },
+  {
+   "slug": "romsilva-cluj-lacul-floroiu",
+   "name": "Lacul Floroiu",
+   "judet": "Cluj",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Floroiu lake polygon already drawn under 'Lacul de acumulare Floroiu' (fjq2a70m); attaching would double-draw — group-join deferred to merge task"
+  },
+  {
+   "slug": "anpa-anpa-0443",
+   "name": "Glăjărie",
+   "judet": "Mureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0435",
+   "name": "Pârâul Hodoș-Patec",
+   "judet": "Mureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [
+    {
+     "kind": "lake",
+     "name": "Hodos holtág",
+     "bb": [
+      22.8362632,
+      47.9622584,
+      22.8501543,
+      47.9739931
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0437",
+   "name": "Pârâul Solocma",
+   "judet": "Mureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0440",
+   "name": "Pârâul Vețca",
+   "judet": "Mureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  }
+ ],
+ "group_shared": [
+  {
+   "slug": "sopv2vba",
+   "name": "Râul Siret",
+   "judet": "Botoșani",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-caras-severin-barzava-superioara",
+   "name": "Râul Bârzava Superioară",
+   "judet": "Caraș-Severin",
+   "group": "barzava",
+   "note": "group 'barzava' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0220",
+   "name": "Râul Bârzava inferioară",
+   "judet": "Caraș-Severin",
+   "group": "barzava",
+   "note": "group 'barzava' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-caras-severin-cerna-inferioara",
+   "name": "Râul Cerna inferioară",
+   "judet": "Caraș-Severin",
+   "group": "cerna-herculane",
+   "note": "group 'cerna-herculane' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-caras-severin-cerna-mijlocie",
+   "name": "Râul Cerna mijlocie",
+   "judet": "Caraș-Severin",
+   "group": "cerna-herculane",
+   "note": "group 'cerna-herculane' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0221",
+   "name": "Râul Timișul inferior",
+   "judet": "Caraș-Severin",
+   "group": "timis",
+   "note": "group 'timis' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "n7cuf5cs",
+   "name": "Crișul Repede Mijlociu",
+   "judet": "Cluj",
+   "group": "crisul-repede",
+   "note": "group 'crisul-repede' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "bv8qho87",
+   "name": "Crișul Repede Superior",
+   "judet": "Cluj",
+   "group": "crisul-repede",
+   "note": "group 'crisul-repede' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "9h06oubr",
+   "name": "Râul Arieș",
+   "judet": "Cluj",
+   "group": "aries",
+   "note": "group 'aries' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "hao8h0b2",
+   "name": "Râul Someșul Mic",
+   "judet": "Cluj",
+   "group": "somesul-mic",
+   "note": "group 'somesul-mic' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-cluj-somesul-rece-mijlociu",
+   "name": "Râul Someșul Rece mijlociu",
+   "judet": "Cluj",
+   "group": "somesu-rece",
+   "note": "group 'somesu-rece' has 3 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-cluj-somesul-rece-superior",
+   "name": "Râul Someșul Rece superior",
+   "judet": "Cluj",
+   "group": "somesu-rece",
+   "note": "group 'somesu-rece' has 3 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-mures-gurghiul-mijlociu",
+   "name": "Râul Gurghiul mijlociu",
+   "judet": "Mureș",
+   "group": "gurghi",
+   "note": "group 'gurghi' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-mures-mures-iii",
+   "name": "Râul Mureş III",
+   "judet": "Mureș",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0426",
+   "name": "Râul Mureș",
+   "judet": "Mureș",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0453",
+   "name": "Râul Mureș IV",
+   "judet": "Mureș",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0454",
+   "name": "Râul Târnava Mare",
+   "judet": "Mureș",
+   "group": "tarnava-mare",
+   "note": "group 'tarnava-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-mures-tarnava-mica-96",
+   "name": "Râul Târnava Mică",
+   "judet": "Mureș",
+   "group": "tarnava-mica",
+   "note": "group 'tarnava-mica' has 1 geometry owner(s); member shares course"
+  }
+ ],
+ "sector_fixed": [
+  {
+   "slug": "romsilva-cluj-1-somesul-cald-superior",
+   "name": "Râul 1 Someșul Cald superior",
+   "judet": "Cluj",
+   "group": "somesul-cald",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.5875,
+   "owner": true
+  },
+  {
+   "slug": "romsilva-cluj-2-somesul-cald-mijlociu",
+   "name": "Râul 2 Somesul Cald Mijlociu",
+   "judet": "Cluj",
+   "group": "somesul-cald",
+   "sectorStart": 0.5875,
+   "sectorEnd": 1.0,
+   "owner": false
+  }
+ ],
+ "sector_cleared": [
+  {
+   "slug": "m19ue32m",
+   "name": "Someșul Cald Superior",
+   "judet": "Cluj",
+   "group": "somesul-cald",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.5875,
+   "old_bbox": [
+    22.7092229,
+    46.6269211,
+    22.8749157,
+    46.6487954
+   ],
+   "note": "wrong 11-pt fragment geometry cleared; shares merged somesul-cald course"
+  },
+  {
+   "slug": "nwa37i1j",
+   "name": "Someșul Cald Mijlociu",
+   "judet": "Cluj",
+   "group": "somesul-cald",
+   "sectorStart": 0.5875,
+   "sectorEnd": 1.0,
+   "old_bbox": [
+    23.0614551,
+    46.6675389,
+    23.2154306,
+    46.7106318
+   ],
+   "note": "wrong 11-pt fragment geometry cleared; shares merged somesul-cald course"
+  }
+ ]
+}
