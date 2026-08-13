@@ -40,6 +40,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import geocode_common as gc
+from _mapping_common import canonical_county  # noqa: E402
 from probe_buzau_places import fraction_at
 
 WATERS = ROOT / "public" / "data" / "waters.json"
@@ -550,7 +551,7 @@ def main() -> None:
         entry = {
             "slug": slug,
             "name": row["water_name"],
-            "judet": row["county"].title(),
+            "judet": canonical_county(row["county"]),
             "type": "ape",
             "subtype": "rau" if row.get("water_type") == "river" else "lac",
             "limite": row.get("limits_text") or "",

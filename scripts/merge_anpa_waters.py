@@ -16,6 +16,8 @@ import sqlite3
 import unicodedata
 from pathlib import Path
 
+from _mapping_common import canonical_county  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 FE_WATERS = ROOT / "public" / "data" / "waters.json"
 ANPA_FILE = ROOT / "data" / "processed" / "anpa_waters.jsonl"
@@ -148,7 +150,7 @@ def main() -> None:
         entry = {
             "slug": f"anpa-{w['id']}",
             "name": name,
-            "judet": (w.get("county") or "").title(),
+            "judet": canonical_county(w.get("county") or ""),
             "type": "ape",
             "subtype": anpa_subtype(w),
             "limite": w.get("limits_text") or "",

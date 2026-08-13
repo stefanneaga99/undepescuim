@@ -47,6 +47,7 @@ from _mapping_common import (  # noqa: E402
     assoc_slug,
     build_county_centroids,
     build_osm_index,
+    canonical_county,
     core,
     fraction_at_point,
     geom_bbox,
@@ -227,7 +228,7 @@ def main() -> None:
         if not rows:
             print(f"[skip] no ANPA row for {wname} {county_raw} assoc={assoc_filter}")
             continue
-        j = county_raw.strip().title().replace(" - ", "-")
+        j = canonical_county(county_raw)
         for row in rows:
             if row_already_present(row, j):
                 print(f"[skip] {wname} {j} km={row.get('sector_km')} already present")

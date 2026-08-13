@@ -50,6 +50,47 @@ def slugify(s: str) -> str:
     return re.sub(r"[^a-zA-Z0-9]+", "-", s.lower()).strip("-")
 
 
+# Canonical county names as shown in the FE county filter (t_c5bc15f9).
+# Keyed by fully-normalized alnum form so ANY source spelling — case
+# ('BACĂU'), separators ('Bistrița - Năsăud' vs 'Bistrița-Năsăud'),
+# diacritics — resolves to exactly one name. Must cover all 42 counties
+# (mirrors fetch_all_county_boundaries.COUNTIES).
+CANONICAL_COUNTIES = {
+    "alba": "Alba", "arad": "Arad", "arges": "Argeș", "bacau": "Bacău",
+    "bihor": "Bihor", "bistritanasaud": "Bistrița-Năsăud", "botosani": "Botoșani",
+    "brasov": "Brașov", "braila": "Brăila", "bucuresti": "București",
+    "buzau": "Buzău", "carasseverin": "Caraș-Severin", "calarasi": "Călărași",
+    "cluj": "Cluj", "constanta": "Constanța", "covasna": "Covasna",
+    "dambovita": "Dâmbovița", "dolj": "Dolj", "galati": "Galați",
+    "giurgiu": "Giurgiu", "gorj": "Gorj", "harghita": "Harghita",
+    "hunedoara": "Hunedoara", "ialomita": "Ialomița", "iasi": "Iași",
+    "ilfov": "Ilfov", "maramures": "Maramureș", "mehedinti": "Mehedinți",
+    "mures": "Mureș", "neamt": "Neamț", "olt": "Olt", "prahova": "Prahova",
+    "satumare": "Satu Mare", "salaj": "Sălaj", "sibiu": "Sibiu",
+    "suceava": "Suceava", "teleorman": "Teleorman", "timis": "Timiș",
+    "tulcea": "Tulcea", "valcea": "Vâlcea", "vaslui": "Vaslui",
+    "vrancea": "Vrancea",
+}
+
+
+def _county_key(s: str) -> str:
+    t = unicodedata.normalize("NFKD", s or "")
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "", t.lower())
+
+
+def canonical_county(s: str) -> str:
+    """Map ANY county spelling to the canonical FE name.
+
+    'BISTRIȚA - NĂSĂUD' / 'Bistrița - Năsăud' / 'Bistrița-Năsăud' /
+    'Bistrita-Nasaud' all resolve to 'Bistrița-Năsăud', so the county
+    filter shows exactly one chip (t_c5bc15f9).
+    """
+    if not s:
+        return s
+    return CANONICAL_COUNTIES.get(_county_key(s), s.strip().title())
+
+
 def assoc_slug(name: str, waters: list[dict], assocs: list[dict]) -> str:
     """Canonical FE association slug for an association NAME."""
     for a in assocs:

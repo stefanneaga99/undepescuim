@@ -43,6 +43,7 @@ ROMSILVA_FILE = ROOT / "data" / "processed" / "anpa_romsilva_waters.jsonl"
 SOURCES = ROOT / "data" / "processed" / "sources.jsonl"
 
 sys.path.insert(0, str(ROOT / "scripts"))
+from _mapping_common import canonical_county  # noqa: E402
 from audit_missing_rivers import (  # noqa: E402
     best_osm_match,
     build_county_centroids,
@@ -95,7 +96,7 @@ COUNTY_TITLE = {
 
 
 def county_title(c: str) -> str:
-    return COUNTY_TITLE.get(c.strip().upper(), c.strip().title())
+    return COUNTY_TITLE.get(c.strip().upper(), canonical_county(c))
 
 
 def slugify(s: str) -> str:

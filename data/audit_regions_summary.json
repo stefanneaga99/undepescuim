@@ -13,8 +13,7 @@
     "Argeș": 164,
     "Bacău": 83,
     "Bihor": 282,
-    "Bistrița - Năsăud": 55,
-    "Bistrița-Năsăud": 119,
+    "Bistrița-Năsăud": 174,
     "Botoșani": 89,
     "Brașov": 369,
     "Brăila": 59,
@@ -72,14 +71,10 @@
       "present": 34,
       "present-hidden": 2
     },
-    "Bistrița - Năsăud": {
-      "uncontracted": 47,
-      "present-hidden": 2,
-      "present": 6
-    },
     "Bistrița-Năsăud": {
-      "present": 18,
-      "uncontracted": 101
+      "present": 24,
+      "uncontracted": 148,
+      "present-hidden": 2
     },
     "Botoșani": {
       "uncontracted": 52,

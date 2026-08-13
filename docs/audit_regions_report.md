@@ -24,8 +24,7 @@ Toate cele 16 ape contractate AJVPS COVASNA există în waters.json. După audit
 | Argeș | 164 | 36 | 0 | 0 | 0 | 128 |
 | Bacău | 83 | 21 | 0 | 0 | 0 | 62 |
 | Bihor | 282 | 34 | 0 | 0 | 0 | 246 |
-| Bistrița - Năsăud | 55 | 6 | 0 | 0 | 0 | 47 |
-| Bistrița-Năsăud | 119 | 18 | 0 | 0 | 0 | 101 |
+| Bistrița-Năsăud | 174 | 24 | 0 | 0 | 0 | 148 |
 | Botoșani | 89 | 37 | 0 | 0 | 0 | 52 |
 | Brașov | 369 | 31 | 0 | 0 | 0 | 338 |
 | Brăila | 59 | 8 | 0 | 0 | 0 | 51 |

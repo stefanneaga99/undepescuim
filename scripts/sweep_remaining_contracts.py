@@ -45,6 +45,7 @@ from _mapping_common import (  # noqa: E402
     assoc_slug,
     build_county_centroids,
     build_osm_index,
+    canonical_county,
     core,
     fraction_at_point,
     geom_bbox,
@@ -56,13 +57,9 @@ from _mapping_common import (  # noqa: E402
 
 ANPA_FILE = ROOT / "data" / "processed" / "anpa_waters.jsonl"
 
-COUNTY_TITLE = {
-    "BISTRIȚA - NĂSĂUD": "Bistrița-Năsăud", "BISTRIȚA-NĂSĂUD": "Bistrița-Năsăud",
-}
-
 
 def county_title(c: str) -> str:
-    return COUNTY_TITLE.get(c.strip().upper(), c.strip().title().replace(" - ", "-"))
+    return canonical_county(c)
 
 
 def make_anpa_water(row: dict, ct: str, assocs: list[dict], waters: list[dict],
