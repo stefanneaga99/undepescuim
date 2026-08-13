@@ -1,0 +1,418 @@
+{
+ "fixed": [
+  {
+   "slug": "19468k28",
+   "name": "Pârâul Lesuntu",
+   "judet": "Bacău",
+   "source": "river",
+   "osmc": "way434756492+way434756493",
+   "in_county_pts": 71,
+   "majority": "Bacău",
+   "note": "unnamed OSM river at Lesuntu bbox (tributary of Oituz)"
+  },
+  {
+   "slug": "anpa-anpa-0301",
+   "name": "Râul Comasca",
+   "judet": "Giurgiu",
+   "source": "river",
+   "osmc": "way15943446",
+   "in_county_pts": 1,
+   "majority": "Giurgiu",
+   "note": "unnamed OSM stream at Comasca village (Oinacu)"
+  },
+  {
+   "slug": "anpa-anpa-0471",
+   "name": "Lac acumulare Izbiceni cu bălțile adiacente",
+   "judet": "Olt",
+   "source": "lake",
+   "osmc": "Olt-reservoir-relation-2435464",
+   "in_county_pts": 66,
+   "majority": "Olt",
+   "note": "2 outer rings, 43.7-44.06N reach"
+  },
+  {
+   "slug": "anpa-anpa-0473",
+   "name": "Lac acumulare Frunzaru cu bălțile adiacente",
+   "judet": "Olt",
+   "source": "lake",
+   "osmc": "acumularea frunzaru",
+   "in_county_pts": 65,
+   "majority": "Olt",
+   "note": "merged 2 polygon parts"
+  },
+  {
+   "slug": "anpa-anpa-0247",
+   "name": "Canal Dunăre – Marea Neagră",
+   "judet": "Constanța",
+   "source": "lake",
+   "osmc": "canalul dunare marea neagra",
+   "in_county_pts": 63,
+   "majority": "Constanța",
+   "note": "contract limits span the lake"
+  },
+  {
+   "slug": "anpa-anpa-0397",
+   "name": "Râul Snagov",
+   "judet": "Ilfov",
+   "source": "lake",
+   "osmc": "lacul snagov",
+   "in_county_pts": 61,
+   "majority": "Ilfov",
+   "note": "contract limits span the lake"
+  },
+  {
+   "slug": "romsilva-dambovita-bratei",
+   "name": "Râul Brătei",
+   "judet": "Dâmbovița",
+   "source": "river",
+   "osmc": "Valea Brăteiului",
+   "in_county_pts": 63,
+   "majority": "Dâmbovița"
+  },
+  {
+   "slug": "romsilva-mehedinti-brebena-bulba",
+   "name": "Râul Brebena - Bulba",
+   "judet": "Mehedinți",
+   "source": "river",
+   "osmc": "Brebina",
+   "in_county_pts": 63,
+   "majority": "Mehedinți"
+  },
+  {
+   "slug": "romsilva-prahova-valea-azugii",
+   "name": "Valea Azugii",
+   "judet": "Prahova",
+   "source": "river",
+   "osmc": "Azuga",
+   "in_county_pts": 45,
+   "majority": "Prahova"
+  }
+ ],
+ "unmatchable": [
+  {
+   "slug": "anpa-anpa-0203",
+   "name": "Japșa Corotisca",
+   "judet": "Brăila",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Japșa Corotisca (3 ha, mal drept Dunăre km 171): no named OSM lake at the Brăila Danube right bank"
+  },
+  {
+   "slug": "anpa-anpa-0205",
+   "name": "Japșa Poala Albă",
+   "judet": "Brăila",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Japșa Poala Albă (8 ha, braț mort al Buzăului UAT Ibrianu): no named OSM lake near Ibrianu"
+  },
+  {
+   "slug": "anpa-anpa-0206",
+   "name": "Valea Encii",
+   "judet": "Brăila",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Valea Encii (5 km, ANIF desecare Comăneasca): drainage network, no OSM named water"
+  },
+  {
+   "slug": "anpa-anpa-0248",
+   "name": "Canal Poarta Albă – Midia Năvodari",
+   "judet": "Constanța",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Canal Poarta Albă – Midia Năvodari: no named OSM way/lake for the PAMN canal in the dump"
+  },
+  {
+   "slug": "anpa-anpa-0249",
+   "name": "Canal apă caldă Cernavodă",
+   "judet": "Constanța",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Canal apă caldă Cernavodă: no named OSM way for the hot-water discharge canal"
+  },
+  {
+   "slug": "ebhj5eyj",
+   "name": "Râul Potop",
+   "judet": "Dâmbovița",
+   "action": "keep-bbox",
+   "old_bbox": [
+    25.18319409092,
+    44.72350942499,
+    25.3626899674,
+    45.07181909538
+   ],
+   "note": "Râul Potop (45 km, Dâmbovița): no OSM 'Potop' way/cluster in Dâmbovița (Overpass 0 hits); bbox fallback from areba"
+  },
+  {
+   "slug": "anpa-anpa-0302",
+   "name": "Râul Șaica",
+   "judet": "Giurgiu",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Râul Șaica (10 ha, 'Vedea' limits): no OSM candidate; limits text appears to be a data error"
+  },
+  {
+   "slug": "anpa-anpa-0387",
+   "name": "Canalul Saltava",
+   "judet": "Ialomița",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Canalul Saltava (70 ha, desecare IAS Făcăieni): no OSM 'Saltava' waterway in Ialomița"
+  },
+  {
+   "slug": "anpa-anpa-0386",
+   "name": "Potcoava Bordușani",
+   "judet": "Ialomița",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Potcoava Bordușani (10 ha, mal drept baraj Borcea): only unnamed lakes at Bordușani (ways 86127473/88363518, no name tags); no named OSM match"
+  },
+  {
+   "slug": "anpa-anpa-0393",
+   "name": "Brațul Închis(mort) al râului Jijia",
+   "judet": "Iași",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Brațul Închis(mort) al râului Jijia (Cârniceni–Gorban): OSM 'jijia veche' cluster is IDENTICAL to the main Jijia course (133/133 pts within 0.003°); attaching would double-draw with the jijia group owner"
+  },
+  {
+   "slug": "anpa-anpa-0498",
+   "name": "CCPFB Paulian",
+   "judet": "Satu Mare",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "CCPFB Paulian (11.4 km, frontieră Berveni): unnamed fish-pond complex at Berveni (40+ unnamed ways 22.66-22.76E/47.85-47.93N); no named OSM feature"
+  },
+  {
+   "slug": "anpa-anpa-0497",
+   "name": "CCRM Ruseni",
+   "judet": "Satu Mare",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "CCRM Ruseni (36.8 km, Moftin): no named OSM water at Rușeni/Moftin (Lacul Moftinu is 17 ha, not the 36.8 km contract)"
+  },
+  {
+   "slug": "anpa-anpa-0499",
+   "name": "CP 9 stația mică",
+   "judet": "Satu Mare",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "CP 9 stația mică (36.19 km): cryptic fish-farm code, no limits text, no OSM candidate"
+  },
+  {
+   "slug": "anpa-anpa-0627",
+   "name": "Pârâu Elan",
+   "judet": "Vaslui",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Pârâu Elan (67 km, Ivănești Huși–conf. Prut): no OSM 'Elan' way in the extract (only Prut/Bârlad/Vaslui/Tigheci named in the valley)"
+  },
+  {
+   "slug": "anpa-anpa-0675",
+   "name": "Doaga",
+   "judet": "Vrancea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Doaga (18 ha, Doaga village): only unnamed reservoir (985 ha, way 352574401) at the village — size mismatch vs contract, no OSM name"
+  },
+  {
+   "slug": "romsilva-vrancea-coza",
+   "name": "Râul Coza",
+   "judet": "Vrancea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Râul Coza (9 km, izvoare–conf. Putna): no named OSM 'Coza' way; only unnamed headwater fragments not attributable with confidence"
+  },
+  {
+   "slug": "anpa-anpa-0680",
+   "name": "Râul Zăbăluța",
+   "judet": "Vrancea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Râul Zăbăluța (16 km, izvoare–pod Florean): no named OSM 'Zăbăluța' way; Zăbala clusters are the main stem, not the tributary"
+  }
+ ],
+ "group_shared": [
+  {
+   "slug": "anpa-bacau-bistrita-39",
+   "name": "Râul Bistrița",
+   "judet": "Bacău",
+   "group": "bistrita",
+   "note": "group 'bistrita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-bacau-casinul-superior",
+   "name": "Râul Cașinul Superior",
+   "judet": "Bacău",
+   "group": "casinul",
+   "note": "group 'casinul' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0066",
+   "name": "Râul Siret",
+   "judet": "Bacău",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "f553avch",
+   "name": "Râul Colentina",
+   "judet": "Dâmbovița",
+   "group": "colentina",
+   "note": "group 'colentina' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "ggka27ea",
+   "name": "Râul Dâmbovița",
+   "judet": "Dâmbovița",
+   "group": "dambovita",
+   "note": "group 'dambovita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-dambovita-ialomita-superioara",
+   "name": "Râul Ialomița superioară",
+   "judet": "Dâmbovița",
+   "group": "ialomita",
+   "note": "group 'ialomita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0297",
+   "name": "Râul Prut",
+   "judet": "Galați",
+   "group": "prut",
+   "note": "group 'prut' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0296",
+   "name": "Râul Siret",
+   "judet": "Galați",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0298",
+   "name": "Râul Argeș",
+   "judet": "Giurgiu",
+   "group": "arges",
+   "note": "group 'arges' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0388",
+   "name": "Raul Ialomița",
+   "judet": "Ialomița",
+   "group": "ialomita",
+   "note": "group 'ialomita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0392",
+   "name": "Râul Jijia curs principal",
+   "judet": "Iași",
+   "group": "jijia",
+   "note": "group 'jijia' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0389",
+   "name": "Râul Prut",
+   "judet": "Iași",
+   "group": "prut",
+   "note": "group 'prut' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0390",
+   "name": "Râul Siret",
+   "judet": "Iași",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-mehedinti-cerna",
+   "name": "Râul Cerna",
+   "judet": "Mehedinți",
+   "group": "cerna-herculane",
+   "note": "group 'cerna-herculane' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "y6i6nikh",
+   "name": "Râul Olt",
+   "judet": "Olt",
+   "group": "olt",
+   "note": "group 'olt' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "e8r6r01g",
+   "name": "Râul Olteț",
+   "judet": "Olt",
+   "group": "oltet",
+   "note": "group 'oltet' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0496",
+   "name": "Râul Someș",
+   "judet": "Satu Mare",
+   "group": "somes",
+   "note": "group 'somes' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0505",
+   "name": "Râul Tur mijlociu",
+   "judet": "Satu Mare",
+   "group": "tur",
+   "note": "group 'tur' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0504",
+   "name": "Râul Tur superior",
+   "judet": "Satu Mare",
+   "group": "tur",
+   "note": "group 'tur' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0581",
+   "name": "Râul Olt",
+   "judet": "Teleorman",
+   "group": "olt",
+   "note": "group 'olt' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0622",
+   "name": "Râul Prut și revărsări",
+   "judet": "Vaslui",
+   "group": "prut",
+   "note": "group 'prut' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-vrancea-putna-mijlocie",
+   "name": "Râul Putna Mijlocie",
+   "judet": "Vrancea",
+   "group": "putna",
+   "note": "group 'putna' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-vrancea-putna-superioara",
+   "name": "Râul Putna Superioara",
+   "judet": "Vrancea",
+   "group": "putna",
+   "note": "group 'putna' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0674",
+   "name": "Râul Siret",
+   "judet": "Vrancea",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-vrancea-zabala-superioara",
+   "name": "Râul Zăbala Superioară",
+   "judet": "Vrancea",
+   "group": "zabala",
+   "note": "group 'zabala' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0677",
+   "name": "Râul Zăbala inferioara",
+   "judet": "Vrancea",
+   "group": "zabala",
+   "note": "group 'zabala' has 1 geometry owner(s); member shares course"
+  }
+ ]
+}
