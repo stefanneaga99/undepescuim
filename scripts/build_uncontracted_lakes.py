@@ -258,9 +258,15 @@ def main() -> None:
     print(f"[waters] {len(waters)} contracted, {len(polygons)} county polygons", flush=True)
 
     # Contracted lake lookup: core name + county + centroid, for dedupe.
+    # Any contracted water with a Polygon/MultiPolygon geometry is a lake-like
+    # body (some are typed 'rau' in the source data, e.g. 'Dopca', 'Canalul
+    # Cefa IV', 'Culișer' — t_963f40e4 sweep found their OSM polygons leaking
+    # into the overlay because the old code only checked subtype=='lac').
     contracted_lakes = []
     for w in waters:
-        if w.get("subtype") != "lac":
+        g = w.get("geometry")
+        is_poly = bool(g) and g.get("type") in ("Polygon", "MultiPolygon")
+        if w.get("subtype") != "lac" and not is_poly:
             continue
         bbox = w.get("bbox")
         cpt = ((bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2) if bbox else None
@@ -270,11 +276,19 @@ def main() -> None:
             "county": norm(w.get("judet", "")),
             "cpt": cpt,
             "name": w["name"],
-            "geom": shape(w["geometry"]) if w.get("geometry") else None,
+            "geom": shape(g) if g else None,
         })
     print(f"[dedupe] {len(contracted_lakes)} contracted lakes to avoid", flush=True)
 
     def is_contracted(name, county, cpt, geom):
+        # centroid inside any contracted lake geometry → same body regardless
+        # of name (and regardless of whether the OSM polygon has a name — an
+        # unnamed 'Iaz neidentificat' whose body IS the contracted lake must
+        # not appear in the teal overlay; t_963f40e4 sweep found 46 such).
+        cpt_pt = shape({"type": "Point", "coordinates": cpt})
+        for cl in contracted_lakes:
+            if cl["geom"] is not None and cl["geom"].contains(cpt_pt):
+                return True
         if not name:
             return False
         core = lake_core_name(norm(name))
@@ -291,11 +305,19 @@ def main() -> None:
                 return True
             if cl["cpt"] and haversine_km(cpt, cl["cpt"]) < 10.0:
                 return True
-            if cl["geom"] is not None and cl["geom"].contains(shape({"type": "Point", "coordinates": cpt})):
+            if cl["geom"] is not None and cl["geom"].contains(cpt_pt):
                 return True
-        # centroid inside any contracted lake geometry → same body regardless of name
+        # substantial area overlap with a contracted lake polygon → same body
+        # even when the centroid falls just outside (e.g. adjacent reservoir
+        # shapes). 50% of the OSM polygon inside a contracted lake is decisive.
         for cl in contracted_lakes:
-            if cl["geom"] is not None and cl["geom"].contains(shape({"type": "Point", "coordinates": cpt})):
+            if cl["geom"] is None:
+                continue
+            try:
+                inter = geom.intersection(cl["geom"])
+            except Exception:
+                continue
+            if not inter.is_empty and geom.area > 0 and inter.area / geom.area >= 0.5:
                 return True
         return False
 
