@@ -107,6 +107,11 @@ export const useMapStore = create<MapStore>((set, get) => ({
     // association filter — clear selectedAssociationSlug so the map stops
     // showing the association's green/grey coverage, then select the clicked
     // water (existing orange focus + detail card behavior takes over).
+    // t_abccfd6c: EXCEPT when the clicked water BELONGS to the selected
+    // association — then the association filter stays (coverage keeps
+    // highlighting the association's waters) and the map does NOT re-fit /
+    // zoom out (FlyToController only reacts to selectedAssociationSlug
+    // changes). Only a click on a water OUTSIDE the association clears it.
     // Also drop a county/type filter that would hide the clicked water (a
     // defensive "as needed" — normally only waters that pass the filters are
     // rendered/clickable, but never leave a selection invisible).
@@ -114,14 +119,22 @@ export const useMapStore = create<MapStore>((set, get) => ({
       set({ selectedWaterSlug: null });
       return;
     }
-    const { countyFilter, waterTypeFilter, waters, uncontracted } = get();
+    const { countyFilter, waterTypeFilter, waters, uncontracted, selectedAssociationSlug } = get();
     const water =
       waters.find((w) => w.slug === slug) ??
       uncontracted.find((w) => w.slug === slug) ??
       null;
+    // Same equality the coverage styling uses (colors.ts getFeatureStyle),
+    // so a green-highlighted water keeps the association and a grey/dimmed
+    // one clears it — visually consistent. Uncontracted waters have no
+    // asociatie, so they always clear.
+    const belongsToAssociation =
+      selectedAssociationSlug !== null &&
+      water !== null &&
+      water.asociatie?.slug === selectedAssociationSlug;
     set({
       selectedWaterSlug: slug,
-      selectedAssociationSlug: null,
+      selectedAssociationSlug: belongsToAssociation ? selectedAssociationSlug : null,
       countyFilter:
         water && countyFilter.length > 0 && !countyFilter.includes(water.judet)
           ? []

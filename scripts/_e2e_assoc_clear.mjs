@@ -1,22 +1,25 @@
 /* eslint-disable no-console */
 /**
- * t_7a7192ea Bug 2 e2e: clicking a river/lake while an association filter is
- * active must CLEAR the association (and any county/type filter that would
- * hide the clicked water), then select + orange-highlight the clicked water
- * and show its detail card with the sector's association.
+ * t_7a7192ea Bug 2 + t_abccfd6c e2e: clicking a river/lake while an
+ * association filter is active.
+ *
+ * t_abccfd6c changed the semantics: a click on a water that BELONGS to the
+ * selected association KEEPS the association (coverage stays, map does NOT
+ * zoom out) and just opens the detail card; only a click on a water OUTSIDE
+ * the association clears it (existing t_7a7192ea behavior).
  *
  * Checks:
  *  1. select AJVPS BUZĂU → green highlight + grey dim appear
  *  2. click a green river (e.g. Râul Buzău sector) →
- *       - association cleared (no green left, trigger label back to
- *         'Caută asociația…')
+ *       - association KEPT (green still highlighted, trigger still shows it)
+ *       - map zoom UNCHANGED (no zoom-out to the full-Romania view)
  *       - orange click-focus appears
  *       - detail card shows the clicked water + its association
  *  3. select AJVPS Covasna → click an UNCONTRACTED teal river →
- *       - association cleared, teal water selected, orange focus on it,
- *         card shows 'Apă necontractată'
+ *       - association cleared (no green left, trigger back to placeholder)
+ *       - teal water selected, orange focus on it, card shows 'Apă necontractată'
  *  4. county filter + association: county stays when the clicked water is
- *     inside it (only the association clears)
+ *     inside it (association stays too — covered water belongs to it)
  *
  * Run: PLAYWRIGHT_CDP=http://localhost:3000 node scripts/_e2e_assoc_clear.mjs http://172.25.236.246:3100
  */
@@ -128,6 +131,54 @@ const cardText = () =>
     return el ? (el.textContent || '').replace(/\s+/g, ' ').trim() : '';
   });
 
+const waitForCardText = async (timeout = 12000) => {
+  try {
+    await page.waitForFunction(
+      () => {
+        const aside = document.querySelector('aside:has(h2)');
+        const drawer = document.querySelector('[data-vaul-drawer]');
+        const el = aside || drawer;
+        return !!el && (el.textContent || '').trim().length > 10;
+      },
+      { timeout },
+    );
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+// Whether the SELECTED uncontracted water should be rendered at zoom `z`
+// (LOD: z<8 → ≥30km rivers / ≥100ha lakes, z<10 → ≥10km / ≥10ha, else all).
+// After a non-association click the map may zoom OUT to the national view
+// (accepted t_abccfd6c behavior), which culls short rivers — the orange
+// focus then legitimately cannot render. Returns the river name + flag.
+const selectedWaterRenderable = (z) =>
+  page.evaluate(async (zoom) => {
+    const aside = document.querySelector('aside:has(h2)');
+    const drawer = document.querySelector('[data-vaul-drawer]');
+    const el = aside || drawer;
+    // The water name is the bold h2 in WaterDetailCard (the aside's own
+    // header h2 is 'Detalii apă').
+    const name = (
+      el?.querySelector('h2.font-bold')?.textContent ||
+      el?.querySelector('h2')?.textContent ||
+      ''
+    ).trim();
+    if (!name) return { name, renderable: false, lenKm: null };
+    const [rivers, lakes] = await Promise.all([
+      fetch('/data/uncontracted_rivers.json').then((r) => r.json()),
+      fetch('/data/uncontracted_lakes.json').then((r) => r.json()),
+    ]);
+    const w = rivers.find((x) => x.name === name) || lakes.find((x) => x.name === name);
+    const len = w ? w.lengthKm ?? 0 : 0;
+    const area = w ? w.areaHa ?? 0 : 0;
+    const minLen = zoom < 8 ? 30 : zoom < 10 ? 10 : 0;
+    const minArea = zoom < 8 ? 100 : zoom < 10 ? 10 : 0;
+    const renderable = !!w && (len >= minLen || area >= minArea);
+    return { name, renderable, lenKm: len };
+  }, z);
+
 const waitForStrokeCount = async (color, min, timeout = 20000) => {
   try {
     await page.waitForFunction(
@@ -143,6 +194,22 @@ const waitForStrokeCount = async (color, min, timeout = 20000) => {
     return false;
   }
 };
+
+// Current map zoom, read from the tile URLs (z/x/y in the src). DPR-agnostic
+// for COMPARISONS (before vs after a click at the same view) — the tile z
+// moves with the map zoom, so equality means the map did not zoom.
+const mapZoom = () =>
+  page.evaluate(() => {
+    const zs = [...document.querySelectorAll('.leaflet-tile')]
+      .map((t) => (t.getAttribute('src') || '').match(/\/(\d+)\/\d+\/\d+(?:@2x)?\.png/)?.[1])
+      .filter(Boolean)
+      .map(Number);
+    if (!zs.length) return null;
+    // mode: at rest all tiles share one z (animation leftovers are fewer)
+    const counts = new Map();
+    zs.forEach((z) => counts.set(z, (counts.get(z) || 0) + 1));
+    return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+  });
 
 console.log(`== load ${BASE} ==`);
 await page.goto(BASE, { waitUntil: 'domcontentloaded' });
@@ -161,33 +228,53 @@ const greyBefore = await countStroke(UNCOVERED);
 console.log(`  green=${greenBefore} grey=${greyBefore}`);
 check(greyBefore > 0, 'other waters dimmed grey');
 
-console.log('== 2. click a green river → association filter clears ==');
+console.log('== 2. click a green river → association KEPT, no zoom-out (t_abccfd6c) ==');
+const zoomBefore = await mapZoom();
+console.log(`  zoom before click: ${zoomBefore}`);
 check(await clickStroke(COVERED), 'clicked a green river');
 const greenAfter = await countStroke(COVERED);
 const greyAfter = await countStroke(UNCOVERED);
 const orangeAfter = await countStroke(ORANGE);
-console.log(`  green=${greenAfter} grey=${greyAfter} orange=${orangeAfter}`);
-check(greenAfter === 0, `association cleared (no green left, got ${greenAfter})`);
-check(greyAfter === 0, `no more dimmed waters (got ${greyAfter})`);
+const zoomAfter = await mapZoom();
+console.log(`  green=${greenAfter} grey=${greyAfter} orange=${orangeAfter} zoom after=${zoomAfter}`);
+check(greenAfter > 0, `association kept (green still highlighted, got ${greenAfter})`);
+check(greyAfter > 0, 'other waters still dimmed grey');
 check(orangeAfter > 0, `orange click-focus appeared (got ${orangeAfter})`);
+check(zoomAfter === zoomBefore, `map zoom unchanged after covered click (${zoomBefore} → ${zoomAfter})`);
 const trig = await triggerText();
 console.log(`  trigger: "${trig}"`);
-check(!trig.includes('AJVPS'), 'trigger back to placeholder (association deselected)');
+check(trig.includes('AJVPS'), 'trigger still shows the association');
 const card = await cardText();
 console.log(`  card: ${card.slice(0, 110)}`);
 check(card.includes('Asociație'), 'detail card shows the association section');
-await page.screenshot({ path: '.e2e/b2_cleared.png' });
+await page.screenshot({ path: '.e2e/b2_kept.png' });
 
 console.log('== 3. select AJVPS Covasna → click an UNCONTRACTED teal river ==');
+// Close any open detail card first — the vaul bottom sheet sets
+// pointer-events:none on body, which can block the search trigger (mobile).
+const cardOpen = await page.evaluate(
+  () => !!document.querySelector('[data-vaul-drawer]') || !!document.querySelector('aside:has(h2)'),
+);
+if (cardOpen) {
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(500);
+}
 check(await selectAssociation('covasna', 'AJVPS Covasna'), 'selected AJVPS Covasna');
 check(await waitForStrokeCount(COVERED, 1), 'green paths appeared');
+const zoom3Before = await mapZoom();
 check(await clickStroke(TEAL), 'clicked a teal uncontracted river');
+await page.waitForTimeout(600); // let the clear + optional flyTo settle
 const green3 = await countStroke(COVERED);
 const orange3 = await countStroke(ORANGE);
 const teal3 = await countStroke(TEAL);
-console.log(`  green=${green3} orange=${orange3} teal=${teal3}`);
+const zoom3After = await mapZoom();
+const sel3 = await selectedWaterRenderable(zoom3After);
+console.log(`  green=${green3} orange=${orange3} teal=${teal3} zoom ${zoom3Before} → ${zoom3After} sel=${sel3.name} (${sel3.lenKm ?? '?'}km, renderable@z${zoom3After}=${sel3.renderable})`);
 check(green3 === 0, `association cleared after teal click (got ${green3})`);
-check(orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
+// Orange focus only when the clicked water survives the post-clear LOD cull
+// (the map zooms to the national view on clear — accepted for non-association
+// clicks); when it SHOULD render, orange is mandatory.
+check(!sel3.renderable || orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
 const card3 = await cardText();
 console.log(`  card: ${card3.slice(0, 110)}`);
 check(card3.includes('Apă necontractată'), 'card shows the uncontracted notice');
@@ -214,7 +301,7 @@ if (await countyChip.count().catch(() => 0) > 0) {
     return btn ? btn.getAttribute('aria-pressed') : null;
   });
   console.log(`  green=${green4} county still pressed: ${pressedAfter}`);
-  check(green4 === 0, 'association cleared');
+  check(green4 > 0, 'association kept (clicked water belongs to it)');
   check(pressedAfter === 'true', 'county filter preserved (clicked water inside it)');
 } else {
   console.log('  skip: county chip not found');
