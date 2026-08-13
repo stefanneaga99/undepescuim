@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
-import { NEUTRAL_COLOR, COVERED_COLOR, UNCOVERED_COLOR, UNCONTRACTED_COLOR } from '@/utils/colors';
+import { NEUTRAL_COLOR, COVERED_COLOR, UNCOVERED_COLOR, UNCONTRACTED_COLOR, UNCONTRACTED_LAKE_FILL } from '@/utils/colors';
 
 interface LegendRow {
   color: string;
@@ -38,7 +38,12 @@ export function ColorLegend() {
           { color: COVERED_COLOR, label: 'Acoperit' },
           { color: UNCOVERED_COLOR, label: 'Neacoperit' },
         ]),
-    ...(showUncontracted ? [{ color: UNCONTRACTED_COLOR, label: 'Necontractate' }] : []),
+    ...(showUncontracted
+      ? [
+          { color: UNCONTRACTED_COLOR, label: 'Râuri necontractate' },
+          { color: UNCONTRACTED_LAKE_FILL, label: 'Bălți / iazuri necontractate' },
+        ]
+      : []),
   ];
 
   return (

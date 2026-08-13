@@ -70,10 +70,11 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   loadData: async () => {
     try {
-      const [assocRes, watersRes, uncRes] = await Promise.all([
+      const [assocRes, watersRes, uncRes, uncLakesRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
         fetch('/data/uncontracted_rivers.json'),
+        fetch('/data/uncontracted_lakes.json'),
       ]);
       if (!assocRes.ok || !watersRes.ok) throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status}`);
       const [associations, waters] = (await Promise.all([
@@ -83,6 +84,13 @@ export const useMapStore = create<MapStore>((set, get) => ({
       let uncontracted: Water[] = [];
       if (uncRes.ok) {
         uncontracted = (await uncRes.json()) as Water[];
+      }
+      // t_51e028c4: ponds/lakes with no contract join the same uncontracted
+      // pool — county/type/contract filters and the 'Necontractat' card UX
+      // apply to them automatically.
+      if (uncLakesRes.ok) {
+        const lakes = (await uncLakesRes.json()) as Water[];
+        uncontracted = [...uncontracted, ...lakes];
       }
       set({ associations, waters, uncontracted, dataLoaded: true });
     } catch (err) {

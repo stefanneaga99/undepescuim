@@ -5,31 +5,34 @@ import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { waterToGeoJSON } from '@/utils/geo';
-import { getUncontractedStyle } from '@/utils/colors';
+import { getUncontractedLakeStyle, getUncontractedStyle } from '@/utils/colors';
 import type { Water, WaterFeature } from '@/types/data';
 
-interface UncontractedRiverLayerProps {
-  /** filtered uncontracted rivers (county/type/contract filter already applied) */
+interface UncontractedWaterLayerProps {
+  /** filtered uncontracted waters (county/type/contract filter already applied):
+   * OSM rivers (LineString) AND lakes/ponds (Polygon) — t_471dad64 + t_51e028c4 */
   waters: Water[];
 }
 
 /**
- * Overlay for OSM rivers with NO contract (t_471dad64).
+ * Overlay for OSM waters with NO contract: named rivers (t_471dad64) and all
+ * ponds/lakes (t_51e028c4). Rivers render as thin dashed teal polylines;
+ * lakes/ponds as light teal filled polygons — the polygon counterpart of the
+ * river overlay, clearly distinct from contracted lakes (blue/orange).
  *
- * Performance (the dataset is 4k+ polylines — must stay light on mobile):
+ * Performance (the combined dataset is 4k+ rivers and thousands of ponds —
+ * must stay light on mobile):
  * 1. VIEWPORT CULLING — only features whose bbox intersects the current map
  *    viewport are added as Leaflet layers; re-evaluated on every moveend.
- * 2. ZOOM LOD — at national zoom only the major rivers (≥30 km) render; the
- *    threshold drops as you zoom in, so small streams appear exactly when
- *    they're big enough to matter on screen.
- * 3. COMPACT GEOMETRY — the served file is pre-simplified (~200 m tolerance),
- *    so each feature is a handful of points (median 6).
+ * 2. ZOOM LOD — at national zoom only the major rivers (≥30 km) and big lakes
+ *    (≥100 ha) render; thresholds drop as you zoom in.
+ * 3. COMPACT GEOMETRY — the served files are pre-simplified, so each feature
+ *    is a handful of points.
  *
- * Style: thin dashed teal (getUncontractedStyle) — clearly different from
- * contracted waters (blue/green/orange). Click opens the 'Necontractat' card.
- * Rendered BELOW the contracted layer so contracted clicks win on overlap.
+ * Click opens the 'Necontractat' card. Rendered BELOW the contracted layer so
+ * contracted clicks win on overlap.
  */
-export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) {
+export function UncontractedWaterLayer({ waters }: UncontractedWaterLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
   const map = useMap();
 
@@ -43,9 +46,10 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
     moveend: () => setView({ zoom: map.getZoom(), bounds: map.getBounds() }),
   });
 
-  // Zoom LOD thresholds (km): only rivers long enough to be meaningful at the
-  // current zoom. National view shows majors; zoom in and the streams appear.
+  // Zoom LOD thresholds: rivers by length (km), lakes by surface (ha). Only
+  // waters big enough to be meaningful at the current zoom render.
   const minLengthKm = view.zoom < 8 ? 30 : view.zoom < 10 ? 10 : 0;
+  const minAreaHa = view.zoom < 8 ? 100 : view.zoom < 10 ? 10 : 0;
 
   const visibleFeatures = useMemo(() => {
     const pad = view.bounds.pad(0.25);
@@ -55,13 +59,19 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
     const north = pad.getNorth();
     const out: GeoJSON.Feature[] = [];
     for (const w of waters) {
-      if ((w.lengthKm ?? 0) < minLengthKm) continue;
+      // lake/pond (Polygon data) → area LOD; river → length LOD
+      const isLake = w.areaHa != null;
+      if (isLake) {
+        if (w.areaHa! < minAreaHa) continue;
+      } else if ((w.lengthKm ?? 0) < minLengthKm) {
+        continue;
+      }
       const [bl, bt, br, bb] = w.bbox;
       if (bl > east || br < west || bt > north || bb < south) continue;
       out.push(waterToGeoJSON(w) as GeoJSON.Feature);
     }
     return out;
-  }, [waters, view, minLengthKm]);
+  }, [waters, view, minLengthKm, minAreaHa]);
 
   const handleClick = (feature: WaterFeature) => {
     selectWater(feature.properties.slug);
@@ -74,6 +84,11 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
   const filterSig = waters.length ? `${waters.length}:${waters[0].slug}:${waters[waters.length - 1].slug}` : 'empty';
   const layerKey = `${view.zoom}|${view.bounds.getWest().toFixed(2)},${view.bounds.getSouth().toFixed(2)},${view.bounds.getEast().toFixed(2)},${view.bounds.getNorth().toFixed(2)}|${filterSig}`;
 
+  const isPolygonFeature = (f: GeoJSON.Feature) =>
+    f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon';
+
+  // Invisible wide hit polylines — reliable click/tap on thin rivers.
+  // (Polygons don't need this: their filled area is the click target.)
   const hitCollection = useMemo<GeoJSON.FeatureCollection>(() => {
     return {
       type: 'FeatureCollection',
@@ -83,7 +98,8 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
     } as GeoJSON.FeatureCollection;
   }, [visibleFeatures]);
 
-  const style = getUncontractedStyle();
+  const riverStyle = getUncontractedStyle();
+  const lakeStyle = getUncontractedLakeStyle();
 
   return (
     <>
@@ -97,11 +113,13 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
           layer.on('click', () => handleClick(f));
         }}
       />
-      {/* Visible thin teal dashed lines */}
+      {/* Visible layer: dashed teal rivers + filled teal ponds */}
       <LeafletGeoJSON
         key={`vis-${layerKey}`}
         data={{ type: 'FeatureCollection', features: visibleFeatures } as GeoJSON.FeatureCollection}
-        style={style}
+        style={(feature) =>
+          isPolygonFeature(feature as GeoJSON.Feature) ? lakeStyle : riverStyle
+        }
         onEachFeature={(feature, layer: L.Path) => {
           const f = feature as WaterFeature;
           layer.on('click', () => handleClick(f));

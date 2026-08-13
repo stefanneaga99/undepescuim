@@ -97,6 +97,8 @@ export interface Water {
   uncontracted?: boolean;
   /** Simplified-course length in km (uncontracted rivers; used for zoom LOD). */
   lengthKm?: number;
+  /** Surface area in hectares (uncontracted lakes/ponds; used for zoom LOD). */
+  areaHa?: number;
   /**
    * Per-county render geometry (t_117f0b99). Key = normalized county name
    * (lowercase, diacritics stripped, separators removed — see
@@ -125,6 +127,8 @@ export interface WaterFeatureProperties {
   uncontracted?: boolean;
   /** simplified-course length in km (uncontracted rivers; zoom LOD) */
   lengthKm?: number;
+  /** surface area in ha (uncontracted lakes/ponds; zoom LOD) */
+  areaHa?: number;
 }
 
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;

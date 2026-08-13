@@ -32,6 +32,11 @@ export const UNCOVERED_COLOR = '#9ca3af';
 export const FOCUS_COLOR = '#f97316';
 /** Uncontracted OSM river overlay (t_471dad64) — thin muted teal. */
 export const UNCONTRACTED_COLOR = '#14b8a6';
+/** Uncontracted lake/pond polygon fill (t_51e028c4) — lighter teal tint,
+ * clearly distinct from contracted lakes (blue #3b82f6 fill 0.2 / orange
+ * focus) while staying in the same 'uncontracted' family as the rivers. */
+export const UNCONTRACTED_LAKE_COLOR = '#2dd4bf';
+export const UNCONTRACTED_LAKE_FILL = '#14b8a6';
 
 /**
  * Style for the uncontracted overlay (t_471dad64): thin, muted teal, clearly
@@ -44,5 +49,20 @@ export function getUncontractedStyle(): PathOptions {
     weight: 1.5,
     opacity: 0.8,
     dashArray: '4 4',
+  };
+}
+
+/**
+ * Style for uncontracted lake/pond polygons (t_51e028c4): light teal fill
+ * with a solid teal outline — the polygon counterpart of the dashed river
+ * overlay. Filled so the whole pond is clickable, not just its rim.
+ */
+export function getUncontractedLakeStyle(): PathOptions {
+  return {
+    color: UNCONTRACTED_LAKE_COLOR,
+    weight: 1,
+    opacity: 0.9,
+    fillColor: UNCONTRACTED_LAKE_FILL,
+    fillOpacity: 0.25,
   };
 }

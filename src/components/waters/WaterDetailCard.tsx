@@ -46,7 +46,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         </Badge>
         {isUncontracted && (
           <Badge variant="outline" className="bg-slate-100 text-[10px] uppercase tracking-wide text-slate-600">
-            Necontractat
+            {isLake ? 'Privat / Necontractat' : 'Necontractat'}
           </Badge>
         )}
         {water.pescuit_interzis && (

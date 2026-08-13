@@ -17,6 +17,7 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     riverGroup: water.riverGroup ?? null,
     uncontracted: water.uncontracted ?? false,
     lengthKm: water.lengthKm,
+    areaHa: water.areaHa,
   };
   // Real geometry from the geocoding pipeline takes priority
   if (water.geometry && water.geometry.coordinates?.length) {

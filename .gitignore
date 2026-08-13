@@ -63,3 +63,7 @@ data/rivers_osm.geojson
 data/matched_small_geocoded.geojson
 data/raw/overpass_water_all.json
 data/raw/overpass_water_all.json
+data/raw/overpass_water_polys.json
+
+# e2e screenshots
+.e2e/
