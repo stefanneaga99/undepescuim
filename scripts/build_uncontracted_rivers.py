@@ -49,6 +49,56 @@ COORD_ROUND = 5
 # useful on the map; keeps the file compact).
 MIN_LENGTH_KM = 0.5
 
+# Duplicate-of-contracted test (t_0ca43d1a): a cluster whose course lies
+# (near-)entirely on an already-contracted water's geometry is a DUPLICATE of
+# that contract — an OSM way or name variant the name matcher cannot tie to the
+# water ('Siriu' vs 'Râul Siriul', 'Maros' vs 'Mureș', 'Lăpușnicu Mic' vs
+# 'Lăpușnicul Mic'). It must NOT appear in the teal overlay, or it draws a
+# second teal stream on top of the contracted blue course (user report:
+# duplicate 'Siriu' near Gura Siriului).
+DUP_EPS_DEG = 0.0008  # ~90 m
+# fraction of sampled cluster points that must lie within DUP_EPS_DEG of the
+# contracted course for the cluster to be considered a duplicate
+DUP_MIN_FRAC = 0.9
+
+
+def duplicate_of_contracted(cluster: dict, water_geoms: list) -> str | None:
+    """Return the slug of a contracted water whose course CONTAINS this
+    cluster's geometry (within DUP_EPS_DEG), else None.
+
+    Both endpoints must also lie on the course: a genuine tributary touches
+    the contracted river only at its mouth and fails that check, so it stays
+    in the overlay.
+    """
+    from shapely.geometry import LineString, MultiLineString, Point
+
+    geom = cluster["geom"]
+    if geom["type"] == "LineString":
+        course = LineString(geom["coordinates"])
+    else:
+        course = MultiLineString(geom["coordinates"])
+    if course.geom_type == "LineString":
+        coords = list(course.coords)
+    else:
+        coords = [c for part in course.geoms for c in part.coords]
+    if len(coords) < 2:
+        return None
+    bx0, by0, bx1, by1 = cluster["bbox"]
+    x0, y0, x1, y1 = (bx0 - DUP_EPS_DEG, by0 - DUP_EPS_DEG,
+                      bx1 + DUP_EPS_DEG, by1 + DUP_EPS_DEG)
+    sample = [Point(c) for c in coords[:: max(1, len(coords) // 40)]]
+    first, last = Point(coords[0]), Point(coords[-1])
+    for slug, wb, wmls in water_geoms:
+        if not (wb[0] - DUP_EPS_DEG <= x1 and wb[2] + DUP_EPS_DEG >= x0 and
+                wb[1] - DUP_EPS_DEG <= y1 and wb[3] + DUP_EPS_DEG >= y0):
+            continue
+        near = sum(1 for p in sample if wmls.distance(p) <= DUP_EPS_DEG)
+        if near / len(sample) >= DUP_MIN_FRAC:
+            if (wmls.distance(first) <= DUP_EPS_DEG and
+                    wmls.distance(last) <= DUP_EPS_DEG):
+                return slug
+    return None
+
 
 def haversine_km(a: tuple[float, float], b: tuple[float, float]) -> float:
     R = 6371.0
@@ -218,13 +268,39 @@ def main() -> None:
     matched = match_waters(clusters, waters, county_centroids)
     print(f"[match] {len(matched)}/{len(clusters)} clusters already contracted → excluded", flush=True)
 
+    # geometry index of contracted waters (courses only) for the
+    # duplicate-of-contracted check — clusters whose course already lies on a
+    # contracted water must not render again in the teal overlay
+    from shapely.geometry import MultiLineString  # noqa: F401  (import check)
+
+    water_geoms: list[tuple[str, tuple, MultiLineString]] = []
+    for w in waters:
+        g = w.get("geometry")
+        if not g or g.get("type") in ("Polygon", "MultiPolygon"):
+            continue
+        parts = (g["coordinates"] if g["type"] == "MultiLineString"
+                 else [g["coordinates"]])
+        try:
+            mls = MultiLineString(parts)
+        except Exception:
+            continue
+        water_geoms.append((w.get("slug"), mls.bounds, mls))
+    print(f"[geom] {len(water_geoms)} contracted waters with course geometry", flush=True)
+
     from shapely.geometry import LineString  # noqa: F401  (import check)
 
     out: list[dict] = []
     skipped_short = 0
+    dup_skipped = 0
     for i, cl in enumerate(clusters):
         if i in matched:
             continue  # already contracted in waters.json
+        dup_slug = duplicate_of_contracted(cl, water_geoms)
+        if dup_slug is not None:
+            dup_skipped += 1
+            print(f"[dup] {(cl.get('raw_name') or cl['name'])!r} "
+                  f"is the course of {dup_slug} → excluded", flush=True)
+            continue
         geom = simplify_geometry(cl["geom"], SIMPLIFY_TOL_DEG, COORD_ROUND)
         if not geom:
             continue
@@ -265,6 +341,7 @@ def main() -> None:
     size_mb = OUT_FILE.stat().st_size / 1e6
     print(f"[write] {len(out)} uncontracted rivers → {OUT_FILE} ({size_mb:.1f} MB)")
     print(f"[skip] {skipped_short} dropped (too short or entirely outside Romania)")
+    print(f"[skip] {dup_skipped} dropped (duplicate of an already-contracted course)")
 
     # sanity: Râmna must be present (user-reported example)
     ramna = [w for w in out if norm(w["name"]) == "ramna"]
