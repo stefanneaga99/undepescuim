@@ -244,6 +244,24 @@ export function courseRank(name: string): number {
 }
 
 /**
+ * Contracts sharing the same river course as `w` — the group used by
+ * contractAtFraction / contractInterval / coverage slicing (t_5f5f2cce).
+ * Matched EXACTLY by `riverGroup` when available (fixes Siret/Sirețel,
+ * Someș/Someșul Mic, Crișul Repede/Alb/Negru collisions, the 'oltul'/'olt'
+ * mismatch, and same-name distinct rivers like the Gorj vs Moldavian
+ * Bistrița); otherwise the fuzzy waterKey prefix is used. Prefix-named
+ * tributaries ('Valea X', 'Pârâu X') are excluded unless mainCourse is set.
+ */
+export function contractGroup(w: { slug?: string; riverGroup?: string | null; name?: string }, allWaters: Water[]): Water[] {
+  const gk = groupKeyOf(w);
+  return allWaters.filter(
+    (x) =>
+      (isMainCourse(x.name) || x.mainCourse === true) &&
+      groupKeyOf(x) === gk,
+  );
+}
+
+/**
  * Pick the contract (water) whose position covers the given fraction of the
  * river course. Resolution order (t_ac697770):
  *  1. EXACT sector intervals: when a contract declares [sectorStart,
@@ -252,10 +270,6 @@ export function courseRank(name: string): number {
  *  2. Voronoi over `course_frac` (geocoded real position), else name-rank +
  *     uniform spread. Each contract owns the interval between the midpoints
  *     to its neighbours.
- * The group is matched EXACTLY by `riverGroup` when available (fixes
- * Siret/Sirețel, Someș/Someșul Mic, Crișul Repede/Alb/Negru collisions,
- * the 'oltul'/'olt' mismatch, and same-name distinct rivers like the Gorj
- * vs Moldavian Bistrița); otherwise the fuzzy waterKey prefix is used.
  * The clicked river is identified by slug first (unambiguous), falling back
  * to name. Returns the water, or null when no grouping applies.
  */
@@ -268,12 +282,7 @@ export function contractAtFraction(
     (clickedRef.slug && allWaters.find((w) => w.slug === clickedRef.slug)) ||
     (clickedRef.name && allWaters.find((w) => w.name === clickedRef.name)) ||
     ({ name: clickedRef.name } as Water);
-  const gk = groupKeyOf(clicked);
-  const group = allWaters.filter(
-    (w) =>
-      (isMainCourse(w.name) || w.mainCourse === true) &&
-      groupKeyOf(w) === gk,
-  );
+  const group = contractGroup(clicked, allWaters);
   if (group.length <= 1) return null;
 
   // 1. exact sector intervals — smallest containing interval wins
@@ -328,12 +337,7 @@ export function contractInterval(selected: Water, allWaters: Water[]): [number, 
   if (typeof selected.sectorStart === 'number' && typeof selected.sectorEnd === 'number') {
     return [selected.sectorStart, selected.sectorEnd];
   }
-  const gk = groupKeyOf(selected);
-  const group = allWaters.filter(
-    (w) =>
-      (isMainCourse(w.name) || w.mainCourse === true) &&
-      groupKeyOf(w) === gk,
-  );
+  const group = contractGroup(selected, allWaters);
   if (group.length <= 1) return [0, 1];
   const ranked = [...group].sort((a, b) => courseRank(a.name) - courseRank(b.name));
   const rankedFrac = (i: number) => (ranked.length <= 1 ? 0.5 : i / (ranked.length - 1));
@@ -485,33 +489,45 @@ export function WaterFeatureLayer({
     return features.length ? features : null;
   }, [focusGroupKey, focusRange, featureCollection, countyFilter, allWaters, selectedWaterSlug, focusKey]);
 
-  // Association highlight slices (t_b6a0e2fe): geometry-less sector members of
-  // the selected association (e.g. Pârâu Buzăul Mijlociu / AJVPS Covasna,
-  // Râul Buzăul superior / D.S. Brașov) are INVISIBLE in the base layer —
-  // they carry no own geometry and no bbox, only a riverGroup + fraction. This
-  // layer slices the group's geometry owner course to the member's contract
-  // interval (contractInterval — same math as the click focus) and draws it in
-  // the covered color, so the association's sectors light up too. Members with
-  // their own geometry are already colored by getFeatureStyle — only the
-  // missing slices are added here. Skipped under a county filter: the rendered
-  // geometry is a per-county clip, which full-course fractions must not slice.
+  // Association highlight slices (t_b6a0e2fe + t_5f5f2cce): every member of
+  // the selected association that belongs to a MULTI-CONTRACT group is drawn
+  // as its contract interval SLICE of the group's shared course, in the
+  // covered color. Two cases:
+  //  - geometry-less sector members (Pârâu Buzăul Mijlociu / AJVPS Covasna,
+  //    Râul Buzăul superior / D.S. Brașov) are INVISIBLE in the base layer —
+  //    they carry no own geometry and no bbox, only a riverGroup + fraction;
+  //  - geometry-bearing members of a multi-contract group (the 'jiu' group's
+  //    owner holding the FULL shared course, e.g. Râul Jiu / AJVPS GORJ) are
+  //    deliberately NOT base-covered by focusAwareStyle — painting the whole
+  //    geometry green would highlight every other county's/association's
+  //    sector (the whole-Jiu-highlight bug). The slice paints ONLY the
+  //    member's own sector.
+  // Skipped under a county filter: the rendered geometry is a per-county
+  // clip, which full-course fractions must not slice.
   const assocHighlightFeatures = useMemo(() => {
     if (!coverageSlug) return null;
     if (countyFilter.length > 0) return null;
     const out: GeoJSON.Feature[] = [];
     for (const w of waters) {
       if ((w.asociatie?.slug ?? null) !== coverageSlug) continue;
-      if (w.geometry) continue; // has own geometry → base layer colors it covered
       const gk = groupKeyOf(w);
       if (!gk) continue;
-      const owner = allWaters.find(
-        (x) =>
-          x.slug !== w.slug &&
-          (isMainCourse(x.name) || x.mainCourse === true) &&
-          groupKeyOf(x) === gk &&
-          !!x.geometry &&
-          (x.geometry.type === 'LineString' || x.geometry.type === 'MultiLineString'),
-      );
+      const group = contractGroup(w, allWaters);
+      if (group.length <= 1) continue; // single-contract → base layer colors it
+      // owner = the group member carrying the shared course (prefer another
+      // member; a geometry-bearing member slices its OWN course)
+      const owner =
+        allWaters.find(
+          (x) =>
+            x.slug !== w.slug &&
+            groupKeyOf(x) === gk &&
+            !!x.geometry &&
+            (x.geometry.type === 'LineString' || x.geometry.type === 'MultiLineString'),
+        ) ||
+        (w.geometry &&
+        (w.geometry.type === 'LineString' || w.geometry.type === 'MultiLineString')
+          ? w
+          : null);
       if (!owner) continue;
       const [f0, f1] = contractInterval(w, allWaters);
       const g = owner.geometry as GeoJSON.LineString | GeoJSON.MultiLineString;
@@ -538,10 +554,32 @@ export function WaterFeatureLayer({
   // Matching is slug-exact: only the selected water's own feature turns
   // orange. When the focus-slice layer already draws the orange (contracted
   // river sector / county clip), keep the base style to avoid double-painting.
+  // t_5f5f2cce: a member of a multi-contract group (e.g. the 'jiu' group's
+  // geometry owner holding the FULL shared course) must NOT be base-covered
+  // by its asociatie — the whole shared course would turn green including
+  // other counties'/associations' sectors. Its sector is painted by the
+  // covered-slices layer instead; the base keeps the whole course neutral.
   const focusAwareStyle = useCallback(
     (feature?: GeoJSON.Feature<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>): L.PathOptions => {
+      const props = feature?.properties as WaterFeatureProperties | undefined;
+      const water = props?.slug ? allWaters.find((x) => x.slug === props.slug) : undefined;
+      // t_5f5f2cce: a LINE member of a multi-contract group (e.g. the 'jiu'
+      // group's geometry owner holding the FULL shared course) must NOT be
+      // base-covered by its asociatie — the whole shared course would turn
+      // green including other counties'/associations' sectors. Its sector is
+      // painted by the covered-slices layer instead. LAKE polygons are exempt:
+      // they can't be sector-sliced and belong to a single contract, so their
+      // whole-polygon coverage stays (Siriu lake under AJVPS BUZĂU).
+      const lineGeom =
+        !!water?.geometry &&
+        (water.geometry.type === 'LineString' || water.geometry.type === 'MultiLineString');
+      const multiContractMember =
+        coverageSlug !== null &&
+        lineGeom &&
+        !!water &&
+        contractGroup(water, allWaters).length > 1;
       const base = getFeatureStyle(
-        (feature?.properties as WaterFeatureProperties | undefined)?.asociatieSlug ?? null,
+        multiContractMember ? null : (props?.asociatieSlug ?? null),
         coverageSlug,
       );
       if (!focusColor || !selectedWaterSlug) return base;
@@ -555,7 +593,7 @@ export function WaterFeatureLayer({
         opacity: 1,
       };
     },
-    [coverageSlug, focusColor, selectedWaterSlug, focusRange, focusFeatures],
+    [coverageSlug, focusColor, selectedWaterSlug, focusRange, focusFeatures, allWaters],
   );
 
   // Invisible wide hit layers for lines (added after the visible layer).

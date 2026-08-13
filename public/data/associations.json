@@ -6,10 +6,10 @@
   "ape": 3,
   "adresa": "Str. Macului 5, Târgu Jiu, Romania",
   "bbox": [
-   22.8514963,
-   44.6025913,
-   23.4544104,
-   45.2548135
+   23.108881,
+   45.118664,
+   23.148951,
+   45.280336
   ],
   "id": "65fbf0dc743aa3d2fbbe842b"
  },
@@ -365,10 +365,10 @@
   "telefon": "0353801888",
   "siteUrl": "https://www.ajvpsgorj.com/",
   "bbox": [
-   22.8514963,
-   44.6010177,
-   23.72888083935,
-   45.18469871645
+   22.549294,
+   44.325495,
+   24.275782,
+   45.328425
   ],
   "id": "65fbf17e743aa3d2fbbe844d"
  },
@@ -891,7 +891,7 @@
   "slug": "directia-silvica-gorj",
   "name": "Direcția Silvica Gorj",
   "name_long": "Direcția Silvica Gorj",
-  "ape": 8,
+  "ape": 9,
   "adresa": "Str.Lt. col D-tru Petrescu , nr. 22",
   "telefon": "0253216351",
   "siteUrl": "http://targujiu.rosilva.ro/",
