@@ -239,8 +239,12 @@ MANUAL_OVERRIDES = {
     "slanic moldova": "slanic",
     # Oituzul Moldovenesc (Bacău) == OSM Oituz
     "oituzul moldovenesc": "oituz",
-    # Doftana Gârcin (Brașov) == OSM Doftana Ardeleană / Doftana (Brașov)
-    "doftana garcin": "doftana",
+    # Doftana Gârcin (Brașov) == OSM Doftana Ardeleană (the Tărlung-basin
+    # Doftana — tributary of Râul Tărlung, matching 'conf. cu râul
+    # Tărlungeni'). NOT the Prahova-basin Doftana (Valea Doftanei), which is
+    # a DIFFERENT river; attaching it put the contract in the wrong county
+    # (t_f4ff3853).
+    "doftana garcin": "doftana ardeleana",
     # Taia Aușel Voievodul (Hunedoara) == OSM Taia
     "taia ausel voievodul": "taia",
     # Bistra Ardealului, mijlociu (Caraș-Severin) == OSM Bistra (the CS one)

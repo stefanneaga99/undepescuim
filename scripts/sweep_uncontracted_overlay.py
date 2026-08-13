@@ -95,8 +95,18 @@ def line_points(geom):
     return [c for part in geom.geoms for c in part.coords]
 
 
-def classify_river_hit(unc, unc_geom, w, w_geom, dist, frac_near, end_near, name_hit):
-    """Return (label, confidence, note)."""
+def classify_river_hit(unc, unc_geom, w, w_geom, dist, frac_near, end_near, name_hit,
+                       part_fracs=None):
+    """Return (label, confidence, note).
+
+    part_fracs (optional): per-part fraction of points near the contracted
+    course for MultiLineString overlays. A single PART lying almost entirely
+    on the contracted course is a PARTIAL_DUPLICATE even when the whole entry
+    (with other genuinely-uncontracted parts) has a low overall frac_near —
+    the Doftana class (t_f4ff3853): the upper part of the Prahova 'Doftana'
+    overlay was the contracted Râul Doftana Gârcin course while its lower
+    parts were a different, uncontracted river.
+    """
     # Douglas-Peucker can collapse a winding stream to a straight 2-pt chord
     # that happens to lie on the contracted course (t_963f40e4: 'Valea
     # Brustuletului' — raw 169-pt stream meanders 900 m away mid-course, the
@@ -105,6 +115,21 @@ def classify_river_hit(unc, unc_geom, w, w_geom, dist, frac_near, end_near, name
     if unc_geom.geom_type == "LineString" and len(list(unc_geom.coords)) <= 2:
         return ("AMBIGUOUS", "low",
                 f"simplified 2-pt chord lies on {w['name']} (raw course meanders away?)")
+    if part_fracs:
+        # PARTIAL_DUPLICATE only when a real STRETCH of the overlay lies on
+        # the contracted course (t_f4ff3853: Doftana seg8 was a 191-pt /
+        # 7.6 km way). Tiny 2-pt connector fragments at a confluence also have
+        # 100% of THEIR points near the course but are just the mouth touch —
+        # require the part to look like a genuine course (> 1 km).
+        best_part = None
+        for pi, pf, plen in part_fracs:
+            if pf >= 0.9 and plen >= 1.0:
+                if best_part is None or plen > best_part[2]:
+                    best_part = (pi, pf, plen)
+        if best_part:
+            return ("PARTIAL_DUPLICATE", "high",
+                    f"part {best_part[0]} ({best_part[1]:.0%}, {best_part[2]:.1f} km on "
+                    f"contracted course) is the course of {w['name']}")
     if name_hit and frac_near >= 0.5:
         return ("DUPLICATE", "high",
                 f"name {unc['name']!r}=={w['name']!r} and {frac_near:.0%} of course on contracted water")
@@ -209,7 +234,24 @@ def main() -> None:
             first, last = Point(pts[0]), Point(pts[-1])
             end_near = w_geom.distance(first) <= EPS_DEG and w_geom.distance(last) <= EPS_DEG
             name_hit = name_match(u["name"], w["name"])
-            cls = classify_river_hit(u, u_geom, w, w_geom, dist, frac_near, end_near, name_hit)
+            # per-part fractions for MultiLineString overlays — a single part
+            # lying on the contracted course is a PARTIAL_DUPLICATE even when
+            # the whole entry is mostly a different river (t_f4ff3853).
+            part_fracs = None
+            if u_geom.geom_type == "MultiLineString":
+                part_fracs = []
+                for pi, part in enumerate(u_geom.geoms):
+                    pc = list(part.coords)
+                    ps = pc[:: max(1, len(pc) // 40)]
+                    pn = sum(1 for p in ps if w_geom.distance(Point(p)) <= EPS_DEG)
+                    plen = sum(
+                        __import__("math").hypot(pc[k][0] - pc[k - 1][0],
+                                                 pc[k][1] - pc[k - 1][1]) * 111.0
+                        for k in range(1, len(pc))
+                    ) if len(pc) > 1 else 0.0
+                    part_fracs.append((pi, pn / len(ps) if ps else 0.0, plen))
+            cls = classify_river_hit(u, u_geom, w, w_geom, dist, frac_near, end_near,
+                                     name_hit, part_fracs)
             if cls is None:
                 continue
             label, conf, note = cls
@@ -219,6 +261,8 @@ def main() -> None:
                 "water_slug": w["slug"], "water_name": w["name"],
                 "water_judet": w.get("judet"), "label": label, "confidence": conf,
                 "dist_m": round(dist * 111e3), "frac_near": round(frac_near, 3),
+                "part_frac": (round(max(p[1] for p in part_fracs), 3)
+                              if part_fracs else None),
                 "end_near": bool(end_near), "note": note,
             })
 
@@ -303,7 +347,8 @@ def main() -> None:
                     seen_pairs.add((kind, u["slug"], w["slug"]))
 
     # sort: duplicates first, then by label/confidence
-    order = {"DUPLICATE": 0, "AMBIGUOUS": 1, "TRIBUTARY": 2, "NAME_COLLISION": 3}
+    order = {"DUPLICATE": 0, "PARTIAL_DUPLICATE": 0, "AMBIGUOUS": 1,
+             "TRIBUTARY": 2, "NAME_COLLISION": 3}
     conf_order = {"high": 0, "medium": 1, "low": 2}
     hits.sort(key=lambda h: (order.get(h["label"], 9), conf_order.get(h["confidence"], 9),
                              h["unc_name"].lower()))
@@ -334,9 +379,11 @@ def main() -> None:
     lines.append("| # | kind | uncontracted | judet | contracted water | dist_m | frac | note |")
     lines.append("|---|------|--------------|-------|------------------|--------|------|------|")
     for i, h in enumerate(hits, 1):
-        if h["label"] != "DUPLICATE":
+        if h["label"] not in ("DUPLICATE", "PARTIAL_DUPLICATE"):
             continue
         frac = h.get("frac_near") if h["kind"] == "river" else h.get("overlap_frac")
+        if h["label"] == "PARTIAL_DUPLICATE":
+            frac = h.get("part_frac")
         lines.append(f"| {i} | {h['kind']} | {h['unc_name']} | {h['unc_judet']} | "
                      f"{h['water_name']} ({h['water_slug']}) | {h['dist_m']} | {frac} | {h['note']} |")
     lines.append("")

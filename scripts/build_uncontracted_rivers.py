@@ -60,6 +60,11 @@ DUP_EPS_DEG = 0.0008  # ~90 m
 # fraction of sampled cluster points that must lie within DUP_EPS_DEG of the
 # contracted course for the cluster to be considered a duplicate
 DUP_MIN_FRAC = 0.9
+# PARTIAL-overlap trim (t_f4ff3853): a contiguous run of a cluster's points
+# lying on a contracted course is cut out only when its length exceeds this
+# (haversine km). Genuine tributaries touch the contracted river in a short
+# confluence zone (< 2 km); a run this long IS the contracted course.
+TRIM_MIN_RUN_KM = 2.0
 
 
 def duplicate_of_contracted(cluster: dict, water_geoms: list) -> str | None:
@@ -98,6 +103,188 @@ def duplicate_of_contracted(cluster: dict, water_geoms: list) -> str | None:
                     wmls.distance(last) <= DUP_EPS_DEG):
                 return slug
     return None
+
+
+def _near_flags(part: list, water_geoms: list, eps: float) -> list:
+    """Boolean per point: lies within eps of ANY contracted course."""
+    from shapely.geometry import Point
+
+    near = []
+    for lon, lat in part:
+        is_near = False
+        for _slug, wb, wmls in water_geoms:
+            if not (wb[0] - eps <= lon <= wb[2] + eps and
+                    wb[1] - eps <= lat <= wb[3] + eps):
+                continue
+            if wmls.distance(Point(lon, lat)) <= eps:
+                is_near = True
+                break
+        near.append(is_near)
+    return near
+
+
+def trim_contracted_runs(geom: dict, water_geoms: list,
+                         eps: float = DUP_EPS_DEG) -> dict | None:
+    """Cut out any STRETCH of a cluster that lies on a contracted water's
+    course — the PARTIAL-overlap duplicate class (t_f4ff3853: the Prahova
+    'Doftana' cluster whose UPPER course is the Romsilva '4 Doftana
+    Superioara' contract while its LOWER course is genuinely uncontracted).
+
+    Whole-cluster tests (duplicate_of_contracted) can't catch these: the
+    overlapping part is diluted by the uncontracted parts (frac ~0.1), so the
+    cluster survives and draws a teal copy over a blue contracted stretch.
+
+    A contiguous run of points within eps of a contracted course is removed
+    ONLY when it is long enough (>= TRIM_MIN_RUN_KM) to BE the contracted
+    course; short confluence-zone touches are kept so genuine tributaries
+    don't lose their mouth. Parts are deduped by their FULL rounded
+    coordinate sequence (the OSM extract maps some ways twice) — NOT by
+    endpoints, which would collapse different braids sharing the same
+    endpoints (e.g. the Lom).
+
+    Returns a NEW geometry dict (LineString/MultiLineString of the remaining
+    stretches) or None when nothing uncontracted remains.
+    """
+    from shapely.geometry import Point
+
+    parts = geom["coordinates"] if geom["type"] == "MultiLineString" else [geom["coordinates"]]
+    # Fast path: if NO part has a long enough run on a contracted course, the
+    # cluster is untouched (dedupe would otherwise alter unrelated rivers'
+    # geometry — e.g. foreign 'Лом' parts that merely repeat). Only clusters
+    # with a real partial-overlap get deduped + cut.
+    has_long_run = False
+    for part in parts:
+        if len(part) < 2:
+            continue
+        near = _near_flags(part, water_geoms, eps)
+        i = 0
+        n = len(part)
+        while i < n:
+            if near[i]:
+                j = i
+                while j < n and near[j]:
+                    j += 1
+                run_len_km = sum(
+                    haversine_km(part[k], part[k + 1]) for k in range(i, j - 1)
+                )
+                if run_len_km >= TRIM_MIN_RUN_KM:
+                    has_long_run = True
+                    break
+                i = j
+            else:
+                i += 1
+        if has_long_run:
+            break
+    if not has_long_run:
+        return geom
+
+    out_parts = []
+    seen = set()
+    for part in parts:
+        if len(part) < 2:
+            continue
+        key = tuple(round(c, 5) for p in part for c in p)
+        if key in seen:
+            continue
+        seen.add(key)
+        # point -> is it near ANY contracted course?
+        near = _near_flags(part, water_geoms, eps)
+        # split into maximal runs; drop only LONG near-runs, keep short
+        # (confluence-zone) near-runs INLINE so a tributary's mouth point is
+        # not isolated and dropped
+        n = len(part)
+        kept = []
+        cur = []
+        i = 0
+        while i < n:
+            if near[i]:
+                j = i
+                while j < n and near[j]:
+                    j += 1
+                # cumulative along-course length of the run (chord would
+                # under-measure a winding overlap)
+                run_len_km = sum(
+                    haversine_km(part[k], part[k + 1]) for k in range(i, j - 1)
+                )
+                if run_len_km >= TRIM_MIN_RUN_KM:
+                    # long overlap IS the contracted course — cut it out,
+                    # closing the current kept segment at the run start
+                    if len(cur) >= 2:
+                        kept.append(cur)
+                    cur = []
+                else:
+                    # short confluence touch — keep the points inline
+                    cur.extend(part[i:j])
+                i = j
+            else:
+                cur.append(part[i])
+                i += 1
+        if len(cur) >= 2:
+            kept.append(cur)
+        for seg in kept:
+            if len(seg) >= 2:
+                out_parts.append(seg)
+    if not out_parts:
+        return None
+    if len(out_parts) == 1:
+        return {"type": "LineString", "coordinates": out_parts[0]}
+    # Chain the remaining stretches by endpoint connectivity into ONE ordered
+    # LineString when they form a single course (the trimmed Doftana lower
+    # course). A single LineString makes the FE's PCA orderParts a no-op and
+    # keeps line_length (concatenated coords) honest.
+    chain = chain_parts_by_connectivity(out_parts)
+    if len(chain) == 1:
+        return {"type": "LineString", "coordinates": chain[0]}
+    return {"type": "MultiLineString", "coordinates": chain}
+
+
+def chain_parts_by_connectivity(parts: list) -> list:
+    """Grow chains from parts that share junction points (within 1e-5 deg).
+    Returns a list of chained coordinate lists (each a single LineString)."""
+    parts = [list(p) for p in parts]
+    used = [False] * len(parts)
+
+    def dist(a, b):
+        return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+    chains = []
+    for i in range(len(parts)):
+        if used[i]:
+            continue
+        used[i] = True
+        chain = list(parts[i])
+        # grow forward
+        changed = True
+        while changed:
+            changed = False
+            for j in range(len(parts)):
+                if used[j]:
+                    continue
+                if dist(chain[-1], parts[j][0]) <= 1e-5:
+                    chain.extend(parts[j][1:])
+                    used[j] = True
+                    changed = True
+                elif dist(chain[-1], parts[j][-1]) <= 1e-5:
+                    chain.extend(reversed(parts[j][:-1]))
+                    used[j] = True
+                    changed = True
+        # grow backward
+        changed = True
+        while changed:
+            changed = False
+            for j in range(len(parts)):
+                if used[j]:
+                    continue
+                if dist(chain[0], parts[j][-1]) <= 1e-5:
+                    chain = list(parts[j][:-1]) + chain
+                    used[j] = True
+                    changed = True
+                elif dist(chain[0], parts[j][0]) <= 1e-5:
+                    chain = list(reversed(parts[j][1:])) + chain
+                    used[j] = True
+                    changed = True
+        chains.append(chain)
+    return chains
 
 
 def haversine_km(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -292,6 +479,7 @@ def main() -> None:
     out: list[dict] = []
     skipped_short = 0
     dup_skipped = 0
+    trimmed_skipped = 0
     for i, cl in enumerate(clusters):
         if i in matched:
             continue  # already contracted in waters.json
@@ -301,7 +489,17 @@ def main() -> None:
             print(f"[dup] {(cl.get('raw_name') or cl['name'])!r} "
                   f"is the course of {dup_slug} → excluded", flush=True)
             continue
-        geom = simplify_geometry(cl["geom"], SIMPLIFY_TOL_DEG, COORD_ROUND)
+        # PARTIAL overlap: a stretch of the cluster lies on a contracted
+        # course (e.g. the Prahova 'Doftana' upper course == the Romsilva
+        # '4 Doftana Superioara' contract) while the rest is genuinely
+        # uncontracted. Cut the overlapping runs out (t_f4ff3853).
+        geom = trim_contracted_runs(cl["geom"], water_geoms)
+        if geom is None:
+            trimmed_skipped += 1
+            print(f"[trim] {(cl.get('raw_name') or cl['name'])!r} "
+                  f"fully covered by contracted courses → excluded", flush=True)
+            continue
+        geom = simplify_geometry(geom, SIMPLIFY_TOL_DEG, COORD_ROUND)
         if not geom:
             continue
         coords = geom["coordinates"] if geom["type"] == "LineString" else [
@@ -342,6 +540,7 @@ def main() -> None:
     print(f"[write] {len(out)} uncontracted rivers → {OUT_FILE} ({size_mb:.1f} MB)")
     print(f"[skip] {skipped_short} dropped (too short or entirely outside Romania)")
     print(f"[skip] {dup_skipped} dropped (duplicate of an already-contracted course)")
+    print(f"[skip] {trimmed_skipped} dropped (fully covered after partial-overlap trim)")
 
     # sanity: Râmna must be present (user-reported example)
     ramna = [w for w in out if norm(w["name"]) == "ramna"]
