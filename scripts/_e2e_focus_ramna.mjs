@@ -1,13 +1,18 @@
 /* eslint-disable no-console */
 /**
- * t_f9d81184 Râmna (Vrancea, uncontracted) targeted verification.
+ * t_b1547e24 Râmna (Vrancea, uncontracted) targeted verification.
+ * Clicking an UNCONTRACTED teal river must show the orange highlight on that
+ * feature (whole feature — no sector slicing) + the Necontractat card.
  * Run: node scripts/_e2e_focus_ramna.mjs [BASE_URL]
  */
 import { chromium } from 'playwright';
 
 const BASE = process.argv[2] || process.env.BASE_URL || 'http://localhost:3000';
+const CDP = process.env.PLAYWRIGHT_CDP;
 
-const browser = await chromium.launch();
+const browser = CDP
+  ? await chromium.connectOverCDP(CDP)
+  : await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
 let failures = 0;
@@ -25,8 +30,28 @@ const countOrange = () =>
     return n;
   });
 
+// Read the detail panel text regardless of viewport branch: desktop renders an
+// <aside>, mobile renders a vaul drawer (CDP-connect to browserless ignores
+// viewport emulation, so the mobile branch may be active at any claimed width).
 const rightPanelText = () =>
-  page.locator('aside:has(h2:text("Detalii apă"))').innerText().catch(() => '');
+  page.evaluate(() => {
+    const aside = document.querySelector('aside:has(h2)');
+    const drawer = document.querySelector('[data-vaul-drawer]');
+    const el = aside || drawer;
+    return el ? (el.textContent || '').trim() : '';
+  });
+
+/** Poll the panel until it has text (first open can be slow). */
+const readCardText = async (timeoutMs = 10000) => {
+  const deadline = Date.now() + timeoutMs;
+  let last = '';
+  while (Date.now() < deadline) {
+    last = await rightPanelText();
+    if (last && last.trim()) return last;
+    await page.waitForTimeout(300);
+  }
+  return last;
+};
 
 const computePos = (lon, lat) =>
   page.evaluate(([lon, lat]) => {
@@ -46,18 +71,28 @@ const computePos = (lon, lat) =>
     return { x: paneX + px, y: paneY + py, z };
   }, [lon, lat]);
 
+const mapRect = () =>
+  page.evaluate(() => {
+    const c = document.querySelector('.leaflet-container');
+    if (!c) return { left: 0, top: 0, right: 800, bottom: 600, cx: 400, cy: 300 };
+    const r = c.getBoundingClientRect();
+    return { left: r.left, top: r.top, right: r.right, bottom: r.bottom, cx: (r.left + r.right) / 2, cy: (r.top + r.bottom) / 2 };
+  });
+
 const panTo = async (lon, lat) => {
   let pos = await computePos(lon, lat);
+  let m = await mapRect();
   let guard = 0;
-  while (pos && (pos.x < 150 || pos.x > 1130 || pos.y < 120 || pos.y > 680) && guard < 12) {
-    const dx = Math.max(-250, Math.min(250, 640 - pos.x));
-    const dy = Math.max(-250, Math.min(250, 400 - pos.y));
-    await page.mouse.move(640, 400);
+  while (pos && (pos.x < m.left + 60 || pos.x > m.right - 60 || pos.y < m.top + 60 || pos.y > m.bottom - 60) && guard < 12) {
+    const dx = Math.max(-250, Math.min(250, m.cx - pos.x));
+    const dy = Math.max(-250, Math.min(250, m.cy - pos.y));
+    await page.mouse.move(m.cx, m.cy);
     await page.mouse.down();
-    await page.mouse.move(640 + dx, 400 + dy, { steps: 6 });
+    await page.mouse.move(m.cx + dx, m.cy + dy, { steps: 6 });
     await page.mouse.up();
     await page.waitForTimeout(400);
     pos = await computePos(lon, lat);
+    m = await mapRect();
     guard += 1;
   }
   return pos;
@@ -81,22 +116,27 @@ check(!!pos, `panned to Râmna (${JSON.stringify(pos)})`);
 
 // find teal path named Râmna near the point, click its midpoint on-stroke
 const hit = await page.evaluate(() => {
-  const MAP_L = 320, MAP_R = 1270, MAP_T = 70, MAP_B = 770;
+  const c = document.querySelector('.leaflet-container');
+  const r = c ? c.getBoundingClientRect() : { left: 0, top: 0, right: 800, bottom: 600 };
+  const MAP_L = r.left, MAP_R = r.right, MAP_T = r.top, MAP_B = r.bottom;
   const paths = [...document.querySelectorAll('.leaflet-overlay-pane path')].filter((p) => {
     if ((p.getAttribute('stroke') || '').toLowerCase() !== '#14b8a6') return false;
     const b = p.getBoundingClientRect();
-    return b.right > MAP_L && b.bottom > MAP_T && b.left < MAP_R && b.top < MAP_B;
+    return b.right > MAP_L && b.bottom > MAP_T && b.left < MAP_R && b.top < MAP_B && b.width * b.height > 4;
   });
   for (const p of paths) {
     const len = p.getTotalLength();
     const m = p.ownerSVGElement.getScreenCTM();
-    for (const frac of [0.2, 0.35, 0.5, 0.65, 0.8]) {
+    // Dense sampling: dashed teal strokes have 4px gaps — sparse fractions
+    // often land in a gap and fail the topmost check.
+    const fracs = Array.from({ length: 19 }, (_, i) => 0.05 + 0.05 * i);
+    for (const frac of fracs) {
       const pt = p.getPointAtLength(len * frac);
       const sp = new DOMPoint(pt.x, pt.y).matrixTransform(m);
       if (sp.x < MAP_L || sp.x > MAP_R || sp.y < MAP_T || sp.y > MAP_B) continue;
       const top = document.elementFromPoint(sp.x, sp.y);
       const isSelf = top === p || (top && top.getAttribute('stroke') === p.getAttribute('stroke'));
-      if (isSelf) return { x: sp.x, y: sp.y, d: (p.getAttribute('d') || '').slice(0, 60) };
+      if (isSelf) return { x: sp.x, y: sp.y, d: (p.getAttribute('d') || '').slice(0, 60), count: paths.length };
     }
   }
   return null;
@@ -105,12 +145,13 @@ check(!!hit, `found clickable teal river near Râmna (${hit ? hit.d : 'none'})`)
 if (hit) {
   await page.mouse.click(hit.x, hit.y);
   await page.waitForTimeout(1500);
-  const t = await rightPanelText();
+  // First open can be slow (sheet hydration) — poll until the panel has text.
+  const t = await readCardText();
   const lower = t.toLowerCase();
   check(lower.includes('necontractat'), `card shows Necontractat (got: ${t.split('\n').slice(1, 3).join(' | ') || 'empty'})`);
   const orange = await countOrange();
   console.log(`  orange strokes after Râmna-area click: ${orange}`);
-  check(orange === 0, `NO orange for uncontracted river (got ${orange})`);
+  check(orange > 0, `uncontracted river highlights orange (got ${orange})`);
   await page.screenshot({ path: '.e2e/r_ramna.png' });
 }
 

@@ -1,19 +1,22 @@
 /* eslint-disable no-console */
 /**
- * t_f9d81184 careful behavior test. Clicks only points where elementFromPoint
+ * t_b1547e24 careful behavior test. Clicks only points where elementFromPoint
  * confirms the intended layer is the TOPMOST interactive element.
- * 1. click a REAL contracted blue river → orange focus SHOULD appear
- * 2. click a REAL uncontracted teal river → card Necontractat + NO orange
+ * 1. click a REAL contracted blue river → orange focus SHOULD appear (sector)
+ * 2. click a REAL uncontracted teal river → card Necontractat + ORANGE on it
  * 3. re-click contracted → orange reappears
- * 4. click a pond → card Privat/Necontractat + no orange
+ * 4. click a pond → card Privat/Necontractat + ORANGE on the pond
  *
  * Run: node scripts/_e2e_focus_careful.mjs [BASE_URL]
  */
 import { chromium } from 'playwright';
 
 const BASE = process.argv[2] || process.env.BASE_URL || 'http://localhost:3000';
+const CDP = process.env.PLAYWRIGHT_CDP;
 
-const browser = await chromium.launch();
+const browser = CDP
+  ? await chromium.connectOverCDP(CDP)
+  : await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
 let failures = 0;
@@ -31,8 +34,16 @@ const countOrange = () =>
     return n;
   });
 
+// Read the detail panel text regardless of viewport branch: desktop renders an
+// <aside>, mobile renders a vaul drawer (CDP-connect to browserless ignores
+// viewport emulation, so the mobile branch may be active at any claimed width).
 const rightPanelText = () =>
-  page.locator('aside:has(h2:text("Detalii apă"))').innerText().catch(() => '');
+  page.evaluate(() => {
+    const aside = document.querySelector('aside:has(h2)');
+    const drawer = document.querySelector('[data-vaul-drawer]');
+    const el = aside || drawer;
+    return el ? (el.textContent || '').trim() : '';
+  });
 
 /** Find an on-screen path of `stroke` whose midpoint's topmost element is itself.
  * When `preferOpen` is set, only open paths (rivers) are considered — polygons (lakes) end with 'z'. */
@@ -118,7 +129,7 @@ check(!!t1, 'found topmost uncontracted teal point');
 if (t1) {
   const orange = await countOrange();
   console.log(`  orange after uncontracted click: ${orange}`);
-  check(orange === 0, `uncontracted click cleared orange (got ${orange})`);
+  check(orange > 0, `uncontracted click shows orange highlight (got ${orange})`);
   const t = await rightPanelText();
   const lower = t.toLowerCase();
   check(lower.includes('necontractat'), `card shows Necontractat (got: ${t.split('\n').slice(1, 3).join(' | ') || 'empty'})`);

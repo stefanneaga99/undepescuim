@@ -7,7 +7,7 @@ import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle } from '@/utils/colors';
 import { countyRenderGeometry } from '@/utils/county-clip';
-import type { Water, WaterFeature } from '@/types/data';
+import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
@@ -340,14 +340,13 @@ export function WaterFeatureLayer({
 
   // Exact river-group key of the focused contract (t_ac697770) — matches
   // focus slices across name variants ('Râul Oltul superior' / 'Râul Olt').
-  // t_f9d81184: focus highlighting is ONLY for contracted waters — require a
-  // focusColor (set by MapView only when the selected water has an asociatie)
-  // so an uncontracted selection can never enter the focus path.
+  // t_b1547e24: focus applies to EVERY water (contracted + uncontracted), so
+  // no asociatie gate here — only focusKey gates the focus path.
   const focusGroupKey = useMemo(() => {
-    if (!focusKey || !focusColor) return null;
+    if (!focusKey) return null;
     const w = allWaters.find((x) => x.name === focusKey);
     return w ? groupKeyOf(w) : waterKey(focusKey);
-  }, [allWaters, focusKey, focusColor]);
+  }, [allWaters, focusKey]);
 
   // Click on a river: resolve the fraction along the course, then select the
   // contract (association) that owns that sector — not just the first one.
@@ -387,36 +386,20 @@ export function WaterFeatureLayer({
   const handleEachFeature = useCallback(
     (feature: GeoJSON.Feature, layer: L.Path) => {
       const f = feature as WaterFeature;
-      const style = getFeatureStyle(f.properties?.asociatieSlug ?? null, coverageSlug);
       const isLine = f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString';
-
-      // River match for focus highlighting (contract selected from the card)
-      const inFocus =
-        !!focusGroupKey && groupKeyOf(f.properties ?? {}) === focusGroupKey;
-
       if (isLine) {
-        // Visible thin line; thick + colored ONLY when this river is focused
-        // AND no km-range slice is in play (single-contract rivers get full focus)
-        const sliceActive = !!focusKey && !!focusRange;
-        layer.setStyle({
-          ...style,
-          weight: inFocus && !sliceActive ? 6 : 3,
-          color: inFocus && !sliceActive && focusColor ? focusColor : style.color,
-          opacity: inFocus && !sliceActive ? 1 : style.opacity ?? 1,
-        });
+        // Visible thin line (focus styling is handled by the style prop below —
+        // per-feature setStyle here would be wiped by react-leaflet v5's
+        // style-prop re-apply on the next render).
+        layer.setStyle({ weight: 3 });
         layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       } else {
-        layer.setStyle({
-          ...style,
-          weight: inFocus ? 4 : style.weight ?? 2,
-          color: inFocus && focusColor ? focusColor : style.color,
-        });
         layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
         layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
       }
     },
-    [handleClick, coverageSlug, focusKey, focusGroupKey, focusColor, focusRange],
+    [handleClick],
   );
 
   // Focus slice: when a contract owns a km-range of a multi-contract river,
@@ -469,6 +452,34 @@ export function WaterFeatureLayer({
     return features.length ? features : null;
   }, [focusGroupKey, focusRange, featureCollection, countyFilter, allWaters, selectedWaterSlug, focusKey]);
 
+  // Focus-aware style (t_b1547e24): the orange highlight for ALL waters.
+  // react-leaflet v5 re-applies the `style` prop on every re-render
+  // (updateGeoJSON → layer.setStyle) but onEachFeature only runs at mount —
+  // so whole-feature focus styling MUST live in this style function or the
+  // next re-render wipes it and the highlight never shows (the original bug).
+  // Matching is slug-exact: only the selected water's own feature turns
+  // orange. When the focus-slice layer already draws the orange (contracted
+  // river sector / county clip), keep the base style to avoid double-painting.
+  const focusAwareStyle = useCallback(
+    (feature?: GeoJSON.Feature<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>): L.PathOptions => {
+      const base = getFeatureStyle(
+        (feature?.properties as WaterFeatureProperties | undefined)?.asociatieSlug ?? null,
+        coverageSlug,
+      );
+      if (!focusColor || !selectedWaterSlug) return base;
+      const f = feature as WaterFeature | undefined;
+      if (f?.properties?.slug !== selectedWaterSlug) return base;
+      if (focusRange && focusFeatures && focusFeatures.length > 0) return base;
+      return {
+        ...base,
+        color: focusColor,
+        weight: Math.max(base.weight ?? 2, 3),
+        opacity: 1,
+      };
+    },
+    [coverageSlug, focusColor, selectedWaterSlug, focusRange, focusFeatures],
+  );
+
   // Invisible wide hit layers for lines (added after the visible layer).
   // react-leaflet's GeoJSON doesn't expose each layer for extra additions, so
   // we add the hit layer inside onEachFeature via layer.bringToBack after
@@ -491,9 +502,7 @@ export function WaterFeatureLayer({
       <LeafletGeoJSON
         key={layerKey}
         data={featureCollection}
-        style={(feature) =>
-          getFeatureStyle(feature?.properties?.asociatieSlug ?? null, coverageSlug)
-        }
+        style={focusAwareStyle}
         onEachFeature={handleEachFeature}
       />
       {/* Focus slice on top: only the selected contract's sector, thick + colored */}

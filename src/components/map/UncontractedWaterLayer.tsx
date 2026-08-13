@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
@@ -12,6 +12,10 @@ interface UncontractedWaterLayerProps {
   /** filtered uncontracted waters (county/type/contract filter already applied):
    * OSM rivers (LineString) AND lakes/ponds (Polygon) — t_471dad64 + t_51e028c4 */
   waters: Water[];
+  /** orange focus color, passed when ANY water is selected (t_b1547e24). The
+   * selected water's own feature renders orange — whole feature, no sector
+   * slicing (uncontracted waters have no contracts). */
+  focusColor?: string | null;
 }
 
 /**
@@ -32,8 +36,9 @@ interface UncontractedWaterLayerProps {
  * Click opens the 'Necontractat' card. Rendered BELOW the contracted layer so
  * contracted clicks win on overlap.
  */
-export function UncontractedWaterLayer({ waters }: UncontractedWaterLayerProps) {
+export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWaterLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
+  const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
   const map = useMap();
 
   // Viewport snapshot (zoom + bounds) — re-captured on every pan/zoom end.
@@ -98,8 +103,34 @@ export function UncontractedWaterLayer({ waters }: UncontractedWaterLayerProps) 
     } as GeoJSON.FeatureCollection;
   }, [visibleFeatures]);
 
-  const riverStyle = getUncontractedStyle();
-  const lakeStyle = getUncontractedLakeStyle();
+  const riverStyle = useMemo(() => getUncontractedStyle(), []);
+  const lakeStyle = useMemo(() => getUncontractedLakeStyle(), []);
+
+  // Focus-aware style (t_b1547e24): the clicked water's own feature turns
+  // orange — solid stroke for rivers (dash cleared), filled orange for ponds.
+  // Matched by slug (uncontracted slugs are unique and never collide with the
+  // contracted pool). Must live in the style prop: react-leaflet v5 re-applies
+  // it on every re-render, while onEachFeature only runs at mount.
+  const focusAwareStyle = useCallback(
+    (feature?: GeoJSON.Feature<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>): L.PathOptions => {
+      const f = feature as WaterFeature | undefined;
+      if (!f) return riverStyle;
+      const focused =
+        !!focusColor && !!selectedWaterSlug && f.properties?.slug === selectedWaterSlug;
+      if (!focused) return isPolygonFeature(f) ? lakeStyle : riverStyle;
+      if (isPolygonFeature(f)) {
+        return {
+          color: focusColor,
+          weight: 2,
+          opacity: 1,
+          fillColor: focusColor,
+          fillOpacity: 0.3,
+        };
+      }
+      return { color: focusColor, weight: 4, opacity: 1, dashArray: [] };
+    },
+    [focusColor, selectedWaterSlug, lakeStyle, riverStyle],
+  );
 
   return (
     <>
@@ -113,13 +144,11 @@ export function UncontractedWaterLayer({ waters }: UncontractedWaterLayerProps) 
           layer.on('click', () => handleClick(f));
         }}
       />
-      {/* Visible layer: dashed teal rivers + filled teal ponds */}
+      {/* Visible layer: dashed teal rivers + filled teal ponds (orange when focused) */}
       <LeafletGeoJSON
         key={`vis-${layerKey}`}
         data={{ type: 'FeatureCollection', features: visibleFeatures } as GeoJSON.FeatureCollection}
-        style={(feature) =>
-          isPolygonFeature(feature as GeoJSON.Feature) ? lakeStyle : riverStyle
-        }
+        style={focusAwareStyle}
         onEachFeature={(feature, layer: L.Path) => {
           const f = feature as WaterFeature;
           layer.on('click', () => handleClick(f));
