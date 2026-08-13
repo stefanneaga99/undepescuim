@@ -31,10 +31,16 @@ interface MapStore {
   waterTypeFilter: WaterTypeFilter; // 'all' | 'lac' | 'rau'
   contractFilter: ContractFilter; // 'all' | 'contractate' | 'necontractate'
 
+  // FlyTo gating (t_697ba939): one-shot flag — the association was cleared
+  // as a side effect of CLICKING a water outside it, so the next
+  // FlyToController pass must NOT re-fit / zoom out to the full dataset.
+  suppressAssociationFlyTo: boolean;
+
   // Actions
   loadData: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
   selectWater: (slug: string | null) => void;
+  consumeAssociationFlyToSuppression: () => void;
   toggleCounty: (county: string) => void;
   setWaterTypeFilter: (type: WaterTypeFilter) => void;
   setContractFilter: (filter: ContractFilter) => void;
@@ -67,6 +73,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   countyFilter: [],
   waterTypeFilter: 'all',
   contractFilter: 'all',
+  suppressAssociationFlyTo: false,
 
   loadData: async () => {
     try {
@@ -132,9 +139,17 @@ export const useMapStore = create<MapStore>((set, get) => ({
       selectedAssociationSlug !== null &&
       water !== null &&
       water.asociatie?.slug === selectedAssociationSlug;
+    // t_697ba939: a click on a water OUTSIDE the association clears the
+    // filter (t_7a7192ea), but that clear is a SIDE EFFECT of the click,
+    // not the user leaving the association — FlyToController must NOT
+    // re-fit / zoom out to the full dataset. Arm the one-shot suppression;
+    // only set it when an association is actually being cleared (never
+    // leave a stale flag that could swallow a later explicit clear).
+    const clearingAssociationByClick = !belongsToAssociation && selectedAssociationSlug !== null;
     set({
       selectedWaterSlug: slug,
       selectedAssociationSlug: belongsToAssociation ? selectedAssociationSlug : null,
+      suppressAssociationFlyTo: clearingAssociationByClick,
       countyFilter:
         water && countyFilter.length > 0 && !countyFilter.includes(water.judet)
           ? []
@@ -145,6 +160,10 @@ export const useMapStore = create<MapStore>((set, get) => ({
           : waterTypeFilter,
     });
   },
+
+  // t_697ba939: consumed by FlyToController — the association was cleared by
+  // a water click, so the map stays put (no zoom-out to the national view).
+  consumeAssociationFlyToSuppression: () => set({ suppressAssociationFlyTo: false }),
 
   toggleCounty: (county) => {
     const { countyFilter, waters, uncontracted, selectedWaterSlug, waterTypeFilter } = get();

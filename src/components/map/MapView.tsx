@@ -81,12 +81,20 @@ export function MapView() {
  * User-confirmed behavior: auto-center/zoom on association select.
  * Selecting an association → fly to its bbox center (zoom 9).
  * Clearing → fly back to the full-Romania default view.
+ *
+ * t_697ba939: EXCEPT when the association was cleared by CLICKING a water
+ * that does not belong to it (selectWater) — that clear is a side effect of
+ * the click, so the map must NOT re-fit / zoom out to the full dataset; it
+ * stays put and just shows the clicked water's card. Only an explicit
+ * "Toate asociațiile" clear (selectAssociation(null)) flies to the national
+ * view. Sibling of t_abccfd6c (covered clicks keep the association entirely).
  */
 function FlyToController() {
   const map = useMap();
   const dataLoaded = useMapStore((s) => s.dataLoaded);
   const associations = useMapStore((s) => s.associations);
   const slug = useMapStore((s) => s.selectedAssociationSlug);
+  const consumeSuppression = useMapStore((s) => s.consumeAssociationFlyToSuppression);
   const firstRun = useRef(true);
 
   useEffect(() => {
@@ -97,6 +105,14 @@ function FlyToController() {
       return;
     }
     if (!slug) {
+      // t_697ba939: the association was cleared by a water click → consume
+      // the one-shot suppression and keep the current view. Read the flag
+      // via getState() (NOT a subscription) so the consume does not trigger
+      // a re-render/re-run of this effect.
+      if (useMapStore.getState().suppressAssociationFlyTo) {
+        consumeSuppression();
+        return;
+      }
       map.flyTo([45.95, 24.95], 7, { duration: 0.8 });
       return;
     }
@@ -107,7 +123,7 @@ function FlyToController() {
     if (!assoc || !assoc.bbox) return;
     const [minLon, minLat, maxLon, maxLat] = assoc.bbox;
     map.flyTo([(minLat + maxLat) / 2, (minLon + maxLon) / 2], 9, { duration: 0.8 });
-  }, [slug, associations, dataLoaded, map]);
+  }, [slug, associations, dataLoaded, map, consumeSuppression]);
 
   return null;
 }

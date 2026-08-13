@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 /**
- * t_abccfd6c e2e: clicking a river of the SELECTED association must NOT
- * zoom the map out — the map stays put and the detail card opens; the
- * association filter stays active (coverage keeps highlighting its waters).
- * Clicking a water OUTSIDE the association still clears the filter
- * (t_7a7192ea behavior) and may zoom out — acceptable there.
+ * t_abccfd6c + t_697ba939 e2e: clicking a river of the SELECTED association
+ * must NOT zoom the map out — the map stays put and the detail card opens;
+ * the association filter stays active (coverage keeps highlighting its
+ * waters). Clicking a water OUTSIDE the association also does NOT zoom out
+ * (t_697ba939): the association filter clears (t_7a7192ea behavior) but the
+ * map stays put — only the filter goes away, the view is untouched.
  *
  * Runs BOTH viewports (desktop 1280px and mobile 390px) through the same
  * assertions, using setViewportSize (the browserless CDP window honours it).
@@ -20,7 +21,8 @@
  *  2. click a GREEN river → map zoom UNCHANGED (no zoom-out), association
  *     kept (green stays), orange click-focus appears, card opens
  *  3. select AJVPS Covasna → click an UNCONTRACTED teal river → association
- *     clears (green gone), card shows 'Apă necontractată'
+ *     clears (green gone) but map zoom UNCHANGED (t_697ba939), orange focus
+ *     appears, card shows 'Apă necontractată'
  *
  * Run: PLAYWRIGHT_CDP=http://localhost:3000 node scripts/_e2e_assoc_nozoom.mjs http://172.25.236.246:3100
  */
@@ -208,9 +210,11 @@ const closeCardIfOpen = async () => {
 
 // Whether the SELECTED uncontracted water should be rendered at zoom `z`
 // (LOD: z<8 → ≥30km rivers / ≥100ha lakes, z<10 → ≥10km / ≥10ha, else all).
-// After a non-association click the map may zoom OUT to the national view
-// (accepted t_abccfd6c behavior), which culls short rivers — the orange
-// focus then legitimately cannot render. Returns the river name + flag.
+// t_697ba939: a non-association click no longer zooms the map out — the
+// clicked water was rendered at the pre-click zoom (it was clickable) and
+// stays rendered, so the orange focus is mandatory. The helper remains for
+// diagnostics + as a guard against shared-window zoom drift. Returns the
+// river name + flag.
 const selectedWaterRenderable = (z) =>
   page.evaluate(async (zoom) => {
     const aside = document.querySelector('aside:has(h2)');
@@ -264,7 +268,7 @@ async function runPass(label, isMobile, expectedWidth) {
   check(card.includes('Asociație'), 'card shows the association section');
   await page.screenshot({ path: `.e2e/nozoom_${isMobile ? 'mobile' : 'desktop'}_kept.png` });
 
-  console.log('== 3. select AJVPS Covasna → click UNCONTRACTED teal → association clears ==');
+  console.log('== 3. select AJVPS Covasna → click UNCONTRACTED teal → association clears, NO zoom-out (t_697ba939) ==');
   await closeCardIfOpen();
   check(await selectAssociation('covasna', 'AJVPS Covasna', expectedWidth), 'selected AJVPS Covasna');
   check(await waitForStrokeCount(COVERED, 1), 'green paths appeared (Covasna)');
@@ -277,10 +281,12 @@ async function runPass(label, isMobile, expectedWidth) {
   const sel3 = await selectedWaterRenderable(zoomAfterTeal);
   console.log(`  green=${green3} orange=${orange3} zoom ${zoomBeforeTeal} → ${zoomAfterTeal} sel=${sel3.name} (${sel3.lenKm ?? '?'}km, renderable@z${zoomAfterTeal}=${sel3.renderable})`);
   check(green3 === 0, `association cleared after teal click (got ${green3})`);
-  // Orange focus only when the clicked water survives the post-clear LOD cull
-  // (the map zooms to the national view on clear — accepted for non-association
-  // clicks); when it SHOULD render, orange is mandatory.
-  check(!sel3.renderable || orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
+  // t_697ba939: the map must NOT zoom out when a non-association water is
+  // clicked — only the filter clears, the view stays put.
+  check(zoomAfterTeal === zoomBeforeTeal, `map zoom UNCHANGED after teal click (${zoomBeforeTeal} → ${zoomAfterTeal})`);
+  // The clicked teal river was rendered at the pre-click zoom (it was
+  // clickable) and the map does not move, so the orange focus is mandatory.
+  check(orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
   const card3 = await cardText();
   console.log(`  card: ${card3.slice(0, 110)}`);
   check(card3.includes('Apă necontractată'), 'card shows the uncontracted notice');

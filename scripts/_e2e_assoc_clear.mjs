@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
 /**
- * t_7a7192ea Bug 2 + t_abccfd6c e2e: clicking a river/lake while an
- * association filter is active.
+ * t_7a7192ea Bug 2 + t_abccfd6c + t_697ba939 e2e: clicking a river/lake
+ * while an association filter is active.
  *
  * t_abccfd6c changed the semantics: a click on a water that BELONGS to the
  * selected association KEEPS the association (coverage stays, map does NOT
- * zoom out) and just opens the detail card; only a click on a water OUTSIDE
- * the association clears it (existing t_7a7192ea behavior).
+ * zoom out) and just opens the detail card; a click on a water OUTSIDE the
+ * association clears it (t_7a7192ea behavior) — and since t_697ba939 the
+ * map does NOT zoom out on that clear either: the view stays put, only the
+ * filter goes away.
  *
  * Checks:
  *  1. select AJVPS BUZĂU → green highlight + grey dim appear
@@ -17,6 +19,7 @@
  *       - detail card shows the clicked water + its association
  *  3. select AJVPS Covasna → click an UNCONTRACTED teal river →
  *       - association cleared (no green left, trigger back to placeholder)
+ *       - map zoom UNCHANGED (t_697ba939 — no zoom-out on clear)
  *       - teal water selected, orange focus on it, card shows 'Apă necontractată'
  *  4. county filter + association: county stays when the clicked water is
  *     inside it (association stays too — covered water belongs to it)
@@ -150,9 +153,11 @@ const waitForCardText = async (timeout = 12000) => {
 
 // Whether the SELECTED uncontracted water should be rendered at zoom `z`
 // (LOD: z<8 → ≥30km rivers / ≥100ha lakes, z<10 → ≥10km / ≥10ha, else all).
-// After a non-association click the map may zoom OUT to the national view
-// (accepted t_abccfd6c behavior), which culls short rivers — the orange
-// focus then legitimately cannot render. Returns the river name + flag.
+// t_697ba939: a non-association click no longer zooms the map out — the
+// clicked water was rendered at the pre-click zoom (it was clickable) and
+// stays rendered, so the orange focus is mandatory. The helper remains for
+// diagnostics + as a guard against shared-window zoom drift. Returns the
+// river name + flag.
 const selectedWaterRenderable = (z) =>
   page.evaluate(async (zoom) => {
     const aside = document.querySelector('aside:has(h2)');
@@ -271,10 +276,12 @@ const zoom3After = await mapZoom();
 const sel3 = await selectedWaterRenderable(zoom3After);
 console.log(`  green=${green3} orange=${orange3} teal=${teal3} zoom ${zoom3Before} → ${zoom3After} sel=${sel3.name} (${sel3.lenKm ?? '?'}km, renderable@z${zoom3After}=${sel3.renderable})`);
 check(green3 === 0, `association cleared after teal click (got ${green3})`);
-// Orange focus only when the clicked water survives the post-clear LOD cull
-// (the map zooms to the national view on clear — accepted for non-association
-// clicks); when it SHOULD render, orange is mandatory.
-check(!sel3.renderable || orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
+// t_697ba939: the map must NOT zoom out when a non-association water is
+// clicked — only the filter clears, the view stays put.
+check(zoom3After === zoom3Before, `map zoom UNCHANGED after teal click (${zoom3Before} → ${zoom3After})`);
+// The clicked teal river was rendered at the pre-click zoom (it was
+// clickable) and the map does not move, so the orange focus is mandatory.
+check(orange3 > 0, `orange focus on the uncontracted water (got ${orange3})`);
 const card3 = await cardText();
 console.log(`  card: ${card3.slice(0, 110)}`);
 check(card3.includes('Apă necontractată'), 'card shows the uncontracted notice');
