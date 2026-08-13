@@ -97,6 +97,17 @@ export interface Water {
   uncontracted?: boolean;
   /** Simplified-course length in km (uncontracted rivers; used for zoom LOD). */
   lengthKm?: number;
+  /**
+   * Per-county render geometry (t_117f0b99). Key = normalized county name
+   * (lowercase, diacritics stripped, separators removed — see
+   * utils/county-clip.ts `countyClipKey`). When the county filter is active
+   * the layer renders THIS instead of the full `geometry`, which spans the
+   * whole river course across several counties. Only the water's OWN county
+   * is ever stored (the filter includes a water iff its judet is selected).
+   * `null` = the geometry does not touch the county — render nothing when the
+   * county is selected (misattributed geometry can't leak outside anymore).
+   */
+  geometryByCounty?: Record<string, GeoJSON.Geometry | null>;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */

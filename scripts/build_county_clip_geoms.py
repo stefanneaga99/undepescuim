@@ -50,6 +50,11 @@ UNCONTRACTED_JSON = ROOT / "public/data/uncontracted_rivers.json"
 
 # ~200 m buffer so border rivers (whose centerline IS the county ring) stay whole.
 BUFFER_DEG = 0.002
+# Douglas-Peucker tolerance for stored clips — the clips are RENDER-only
+# (click resolution always uses the ORIGINAL full-course geometry), so they can
+# be simplified at the same 0.002° (~200 m) used by the uncontracted overlay
+# without any visible loss. Cuts the clip payload ~50%.
+SIMPLIFY_DEG = 0.002
 # Coordinate rounding for stored clips (5 dp ≈ 1 m — plenty for a fishing map).
 ROUND_DP = 5
 
@@ -231,6 +236,14 @@ def all_points(g: BaseGeometry):
             yield from [Point(c) for c in ring.coords]
 
 
+def _total_length_km(mls: BaseGeometry) -> float:
+    if mls.geom_type == "LineString":
+        return part_length(list(mls.coords))
+    if mls.geom_type == "MultiLineString":
+        return sum(part_length(list(p.coords)) for p in mls.geoms)
+    return 0.0
+
+
 # Tri-state clip result: (key, geojson) | (key, None)=store-null | None=skip.
 def build_clip_for_water(w: dict, source_geom: dict, county_polys: dict, buffered: dict, skip_if_inside: bool):
     own = norm_county(w.get("judet", ""))
@@ -251,13 +264,28 @@ def build_clip_for_water(w: dict, source_geom: dict, county_polys: dict, buffere
         line = MultiLineString(sliced)
     else:
         line = shapely_line
-        if skip_if_inside and all(
-            county_polys[own].buffer(BUFFER_DEG).contains(pt) for pt in all_points(line)
-        ):
-            return None  # fully inside its county → FE falls back to full geometry
 
     clip = line.intersection(buffered[own])
+
+    # Fully inside its county (incl. border buffer) → no clip needed: the FE
+    # falls back to the full geometry. Measured by length coverage so border
+    # rivers (whose centerline IS the county ring) are skipped rather than
+    # stored as near-duplicate geometry.
+    if (
+        skip_if_inside
+        and not has_sector
+        and source_geom["type"] in ("LineString", "MultiLineString")
+        and line.geom_type in ("LineString", "MultiLineString")
+    ):
+        src_len = _total_length_km(line)
+        clip_len = _total_length_km(clip) if clip.geom_type in ("LineString", "MultiLineString") else 0.0
+        if src_len > 0 and clip_len / src_len >= 0.995:
+            return None
+
+    # Render-only clips are simplified (click resolution uses the ORIGINAL
+    # geometry) — same 0.002° tolerance as the uncontracted overlay.
     if source_geom["type"] in ("LineString", "MultiLineString"):
+        clip = clip.simplify(SIMPLIFY_DEG, preserve_topology=True)
         out = _as_lines(clip)
         if out is None:
             return (own, None)
@@ -319,8 +347,12 @@ def process_pool(pool: list, waters_by_slug: dict, county_polys: dict, buffered:
     return stats
 
 
-def dump_json(data, path: Path):
-    path.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
+def dump_json(data, path: Path, compact: bool = False):
+    if compact:
+        text = json.dumps(data, separators=(",", ":"), ensure_ascii=False)
+    else:
+        text = json.dumps(data, indent=1, ensure_ascii=False)
+    path.write_text(text, encoding="utf-8")
 
 
 def main():
@@ -338,7 +370,7 @@ def main():
     stats_u = process_pool(uncontracted, {}, county_polys, buffered, allow_group_owner=False)
 
     dump_json(waters, WATERS_JSON)
-    dump_json(uncontracted, UNCONTRACTED_JSON)
+    dump_json(uncontracted, UNCONTRACTED_JSON, compact=True)
 
     print("contracted:", stats_c, file=sys.stderr)
     print("uncontracted:", stats_u, file=sys.stderr)

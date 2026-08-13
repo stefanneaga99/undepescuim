@@ -68,7 +68,11 @@ export function UncontractedRiverLayer({ waters }: UncontractedRiverLayerProps) 
   };
 
   // Rebuild layers on viewport change (cheap — only visible features).
-  const layerKey = `${view.zoom}|${view.bounds.getWest().toFixed(2)},${view.bounds.getSouth().toFixed(2)},${view.bounds.getEast().toFixed(2)},${view.bounds.getNorth().toFixed(2)}`;
+  // The county/type filter is part of the key: react-leaflet v5 ignores the
+  // data prop change without a key change, so the teal layer would otherwise
+  // keep stale rivers after a filter toggle (t_117f0b99).
+  const filterSig = waters.length ? `${waters.length}:${waters[0].slug}:${waters[waters.length - 1].slug}` : 'empty';
+  const layerKey = `${view.zoom}|${view.bounds.getWest().toFixed(2)},${view.bounds.getSouth().toFixed(2)},${view.bounds.getEast().toFixed(2)},${view.bounds.getNorth().toFixed(2)}|${filterSig}`;
 
   const hitCollection = useMemo<GeoJSON.FeatureCollection>(() => {
     return {

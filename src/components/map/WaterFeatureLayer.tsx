@@ -6,6 +6,7 @@ import { GeoJSON as LeafletGeoJSON } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle } from '@/utils/colors';
+import { countyRenderGeometry } from '@/utils/county-clip';
 import type { Water, WaterFeature } from '@/types/data';
 
 interface WaterFeatureLayerProps {
@@ -330,6 +331,8 @@ export function WaterFeatureLayer({
   focusRange,
 }: WaterFeatureLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
+  const countyFilter = useMapStore((s) => s.countyFilter);
+  const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
 
   const featureCollection = useMemo(() => watersToFeatureCollection(waters), [waters]);
 
@@ -345,24 +348,31 @@ export function WaterFeatureLayer({
 
   // Click on a river: resolve the fraction along the course, then select the
   // contract (association) that owns that sector — not just the first one.
+  // NOTE: the rendered geometry may be the per-county clip (t_117f0b99), whose
+  // fractions are NOT full-course fractions — always resolve against the
+  // ORIGINAL full-course geometry (allWaters) so sectorStart/sectorEnd
+  // intervals stay correct.
   const handleClick = useCallback(
     (feature: WaterFeature, latlng?: L.LatLng) => {
-      const g = feature.geometry;
-      if (latlng && (g.type === 'MultiLineString' || g.type === 'LineString')) {
-        const parts =
-          g.type === 'MultiLineString'
-            ? (g.coordinates as [number, number][][])
-            : [g.coordinates as [number, number][]];
-        const frac = fractionAtPoint(parts, [latlng.lng, latlng.lat]);
-        if (frac !== null) {
-          const contract = contractAtFraction(
-            { slug: feature.properties.slug, name: feature.properties.name },
-            frac,
-            allWaters,
-          );
-          if (contract) {
-            selectWater(contract.slug);
-            return;
+      if (latlng) {
+        const original = allWaters.find((w) => w.slug === feature.properties.slug);
+        const g = original?.geometry ?? feature.geometry;
+        if (g && (g.type === 'MultiLineString' || g.type === 'LineString')) {
+          const parts =
+            g.type === 'MultiLineString'
+              ? (g.coordinates as [number, number][][])
+              : [g.coordinates as [number, number][]];
+          const frac = fractionAtPoint(parts, [latlng.lng, latlng.lat]);
+          if (frac !== null) {
+            const contract = contractAtFraction(
+              { slug: feature.properties.slug, name: feature.properties.name },
+              frac,
+              allWaters,
+            );
+            if (contract) {
+              selectWater(contract.slug);
+              return;
+            }
           }
         }
       }
@@ -411,6 +421,25 @@ export function WaterFeatureLayer({
   // sliced by fraction). Single-contract rivers use the full-course style above.
   const focusFeatures = useMemo(() => {
     if (!focusGroupKey || !focusRange) return null;
+    // County filter active (t_117f0b99): the rendered geometry is already the
+    // per-county clip, so slicing it by FULL-course fractions would highlight a
+    // random sub-segment. Highlight the focused water's own county clip instead
+    // (for sector contracts the clip IS the sector, clipped to the county).
+    if (countyFilter.length > 0) {
+      const focused =
+        (selectedWaterSlug && allWaters.find((x) => x.slug === selectedWaterSlug)) ||
+        allWaters.find((x) => x.name === focusKey);
+      if (!focused) return null;
+      const clip = countyRenderGeometry(focused);
+      if (!clip) return null;
+      return [
+        {
+          type: 'Feature',
+          properties: { name: focused.name },
+          geometry: clip,
+        } as GeoJSON.Feature,
+      ];
+    }
     const [f0, f1] = focusRange;
     const features: GeoJSON.Feature[] = [];
     for (const f of featureCollection.features) {
@@ -435,7 +464,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focusRange, featureCollection]);
+  }, [focusGroupKey, focusRange, featureCollection, countyFilter, allWaters, selectedWaterSlug, focusKey]);
 
   // Invisible wide hit layers for lines (added after the visible layer).
   // react-leaflet's GeoJSON doesn't expose each layer for extra additions, so
@@ -453,7 +482,9 @@ export function WaterFeatureLayer({
 
   return (
     <>
-      <GeoJSONHits data={hitCollection} onFeatureClick={handleClick} />
+      {/* key forces remount on filter change — react-leaflet v5 ignores data
+          prop changes without a key change (stale hit targets otherwise). */}
+      <GeoJSONHits key={`hits-${layerKey}`} data={hitCollection} onFeatureClick={handleClick} />
       <LeafletGeoJSON
         key={layerKey}
         data={featureCollection}
