@@ -162,26 +162,93 @@ polygons). `npm run build` passes. Deployed to https://undepescuim.vercel.app
 
 ## Known follow-ups (deferred, NOT fixed here)
 
-1. **romsilva-bihor-dragan** (Drăgan, Bihor): subtype `lac` (source: 200 ha
-   artificial lake) but geometry is a 24-part river course (7313 pts) — source
-   data mismatch, pre-existing; no OSM lake polygon named 'Drăgan' exists in
-   the water dump. Needs human decision: rename/flip subtype vs re-attach a
-   reservoir polygon.
-2. **sadu group** (Sibiu): ug8h7f1s full course + gff3cbfy headwater lake
+1. **sadu group** (Sibiu): ug8h7f1s full course + gff3cbfy headwater lake
    polygon (Sadu V) — lake polygon is exempt from slicing (FE pitfall #51);
    coexistence is cartographically correct, left as-is.
-3. **Pre-existing identical-geometry double-draws** in groups argesel, budacul,
-   crisul-negru (4 owners), malaia, prahova (3), somesu-rece, targului (3),
-   teleajen, valea-robesti — all pre-date this sweep; candidates for a
-   dedicated one-owner-per-group cleanup.
-4. **m19ue32m/nwa37i1j == romsilva-cluj-1/2** (Someșul Cald): duplicate
-   contracts with identical sector intervals — dedup candidate for the
-   contract-merge task (batch3 note).
-5. Botoșani 13 unmatchable: no OSM named rivers exist in-county — all listed in
-   `batch3_geometry_report.json` with per-water notes.
+2. **somesu-rece probe duplicates**: 9y116j3m (Someșu Rece Mijlociu) and
+   i9uffwbx (Someșu Rece Superior) are areba-probe duplicates of the official
+   romsilva-cluj-somesul-rece-* entries (same limits, same association).
+   Not removed in run 2 (user decision #3 scoped dedup to Someșul Cald only);
+   geometry nulled (one-owner-per-group), sectors set from official Romsilva
+   km (64/21/18). Candidates for the same official-source dedup.
+3. Botoșani 13 unmatchable: no OSM named rivers exist in-county — all listed in
+   `batch3_geometry_report.json` with per-water notes; **keep bbox fallback**
+   (user decision #4: no data change, documented only).
+
+## Run 2 — user-decision fixes (commit f98fa07, 2026-08-14)
+
+The four follow-up decisions from the review comment were applied to
+`public/data/waters.json` (script `scripts/merge_fixes_final.py`, report
+`data/processed/merge_fixes_report.json`):
+
+1. **romsilva-bihor-dragan** (Drăgan, Bihor): subtype flipped `lac` → `rau`;
+   the 24-part river course geometry (7313 pts) is kept. Card now shows
+   "Râu" instead of "Lac". (`dimensiune: 200 Ha` kept as source data.)
+
+2. **9 double-draw groups → one geometry owner per group** (Siret/Buzău
+   pattern: geometry:null + bbox:null + sectorStart/sectorEnd for the other
+   members, so the base layer draws the course once while coverage slicing and
+   click resolution still work per contract):
+
+   | group | owner (geometry) | members made geometry-less (sector) |
+   |---|---|---|
+   | argesel | 0hxo4zi3 (full 1538-pt course, deduped) | 0djgr9l8 superior [0, f(Pravăț)] |
+   | budacul | u1frrl08 (full 2942-pt course, deduped+oriented) | gvmaf2tz superior [0, f(Budacu de Sus)] |
+   | crisul-negru | 9mfds2yv (**FULL chained course**, 2058 pts, rebuilt from both OSM clusters; was a 435-pt fragment) | 7ull4jnk mijlociu [0.038, 0.224]; jw9il5yo inferior [0.224, 0.330]; w69nse7i Bihor [0.315, 1] |
+   | malaia | 1v83tpdy lake Polygon + 0d29kh5i river LineString [0,1] | aty62qwm (uncontracted ANPA lake dup of the river line) |
+   | prahova | 53mzatrd (full 5889-pt course, deduped from 8823) | 0a4d89le mijlocie; 2g9hg98a superioară [0, f(Valea Fetii)] |
+   | somesu-rece | 89j19sek (1029-pt full course, oriented to Gilău) | 9y116j3m, i9uffwbx (probe dupes, sectors from official km) |
+   | targului | rv08w2ty (full 1254-pt course, deduped) | 2dxykcpr mijlociu; k44320iw superior |
+   | teleajen | 0wn4yfsa (**FULL chained course**, 2033 pts = superior 1202 + inferior 884; the 12-pt degenerate stub 44plkztf cleared) | 44plkztf Măneciu–Zamfira; yfzdgchv Zamfira–Bucov; c1gifahb Bucov–Prahova |
+   | valea-robesti | zryn07zh (253-pt course) | hmidzduu (same contract) |
+
+   Also deduped internally-duplicated parts inside the owner geometries
+   (prahova 105→~50 parts, argesel, targului, budacul, teleajen) so a single
+   owner does not self-double-draw.
+
+3. **Someșul Cald dedup** (user decision #3 — prefer official ANPA+Romsilva):
+   removed probe duplicates **m19ue32m** and **nwa37i1j**; kept official
+   `romsilva-cluj-1-somesul-cald-superior` (geometry owner) and
+   `romsilva-cluj-2-somesul-cald-mijlociu`. Group now 3 members (lake polygon
+   + 2 river contracts). `d-s--cluj` ape count 31 → 29 (recomputed).
+
+4. **Botoșani**: no data change (bbox fallback kept, documented above).
+
+### Final counts after run 2 (public/data/waters.json)
+
+| metric | after merge (8dfce6f) | after run 2 (f98fa07) |
+|---|---|---|
+| total contracted waters | 1015 | **1013** (−2 somesul-cald probes) |
+| with OSM geometry | 691 | **675** (one owner per double-draw group) |
+| with bbox | 504 | 488 |
+| neither geometry nor bbox | 292 | 306 (hidden sector members + unmatchables) |
+
+Validator: **0 flags** (675 geometry waters, 42 county polygons). County clips
+rebuilt (`build_county_clip_geoms.py`), association counts recomputed
+(`recompute_assoc_counts.py`). `npm run build` passes.
+
+### Run-2 verification
+
+- **Click-resolution simulation** (`scripts/_merge_fixes_resolve.mjs`):
+  22/22 fraction→contract checks pass across all 9 groups (smallest-sector
+  rule + official-km fallback for somesu-rece).
+- **Live deploy**: `vercel --prod` → aliased **https://undepescuim.vercel.app**
+  (live waters.json: 1013 waters, 675 with geometry; dragan subtype=rau;
+  somesul-cald group 3 members).
+- **E2E per-county sample** (54 waters from the previously-unmapped set across
+  28 counties): 54/54 rendered + card-verified.
+- **E2E fixed-groups** (`scripts/_e2e_fixed_groups.mjs`): all 10 groups +
+  dragan owner courses render blue and open a card (argesel 13px, crisul-negru
+  8px full course, prahova 6px, teleajen 17px full course, etc.).
+- **Association click** (`scripts/_e2e_merge_snagov.mjs`): AVPS ACVILA →
+  Râul Snagov covered green, card names Snagov + ACVILA. PASSED.
 
 ## Artifacts
 
 - `data/processed/batch{1..6}_geometry_report.json` — per-water detail.
 - `scripts/fix_degenerate_lake_rings.py`, `scripts/fix_merge_double_draws.py`.
-- `scripts/_e2e_merge_sample.mjs`, `.e2e/r_merge_snagov.png`.
+- `scripts/merge_fixes_final.py` — run-2 fix script (idempotent, report to
+  `data/processed/merge_fixes_report.json`).
+- `scripts/_merge_fixes_resolve.mjs`, `scripts/_e2e_fixed_groups.mjs`,
+  `scripts/_e2e_merge_sample.mjs`, `.e2e/r_merge_snagov.png`.
+
