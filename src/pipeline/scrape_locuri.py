@@ -460,6 +460,27 @@ def main(argv=None):
         )
 
     # ---------------- write outputs ----------------
+    # Carry over prior id/ingested_at for already-ingested pages so re-runs
+    # rewrite byte-identical sources.jsonl rows (true file-level idempotency;
+    # the original ingest timestamp is the lineage-correct value anyway).
+    prior_rows = {}
+    sources_path = out_dir / "sources.jsonl"
+    if sources_path.exists():
+        for line in sources_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r0 = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            prior_rows.setdefault(r0.get("raw_file_path"), r0)
+    for rec in src_recs:
+        prior = prior_rows.get(rec["raw_file_path"])
+        if prior:
+            rec["id"] = prior["id"]
+            rec["ingested_at"] = prior["ingested_at"]
+
     with (out_dir / "locuri_associations.jsonl").open("w", encoding="utf-8") as f:
         for r in assoc_recs:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
