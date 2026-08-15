@@ -160,6 +160,10 @@ def main() -> None:
             "coordinates": None,
             "driving": None,
             "bbox": None,
+            # F1a note: ANPA canonical rows carry no permit URL (permit is
+            # national / per-association). Do NOT add permit fields here — but
+            # if a future merge feeds association records that carry permitUrl/
+            # permitIssuer, spread them through instead of hardcoding absence.
             "asociatie": {
                 "name": w.get("association", ""),
                 "slug": norm(w.get("association", "")).replace(" ", "-"),

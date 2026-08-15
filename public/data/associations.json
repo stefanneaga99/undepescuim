@@ -15,7 +15,8 @@
   "counties": [
    "Gorj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "a-lucioperca-club-pescar-modern",
@@ -27,7 +28,8 @@
   "counties": [
    "Suceava"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "a-penes-curcanul",
@@ -47,7 +49,8 @@
   "counties": [
    "Prahova"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-iasi",
@@ -61,7 +64,8 @@
   "counties": [
    "Iași"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "acvps-fagetel-mortonca-",
@@ -72,7 +76,8 @@
   "telefon": "0743931681",
   "id": "65fbfac4743aa3d2fbbe8503",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajps-brasov",
@@ -91,7 +96,8 @@
   "counties": [
    "Brașov"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajps-cluj",
@@ -111,7 +117,8 @@
   "counties": [
    "Cluj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-alba",
@@ -131,7 +138,8 @@
   "counties": [
    "Alba"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-arad",
@@ -151,7 +159,8 @@
   "counties": [
    "Arad"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-arges",
@@ -171,7 +180,8 @@
   "counties": [
    "Argeș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-bacau-",
@@ -190,7 +200,8 @@
   "counties": [
    "Bacău"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-bihor",
@@ -210,7 +221,8 @@
   "counties": [
    "Bihor"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-bistrita-nasaud",
@@ -229,7 +241,8 @@
   "counties": [
    "Bistrița-Năsăud"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-botosani",
@@ -250,7 +263,8 @@
    "Botoșani",
    "Suceava"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-braila",
@@ -270,7 +284,8 @@
   "counties": [
    "Brăila"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-buzau",
@@ -290,7 +305,8 @@
   "counties": [
    "Buzău"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-caras-severin",
@@ -310,7 +326,8 @@
   "counties": [
    "Caraș-Severin"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-calarasi",
@@ -324,7 +341,8 @@
   "counties": [
    "Călărași"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-campina",
@@ -342,7 +360,8 @@
   ],
   "id": "671e9a500732c482a8043edd",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-cluj",
@@ -361,7 +380,8 @@
   "counties": [
    "Cluj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-constanta",
@@ -375,7 +395,8 @@
   "counties": [
    "Constanța"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-covasna",
@@ -388,7 +409,8 @@
   "counties": [
    "Covasna"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-dambovita",
@@ -408,7 +430,8 @@
   "counties": [
    "Dâmbovița"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-dolj",
@@ -428,7 +451,8 @@
   "counties": [
    "Dolj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-galati",
@@ -442,7 +466,8 @@
   "counties": [
    "Galați"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-giurgiu",
@@ -455,7 +480,8 @@
   "counties": [
    "Giurgiu"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-gorj",
@@ -475,7 +501,8 @@
   "counties": [
    "Gorj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-hunedoara",
@@ -494,7 +521,8 @@
   "counties": [
    "Hunedoara"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-maramures",
@@ -508,7 +536,8 @@
   "counties": [
    "Maramureș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-mures",
@@ -528,7 +557,9 @@
   "counties": [
    "Mureș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie",
+  "permitUrl": "https://ajvpsmures.ro/plata-online.php"
  },
  {
   "slug": "ajvps-neamt",
@@ -548,7 +579,8 @@
   "counties": [
    "Neamț"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-olt",
@@ -568,7 +600,8 @@
   "counties": [
    "Olt"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-prahova",
@@ -588,7 +621,8 @@
   "counties": [
    "Prahova"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-satu-mare",
@@ -601,7 +635,8 @@
   "counties": [
    "Satu Mare"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-salaj",
@@ -621,7 +656,8 @@
   "counties": [
    "Sălaj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-sibiu",
@@ -641,7 +677,8 @@
   "counties": [
    "Sibiu"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-teleorman",
@@ -654,7 +691,8 @@
   "counties": [
    "Teleorman"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-timis",
@@ -674,7 +712,8 @@
   "counties": [
    "Timiș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-vaslui",
@@ -688,7 +727,8 @@
   "counties": [
    "Vaslui"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-valcea",
@@ -707,7 +747,8 @@
   "counties": [
    "Vâlcea"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "ajvps-vrancea",
@@ -721,7 +762,8 @@
   "counties": [
    "Vrancea"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "anpa",
@@ -749,7 +791,9 @@
    "Timiș",
    "Vâlcea"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "anadspa",
+  "permitUrl": "https://permise.anpa.ro:12443/portal-public/permis"
  },
  {
   "slug": "ap-banatul",
@@ -767,7 +811,8 @@
   "counties": [
    "Caraș-Severin"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "app-filiala-suceava",
@@ -778,7 +823,8 @@
   "siteUrl": "https://www.facebook.com/prietenipescari.suceava/?locale=ro_RO",
   "id": "65fc0a8c743aa3d2fbbe8a78",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "aps-aqua-crisius",
@@ -802,7 +848,9 @@
    "Sibiu",
    "Suceava"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie",
+  "permitUrl": "https://www.aquacrisius.ro/tarif-permis-de-pescuit/"
  },
  {
   "slug": "aps-bega-poieni",
@@ -816,7 +864,8 @@
   "counties": [
    "Caraș-Severin"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "aps-cheile-lapusului",
@@ -834,7 +883,8 @@
   "counties": [
    "Maramureș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "aps-deva",
@@ -852,7 +902,8 @@
   "counties": [
    "Hunedoara"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "aps-hunedoara",
@@ -862,7 +913,8 @@
   "adresa": "str. Victoriei, nr. 8, Hunedoara",
   "id": "65f9877fb28159e06fc476ba",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "aps-salmo-carpatica-lupeni-",
@@ -872,7 +924,8 @@
   "adresa": "Lupeni, str. Parângului, nr.4, bl.D6/15",
   "id": "65fbfe50743aa3d2fbbe85dc",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "a-p-s--sovata-2008",
@@ -882,7 +935,8 @@
   "adresa": "Str. Vanatorilor nr. 10G, Sovata, jud. Mures",
   "id": "65fbf9ff743aa3d2fbbe84de",
   "counties": [],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "av-vida-surducel-dobresti",
@@ -900,7 +954,8 @@
   "counties": [
    "Bihor"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-acvila",
@@ -920,7 +975,8 @@
   "counties": [
    "Ilfov"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-bradul-piatra-neamt",
@@ -933,7 +989,8 @@
   "counties": [
    "Neamț"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-campina",
@@ -952,7 +1009,8 @@
   "counties": [
    "Prahova"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-diana-turnu-arad",
@@ -964,7 +1022,8 @@
   "counties": [
    "Arad"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-fagaras",
@@ -983,7 +1042,8 @@
   "counties": [
    "Brașov"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-gheorghieni",
@@ -996,7 +1056,8 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-hubertus",
@@ -1009,7 +1070,8 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-ialomita",
@@ -1029,7 +1091,8 @@
   "counties": [
    "Ialomița"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-miercurea-ciuc",
@@ -1048,7 +1111,8 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-roman",
@@ -1062,7 +1126,8 @@
   "counties": [
    "Neamț"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-rupea",
@@ -1081,7 +1146,8 @@
   "counties": [
    "Brașov"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "avps-tarnava-mare",
@@ -1101,7 +1167,9 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie",
+  "permitUrl": "https://vizpart.ro/ro/permise-cu-plata-online/"
  },
  {
   "slug": "avps-toplita",
@@ -1115,7 +1183,8 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "centrul-regional-de-ecologie-bacau",
@@ -1135,7 +1204,8 @@
   "counties": [
    "Bacău"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie"
  },
  {
   "slug": "d-s--cluj",
@@ -1155,7 +1225,8 @@
   "counties": [
    "Cluj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-gorj",
@@ -1175,7 +1246,8 @@
   "counties": [
    "Gorj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-maramures",
@@ -1195,7 +1267,8 @@
   "counties": [
    "Maramureș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-alba",
@@ -1215,7 +1288,8 @@
   "counties": [
    "Alba"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-arges",
@@ -1229,7 +1303,8 @@
   "counties": [
    "Argeș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-bihor",
@@ -1249,7 +1324,9 @@
   "counties": [
    "Bihor"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva",
+  "permitUrl": "https://magazin-online.dsoradea.ro/categorie-produs/pescuit-recreativ/"
  },
  {
   "slug": "directia-silvica-caras-severin",
@@ -1269,7 +1346,8 @@
   "counties": [
    "Caraș-Severin"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-dambovita",
@@ -1289,7 +1367,8 @@
   "counties": [
    "Dâmbovița"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-harghita",
@@ -1309,7 +1388,8 @@
   "counties": [
    "Harghita"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-hunedoara",
@@ -1329,7 +1409,8 @@
   "counties": [
    "Hunedoara"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-mehedinti",
@@ -1349,7 +1430,8 @@
   "counties": [
    "Mehedinți"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-neamt",
@@ -1369,7 +1451,8 @@
   "counties": [
    "Neamț"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-sibiu",
@@ -1389,7 +1472,8 @@
   "counties": [
    "Sibiu"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-valcea",
@@ -1409,7 +1493,8 @@
   "counties": [
    "Vâlcea"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "fly-fishing-club-sibiu",
@@ -1429,7 +1514,9 @@
   "counties": [
    "Sibiu"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie",
+  "permitUrl": "https://flyfishingclubsibiu.ro/tarife/"
  },
  {
   "slug": "pro-pescar",
@@ -1449,7 +1536,9 @@
   "counties": [
    "Hunedoara"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "asociatie",
+  "permitUrl": "https://propescar.ro/membru-propescar/"
  },
  {
   "slug": "directia-silvica-covasna",
@@ -1464,7 +1553,8 @@
   "counties": [
    "Covasna"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-buzau",
@@ -1479,7 +1569,8 @@
   "counties": [
    "Buzău"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-arad",
@@ -1494,7 +1585,8 @@
   "counties": [
    "Arad"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-bacau",
@@ -1509,7 +1601,8 @@
   "counties": [
    "Bacău"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-bistrita-nasaud",
@@ -1524,7 +1617,8 @@
   "counties": [
    "Bistrița-Năsăud"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-brasov",
@@ -1539,7 +1633,8 @@
   "counties": [
    "Brașov"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-mures",
@@ -1554,7 +1649,8 @@
   "counties": [
    "Mureș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-prahova",
@@ -1569,7 +1665,8 @@
   "counties": [
    "Prahova"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-salaj",
@@ -1584,7 +1681,8 @@
   "counties": [
    "Sălaj"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-suceava",
@@ -1599,7 +1697,8 @@
   "counties": [
    "Suceava"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-timis",
@@ -1614,7 +1713,8 @@
   "counties": [
    "Timiș"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  },
  {
   "slug": "directia-silvica-vrancea",
@@ -1629,6 +1729,7 @@
   "counties": [
    "Vrancea"
   ],
-  "reciprocity": "neconfirmată"
+  "reciprocity": "neconfirmată",
+  "permitIssuer": "romsilva"
  }
 ]

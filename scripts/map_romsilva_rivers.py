@@ -216,6 +216,7 @@ def build_new_assocs(rows: list[dict]) -> dict[str, dict]:
             "adresa": None,
             "telefon": None,
             "siteUrl": f"https://{slugify(ct)}.rosilva.ro/",
+            "permitIssuer": "romsilva",
             "bbox": None,
             "id": f"anpa-romsilva-ds-{slugify(ct)}",
         }
@@ -280,6 +281,7 @@ def main() -> None:
                 "name": ds_name(ct),
                 "name_long": f"{ds_name(ct)} – Regia Națională a Pădurilor Romsilva",
                 "slug": ds_slug(ct),
+                "permitIssuer": "romsilva",
             },
             "source": "anpa_romsilva",
             "source_detail": "romsilva_map",
@@ -357,7 +359,7 @@ def main() -> None:
     fe_slugs = {a["slug"] for a in fe_assoc}
     for a in new_assocs.values():
         if a["slug"] not in fe_slugs:
-            fe_assoc.append({k: a.get(k) for k in ("slug", "name", "name_long", "ape", "adresa", "telefon", "siteUrl", "bbox", "id")})
+            fe_assoc.append({k: a.get(k) for k in ("slug", "name", "name_long", "ape", "adresa", "telefon", "siteUrl", "permitUrl", "permitIssuer", "bbox", "id")})
             fe_slugs.add(a["slug"])
 
     proc_assoc = [json.loads(l) for l in PROC_ASSOC.read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -370,7 +372,8 @@ def main() -> None:
             "source_row": None, "name": a["name"], "name_long": a["name_long"],
             "name_normalized": a["slug"].replace("-", " "), "type": "ds",
             "slug": a["slug"], "address": a["adresa"], "phone": a["telefon"],
-            "website": a["siteUrl"], "permit_url": None, "bbox": a["bbox"],
+            "website": a["siteUrl"], "permit_url": a.get("permit_url") or None,
+            "permit_issuer": "romsilva", "bbox": a["bbox"],
             "adrese": [], "water_count": 0, "flags": [],
         })
 
