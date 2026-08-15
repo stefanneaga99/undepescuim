@@ -27,12 +27,8 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
   const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
-  // F1a: permit info — association record first, water's embedded block as fallback.
-  const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
-  const permitIssuer: PermitIssuer | undefined =
-    association?.permitIssuer ?? water.asociatie?.permitIssuer;
-  const [reportOpen, setReportOpen] = useState(false);
-  const [reportReason, setReportReason] = useState<ReportReason | null>(null);
+
+  return (
     <div className="flex flex-col gap-3">
       {/* Header: name + badges */}
       <div className="flex flex-wrap items-center gap-1.5 pr-8">
