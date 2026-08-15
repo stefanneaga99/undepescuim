@@ -52,6 +52,11 @@ export function WaterDetailSheet() {
       telefon: water.asociatie.telefon,
       adresa: water.asociatie.adresa,
       siteUrl: water.asociatie.siteUrl,
+      // F1a: copy permit info so the card renders the permit rows even for
+      // waters whose association is not in the 94-record directory.
+      permitUrl: water.asociatie.permitUrl,
+      permitIssuer: water.asociatie.permitIssuer,
+      permitType: water.asociatie.permitType,
     };
   }, [water, associations]);
 
