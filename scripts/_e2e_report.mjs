@@ -48,14 +48,15 @@ const readCardText = async (timeoutMs = 12000) => {
   return last;
 };
 
-/** Click the midpoint of the first visible non-dashed (contracted blue) river. */
+/** Click the midpoint of the first visible water path (any color) — every card
+ * has the F3 report buttons, so the exact water doesn't matter. */
 const clickAnyWater = async () => {
   return page.evaluate(() => {
     const c = document.querySelector('.leaflet-container');
     const r = c ? c.getBoundingClientRect() : { left: 0, top: 0, right: 800, bottom: 600 };
+    const WATERS = new Set(['#3b82f6', '#22c55e', '#9ca3af', '#14b8a6', '#2dd4bf', '#f97316']);
     const paths = [...document.querySelectorAll('.leaflet-overlay-pane path')].filter((p) => {
-      const stroke = (p.getAttribute('stroke') || '').toLowerCase();
-      if (stroke !== '#3b82f6') return false; // contracted blue (neutral view)
+      if (!WATERS.has((p.getAttribute('stroke') || '').toLowerCase())) return false;
       const b = p.getBoundingClientRect();
       return b.right > r.left && b.bottom > r.top && b.left < r.right && b.top < r.bottom && b.width * b.height > 4;
     });
@@ -69,7 +70,8 @@ const clickAnyWater = async () => {
       const sp = new DOMPoint(pt.x, pt.y).matrixTransform(m);
       if (sp.x < r.left || sp.x > r.right || sp.y < r.top || sp.y > r.bottom) continue;
       const top = document.elementFromPoint(sp.x, sp.y);
-      if (top === p || (top && top.getAttribute('stroke') === '#3b82f6')) return { x: sp.x, y: sp.y };
+      const stroke = p.getAttribute('stroke') || '';
+      if (top === p || (top && top.getAttribute('stroke') === stroke)) return { x: sp.x, y: sp.y };
     }
     return null;
   });
@@ -137,8 +139,10 @@ async function runPass(width, height, label) {
   check(after.includes('GitHub'), 'confirmation links to the GitHub issue');
   await p.screenshot({ path: `.e2e/report_${width}_success.png` });
 
-  // Close + quick positive-signal tap: dialog reopens with data_correct pre-selected.
-  await p.keyboard.press('Escape').catch(() => {});
+  // Close the dialog via its X button (present in both form and success
+  // phases; Escape would bubble to the card sheet's close handler and unmount
+  // the card entirely).
+  await dialog.locator('[data-slot="dialog-close"]').click().catch(() => {});
   await p.waitForTimeout(600);
   const posBtn = p.locator('button', { hasText: 'Datele sunt corecte' }).first();
   try {
