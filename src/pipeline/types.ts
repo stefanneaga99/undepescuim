@@ -9,6 +9,7 @@
 export type WaterType = "river" | "lake" | "canal" | "stream" | "pond" | "accumulation";
 export type SectorUnit = "km" | "ha";
 export type AssociationType = "ajvps" | "avps" | "aps" | "ds" | "anpa" | "other";
+export type PermitIssuer = "anadspa" | "romsilva" | "asociatie";
 export type CanonicalSource = "anpa" | "arebaltapeste" | "locuri";
 export type SourceName = "anpa" | "arebaltapeste" | "locuri";
 
@@ -33,6 +34,7 @@ export interface Association {
   email?: string;
   website?: string;
   permit_url?: string;
+  permit_issuer?: PermitIssuer;
   slug: string;
   bbox?: [number, number, number, number];
   source_ids: string[];

@@ -22,6 +22,12 @@ export type ContractFilter = 'all' | 'contractate' | 'necontractate';
 /** County name as stored in water.judet (e.g. "Cluj", "Bihor") */
 export type County = string;
 
+/** Who issues the permit for a water. Derived from association type at transform time (F1a). */
+export type PermitIssuer = 'anadspa' | 'romsilva' | 'asociatie';
+
+/** Permit duration type. NOT populated from upstream yet (F1a-part2 enrichment). */
+export type PermitType = 'anual' | 'zi' | 'luna' | 'sezon' | 'altele';
+
 /** A fishing association that manages waters */
 export interface Association {
   slug: string;
@@ -37,6 +43,12 @@ export interface Association {
   adresa?: string;
   telefon?: string;
   siteUrl?: string;
+  /** URL to buy the association's permit online (arebaltapeste `link_permis`). */
+  permitUrl?: string;
+  /** Issuing body derived from association type at transform time. */
+  permitIssuer?: PermitIssuer;
+  /** Permit duration type — reserved; empty until enrichment lands (F1a-part2). */
+  permitType?: PermitType;
   bbox: BBox;
   id: string;
 }
@@ -62,6 +74,9 @@ export interface Water {
     telefon?: string;
     adresa?: string;
     siteUrl?: string;
+    permitUrl?: string;
+    permitIssuer?: PermitIssuer;
+    permitType?: PermitType;
   } | null;
   // Real polygon/polyline geometry from the geocoding pipeline (t_04163c8f).
   // When present, the map renders the true shape of the water; otherwise
@@ -140,3 +155,21 @@ export interface WaterFeatureProperties {
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;
 
 export type WaterFeatureCollection = GeoJSON.FeatureCollection<GeoJSON.Geometry, WaterFeatureProperties>;
+
+/** Report form submission reason (F3 — crowdsourced data maintenance). */
+export type ReportReason =
+  | 'data_correct'          // "Datele sunt corecte (am pescuit aici)"
+  | 'water_invalid'         // "Această apă nu mai există / nu se poate pescui"
+  | 'association_changed'   // "Asociația s-a schimbat"
+  | 'wrong_coordinates'     // "Coordonatele sunt greșite"
+  | 'other';                // "Altă problemă"
+
+/** Report form submission payload (client → POST /api/report). */
+export interface VerificationReport {
+  waterSlug: string;
+  waterName: string;
+  reason: ReportReason;
+  details?: string;         // optional free-text
+  contactEmail?: string;    // optional, for follow-up
+  submittedAt: string;      // ISO 8601 (set server-side)
+}
