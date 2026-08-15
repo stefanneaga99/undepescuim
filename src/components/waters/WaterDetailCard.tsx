@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText } from 'lucide-react';
+import { ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Ticket } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import type { Association, Water } from '@/types/data';
+import { NATIONAL_PERMIT_LABEL, NATIONAL_PERMIT_URL } from '@/lib/permit';
+import type { Association, PermitIssuer, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
   water: Water;
@@ -27,6 +28,10 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
   const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
+  // F1a: permit info — association record first, water's embedded block as fallback.
+  const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
+  const permitIssuer: PermitIssuer | undefined =
+    association?.permitIssuer ?? water.asociatie?.permitIssuer;
 
   return (
     <div className="flex flex-col gap-3">
@@ -131,6 +136,40 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
                   {siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                 </a>
               )}
+              {/* F1a: permit block — national permit (required on EVERY
+                  contracted water) + the association's own permit store when
+                  known. The issuer label tells the two regimes apart. */}
+              <div className="mt-1 flex flex-col gap-1.5 border-t pt-2 text-sm">
+                <a
+                  href={NATIONAL_PERMIT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-primary hover:underline"
+                >
+                  <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
+                  {NATIONAL_PERMIT_LABEL}
+                </a>
+                {permitUrl ? (
+                  <a
+                    href={permitUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-primary hover:underline"
+                  >
+                    <Ticket className="h-3.5 w-3.5 shrink-0" />
+                    {permitIssuer === 'anadspa'
+                      ? 'Permis ANADSPA'
+                      : permitIssuer === 'romsilva'
+                        ? 'Permis Romsilva'
+                        : 'Cumpără permis online'}
+                  </a>
+                ) : (
+                  <p className="flex items-start gap-2 text-xs text-muted-foreground">
+                    <Ticket className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                    Permis: verifică cu asociația
+                  </p>
+                )}
+              </div>
             </div>
           ) : (
             <p className="text-sm text-muted-foreground">Fără asociație</p>
