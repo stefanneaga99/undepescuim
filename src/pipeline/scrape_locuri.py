@@ -446,7 +446,9 @@ def main(argv=None):
             )
         src_recs.append(
             {
-                "id": str(uuid.uuid4()),
+                # stable UUID5 per page URL -> re-runs rewrite identical rows,
+                # keeping sources.jsonl byte-identical (true idempotency)
+                "id": str(uuid.uuid5(uuid.NAMESPACE_URL, u)),
                 "source_name": "locuri",
                 "raw_file_path": f"{PAGES_DIR}/{cp.name}",
                 "raw_file_url": u,
