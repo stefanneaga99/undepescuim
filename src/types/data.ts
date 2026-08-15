@@ -28,6 +28,12 @@ export interface Association {
   name: string;
   name_long: string;
   ape: number; // water count (computed from waters dataset at extract time)
+  /** County names whose contracted waters this association manages (sorted, display-ready). */
+  counties?: string[];
+  /** Reciprocity status. 'neconfirmată' unless a public source confirms otherwise (F2a). */
+  reciprocity?: 'confirmată' | 'neconfirmată';
+  /** Optional contract reference (most recent ANPA contract_number). */
+  contract_ref?: string;
   adresa?: string;
   telefon?: string;
   siteUrl?: string;

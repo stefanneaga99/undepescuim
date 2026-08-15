@@ -128,6 +128,14 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
           ) : (
             <p className="text-sm text-muted-foreground">Fără asociație</p>
           )}
+          {/* F2a: explicit permit-validity framing for THIS sector — the map
+              already resolved the contract, so the association's permit covers
+              this water (docs/f2a-permit-validity.md §4 step 7). */}
+          {association && (
+            <p className="mt-1 border-t pt-2 text-xs text-muted-foreground">
+              Permisul {association.name} este valabil pe acest sector.
+            </p>
+          )}
         </div>
       )}
 
