@@ -25,6 +25,15 @@ export function Header() {
         <AssociationSearch />
       </div>
 
+      <nav className="shrink-0">
+        <Link
+          href="/permis"
+          className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
+        >
+          Permis 2026
+        </Link>
+      </nav>
+
       <span
         className="shrink-0 rounded-md border px-2 py-0.5 text-xs font-semibold text-muted-foreground"
         title="Limba site-ului — EN în curând"

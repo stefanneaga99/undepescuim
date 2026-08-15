@@ -1,6 +1,7 @@
 'use client';
 
-import { ExternalLink, Flag, MapPin, Phone, Ruler } from 'lucide-react';
+import Link from 'next/link';
+import { ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { Association, Water } from '@/types/data';
@@ -26,8 +27,12 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
   const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
-
-  return (
+  // F1a: permit info — association record first, water's embedded block as fallback.
+  const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
+  const permitIssuer: PermitIssuer | undefined =
+    association?.permitIssuer ?? water.asociatie?.permitIssuer;
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reportReason, setReportReason] = useState<ReportReason | null>(null);
     <div className="flex flex-col gap-3">
       {/* Header: name + badges */}
       <div className="flex flex-wrap items-center gap-1.5 pr-8">
@@ -64,6 +69,12 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
             Pescuitul aici <strong>nu este acoperit</strong> de niciun permis afișat pe acest site.
             Verifică legislația locală înainte de a pescui.
           </p>
+          <Link
+            href="/permis"
+            className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-teal-800 underline-offset-2 hover:underline dark:text-teal-200"
+          >
+            Vezi ghidul „Permis &amp; Reguli 2026&rdquo; →
+          </Link>
         </div>
       )}
 
@@ -158,6 +169,13 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         <Flag className="h-3.5 w-3.5" />
         Raportează o problemă
       </button>
+      <Link
+        href="/permis"
+        className="mt-1 inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
+      >
+        <ScrollText className="h-3.5 w-3.5" />
+        Permis &amp; Reguli 2026
+      </Link>
     </div>
   );
 }
