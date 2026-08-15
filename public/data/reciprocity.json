@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "confirmed": [],
+  "note": "Asociații cu reciprocitate confirmată prin sursă publică. Fiecare intrare: { slug, partners: [slug...], source_url, source_date }. Empty = nimic confirmat încă. Documentație: docs/f2a-permit-validity.md §2."
+}

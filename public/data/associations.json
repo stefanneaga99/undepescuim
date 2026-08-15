@@ -11,7 +11,11 @@
    23.148951,
    45.280336
   ],
-  "id": "65fbf0dc743aa3d2fbbe842b"
+  "id": "65fbf0dc743aa3d2fbbe842b",
+  "counties": [
+   "Gorj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "a-lucioperca-club-pescar-modern",
@@ -19,7 +23,11 @@
   "name_long": "ASOCIAȚIA LUCIOPERCA CLUB PESCAR MODERN",
   "ape": 1,
   "adresa": "Bistrița, str. V. Lucaciu, nr. 5",
-  "id": "65fc0b19743aa3d2fbbe8a95"
+  "id": "65fc0b19743aa3d2fbbe8a95",
+  "counties": [
+   "Suceava"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "a-penes-curcanul",
@@ -35,7 +43,11 @@
    25.7538163,
    45.2751445
   ],
-  "id": "64e710708e7d310009b09db8"
+  "id": "64e710708e7d310009b09db8",
+  "counties": [
+   "Prahova"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-iasi",
@@ -45,7 +57,11 @@
   "adresa": "Iasi, str. Zimbrului, nr. 11-13-15, demisol, ap. 4, ",
   "telefon": "0232267585",
   "siteUrl": "https://avpsiasi.ro/",
-  "id": "65fbff39743aa3d2fbbe860f"
+  "id": "65fbff39743aa3d2fbbe860f",
+  "counties": [
+   "Iași"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "acvps-fagetel-mortonca-",
@@ -54,7 +70,9 @@
   "ape": 0,
   "adresa": "str. Profesor Andrei Cotfaș, nr. 9, Subcetate",
   "telefon": "0743931681",
-  "id": "65fbfac4743aa3d2fbbe8503"
+  "id": "65fbfac4743aa3d2fbbe8503",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajps-brasov",
@@ -69,7 +87,11 @@
    25.7832825,
    46.0525472
   ],
-  "id": "65f99879b28159e06fc4785b"
+  "id": "65f99879b28159e06fc4785b",
+  "counties": [
+   "Brașov"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajps-cluj",
@@ -85,7 +107,11 @@
    24.1435933,
    47.0504272
   ],
-  "id": "6440f463476607000974d493"
+  "id": "6440f463476607000974d493",
+  "counties": [
+   "Cluj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-alba",
@@ -101,7 +127,11 @@
    24.1685206,
    46.8727473
   ],
-  "id": "65f98619b28159e06fc47666"
+  "id": "65f98619b28159e06fc47666",
+  "counties": [
+   "Alba"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-arad",
@@ -117,7 +147,11 @@
    22.5632019,
    46.693885
   ],
-  "id": "64e3201a8e7d310009b09d95"
+  "id": "64e3201a8e7d310009b09d95",
+  "counties": [
+   "Arad"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-arges",
@@ -133,7 +167,11 @@
    25.2205825,
    45.4304101
   ],
-  "id": "64e3217f8e7d310009b09d96"
+  "id": "64e3217f8e7d310009b09d96",
+  "counties": [
+   "Argeș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-bacau-",
@@ -148,7 +186,11 @@
    27.1965759,
    46.7008566
   ],
-  "id": "64e33f2f8e7d310009b09d97"
+  "id": "64e33f2f8e7d310009b09d97",
+  "counties": [
+   "Bacău"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-bihor",
@@ -164,7 +206,11 @@
    22.6876923,
    47.4463171
   ],
-  "id": "65f99507b28159e06fc477c9"
+  "id": "65f99507b28159e06fc477c9",
+  "counties": [
+   "Bihor"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-bistrita-nasaud",
@@ -179,7 +225,11 @@
    25.0180149,
    47.5787875
   ],
-  "id": "64e340bc8e7d310009b09d99"
+  "id": "64e340bc8e7d310009b09d99",
+  "counties": [
+   "Bistrița-Năsăud"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-botosani",
@@ -195,7 +245,12 @@
    27.39126901105,
    48.26548891829
   ],
-  "id": "64e342a18e7d310009b09d9a"
+  "id": "64e342a18e7d310009b09d9a",
+  "counties": [
+   "Botoșani",
+   "Suceava"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-braila",
@@ -211,7 +266,11 @@
    27.9097214,
    45.4822205
   ],
-  "id": "65f9996eb28159e06fc4789e"
+  "id": "65f9996eb28159e06fc4789e",
+  "counties": [
+   "Brăila"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-buzau",
@@ -227,7 +286,11 @@
    26.254928,
    45.5301105
   ],
-  "id": "64e34e1e8e7d310009b09d9c"
+  "id": "64e34e1e8e7d310009b09d9c",
+  "counties": [
+   "Buzău"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-caras-severin",
@@ -243,7 +306,11 @@
    21.91811335422,
    45.01577634405
   ],
-  "id": "64e35ae48e7d310009b09d9e"
+  "id": "64e35ae48e7d310009b09d9e",
+  "counties": [
+   "Caraș-Severin"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-calarasi",
@@ -253,7 +320,11 @@
   "adresa": "Strada Portului nr. 7, Călărași",
   "telefon": "0242315131",
   "siteUrl": "https://ajvps-calarasi.ro/",
-  "id": "65f99c68b28159e06fc47965"
+  "id": "65f99c68b28159e06fc47965",
+  "counties": [
+   "Călărași"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-campina",
@@ -269,7 +340,9 @@
    26.4284529,
    45.50210598801
   ],
-  "id": "671e9a500732c482a8043edd"
+  "id": "671e9a500732c482a8043edd",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-cluj",
@@ -284,7 +357,11 @@
    23.9879835,
    47.24190302774
   ],
-  "id": "64e8567a60bcdf000a025118"
+  "id": "64e8567a60bcdf000a025118",
+  "counties": [
+   "Cluj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-constanta",
@@ -294,7 +371,11 @@
   "adresa": "Constanța, str. Baba Novac nr. 1, bl L 118, parter",
   "telefon": "0241635651",
   "siteUrl": "https://www.ajvpsconstanta.ro/",
-  "id": "65f9a012b28159e06fc4799f"
+  "id": "65f9a012b28159e06fc4799f",
+  "counties": [
+   "Constanța"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-covasna",
@@ -303,7 +384,11 @@
   "ape": 16,
   "adresa": "Strada Kós Károly 5/A, Sfântu Gheorghe 520055",
   "telefon": "0267352683",
-  "id": "65f9a0f5b28159e06fc479d0"
+  "id": "65f9a0f5b28159e06fc479d0",
+  "counties": [
+   "Covasna"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-dambovita",
@@ -319,7 +404,11 @@
    25.9255354,
    45.1488196
   ],
-  "id": "64e35ba98e7d310009b09d9f"
+  "id": "64e35ba98e7d310009b09d9f",
+  "counties": [
+   "Dâmbovița"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-dolj",
@@ -335,7 +424,11 @@
    23.3289903,
    44.0552477
   ],
-  "id": "64e493868e7d310009b09da0"
+  "id": "64e493868e7d310009b09da0",
+  "counties": [
+   "Dolj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-galati",
@@ -345,7 +438,11 @@
   "adresa": "Strada Brăilei 86, Galați ",
   "telefon": "0236412110",
   "siteUrl": "https://www.facebook.com/profile.php?id=100011502287012&locale=ro_RO",
-  "id": "65fbecd5743aa3d2fbbe83b1"
+  "id": "65fbecd5743aa3d2fbbe83b1",
+  "counties": [
+   "Galați"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-giurgiu",
@@ -354,7 +451,11 @@
   "ape": 5,
   "adresa": "Str. Vlad Tepes, bl. MUV 5, parter, Giurgiu",
   "telefon": "",
-  "id": "65fbedb3743aa3d2fbbe83c1"
+  "id": "65fbedb3743aa3d2fbbe83c1",
+  "counties": [
+   "Giurgiu"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-gorj",
@@ -370,7 +471,11 @@
    24.275782,
    45.328425
   ],
-  "id": "65fbf17e743aa3d2fbbe844d"
+  "id": "65fbf17e743aa3d2fbbe844d",
+  "counties": [
+   "Gorj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-hunedoara",
@@ -385,7 +490,11 @@
    22.8293145,
    45.8780767
   ],
-  "id": "64e496528e7d310009b09da3"
+  "id": "64e496528e7d310009b09da3",
+  "counties": [
+   "Hunedoara"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-maramures",
@@ -395,7 +504,11 @@
   "adresa": "Baia Mare, Bulevardul Unirii 12",
   "telefon": "0262206303",
   "siteUrl": "https://www.facebook.com/ajvps.maramures/",
-  "id": "65fc053e743aa3d2fbbe88e2"
+  "id": "65fc053e743aa3d2fbbe88e2",
+  "counties": [
+   "Maramureș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-mures",
@@ -411,7 +524,11 @@
    24.913306,
    46.4255239
   ],
-  "id": "64e5c6d38e7d310009b09da7"
+  "id": "64e5c6d38e7d310009b09da7",
+  "counties": [
+   "Mureș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-neamt",
@@ -427,7 +544,11 @@
    26.3742932838,
    47.1153974
   ],
-  "id": "64e5d7378e7d310009b09da8"
+  "id": "64e5d7378e7d310009b09da8",
+  "counties": [
+   "Neamț"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-olt",
@@ -443,7 +564,11 @@
    24.7341114,
    44.6823801
   ],
-  "id": "64e5df438e7d310009b09db0"
+  "id": "64e5df438e7d310009b09db0",
+  "counties": [
+   "Olt"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-prahova",
@@ -459,7 +584,11 @@
    26.4284529,
    45.50210598801
   ],
-  "id": "64e70f708e7d310009b09db7"
+  "id": "64e70f708e7d310009b09db7",
+  "counties": [
+   "Prahova"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-satu-mare",
@@ -468,7 +597,11 @@
   "ape": 11,
   "adresa": "Satu Mare, str. Petofi Șandor, nr. 38",
   "siteUrl": "https://ajvpssm.ro/",
-  "id": "65fc09e8743aa3d2fbbe8a59"
+  "id": "65fc09e8743aa3d2fbbe8a59",
+  "counties": [
+   "Satu Mare"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-salaj",
@@ -484,7 +617,11 @@
    23.12892833275,
    47.36722826186
   ],
-  "id": "64ec47f060bcdf000a025227"
+  "id": "64ec47f060bcdf000a025227",
+  "counties": [
+   "Sălaj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-sibiu",
@@ -500,7 +637,11 @@
    24.6747373,
    45.8028843
   ],
-  "id": "64ec502160bcdf000a025228"
+  "id": "64ec502160bcdf000a025228",
+  "counties": [
+   "Sibiu"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-teleorman",
@@ -509,7 +650,11 @@
   "ape": 6,
   "adresa": "Strada Libertății 181-183, Alexandria",
   "telefon": "0247317475",
-  "id": "65fc0b9d743aa3d2fbbe8ab1"
+  "id": "65fc0b9d743aa3d2fbbe8ab1",
+  "counties": [
+   "Teleorman"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-timis",
@@ -525,7 +670,11 @@
    25.5124289,
    45.78978012194
   ],
-  "id": "64ec5b7f60bcdf000a02522a"
+  "id": "64ec5b7f60bcdf000a02522a",
+  "counties": [
+   "Timiș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-vaslui",
@@ -535,7 +684,11 @@
   "adresa": "Vaslui, str. Mihail Kogălniceanu, nr.26",
   "telefon": "0235311502",
   "siteUrl": "https://www.facebook.com/groups/324373971603987/",
-  "id": "65fc0f66743aa3d2fbbe8c97"
+  "id": "65fc0f66743aa3d2fbbe8c97",
+  "counties": [
+   "Vaslui"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-valcea",
@@ -550,7 +703,11 @@
    24.51637740612,
    45.5643651
   ],
-  "id": "65fc0fd6743aa3d2fbbe8cb6"
+  "id": "65fc0fd6743aa3d2fbbe8cb6",
+  "counties": [
+   "Vâlcea"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ajvps-vrancea",
@@ -560,7 +717,11 @@
   "adresa": "Focșani, str. Peneș Curcanul, nr. 2 bis  ",
   "telefon": "0237221058",
   "siteUrl": "https://ajvpsvrancea.ro/ro/descriere/",
-  "id": "65fc1134743aa3d2fbbe8d0e"
+  "id": "65fc1134743aa3d2fbbe8d0e",
+  "counties": [
+   "Vrancea"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "anpa",
@@ -575,7 +736,20 @@
    26.76096755122,
    48.02649263057
   ],
-  "id": "64eddaee60bcdf000a02522b"
+  "id": "64eddaee60bcdf000a02522b",
+  "counties": [
+   "Arad",
+   "Argeș",
+   "Botoșani",
+   "Caraș-Severin",
+   "Gorj",
+   "Harghita",
+   "Olt",
+   "Suceava",
+   "Timiș",
+   "Vâlcea"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "ap-banatul",
@@ -589,7 +763,11 @@
    22.1290711,
    45.4510038
   ],
-  "id": "64e34f008e7d310009b09d9d"
+  "id": "64e34f008e7d310009b09d9d",
+  "counties": [
+   "Caraș-Severin"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "app-filiala-suceava",
@@ -598,7 +776,9 @@
   "ape": 0,
   "adresa": "str. Depoului, nr. 16, Suceava",
   "siteUrl": "https://www.facebook.com/prietenipescari.suceava/?locale=ro_RO",
-  "id": "65fc0a8c743aa3d2fbbe8a78"
+  "id": "65fc0a8c743aa3d2fbbe8a78",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-aqua-crisius",
@@ -614,7 +794,15 @@
    25.3038642,
    47.7161167
   ],
-  "id": "6490432a679ad900092e5f4d"
+  "id": "6490432a679ad900092e5f4d",
+  "counties": [
+   "Alba",
+   "Argeș",
+   "Brașov",
+   "Sibiu",
+   "Suceava"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-bega-poieni",
@@ -624,7 +812,11 @@
   "adresa": "Muncitorilor 8,Timișoara,Timiș",
   "telefon": "0728667788",
   "siteUrl": "http://www.begapoieni.ro/",
-  "id": "65f99ad4b28159e06fc47940"
+  "id": "65f99ad4b28159e06fc47940",
+  "counties": [
+   "Caraș-Severin"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-cheile-lapusului",
@@ -638,7 +830,11 @@
    23.8773732,
    47.4411781
   ],
-  "id": "64e5c6308e7d310009b09da6"
+  "id": "64e5c6308e7d310009b09da6",
+  "counties": [
+   "Maramureș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-deva",
@@ -652,7 +848,11 @@
    22.9536606,
    45.9962644
   ],
-  "id": "64e496ee8e7d310009b09da4"
+  "id": "64e496ee8e7d310009b09da4",
+  "counties": [
+   "Hunedoara"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-hunedoara",
@@ -660,7 +860,9 @@
   "name_long": "Asociatia Pescuit Sportiv Hunedoara",
   "ape": 0,
   "adresa": "str. Victoriei, nr. 8, Hunedoara",
-  "id": "65f9877fb28159e06fc476ba"
+  "id": "65f9877fb28159e06fc476ba",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "aps-salmo-carpatica-lupeni-",
@@ -668,7 +870,9 @@
   "name_long": "Așociația de Pescuit Salmo Carpatica Lupeni",
   "ape": 0,
   "adresa": "Lupeni, str. Parângului, nr.4, bl.D6/15",
-  "id": "65fbfe50743aa3d2fbbe85dc"
+  "id": "65fbfe50743aa3d2fbbe85dc",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "a-p-s--sovata-2008",
@@ -676,7 +880,9 @@
   "name_long": "Asociația Pescarilor Sportivi Sovata 2008",
   "ape": 0,
   "adresa": "Str. Vanatorilor nr. 10G, Sovata, jud. Mures",
-  "id": "65fbf9ff743aa3d2fbbe84de"
+  "id": "65fbf9ff743aa3d2fbbe84de",
+  "counties": [],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "av-vida-surducel-dobresti",
@@ -690,7 +896,11 @@
    26.42197503826,
    46.863925
   ],
-  "id": "64e33fe68e7d310009b09d98"
+  "id": "64e33fe68e7d310009b09d98",
+  "counties": [
+   "Bihor"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-acvila",
@@ -706,7 +916,11 @@
    26.2815856,
    44.60458507425
   ],
-  "id": "65fc045c743aa3d2fbbe88c7"
+  "id": "65fc045c743aa3d2fbbe88c7",
+  "counties": [
+   "Ilfov"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-bradul-piatra-neamt",
@@ -715,7 +929,11 @@
   "ape": 1,
   "adresa": "Piatra Neamț, Str. Lt. Drăghescu, nr. 7,bl. E5, sc. B. ap. 23",
   "telefon": "",
-  "id": "65fc0704743aa3d2fbbe8950"
+  "id": "65fc0704743aa3d2fbbe8950",
+  "counties": [
+   "Neamț"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-campina",
@@ -730,7 +948,11 @@
    25.80984588146,
    45.4868519
   ],
-  "id": "65fc091c743aa3d2fbbe8a08"
+  "id": "65fc091c743aa3d2fbbe8a08",
+  "counties": [
+   "Prahova"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-diana-turnu-arad",
@@ -738,7 +960,11 @@
   "name_long": "Asociatia Vanatorilor si Pescarilor Sportivi Diana Turnu Arad",
   "ape": 3,
   "adresa": "Arad, str. Calea Aurel Vlaicu, nr. 150, bl. Z 27 B, parter",
-  "id": "65f98973b28159e06fc4770f"
+  "id": "65f98973b28159e06fc4770f",
+  "counties": [
+   "Arad"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-fagaras",
@@ -753,7 +979,11 @@
    24.9355951,
    45.8517057
   ],
-  "id": "64e345968e7d310009b09d9b"
+  "id": "64e345968e7d310009b09d9b",
+  "counties": [
+   "Brașov"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-gheorghieni",
@@ -762,7 +992,11 @@
   "ape": 5,
   "adresa": "str. cart. Revoluției, bl. I/40, sc. A, ap. 4, Gheorgheni",
   "telefon": " 0742816546",
-  "id": "65fbf687743aa3d2fbbe84bc"
+  "id": "65fbf687743aa3d2fbbe84bc",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-hubertus",
@@ -771,7 +1005,11 @@
   "ape": 2,
   "adresa": "Strada Kossuth Lajos 12, Cristuru Secuiesc",
   "telefon": "0266243976",
-  "id": "65fbf40c743aa3d2fbbe846c"
+  "id": "65fbf40c743aa3d2fbbe846c",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-ialomita",
@@ -787,7 +1025,11 @@
    27.92896604378,
    44.52059791843
   ],
-  "id": "64e499f88e7d310009b09da5"
+  "id": "64e499f88e7d310009b09da5",
+  "counties": [
+   "Ialomița"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-miercurea-ciuc",
@@ -802,7 +1044,11 @@
    25.8946118,
    46.450736
   ],
-  "id": "64e495188e7d310009b09da2"
+  "id": "64e495188e7d310009b09da2",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-roman",
@@ -812,7 +1058,11 @@
   "adresa": "Str. Eternităţii , Nr. 21 , Roman",
   "telefon": "0233742577",
   "siteUrl": "https://avpsroman.wordpress.com/contact/",
-  "id": "65fc0764743aa3d2fbbe898d"
+  "id": "65fc0764743aa3d2fbbe898d",
+  "counties": [
+   "Neamț"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-rupea",
@@ -827,7 +1077,11 @@
    25.5471524,
    46.0518861
   ],
-  "id": "65f996c2b28159e06fc477ee"
+  "id": "65f996c2b28159e06fc477ee",
+  "counties": [
+   "Brașov"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-tarnava-mare",
@@ -843,7 +1097,11 @@
    25.42374522402,
    46.4880258
   ],
-  "id": "64e494618e7d310009b09da1"
+  "id": "64e494618e7d310009b09da1",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "avps-toplita",
@@ -853,7 +1111,11 @@
   "adresa": "Str. Sportivilor, Nr.2, Toplita",
   "telefon": "0266341928",
   "siteUrl": "https://www.facebook.com/profile.php?id=100067590011727",
-  "id": "65fbf528743aa3d2fbbe849b"
+  "id": "65fbf528743aa3d2fbbe849b",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "centrul-regional-de-ecologie-bacau",
@@ -869,7 +1131,11 @@
    26.98162510689,
    46.5945173
   ],
-  "id": "65f993f5b28159e06fc477b0"
+  "id": "65f993f5b28159e06fc477b0",
+  "counties": [
+   "Bacău"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "d-s--cluj",
@@ -885,7 +1151,11 @@
    23.5301749,
    46.9602736
   ],
-  "id": "6440f473476607000974d494"
+  "id": "6440f473476607000974d494",
+  "counties": [
+   "Cluj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-gorj",
@@ -901,7 +1171,11 @@
    22.9930972,
    45.1785581
   ],
-  "id": "64f827b13f7fd40009b76f6a"
+  "id": "64f827b13f7fd40009b76f6a",
+  "counties": [
+   "Gorj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-maramures",
@@ -917,7 +1191,11 @@
    25.2618728,
    47.9102728
   ],
-  "id": "64f829383f7fd40009b76f6c"
+  "id": "64f829383f7fd40009b76f6c",
+  "counties": [
+   "Maramureș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-alba",
@@ -933,7 +1211,11 @@
    23.62474491177,
    46.1825091
   ],
-  "id": "64f81eb63f7fd40009b76f63"
+  "id": "64f81eb63f7fd40009b76f63",
+  "counties": [
+   "Alba"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-arges",
@@ -943,7 +1225,11 @@
   "adresa": "str. Trivale nr. 82, Pitești",
   "telefon": "0248213434",
   "siteUrl": "http://pitesti.rosilva.ro/",
-  "id": "64f81f313f7fd40009b76f64"
+  "id": "64f81f313f7fd40009b76f64",
+  "counties": [
+   "Argeș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-bihor",
@@ -959,7 +1245,11 @@
    22.7287674,
    46.7977998
   ],
-  "id": "64f81fd83f7fd40009b76f66"
+  "id": "64f81fd83f7fd40009b76f66",
+  "counties": [
+   "Bihor"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-caras-severin",
@@ -975,7 +1265,11 @@
    22.5354336,
    45.4288329
   ],
-  "id": "64f8230e3f7fd40009b76f67"
+  "id": "64f8230e3f7fd40009b76f67",
+  "counties": [
+   "Caraș-Severin"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-dambovita",
@@ -991,7 +1285,11 @@
    25.434739,
    45.3619105
   ],
-  "id": "64f8275d3f7fd40009b76f69"
+  "id": "64f8275d3f7fd40009b76f69",
+  "counties": [
+   "Dâmbovița"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-harghita",
@@ -1007,7 +1305,11 @@
    25.7882456,
    47.0937511
   ],
-  "id": "64f8238a3f7fd40009b76f68"
+  "id": "64f8238a3f7fd40009b76f68",
+  "counties": [
+   "Harghita"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-hunedoara",
@@ -1023,7 +1325,11 @@
    23.5735101,
    45.3865632
   ],
-  "id": "64f828133f7fd40009b76f6b"
+  "id": "64f828133f7fd40009b76f6b",
+  "counties": [
+   "Hunedoara"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-mehedinti",
@@ -1039,7 +1345,11 @@
    22.7802158,
    45.1929595
   ],
-  "id": "64f829923f7fd40009b76f6d"
+  "id": "64f829923f7fd40009b76f6d",
+  "counties": [
+   "Mehedinți"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-neamt",
@@ -1055,7 +1365,11 @@
    26.2201541,
    47.0389465
   ],
-  "id": "64f829ee3f7fd40009b76f6e"
+  "id": "64f829ee3f7fd40009b76f6e",
+  "counties": [
+   "Neamț"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-sibiu",
@@ -1071,7 +1385,11 @@
    24.6923661,
    45.6437268
   ],
-  "id": "64f82a663f7fd40009b76f6f"
+  "id": "64f82a663f7fd40009b76f6f",
+  "counties": [
+   "Sibiu"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-valcea",
@@ -1087,7 +1405,11 @@
    24.1075455,
    45.47740975932
   ],
-  "id": "64f82ae13f7fd40009b76f70"
+  "id": "64f82ae13f7fd40009b76f70",
+  "counties": [
+   "Vâlcea"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "fly-fishing-club-sibiu",
@@ -1103,7 +1425,11 @@
    24.6142987,
    45.8209828
   ],
-  "id": "64ec526f60bcdf000a025229"
+  "id": "64ec526f60bcdf000a025229",
+  "counties": [
+   "Sibiu"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "pro-pescar",
@@ -1119,7 +1445,11 @@
    23.43830108374,
    45.7673012
   ],
-  "id": "647dbcada8567a00096481ca"
+  "id": "647dbcada8567a00096481ca",
+  "counties": [
+   "Hunedoara"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-covasna",
@@ -1130,7 +1460,11 @@
   "telefon": "0267351890",
   "siteUrl": "https://sfgh.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-covasna"
+  "id": "anpa-romsilva-ds-covasna",
+  "counties": [
+   "Covasna"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-buzau",
@@ -1141,7 +1475,11 @@
   "telefon": null,
   "siteUrl": "https://buzau.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-buzau"
+  "id": "anpa-romsilva-ds-buzau",
+  "counties": [
+   "Buzău"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-arad",
@@ -1152,7 +1490,11 @@
   "telefon": null,
   "siteUrl": "https://arad.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-arad"
+  "id": "anpa-romsilva-ds-arad",
+  "counties": [
+   "Arad"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-bacau",
@@ -1163,7 +1505,11 @@
   "telefon": null,
   "siteUrl": "https://bacau.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-bacau"
+  "id": "anpa-romsilva-ds-bacau",
+  "counties": [
+   "Bacău"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-bistrita-nasaud",
@@ -1174,7 +1520,11 @@
   "telefon": null,
   "siteUrl": "https://bistrita-nasaud.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-bistrita-nasaud"
+  "id": "anpa-romsilva-ds-bistrita-nasaud",
+  "counties": [
+   "Bistrița-Năsăud"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-brasov",
@@ -1185,7 +1535,11 @@
   "telefon": null,
   "siteUrl": "https://brasov.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-brasov"
+  "id": "anpa-romsilva-ds-brasov",
+  "counties": [
+   "Brașov"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-mures",
@@ -1196,7 +1550,11 @@
   "telefon": null,
   "siteUrl": "https://mures.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-mures"
+  "id": "anpa-romsilva-ds-mures",
+  "counties": [
+   "Mureș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-prahova",
@@ -1207,7 +1565,11 @@
   "telefon": null,
   "siteUrl": "https://prahova.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-prahova"
+  "id": "anpa-romsilva-ds-prahova",
+  "counties": [
+   "Prahova"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-salaj",
@@ -1218,7 +1580,11 @@
   "telefon": null,
   "siteUrl": "https://salaj.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-salaj"
+  "id": "anpa-romsilva-ds-salaj",
+  "counties": [
+   "Sălaj"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-suceava",
@@ -1229,7 +1595,11 @@
   "telefon": null,
   "siteUrl": "https://suceava.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-suceava"
+  "id": "anpa-romsilva-ds-suceava",
+  "counties": [
+   "Suceava"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-timis",
@@ -1240,7 +1610,11 @@
   "telefon": null,
   "siteUrl": "https://timis.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-timis"
+  "id": "anpa-romsilva-ds-timis",
+  "counties": [
+   "Timiș"
+  ],
+  "reciprocity": "neconfirmată"
  },
  {
   "slug": "directia-silvica-vrancea",
@@ -1251,6 +1625,10 @@
   "telefon": null,
   "siteUrl": "https://vrancea.rosilva.ro/",
   "bbox": null,
-  "id": "anpa-romsilva-ds-vrancea"
+  "id": "anpa-romsilva-ds-vrancea",
+  "counties": [
+   "Vrancea"
+  ],
+  "reciprocity": "neconfirmată"
  }
 ]
