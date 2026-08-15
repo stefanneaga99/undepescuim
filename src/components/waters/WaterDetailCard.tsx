@@ -1,11 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Ticket } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Ticket } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { NATIONAL_PERMIT_LABEL, NATIONAL_PERMIT_URL } from '@/lib/permit';
-import type { Association, PermitIssuer, Water } from '@/types/data';
+import { ReportForm } from '@/components/verification/ReportForm';
+import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
   water: Water;
@@ -32,6 +34,15 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
   const permitIssuer: PermitIssuer | undefined =
     association?.permitIssuer ?? water.asociatie?.permitIssuer;
+  // F3 (t_5b1250b3): report dialog state. `reportReason` pre-selects the reason
+  // for the lowest-friction positive-signal tap ("Datele sunt corecte").
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reportReason, setReportReason] = useState<ReportReason | null>(null);
+
+  const openReport = (reason: ReportReason | null) => {
+    setReportReason(reason);
+    setReportOpen(true);
+  };
 
   return (
     <div className="flex flex-col gap-3">
@@ -195,15 +206,25 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         </div>
       )}
 
-      {/* Report placeholder — out of scope this milestone */}
-      <button
-        type="button"
-        title="În curând"
-        className="mt-1 inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground"
-      >
-        <Flag className="h-3.5 w-3.5" />
-        Raportează o problemă
-      </button>
+      {/* F3 (t_5b1250b3): report entry points — positive-signal quick tap + full form. */}
+      <div className="mt-1 flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => openReport('data_correct')}
+          className="inline-flex items-center gap-1.5 rounded-md border border-green-600/40 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-800 transition-colors hover:bg-green-100 dark:border-green-500/40 dark:bg-green-950/40 dark:text-green-300 dark:hover:bg-green-950/70"
+        >
+          <CheckCircle2 className="h-3.5 w-3.5" />
+          Datele sunt corecte
+        </button>
+        <button
+          type="button"
+          onClick={() => openReport(null)}
+          className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <Flag className="h-3.5 w-3.5" />
+          Raportează o problemă
+        </button>
+      </div>
       <Link
         href="/permis"
         className="mt-1 inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -211,6 +232,14 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         <ScrollText className="h-3.5 w-3.5" />
         Permis &amp; Reguli 2026
       </Link>
+
+      <ReportForm
+        open={reportOpen}
+        onOpenChange={setReportOpen}
+        waterSlug={water.slug}
+        waterName={water.name}
+        initialReason={reportReason}
+      />
     </div>
   );
 }

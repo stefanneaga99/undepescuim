@@ -345,6 +345,40 @@ All routes are under `src/app/[locale]/` with next-intl prefix-based routing.
 | `/api/report` | `api/report/route.ts` | — | POST handler for verification reports |
 | `[...rest]` | `not-found.tsx` | `<NotFound />` | 404 catch-all |
 
+### Report API — `/api/report` (F3, implemented)
+
+POST handler (`src/app/api/report/route.ts`) that turns an in-app verification
+report into a **GitHub issue** on `neagastefan99/undepescuim` with the `report`
+label. This is the review queue: maintainer closes the issue after fixing the
+data → commit → Vercel auto-deploy.
+
+Request body (JSON):
+
+| Field | Type | Required | Notes |
+|-------|------|----------|-------|
+| `reason` | `ReportReason` | yes | one of `data_correct` / `water_invalid` / `association_changed` / `wrong_coordinates` / `other` |
+| `waterSlug` | string | yes | water slug, auto-attached by the form |
+| `waterName` | string | yes | water name, auto-attached by the form |
+| `details` | string | no | free text, ≤2000 chars |
+| `contactEmail` | string | no | optional follow-up contact |
+| `website` | string | no | honeypot — bots fill it, route silently drops |
+
+Responses: `200 {ok:true, issueUrl}` · `400 invalid_json/invalid_reason/missing_water` ·
+`503 not_configured` (missing token) · `502 github_error`. Honeypot submissions
+get a silent `200 {ok:true, issueUrl:null}`.
+
+**Env secret (server-side only, never `NEXT_PUBLIC_`):** `REPORT_GITHUB_TOKEN` —
+a GitHub token with `repo` / fine-grained **Issues: Read & Write** scope on
+`neagastefan99/undepescuim`. Required in production (Vercel env: Production +
+Preview) and locally (`.env.local`) for the route to create issues; without it
+the route returns 503. The `report` label must exist on the repo or issue
+creation 422s (`gh label create report`).
+
+**Static-site constraint:** this route REQUIRES a serverless runtime. Do **not**
+set `output: "export"` in `next.config.ts` or `/api/report` silently 404s. If
+serverless is ever dropped, the documented fallback (t_c21762e3) swaps the form's
+submit handler to open the Google Form with a prefill param.
+
 ### Layout Hierarchy
 
 ```

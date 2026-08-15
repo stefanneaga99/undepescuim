@@ -36,3 +36,33 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 Live at [https://undepescuim.vercel.app](https://undepescuim.vercel.app) — auto-deployed from `main` via Vercel.
+
+## Raportarea problemelor de date (F3)
+
+Cardurile de apă au două butoane:
+
+- **„Datele sunt corecte"** — semnal pozitiv rapid (deschide formularul cu motivul `data_correct` preselectat).
+- **„Raportează o problemă"** — formular complet (motiv + detalii opționale + email opțional).
+
+Formularul trimite un POST la `POST /api/report` (serverless function pe Vercel),
+care creează un **GitHub issue** pe `neagastefan99/undepescuim` cu eticheta
+`report` — coada de review pentru mentenanța datelor.
+
+### Variabila de mediu (secret)
+
+`REPORT_GITHUB_TOKEN` — token GitHub cu scop **Issues: Read & Write** pe
+`neagastefan99/undepescuim` (sau scope `repo` clasic).
+
+- **Local:** în `.env.local` (ignorat de git) — poți folosi `gh auth token`.
+- **Producție:** Vercel → Project → Settings → Environment Variables →
+  `REPORT_GITHUB_TOKEN` (Production + Preview). **Niciodată `NEXT_PUBLIC_`** —
+  tokenul e folosit doar server-side în `src/app/api/report/route.ts`.
+
+Fără token, endpointul răspunde `503 not_configured`, iar formularul afișează
+starea de eroare (fără eșecuri silențioase).
+
+Eticheta `report` trebuie să existe pe repo (`gh label create report`), altfel
+crearea issue-ului eșuează cu 422.
+
+**Notă:** `/api/report` necesită runtime serverless — nu seta `output: "export"`
+în `next.config.ts`, altfel endpointul dispare din build.
