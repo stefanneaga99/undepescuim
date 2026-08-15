@@ -36,11 +36,18 @@ interface MapStore {
   // FlyToController pass must NOT re-fit / zoom out to the full dataset.
   suppressAssociationFlyTo: boolean;
 
+  // F2a: association detail sheet visibility (opened from the association
+  // chip on the map). Mirrors the water sheet's one-at-a-time rule: opening
+  // it clears the selected water, selecting a water closes it.
+  associationSheetOpen: boolean;
+
   // Actions
   loadData: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
   selectWater: (slug: string | null) => void;
   consumeAssociationFlyToSuppression: () => void;
+  openAssociationSheet: () => void;
+  closeAssociationSheet: () => void;
   toggleCounty: (county: string) => void;
   setWaterTypeFilter: (type: WaterTypeFilter) => void;
   setContractFilter: (filter: ContractFilter) => void;
@@ -74,6 +81,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   waterTypeFilter: 'all',
   contractFilter: 'all',
   suppressAssociationFlyTo: false,
+  associationSheetOpen: false,
 
   loadData: async () => {
     try {
@@ -107,7 +115,14 @@ export const useMapStore = create<MapStore>((set, get) => ({
     }
   },
 
-  selectAssociation: (slug) => set({ selectedAssociationSlug: slug }),
+  selectAssociation: (slug) =>
+    set({ selectedAssociationSlug: slug, associationSheetOpen: false }),
+
+  // F2a: the chip opens the association detail sheet; opening it dismisses
+  // the water sheet (one-at-a-time, mirrors the existing selection rules).
+  openAssociationSheet: () =>
+    set({ associationSheetOpen: true, selectedWaterSlug: null }),
+  closeAssociationSheet: () => set({ associationSheetOpen: false }),
 
   selectWater: (slug) => {
     // t_7a7192ea Bug 2: clicking a river/lake takes over from any active
@@ -149,6 +164,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
     set({
       selectedWaterSlug: slug,
       selectedAssociationSlug: belongsToAssociation ? selectedAssociationSlug : null,
+      associationSheetOpen: false,
       suppressAssociationFlyTo: clearingAssociationByClick,
       countyFilter:
         water && countyFilter.length > 0 && !countyFilter.includes(water.judet)

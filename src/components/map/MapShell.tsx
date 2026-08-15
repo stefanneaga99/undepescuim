@@ -6,6 +6,8 @@ import { useMapStore } from '@/stores/map-store';
 import { FilterBar } from '@/components/map/FilterBar';
 import { ColorLegend } from '@/components/map/ColorLegend';
 import { WaterDetailSheet } from '@/components/waters/WaterDetailSheet';
+import { AssociationChip } from '@/components/associations/AssociationChip';
+import { AssociationDetailSheet } from '@/components/associations/AssociationDetailSheet';
 import { MapSkeleton } from '@/components/map/MapSkeleton';
 
 /**
@@ -37,9 +39,11 @@ export function MapShell() {
         <div className="relative min-h-0 flex-1">
           {dataLoaded ? <MapView /> : <MapSkeleton />}
           <ColorLegend />
+          <AssociationChip />
         </div>
       </div>
       <WaterDetailSheet />
+      <AssociationDetailSheet />
     </div>
   );
 }
