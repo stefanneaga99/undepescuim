@@ -24,6 +24,6 @@ for a in assocs:
         a["ape"] = new
         changed += 1
 
-FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1), encoding="utf-8")
+FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print(f"associations.json: {len(assocs)} entries, {changed} ape counts updated")
 print("top:", ", ".join(f"{a['slug']}={a['ape']}" for a in sorted(assocs, key=lambda x: -x['ape'])[:8]))

@@ -33,7 +33,7 @@ for a in assocs:
     a["counties"] = sorted(counties.get(a["slug"], ()))
     a["reciprocity"] = "neconfirmată"  # constant until curated (§2)
 
-FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1), encoding="utf-8")
+FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print(f"associations.json: {len(assocs)} entries, counties + reciprocity added")
 multi = [a["slug"] for a in assocs if len(a["counties"]) > 1]
 print("multi-county:", ", ".join(f"{s}={len([x for x in assocs if x['slug']==s][0]['counties'])}" for s in multi) or "none")
