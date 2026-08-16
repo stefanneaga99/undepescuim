@@ -6,7 +6,8 @@ import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
-import { WaterFeatureLayer, contractInterval } from '@/components/map/WaterFeatureLayer';
+import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
+import { contractInterval } from '@/utils/river-course';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
@@ -75,8 +76,26 @@ export function MapView() {
       />
       <UserPositionLayer />
       <FlyToController />
+      <MapTestBridge />
     </MapContainer>
   );
+}
+
+/**
+ * Test-only bridge (docs/e2e-test-plan.md §5): exposes the Leaflet map
+ * instance on `window.__UNDEPESCUIM_MAP__` so the e2e suite can click a
+ * water by slug (find the feature layer → fire its click with the real
+ * latlng) and read the live zoom without pixel/tile math. No UI effect.
+ */
+function MapTestBridge() {
+  const map = useMap();
+  useEffect(() => {
+    (window as unknown as Record<string, unknown>).__UNDEPESCUIM_MAP__ = map;
+    return () => {
+      delete (window as unknown as Record<string, unknown>).__UNDEPESCUIM_MAP__;
+    };
+  }, [map]);
+  return null;
 }
 
 /**

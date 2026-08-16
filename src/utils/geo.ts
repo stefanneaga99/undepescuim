@@ -146,7 +146,7 @@ export function nearestWaters(
 }
 
 /** All ring/part points of a water's geometry as [lon, lat] pairs. */
-function geometryParts(geom: NonNullable<Water['geometry']>): [number, number][][] {
+export function geometryParts(geom: NonNullable<Water['geometry']>): [number, number][][] {
   const coords = geom.coordinates;
   if (geom.type === 'LineString') return [coords as [number, number][]];
   if (geom.type === 'MultiLineString') return coords as [number, number][][];
