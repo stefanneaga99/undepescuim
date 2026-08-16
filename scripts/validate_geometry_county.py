@@ -223,7 +223,26 @@ def flag_waters(waters, polygons):
         elif in_declared == 0 and sd is not None and sd > SEAT_DIST_MAX_DEG and dense_in == 0:
             cls = "wrong-county"
         elif in_declared == 0 and sd is not None and sd <= SEAT_DIST_MAX_DEG and dense_in == 0:
-            cls = "ok"
+            # seat-distance shortcut: the geometry is within 1.5° of the seat
+            # BUT has ZERO dense points inside the declared county polygon.
+            # Tolerated when (a) the water is a legit multi-county group member
+            # (shared full-course owners / border rivers like Bărzăuța
+            # Bacău+Covasna, Crasna Maramureș+Sălaj whose polygon-following
+            # course sits on the county line), or (b) the geometry sits EXACTLY
+            # where the source data geocoded the water (stored bbox centroid
+            # within ~0.2° of the geometry centroid) — a border-attribution
+            # artifact (Romsilva-managed lakes on the Făgăraș crest like
+            # Podragu Mare, administered by D.S. Sibiu even though the OSM
+            # boundary puts the polygon in Brașov), NOT a wrong attachment.
+            # Everything else with zero in-county points is a same-name
+            # cross-county attachment (Sebeșul de Sus class) even when the
+            # wrong course is only ~1.4° from the seat.
+            src_bb = w.get("bbox")
+            src_matches = False
+            if src_bb:
+                sc = ((src_bb[0] + src_bb[2]) / 2, (src_bb[1] + src_bb[3]) / 2)
+                src_matches = math.hypot(cpt[0] - sc[0], cpt[1] - sc[1]) <= 0.2
+            cls = "ok" if (multi_county_group or src_matches) else "wrong-county"
         elif in_declared == 0 and sd is None and dense_in == 0:
             cls = "ok" if actual else "outside-romania"
         elif in_declared > 0 and sd is not None and sd > SEAT_DIST_MAX_DEG:
@@ -249,7 +268,18 @@ def flag_waters(waters, polygons):
         }
         all_recs.append(rec)
         if cls in ("wrong-county", "outside-romania"):
-            flagged.append(rec)
+            # final gate: border-attribution artifacts whose OSM course is the
+            # correct feature but sits just across the county line (Romsilva /
+            # areba manage it on the border, e.g. Râul Șugo Covasna at 0.4 km
+            # from the Covasna boundary, flowing into the Vîrghiș border
+            # stream). The fixer's KEEP_GEOMETRY set is the source of truth.
+            from fix_wrong_county_geometry import KEEP_GEOMETRY
+
+            if w.get("slug") in KEEP_GEOMETRY:
+                cls = "ok-border-artifact"
+                rec["classification"] = cls
+            else:
+                flagged.append(rec)
     return flagged, all_recs
 
 

@@ -86,11 +86,19 @@ NAME_OVERRIDES = {
     "apa calda cernavoda": "apa calda",
     "stegii": "paraul stegii",
     "tau": "lacul de acumulare tau",  # Acumulare Tău (Alba, O.S. Sebeș) — reservoir
+    "saliste": "raul negru",          # Râul Săliște (Sibiu) — OSM names the Săliște course Râul Negru (Sibiu clusters)
+    "almasului": "almas",             # Valea Almașului (Sălaj) — OSM names the Almaș valley river 'almas' (Sălaj cluster)
+    "motru mare": "motru",            # Râul Motru Mare (Gorj) — OSM 'motru' cluster touches Gorj (headwaters at D.N. 67D)
+    "vasluiet": "vaslui",             # Râul Vasluieț (Vaslui) — OSM names the Vasluieț course 'vaslui' (Vaslui cluster)
+    "geoagiu inferior": "stremt",     # Råul Geoagiu Inferior (Alba) — areba bbox matches OSM 'stremt' course exactly
+                                      # (Cheile Râmeț → conf. Mureș); the Alba Geoagiu is OSM-named Stremț
+    "gradistea inferioara": "orastie", # Grădiștea inferioară (Hunedoara) — cabana Costești→Mureș is the Orăștie course
 }
 
 # slug -> OSM lake name when the ANPA/Romsilva name differs from OSM entirely
 LAKE_NAME_BY_SLUG = {
     "gizkgxdq": "lacul de acumulare vida",  # Lacul Toplița (Bihor) == Vida reservoir
+    "romsilva-hunedoara-papusa": "taul papusii",  # Păpușa (D.S. Hunedoara, Țarcu) == Tăul Păpușii, not the Gorj Păpușa lake
 }
 
 # flagged waters whose geometry should be dropped entirely (no credible OSM
@@ -109,6 +117,15 @@ FORCE_DROP = {
     "romsilva-sibiu-bistra",  # Râul Bistra Sibiu — no OSM Bistra in Sibiu
     "fee3lhad",        # Râul Valea Morilor Alba — no OSM Morii near Huda lui Papară
     "anpa-anpa-0227",  # Valea Mare CS (Ilidia) — OSM Valea Mare in CS is 40km E of Ilidia; actual Ilidia course unnamed
+}
+
+# slug -> water whose current geometry is CORRECT and must be KEPT even though
+# the strict county-polygon test flags it: border-attribution artifacts where
+# the OSM course is the right feature but sits just across the county line
+# (e.g. Râul Șugo Covasna — Romsilva D.S. Covasna manages it, flows into the
+# Vîrghiș border stream, OSM Pârâul Șugo is 0.4 km from the Covasna boundary).
+KEEP_GEOMETRY = {
+    "romsilva-covasna-sugo",
 }
 
 
@@ -374,6 +391,13 @@ def main():
         declared = w.get("judet") or "?"
         name = w.get("name") or ""
         slug = w["slug"]
+
+        if slug in KEEP_GEOMETRY:
+            # border-attribution artifact: the attached course IS the correct
+            # feature (Romsilva/areba manage it on the county line); keep it as-is
+            # and do not flag it for a fix/drop cycle.
+            print(f"  KEEP {declared:14} {name[:42]:44} (border-attribution artifact)")
+            continue
 
         if slug in MANUAL_COURSE_BY_SLUG:
             spec = MANUAL_COURSE_BY_SLUG[slug]
