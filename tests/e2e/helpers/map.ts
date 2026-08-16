@@ -26,6 +26,18 @@ export async function mapZoom(page: Page): Promise<number> {
   return z;
 }
 
+/** Set the map zoom programmatically (LOD tests need zoom ≥ 8). */
+export async function setMapZoom(page: Page, zoom: number): Promise<void> {
+  await page.evaluate(
+    (z) => (window as any).__UNDEPESCUIM_MAP__?.setZoom(z),
+    zoom,
+  );
+  await page.waitForFunction(
+    (z) => (window as any).__UNDEPESCUIM_MAP__?.getZoom() === z,
+    zoom,
+  );
+}
+
 /** Wait until the map root + the vector overlay are rendered. */
 export async function waitForMapReady(page: Page): Promise<void> {
   await expect(page.getByTestId(Selectors.mapRoot)).toBeVisible();

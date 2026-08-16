@@ -15,7 +15,10 @@ import { chromium } from 'playwright';
 const BASE = process.argv[2] || process.env.BASE_URL || 'http://localhost:3000';
 const CDP = process.env.PLAYWRIGHT_CDP;
 
-const browser = CDP ? await chromium.connectOverCDP(CDP) : await chromium.launch();
+const browser = CDP
+  ? await chromium.connectOverCDP(CDP)
+  // This WSL host cannot run chromium's sandbox (skill: undepescuim-e2e-playwright).
+  : await chromium.launch({ args: ['--no-sandbox'] });
 // Close leftover pages from crashed runs — they share the single browserless window.
 for (const ctx of browser.contexts()) {
   for (const p of ctx.pages()) {

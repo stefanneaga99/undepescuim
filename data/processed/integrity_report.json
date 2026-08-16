@@ -1,0 +1,1439 @@
+{
+ "checked": {
+  "waters": 1013,
+  "associations": 96,
+  "rivers": 4142,
+  "lakes": 5695,
+  "species": 29
+ },
+ "violations": [],
+ "findings": [
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0023",
+   "field": "dimensiune",
+   "name": "Canalele din zona Turnu"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0024",
+   "field": "dimensiune",
+   "name": "Balta Ghilin I și II"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0026",
+   "field": "dimensiune",
+   "name": "Canalele hidroameliorative Socodor"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0212",
+   "field": "dimensiune",
+   "name": "Pârâul Valea Sibiciului"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0229",
+   "field": "dimensiune",
+   "name": "Rețeaua de canale de irigații cu excepția canalelor        Rasa și Gălățui"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0247",
+   "field": "limite",
+   "name": "Canal Dunăre – Marea Neagră"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0247",
+   "field": "dimensiune",
+   "name": "Canal Dunăre – Marea Neagră"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0248",
+   "field": "limite",
+   "name": "Canal Poarta Albă – Midia Năvodari"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0248",
+   "field": "dimensiune",
+   "name": "Canal Poarta Albă – Midia Năvodari"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0249",
+   "field": "limite",
+   "name": "Canal apă caldă Cernavodă"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0249",
+   "field": "dimensiune",
+   "name": "Canal apă caldă Cernavodă"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0252",
+   "field": "dimensiune",
+   "name": "Brațele secundare ale Râului Negru"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0253",
+   "field": "dimensiune",
+   "name": "Pârâu Szaldoboș"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0254",
+   "field": "dimensiune",
+   "name": "Pârâu Șomko"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0259",
+   "field": "dimensiune",
+   "name": "Pârâu Pădureni"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0291",
+   "field": "dimensiune",
+   "name": "Râul Jieț"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0294",
+   "field": "limite",
+   "name": "Râul Terpezița"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0300",
+   "field": "dimensiune",
+   "name": "Râul Câlniștea"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0301",
+   "field": "dimensiune",
+   "name": "Râul Comasca"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0355",
+   "field": "dimensiune",
+   "name": "Râul Steiul montan inferior"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0356",
+   "field": "dimensiune",
+   "name": "Râul Mare inf. II"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0370",
+   "field": "dimensiune",
+   "name": "Râul Steiul montan mijlociu"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0371",
+   "field": "dimensiune",
+   "name": "Valea Luncanilor"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0373",
+   "field": "dimensiune",
+   "name": "Bulzești"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0374",
+   "field": "dimensiune",
+   "name": "Grădiștea inferioară"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0375",
+   "field": "dimensiune",
+   "name": "Râul Bănița"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0376",
+   "field": "dimensiune",
+   "name": "Raul Taia Aușel Voievodul"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0379",
+   "field": "dimensiune",
+   "name": "Râul Crișul Alb, cu afluenții"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0397",
+   "field": "dimensiune",
+   "name": "Râul Snagov"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0499",
+   "field": "limite",
+   "name": "CP 9 stația mică"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0577",
+   "field": "dimensiune",
+   "name": "Râul Teleorman"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0578",
+   "field": "dimensiune",
+   "name": "Râul Vedea"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0580",
+   "field": "dimensiune",
+   "name": "Râul Urlui"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0591",
+   "field": "limite",
+   "name": "Pârâul Bega Veche"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0638",
+   "field": "dimensiune",
+   "name": "Acumularea Robești si Valea Robești"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0650",
+   "field": "limite",
+   "name": "Râul Olănești cu pâraiele Cheia, Bacea și Mânza"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0192",
+   "field": "dimensiune",
+   "name": "Râul Olt și afluenții săi"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0581",
+   "field": "dimensiune",
+   "name": "Râul Olt"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-anpa-0298",
+   "field": "dimensiune",
+   "name": "Râul Argeș"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "romsilva-suceava-brodina",
+   "field": "limite",
+   "name": "Râul Brodina"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "romsilva-suceava-afluentii-suhei",
+   "field": "limite",
+   "name": "Râul Afluenţii Suhei"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-giurgiu-neajlov",
+   "field": "dimensiune",
+   "name": "Râul Neajlov"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-teleorman-calnistea",
+   "field": "dimensiune",
+   "name": "Râul Câlniștea"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-teleorman-calmatui",
+   "field": "dimensiune",
+   "name": "Râul Călmățui"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-vrancea-ramnicu-sarat",
+   "field": "dimensiune",
+   "name": "Râul Râmnicu Sărat"
+  },
+  {
+   "check": "waters.contract_blank",
+   "slug": "anpa-brasov-arpasu",
+   "field": "dimensiune",
+   "name": "Lac acumulare Arpașu"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "swvvpoez",
+   "name": "Galeşul"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "awhxtilq",
+   "name": "Ghereşul"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "80a6de8r",
+   "name": "Ghimpele (Peleguţa)"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "3cffswnd",
+   "name": "Iezer – Ighel"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "dkyhyd7w",
+   "name": "Iezer – Șurianu"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "uv7try13",
+   "name": "Izvoare – conf. pârâul Bumbului"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "o4sf1fah",
+   "name": "Prut– fără lacul Stânca"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "4pouq9sd",
+   "name": "Råul Geoagiu Inferior"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "6vsle29k",
+   "name": "Râul Jiul de vest – superior cu afluenții"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "u90zfl7t",
+   "name": "Roşiile (Tăul fără Fund)"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "axdnd0sx",
+   "name": "Tăul Ţapului"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "1zqkhha4",
+   "name": "Topa – Holod"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "h75ngnsv",
+   "name": "Valea Şartăşului"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0097",
+   "name": "Canalul Tăut – Barmod"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0179",
+   "name": "Valea Mare – Crizbav"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0247",
+   "name": "Canal Dunăre – Marea Neagră"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0248",
+   "name": "Canal Poarta Albă – Midia Năvodari"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0295",
+   "name": "Canalul CET Ișalnița – apă caldă"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0344",
+   "name": "Fondul piscicol 24 Ciceu: include Pârâul Tekero – 5 km, Pârâul Ferii – 6 km, Pârâul Cetății – 9 km, Pârâul Fierăstrăului- 9 km, Pârâul Stâncii - 8 km"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0515",
+   "name": "Năpradea– braț mort Someșul Mare"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "anpa-anpa-0669",
+   "name": "Râul „Izvor”"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-bihor-crisul-pietros",
+   "name": "Râul Crişul Pietros"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-bihor-vl-finis-finisului",
+   "name": "Râul Vl. Finiş (Finişului)"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-sibisel",
+   "name": "Râul Sibişel"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-lapusnicul-mare",
+   "name": "Râul Lăpuşnicul Mare"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-lapusnicul-mic",
+   "name": "Râul Lăpuşnicul Mic"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-nucsorul-superior",
+   "name": "Râul Nucşorul Superior"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-nucsorul-inferior",
+   "name": "Râul Nucşorul Inferior"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-jiet",
+   "name": "Râul Jieţ"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-hunedoara-papusa",
+   "name": "Păpuşa"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-mures-mures-iii",
+   "name": "Râul Mureş III"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-suceava-dornisoara",
+   "name": "Râul Dornişoara"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-suceava-moldovita-superioara",
+   "name": "Râul Moldoviţa Superioară"
+  },
+  {
+   "check": "waters.non_latin_name",
+   "slug": "romsilva-suceava-afluentii-suhei",
+   "name": "Râul Afluenţii Suhei"
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-covasna",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-arad",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-bacau",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-bistrita-nasaud",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-brasov",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-mures",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-prahova",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-salaj",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-suceava",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-timis",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "assoc.placeholder",
+   "slug": "directia-silvica-vrancea",
+   "field": "adresa",
+   "value": null
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6eeab58993",
+   "name": "André"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-39800094e6",
+   "name": "Barabás"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ec03497033",
+   "name": "Barcău/Berettyó"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-711732b5f7",
+   "name": "Barát-ér"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0592a5613c",
+   "name": "Berettyó"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6069fbba5f",
+   "name": "Borvíz-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-01f9898f87",
+   "name": "Bosnyák-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-53aae1110d",
+   "name": "Budvár"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-874c541938",
+   "name": "Bánkó vőgye"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d24facd4cf",
+   "name": "Crișul Mic/Kis-Körös"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-c33006660f",
+   "name": "Csanálosi-folyás"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-388f8b1a0f",
+   "name": "Cseke-hágó-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-dbc0e28cb0",
+   "name": "Csicsér"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-3387778b1c",
+   "name": "Csobányos-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-63567e379e",
+   "name": "Csorgó patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-fdd602f41e",
+   "name": "Dián pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-682aafa21c",
+   "name": "Eszenyő pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-65f378fa7e",
+   "name": "Fehér-Körös"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-3dc038d892",
+   "name": "Fehér-Körös"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-2ac749f8f8",
+   "name": "Fehéres-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-979c1d7bb3",
+   "name": "Felső Visszafolyó-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d99a25c0e5",
+   "name": "Fülöp András patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-1fc2dcf0b8",
+   "name": "Garán-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7334a36d0a",
+   "name": "Gergelyfájai-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7f396f1af4",
+   "name": "Gesztenyés patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-1960c3c25e",
+   "name": "György-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5a7341d614",
+   "name": "Göce-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f22ea7a05c",
+   "name": "Halál pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-106ff56f28",
+   "name": "Harapétke pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e4f1517d4e",
+   "name": "Hidegkút árka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-084a5b0160",
+   "name": "Holló-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-20d3762ad9",
+   "name": "Hollók patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5c69c8e5fd",
+   "name": "Hollós-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d7f5cb4075",
+   "name": "Horgász"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e4f0837caa",
+   "name": "Hosszú-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f1c1025c56",
+   "name": "Janík"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-008164df3f",
+   "name": "Jáhor-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0f108f7600",
+   "name": "János pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-dc979534d6",
+   "name": "Karaš"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-43566dbecd",
+   "name": "Kecskés patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e92d9f610b",
+   "name": "Keleti-övcsatorna"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-21757df02f",
+   "name": "Kicsi vész sarok patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-448e477b86",
+   "name": "Kis Kürüsz patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-c8521126e5",
+   "name": "Kis-Bükk-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8e770c2236",
+   "name": "Komlós-árok"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-47c797a714",
+   "name": "Kurt erdő patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-9b93cbde1a",
+   "name": "Küpü vize"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ed51ca4879",
+   "name": "Küpüs pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7a789a5502",
+   "name": "Kőrengetegi patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e24968f4fe",
+   "name": "kővár patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5a15cde19a",
+   "name": "Lukóbükk-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-2f19b7ea37",
+   "name": "Lókod-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0fa83995b6",
+   "name": "Magyarós pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-de3a20c56e",
+   "name": "Malomárok"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-3367f3ff75",
+   "name": "Mészpatak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-37e411dcf1",
+   "name": "Nagy vész sarok"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-79670cab22",
+   "name": "Nádas patak;Sós-kút"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8c9337c777",
+   "name": "Nádas patak;Sóskút"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d3578cead8",
+   "name": "Nádas-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-cf8665b305",
+   "name": "Nádaska pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ea473e5c99",
+   "name": "Orsováj pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-18c791169e",
+   "name": "Paraul Szent Miklós"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b5b6f86a0d",
+   "name": "Paraué Mare"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e4f723dec2",
+   "name": "Paroş (Valea Mateşcilor)"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-fe7d083a54",
+   "name": "Pr. Iadul (Jád patak)"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7f218b5d22",
+   "name": "Pârâul Balogsás"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d031a9b718",
+   "name": "Pârâul Borjúvész"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d76b67688b",
+   "name": "Pârâul Bálványos"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-190eac4b8e",
+   "name": "Pârâul Bükkészka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8531c96349",
+   "name": "Pârâul Csíkik"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b37adbf9a0",
+   "name": "Pârâul Disznó-sarok"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-94e17bf032",
+   "name": "Pârâul Dobák"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d40daeafd4",
+   "name": "Pârâul Dékány"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ceb95952b8",
+   "name": "Pârâul Halaság"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0569adf753",
+   "name": "Pârâul Hévíz"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0781258a92",
+   "name": "Pârâul Jártók"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-525dcd2b7c",
+   "name": "Pârâul Nyikák"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6f32268d38",
+   "name": "Pârâul Répád"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b0f3f3b11d",
+   "name": "Pârâul Szénégető"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b3a3b3f3eb",
+   "name": "Pârâul Szőcsők"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-fbc6ba6064",
+   "name": "Pârâul Tekenyős"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b0af14fa86",
+   "name": "Pârâul Tompád"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0b01b96153",
+   "name": "Pârâul Tompád"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-3bd5d2b0bc",
+   "name": "Pârâul Tók"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-bd92ddd321",
+   "name": "Pârâul Ángyos"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5c9785c630",
+   "name": "Rakottyás patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-10f30e81ac",
+   "name": "Rakta-ér"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-550ab465e2",
+   "name": "Rác pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5191b5480c",
+   "name": "Szelhás"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-29887663e8",
+   "name": "Szent György-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5e1c81cc55",
+   "name": "Szentegyház pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b5da811cf3",
+   "name": "Szentegyháza-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-1712f2b385",
+   "name": "Szinér patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7c0764eccf",
+   "name": "Szász-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e1ee83191b",
+   "name": "Szénási-vízfolyás"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-3432df13b1",
+   "name": "Sár-Éger-csatorna"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-fc57be5641",
+   "name": "Sáros-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-30eef5070c",
+   "name": "Sárvíz"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-46c4cc7364",
+   "name": "Sás pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e5e3d35de4",
+   "name": "Sós-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d278e2cd5a",
+   "name": "Sükó patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-783b2381fb",
+   "name": "Sükő-pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-5b3d3356db",
+   "name": "Tifánpataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7b7b5d0f4d",
+   "name": "Tóbükke-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ef325a01b5",
+   "name": "Tő-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-277fefbeeb",
+   "name": "Valea lui Andraş"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6c58a689bf",
+   "name": "Valea Pârâul Miklós"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-d96ca468e5",
+   "name": "Valea Păltinişului"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-ab546f3c67",
+   "name": "Veresvész pataka"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-0bcfd2355e",
+   "name": "Vágási patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7a630bf473",
+   "name": "Várpatak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-33c44193fb",
+   "name": "Zalán-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-139b096b28",
+   "name": "Ülő-patak"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-439369cee0",
+   "name": "Апшиця"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f95947c0a0",
+   "name": "Батарч"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f5bc55f8bb",
+   "name": "Бољетинска река"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-39b92db978",
+   "name": "Варошки поток"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8989807aac",
+   "name": "гирло Мусура – Brațul Musura"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6583c7fc5a",
+   "name": "Казански поток"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-52c15a44a6",
+   "name": "Канагьол"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b6cbddb554",
+   "name": "Кислицький рукав"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6bce8bd904",
+   "name": "Кожица"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-9915ae8fa9",
+   "name": "Косівська"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-9c40e3eb59",
+   "name": "Кілійське гирло"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-aa5cd88ec1",
+   "name": "Кілійське гирло"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-70f49a27b2",
+   "name": "Кілійське гирло - Brațul Chilia"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b5af6c51fd",
+   "name": "Кілійське гирло - Brațul Chilia"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-4a77cd4c2f",
+   "name": "Кілійське гирло - Brațul Chilia"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b1a78f1a28",
+   "name": "Кілійське гирло - Brațul Chilia"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8147cdb6f8",
+   "name": "Ланка"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-1c9a03ac67",
+   "name": "Лаура"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-c146d005a9",
+   "name": "Лесковачки поток"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-577d558cbb",
+   "name": "Лом"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-7158412750",
+   "name": "Мали Караш"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-c5b7746a08",
+   "name": "Матка"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-86b3eb5850",
+   "name": "Млака"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-cafcc0ee95",
+   "name": "Најдашки поток"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-c6fea8b717",
+   "name": "Нирєу-Герца"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f6fc6272eb",
+   "name": "Огоста"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-495985e27d",
+   "name": "Осъм"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b45dcf5434",
+   "name": "Очаківське гирло"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-1bd11dd003",
+   "name": "Папреница"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8ab1a60e18",
+   "name": "протока Даллер"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-2ee61d2159",
+   "name": "протока Скунда"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-59b1cddb50",
+   "name": "Прямий рукав"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6f13b2dd88",
+   "name": "Ретка гирло"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-b0024ab50d",
+   "name": "рукав Катенька"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-377a6a3dbb",
+   "name": "рукав Іванешть — Brațul Ivănești"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-e1c4ae4070",
+   "name": "Рушњачки поток"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-9d085e3bb5",
+   "name": "Садеу"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-cd79227481",
+   "name": "Сарата"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-2c75cfd56b",
+   "name": "Соломонів рукав"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-657ba4bd11",
+   "name": "Старостамбульське гирло - Brațul Stambulul Vechi"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-85562ee60e",
+   "name": "Суха река"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-2024aaed19",
+   "name": "Сучава"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-cfa0a0bdaa",
+   "name": "Сучава - Suceava"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-33cce7d902",
+   "name": "Тирнаука"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-105586aee9",
+   "name": "Тиса - Tisa"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-701b965397",
+   "name": "Тиса - Tisa"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-8fcaa78520",
+   "name": "Тиса - Tisa"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-47b50e35a5",
+   "name": "Тиса - Tisa"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-a3afbef98f",
+   "name": "Тырла-Цыганилор"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-6bdf4379d7",
+   "name": "Фальків"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-f8e50c694e",
+   "name": "Чезава"
+  },
+  {
+   "check": "overlay.rivers.non_latin_name",
+   "slug": "unc-4f0f1b1616",
+   "name": "Шопурка"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-96e2f5cbf0",
+   "name": "Balta Porumbeşti"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-71fe18e6a6",
+   "name": "Bányató 2.-Lacul de mină 1."
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-13644b6418",
+   "name": "Csíkmadarasi bányató"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-7650497e41",
+   "name": "Dană Port Bucureşti"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-4f92d24bb0",
+   "name": "Eszenyői horgásztó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-c373e440de",
+   "name": "Heleşteu"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-f7c2b712d8",
+   "name": "Hollós-tó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-90fc900635",
+   "name": "Lac Frontiera Borș - Borsi horgásztó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-b460cbe1d6",
+   "name": "Lacul Gémvári"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-3aaf69eb88",
+   "name": "Lacul Kőhegy"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-d3c86855cf",
+   "name": "Lacul Ocniţa"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-2b4ee5178c",
+   "name": "Lacul Pietriş"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-2bd8499c42",
+   "name": "Lacul Ţeica"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-358a003789",
+   "name": "Matula Tó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-5cdaac65c4",
+   "name": "Matula Tó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-1f8dd0dff7",
+   "name": "Matula Tó"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-58e3a61bf9",
+   "name": "Máté tava"
+  },
+  {
+   "check": "overlay.lakes.non_latin_name",
+   "slug": "uncl-5d06be65b1",
+   "name": "Nyires-tó"
+  }
+ ]
+}

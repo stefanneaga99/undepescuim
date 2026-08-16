@@ -3,9 +3,9 @@
  * Runs in all three viewports. Asserts: header, map container, filter bar,
  * vector paths drawn, zero console/page errors (hydration + Leaflet gate).
  */
-import { test, expect } from '../fixtures/app';
-import { MapPage } from '../pages/MapPage';
-import { Header } from '../pages/Header';
+import { test, expect } from '../../fixtures/app';
+import { MapPage } from '../../pages/MapPage';
+import { Header } from '../../pages/Header';
 
 test.describe('F1 — app load', () => {
   test('map boots with header, filters and vector paths — no console errors', async ({

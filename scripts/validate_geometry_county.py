@@ -34,6 +34,7 @@ Exit code 0. Writes the report to stdout and optionally to a JSON file.
 import argparse
 import json
 import math
+import sys
 import unicodedata
 from pathlib import Path
 
@@ -306,6 +307,8 @@ def flag_waters(waters, polygons):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", type=str, help="write full report JSON to this path")
+    ap.add_argument("--flags-json", type=str, default=str(ROOT / "data" / "processed" / "county_audit_flags.json"),
+                    help="write the FLAGGED subset to this path (CI reads it)")
     args = ap.parse_args()
 
     waters = json.loads(WATERS.read_text(encoding="utf-8"))
@@ -314,23 +317,61 @@ def main():
     flagged, all_recs = flag_waters(waters, polygons)
     checked = len(all_recs)
 
+    # waters with NO locatable points (no geometry / coordinates / bbox) —
+    # each must be justified (riverGroup sector copy or explicit fallback
+    # marker) or it is an undocumented gap (plan §3.3 extension 3).
+    no_locatable = []
+    for w in waters:
+        if water_points(w):
+            continue
+        no_locatable.append({
+            "slug": w.get("slug"),
+            "name": w.get("name"),
+            "judet": w.get("judet"),
+            "asociatie": (w.get("asociatie") or {}).get("name"),
+            "riverGroup": w.get("riverGroup"),
+            "fallback": w.get("fallback"),
+            "justified": bool(w.get("riverGroup") or w.get("fallback")),
+        })
+    gaps = [n for n in no_locatable if not n["justified"]]
+
     print(f"[validate] {len(waters)} waters, {len(polygons)} county polygons")
     print(f"[validate] waters with locatable points (geometry or coords/bbox fallback): {checked}")
     print(f"[validate] FLAGGED (wrong-county + outside-romania): {len(flagged)}")
+    print(f"[validate] no locatable points: {len(no_locatable)} "
+          f"({len(no_locatable) - len(gaps)} documented, {len(gaps)} gaps)")
     print()
     for r in sorted(flagged, key=lambda r: (r["judet"], r["name"])):
         print(f"  {r['classification']:16} {r['judet']:16} {r['name'][:40]:42} "
               f"actual={r['actual_county']!s:12} seat_d={r['seat_dist_deg']} "
               f"bbox={r['bbox']}")
+    for g in gaps:
+        print(f"  GAP {g['judet']:16} {g['name'][:50]} (no geometry/coords/bbox/riverGroup)")
     if args.json:
         Path(args.json).write_text(
             json.dumps(
-                {"checked": checked, "flagged": flagged, "all": all_recs},
+                {"checked": checked, "flagged": flagged, "all": all_recs,
+                 "no_locatable": no_locatable, "gaps": gaps},
                 ensure_ascii=False, indent=1,
             ),
             encoding="utf-8",
         )
         print(f"\n[report] wrote {args.json}")
+    Path(args.flags_json).write_text(
+        json.dumps({"count": len(flagged), "flagged": flagged,
+                    "no_locatable": no_locatable, "gaps": gaps},
+                   ensure_ascii=False, indent=1),
+        encoding="utf-8",
+    )
+    print(f"[report] wrote {args.flags_json}")
+    if flagged:
+        print("[validate] FAIL: wrong-county / outside-romania geometries must be 0")
+        sys.exit(1)
+    if gaps:
+        print(f"[validate] FAIL: {len(gaps)} undocumented no-locatable waters "
+              f"must carry a riverGroup or fallback marker")
+        sys.exit(1)
+    print("[validate] PASS: 0 county flags, 0 undocumented gaps")
 
 
 if __name__ == "__main__":

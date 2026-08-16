@@ -188,6 +188,13 @@ def main() -> None:
     lakes = json.loads(FE_LAKES.read_text(encoding="utf-8"))
     print(f"[a1] rivers {len(rivers)}, lakes {len(lakes)}")
 
+    # transliterate FIRST so dedupe sees the final names (Aranca/Златица
+    # became the same 'Aranca' name only after renaming — deduping before
+    # would miss the pair)
+    r_renames = transliterate(rivers)
+    l_renames = transliterate(lakes)
+    print(f"[a1] transliterations: {r_renames + l_renames or 'none'}")
+
     r_kept, r_dropped = dedupe_overlay(rivers, "rau")
     l_kept, l_dropped = dedupe_overlay(lakes, "lac")
     # same-body pairs that escaped the slug collision (different slugs)
@@ -203,10 +210,6 @@ def main() -> None:
     for d in l_dropped:
         print(f"     DROP {d['name']} ({d['judet']}) area={d.get('areaHa')} "
               f"dup_of={d['_dup_of']} frac={d['_overlap_frac']}")
-
-    r_renames = transliterate(r_kept)
-    l_renames = transliterate(l_kept)
-    print(f"[a1] transliterations: {r_renames + l_renames or 'none'}")
 
     # determinism: keep the existing sort order (by name)
     r_kept.sort(key=lambda w: w["name"].lower())

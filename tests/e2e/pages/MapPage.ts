@@ -10,6 +10,7 @@ import {
   countAllPaths,
   countPathsByColor,
   mapZoom,
+  setMapZoom,
 } from '../helpers/map';
 import { Header } from './Header';
 import { FilterBar } from './FilterBar';
@@ -65,6 +66,11 @@ export class MapPage {
 
   zoom(): Promise<number> {
     return mapZoom(this.page);
+  }
+
+  /** Set the map zoom programmatically (LOD tests need zoom ≥ 8). */
+  zoomTo(z: number): Promise<void> {
+    return setMapZoom(this.page, z);
   }
 
   pathCount(): Promise<number> {
