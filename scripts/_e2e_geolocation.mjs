@@ -69,9 +69,12 @@ const readSheet = async (page, timeoutMs = 10000) => {
 
 const cardText = (page) =>
   page.evaluate(() => {
+    // Desktop: the water aside contains an <h2> (panel header 'Detalii apă').
+    // Mobile: the water drawer carries aria-label="Detalii: <name>" — the
+    // literal 'Detalii' is NOT in its textContent, so match the aria-label.
     const aside = document.querySelector('aside:has(h2)');
-    const drawers = [...document.querySelectorAll('[data-vaul-drawer]')];
-    const drawer = drawers.find((d) => (d.textContent || '').includes('Detalii'));
+    const drawer = [...document.querySelectorAll('[data-vaul-drawer]')]
+      .find((d) => (d.getAttribute('aria-label') || '').startsWith('Detalii'));
     const el = aside || drawer;
     return el ? (el.textContent || '').trim() : '';
   });
@@ -98,15 +101,15 @@ const waitForMap = async (page) => {
 };
 
 /** Stub navigator.geolocation BEFORE app scripts run (CDP / deny paths). */
-const stubGeolocation = (page, mode) =>
-  page.addInitScript(({ mode: m, geolocation }) => {
+const stubGeolocation = (page, mode, geolocation) =>
+  page.addInitScript(({ mode: m, geolocation: geo }) => {
     Object.defineProperty(navigator, 'geolocation', {
       configurable: true,
       value: {
         getCurrentPosition: (ok, err) => {
           if (m === 'grant') {
             ok({
-              coords: { latitude: geolocation.latitude, longitude: geolocation.longitude, accuracy: 30 },
+              coords: { latitude: geo.latitude, longitude: geo.longitude, accuracy: 30 },
               timestamp: Date.now(),
             });
           } else {
@@ -177,15 +180,11 @@ async function runDenyPass() {
   const p = CDP ? await browser.newPage() : await (await browser.newContext()).newPage();
   await p.setViewportSize({ width: 1280, height: 800 });
   if (CDP) {
-    await stubGeolocation(p, 'deny');
+    await stubGeolocation(p, 'deny', { latitude: 44.4, longitude: 26.1 });
   } else {
     // Real permission flow: deny via permissions policy override.
     await p.context().clearPermissions();
-    await p.addInitScript(() => {
-      // Force the browser to refuse geolocation for this origin.
-      // (Playwright has no direct "deny" — emulate via a stub, same as CDP.)
-    });
-    await stubGeolocation(p, 'deny');
+    await stubGeolocation(p, 'deny', { latitude: 44.4, longitude: 26.1 });
   }
   await waitForMap(p);
 
