@@ -1,0 +1,183 @@
+{
+ "_meta": {
+  "note": "Pinned from data/species.json after verification vs Monitorul Oficial (Ordin MADR 342/2008 anexa as amended by 304/2023; prohibition windows Ordin 23/297/2025). Re-derive ONLY from Monitorul Oficial; do not edit by hand.",
+  "pinned_at": "2026-08-16",
+  "count": 29
+ },
+ "species": {
+  "Avat": {
+   "latin": "Aspius aspius",
+   "min_cm": 30,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 1"
+  },
+  "Babușcă": {
+   "latin": "Rutilus rutilus",
+   "min_cm": 15,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 3"
+  },
+  "Biban": {
+   "latin": "Perca fluviatilis",
+   "min_cm": 12,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 5"
+  },
+  "Crap": {
+   "latin": "Cyprinus carpio",
+   "min_cm": 40,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 6"
+  },
+  "Caras": {
+   "latin": "Carassius auratus gibelio",
+   "min_cm": 20,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 7"
+  },
+  "Caracudă": {
+   "latin": "Carassius carassius",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 8"
+  },
+  "Clean": {
+   "latin": "Squalius cephalus (Leuciscus cephalus)",
+   "min_cm": 25,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 10"
+  },
+  "Lin": {
+   "latin": "Tinca tinca",
+   "min_cm": 25,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 18"
+  },
+  "Lipan": {
+   "latin": "Thymallus thymallus",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 19"
+  },
+  "Morunaș": {
+   "latin": "Vimba vimba",
+   "min_cm": 25,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 20"
+  },
+  "Mreană": {
+   "latin": "Barbus barbus",
+   "min_cm": 27,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 21"
+  },
+  "Oblete": {
+   "latin": "Alburnus alburnus",
+   "min_cm": 12,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 22"
+  },
+  "Plătică": {
+   "latin": "Abramis brama",
+   "min_cm": 25,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 23"
+  },
+  "Păstrăv indigen": {
+   "latin": "Salmo trutta fario",
+   "min_cm": 20,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 24 „Păstrăv"
+  },
+  "Păstrăv curcubeu": {
+   "latin": "Oncorhynchus mykiss",
+   "min_cm": 20,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 24 „Păstrăv"
+  },
+  "Roșioară": {
+   "latin": "Scardinius erythrophthalmus",
+   "min_cm": 15,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 25"
+  },
+  "Scobar": {
+   "latin": "Chondrostoma nasus",
+   "min_cm": 20,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 29"
+  },
+  "Somn": {
+   "latin": "Silurus glanis",
+   "min_cm": 50,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 30"
+  },
+  "Șalău": {
+   "latin": "Sander lucioperca",
+   "min_cm": 40,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 34 „Șalău"
+  },
+  "Știucă": {
+   "latin": "Esox lucius",
+   "min_cm": 40,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 35"
+  },
+  "Văduviță": {
+   "latin": "Leuciscus idus",
+   "min_cm": 30,
+   "retention": null,
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 37"
+  },
+  "Coregon": {
+   "latin": "Coregonus sp.",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, anexa poz. 11"
+  },
+  "Lostriță": {
+   "latin": "Hucho hucho",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  },
+  "Asprete": {
+   "latin": "Romanichthys valsanicola",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR/MMAP 23/297/2025, art. 5 lit. c"
+  },
+  "Morun": {
+   "latin": "Huso huso",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  },
+  "Nisetru": {
+   "latin": "Acipenser gueldenstaedtii",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  },
+  "Păstrugă": {
+   "latin": "Acipenser stellatus",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  },
+  "Cegă": {
+   "latin": "Acipenser ruthenus",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  },
+  "Șip": {
+   "latin": "Acipenser nudiventris",
+   "min_cm": null,
+   "retention": "interzis",
+   "source_ref": "Ordin MADR 342/2008, art. 4"
+  }
+ }
+}
