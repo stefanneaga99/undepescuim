@@ -112,7 +112,7 @@ export function NearbyWatersSheet() {
                 {issuerBadge(water.asociatie?.permitIssuer)}
               </div>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {n.county ?? water.judet} · {water.asociatie?.name ?? 'Fără asociație'}
+                {water.judet} · {water.asociatie?.name ?? 'Fără asociație'}
               </p>
             </div>
             <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">
