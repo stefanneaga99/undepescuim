@@ -1,0 +1,79 @@
+name: Performance Budgets
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # M7/M8/M9 — static data payload gates (docs/performance-test-plan.md §8.2).
+  # EXPECTED-FAIL today: waters.json is 4.7 MB gzip / total ~6 MB / 22.5 MB
+  # parsed (measured 2026-08-16). The data optimization task flips these
+  # green — until then the job reports the numbers WITHOUT blocking PRs.
+  # Flip continue-on-error to false once the optimizations land.
+  data-budget:
+    name: Data payload budgets (M7/M8/M9)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    continue-on-error: true # expected-fail until data optimization lands
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Enforce data payload budgets
+        run: node scripts/check-data-budget.mjs
+
+  # M1-M5 — Lighthouse CI, mobile emulation, Fast 3G + CPU 4×.
+  # LCP<2.5s, TBT<200ms (lab INP proxy for M2), CLS<0.1. Expected to FAIL
+  # until the data optimization lands (LCP is gated behind the full-data
+  # fetch+parse); continue-on-error keeps the gate visible without blocking.
+  lhci:
+    name: Lighthouse CI mobile (M1-M5)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true # expected-fail until data optimization lands
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - name: Start production server
+        run: |
+          npm run start &
+          for i in $(seq 1 60); do curl -sf http://localhost:3000 >/dev/null 2>&1 && break; sleep 2; done
+      - name: Run Lighthouse CI (mobile budget)
+        run: npx lhci autorun --config=lighthouserc.json
+
+  # M5/M6/M10-M14 — Playwright perf traces on the map (scripts/_perf_map.mjs).
+  # Same expected-fail posture as the other jobs until the optimization lands.
+  perf-map:
+    name: Playwright map perf traces (M5/M6/M10-M14)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true # expected-fail until data optimization lands
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Install Playwright chromium
+        run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Start production server
+        run: |
+          npm run start &
+          for i in $(seq 1 60); do curl -sf http://localhost:3000 >/dev/null 2>&1 && break; sleep 2; done
+      - name: Run Playwright perf traces (Fast 3G)
+        run: node scripts/_perf_map.mjs http://localhost:3000

@@ -51,12 +51,14 @@ export function Header() {
       <nav className="flex shrink-0 items-center gap-1.5">
         <Link
           href="/permis"
+          data-testid="nav-permis"
           className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
         >
           Permis 2026
         </Link>
         <Link
           href="/specii"
+          data-testid="nav-specii"
           className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
         >
           Specii
@@ -80,6 +82,7 @@ export function Header() {
             size="icon-sm"
             className="sm:hidden"
             aria-label="Meniu"
+            data-testid="hamburger"
           >
             <Menu className="h-5 w-5" />
           </Button>
@@ -93,6 +96,7 @@ export function Header() {
               <SheetClose asChild key={href}>
                 <Link
                   href={href}
+                  data-testid={href === '/specii' ? 'nav-sheet-specii' : 'nav-sheet-permis'}
                   className="flex flex-col gap-0.5 rounded-lg px-3 py-3 text-sm font-semibold transition-colors hover:bg-accent hover:text-foreground"
                 >
                   {label}

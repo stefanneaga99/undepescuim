@@ -35,7 +35,7 @@ export function MapShell() {
   }, [loadData]);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col lg:flex-row">
+    <div data-testid="map-root" className="flex min-h-0 flex-1 flex-col lg:flex-row">
       <div className="relative flex min-h-0 flex-1 flex-col">
         <FilterBar />
         <div className="relative min-h-0 flex-1">

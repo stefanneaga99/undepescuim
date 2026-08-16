@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { getClientIp, reportRateLimiter } from '@/lib/rate-limit';
+import { buildIssueText } from '@/lib/issue-text';
 
 const REPO = 'neagastefan99/undepescuim';
 
@@ -33,9 +35,24 @@ export async function POST(request: Request) {
   if (!waterSlug || !waterName) {
     return NextResponse.json({ ok: false, error: 'missing_water' }, { status: 400 });
   }
-  // Honeypot: bots fill the hidden "website" field — silently drop.
+  // Honeypot: bots fill the hidden "website" field — silently drop WITHOUT
+  // consuming rate-limit quota (they never come back either way).
   if (honeypot) {
     return NextResponse.json({ ok: true, issueUrl: null });
+  }
+
+  // REM-1: in-memory per-IP sliding window (~5 req / 10 min). Runs before the
+  // token check so the 429 path is reachable even when REPORT_GITHUB_TOKEN is
+  // unset (e.g. local e2e). Serverless caveat: per-instance, not global — see
+  // src/lib/rate-limit.ts.
+  const clientIp = getClientIp(request);
+  const limit = reportRateLimiter.check(clientIp);
+  if (!limit.allowed) {
+    const retryAfter = String(limit.retryAfterSec ?? 600);
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited' },
+      { status: 429, headers: { 'Retry-After': retryAfter } },
+    );
   }
 
   const token = process.env.REPORT_GITHUB_TOKEN;
@@ -43,18 +60,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'not_configured' }, { status: 503 });
   }
 
-  const title = `[Raport] ${REASON_LABELS[reason]} — ${waterName}`;
-  const bodyText = [
-    `**Motiv:** ${REASON_LABELS[reason]} (\`${reason}\`)`,
-    `**Apă:** ${waterName} — \`${waterSlug}\``,
-    '',
-    '**Detalii:**',
-    details || '_(nespecificat)_',
-    '',
-    `**Contact:** ${contactEmail || '_(anonim)_'}`,
-    '',
-    `**Trimis automat:** ${new Date().toISOString()}`,
-  ].join('\n');
+  // REM-3/REM-4: build the issue text through the sanitizer (markdown-
+  // neutralized title/body, fenced details, control-char-stripped email).
+  const { title, body: bodyText } = buildIssueText({
+    reasonLabel: REASON_LABELS[reason],
+    reasonKey: reason,
+    waterName,
+    waterSlug,
+    details,
+    contactEmail,
+  });
 
   const res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
     method: 'POST',
@@ -68,7 +83,9 @@ export async function POST(request: Request) {
   });
 
   if (!res.ok) {
-    console.error('[report] create issue failed', res.status, await res.text());
+    // Log status only; the response body never contains the token, and logging
+    // the request/response headers could — keep error logging body-free.
+    console.error('[report] create issue failed', res.status);
     return NextResponse.json({ ok: false, error: 'github_error' }, { status: 502 });
   }
 

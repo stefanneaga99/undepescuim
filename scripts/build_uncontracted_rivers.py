@@ -480,6 +480,37 @@ def main() -> None:
     skipped_short = 0
     dup_skipped = 0
     trimmed_skipped = 0
+    # t_45a0beae: intra-overlay same-body dedupe. Two OSM clusters can carry
+    # the SAME name and be the same river mapped twice (sub-segment ways with
+    # identical names — the Galbena/Ghimbășel/Râșca Mare/Бирда pairs found in
+    # the A1 baseline had their smaller course 100% on the larger one). Track
+    # already-emitted courses per (name, county) and skip a cluster whose
+    # sampled course lies >= DUP_MIN_FRAC on an emitted one.
+    emitted_courses: list[tuple[str, str, tuple, "MultiLineString"]] = []  # (name_norm, county, bbox, mls)
+
+    def same_body_emitted(cl, county) -> bool:
+        from shapely.geometry import LineString, MultiLineString, Point
+
+        g = cl["geom"]
+        if g["type"] == "MultiLineString":
+            geom = MultiLineString(g["coordinates"])
+        else:
+            geom = LineString(g["coordinates"])
+        coords = list(geom.coords) if geom.geom_type == "LineString" else [
+            c for part in geom.geoms for c in part.coords
+        ]
+        if len(coords) < 2:
+            return False
+        sample = [Point(c) for c in coords[:: max(1, len(coords) // 40)]]
+        n_name = norm(cl.get("raw_name") or cl["name"])
+        for name2, county2, _bb, mls in emitted_courses:
+            if name2 != n_name or county2 != county:
+                continue
+            near = sum(1 for p in sample if mls.distance(p) <= DUP_EPS_DEG)
+            if near / len(sample) >= DUP_MIN_FRAC:
+                return True
+        return False
+
     for i, cl in enumerate(clusters):
         if i in matched:
             continue  # already contracted in waters.json
@@ -517,8 +548,15 @@ def main() -> None:
         if total_hits == 0:
             skipped_short += 1
             continue
+        # t_45a0beae: same-body duplicate already emitted (same name + county,
+        # course >= DUP_MIN_FRAC on an emitted course) — drop the copy.
+        if same_body_emitted(cl, county):
+            dup_skipped += 1
+            print(f"[dup-in] {(cl.get('raw_name') or cl['name'])!r} "
+                  f"is a duplicate of an already-emitted overlay course → excluded", flush=True)
+            continue
         slug = "unc-" + hashlib.md5(
-            f"{cl['name']}|{bbox[0]:.4f}|{bbox[1]:.4f}".encode()
+            f"{cl['name']}|{county}|{bbox[0]:.5f}|{bbox[1]:.5f}|{bbox[2]:.5f}|{bbox[3]:.5f}".encode()
         ).hexdigest()[:10]
         out.append({
             "slug": slug,
@@ -533,6 +571,10 @@ def main() -> None:
             "uncontracted": True,
             "lengthKm": round(length, 1),
         })
+        from shapely.geometry import MultiLineString as _MLS
+        course = (_MLS(geom["coordinates"]) if geom["type"] == "MultiLineString"
+                  else _MLS([geom["coordinates"]]))
+        emitted_courses.append((norm(cl.get("raw_name") or cl["name"]), county, tuple(bbox), course))
 
     out.sort(key=lambda w: w["name"].lower())
     OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

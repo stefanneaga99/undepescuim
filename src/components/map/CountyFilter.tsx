@@ -37,6 +37,8 @@ export function CountyFilter({ counties, selected, onToggle }: CountyFilterProps
               type="button"
               onClick={() => onToggle(county)}
               aria-pressed={active}
+              data-testid="county-chip"
+              data-county={county}
               className={cn(
                 'map-touch shrink-0 select-none rounded-full border px-2.5 py-1 text-xs font-medium transition-colors',
                 active

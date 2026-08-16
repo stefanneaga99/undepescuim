@@ -80,7 +80,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
       open={open}
       onOpenChange={(o) => { if (!o) reset(); onOpenChange(o); }}
     >
-      <DialogContent className="sm:max-w-md">
+      <DialogContent data-testid="report-dialog" className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Raportează o problemă</DialogTitle>
           <DialogDescription>
@@ -107,7 +107,12 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
             <fieldset className="flex flex-col gap-2">
               <legend className="text-sm font-medium">Motivul raportului</legend>
               {REASON_OPTIONS.map((opt) => (
-                <label key={opt.value} className="flex items-center gap-2 text-sm">
+                <label
+                  key={opt.value}
+                  data-testid="report-reason"
+                  data-value={opt.value}
+                  className="flex items-center gap-2 text-sm"
+                >
                   <input
                     type="radio"
                     name="reason"
@@ -140,6 +145,11 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
                 onChange={(e) => setContactEmail(e.target.value)}
                 placeholder="tu@exemplu.ro"
               />
+              {/* REM-4: explicit consent notice — the address is published in a
+                  PUBLIC GitHub issue when provided. */}
+              <p className="text-xs text-muted-foreground">
+                Dacă îl completezi, adresa va fi vizibilă în raportul public de pe GitHub.
+              </p>
             </div>
 
             {/* honeypot — hidden from humans, filled by bots */}

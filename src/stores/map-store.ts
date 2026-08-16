@@ -78,6 +78,24 @@ interface MapStore {
   clearUserPosition: () => void;
 }
 
+/**
+ * Perf instrumentation (docs/performance-test-plan.md §9): expose a stable
+ * first-paint signal for Playwright perf tests to await instead of guessing
+ * with waitForTimeout. `window.__perfDataLoaded` flips true (and
+ * `__perfDataLoadedAt` records `performance.now()`) the moment the map's
+ * data gate opens — the MapSkeleton is replaced by the real map then.
+ * No-op server-side / in old browsers.
+ */
+function markPerfDataLoaded() {
+  if (typeof window === 'undefined') return;
+  try {
+    (window as unknown as { __perfDataLoaded?: boolean; __perfDataLoadedAt?: number }).__perfDataLoaded = true;
+    (window as unknown as { __perfDataLoadedAt?: number }).__perfDataLoadedAt = performance.now();
+  } catch {
+    /* instrumentation must never break the app */
+  }
+}
+
 /** R9: would `slug` survive the given filters? (checked across both pools) */
 function isFilteredOut(
   slug: string | null,
@@ -150,10 +168,12 @@ export const useMapStore = create<MapStore>((set, get) => ({
         counties = Array.isArray(fc.features) ? fc.features : [];
       }
       set({ associations, waters, uncontracted, counties, dataLoaded: true });
+      markPerfDataLoaded();
     } catch (err) {
       // Never leave the skeleton spinning forever — render an empty map instead.
       console.error('[map-store] loadData failed:', err);
       set({ dataLoaded: true });
+      markPerfDataLoaded();
     }
   },
 

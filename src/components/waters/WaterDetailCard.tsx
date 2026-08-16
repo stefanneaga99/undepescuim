@@ -45,7 +45,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div data-testid="water-card" className="flex flex-col gap-3">
       {/* Header: name + badges */}
       <div className="flex flex-wrap items-center gap-1.5 pr-8">
         <h2 className="mr-auto text-base font-bold leading-tight">{water.name}</h2>
@@ -155,6 +155,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
                   href={NATIONAL_PERMIT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-testid="permit-row"
                   className="flex items-center gap-2 text-primary hover:underline"
                 >
                   <ShieldCheck className="h-3.5 w-3.5 shrink-0" />
@@ -165,6 +166,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
                     href={permitUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-testid="permit-row"
                     className="flex items-center gap-2 text-primary hover:underline"
                   >
                     <Ticket className="h-3.5 w-3.5 shrink-0" />
@@ -211,6 +213,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         <button
           type="button"
           onClick={() => openReport('data_correct')}
+          data-testid="report-positive"
           className="inline-flex items-center gap-1.5 rounded-md border border-green-600/40 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-800 transition-colors hover:bg-green-100 dark:border-green-500/40 dark:bg-green-950/40 dark:text-green-300 dark:hover:bg-green-950/70"
         >
           <CheckCircle2 className="h-3.5 w-3.5" />
@@ -219,6 +222,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         <button
           type="button"
           onClick={() => openReport(null)}
+          data-testid="report-flag"
           className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
           <Flag className="h-3.5 w-3.5" />

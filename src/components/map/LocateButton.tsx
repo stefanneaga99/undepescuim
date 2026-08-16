@@ -65,6 +65,7 @@ export function LocateButton() {
       {showBubble && (
         <div
           role="status"
+          data-testid="geolocation-bubble"
           className="max-w-[240px] rounded-lg border bg-background/95 px-3 py-2 text-xs shadow-md backdrop-blur"
         >
           {denied ? (
@@ -99,6 +100,7 @@ export function LocateButton() {
         onClick={onLocate}
         disabled={requesting}
         aria-label="Localizează-mă"
+        data-testid="locate-button"
         className={cn(
           'map-touch inline-flex items-center gap-2 rounded-full border bg-background/95 py-2 pl-3 pr-3.5 text-sm font-medium shadow-md backdrop-blur transition-colors hover:bg-accent disabled:opacity-70',
           granted && 'text-primary',

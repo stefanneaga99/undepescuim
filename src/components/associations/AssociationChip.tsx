@@ -28,6 +28,7 @@ export function AssociationChip() {
         onClick={openAssociationSheet}
         className="map-touch pointer-events-auto flex max-w-full items-center gap-2 rounded-full border bg-background/95 py-1.5 pl-2 pr-2.5 text-sm shadow-md backdrop-blur transition-colors hover:bg-accent"
         aria-label={`Detalii ${association.name}`}
+        data-testid="assoc-chip"
       >
         <Building2 className="h-4 w-4 shrink-0 text-primary" />
         <span className="truncate font-medium">{association.name}</span>

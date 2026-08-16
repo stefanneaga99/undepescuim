@@ -54,6 +54,7 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
             type="button"
             aria-expanded={open}
             aria-haspopup="listbox"
+            data-testid="locality-filter"
             className={cn(
               'map-touch inline-flex w-fit max-w-full items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition-colors',
               selected.length > 0
@@ -74,6 +75,7 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
                 <CommandGroup heading="Toate localitățile">
                   <CommandItem
                     value="__all__"
+                    data-testid="locality-reset"
                     onSelect={() => {
                       onClear();
                       setOpen(false);
@@ -92,6 +94,7 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
                       key={locality}
                       value={locality}
                       data-checked={active}
+                      data-testid="locality-option"
                       onSelect={() => onToggle(locality)}
                     >
                       <span className="truncate">{locality}</span>

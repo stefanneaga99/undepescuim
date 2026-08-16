@@ -323,8 +323,19 @@ def main() -> None:
 
     out = []
     skipped = {"foreign": 0, "unnamed_small": 0, "named_small": 0, "contracted": 0,
-               "excluded_type": 0, "no_geom": 0, "wetland_skip": 0}
+               "excluded_type": 0, "no_geom": 0, "wetland_skip": 0, "dup_in": 0}
     named_n = 0
+    # t_45a0beae: same-body dedupe — the OSM extract maps some ponds twice
+    # (way AND relation for the same body, or nested ways). Key on
+    # (county, 4-dp rounded bbox, 4-dp rounded centroid): two polygons with
+    # the same center AND extent to ~11 m are the same body.
+    emitted_keys: set[tuple] = set()
+
+    def same_body_key(county, bbox, cpt) -> tuple:
+        return (county,
+                round(bbox[0], 4), round(bbox[1], 4), round(bbox[2], 4), round(bbox[3], 4),
+                round(cpt[0], 4), round(cpt[1], 4))
+
     for p in polys:
         tags = p["tags"]
         wv = tags.get("water")
@@ -382,6 +393,11 @@ def main() -> None:
         if is_contracted(p["name"], county, cpt, geom):
             skipped["contracted"] += 1
             continue
+        key = same_body_key(county, bbox, cpt)
+        if key in emitted_keys:
+            skipped["dup_in"] += 1
+            continue
+        emitted_keys.add(key)
 
         # size-proportional simplification: tol = 5% of linear size, capped.
         linear_deg = math.sqrt(geom.area)
@@ -423,7 +439,7 @@ def main() -> None:
                 geom_out = {"type": "MultiPolygon", "coordinates": parts}
 
         slug = "uncl-" + hashlib.md5(
-            f"{name}|{county}|{bbox[0]:.4f}|{bbox[1]:.4f}".encode()
+            f"{name}|{county}|{bbox[0]:.5f}|{bbox[1]:.5f}|{bbox[2]:.5f}|{bbox[3]:.5f}|{cpt[0]:.5f}|{cpt[1]:.5f}".encode()
         ).hexdigest()[:10]
         dimensiune = f"{area_ha:.1f} ha" if area_ha >= 10 else f"{area_ha:.2f} ha"
         out.append({

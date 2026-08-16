@@ -56,7 +56,13 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
         <CommandEmpty>Nicio specie găsită</CommandEmpty>
         <CommandGroup heading="Specii">
           {species.map((s) => (
-            <CommandItem key={s.slug} value={itemValue(s)} onSelect={() => handleSelect(s.slug)}>
+            <CommandItem
+              key={s.slug}
+              value={itemValue(s)}
+              data-testid="species-option"
+              data-slug={s.slug}
+              onSelect={() => handleSelect(s.slug)}
+            >
               <span className="flex-1 truncate">
                 {s.nameRo}
                 {s.nameScientific && (
@@ -82,6 +88,7 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
         onClick={() => setOpen(true)}
         className="map-touch flex h-11 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground shadow-sm md:hidden"
         aria-label="Caută o specie"
+        data-testid="species-search-mobile"
       >
         <Search className="h-4 w-4 shrink-0" />
         <span className="flex-1 text-left">Caută o specie…</span>
@@ -121,6 +128,7 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
           }}
           className="map-touch flex h-11 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm shadow-sm transition-colors hover:bg-accent"
           aria-label="Caută o specie"
+          data-testid="species-search"
         >
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
           <span className="flex-1 truncate text-left text-muted-foreground">Caută o specie…</span>

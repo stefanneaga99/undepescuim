@@ -1,0 +1,58 @@
+# REM-6 / SEC-07: dependency + data-integrity security gates.
+# Triggered on every PR and push to main. See docs/security-test-plan.md §5.
+name: Security
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Audit & static gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: npm audit (prod deps — fail on moderate+)
+        run: npm audit --omit=dev --audit-level=moderate
+
+      - name: npm audit (all deps — fail on high+)
+        run: npm audit --audit-level=high
+
+      - name: XSS sink scan (SEC-06 — no raw-HTML sinks)
+        run: |
+          if grep -rnE 'dangerouslySetInnerHTML|__html|innerHTML|insertAdjacentHTML|document\.write|new Function|eval\(' src/; then
+            echo "::error:: raw-HTML sink found in src/ — refused"
+            exit 1
+          fi
+          echo "PASS: no raw-HTML sinks"
+
+      - name: Data scheme scan (SEC-08 / REM-5)
+        run: node scripts/security_data_check.mjs
+
+  deps:
+    name: Dependency review (PRs)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    # Dependency review only makes sense on PRs.
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high

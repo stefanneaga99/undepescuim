@@ -24,6 +24,7 @@ export function WaterTypeFilter({ selected, onChange }: WaterTypeFilterProps) {
       <div
         role="group"
         aria-label="Tipul apei"
+        data-testid="type-filter"
         className="inline-flex w-fit rounded-full border bg-muted/60 p-0.5"
       >
         {OPTIONS.map((opt) => (
@@ -32,6 +33,8 @@ export function WaterTypeFilter({ selected, onChange }: WaterTypeFilterProps) {
             type="button"
             onClick={() => onChange(opt.value)}
             aria-pressed={selected === opt.value}
+            data-testid="type-option"
+            data-value={opt.value}
             className={cn(
               'map-touch select-none rounded-full px-3 py-1 text-xs font-medium transition-colors',
               selected === opt.value

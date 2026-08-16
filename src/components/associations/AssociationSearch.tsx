@@ -57,6 +57,8 @@ export function AssociationSearch() {
             <CommandItem
               key={a.slug}
               value={`${a.name} ${a.slug}`}
+              data-testid="assoc-option"
+              data-slug={a.slug}
               onSelect={() => handleSelect(a.slug)}
             >
               <span className="flex-1 truncate">{a.name}</span>
@@ -70,7 +72,12 @@ export function AssociationSearch() {
           ))}
         </CommandGroup>
         <CommandGroup>
-          <CommandItem value="toate-asociatiile" onSelect={() => handleSelect(null)}>
+          <CommandItem
+            value="toate-asociatiile"
+            data-testid="assoc-option"
+            data-slug="__all__"
+            onSelect={() => handleSelect(null)}
+          >
             <span className="flex-1">Toate asociațiile</span>
             {selectedSlug === null && <Check className="ml-1 h-3.5 w-3.5 text-primary" />}
           </CommandItem>
@@ -89,6 +96,7 @@ export function AssociationSearch() {
         onClick={() => setOpen(true)}
         className="map-touch flex h-9 w-9 shrink-0 items-center justify-center rounded-md border text-muted-foreground md:hidden"
         aria-label="Caută asociația"
+        data-testid="assoc-search-mobile"
       >
         <Search className="h-4 w-4" />
       </button>
@@ -129,6 +137,7 @@ export function AssociationSearch() {
             'map-touch flex h-9 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm shadow-sm transition-colors hover:bg-accent',
             open && 'ring-2 ring-ring',
           )}
+          data-testid="assoc-search"
         >
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
           <span

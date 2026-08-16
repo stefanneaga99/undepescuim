@@ -97,6 +97,7 @@ export function AssociationDetailSheet() {
             )}
             <Drawer.Content
               aria-label={association ? `Detalii: ${association.name}` : 'Detalii asociație'}
+              data-testid="assoc-detail-sheet"
               className="fixed inset-x-0 bottom-0 z-[1200] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
             >
               {/* drag handle */}
@@ -130,7 +131,10 @@ export function AssociationDetailSheet() {
 
       {/* ── Desktop (≥1024px): right side panel ──────────────────────── */}
       {!isCompact && open && association && (
-        <aside className="flex h-full w-[380px] shrink-0 flex-col border-l bg-background">
+        <aside
+          data-testid="assoc-detail-sheet"
+          className="flex h-full w-[380px] shrink-0 flex-col border-l bg-background"
+        >
           <div className="flex h-12 shrink-0 items-center justify-between border-b px-4">
             <h2 className="text-sm font-semibold">Detalii asociație</h2>
             <button

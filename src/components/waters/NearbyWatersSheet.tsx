@@ -104,6 +104,7 @@ export function NearbyWatersSheet() {
           <button
             type="button"
             onClick={() => selectWater(n.slug)}
+            data-testid="nearby-row"
             className="flex w-full items-center gap-2 rounded-lg border bg-card p-2.5 text-left transition-colors hover:bg-accent"
           >
             <div className="min-w-0 flex-1">
@@ -143,6 +144,7 @@ export function NearbyWatersSheet() {
           <Drawer.Content
             aria-label="Ape în apropiere"
             data-nearby-sheet=""
+            data-testid="nearby-sheet"
             className="fixed inset-x-0 bottom-0 z-[1050] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
           >
             <SheetGrabber />
@@ -163,6 +165,7 @@ export function NearbyWatersSheet() {
   return (
     <div
       data-nearby-sheet=""
+      data-testid="nearby-sheet"
       className="absolute bottom-[calc(var(--sheet-snap-h,0vh)+88px)] left-3 z-[1000] flex w-[360px] max-w-[calc(100vw-24px)] flex-col gap-1.5 rounded-xl border bg-background/95 p-3 shadow-md backdrop-blur"
     >
       {header}
