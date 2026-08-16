@@ -108,7 +108,7 @@
   "ape": 9,
   "adresa": "Str. Cuza Vodă, Nr. FN, Bl. A, Cluj-Napoca",
   "telefon": "0745 515 208",
-  "siteUrl": "http://ajpscluj.ro/",
+  "siteUrl": "https://ajpscluj.ro/",
   "bbox": [
    23.0569618,
    46.7029011,
@@ -171,7 +171,7 @@
   "ape": 17,
   "adresa": "Strada Mihai Viteazul 29, Pitesti",
   "telefon": "0756652853",
-  "siteUrl": "https://ajvps-arges.ro/",
+  "siteUrl": "https://ajvpsarges.ro/",
   "bbox": [
    24.64858473669,
    44.73430445736,
@@ -493,7 +493,7 @@
   "ape": 12,
   "adresa": "Str. Christian Tell, nr.28A, (Traian nr. 9), Târgu Jiu",
   "telefon": "0353801888",
-  "siteUrl": "https://www.ajvpsgorj.com/",
+  "siteUrl": "https://ajvpsgorj.webnode.ro/",
   "bbox": [
    22.549294,
    44.325495,
