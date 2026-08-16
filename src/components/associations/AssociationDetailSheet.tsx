@@ -160,7 +160,7 @@ function AssociationDetailContent({ association }: { association: Association })
   return (
     <div className="flex flex-col gap-3">
       <div>
-        <h2 className="text-base font-bold leading-tight">{association.name}</h2>
+        <h2 data-testid="assoc-detail-name" className="text-base font-bold leading-tight">{association.name}</h2>
         {association.name_long && association.name_long !== association.name && (
           <p className="mt-0.5 text-sm text-muted-foreground">{association.name_long}</p>
         )}
