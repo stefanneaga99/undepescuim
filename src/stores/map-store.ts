@@ -1,5 +1,12 @@
 import { create } from 'zustand';
 import type { Association, ContractFilter, Water, WaterTypeFilter } from '@/types/data';
+import { distanceToWaterKm, nearestWaters, type NearbyWater } from '@/utils/geo';
+
+/** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
+export const DEFAULT_RADIUS_KM = 25;
+export const EXPANDED_RADIUS_KM = 50;
+export const MIN_NEARBY_COUNT = 3;
+export const NEARBY_LIMIT = 10;
 
 /**
  * Single source of truth for all cross-component map UI state.
@@ -41,6 +48,15 @@ interface MapStore {
   // it clears the selected water, selecting a water closes it.
   associationSheetOpen: boolean;
 
+  // Geolocation MVP (docs/geolocation-feasibility.md): one-shot user fix +
+  // the nearest contracted waters computed client-side from the loaded pool.
+  // `nearbyRadiusKm` is the ADAPTIVE radius actually used (25 → 50 when too
+  // few results; grows to cover the nearest-few fallback) — the map draws
+  // the circle with this value and the sheet labels it.
+  userPosition: { lat: number; lon: number; accuracy: number } | null;
+  nearbyWaters: NearbyWater[];
+  nearbyRadiusKm: number;
+
   // Actions
   loadData: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
@@ -51,6 +67,10 @@ interface MapStore {
   toggleCounty: (county: string) => void;
   setWaterTypeFilter: (type: WaterTypeFilter) => void;
   setContractFilter: (filter: ContractFilter) => void;
+  /** Geolocation MVP: store a one-shot position fix + recompute nearest waters. */
+  applyUserPosition: (pos: { lat: number; lon: number; accuracy: number }) => void;
+  /** Geolocation MVP: clear the user marker / circle / nearby list. */
+  clearUserPosition: () => void;
 }
 
 /** R9: would `slug` survive the given filters? (checked across both pools) */
@@ -82,6 +102,10 @@ export const useMapStore = create<MapStore>((set, get) => ({
   contractFilter: 'all',
   suppressAssociationFlyTo: false,
   associationSheetOpen: false,
+
+  userPosition: null,
+  nearbyWaters: [],
+  nearbyRadiusKm: DEFAULT_RADIUS_KM,
 
   loadData: async () => {
     try {
@@ -215,4 +239,34 @@ export const useMapStore = create<MapStore>((set, get) => ({
     }
     set({ contractFilter: filter, selectedWaterSlug: nextSlug });
   },
+
+  // Geolocation MVP (docs/geolocation-feasibility.md §5 AC4): adaptive radius
+  // — 25 km default; if fewer than 3 contracted waters are within it, expand
+  // to 50 km; always show at least the nearest few regardless of radius (and
+  // grow the drawn radius to cover the farthest shown entry so the circle
+  // never under-states what the list claims).
+  applyUserPosition: (pos) => {
+    const { waters } = get();
+    let radius = DEFAULT_RADIUS_KM;
+    let nearby = nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius });
+    if (nearby.length < MIN_NEARBY_COUNT) {
+      radius = EXPANDED_RADIUS_KM;
+      nearby = nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius });
+    }
+    if (nearby.length < MIN_NEARBY_COUNT) {
+      // Nearest-few fallback, no radius cap (e.g. deep wilderness).
+      nearby = waters
+        .map((w) => ({ slug: w.slug, km: distanceToWaterKm(pos.lat, pos.lon, w) }))
+        .filter((e) => Number.isFinite(e.km))
+        .sort((a, b) => a.km - b.km)
+        .slice(0, NEARBY_LIMIT);
+      if (nearby.length > 0) {
+        radius = Math.max(radius, Math.ceil(nearby[nearby.length - 1].km / 10) * 10);
+      }
+    }
+    set({ userPosition: pos, nearbyWaters: nearby, nearbyRadiusKm: radius });
+  },
+
+  clearUserPosition: () =>
+    set({ userPosition: null, nearbyWaters: [], nearbyRadiusKm: DEFAULT_RADIUS_KM }),
 }));

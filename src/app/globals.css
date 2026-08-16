@@ -156,3 +156,35 @@
 :root {
   --sheet-snap-h: 0vh;
 }
+
+/* Geolocation MVP: blue pulsing user-position dot (divIcon — no bitmap
+   marker assets; see docs/geolocation-feasibility.md §2c). */
+.user-position-dot {
+  background: #2563eb;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  box-shadow:
+    0 0 0 4px rgb(37 99 235 / 0.25),
+    0 1px 3px rgb(0 0 0 / 0.3);
+  animation: user-position-pulse 2s ease-out infinite;
+}
+@keyframes user-position-pulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgb(37 99 235 / 0.45),
+      0 0 0 4px rgb(37 99 235 / 0.25),
+      0 1px 3px rgb(0 0 0 / 0.3);
+  }
+  70% {
+    box-shadow:
+      0 0 0 12px rgb(37 99 235 / 0),
+      0 0 0 4px rgb(37 99 235 / 0.25),
+      0 1px 3px rgb(0 0 0 / 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgb(37 99 235 / 0),
+      0 0 0 4px rgb(37 99 235 / 0.25),
+      0 1px 3px rgb(0 0 0 / 0.3);
+  }
+}

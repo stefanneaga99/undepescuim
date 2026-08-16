@@ -6,8 +6,10 @@ import { useMapStore } from '@/stores/map-store';
 import { FilterBar } from '@/components/map/FilterBar';
 import { ColorLegend } from '@/components/map/ColorLegend';
 import { WaterDetailSheet } from '@/components/waters/WaterDetailSheet';
+import { NearbyWatersSheet } from '@/components/waters/NearbyWatersSheet';
 import { AssociationChip } from '@/components/associations/AssociationChip';
 import { AssociationDetailSheet } from '@/components/associations/AssociationDetailSheet';
+import { LocateButton } from '@/components/map/LocateButton';
 import { MapSkeleton } from '@/components/map/MapSkeleton';
 
 /**
@@ -40,9 +42,11 @@ export function MapShell() {
           {dataLoaded ? <MapView /> : <MapSkeleton />}
           <ColorLegend />
           <AssociationChip />
+          <LocateButton />
         </div>
       </div>
       <WaterDetailSheet />
+      <NearbyWatersSheet />
       <AssociationDetailSheet />
     </div>
   );

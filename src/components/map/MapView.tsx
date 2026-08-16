@@ -8,6 +8,7 @@ import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
 import { WaterFeatureLayer, contractInterval } from '@/components/map/WaterFeatureLayer';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
+import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 
 /**
@@ -72,6 +73,7 @@ export function MapView() {
         focusColor={focusColor}
         focusRange={focusRange}
       />
+      <UserPositionLayer />
       <FlyToController />
     </MapContainer>
   );
