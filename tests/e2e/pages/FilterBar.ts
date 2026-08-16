@@ -57,12 +57,20 @@ export class FilterBar {
   }
 
   async selectLocality(locality: string): Promise<void> {
-    await this.localityTrigger.click();
+    await this.openLocality();
     await this.localityOption(locality).click();
   }
 
-  async resetLocalities(): Promise<void> {
+  /** Open the locality popover AFTER closing any previous open popover —
+   * the popover stays open after a pick (multi-select UX), so a stale open
+   * popover makes the trigger click TOGGLE shut instead of re-opening. */
+  async openLocality(): Promise<void> {
+    await this.page.keyboard.press('Escape');
     await this.localityTrigger.click();
+  }
+
+  async resetLocalities(): Promise<void> {
+    await this.openLocality();
     await this.localityReset.click();
   }
 

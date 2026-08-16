@@ -23,4 +23,6 @@ export async function routeData(page: Page, seed: SeedData): Promise<void> {
   await page.route('**/tile.openstreetmap.org/**', (r) =>
     r.fulfill({ contentType: 'image/png', body: TRANSPARENT_PNG }),
   );
+  // No favicon in this app — a 404 would trip the smoke console-error gate.
+  await page.route('**/favicon.ico', (r) => r.fulfill({ status: 204 }));
 }

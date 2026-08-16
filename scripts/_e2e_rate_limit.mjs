@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /**
  * REM-1 e2e: rate limiting on POST /api/report (docs/security-test-plan.md).
  *
