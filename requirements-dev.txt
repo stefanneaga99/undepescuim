@@ -1,0 +1,9 @@
+# Dev/test dependencies for the data pipeline (UndePescuim.ro).
+# The pipeline runs on the repo's .venv (shapely + numpy already installed);
+# this file pins the TEST tooling so CI and future devs reproduce it:
+#   .venv/bin/pip install -r requirements-dev.txt
+pytest==9.1.1
+pytest-cov==6.0.0
+shapely==2.1.2
+numpy==2.5.2
+requests==2.33.0

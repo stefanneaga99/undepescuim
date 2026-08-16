@@ -1,0 +1,27 @@
+{
+  "name": "parity_expectations",
+  "description": "Golden numbers for tests/fixtures/winding_river.geojson, computed by the REFERENCE implementation scripts/_mapping_common.py and asserted EQUAL by both the pytest side (test_parity_vs_frontend.py) and the vitest side (src/utils/river-course.test.ts). Any drift between the two implementations fails one of the two.",
+  "ordered_course": {
+    "first_point": [26.024, 45.33],
+    "last_point": [26.08, 45.18],
+    "part_point_counts": [3, 3, 3, 3, 3]
+  },
+  "fraction_at_point": [
+    { "point": [26.0240, 45.3300], "fraction": 0.0 },
+    { "point": [26.0360, 45.3000], "fraction": 0.200352 },
+    { "point": [26.0500, 45.2700], "fraction": 0.403533 },
+    { "point": [26.0640, 45.2400], "fraction": 0.606713 },
+    { "point": [26.0800, 45.1800], "fraction": 1.0 },
+    { "point": [26.0570, 45.2550], "fraction": 0.403533 }
+  ],
+  "km_to_frac": [
+    { "km": 0.0, "fraction": 0.0 },
+    { "km": 10.0, "fraction": 0.981699 },
+    { "km": 999.0, "fraction": 1.0 }
+  ],
+  "deduped_chain": {
+    "point_count": 10,
+    "first_point": [26.024, 45.33],
+    "last_point": [26.08, 45.18]
+  }
+}

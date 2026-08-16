@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "winding_river_parity_fixture",
+  "description": "Shared geometry for the TS<->Python parity golden tests (QA-UNIT t_52cdeba9). A 5-part river course in the Buzău region, input parts SCRAMBLED (like OSM fragmented ways) with one exact duplicate part (p_dup == p_mid). Both implementations (src/utils/river-course.ts and scripts/_mapping_common.py) must produce identical ordered parts and fractions. See tests/fixtures/parity_expectations.json for the golden numbers.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "winding" },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [[26.0360, 45.3000], [26.0420, 45.2850], [26.0500, 45.2700]],
+          [[26.0240, 45.3300], [26.0300, 45.3150], [26.0360, 45.3000]],
+          [[26.0740, 45.2100], [26.0780, 45.1950], [26.0800, 45.1800]],
+          [[26.0640, 45.2400], [26.0700, 45.2250], [26.0740, 45.2100]],
+          [[26.0360, 45.3000], [26.0420, 45.2850], [26.0500, 45.2700]]
+        ]
+      }
+    }
+  ]
+}
