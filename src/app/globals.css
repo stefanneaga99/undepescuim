@@ -157,6 +157,41 @@
   --sheet-snap-h: 0vh;
 }
 
+/* ── Bottom-sheet drag handle (t_f21260ee) ──────────────────────────────
+   Full-width, 44px-tall touch target with an inset visual pill. Vaul injects
+   its own <style> into <head> AFTER this stylesheet, so these overrides use
+   the `html` prefix (specificity 0,1,1 > vaul's 0,1,0) to win the cascade. */
+html [data-vaul-handle] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  opacity: 1;
+  cursor: grab;
+}
+html [data-vaul-handle]:active,
+html [data-vaul-handle]:hover {
+  opacity: 1;
+  cursor: grabbing;
+}
+/* The hit area is vaul's guaranteed-minimum-44px wrapper around the visual
+   pill; make it fill the whole handle so the entire strip is grabbable. */
+html [data-vaul-handle-hitarea] {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
 /* Geolocation MVP: blue pulsing user-position dot (divIcon — no bitmap
    marker assets; see docs/geolocation-feasibility.md §2c). */
 .user-position-dot {

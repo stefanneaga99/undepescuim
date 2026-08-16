@@ -6,6 +6,7 @@ import { ExternalLink, MapPin, Phone, X } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { AssociationValidity } from '@/components/associations/AssociationValidity';
+import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { cn } from '@/lib/utils';
 import type { Association } from '@/types/data';
 
@@ -99,12 +100,10 @@ export function AssociationDetailSheet() {
               className="fixed inset-x-0 bottom-0 z-[1200] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
             >
               {/* drag handle */}
-              <div className="flex shrink-0 justify-center pt-2.5 pb-1 select-none" aria-hidden>
-                <span className="h-1 w-9 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-              </div>
+              <SheetGrabber />
 
               {association && (
-                <div className="absolute right-3 top-2.5">
+                <div className="absolute right-3 top-12">
                   <button
                     type="button"
                     onClick={closeAssociationSheet}
@@ -119,7 +118,7 @@ export function AssociationDetailSheet() {
               {association && (
                 <div
                   key={association.slug}
-                  className="min-h-0 flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)] animate-in fade-in-0 duration-200"
+                  className="h-[calc(65dvh-44px)] shrink-0 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)] animate-in fade-in-0 duration-200"
                 >
                   <AssociationDetailContent association={association} />
                 </div>

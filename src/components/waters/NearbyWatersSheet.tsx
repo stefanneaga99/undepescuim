@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { Drawer } from 'vaul';
 import { ChevronRight, LocateFixed, X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { cn } from '@/lib/utils';
@@ -111,7 +112,7 @@ export function NearbyWatersSheet() {
                 {issuerBadge(water.asociatie?.permitIssuer)}
               </div>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {water.judet} · {water.asociatie?.name ?? 'Fără asociație'}
+                {n.county ?? water.judet} · {water.asociatie?.name ?? 'Fără asociație'}
               </p>
             </div>
             <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">
@@ -144,14 +145,12 @@ export function NearbyWatersSheet() {
             data-nearby-sheet=""
             className="fixed inset-x-0 bottom-0 z-[1050] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
           >
-            <div className="flex shrink-0 justify-center pt-2.5 pb-1 select-none" aria-hidden>
-              <span className="h-1 w-9 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-            </div>
+            <SheetGrabber />
             <div className="flex flex-col gap-1.5 px-4 pb-2">
               {header}
               {freshness}
             </div>
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)]">
+            <div className="min-h-0 max-h-[calc(85dvh-44px-64px)] flex-1 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)]">
               {list}
             </div>
           </Drawer.Content>
