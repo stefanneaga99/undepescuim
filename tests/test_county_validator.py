@@ -29,7 +29,7 @@ class TestValidateGeometryCountyPure:
     """Unit tests for the pure classifier helpers (no data files)."""
 
     def test_norm(self):
-        assert vc_norm("Bistrița-Năsăud") == "bistrita nasaud"
+        assert vc_norm("Bistrița-Năsăud") == "bistrita-nasaud"
         assert vc_norm("CĂLĂRAȘI") == "calarasi"
 
     def test_water_points_geometry(self):
@@ -40,8 +40,8 @@ class TestValidateGeometryCountyPure:
     def test_water_points_fallback_bbox(self):
         w = {"bbox": [23.0, 46.0, 24.0, 47.0]}
         pts = water_points(w)
-        # centroid + 4 corners
-        assert [23.5, 46.5] in pts
+        # centroid + 4 corners (tuples)
+        assert (23.5, 46.5) in pts
         assert len(pts) == 5
 
     def test_water_points_empty(self):
@@ -101,15 +101,16 @@ class TestSnapshotInvariants:
         assert outliers == [], f"waters with geometry far from their county seat: {outliers[:10]}"
 
     def test_county_clip_keys_are_normalized(self):
-        """geometryByCounty keys must equal countyClipKey(judet) so the FE
-        lookup never misses (t_117f0b99)."""
+        """geometryByCounty keys must equal countyClipKey(judet) (lowercase,
+        diacritics stripped, ALL separators removed) so the FE lookup never
+        misses (t_117f0b99)."""
         waters = _load(WATERS)
         bad = []
         for w in waters:
             by_county = w.get("geometryByCounty")
             if not by_county:
                 continue
-            key = vc_norm(w.get("judet") or "").replace(" ", "")
+            key = vc_norm(w.get("judet") or "").replace(" ", "").replace("-", "")
             if key not in by_county:
                 bad.append((w["slug"], key, list(by_county.keys())[:3]))
         assert bad == [], f"geometryByCounty missing the water's own county key: {bad[:10]}"

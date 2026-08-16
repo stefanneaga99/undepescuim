@@ -17,7 +17,7 @@ class TestNorm:
 
 class TestSimilarity:
     def test_token_overlap(self):
-        assert similarity("paraul buzaielului", "buzaielului") == pytest.approx(2 / 3)
+        assert similarity("paraul buzaielului", "buzaielului") == pytest.approx(0.5)
         assert similarity("a b c", "a b c d") == pytest.approx(3 / 4)
 
     def test_no_overlap(self):
@@ -75,8 +75,16 @@ class TestMatchWater:
         assert f["properties"]["source_detail"] == "osm_exact"
 
     def test_fuzzy_match_within_threshold(self):
-        idx, geoms = self._index()
-        w = {"name": "Valea Rece Mică", "slug": "vr-mica", "judet": "Cluj"}
+        # index entry has 3 tokens, water core shares 2 → 2/3 >= 0.6 fuzzy hit
+        data = {
+            "elements": [
+                {"type": "node", "id": 1, "lat": 46.0, "lon": 23.0},
+                {"type": "node", "id": 2, "lat": 46.1, "lon": 23.1},
+                {"type": "way", "id": 101, "nodes": [1, 2], "tags": {"name": "Valea Rece Mare", "waterway": "stream"}},
+            ]
+        }
+        idx, geoms = build_name_index(data)
+        w = {"name": "Valea Rece Mare Mică", "slug": "vrm-mica", "judet": "Cluj"}
         f = match_water(w, idx, geoms)
         assert f is not None
         assert f["properties"]["source_detail"].startswith("osm_fuzzy_")

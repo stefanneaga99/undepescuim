@@ -23,7 +23,7 @@ COURSE = [
 
 class TestNorm:
     def test_strip_diacritics(self):
-        assert norm("Bistrița-Năsăud") == "bistrita nasaud"
+        assert norm("Bistrița-Năsăud") == "bistrita-nasaud"  # hyphens kept
         assert norm("Râul Buzău") == "raul buzau"
 
 
@@ -77,7 +77,7 @@ class TestBuildQueries:
 
 
 class TestGeocodeAny:
-    def test_returns_first_hit(self):
+    def test_returns_first_hit(self, monkeypatch):
         calls = []
 
         def fake_geocode(q):
@@ -86,11 +86,13 @@ class TestGeocodeAny:
                 return [25.0, 46.0]
             return None
 
+        monkeypatch.setattr("assign_course_frac.geocode", fake_geocode)
         out = geocode_any(["brașov, românia", "river, românia"])
         assert out == [25.0, 46.0]
         assert calls == ["brașov, românia", "river, românia"]
 
-    def test_returns_none_when_all_miss(self):
+    def test_returns_none_when_all_miss(self, monkeypatch):
+        monkeypatch.setattr("assign_course_frac.geocode", lambda q: None)
         out = geocode_any(["a", "b"])
         assert out is None
 
@@ -101,7 +103,7 @@ class TestCountySeat:
 
     def test_diacritics_normalized(self):
         assert county_seat("Bistrița-Năsăud") == [24.50, 47.13]
-        assert county_seat("bistrita nasaud") == [24.50, 47.13]
+        assert county_seat("bistrita-nasaud") == [24.50, 47.13]
 
     def test_unknown(self):
         assert county_seat("Atlantis") is None

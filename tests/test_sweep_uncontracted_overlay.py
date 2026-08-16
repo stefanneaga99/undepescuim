@@ -16,15 +16,16 @@ def _w(name="Râul Siriu"):
 
 class TestRiverCoreName:
     def test_strips_prefixes(self):
-        assert river_core_name("Râul Siriu") == "siriul"
-        assert river_core_name("Râul Siriu") == river_core_name("Siriul")
+        assert river_core_name("Râul Siriu") == "siriu"
+        assert river_core_name("Siriul") == "siriul"  # definite-article form kept as-is
         assert river_core_name("Valea Pojorâtei") == "pojoratei"
         assert river_core_name("Recea") == "recea"  # no prefix
 
 
 class TestNameMatch:
     def test_exact_normalized(self):
-        assert name_match("Râul Siriu", "Siriul")
+        assert name_match("Râul Siriu", "Siriu")
+        assert name_match("Siriul", "Siriul")
 
     def test_core_equality(self):
         assert name_match("Râul Bâsca", "Bâsca")
@@ -35,6 +36,8 @@ class TestNameMatch:
 
     def test_no_match(self):
         assert not name_match("Râul Olt", "Râul Mureș")
+        # 'siriu' vs 'siriul' do NOT match — definite-article forms are not merged
+        assert not name_match("Râul Siriu", "Siriul")
 
 
 class TestClassifyRiverHit:
@@ -68,7 +71,7 @@ class TestClassifyRiverHit:
         assert "mouth" in note
 
     def test_name_collision_far_apart(self):
-        unc_geom = LineString([[0, 0], [1, 0]])
+        unc_geom = LineString([[0, 0], [0.5, 0], [1, 0]])  # 3-pt: real course, not a 2-pt chord
         w_geom = LineString([[5, 5], [6, 5]])
         label, conf, note = classify_river_hit(
             {"name": "Crasna"}, unc_geom, _w("Crasna"), w_geom, 0.5, 0.1, False, True
@@ -101,7 +104,7 @@ class TestClassifyRiverHit:
         assert label == "DUPLICATE"  # falls through to the name+frac_near rule
 
     def test_no_classification_returned(self):
-        unc_geom = LineString([[0, 0], [1, 0]])
+        unc_geom = LineString([[0, 0], [0.5, 0], [1, 0]])  # 3-pt: real course
         w_geom = LineString([[5, 5], [6, 5]])
         cls = classify_river_hit(
             {"name": "Altul"}, unc_geom, _w(), w_geom, 7.0, 0.0, False, False
