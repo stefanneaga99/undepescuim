@@ -1,0 +1,52 @@
+name: data-integrity
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install --quiet shapely==2.1.2 pytest requests
+
+      # Layer 5 — consistency invariants (slug uniqueness incl. the A1
+      # duplicate-slug gate, assoc resolution, geometry/bbox ranges, overlay
+      # same-body duplicates, contact placeholders)
+      - name: Consistency invariants (Layer 5)
+        run: python3 scripts/audit_integrity.py
+
+      # Layer 3.1 — every waters.json entry traces to a source row (S1/S3/S4)
+      - name: Source traceability (Layer 3.1)
+        run: python3 scripts/audit_source_trace.py
+
+      # Layer 3.3 — county correctness: 0 wrong-county / outside-romania and
+      # 0 undocumented no-locatable gaps
+      - name: County audit (Layer 3.3)
+        run: python3 scripts/validate_geometry_county.py --json data/processed/county_audit_report.json
+
+      # Layer 5.1 — overlap sweep gate: 0 DUPLICATE + 0 PARTIAL_DUPLICATE
+      - name: Overlap sweep gate (Layer 5.1)
+        run: python3 scripts/sweep_uncontracted_overlay.py --gate
+
+      # Layer 3.5 — species fixture vs Monitorul Oficial values + /permis
+      # discipline (pytest: tests/test_data_gates.py)
+      - name: Species fixture + /permis gates
+        run: pytest tests/test_data_gates.py -q
+
+      # Layer 6 — determinism of the derivable outputs (assoc validity/counts,
+      # counties geojson must reproduce byte-identical)
+      - name: Determinism of derivations (Layer 6)
+        run: python3 scripts/rebuild_data.py --verify
+
+      # Layer 6 — input pinning: a drifted input means the rebuild must be
+      # re-verified before trusting the committed data
+      - name: Pipeline manifest input pinning (Layer 6)
+        run: python3 scripts/rebuild_data.py --check
