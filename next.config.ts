@@ -56,4 +56,11 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default nextConfig;
+// Perf budget tooling (t_fbbc943b, docs/performance-test-plan.md §5.4):
+// `ANALYZE=true npm run build` produces the @next/bundle-analyzer interactive
+// chunk report used for the M10 initial-JS budget. Builds without the env var
+// are untouched (the analyzer wrapper is a no-op when disabled).
+import withBundleAnalyzer from "@next/bundle-analyzer";
+const analyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
+
+export default analyzer(nextConfig);

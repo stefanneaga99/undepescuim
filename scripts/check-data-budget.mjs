@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 /**
  * Data payload budget gate — M7/M8/M9 of docs/performance-test-plan.md §4.
  *

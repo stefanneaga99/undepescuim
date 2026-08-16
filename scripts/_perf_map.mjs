@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 /**
  * Performance budget suite — map home route (docs/performance-test-plan.md §4).
  *
@@ -84,10 +83,10 @@ if (THROTTLE) {
 }
 
 // ---- Load + wait for the map data gate (instrumented in map-store.ts) ----
-const navStart = Date.now();
 await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
 try {
-  await page.waitForFunction(() => window.__perfDataLoaded === true, { timeout: 180000 });
+  // NOTE: 2nd param is `arg` — pass undefined so the 3rd is options.
+  await page.waitForFunction(() => window.__perfDataLoaded === true, undefined, { timeout: 180000 });
 } catch (err) {
   await page.waitForTimeout(5000);
   console.log(`  warn: __perfDataLoaded wait failed (${String(err.message).split('\n')[0]}) — continuing with what rendered`);
@@ -210,13 +209,18 @@ await page.evaluate(() => {
 // Toggle a county chip twice (filter mutation re-renders the map overlays).
 // Real tap: pointerdown fires → the resulting re-render shift is input-attributed.
 const chip = page.locator('button:has-text("Bihor")').first();
-const chipBox = await chip.boundingBox().catch(() => null);
+let chipBox = await chip.boundingBox().catch(() => null);
 if (chipBox) {
-  await page.mouse.click(chipBox.x + chipBox.width / 2, chipBox.y + chipBox.height / 2);
+  const chipCenter = () => ({ x: chipBox.x + chipBox.width / 2, y: chipBox.y + chipBox.height / 2 });
+  await page.mouse.click((await chipCenter()).x, (await chipCenter()).y);
   await page.waitForTimeout(900);
   const on = await page.evaluate(() => document.querySelectorAll('button[aria-pressed="true"]').length).catch(() => -1);
-  await page.mouse.click(chipBox.x + chipBox.width / 2, chipBox.y + chipBox.height / 2);
-  await page.waitForTimeout(900);
+  // the bar re-renders after the toggle — re-read the chip position
+  chipBox = await chip.boundingBox().catch(() => null);
+  if (chipBox) {
+    await page.mouse.click(chipBox.x + chipBox.width / 2, chipBox.y + chipBox.height / 2);
+    await page.waitForTimeout(900);
+  }
   const off = await page.evaluate(() => document.querySelectorAll('button[aria-pressed="true"]').length).catch(() => -1);
   report('county filter chip toggles', `${on} active chips after ON, ${off} after OFF`);
 } else {
