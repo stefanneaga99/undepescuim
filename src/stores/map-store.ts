@@ -35,6 +35,7 @@ interface MapStore {
 
   // Filter layer
   countyFilter: string[]; // empty [] = all counties
+  localityFilter: string[]; // empty [] = all localities (t_dd918db7)
   waterTypeFilter: WaterTypeFilter; // 'all' | 'lac' | 'rau'
   contractFilter: ContractFilter; // 'all' | 'contractate' | 'necontractate'
 
@@ -65,6 +66,8 @@ interface MapStore {
   openAssociationSheet: () => void;
   closeAssociationSheet: () => void;
   toggleCounty: (county: string) => void;
+  toggleLocality: (locality: string) => void;
+  clearLocalities: () => void;
   setWaterTypeFilter: (type: WaterTypeFilter) => void;
   setContractFilter: (filter: ContractFilter) => void;
   /** Geolocation MVP: store a one-shot position fix + recompute nearest waters. */
@@ -79,12 +82,15 @@ function isFilteredOut(
   allWaters: Water[],
   countyFilter: string[],
   waterTypeFilter: WaterTypeFilter,
+  localityFilter: string[],
 ): boolean {
   if (!slug) return false;
   const water = allWaters.find((w) => w.slug === slug);
   if (!water) return true;
   if (countyFilter.length > 0 && !countyFilter.includes(water.judet)) return true;
   if (waterTypeFilter !== 'all' && water.subtype !== waterTypeFilter) return true;
+  // A water without a locality is hidden by any active locality filter.
+  if (localityFilter.length > 0 && !localityFilter.includes(water.locality ?? '')) return true;
   return false;
 }
 
@@ -98,6 +104,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   selectedWaterSlug: null,
 
   countyFilter: [],
+  localityFilter: [],
   waterTypeFilter: 'all',
   contractFilter: 'all',
   suppressAssociationFlyTo: false,
@@ -165,7 +172,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
       set({ selectedWaterSlug: null });
       return;
     }
-    const { countyFilter, waterTypeFilter, waters, uncontracted, selectedAssociationSlug } = get();
+    const { countyFilter, localityFilter, waterTypeFilter, waters, uncontracted, selectedAssociationSlug } = get();
     const water =
       waters.find((w) => w.slug === slug) ??
       uncontracted.find((w) => w.slug === slug) ??
@@ -198,6 +205,10 @@ export const useMapStore = create<MapStore>((set, get) => ({
         water && waterTypeFilter !== 'all' && water.subtype !== waterTypeFilter
           ? 'all'
           : waterTypeFilter,
+      localityFilter:
+        water && localityFilter.length > 0 && !localityFilter.includes(water.locality ?? '')
+          ? []
+          : localityFilter,
     });
   },
 
@@ -212,17 +223,38 @@ export const useMapStore = create<MapStore>((set, get) => ({
       : [...countyFilter, county];
     set({
       countyFilter: next,
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], next, waterTypeFilter)
+      // t_dd918db7: locality is a REFINEMENT of the county selection — a
+      // locality list only exists for the currently selected counties, so a
+      // county change invalidates any active locality filter (plan §7.4 /
+      // risk 2: same-name UATs across counties must never leak).
+      localityFilter: [],
+      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], next, waterTypeFilter, [])
         ? null
         : selectedWaterSlug,
     });
   },
 
+  toggleLocality: (locality) => {
+    const { localityFilter, waters, uncontracted, selectedWaterSlug, countyFilter, waterTypeFilter } = get();
+    const next = localityFilter.includes(locality)
+      ? localityFilter.filter((l) => l !== locality)
+      : [...localityFilter, locality];
+    set({
+      localityFilter: next,
+      // R9: a locality change that hides the selected water dismisses the sheet.
+      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, waterTypeFilter, next)
+        ? null
+        : selectedWaterSlug,
+    });
+  },
+
+  clearLocalities: () => set({ localityFilter: [] }),
+
   setWaterTypeFilter: (type) => {
-    const { countyFilter, waters, uncontracted, selectedWaterSlug } = get();
+    const { countyFilter, localityFilter, waters, uncontracted, selectedWaterSlug } = get();
     set({
       waterTypeFilter: type,
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, type)
+      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, type, localityFilter)
         ? null
         : selectedWaterSlug,
     });
