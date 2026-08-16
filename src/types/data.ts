@@ -22,6 +22,19 @@ export type ContractFilter = 'all' | 'contractate' | 'necontractate';
 /** County name as stored in water.judet (e.g. "Cluj", "Bihor") */
 export type County = string;
 
+/**
+ * A county boundary feature from /data/counties.geojson (t_6c2ac870) —
+ * simplified Nominatim polygons, one per county. Used by the nearby-waters
+ * sheet to attribute a water's segment (geometry/bbox) to its own county,
+ * instead of the contract county (which for multi-county rivers is the
+ * association's seat).
+ */
+export interface CountyFeature {
+  type: 'Feature';
+  properties: { name: County };
+  geometry: GeoJSON.Polygon | GeoJSON.MultiPolygon;
+}
+
 /** Who issues the permit for a water. Derived from association type at transform time (F1a). */
 export type PermitIssuer = 'anadspa' | 'romsilva' | 'asociatie';
 

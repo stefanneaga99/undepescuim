@@ -1,6 +1,6 @@
 import { create } from 'zustand';
-import type { Association, ContractFilter, Water, WaterTypeFilter } from '@/types/data';
-import { distanceToWaterKm, nearestWaters, type NearbyWater } from '@/utils/geo';
+import type { Association, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
+import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -27,6 +27,8 @@ interface MapStore {
   associations: Association[];
   waters: Water[];
   uncontracted: Water[];
+  /** County boundary polygons (/data/counties.geojson) — nearby chip attribution (t_6c2ac870). */
+  counties: CountyFeature[];
   dataLoaded: boolean;
 
   // Selection layer (mutually independent)
@@ -98,6 +100,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   associations: [],
   waters: [],
   uncontracted: [],
+  counties: [],
   dataLoaded: false,
 
   selectedAssociationSlug: null,
@@ -116,11 +119,12 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   loadData: async () => {
     try {
-      const [assocRes, watersRes, uncRes, uncLakesRes] = await Promise.all([
+      const [assocRes, watersRes, uncRes, uncLakesRes, countiesRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
         fetch('/data/uncontracted_rivers.json'),
         fetch('/data/uncontracted_lakes.json'),
+        fetch('/data/counties.geojson'),
       ]);
       if (!assocRes.ok || !watersRes.ok) throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status}`);
       const [associations, waters] = (await Promise.all([
@@ -138,7 +142,14 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const lakes = (await uncLakesRes.json()) as Water[];
         uncontracted = [...uncontracted, ...lakes];
       }
-      set({ associations, waters, uncontracted, dataLoaded: true });
+      // t_6c2ac870: county polygons for the nearby-waters chip. Optional —
+      // the chip falls back to the contract county when missing.
+      let counties: CountyFeature[] = [];
+      if (countiesRes.ok) {
+        const fc = (await countiesRes.json()) as { type: string; features: CountyFeature[] };
+        counties = Array.isArray(fc.features) ? fc.features : [];
+      }
+      set({ associations, waters, uncontracted, counties, dataLoaded: true });
     } catch (err) {
       // Never leave the skeleton spinning forever — render an empty map instead.
       console.error('[map-store] loadData failed:', err);
@@ -278,20 +289,30 @@ export const useMapStore = create<MapStore>((set, get) => ({
   // grow the drawn radius to cover the farthest shown entry so the circle
   // never under-states what the list claims).
   applyUserPosition: (pos) => {
-    const { waters } = get();
+    const { waters, counties } = get();
+    // t_6c2ac870: attach the water's OWN county (of the segment nearest the
+    // user) so the nearby card doesn't show the association's seat county
+    // (e.g. 'Ilfov' for the Dâmbovița headwaters near Brașov).
+    const withCounty = (nearby: NearbyWater[]): NearbyWater[] =>
+      nearby.map((n) => {
+        const water = waters.find((w) => w.slug === n.slug);
+        return { ...n, county: water ? nearbyCounty(pos.lat, pos.lon, water, counties) : null };
+      });
     let radius = DEFAULT_RADIUS_KM;
-    let nearby = nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius });
+    let nearby = withCounty(nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius }));
     if (nearby.length < MIN_NEARBY_COUNT) {
       radius = EXPANDED_RADIUS_KM;
-      nearby = nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius });
+      nearby = withCounty(nearestWaters(pos.lat, pos.lon, waters, { limit: NEARBY_LIMIT, maxKm: radius }));
     }
     if (nearby.length < MIN_NEARBY_COUNT) {
       // Nearest-few fallback, no radius cap (e.g. deep wilderness).
-      nearby = waters
-        .map((w) => ({ slug: w.slug, km: distanceToWaterKm(pos.lat, pos.lon, w) }))
-        .filter((e) => Number.isFinite(e.km))
-        .sort((a, b) => a.km - b.km)
-        .slice(0, NEARBY_LIMIT);
+      nearby = withCounty(
+        waters
+          .map((w) => ({ slug: w.slug, km: distanceToWaterKm(pos.lat, pos.lon, w), county: null }))
+          .filter((e) => Number.isFinite(e.km))
+          .sort((a, b) => a.km - b.km)
+          .slice(0, NEARBY_LIMIT),
+      );
       if (nearby.length > 0) {
         radius = Math.max(radius, Math.ceil(nearby[nearby.length - 1].km / 10) * 10);
       }

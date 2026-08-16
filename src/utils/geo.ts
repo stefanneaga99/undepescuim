@@ -1,4 +1,4 @@
-import type { Water, WaterFeature, WaterFeatureCollection, WaterFeatureProperties } from '@/types/data';
+import type { CountyFeature, Water, WaterFeature, WaterFeatureCollection, WaterFeatureProperties } from '@/types/data';
 
 /**
  * Convert a Water to a GeoJSON Feature.
@@ -82,21 +82,23 @@ export function haversineKm(lat1: number, lon1: number, lat2: number, lon2: numb
  * Distance from a user position to a water, in km (geolocation MVP,
  * docs/geolocation-feasibility.md §2b).
  *
- * - lakes: haversine to the centroid (`coordinates`, [lon, lat]);
- * - rivers: axis-aligned distance to the `bbox` (reflects how close the
- *   water's COURSE is, not just its centroid — a long river's centroid can
- *   be far from a user standing on its bank);
- * - missing `coordinates`/`bbox` (ANPA rows without geocoding): falls back
- *   to whichever exists, and `Infinity` when neither (the water cannot be
- *   located, so it can never appear in "nearby").
+ * - rivers AND lakes: axis-aligned distance to the `bbox` when one exists.
+ *   For rivers the bbox reflects how close the water's COURSE is (a long
+ *   river's centroid can be far from a user standing on its bank); for lakes
+ *   the bbox reflects the lake's EXTENT — the stored centroid can be stale
+ *   (t_6c2ac870: 4 lakes carried centroids in the WRONG county, far from
+ *   their real geometry/bbox, so a Timiș lake showed ~18km from Brașov) and
+ *   is also a poor proxy for big reservoirs (a user on the shore of a huge
+ *   lake should read ~0 km, not the distance to its center).
+ * - missing `bbox`, `coordinates` fallback (haversine to the centroid,
+ *   [lon, lat]);
+ * - missing both (ANPA rows without geocoding): Infinity — the water cannot
+ *   be located, so it never appears in "nearby".
  */
 export function distanceToWaterKm(lat: number, lon: number, w: Water): number {
   const [minLon, minLat, maxLon, maxLat] = w.bbox ?? [Number.NaN, Number.NaN, Number.NaN, Number.NaN];
   const hasBbox = !Number.isNaN(minLon);
-  const [clon, clat] = w.coordinates ?? [Number.NaN, Number.NaN];
-  const hasCoords = !Number.isNaN(clon);
 
-  if (w.subtype === 'lac' && hasCoords) return haversineKm(lat, lon, clat, clon);
   if (hasBbox) {
     // km distance to the bbox rectangle, with mid-latitude longitude scaling
     const dLon = Math.max(minLon - lon, 0, lon - maxLon);
@@ -104,6 +106,8 @@ export function distanceToWaterKm(lat: number, lon: number, w: Water): number {
     const kLon = 111.32 * Math.cos((lat * Math.PI) / 180);
     return Math.hypot(dLat * 111.32, dLon * kLon);
   }
+  const [clon, clat] = w.coordinates ?? [Number.NaN, Number.NaN];
+  const hasCoords = !Number.isNaN(clon);
   if (hasCoords) return haversineKm(lat, lon, clat, clon);
   return Infinity;
 }
@@ -112,6 +116,13 @@ export function distanceToWaterKm(lat: number, lon: number, w: Water): number {
 export interface NearbyWater {
   slug: string;
   km: number;
+  /**
+   * County of the water's segment nearest the user (t_6c2ac870) — computed
+   * from the water's geometry/bbox, NOT the contract county (which for
+   * multi-county rivers is the association's seat). Null when the water has
+   * no locatable geometry and the county lookup misses.
+   */
+  county: string | null;
 }
 
 /**
@@ -127,10 +138,98 @@ export function nearestWaters(
   opts: { limit: number; maxKm: number },
 ): NearbyWater[] {
   return waters
-    .map((w) => ({ slug: w.slug, km: distanceToWaterKm(lat, lon, w) }))
+    .map((w) => ({ slug: w.slug, km: distanceToWaterKm(lat, lon, w), county: null }))
     .filter((e) => Number.isFinite(e.km) && e.km <= opts.maxKm)
     .sort((a, b) => a.km - b.km)
     .slice(0, opts.limit);
+}
+
+/** All ring/part points of a water's geometry as [lon, lat] pairs. */
+function geometryParts(geom: NonNullable<Water['geometry']>): [number, number][][] {
+  const coords = geom.coordinates;
+  if (geom.type === 'LineString') return [coords as [number, number][]];
+  if (geom.type === 'MultiLineString') return coords as [number, number][][];
+  if (geom.type === 'Polygon') return coords.flat() as [number, number][][];
+  if (geom.type === 'MultiPolygon') return coords.flat() as [number, number][][];
+  return [];
+}
+
+/**
+ * The water's location point nearest to the user, as [lon, lat]
+ * (t_6c2ac870). Geometry vertices first (the county of the segment the user
+ * is closest to), then the bbox rectangle's nearest point, then the stored
+ * coordinates as a last resort. Null when the water has none of the three.
+ */
+export function nearestWaterPoint(lat: number, lon: number, w: Water): [number, number] | null {
+  const geom = w.geometry;
+  if (geom && geom.coordinates?.length) {
+    let best: [number, number] | null = null;
+    let bestD = Infinity;
+    for (const part of geometryParts(geom)) {
+      for (const pt of part) {
+        const d = (pt[0] - lon) ** 2 + (pt[1] - lat) ** 2;
+        if (d < bestD) {
+          bestD = d;
+          best = pt;
+        }
+      }
+    }
+    if (best) return best;
+  }
+  if (w.bbox) {
+    const [minLon, minLat, maxLon, maxLat] = w.bbox;
+    return [Math.min(Math.max(lon, minLon), maxLon), Math.min(Math.max(lat, minLat), maxLat)];
+  }
+  if (w.coordinates) return w.coordinates as [number, number];
+  return null;
+}
+
+/** Ray-casting point-in-polygon over a single ring ([lon, lat] points). */
+function pointInRing(lat: number, lon: number, ring: [number, number][]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
+/**
+ * County name containing a [lat, lon] point, or null (t_6c2ac870).
+ * Counties come from /data/counties.geojson (simplified Nominatim polygons).
+ */
+export function countyOfPoint(lat: number, lon: number, counties: CountyFeature[]): string | null {
+  for (const f of counties) {
+    const g = f.geometry;
+    if (g.type === 'Polygon') {
+      if (pointInRing(lat, lon, g.coordinates[0] as [number, number][])) return f.properties.name;
+    } else {
+      for (const poly of g.coordinates) {
+        if (pointInRing(lat, lon, poly[0] as [number, number][])) return f.properties.name;
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * County of the water's segment nearest to the user position (t_6c2ac870):
+ * resolve the nearest point on the water's geometry/bbox, then attribute it
+ * to a county polygon. This is the county shown on the nearby card — the
+ * water's OWN county for the visible segment, not the association's seat.
+ */
+export function nearbyCounty(
+  lat: number,
+  lon: number,
+  w: Water,
+  counties: CountyFeature[],
+): string | null {
+  const p = nearestWaterPoint(lat, lon, w);
+  if (!p) return null;
+  return countyOfPoint(p[1], p[0], counties);
 }
 
 /** Convert a Water[] into a single GeoJSON FeatureCollection for <GeoJSON>. */
