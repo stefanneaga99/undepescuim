@@ -2,7 +2,11 @@
 
 > QA SPIKE (t_8810ff88) — test plan only, no implementation.
 > Scope: Core Web Vitals, bundle size, data payload, map render, geolocation MVP, species/permis pages.
-> Status: **proposed — pending review** (review-required block).
+> Status: **APPROVED 2026-08-16 and implemented (t_fbbc943b)** — lighthouserc.json,
+> .github/workflows/perf.yml, scripts/check-data-budget.mjs, scripts/_perf_map.mjs.
+> Budgets M7/M8/M9 (and M6/M11/M12/M14) are EXPECTED-FAIL until the data
+> optimization (docs/performance-optimization-plan.md) lands; CI jobs are wired
+> with continue-on-error until then.
 
 ---
 

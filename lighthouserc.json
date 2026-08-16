@@ -4,7 +4,6 @@
       "url": ["http://localhost:3000/", "http://localhost:3000/specii", "http://localhost:3000/permis"],
       "numberOfRuns": 3,
       "settings": {
-        "preset": "mobile",
         "formFactor": "mobile",
         "screenEmulation": { "mobile": true, "width": 390, "height": 844, "deviceScaleFactor": 2 },
         "throttlingMethod": "simulate",
