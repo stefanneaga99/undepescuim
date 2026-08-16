@@ -1,0 +1,38 @@
+name: url-audit
+
+# Layer 4.2 — association URL reachability. Scheduled WEEKLY (plan §9.2):
+# reachability is world-state (associations go offline), so this is a cron
+# alert, not a commit gate. A failed run (dead URL) is visible in Actions
+# and the JSONL artifact is the durable record; also manually triggerable.
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # Mondays 05:00 UTC
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install --quiet requests
+      - name: Run URL reachability audit
+        id: audit
+        continue-on-error: true
+        run: |
+          python3 scripts/audit_urls.py \
+            --jsonl data/processed/url_audit.jsonl || true
+      - name: Upload audit record
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-audit
+          path: data/processed/url_audit.jsonl
+          if-no-files-found: error
+      - name: Fail on dead URLs (visible alert)
+        run: |
+          python3 scripts/audit_urls.py --jsonl data/processed/url_audit.jsonl
