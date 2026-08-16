@@ -28,7 +28,10 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     };
   }
 
-  // Fallback: bbox rectangle (un-geocoded waters). Skip if no bbox at all.
+  // Fallback (t_cdb614de): a water with a known contract bbox but no real
+  // OSM geometry renders as a discreet POINT at the bbox center — a small dot
+  // (distinct from rivers/lakes), clickable -> card. NOT a blue rectangle:
+  // the bbox rectangle was the ugly artifact the user reported at zoom-out.
   if (!water.bbox) {
     return {
       type: 'Feature',
@@ -44,22 +47,20 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     };
   }
   const [minLon, minLat, maxLon, maxLat] = water.bbox;
-  const coordinates: GeoJSON.Polygon['coordinates'] = [
-    [
-      [minLon, minLat],
-      [maxLon, minLat],
-      [maxLon, maxLat],
-      [minLon, maxLat],
-      [minLon, minLat],
-    ],
-  ];
 
   return {
     type: 'Feature',
-    properties: commonProps,
+    properties: {
+      ...commonProps,
+      _bboxFallback: true,
+    },
     geometry: {
-      type: 'Polygon',
-      coordinates,
+      type: 'Point',
+      // center of the contract bbox (or the stored coordinate when present)
+      coordinates: [
+        water.coordinates?.[0] ?? (minLon + maxLon) / 2,
+        water.coordinates?.[1] ?? (minLat + maxLat) / 2,
+      ],
     },
   };
 }

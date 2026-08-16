@@ -5,7 +5,7 @@ import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
-import { getFeatureStyle, COVERED_COLOR } from '@/utils/colors';
+import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
 import { countyRenderGeometry } from '@/utils/county-clip';
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 
@@ -578,10 +578,15 @@ export function WaterFeatureLayer({
         lineGeom &&
         !!water &&
         contractGroup(water, allWaters).length > 1;
-      const base = getFeatureStyle(
-        multiContractMember ? null : (props?.asociatieSlug ?? null),
-        coverageSlug,
-      );
+      // t_cdb614de: bbox-fallback waters (no real OSM geometry) render as
+      // discreet point dots — distinct style (violet dot, coverage-aware).
+      const base =
+        props?._bboxFallback === true
+          ? getPointFallbackStyle(props.asociatieSlug ?? null, coverageSlug)
+          : getFeatureStyle(
+              multiContractMember ? null : (props?.asociatieSlug ?? null),
+              coverageSlug,
+            );
       if (!focusColor || !selectedWaterSlug) return base;
       const f = feature as WaterFeature | undefined;
       if (f?.properties?.slug !== selectedWaterSlug) return base;
@@ -600,12 +605,18 @@ export function WaterFeatureLayer({
   // react-leaflet's GeoJSON doesn't expose each layer for extra additions, so
   // we add the hit layer inside onEachFeature via layer.bringToBack after
   // cloning is too late — instead we render a SECOND GeoJSON purely for hits.
+  // t_cdb614de: bbox-fallback POINTS get a fat invisible circle hit too, so a
+  // small dot is still tappable on mobile.
   const hitCollection = useMemo(() => {
     const fc = featureCollection;
     return {
       ...fc,
       features: fc.features.filter(
-        (f) => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString',
+        (f) =>
+          f.geometry.type === 'LineString' ||
+          f.geometry.type === 'MultiLineString' ||
+          ((f.properties as WaterFeatureProperties)._bboxFallback === true &&
+            f.geometry.type === 'Point'),
       ),
     };
   }, [featureCollection]);
@@ -619,6 +630,12 @@ export function WaterFeatureLayer({
         key={layerKey}
         data={featureCollection}
         style={focusAwareStyle}
+        pointToLayer={(feature, latlng) =>
+          // bbox-fallback dots: small filled circle, styled by focusAwareStyle
+          L.circleMarker(latlng, {
+            radius: (feature.properties as WaterFeatureProperties)._bboxFallback ? 5 : 4,
+          })
+        }
         onEachFeature={handleEachFeature}
       />
       {/* Focus slice on top: only the selected contract's sector, thick + colored */}
@@ -686,6 +703,11 @@ function GeoJSONHits({
     <LeafletGeoJSON
       data={data}
       style={() => ({ color: '#000', weight: 16, opacity: 0, fillOpacity: 0 })}
+      pointToLayer={(_feature, latlng) =>
+        // t_cdb614de: bbox-fallback dots need a fat invisible hit circle so a
+        // 5px dot is still tappable on mobile.
+        L.circleMarker(latlng, { radius: 14 })
+      }
       onEachFeature={(feature, layer: L.Path) => {
         const f = feature as WaterFeature;
         layer.on('click', (e: L.LeafletMouseEvent) => onFeatureClick(f, e.latlng));

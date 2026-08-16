@@ -55,6 +55,42 @@ export const UNCONTRACTED_COLOR = '#14b8a6';
  * focus) while staying in the same 'uncontracted' family as the rivers. */
 export const UNCONTRACTED_LAKE_COLOR = '#2dd4bf';
 export const UNCONTRACTED_LAKE_FILL = '#14b8a6';
+/** bbox-fallback water dot color (t_cdb614de): violet, distinct from blue
+ * rivers/lakes and teal uncontracted overlay — reads as 'known location,
+ * no mapped course'. Coverage (green/grey) still applies on top. */
+export const POINT_FALLBACK_COLOR = '#8b5cf6';
+
+/**
+ * Style for bbox-fallback waters (t_cdb614de): a water with a known contract
+ * bbox but NO real OSM geometry renders as a small filled DOT at the bbox
+ * center — not a blue rectangle. Same coverage semantics as rivers/lakes
+ * (neutral violet, covered green, uncovered grey) so association selection
+ * still highlights them; only the shape + base hue differ.
+ */
+export function getPointFallbackStyle(
+  asociatieSlug: string | null,
+  coverageSlug: string | null,
+): PathOptions {
+  if (coverageSlug === null) {
+    return { color: POINT_FALLBACK_COLOR, weight: 2, fillColor: POINT_FALLBACK_COLOR, fillOpacity: 1 };
+  }
+  if (asociatieSlug === coverageSlug) {
+    return {
+      color: COVERED_COLOR,
+      weight: 2,
+      opacity: 1,
+      fillColor: COVERED_COLOR,
+      fillOpacity: 1,
+    };
+  }
+  return {
+    color: UNCOVERED_COLOR,
+    weight: 1,
+    opacity: 0.5,
+    fillColor: UNCOVERED_COLOR,
+    fillOpacity: 0.7,
+  };
+}
 
 /**
  * Style for the uncontracted overlay (t_471dad64): thin, muted teal, clearly

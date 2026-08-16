@@ -166,6 +166,11 @@ export interface WaterFeatureProperties {
   riverGroup?: string | null;
   /** marker for non-renderable waters (no geometry, no bbox) */
   _hidden?: boolean;
+  /** bbox-fallback water rendered as a discreet point dot (t_cdb614de) —
+   * a contracted water whose contract bbox is known but OSM has no real
+   * geometry for it (unmapped/unmappable). Rendered as a small distinct
+   * dot instead of a blue rectangle. */
+  _bboxFallback?: boolean;
   /** uncontracted OSM river (t_471dad64) */
   uncontracted?: boolean;
   /** simplified-course length in km (uncontracted rivers; zoom LOD) */
