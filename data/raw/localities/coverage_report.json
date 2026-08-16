@@ -1,0 +1,217 @@
+{
+ "Alba": {
+  "resolved": 270,
+  "total": 295,
+  "pct": 91.5
+ },
+ "Arad": {
+  "resolved": 190,
+  "total": 215,
+  "pct": 88.4
+ },
+ "Argeș": {
+  "resolved": 366,
+  "total": 372,
+  "pct": 98.4
+ },
+ "Bacău": {
+  "resolved": 165,
+  "total": 165,
+  "pct": 100.0
+ },
+ "Bihor": {
+  "resolved": 449,
+  "total": 461,
+  "pct": 97.4
+ },
+ "Bistrița-Năsăud": {
+  "resolved": 176,
+  "total": 190,
+  "pct": 92.6
+ },
+ "Botoșani": {
+  "resolved": 169,
+  "total": 183,
+  "pct": 92.3
+ },
+ "Brașov": {
+  "resolved": 414,
+  "total": 429,
+  "pct": 96.5
+ },
+ "Brăila": {
+  "resolved": 82,
+  "total": 89,
+  "pct": 92.1
+ },
+ "București": {
+  "resolved": 48,
+  "total": 48,
+  "pct": 100.0
+ },
+ "Buzău": {
+  "resolved": 142,
+  "total": 144,
+  "pct": 98.6
+ },
+ "Caraș-Severin": {
+  "resolved": 204,
+  "total": 229,
+  "pct": 89.1
+ },
+ "Cluj": {
+  "resolved": 409,
+  "total": 420,
+  "pct": 97.4
+ },
+ "Constanța": {
+  "resolved": 129,
+  "total": 137,
+  "pct": 94.2
+ },
+ "Covasna": {
+  "resolved": 171,
+  "total": 177,
+  "pct": 96.6
+ },
+ "Călărași": {
+  "resolved": 145,
+  "total": 154,
+  "pct": 94.2
+ },
+ "Dolj": {
+  "resolved": 210,
+  "total": 244,
+  "pct": 86.1
+ },
+ "Dâmbovița": {
+  "resolved": 195,
+  "total": 220,
+  "pct": 88.6
+ },
+ "Galați": {
+  "resolved": 117,
+  "total": 117,
+  "pct": 100.0
+ },
+ "Giurgiu": {
+  "resolved": 259,
+  "total": 287,
+  "pct": 90.2
+ },
+ "Gorj": {
+  "resolved": 124,
+  "total": 133,
+  "pct": 93.2
+ },
+ "Harghita": {
+  "resolved": 519,
+  "total": 546,
+  "pct": 95.1
+ },
+ "Hunedoara": {
+  "resolved": 327,
+  "total": 332,
+  "pct": 98.5
+ },
+ "Ialomița": {
+  "resolved": 118,
+  "total": 123,
+  "pct": 95.9
+ },
+ "Iași": {
+  "resolved": 319,
+  "total": 334,
+  "pct": 95.5
+ },
+ "Ilfov": {
+  "resolved": 150,
+  "total": 164,
+  "pct": 91.5
+ },
+ "Maramureș": {
+  "resolved": 220,
+  "total": 238,
+  "pct": 92.4
+ },
+ "Mehedinți": {
+  "resolved": 150,
+  "total": 160,
+  "pct": 93.8
+ },
+ "Mureș": {
+  "resolved": 372,
+  "total": 381,
+  "pct": 97.6
+ },
+ "Neamț": {
+  "resolved": 455,
+  "total": 457,
+  "pct": 99.6
+ },
+ "Olt": {
+  "resolved": 302,
+  "total": 322,
+  "pct": 93.8
+ },
+ "Prahova": {
+  "resolved": 315,
+  "total": 324,
+  "pct": 97.2
+ },
+ "Satu Mare": {
+  "resolved": 102,
+  "total": 105,
+  "pct": 97.1
+ },
+ "Sibiu": {
+  "resolved": 281,
+  "total": 308,
+  "pct": 91.2
+ },
+ "Suceava": {
+  "resolved": 189,
+  "total": 203,
+  "pct": 93.1
+ },
+ "Sălaj": {
+  "resolved": 93,
+  "total": 94,
+  "pct": 98.9
+ },
+ "Teleorman": {
+  "resolved": 163,
+  "total": 201,
+  "pct": 81.1
+ },
+ "Timiș": {
+  "resolved": 301,
+  "total": 327,
+  "pct": 92.0
+ },
+ "Tulcea": {
+  "resolved": 891,
+  "total": 945,
+  "pct": 94.3
+ },
+ "Vaslui": {
+  "resolved": 70,
+  "total": 75,
+  "pct": 93.3
+ },
+ "Vrancea": {
+  "resolved": 73,
+  "total": 76,
+  "pct": 96.1
+ },
+ "Vâlcea": {
+  "resolved": 390,
+  "total": 480,
+  "pct": 81.2
+ },
+ "_overall": {
+  "resolved": 10234,
+  "total": 10904,
+  "pct": 93.9
+ }
+}
