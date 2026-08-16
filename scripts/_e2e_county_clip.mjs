@@ -74,7 +74,9 @@ const ures = await fetch(`${BASE}/data/uncontracted_rivers.json`);
 check(wres.ok && ures.ok, 'waters.json + uncontracted_rivers.json served 200');
 const servedWaters = await wres.json();
 const servedUnc = await ures.json();
-check(Array.isArray(servedWaters) && servedWaters.length === 1014, `waters.json parses (${servedWaters.length} waters)`);
+// Count drifts as data-pipeline tasks merge/sweep waters; the assertion's job
+// is a parse sanity check, not an exact-count pin.
+check(Array.isArray(servedWaters) && servedWaters.length >= 1000, `waters.json parses (${servedWaters.length} waters)`);
 const ehwpvgwh = servedWaters.find((w) => w.slug === 'ehwpvgwh');
 check(!!ehwpvgwh?.geometryByCounty?.brasov, 'Olt Brașov entry carries a brasov clip');
 const oltV = servedWaters.find((w) => w.slug === '3e8t20hn');

@@ -65,7 +65,7 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
             <ChevronDown className="size-3.5 shrink-0 opacity-70" />
           </button>
         </PopoverTrigger>
-        <PopoverContent align="start" sideOffset={6} className="w-72 p-1.5">
+        <PopoverContent align="start" sideOffset={6} className="z-[1500] w-72 p-1.5">
           <Command className="rounded-lg">
             <CommandInput placeholder="Caută localitate..." />
             <CommandList>

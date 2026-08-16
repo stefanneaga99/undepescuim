@@ -1,0 +1,171 @@
+/* eslint-disable no-console */
+/**
+ * E2E smoke test for the county→locality filter cascade (t_dd918db7).
+ *
+ * 1. Served data: waters.json / uncontracted_rivers.json / uncontracted_lakes.json
+ *    carry `locality`; spot-checks a text-fallback resolution (Mihoești →
+ *    Câmpeni) and the overall coverage floor.
+ * 2. UI: no locality control before a county is selected; selecting Bihor
+ *    reveals it; the dropdown is county-scoped (contains Oradea, NOT
+ *    Cluj-Napoca); searching nonsense shows 'Fără localități'.
+ * 3. Selecting Oradea filters the map (rendered path count drops vs
+ *    county-only) and the pill reflects the selection.
+ * 4. Cascade: adding a second county resets the locality selection
+ *    ('Toate localitățile' pill returns).
+ * 5. Uncontracted pool participates: an Oradea uncontracted river exists in
+ *    the served data and the locality filter still renders uncontracted.
+ *
+ * Run: node scripts/_e2e_locality.mjs (dev server must be on :3000)
+ */
+import { chromium } from 'playwright';
+
+const BASE = process.env.BASE_URL || 'http://localhost:3000';
+const OUT_DIR = new URL('../.e2e/', import.meta.url);
+
+const errors = [];
+
+const CDP = process.env.PLAYWRIGHT_CDP;
+const browser = CDP
+  ? await chromium.connectOverCDP(CDP)
+  : await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
+
+page.on('console', (msg) => {
+  if (msg.type() === 'error') errors.push(`console.error: ${msg.text()}`);
+});
+page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
+
+let failures = 0;
+const check = (cond, label) => {
+  if (cond) {
+    console.log(`  PASS  ${label}`);
+  } else {
+    console.log(`  FAIL  ${label}`);
+    failures += 1;
+  }
+};
+
+console.log('== 1. served data carries locality ==');
+const wres = await fetch(`${BASE}/data/waters.json`);
+const ures = await fetch(`${BASE}/data/uncontracted_rivers.json`);
+const lres = await fetch(`${BASE}/data/uncontracted_lakes.json`);
+check(wres.ok && ures.ok && lres.ok, 'all three data files served 200');
+const servedWaters = await wres.json();
+const servedUnc = await ures.json();
+const servedLakes = await lres.json();
+check(servedWaters.length === 1013, `waters.json parses (${servedWaters.length} waters)`);
+const withLoc = servedWaters.filter((w) => typeof w.locality === 'string');
+check(withLoc.length >= 850, `contracted coverage >= 84% (${withLoc.length}/1013)`);
+const mihoesti = servedWaters.find((w) => w.slug === 'anpa-anpa-0008');
+check(mihoesti?.locality === 'Câmpeni', 'limite-text fallback: Mihoești → Câmpeni');
+check(
+  servedUnc.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
+  'uncontracted river pool carries locality (Bihor/Oradea)',
+);
+check(
+  servedLakes.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
+  'uncontracted lake pool carries locality (Bihor/Oradea)',
+);
+check(!errors.length, `no console errors while loading (${errors.length})`);
+
+console.log('== 2. UI: locality gated behind county selection ==');
+await page.goto(BASE, { waitUntil: 'domcontentloaded' });
+// wait for county chips (data loaded)
+await page.waitForSelector('button:visible[aria-pressed]', { timeout: 60000 });
+await page.waitForTimeout(2000);
+const localityLabelBefore = await page.locator('text=Localitate').first().isVisible().catch(() => false);
+check(!localityLabelBefore, 'no locality control before any county is selected');
+
+const bihor = page.locator('button:visible', { hasText: /^Bihor$/ }).first();
+await bihor.click();
+await page.waitForTimeout(1500);
+check(await bihor.getAttribute('aria-pressed') === 'true', 'Bihor chip toggled active');
+const localityLabelAfter = page.locator('text=Localitate');
+try {
+  await localityLabelAfter.first().waitFor({ state: 'attached', timeout: 8000 });
+  // FilterBar content renders twice (hidden mobile bar + desktop panel) —
+  // any visible instance proves the control is shown.
+  const anyVisible = await localityLabelAfter.evaluateAll((els) =>
+    els.some((el) => el.offsetParent !== null),
+  );
+  check(anyVisible, 'locality control appears after Bihor selected');
+} catch {
+  check(false, 'locality control appears after Bihor selected');
+}
+
+console.log('== 3. dropdown is county-scoped + searchable ==');
+const trigger = page.locator('button:visible', { hasText: /^Toate localitățile$/ }).first();
+await trigger.click();
+await page.waitForSelector('[data-slot="command-input"]', { timeout: 5000 });
+const items = page.locator('[data-slot="command-item"]');
+const texts = await items.allTextContents();
+check(texts.some((t) => t.includes('Oradea')), 'dropdown lists Oradea (Bihor UAT)');
+check(!texts.some((t) => t.includes('Cluj-Napoca')), 'dropdown excludes Cluj-Napoca (county-scoped)');
+// search: nonsense → empty state
+const search = page.locator('[data-slot="command-input"]');
+await search.fill('zzzzz');
+await page.waitForTimeout(300);
+check(await page.locator('text=Fără localități').first().isVisible(), "search nonsense shows 'Fără localități'");
+// search: Oradea → selectable item
+await search.fill('Oradea');
+await page.waitForTimeout(300);
+const oradeaItem = page.locator('[data-slot="command-item"]', { hasText: 'Oradea' }).first();
+await oradeaItem.click();
+await page.waitForTimeout(1200);
+check(await page.locator('button:visible', { hasText: /^Oradea$/ }).first().isVisible(), "pill shows 'Oradea' after selection");
+check(!errors.length, 'no console errors after locality selection');
+
+console.log('== 4. locality filters the map (fewer rendered features) ==');
+const countPaths = async () => page.locator('.leaflet-overlay-pane path').count();
+// The popover stays open after a multi-select toggle; close it before each
+// interaction so a subsequent trigger click re-opens (not closes) it.
+await page.keyboard.press('Escape');
+await page.waitForTimeout(300);
+// Deselect Oradea → county-only baseline.
+const trigger2 = page.locator('button:visible', { hasText: /^Oradea$/ }).first();
+await trigger2.click();
+await page.locator('[data-slot="command-input"]').fill('Oradea');
+await page.waitForTimeout(300);
+await page.locator('[data-slot="command-item"]', { hasText: 'Oradea' }).first().click(); // deselect
+await page.keyboard.press('Escape');
+await page.waitForTimeout(1200);
+const countyOnly = await countPaths();
+await page.screenshot({ path: new URL('locality_bihor_all.png', OUT_DIR).pathname, fullPage: false });
+
+// Re-select Oradea → locality-filtered count.
+const trigger3 = page.locator('button:visible', { hasText: /^Toate localitățile$/ }).first();
+await trigger3.click();
+await page.locator('[data-slot="command-input"]').fill('Oradea');
+await page.waitForTimeout(300);
+await page.locator('[data-slot="command-item"]', { hasText: 'Oradea' }).first().click();
+await page.keyboard.press('Escape');
+await page.waitForTimeout(1200);
+const oradeaCount = await countPaths();
+check(oradeaCount > 0 && oradeaCount < countyOnly, `Oradea renders fewer features than Bihor (${oradeaCount} < ${countyOnly})`);
+await page.screenshot({ path: new URL('locality_oradea.png', OUT_DIR).pathname, fullPage: false });
+
+console.log('== 5. cascade: county change resets locality ==');
+await page.keyboard.press('Escape');
+await page.waitForTimeout(300);
+const cluj = page.locator('button:visible', { hasText: /^Cluj$/ }).first();
+await cluj.click();
+await page.waitForTimeout(1000);
+check(
+  await page.locator('button:visible', { hasText: /^Toate localitățile$/ }).first().isVisible().catch(() => false),
+  'adding a second county resets locality to "Toate localitățile"',
+);
+check(!errors.length, 'no console errors after cascade');
+
+// cleanup: deselect both counties
+await bihor.click();
+await cluj.click();
+await page.waitForTimeout(800);
+
+console.log('== 6. summary ==');
+if (errors.length) {
+  console.log('console errors seen:');
+  for (const e of errors.slice(0, 10)) console.log('  -', e);
+}
+await browser.close();
+console.log(failures === 0 ? 'E2E PASSED' : `E2E FAILED (${failures} checks)`);
+process.exit(failures === 0 ? 0 : 1);
