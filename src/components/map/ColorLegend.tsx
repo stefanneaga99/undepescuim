@@ -86,7 +86,7 @@ export function ColorLegend() {
       </button>
 
       {/* Desktop: full labels, always visible */}
-      <div className="hidden flex-col gap-1.5 rounded-lg border bg-white/90 px-3 py-2 text-xs shadow-md backdrop-blur-sm md:flex">
+      <div className="hidden flex-col gap-1.5 rounded-lg border bg-white/90 px-3 py-2 text-xs shadow-md backdrop-blur-sm md:flex dark:bg-neutral-900/90">
         {rows.map((r) => (
           <span key={r.label} className="flex items-center gap-2">
             <span

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Fish, Menu } from 'lucide-react';
 import { AssociationSearch } from '@/components/associations/AssociationSearch';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -64,6 +65,10 @@ export function Header() {
           Specii
         </Link>
       </nav>
+
+      {/* Theme toggle — sits left of the RO badge, visible on all
+          viewports (mobile too: hamburger nav doesn't include it). */}
+      <ThemeToggle />
 
       <span
         className="shrink-0 rounded-md border px-2 py-0.5 text-xs font-semibold text-muted-foreground"

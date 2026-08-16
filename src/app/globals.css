@@ -146,6 +146,30 @@
   font: inherit;
 }
 
+/* Dark mode: Leaflet's own zoom controls + attribution are hardcoded white
+   by leaflet.css — restyle for the .dark chrome (defaults back to light
+   tiles in phase 1, so only the controls themselves change). */
+.dark .leaflet-bar a {
+  background: oklch(0.205 0 0);
+  color: oklch(0.985 0 0);
+  border-color: oklch(1 0 0 / 10%);
+}
+.dark .leaflet-bar a:hover {
+  background: oklch(0.269 0 0);
+  color: oklch(0.985 0 0);
+}
+.dark .leaflet-bar a.leaflet-disabled {
+  background: oklch(0.205 0 0);
+  color: oklch(0.556 0 0);
+}
+.dark .leaflet-control-attribution {
+  background: oklch(0.205 0 0);
+  color: oklch(0.985 0 0);
+}
+.dark .leaflet-control-attribution a {
+  color: oklch(0.87 0 0);
+}
+
 /* Prevent iOS double-tap zoom / 300ms delay on interactive elements */
 .map-touch {
   touch-action: manipulation;

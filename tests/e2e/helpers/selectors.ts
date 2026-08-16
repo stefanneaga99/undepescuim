@@ -38,6 +38,7 @@ export const Selectors = {
   speciesSearch: 'species-search',
   speciesSearchMobile: 'species-search-mobile',
   speciesOption: 'species-option',
+  themeToggle: 'theme-toggle',
 } as const;
 
 export type TestId = (typeof Selectors)[keyof typeof Selectors];

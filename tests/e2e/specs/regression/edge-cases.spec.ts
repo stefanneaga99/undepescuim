@@ -190,12 +190,26 @@ test.describe('edge cases', () => {
     expect(resp?.status()).toBe(404);
   });
 
-  test('no dark-mode theme toggle is rendered (dark mode not implemented)', async ({
+  test('dark mode: theme toggle is rendered and switches .dark on <html>', async ({
     page,
   }) => {
     await page.goto('/');
-    await expect(
-      page.locator('[data-theme-toggle], button[aria-label*="temă" i], button[aria-label*="dark" i]'),
-    ).toHaveCount(0);
+    const toggle = page.getByTestId(Selectors.themeToggle);
+    await expect(toggle).toBeVisible();
+    // Start from an explicit light state (clean localStorage + light color scheme)
+    const wasDark = await page.evaluate(() =>
+      document.documentElement.classList.contains('dark'),
+    );
+    if (wasDark) await toggle.click(); // normalise to light
+    await expect(page.locator('html')).not.toHaveClass(/dark/);
+
+    await toggle.click();
+    await expect(page.locator('html')).toHaveClass(/dark/);
+    // persists across reload (next-themes stores the choice in localStorage)
+    await page.reload();
+    await expect(page.locator('html')).toHaveClass(/dark/);
+    // toggling back clears it
+    await page.getByTestId(Selectors.themeToggle).click();
+    await expect(page.locator('html')).not.toHaveClass(/dark/);
   });
 });

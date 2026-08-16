@@ -57,7 +57,7 @@ export function FilterBar() {
       </div>
 
       {/* Tablet/desktop: left overlay panel on the map */}
-      <div className="absolute left-3 top-3 z-[1000] hidden max-h-[calc(100dvh-80px)] max-w-[280px] flex-col gap-2.5 overflow-y-auto rounded-xl border bg-white/90 p-3 shadow-md backdrop-blur-sm md:flex">
+      <div className="absolute left-3 top-3 z-[1000] hidden max-h-[calc(100dvh-80px)] max-w-[280px] flex-col gap-2.5 overflow-y-auto rounded-xl border bg-white/90 p-3 shadow-md backdrop-blur-sm md:flex dark:bg-neutral-900/90">
         {content}
       </div>
     </>

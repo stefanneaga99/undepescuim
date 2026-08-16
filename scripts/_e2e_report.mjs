@@ -51,8 +51,11 @@ const readCardText = async (timeoutMs = 12000) => {
   return last;
 };
 
-/** Click the midpoint of the first visible water path (any color) — every card
- * has the F3 report buttons, so the exact water doesn't matter. */
+/** Click the midpoint of the first hit-testable water path (any color) —
+ * every card has the F3 report buttons, so the exact water doesn't matter.
+ * Paths have an invisible 16px hit-layer (#000) underneath; a neighbor's
+ * hit-layer can cover the thin visible line at intersections, so iterate
+ * candidates until one samples an uncovered point (t_80f384d7 hardening). */
 const clickAnyWater = async () => {
   return page.evaluate(() => {
     const c = document.querySelector('.leaflet-container');
@@ -63,18 +66,19 @@ const clickAnyWater = async () => {
       const b = p.getBoundingClientRect();
       return b.right > r.left && b.bottom > r.top && b.left < r.right && b.top < r.bottom && b.width * b.height > 4;
     });
-    if (!paths.length) return null;
-    const p = paths[0];
-    const len = p.getTotalLength();
-    const m = p.ownerSVGElement.getScreenCTM();
-    const fracs = Array.from({ length: 19 }, (_, i) => 0.05 + 0.05 * i);
-    for (const frac of fracs) {
-      const pt = p.getPointAtLength(len * frac);
-      const sp = new DOMPoint(pt.x, pt.y).matrixTransform(m);
-      if (sp.x < r.left || sp.x > r.right || sp.y < r.top || sp.y > r.bottom) continue;
-      const top = document.elementFromPoint(sp.x, sp.y);
-      const stroke = p.getAttribute('stroke') || '';
-      if (top === p || (top && top.getAttribute('stroke') === stroke)) return { x: sp.x, y: sp.y };
+    for (const p of paths.slice(0, 40)) {
+      const len = p.getTotalLength();
+      const m = p.ownerSVGElement.getScreenCTM();
+      const fracs = Array.from({ length: 9 }, (_, i) => 0.1 + 0.1 * i);
+      for (const frac of fracs) {
+        const pt = p.getPointAtLength(len * frac);
+        const sp = new DOMPoint(pt.x, pt.y).matrixTransform(m);
+        if (sp.x < r.left || sp.x > r.right || sp.y < r.top || sp.y > r.bottom) continue;
+        const top = document.elementFromPoint(sp.x, sp.y);
+        const stroke = p.getAttribute('stroke') || '';
+        const sameStroke = top && typeof top.getAttribute === 'function' && top.getAttribute('stroke') === stroke;
+        if (top === p || sameStroke) return { x: sp.x, y: sp.y };
+      }
     }
     return null;
   });

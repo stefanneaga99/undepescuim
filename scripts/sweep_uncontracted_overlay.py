@@ -478,7 +478,24 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--with-fixed", action="store_true",
                     help="append the FIXED section (removals vs git HEAD) to the report")
+    ap.add_argument("--gate", action="store_true",
+                    help="CI gate: exit 1 when any DUPLICATE / PARTIAL_DUPLICATE remains "
+                         "(plan §5.1 pass criteria: 0 DUPLICATE + 0 PARTIAL_DUPLICATE)")
     args = ap.parse_args()
     main()
     if args.with_fixed:
         append_fixed_section()
+    if args.gate:
+        import json as _json
+        hits = _json.loads(OUT_JSON.read_text(encoding="utf-8")) if OUT_JSON.exists() else []
+        blockers = [h for h in hits if h["label"] in ("DUPLICATE", "PARTIAL_DUPLICATE")]
+        if blockers:
+            from collections import Counter as _C
+            by_label = _C(h["label"] for h in blockers)
+            print(f"[gate] FAIL: {len(blockers)} DUPLICATE/PARTIAL_DUPLICATE remaining "
+                  f"({dict(by_label)}) — overlay is not clean")
+            for h in blockers[:20]:
+                print(f"  {h['label']:18} {h['kind']:6} {h['unc_name'][:40]:42} "
+                      f"== {h['water_name'][:40]} ({h['water_judet']})")
+            sys.exit(1)
+        print("[gate] PASS: 0 DUPLICATE + 0 PARTIAL_DUPLICATE remaining")

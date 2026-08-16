@@ -53,7 +53,9 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
           variant="secondary"
           className={cn(
             'text-[10px] uppercase tracking-wide',
-            isLake ? 'bg-sky-100 text-sky-700' : 'bg-teal-100 text-teal-700',
+            isLake
+              ? 'bg-sky-100 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300'
+              : 'bg-teal-100 text-teal-700 dark:bg-teal-950/60 dark:text-teal-300',
           )}
         >
           {isLake ? 'Lac' : 'Râu'}
@@ -62,7 +64,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
           {water.judet}
         </Badge>
         {isUncontracted && (
-          <Badge variant="outline" className="bg-slate-100 text-[10px] uppercase tracking-wide text-slate-600">
+          <Badge variant="outline" className="bg-slate-100 text-[10px] uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-300">
             {isLake ? 'Privat / Necontractat' : 'Necontractat'}
           </Badge>
         )}
