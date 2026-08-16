@@ -22,7 +22,6 @@
  */
 import type {
   Association,
-  CountyFeature,
   Water,
 } from '../../../src/types/data';
 
