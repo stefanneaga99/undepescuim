@@ -131,6 +131,15 @@ export interface Water {
    * county is selected (misattributed geometry can't leak outside anymore).
    */
   geometryByCounty?: Record<string, GeoJSON.Geometry | null>;
+  /**
+   * Single primary locality (UAT/comună) for the water (t_dd918db7).
+   * Derived offline (scripts/build_locality_assignment.py): county-clip /
+   * sector geometry centroid → line midpoint → coordinates → bbox center →
+   * `limite`-text fallback (the 271 ungeocoded ANPA/Romsilva entries).
+   * Null when nothing resolved — the water stays reachable via the county
+   * filter but never appears under a locality.
+   */
+  locality?: string | null;
 }
 
 /** GeoJSON feature properties for Leaflet rendering */

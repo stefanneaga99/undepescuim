@@ -20,6 +20,7 @@ import type { Water } from '@/types/data';
 export function useFilteredWaters(): Water[] {
   const waters = useMapStore((s) => s.waters);
   const countyFilter = useMapStore((s) => s.countyFilter);
+  const localityFilter = useMapStore((s) => s.localityFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
   const contractFilter = useMapStore((s) => s.contractFilter);
 
@@ -37,9 +38,12 @@ export function useFilteredWaters(): Water[] {
         })
         .filter((w): w is Water => w !== null);
     }
+    if (localityFilter.length > 0) {
+      result = result.filter((w) => w.locality && localityFilter.includes(w.locality));
+    }
     if (waterTypeFilter !== 'all') {
       result = result.filter((w) => w.subtype === waterTypeFilter);
     }
     return result;
-  }, [waters, countyFilter, waterTypeFilter, contractFilter]);
+  }, [waters, countyFilter, localityFilter, waterTypeFilter, contractFilter]);
 }

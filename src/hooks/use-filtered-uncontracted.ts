@@ -17,6 +17,7 @@ import type { Water } from '@/types/data';
 export function useFilteredUncontracted(): Water[] {
   const uncontracted = useMapStore((s) => s.uncontracted);
   const countyFilter = useMapStore((s) => s.countyFilter);
+  const localityFilter = useMapStore((s) => s.localityFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
   const contractFilter = useMapStore((s) => s.contractFilter);
 
@@ -34,9 +35,12 @@ export function useFilteredUncontracted(): Water[] {
         })
         .filter((w): w is Water => w !== null);
     }
+    if (localityFilter.length > 0) {
+      result = result.filter((w) => w.locality && localityFilter.includes(w.locality));
+    }
     if (waterTypeFilter !== 'all') {
       result = result.filter((w) => w.subtype === waterTypeFilter);
     }
     return result;
-  }, [uncontracted, countyFilter, waterTypeFilter, contractFilter]);
+  }, [uncontracted, countyFilter, localityFilter, waterTypeFilter, contractFilter]);
 }
