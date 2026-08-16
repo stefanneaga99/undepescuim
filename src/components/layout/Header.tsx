@@ -1,13 +1,36 @@
 'use client';
 
 import Link from 'next/link';
-import { Fish } from 'lucide-react';
+import { Fish, Menu } from 'lucide-react';
 import { AssociationSearch } from '@/components/associations/AssociationSearch';
+import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+
+/**
+ * Info-page links shown in the mobile hamburger menu. Desktop keeps the
+ * inline header links (below); this array just drives the Sheet — extend
+ * here when a new page lands (no empty links — each must have a route).
+ */
+const MOBILE_NAV_LINKS = [
+  { href: '/specii', label: 'Specii', description: 'Dimensiuni de reținere' },
+  { href: '/permis', label: 'Permis 2026', description: 'Acte și taxe de pescuit' },
+] as const;
 
 /**
  * Fixed top bar (mobile-layout-spec §2): logo left, association search
  * center (icon → fullscreen overlay on mobile, inline dropdown ≥768px),
  * language badge right. Reads no store state itself.
+ *
+ * Mobile (<sm): the inline nav links are hidden, so a hamburger Sheet
+ * (right drawer) keeps Specii / Permis reachable without clicking a water
+ * first (t_f930e4f3). Desktop: inline links unchanged, no hamburger.
  */
 export function Header() {
   return (
@@ -46,6 +69,42 @@ export function Header() {
       >
         RO
       </span>
+
+      {/* Mobile-only hamburger → right sheet with the info-page links.
+          z-[1200]/z-[1100] keeps it above the map's z-1000 filter overlay
+          (stacking pitfall t_7a7192ea — portaled popups need z > 1000). */}
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="sm:hidden"
+            aria-label="Meniu"
+          >
+            <Menu className="h-5 w-5" />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right" className="z-[1200]" overlayClassName="z-[1100]">
+          <SheetHeader>
+            <SheetTitle>Meniu</SheetTitle>
+          </SheetHeader>
+          <nav className="flex flex-col gap-1 px-2 pb-4">
+            {MOBILE_NAV_LINKS.map(({ href, label, description }) => (
+              <SheetClose asChild key={href}>
+                <Link
+                  href={href}
+                  className="flex flex-col gap-0.5 rounded-lg px-3 py-3 text-sm font-semibold transition-colors hover:bg-accent hover:text-foreground"
+                >
+                  {label}
+                  <span className="text-xs font-normal text-muted-foreground">
+                    {description}
+                  </span>
+                </Link>
+              </SheetClose>
+            ))}
+          </nav>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 }
