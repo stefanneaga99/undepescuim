@@ -72,3 +72,5 @@ data/raw/overpass_water_polys.json
 test-results/
 playwright-report/
 blob-report/
+test-results/
+public/sw.js
