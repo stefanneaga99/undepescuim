@@ -4,9 +4,25 @@ Sweep of the remaining 32 bbox-only rectangles + 147 waters with no
 geometry/bbox (no group owner). 159 group-shared waters render via their
 group owner's course by design (one-owner-per-group).
 
-## PART 1 — 32 bbox-only: 10 fixed, 22 documented keep-bbox
+**Update (run 127):** a fuzzy re-scan of the 22 documented-unmatchable
+bbox-only waters + the 74 bbox-added waters found 2 real misses fixed in
+`scripts/fix_missed_unmatchables.py`:
+- Pârâul Murgoci (`ii25s9zo`, Vâlcea) ← OSM 'Valea Murgaciu' (15 pts, inside
+  bbox, ends at the Uria confluence the limits name; sister contract
+  anpa-0644 names the Murgoci).
+- Valea Curpenului (`anpa-anpa-0631`, Vâlcea) ← OSM 'Curpănu' (289 pts,
+  contains bbox; village Curpănu Câineni sits on the course; Wikipedia Olt
+  tributary list matches 'Afluent Râul Olt').
+Remaining 20 documented-unmatchable bbox-only waters re-verified against the
+local OSM cluster index + raw ways: no named or unnamed in-county course
+exists for them (Bihor small valleys: relation children without waterway
+tags; Jilț: only the Jiu cluster, wrong river; Grotului: 'Valea Satului' is
+an adjacent different stream, name sim 0.58; Volovăț/Bistrei: foreign
+Nistru/Vilia clusters only).
 
-### Fixed (10)
+## PART 1 — 32 bbox-only: 11 fixed, 21 documented keep-bbox
+
+### Fixed (11)
 
 - Râul Geoagiu Superior (`z8u6g69z`) — Alba: bbox dropped (renders via group owner) 
 - Lac Pâncota (`u74mudgv`) — Arad: matched (unnamed OSM polygon near locality) ← unnamed-water
@@ -18,8 +34,9 @@ group owner's course by design (one-owner-per-group).
 - Lacul Vlădești  (`0tzvnk1y`) — Vâlcea: matched (unnamed OSM polygon near locality) ← unnamed-water
 - Râul Izvorul Lotrului (`romsilva-valcea-izvorul-lotrului`) — Vâlcea: bbox dropped (renders via group owner) 
 - Râul Lotrul Inferior (`teziodii`) — Vâlcea: bbox dropped (renders via group owner) 
+- Pârâul Murgoci (`ii25s9zo`) — Vâlcea: matched (OSM 'Valea Murgaciu', run 127) ← manual-miss-fix
 
-### Kept bbox fallback — documented unmatchable (22)
+### Kept bbox fallback — documented unmatchable (21)
 
 - Râul Valea Morilor (`fee3lhad`) — Alba: kept bbox fallback (documented unmatchable) 
 - Valea Bistrei (`ys4a4vw8`) — Alba: kept bbox fallback (documented unmatchable) 
@@ -40,13 +57,12 @@ group owner's course by design (one-owner-per-group).
 - Pârâul Nou Roman (`gxjd56ii`) — Sibiu: kept bbox fallback (documented unmatchable) 
 - Pârâul Râul Vadului (`1f162p36`) — Sibiu: kept bbox fallback (documented unmatchable) 
 - Lacul Pojorâta (Iezer) (`4fg24m45`) — Suceava: kept bbox fallback (documented unmatchable) 
-- Pârâul Murgoci (`ii25s9zo`) — Vâlcea: kept bbox fallback (documented unmatchable) 
 - Râul Grotului  (`aksrc2lo`) — Vâlcea: kept bbox fallback (documented unmatchable) 
 - Râul Râmești (`tozghzao`) — Vâlcea: kept bbox fallback (documented unmatchable) 
 
-## PART 2 — 147 truly-invisible: 37 matched, 74 bbox-added, 35 hidden, 4 other
+## PART 2 — 147 truly-invisible: 38 matched, 73 bbox-added, 35 hidden, 4 other
 
-### Matched (37)
+### Matched (38)
 
 - Râul Izvoarele Ampoiului (`romsilva-alba-izvoarele-ampoiului`) — Alba: matched (real geometry) ← Izvoarele
 - Lac Mortărel (`anpa-anpa-0034`) — Arad: matched (unnamed OSM polygon near locality) ← unnamed-
@@ -85,8 +101,9 @@ group owner's course by design (one-owner-per-group).
 - Acumularea Drăgășani cu bălțile adiacente (`anpa-anpa-0649`) — Vâlcea: matched (unnamed OSM polygon near locality) ← unnamed-water
 - Acumularea Ionești cu bălțile adiacente (`anpa-anpa-0648`) — Vâlcea: matched (unnamed OSM polygon near locality) ← unnamed-
 - Acumularea Robești si Valea Robești (`anpa-anpa-0638`) — Vâlcea: matched (real geometry) ← Robești
+- Valea Curpenului (`anpa-anpa-0631`) — Vâlcea: matched (OSM 'Curpănu', run 127) ← manual-miss-fix
 
-### Bbox added — renders as marker (74)
+### Bbox added — renders as marker (73)
 
 - Mihoești (`anpa-anpa-0008`) — Alba: bbox added (renders) 
 - Râul Vîltori - Feneș (`romsilva-alba-viltori-fenes`) — Alba: bbox added (renders) 
@@ -161,7 +178,6 @@ group owner's course by design (one-owner-per-group).
 - Râul Izvoarele Latoriței (`romsilva-valcea-izvoarele-latoritei`) — Vâlcea: bbox added (renders) 
 - Râul Sturișori (`anpa-anpa-0671`) — Vâlcea: bbox added (renders) 
 - Râul „Izvor” (`anpa-anpa-0669`) — Vâlcea: bbox added (renders) 
-- Valea Curpenului (`anpa-anpa-0631`) — Vâlcea: bbox added (renders) 
 
 ### Hidden — documented unmatchable (35)
 
@@ -210,7 +226,10 @@ group owner's course by design (one-owner-per-group).
 
 ## Final state
 
-- waters: 1013, with geometry: 718, with bbox: 598, neither: 196
+- waters: 1013, with geometry: 720, with bbox: 598, neither: 196
+- bbox-only rectangles: 97 (was 32 at task start; 74 of the Part-2 bbox-added
+  waters render as small markers instead of being invisible, 21 Part-1
+  documented keep-bbox + 2 Pojorâta/Fenesasa anchors)
 
 ## Verification
 
