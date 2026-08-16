@@ -16,8 +16,8 @@ strategy so it doesn't flake.
 
 Out of scope (documented, not implemented):
 - **Offline / PWA** — no service worker is built yet (ARCHITECTURE.md §8 is a plan, not code).
-- **Dark mode** — no `ThemeProvider` in `src/app/layout.tsx`; `dark:` classes exist but
-  nothing toggles them. One smoke assertion that no theme toggle exists is the only test.
+- **Dark map tiles** — dark UI ships over light OSM tiles in phase 1 (dark-mode-feasibility-plan.md §7,
+  Option A approved); theme-aware tiles + palette re-tune are a separate phase-2 task.
 - **Unit / component tests** (Vitest/RTL) — this plan is E2E; `src/utils/geo.ts` and the
   Zustand store are mentioned only as *optional* future tiers.
 
@@ -149,7 +149,7 @@ noted. `@smoke` tags mark the fast subset for the PR path.
 | Contract filter toggle | `contractate` hides uncontracted; `necontractate` hides contracted; `all` shows both |
 | Report 503 + honeypot | route-level test (no token → `not_configured`; `website` field → silent 200) |
 | 404 | unknown route returns a Next 404 (no crash) |
-| Dark mode | assert **no** theme toggle is rendered (dark mode not implemented) |
+| Dark mode | theme toggle rendered in header; clicking it toggles `.dark` on `<html>` and persists across reload (localStorage `theme`); system preference respected on first visit; no-FOUC (class applied before first paint); every page renders dark |
 
 ---
 
@@ -492,7 +492,7 @@ Execute in dependency order; each step ends with a green command.
 6. **Port F1–F12 specs** (one file each) using POMs + seeds. Start with
    `smoke/app-load.spec.ts` (F1) as the CI canary. Verify: `npm run test:e2e:smoke`.
 7. **Port edge-case spec** (§3 table) including geolocation deny, empty results,
-   long names, keyboard nav, tablet boundary, 404, dark-mode-none.
+   long names, keyboard nav, tablet boundary, 404, dark-mode (toggle+persist+system+no-FOUC+per-page rendering).
 8. **Migrate data-contract spec** from the 28 scripts — consolidate the *data-shape*
    assertions into `data-integrity.spec.ts` (tag `@data`). Delete the superseded
    `scripts/_e2e_*.mjs` only **after** their assertions are covered (keep a mapping
