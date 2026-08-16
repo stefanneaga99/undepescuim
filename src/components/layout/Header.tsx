@@ -25,12 +25,18 @@ export function Header() {
         <AssociationSearch />
       </div>
 
-      <nav className="shrink-0">
+      <nav className="flex shrink-0 items-center gap-1.5">
         <Link
           href="/permis"
           className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
         >
           Permis 2026
+        </Link>
+        <Link
+          href="/specii"
+          className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
+        >
+          Specii
         </Link>
       </nav>
 

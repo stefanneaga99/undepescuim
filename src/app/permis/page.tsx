@@ -129,6 +129,20 @@ export default function PermisPage() {
         <p className="mt-0.5 text-xs leading-relaxed opacity-90">{PERMIS_GOLDEN_RULE}</p>
       </div>
 
+      {/* Link către /specii — dimensiunile minime pe specii */}
+      <div className="mt-3 rounded-md border bg-accent/40 px-3 py-2.5 text-sm">
+        <p className="font-medium">Cât de mare trebuie să fie peștele ca să-l poți reține?</p>
+        <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+          Dimensiunile minime de reținere, pe specii, cu surse și ultima verificare.
+        </p>
+        <Link
+          href="/specii"
+          className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary underline-offset-2 hover:underline"
+        >
+          Vezi dimensiunile minime pe specii →
+        </Link>
+      </div>
+
       {/* §3 Cum reînnoiești */}
       <SectionHeading icon={<Sparkles className="h-4 w-4 text-primary" />}>
         Cum reînnoiești permisul

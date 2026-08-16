@@ -223,3 +223,20 @@ html [data-vaul-handle-hitarea] {
       0 1px 3px rgb(0 0 0 / 0.3);
   }
 }
+
+/* /specii — flash de evidențiere după selectarea unei specii din căutare. */
+.species-flash {
+  animation: species-flash-pulse 1.8s ease-out;
+}
+@keyframes species-flash-pulse {
+  0%,
+  60% {
+    box-shadow:
+      0 0 0 2px var(--primary),
+      0 0 0 6px rgb(37 99 235 / 0.15);
+    border-color: var(--primary);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(37 99 235 / 0);
+  }
+}

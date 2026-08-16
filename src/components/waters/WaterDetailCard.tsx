@@ -225,13 +225,22 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
           Raportează o problemă
         </button>
       </div>
-      <Link
-        href="/permis"
-        className="mt-1 inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
-      >
-        <ScrollText className="h-3.5 w-3.5" />
-        Permis &amp; Reguli 2026
-      </Link>
+      <div className="mt-1 flex flex-wrap items-center gap-2">
+        <Link
+          href="/permis"
+          className="inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
+        >
+          <ScrollText className="h-3.5 w-3.5" />
+          Permis &amp; Reguli 2026
+        </Link>
+        <Link
+          href="/specii"
+          className="inline-flex w-fit items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
+        >
+          <Ruler className="h-3.5 w-3.5" />
+          Dimensiuni de reținere
+        </Link>
+      </div>
 
       <ReportForm
         open={reportOpen}
