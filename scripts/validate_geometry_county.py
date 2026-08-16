@@ -108,24 +108,44 @@ def load_county_polygons():
     return polys
 
 
-def water_points(w):
-    """Flat [(lon, lat), ...] coordinate list of a water's geometry."""
+def water_points(w, include_fallback=True):
+    """Flat [(lon, lat), ...] coordinate list of a water's geometry.
+
+    With include_fallback (default), a water with NO geometry but a stored
+    `coordinates`/`bbox` (the stale-fallback geocode class, t_a0e123da) yields
+    its stored point + bbox corners/centroid so the county check catches
+    poisoned fallbacks (Valea Pojorâtei pointed at Săcele while the contract
+    county was Brașov-Făgăraș). Pure geocode points land in exactly one county
+    — the wrong-county rule (zero points in the declared county + far from the
+    seat) flags them the same way as wrong geometry.
+    """
     g = w.get("geometry")
-    if not g:
+    if g:
+        t = g.get("type")
+        coords = g["coordinates"]
+        if t == "MultiLineString":
+            flat = [p for part in coords for p in part]
+        elif t == "LineString":
+            flat = coords
+        elif t == "Polygon":
+            flat = [p for ring in coords for p in ring]
+        elif t == "MultiPolygon":
+            flat = [p for poly in coords for ring in poly for p in ring]
+        else:
+            flat = coords
+        return [p for p in flat if isinstance(p, (list, tuple)) and len(p) >= 2]
+    if not include_fallback:
         return []
-    t = g.get("type")
-    coords = g["coordinates"]
-    if t == "MultiLineString":
-        flat = [p for part in coords for p in part]
-    elif t == "LineString":
-        flat = coords
-    elif t == "Polygon":
-        flat = [p for ring in coords for p in ring]
-    elif t == "MultiPolygon":
-        flat = [p for poly in coords for ring in poly for p in ring]
-    else:
-        flat = coords
-    return [p for p in flat if isinstance(p, (list, tuple)) and len(p) >= 2]
+    pts: list[tuple[float, float]] = []
+    c = w.get("coordinates")
+    if isinstance(c, (list, tuple)) and len(c) >= 2 and all(isinstance(v, (int, float)) for v in c[:2]):
+        pts.append((c[0], c[1]))
+    b = w.get("bbox")
+    if isinstance(b, (list, tuple)) and len(b) == 4 and all(isinstance(v, (int, float)) for v in b):
+        min_lon, min_lat, max_lon, max_lat = b
+        pts.append(((min_lon + max_lon) / 2, (min_lat + max_lat) / 2))
+        pts += [(min_lon, min_lat), (max_lon, min_lat), (max_lon, max_lat), (min_lon, max_lat)]
+    return pts
 
 
 def centroid(pts):
@@ -295,7 +315,7 @@ def main():
     checked = len(all_recs)
 
     print(f"[validate] {len(waters)} waters, {len(polygons)} county polygons")
-    print(f"[validate] waters with geometry: {checked}")
+    print(f"[validate] waters with locatable points (geometry or coords/bbox fallback): {checked}")
     print(f"[validate] FLAGGED (wrong-county + outside-romania): {len(flagged)}")
     print()
     for r in sorted(flagged, key=lambda r: (r["judet"], r["name"])):
