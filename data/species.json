@@ -1,0 +1,244 @@
+[
+  {
+    "species": "Avat",
+    "latin": "Aspius aspius",
+    "min_cm": 30,
+    "source": "Ordin MADR 342/2008, anexa poz. 1 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025, consolidat 27.10.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Babușcă",
+    "latin": "Rutilus rutilus",
+    "min_cm": 15,
+    "source": "Ordin MADR 342/2008, anexa poz. 3 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Biban",
+    "latin": "Perca fluviatilis",
+    "min_cm": 12,
+    "source": "Ordin MADR 342/2008, anexa poz. 5 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție proprie: 20 mar–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Crap",
+    "latin": "Cyprinus carpio",
+    "min_cm": 40,
+    "source": "Ordin MADR 342/2008, anexa poz. 6 (MO 410/02.06.2008), modificat prin Ordin 304/2023 (MO 785/31.08.2023): 35→40 cm",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun; în Rezervația Delta Dunării, în afara prohibiției, doar catch&release (1 ex/zi) (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Caras",
+    "latin": "Carassius auratus gibelio",
+    "min_cm": 20,
+    "source": "Ordin MADR 342/2008, anexa poz. 7 (MO 410/02.06.2008), modificat prin Ordin 304/2023 (MO 785/31.08.2023): 15→20 cm",
+    "seasonal_notes": "Specie invazivă; fără prohibiție proprie, dar se aplică prohibiția generală: 9 apr–7 iun",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Caracudă",
+    "latin": "Carassius carassius",
+    "min_cm": 17,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, anexa poz. 8 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "REȚINERE INTERZISĂ tot anul — enumerată explicit la art. 5 lit. c din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025, consolidat 27.10.2025): „...și caracuda (Carassius carassius)... tot timpul anului”. Dimensiunea din anexă (17 cm) rămâne în vigoare dar nu poate fi reținută în 2026",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Clean",
+    "latin": "Squalius cephalus (Leuciscus cephalus)",
+    "min_cm": 25,
+    "source": "Ordin MADR 342/2008, anexa poz. 10 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Lin",
+    "latin": "Tinca tinca",
+    "min_cm": 25,
+    "source": "Ordin MADR 342/2008, anexa poz. 18 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Lipan",
+    "latin": "Thymallus thymallus",
+    "min_cm": 25,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, anexa poz. 19 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "REȚINERE INTERZISĂ tot anul — art. 5 lit. d din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025, consolidat 27.10.2025): „coregonul și lipanul, tot timpul anului”. Dimensiunea din anexă (25 cm) rămâne în vigoare, dar pescuitul/reținerea sunt interzise tot anul începând cu 2025",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Morunaș",
+    "latin": "Vimba vimba",
+    "min_cm": 25,
+    "source": "Ordin MADR 342/2008, anexa poz. 20 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Mreană",
+    "latin": "Barbus barbus",
+    "min_cm": 27,
+    "source": "Ordin MADR 342/2008, anexa poz. 21 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Oblete",
+    "latin": "Alburnus alburnus",
+    "min_cm": 12,
+    "source": "Ordin MADR 342/2008, anexa poz. 22 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Fără prohibiție proprie; se aplică prohibiția generală: 9 apr–7 iun. Este permis ca momeală vie, dar dimensiunea minimă de 12 cm se aplică reținerii",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Plătică",
+    "latin": "Abramis brama",
+    "min_cm": 25,
+    "source": "Ordin MADR 342/2008, anexa poz. 23 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Păstrăv indigen",
+    "latin": "Salmo trutta fario",
+    "min_cm": 20,
+    "source": "Ordin MADR 342/2008, anexa poz. 24 „Păstrăv (Salmo sp.)” (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție proprie: 1 oct–31 mar (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Păstrăv curcubeu",
+    "latin": "Oncorhynchus mykiss",
+    "min_cm": 20,
+    "source": "Ordin MADR 342/2008, anexa poz. 24 „Păstrăv (Salmo sp.)” (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție proprie: 1 oct–31 mar (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Roșioară",
+    "latin": "Scardinius erythrophthalmus",
+    "min_cm": 15,
+    "source": "Ordin MADR 342/2008, anexa poz. 25 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Scobar",
+    "latin": "Chondrostoma nasus",
+    "min_cm": 20,
+    "source": "Ordin MADR 342/2008, anexa poz. 29 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Somn",
+    "latin": "Silurus glanis",
+    "min_cm": 50,
+    "source": "Ordin MADR 342/2008, anexa poz. 30 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun; în Rezervația Delta Dunării, în afara prohibiției, doar catch&release (1 ex/zi) (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Șalău",
+    "latin": "Sander lucioperca",
+    "min_cm": 40,
+    "source": "Ordin MADR 342/2008, anexa poz. 34 „Șalău (Stizostedion sp.)” (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție proprie: 20 mar–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Știucă",
+    "latin": "Esox lucius",
+    "min_cm": 40,
+    "source": "Ordin MADR 342/2008, anexa poz. 35 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție proprie: 1 feb–20 mar (în RBDD: 1 feb–7 iun) + prohibiție generală 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Văduviță",
+    "latin": "Leuciscus idus",
+    "min_cm": 30,
+    "source": "Ordin MADR 342/2008, anexa poz. 37 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "Prohibiție generală: 9 apr–7 iun (Ordin MADR/MMAP 23/297/2025, MO 95/01.02.2025)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Coregon",
+    "latin": "Coregonus sp.",
+    "min_cm": 22,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, anexa poz. 11 (MO 410/02.06.2008); valoare nemodificată prin Ordin 304/2023 (MO 785/31.08.2023)",
+    "seasonal_notes": "REȚINERE INTERZISĂ tot anul — art. 5 lit. d din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025): „coregonul și lipanul, tot timpul anului”",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Lostriță",
+    "latin": "Hucho hucho",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008): „cu excepția sturionilor și lostriței, care sunt interziși la pescuit”; art. 5 lit. c din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); art. 51 lit. f din Legea 176/2024 (MO 517/03.06.2024)",
+    "seasonal_notes": "Pescuitul, deținerea, transportul, comercializarea sau omorârea lostriței interzise (Legea 176/2024, art. 51 lit. f)",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Asprete",
+    "latin": "Romanichthys valsanicola",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR/MMAP 23/297/2025, art. 5 lit. c (MO 95/01.02.2025) + OUG 57/2007, anexele 4A/4B",
+    "seasonal_notes": "Specie strict protejată, pescuit interzis tot timpul anului",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Morun",
+    "latin": "Huso huso",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008) — sturioni interziși la pescuit; art. 5 lit. g din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); Legea 176/2024, art. 51 lit. c (MO 517/03.06.2024)",
+    "seasonal_notes": "Moratoriu privind sturionii din 2006, prelungit; pescuitul sturionilor sălbatici interzis tot anul",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Nisetru",
+    "latin": "Acipenser gueldenstaedtii",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008) — sturioni interziși la pescuit; art. 5 lit. g din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); Legea 176/2024, art. 51 lit. c (MO 517/03.06.2024)",
+    "seasonal_notes": "Moratoriu privind sturionii din 2006, prelungit; pescuitul sturionilor sălbatici interzis tot anul",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Păstrugă",
+    "latin": "Acipenser stellatus",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008) — sturioni interziși la pescuit; art. 5 lit. g din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); Legea 176/2024, art. 51 lit. c (MO 517/03.06.2024)",
+    "seasonal_notes": "Moratoriu privind sturionii din 2006, prelungit; pescuitul sturionilor sălbatici interzis tot anul",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Cegă",
+    "latin": "Acipenser ruthenus",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008) — sturioni interziși la pescuit; art. 5 lit. g din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); Legea 176/2024, art. 51 lit. c (MO 517/03.06.2024)",
+    "seasonal_notes": "Moratoriu privind sturionii din 2006, prelungit; pescuitul sturionilor sălbatici interzis tot anul",
+    "last_updated": "2026-08-16"
+  },
+  {
+    "species": "Șip",
+    "latin": "Acipenser nudiventris",
+    "min_cm": null,
+    "retention": "interzis",
+    "source": "Ordin MADR 342/2008, art. 4 (MO 410/02.06.2008) — sturioni interziși la pescuit; art. 5 lit. g din Ordin MADR/MMAP 23/297/2025 (MO 95/01.02.2025); Legea 176/2024, art. 51 lit. c (MO 517/03.06.2024)",
+    "seasonal_notes": "Moratoriu privind sturionii din 2006, prelungit; pescuitul sturionilor sălbatici interzis tot anul",
+    "last_updated": "2026-08-16"
+  }
+]
