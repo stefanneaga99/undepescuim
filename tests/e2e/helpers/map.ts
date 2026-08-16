@@ -1,0 +1,112 @@
+/**
+ * Map-level helpers (docs/e2e-test-plan.md §4.3 `helpers/map.ts`).
+ *
+ * All SVG/pixel math lives HERE — POMs and specs never touch Leaflet
+ * internals. Two click paths:
+ *  - `clickWaterBySlug` (primary): deterministic — finds the water's feature
+ *    layer via the test bridge (`window.__UNDEPESCUIM_MAP__`, added in
+ *    MapView) and fires the click Leaflet would dispatch, with the layer's
+ *    real center latlng. No pixel math, immune to dashes/overlaps/LOD culls.
+ *  - `clickWaterByPixel` (pipeline check): a REAL pointer click at a screen
+ *    point on the water's path (elementFromPoint hit), exercising the actual
+ *    Leaflet hit-testing chain. Used sparingly to guard the click pipeline.
+ */
+import { expect, type Page } from '@playwright/test';
+import { Selectors } from './selectors';
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function mapOf(page: Page) {
+  return page.evaluate(() => (window as any).__UNDEPESCUIM_MAP__ ?? null);
+}
+
+/** Live Leaflet zoom level (via the test bridge — DPR/UA agnostic). */
+export async function mapZoom(page: Page): Promise<number> {
+  const z = await page.evaluate(() => (window as any).__UNDEPESCUIM_MAP__?.getZoom() ?? -1);
+  if (z < 0) throw new Error('mapZoom: leaflet map bridge not available');
+  return z;
+}
+
+/** Wait until the map root + the vector overlay are rendered. */
+export async function waitForMapReady(page: Page): Promise<void> {
+  await expect(page.getByTestId(Selectors.mapRoot)).toBeVisible();
+  await expect(page.getByTestId(Selectors.watersDrawn)).toBeAttached();
+  await page.waitForFunction(
+    () => document.querySelectorAll('.leaflet-overlay-pane path').length > 0,
+  );
+}
+
+/**
+ * Deterministic water click: fire the feature layer's click at its geographic
+ * center. Returns nothing — throws when the slug cannot be resolved.
+ */
+export async function clickWaterBySlug(page: Page, slug: string): Promise<void> {
+  const res = await page.evaluate((slug) => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
+    if (!map) return { ok: false as const, reason: 'no-map-bridge' };
+    let target: any = null;
+    map.eachLayer((layer: any) => {
+      if (target) return;
+      const f = layer.feature;
+      if (f && f.properties && f.properties.slug === slug && layer._path) target = layer;
+    });
+    if (!target) return { ok: false as const, reason: `no-layer:${slug}` };
+    const center = target.getBounds().getCenter();
+    target.fire('click', { latlng: center, originalEvent: {} });
+    return { ok: true as const };
+  }, slug);
+  if (!res.ok) throw new Error(`clickWaterBySlug failed: ${res.reason}`);
+}
+
+/**
+ * REAL pointer click on the water's rendered path — the full user gesture
+ * through Leaflet's hit-testing. Samples the SVG path (handling thin/dashed
+ * rivers via the invisible 16px hit layer below), then dispatches a mouse
+ * click at the first screen point whose topmost element is inside the
+ * leaflet overlay pane.
+ */
+export async function clickWaterByPixel(page: Page, slug: string): Promise<void> {
+  const pt = await page.evaluate((slug) => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
+    if (!map) return null;
+    let target: any = null;
+    map.eachLayer((layer: any) => {
+      if (target) return;
+      const f = layer.feature;
+      if (f && f.properties && f.properties.slug === slug && layer._path) target = layer;
+    });
+    if (!target) return null;
+    const path = target._path as SVGPathElement;
+    const ctm = path.ownerSVGElement?.getScreenCTM();
+    if (!ctm) return null;
+    const len = path.getTotalLength();
+    if (!len) return null;
+    const fracs = [0.15, 0.3, 0.45, 0.6, 0.75, 0.85];
+    for (const frac of fracs) {
+      const p = path.getPointAtLength(len * frac);
+      const sp = new DOMPoint(p.x, p.y).matrixTransform(ctm);
+      const top = document.elementFromPoint(sp.x, sp.y);
+      if (top && top.closest && top.closest('.leaflet-overlay-pane')) {
+        return { x: sp.x, y: sp.y };
+      }
+    }
+    return null;
+  }, slug);
+  if (!pt) throw new Error(`clickWaterByPixel: no hittable point for ${slug}`);
+  await page.mouse.click(pt.x, pt.y);
+}
+
+/** Count overlay paths stroked with any of the given colors. */
+export async function countPathsByColor(page: Page, colors: readonly string[]): Promise<number> {
+  return page.evaluate((colors) => {
+    const set = new Set(colors.map((c) => c.toLowerCase()));
+    return [...document.querySelectorAll('.leaflet-overlay-pane path')].filter(
+      (p) => set.has((p.getAttribute('stroke') || '').toLowerCase()),
+    ).length;
+  }, colors as string[]);
+}
+
+/** Total vector overlay paths (contracted + uncontracted + slices). */
+export async function countAllPaths(page: Page): Promise<number> {
+  return page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane path').length);
+}
+/* eslint-enable @typescript-eslint/no-explicit-any */

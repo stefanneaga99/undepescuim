@@ -88,9 +88,9 @@ const navStart = Date.now();
 await page.goto(BASE, { waitUntil: 'domcontentloaded', timeout: 60000 });
 try {
   await page.waitForFunction(() => window.__perfDataLoaded === true, { timeout: 180000 });
-} catch {
+} catch (err) {
   await page.waitForTimeout(5000);
-  console.log('  warn: __perfDataLoaded never flipped — the map data gate did not open; continuing with what rendered');
+  console.log(`  warn: __perfDataLoaded wait failed (${String(err.message).split('\n')[0]}) — continuing with what rendered`);
 }
 await page.waitForFunction(() => document.querySelectorAll('.leaflet-overlay-pane path').length > 0, { timeout: 60000 }).catch(() => {});
 
@@ -155,13 +155,16 @@ const zoomLevel = async () =>
   });
 
 const z0 = await zoomLevel();
-await page.evaluate(() => {
+// One wheel per zoom level, spaced so Leaflet's trackpad debounce doesn't
+// swallow events (skill: wheelPxPerZoomLevel 60, but keep 300 ms gaps).
+await page.evaluate(async () => {
   const el = document.querySelector('.leaflet-container');
   const r = el.getBoundingClientRect();
   const cx = r.left + r.width / 2;
   const cy = r.top + r.height / 2;
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 6; i += 1) {
     el.dispatchEvent(new WheelEvent('wheel', { deltaY: -60, clientX: cx, clientY: cy, bubbles: true, cancelable: true }));
+    await new Promise((res) => setTimeout(res, 300));
   }
 });
 await page.waitForTimeout(5000); // let the zoom chain + LOD re-renders settle
@@ -176,31 +179,46 @@ if (longTasks.length > 10) {
 }
 
 // ---- M5: unexpected layout shift across a filter toggle + sheet open ----
+// Uses the standard CLS heuristic: shifts within 500 ms of user input
+// (pointerdown/keydown) are excluded. Interactions below are REAL mouse/key
+// events so input-caused shifts attribute correctly; the assert targets only
+// shifts a real user would experience as unexpected (plan §4 M5 == 0.00).
 await page.evaluate(() => {
-  window.__perfCls = { unexpected: 0, unexpectedShifts: 0, raw: 0, rawShifts: 0 };
+  window.__perfCls = { unexpected: 0, unexpectedShifts: 0, shifts: [] };
   const obs = new PerformanceObserver((list) => {
     for (const e of list.getEntries()) {
+      const entry = {
+        t: Math.round(e.startTime),
+        v: e.value,
+        recentInput: e.hadRecentInput,
+        sources: (e.sources || []).map((s) => {
+          const el = s.node;
+          return el ? `${el.tagName}.${[...el.classList].slice(0, 3).join('.')}` : '?';
+        }),
+      };
       if (!e.hadRecentInput) {
         window.__perfCls.unexpected += e.value;
         window.__perfCls.unexpectedShifts += 1;
-      } else {
-        window.__perfCls.raw += e.value;
       }
-      window.__perfCls.rawShifts += 1;
+      window.__perfCls.shifts.push(entry);
     }
   });
   obs.observe({ entryTypes: ['layout-shift'] });
   window.__perfClsObs = obs;
 });
 
-// Toggle a county chip twice (filter mutation re-renders the map overlays)
+// Toggle a county chip twice (filter mutation re-renders the map overlays).
+// Real tap: pointerdown fires → the resulting re-render shift is input-attributed.
 const chip = page.locator('button:has-text("Bihor")').first();
-const chipVisible = await chip.isVisible().catch(() => false);
-if (chipVisible) {
-  await chip.evaluate((el) => el.click()).catch(() => {});
-  await page.waitForTimeout(600);
-  await chip.evaluate((el) => el.click()).catch(() => {});
-  await page.waitForTimeout(600);
+const chipBox = await chip.boundingBox().catch(() => null);
+if (chipBox) {
+  await page.mouse.click(chipBox.x + chipBox.width / 2, chipBox.y + chipBox.height / 2);
+  await page.waitForTimeout(900);
+  const on = await page.evaluate(() => document.querySelectorAll('button[aria-pressed="true"]').length).catch(() => -1);
+  await page.mouse.click(chipBox.x + chipBox.width / 2, chipBox.y + chipBox.height / 2);
+  await page.waitForTimeout(900);
+  const off = await page.evaluate(() => document.querySelectorAll('button[aria-pressed="true"]').length).catch(() => -1);
+  report('county filter chip toggles', `${on} active chips after ON, ${off} after OFF`);
 } else {
   console.log('  warn: county chip not visible — filter-toggle CLS coverage skipped');
 }
@@ -211,25 +229,29 @@ const mapBox = await page.evaluate(() => {
   const r = document.querySelector('.leaflet-container').getBoundingClientRect();
   return { x: r.left, y: r.top, w: r.width, h: r.height };
 });
-for (const [fx, fy] of [[0.5, 0.5], [0.35, 0.55], [0.6, 0.4]]) {
+for (const [fx, fy] of [[0.5, 0.5], [0.35, 0.55], [0.6, 0.4], [0.45, 0.6], [0.55, 0.45]]) {
   await page.mouse.click(mapBox.x + mapBox.w * fx, mapBox.y + mapBox.h * fy);
-  await page.waitForTimeout(800);
+  await page.waitForTimeout(1500); // throttle slows the React commit + vaul open
   sheetOpened = await page
     .evaluate(() => !!(document.querySelector('[data-vaul-drawer]') || document.querySelector('aside:has(h2)')))
     .catch(() => false);
   if (sheetOpened) {
     await page.keyboard.press('Escape');
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1500); // let the close animation finish inside the window
     break;
   }
 }
+report('water sheet open', sheetOpened ? 'opened + closed via Escape' : 'NOT opened (map clicks missed)');
 if (!sheetOpened) console.log('  warn: no water sheet opened from map clicks — sheet CLS coverage skipped');
 
 const cls = await page.evaluate(() => {
   window.__perfClsObs.disconnect();
   return window.__perfCls;
 });
-check('M5', cls.unexpected < BUDGETS.M5.limit, `unexpected=${cls.unexpected.toFixed(4)} (${cls.unexpectedShifts} shifts; raw incl. input=${cls.raw.toFixed(4)})`);
+check('M5', cls.unexpected < BUDGETS.M5.limit, `unexpected=${cls.unexpected.toFixed(4)} (${cls.unexpectedShifts} shifts)`);
+for (const s of cls.shifts.filter((x) => !x.recentInput)) {
+  report(`  unexpected shift ${s.v.toFixed(4)} @ ${s.t} ms (${s.sources.join(', ') || 'no source'})`, '');
+}
 
 await browser.close();
 

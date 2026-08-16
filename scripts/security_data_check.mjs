@@ -11,12 +11,13 @@
 // Run: node scripts/security_data_check.mjs  (exit 0 = PASS)
 
 import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
-const DIR = new URL('../public/data/', import.meta.url);
+const DIR = fileURLToPath(new URL('../public/data/', import.meta.url));
 const DANGEROUS_SCHEME = /^(javascript|data|vbscript):/i;
 const HTTP_ONLY = /^https?:\/\//i;
-const PHONE_OK = /^\+?[\d\s().-]{6,}$/;
+const PHONE_OK = /^\+?[\d\s()./-]{6,}$/; // allows legacy "0238/710608" format
 
 const bad = [];
 const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));

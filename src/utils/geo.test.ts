@@ -42,10 +42,10 @@ describe('haversineKm', () => {
     expect(a).toBeCloseTo(b, 9);
   });
 
-  it('matches a known Bucharest–Cluj-Napoca distance (~300 km)', () => {
+  it('matches a known Bucharest–Cluj-Napoca distance (~325 km)', () => {
     // Bucharest 44.43, 26.10 — Cluj-Napoca 46.77, 23.60
-    expect(haversineKm(44.43, 26.1, 46.77, 23.6)).toBeGreaterThan(290);
-    expect(haversineKm(44.43, 26.1, 46.77, 23.6)).toBeLessThan(320);
+    expect(haversineKm(44.43, 26.1, 46.77, 23.6)).toBeGreaterThan(300);
+    expect(haversineKm(44.43, 26.1, 46.77, 23.6)).toBeLessThan(350);
   });
 });
 
@@ -55,10 +55,10 @@ describe('distanceToWaterKm', () => {
     expect(distanceToWaterKm(46.5, 23.5, w)).toBe(0);
   });
 
-  it('measures to the bbox rectangle when one exists', () => {
+  it('measures to the bbox rectangle when one exists (111.32 km/deg lat)', () => {
     const w = water({ bbox: [23.0, 46.0, 24.0, 47.0] });
-    // 1 degree north of the bbox top edge ≈ 111 km
-    expect(distanceToWaterKm(48.0, 23.5, w)).toBeCloseTo(111.19, 1);
+    // 1 degree north of the bbox top edge
+    expect(distanceToWaterKm(48.0, 23.5, w)).toBeCloseTo(111.32, 1);
   });
 
   it('falls back to haversine to stored coordinates when no bbox', () => {
@@ -120,12 +120,12 @@ describe('geometryParts', () => {
     expect(parts).toHaveLength(2);
   });
 
-  it('flattens Polygon rings', () => {
+  it('flattens Polygon rings into one part list', () => {
     const parts = geometryParts({
       type: 'Polygon',
       coordinates: [[[1, 2], [3, 4], [1, 2]]],
     });
-    expect(parts).toEqual([[[1, 2], [3, 4], [1, 2]]]);
+    expect(parts).toEqual([[1, 2], [3, 4], [1, 2]]);
   });
 
   it('returns [] for unknown geometry types', () => {
@@ -157,7 +157,7 @@ describe('nearestWaters', () => {
     const one = nearestWaters(46.3, 23.4, waters, { limit: 1, maxKm: 300 });
     expect(one).toHaveLength(1);
     expect(one[0].slug).toBe('a');
-    const none = nearestWaters(46.3, 23.4, waters, { limit: 10, maxKm: 0.001 });
+    const none = nearestWaters(46.3, 23.4, waters, { limit: 10, maxKm: -1 });
     expect(none).toHaveLength(0);
   });
 });

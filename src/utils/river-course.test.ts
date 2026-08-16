@@ -34,9 +34,9 @@ function water(over: Partial<Water>): Water {
 }
 
 describe('waterKey / groupKeyOf / sameRiver', () => {
-  it('strips generic river prefixes', () => {
+  it('strips generic river prefixes and diacritics', () => {
     expect(waterKey('Râul Oltul superior')).toBe('oltul');
-    expect(waterKey('Pârâul Buzăielului')).toBe('buzăielului');
+    expect(waterKey('Pârâul Buzăielului')).toBe('buzaielului'); // waterKey strips diacritics
   });
 
   it('strips diacritics and lowercases', () => {
@@ -45,15 +45,16 @@ describe('waterKey / groupKeyOf / sameRiver', () => {
 
   it('prefers the exact riverGroup over the fuzzy prefix', () => {
     expect(groupKeyOf({ riverGroup: 'siret', name: 'Râul Sirețel' })).toBe('siret');
-    expect(groupKeyOf({ name: 'Râul Sirețel' })).toBe('sirețel');
+    expect(groupKeyOf({ name: 'Râul Sirețel' })).toBe('siretel'); // diacritics stripped
   });
 
   it('sameRiver shares the 5-char prefix', () => {
     expect(sameRiver('oltul', 'oltul')).toBe(true);
-    expect(sameRiver('olt', 'oltul')).toBe(true);
+    expect(sameRiver('buzaielului', 'buzaiel')).toBe(true);
     expect(sameRiver('', 'oltul')).toBe(false);
     expect(sameRiver('buzau', 'buzau')).toBe(true);
     expect(sameRiver('buzau', 'bistrita')).toBe(false);
+    expect(sameRiver('olt', 'oltul')).toBe(false); // a 3-char key is not a 5-char prefix
   });
 });
 

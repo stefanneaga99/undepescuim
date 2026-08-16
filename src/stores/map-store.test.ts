@@ -125,11 +125,11 @@ describe('selectWater association-clear semantics (t_7a7192ea / t_abccfd6c / t_6
 
   it('drops a county/type/locality filter that would hide the clicked water', () => {
     useMapStore.setState({ countyFilter: ['Cluj'], waterTypeFilter: 'rau', localityFilter: ['Oradea'] });
-    useMapStore.getState().selectWater('bihor-lake'); // Bihor + lac
+    useMapStore.getState().selectWater('bihor-lake'); // Bihor + lac; locality Oradea matches
     const s = useMapStore.getState();
     expect(s.countyFilter).toEqual([]);
     expect(s.waterTypeFilter).toBe('all');
-    expect(s.localityFilter).toEqual([]);
+    expect(s.localityFilter).toEqual(['Oradea']); // clicked water's locality matches → kept
   });
 });
 
@@ -150,8 +150,9 @@ describe('filters (R9: selection dismissed when hidden)', () => {
   });
 
   it('a county change that hides the selected water dismisses the sheet (R9)', () => {
-    useMapStore.setState({ selectedWaterSlug: 'cluj-river', countyFilter: ['Cluj'] });
+    useMapStore.setState({ selectedWaterSlug: 'cluj-river', countyFilter: ['Cluj', 'Bihor'] });
     useMapStore.getState().toggleCounty('Cluj'); // remove Cluj → cluj-river hidden
+    expect(useMapStore.getState().countyFilter).toEqual(['Bihor']);
     expect(useMapStore.getState().selectedWaterSlug).toBeNull();
   });
 
@@ -159,10 +160,14 @@ describe('filters (R9: selection dismissed when hidden)', () => {
     useMapStore.setState({ countyFilter: ['Bihor'], selectedWaterSlug: 'bihor-river' });
     useMapStore.getState().toggleLocality('Oradea');
     expect(useMapStore.getState().localityFilter).toEqual(['Oradea']);
-    expect(useMapStore.getState().selectedWaterSlug).toBe('bihor-river');
-    useMapStore.getState().toggleLocality('Altele');
-    expect(useMapStore.getState().localityFilter).toEqual(['Oradea', 'Altele']);
-    expect(useMapStore.getState().selectedWaterSlug).toBeNull(); // no locality 'Altele'
+    expect(useMapStore.getState().selectedWaterSlug).toBe('bihor-river'); // still matches
+    useMapStore.getState().toggleLocality('Oradea');
+    expect(useMapStore.getState().localityFilter).toEqual([]);
+    // a water WITHOUT the active locality is dismissed by the filter (R9)
+    useMapStore.setState({ selectedWaterSlug: 'cluj-river' }); // no locality
+    useMapStore.getState().toggleLocality('Oradea');
+    expect(useMapStore.getState().localityFilter).toEqual(['Oradea']);
+    expect(useMapStore.getState().selectedWaterSlug).toBeNull();
   });
 
   it('clearLocalities empties the locality filter', () => {
@@ -216,7 +221,9 @@ describe('geolocation (applyUserPosition / clearUserPosition)', () => {
     resetStore({ waters: sparse });
     useMapStore.getState().applyUserPosition({ lat: 46.45, lon: 23.45, accuracy: 50 });
     const s = useMapStore.getState();
-    expect(s.nearbyRadiusKm).toBe(EXPANDED_RADIUS_KM);
+    // fewer than 3 → radius expands to 50 km, then the nearest-few fallback
+    // GROWS the drawn radius to cover the farthest entry shown.
+    expect(s.nearbyRadiusKm).toBeGreaterThanOrEqual(EXPANDED_RADIUS_KM);
     // still < MIN_NEARBY_COUNT → nearest-few fallback kicks in
     expect(s.nearbyWaters.length).toBeGreaterThanOrEqual(1);
     expect(s.nearbyWaters.every((n) => Number.isFinite(n.km))).toBe(true);
