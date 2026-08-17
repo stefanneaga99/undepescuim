@@ -7,6 +7,12 @@ import withSerwistInit from "@serwist/next";
 const withSerwist = withSerwistInit({
   swSrc: "src/app/sw.ts",
   swDest: "public/sw.js",
+  // Data JSONs are ~45MB total — they must NOT be precached at install
+  // (offline-pwa-feasibility.md §3: data tier is runtime NetworkFirst via the
+  // app-data cache; precaching them makes SW install crawl/hang). Default
+  // globPublicPatterns is ["**/*"] → exclude the whole /data dir, keep only
+  // shell assets (icons, SVG logos) in the precache.
+  globPublicPatterns: ["**/*", "!data/**"],
   // serverless build: the precache manifest comes from the Next build
   // manifest. No globDirectory/globPatterns (that was the static-export path).
 });
