@@ -15,7 +15,7 @@ export class ReportDialog {
   reason(value: string) {
     return this.dialog
       .getByTestId(Selectors.reportReason)
-      .filter({ has: this.page.locator(`[data-value="${value}"]`) });
+      .and(this.page.locator(`[data-value="${value}"]`));
   }
 
   get submitButton() {

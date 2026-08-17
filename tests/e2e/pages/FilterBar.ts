@@ -40,13 +40,11 @@ export class FilterBar {
   }
 
   typeOption(value: string) {
-    return this.visible(Selectors.typeOption).filter({ has: this.page.locator(`[data-value="${value}"]`) });
+    return this.visible(Selectors.typeOption).and(this.page.locator(`[data-value="${value}"]`));
   }
 
   contractOption(value: string) {
-    return this.visible(Selectors.contractOption).filter({
-      has: this.page.locator(`[data-value="${value}"]`),
-    });
+    return this.visible(Selectors.contractOption).and(this.page.locator(`[data-value="${value}"]`));
   }
 
   async toggleCounty(county: string): Promise<void> {

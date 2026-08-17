@@ -19,8 +19,8 @@ export class AssociationSearch {
   option(slug: string) {
     return this.page
       .getByTestId(Selectors.assocOption)
-      .filter({ visible: true })
-      .filter({ has: this.page.locator(`[data-slug="${slug}"]`) });
+      .and(this.page.locator(`[data-slug="${slug}"]`))
+      .filter({ visible: true });
   }
 
   get allAssociationsOption() {

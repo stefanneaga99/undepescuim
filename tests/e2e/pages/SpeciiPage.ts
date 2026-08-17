@@ -27,8 +27,8 @@ export class SpeciiPage {
   option(slug: string) {
     return this.page
       .getByTestId(Selectors.speciesOption)
-      .filter({ visible: true })
-      .filter({ has: this.page.locator(`[data-slug="${slug}"]`) });
+      .and(this.page.locator(`[data-slug="${slug}"]`))
+      .filter({ visible: true });
   }
 
   speciesCard(slug: string) {
