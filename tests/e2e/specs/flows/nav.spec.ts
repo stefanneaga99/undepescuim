@@ -21,7 +21,6 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
     await mapReady();
 
     const header = new Header(page);
-    const map = new MapPage(page);
 
     // hamburger visible, inline links hidden on mobile
     await expect(header.hamburger).toBeVisible();
