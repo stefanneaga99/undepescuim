@@ -33,12 +33,12 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
     await expect(header.sheetSpeciiLink).toContainText('Specii');
     await expect(header.sheetPermisLink).toContainText('Permis 2026');
 
-    // navigate via the sheet, then come back
+    // navigate via the sheet, then come back (the info page has a back link,
+    // not the header logo — /specii is a back-link layout, no Header)
     await header.sheetSpeciiLink.click();
     await expect(page).toHaveURL(/\/specii$/);
 
-    // overlay tap closes the sheet without navigating
-    await header.goHome();
+    await page.getByRole('link', { name: 'Înapoi la hartă' }).click();
     await expect(page).toHaveURL(/\/$/);
     await header.openMenu();
     await page.locator('[data-slot="sheet-overlay"]').click();
@@ -63,8 +63,11 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
 });
 
 test.describe('F12 — logo returns home', () => {
-  test('clicking the logo from /specii goes back to the map', async ({ page }) => {
-    await page.goto('/specii');
+  test('clicking the logo stays on the map (logo only exists on the map page — info pages use the back link)', async ({
+    mapReady,
+    page,
+  }) => {
+    await mapReady();
     const header = new Header(page);
 
     await header.goHome();

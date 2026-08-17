@@ -31,9 +31,9 @@ test.describe('F9 — /specii page', () => {
     const specii = new SpeciiPage(page);
     await page.goto('/specii');
 
-    // diacritic-insensitive: typing "sturion" finds "Sturion de Dunăre"
-    await specii.searchFor('sturion');
-    await expect(specii.option('sturion-de-dunare')).toBeVisible();
+    // diacritic-insensitive: typing "pastrav" finds "Păstrăv indigen"
+    await specii.searchFor('pastrav');
+    await expect(specii.option('pastrav-indigen')).toBeVisible();
 
     // search by size: "40" finds crap / știucă (40 cm)
     await expect(specii.option('crap')).toBeVisible();
@@ -50,8 +50,8 @@ test.describe('F9 — /specii page', () => {
     const specii = new SpeciiPage(page);
     await page.goto('/specii');
 
-    await specii.searchFor('ȘTURION');
-    await expect(specii.option('sturion-de-dunare')).toBeVisible();
+    await specii.searchFor('ȘTIUCĂ'); // uppercase + diacritics → case/diacritic-insensitive
+    await expect(specii.option('stiuca')).toBeVisible();
 
     await page.getByRole('combobox').fill('zzzzzz');
     await expect(page.getByText('Nicio specie găsită')).toBeVisible();

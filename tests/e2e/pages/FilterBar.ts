@@ -7,6 +7,7 @@
  * display:none duplicate (t_dd918db7 pitfall).
  */
 import type { Page } from '@playwright/test';
+import { expect } from '@playwright/test';
 import { Selectors } from '../helpers/selectors';
 
 export class FilterBar {
@@ -69,7 +70,12 @@ export class FilterBar {
 
   async resetLocalities(): Promise<void> {
     await this.openLocality();
-    await this.localityReset.click();
+    const reset = this.localityReset;
+    // The cmdk reset item can sit in a re-rendering popover ("not stable" /
+    // "detached" loop under vaul close animations) — evaluate-click is the
+    // reliable path for filter controls (t_1b7c95a7 pitfall 9 pattern).
+    await expect(reset).toBeVisible();
+    await reset.evaluate((el) => (el as HTMLElement).click());
   }
 
   async setType(value: 'all' | 'lac' | 'rau'): Promise<void> {

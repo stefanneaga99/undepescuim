@@ -259,6 +259,30 @@ const iasiRivers: Water[] = [
     },
     locality: 'Municipiul Iași',
   },
+  {
+    // 3rd river ~43 km from the Iași point (47.16, 27.59) — outside the
+    // default 25 km but inside the expanded 50 km, so the adaptive branch
+    // stops exactly at EXPANDED_RADIUS_KM ("Rază: 50 km") instead of falling
+    // through to the nearest-few fallback (t_ac6bc110 F7).
+    slug: 'raul-jijia-test',
+    name: 'Râul Jijia Test',
+    judet: 'Iași',
+    type: 'ape',
+    subtype: 'rau',
+    dimensiune: '10 km',
+    coordinates: [28.0, 47.45],
+    bbox: [27.95, 47.42, 28.05, 47.48],
+    asociatie: betaEmbedded,
+    geometry: {
+      type: 'LineString',
+      coordinates: [
+        [27.95, 47.42],
+        [28.0, 47.45],
+        [28.05, 47.48],
+      ],
+    },
+    locality: 'Comuna Jijia Test',
+  },
 ];
 
 /** Long-name water + locality:null in one (both edge cases). */
