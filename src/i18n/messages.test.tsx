@@ -139,7 +139,22 @@ describe('I18nProvider', () => {
         <Probe />
       </I18nProvider>,
     );
-    expect(screen.getByTestId('locale').textContent).toBe('en');
+    // t_5a65abcf hard-default mandate: RO is ALWAYS the default — the browser
+    // language must never auto-switch the UI to EN. Only an explicit click
+    // (persisted choice) may flip the language.
+    expect(screen.getByTestId('locale').textContent).toBe('ro');
+  });
+
+  it('never auto-switches to EN — browser language is ignored entirely', () => {
+    Object.defineProperty(navigator, 'language', { value: 'en-GB', configurable: true });
+    window.localStorage.removeItem(STORAGE_KEY);
+    render(
+      <I18nProvider>
+        <Probe />
+      </I18nProvider>,
+    );
+    expect(screen.getByTestId('locale').textContent).toBe('ro');
+    expect(screen.getByTestId('string').textContent).toBe('Specii');
   });
 
   it('ignores an invalid persisted value', () => {

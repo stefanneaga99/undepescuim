@@ -79,7 +79,9 @@ export function Header() {
       {/* F6 PWA light: data freshness chip (≥sm) + offline banner (all sizes). */}
       <PwaStatusBar />
 
-      {/* t_920a7b7b: working RO ⇄ EN toggle (was a static RO badge). */}
+      {/* t_5a65abcf: RO 🇷🇴 / EN 🇬🇧 flag buttons — active highlighted, RO hard
+          default, persists to localStorage. Compact (h-6) so it stays
+          thumb-reachable next to the hamburger on mobile. */}
       <LanguageSwitcher />
 
       {/* Mobile-only hamburger → right sheet with the info-page links.

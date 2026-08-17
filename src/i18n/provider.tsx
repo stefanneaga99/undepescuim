@@ -22,7 +22,12 @@ export type I18nT = I18nContextValue['t'];
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
-/** Infer the current locale: persisted choice → browser language → RO. */
+/**
+ * Infer the current locale: persisted choice → RO. RO is the HARD default —
+ * the browser language is deliberately ignored (t_5a65abcf user mandate:
+ * "never auto-switch to EN"). A user must explicitly click the EN flag to
+ * switch; nothing else may flip the UI language.
+ */
 function detectLocale(): Locale {
   try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -30,13 +35,12 @@ function detectLocale(): Locale {
   } catch {
     // localStorage unavailable (private mode / storage blocked) — fall through.
   }
-  const nav = typeof navigator !== 'undefined' ? navigator.language : '';
-  return nav.toLowerCase().startsWith('en') ? 'en' : 'ro';
+  return 'ro';
 }
 
 /* Tiny external store (same no-FOUC pattern ThemeToggle uses for `mounted`):
    the SERVER snapshot is always 'ro' (matches the SSR HTML — no hydration
-   mismatch), and the client snapshot re-reads localStorage/navigator live.
+   mismatch), and the client snapshot re-reads localStorage live.
    useSyncExternalStore swaps to the client value after hydration without a
    mismatch error (unlike a useState initializer that reads localStorage). */
 type Listener = () => void;
@@ -67,8 +71,10 @@ function commitLocale(next: Locale): void {
 
 /**
  * Lightweight i18n provider (t_920a7b7b). RO is the SSR default (matches the
- * server-rendered HTML — no hydration mismatch); the persisted/browser locale
- * is applied after hydration via useSyncExternalStore and persists on change.
+ * server-rendered HTML — no hydration mismatch); the persisted locale (RO
+ * unless the user explicitly switched) is applied after hydration via
+ * useSyncExternalStore and persists on change. Browser language is NEVER
+ * auto-detected (t_5a65abcf hard-RO-default mandate).
  */
 export function I18nProvider({ children }: { children: ReactNode }) {
   const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

@@ -40,6 +40,8 @@ export const Selectors = {
   speciesOption: 'species-option',
   themeToggle: 'theme-toggle',
   langSwitcher: 'lang-switcher',
+  langRo: 'lang-ro',
+  langEn: 'lang-en',
   lastUpdated: 'last-updated',
   offlineBanner: 'offline-banner',
 } as const;
