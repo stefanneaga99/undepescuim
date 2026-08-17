@@ -17,6 +17,7 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
     page,
   }, testInfo) => {
     skipTablet(testInfo);
+    test.skip(testInfo.project.name !== 'mobile', 'mobile hamburger flow runs on the mobile project only (desktop branch covered by the second test)');
     await mapReady();
 
     const header = new Header(page);
