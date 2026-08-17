@@ -67,9 +67,13 @@ test.describe('F6 — water detail card', () => {
     const map = new MapPage(page);
 
     // Uncontracted overlay is LOD-culled at national zoom AND viewport-culled —
-    // zoom in and center on the river before clicking (12.3 km river, Cluj).
+    // zoom in and center on the river before clicking (12.3 km river, Cluj),
+    // then WAIT for the teal layer to actually render (viewport culling +
+    // layer rebuild is async — waters-drawn is the contracted layer only).
     await map.panTo(47.0, 23.2, 8);
-    await expect(page.getByTestId(Selectors.watersDrawn)).toBeAttached();
+    await expect
+      .poll(async () => map.pathsByColor(['#14b8a6', '#2dd4bf']))
+      .toBeGreaterThan(0);
     await map.clickWater('valea-testului-necontractata');
     const card = map.waterCard;
 

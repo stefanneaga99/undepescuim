@@ -114,10 +114,10 @@ test.describe('edge cases', () => {
     await page.getByTestId(Selectors.speciesSearchMobile).or(
       page.getByTestId(Selectors.speciesSearch),
     ).filter({ visible: true }).click();
-    await page.getByRole('combobox').fill('sturion');
+    await page.getByRole('combobox').fill('pastrav');
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
-    await expect(page.locator('#specii-sturion-de-dunare')).toHaveClass(/species-flash/);
+    await expect(page.locator('#specii-pastrav-indigen')).toHaveClass(/species-flash/);
   });
 
   test('768px boundary → desktop panel layout (no hamburger, inline links)', async (
@@ -147,14 +147,15 @@ test.describe('edge cases', () => {
     const all = await map.pathCount();
 
     await map.filterBar.setContract('contractate');
-    expect(await map.pathCount()).toBeLessThan(all);
+    // Filter applies on the next render cycle — poll, don't assert sync.
+    await expect.poll(async () => map.pathCount()).toBeLessThan(all);
 
     await map.filterBar.setContract('necontractate');
     expect(await map.pathCount()).toBeGreaterThan(0);
-    expect(await map.pathsByColor(['#3b82f6'])).toBe(0); // no contracted blue left
+    await expect.poll(async () => map.pathsByColor(['#3b82f6'])).toBe(0); // no contracted blue left
 
     await map.filterBar.setContract('all');
-    expect(await map.pathCount()).toBe(all);
+    await expect.poll(async () => map.pathCount()).toBe(all);
   });
 
   test('report without a configured token surfaces the error state (503 not_configured)', async ({

@@ -36,6 +36,7 @@ test.describe('F9 — /specii page', () => {
     await expect(specii.option('pastrav-indigen')).toBeVisible();
 
     // search by size: "40" finds crap / știucă (40 cm)
+    await page.getByRole('combobox').fill('40');
     await expect(specii.option('crap')).toBeVisible();
 
     // select → the row flashes (species-flash class) + is scrolled into view

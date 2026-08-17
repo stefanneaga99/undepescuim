@@ -41,7 +41,9 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
     await page.getByRole('link', { name: 'Înapoi la hartă' }).click();
     await expect(page).toHaveURL(/\/$/);
     await header.openMenu();
-    await page.locator('[data-slot="sheet-overlay"]').click();
+    // The right-side sheet (w-3/4) covers the overlay's center — click the
+    // overlay on the LEFT strip (outside the sheet) to close it.
+    await page.locator('[data-slot="sheet-overlay"]').click({ position: { x: 5, y: 300 } });
     await expect(header.sheetSpeciiLink).toHaveCount(0);
   });
 
@@ -49,7 +51,9 @@ test.describe('F11 — hamburger menu (mobile) / inline nav (desktop)', () => {
     mapReady,
     page,
   }, testInfo) => {
-    skipTablet(testInfo);
+    // Inline nav links are `sm:inline-flex` — hidden below 640px. The
+    // desktop-branch assertions only hold on the desktop project.
+    test.skip(testInfo.project.name !== 'desktop', 'inline nav is a desktop-only branch');
     await mapReady();
 
     const header = new Header(page);
