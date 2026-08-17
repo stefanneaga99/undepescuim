@@ -605,11 +605,14 @@ interface ReportFormProps {
 #### LanguageSwitcher
 ```typescript
 // src/components/layout/LanguageSwitcher.tsx
-// No props — uses next-intl
+// No props — uses useI18n()
 ```
-- RO | EN pill toggle
-- Calls `router.replace()` to switch locale while preserving the current path
-- Active language: bold + primary color
+- Two flag buttons: RO 🇷🇴 / EN 🇬🇧 (inline SVGs — Windows Chromium renders
+  flag emoji as letter pairs, so real flags need SVGs)
+- Active flag highlighted (`bg-accent` + ring); click other flag to switch
+- RO is the hard default (t_5a65abcf); choice persists to localStorage
+  (`undepescuim.locale`); browser language is ignored (never auto-switch)
+- No URL change on switch — content swap only
 ---
 
 ## 7. i18n Strategy
