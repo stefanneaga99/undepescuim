@@ -19,7 +19,12 @@ test.describe('edge cases', () => {
       Object.defineProperty(navigator, 'geolocation', {
         value: {
           getCurrentPosition: (_success: unknown, error: unknown) => {
-            (error as (e: { code: number }) => void)?.({ code: 1 }); // PERMISSION_DENIED
+            // The app checks `e.code === e.PERMISSION_DENIED` — the browser
+            // error object carries both; the stub must too ('denied' branch).
+            (error as (e: { code: number; PERMISSION_DENIED?: number }) => void)?.({
+              code: 1,
+              PERMISSION_DENIED: 1,
+            });
           },
         },
         configurable: true,

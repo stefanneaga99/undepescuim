@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowLeft, Check, ChevronDown, Search } from 'lucide-react';
 import {
@@ -27,6 +27,17 @@ export function AssociationSearch() {
   const selectedSlug = useMapStore((s) => s.selectedAssociationSlug);
   const selectAssociation = useMapStore((s) => s.selectAssociation);
   const [open, setOpen] = useState(false);
+  // Escape closes the overlay on mobile too (plan edge case: keyboard nav in
+  // the association search — Escape closes). cmdk's own Escape handling only
+  // closes its list; the fullscreen overlay is app-controlled.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
   // Desktop trigger ref — the dropdown panel is portaled to <body> so it can
   // escape the header's backdrop-blur stacking context (t_b6a0e2fe): the
   // panel used to render inside the header (z-50) BELOW the click-outside

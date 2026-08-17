@@ -73,6 +73,19 @@ export class MapPage {
     return setMapZoom(this.page, z);
   }
 
+  /** Center the map at a geographic point (uncontracted overlays are
+   * viewport-culled — click targets must be panned into view first). */
+  async panTo(lat: number, lon: number, zoom?: number): Promise<void> {
+    await this.page.evaluate(
+      ([la, lo, z]) => {
+        const map = (window as any).__UNDEPESCUIM_MAP__;
+        if (!map) throw new Error('panTo: leaflet map bridge not available');
+        map.setView([la, lo], z ?? map.getZoom());
+      },
+      [lat, lon, zoom ?? null],
+    );
+  }
+
   pathCount(): Promise<number> {
     return countAllPaths(this.page);
   }

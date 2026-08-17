@@ -62,7 +62,8 @@ export async function clickWaterBySlug(page: Page, slug: string): Promise<void> 
       if (f && f.properties && f.properties.slug === slug && layer._path) target = layer;
     });
     if (!target) return { ok: false as const, reason: `no-layer:${slug}` };
-    const center = target.getBounds().getCenter();
+    // bbox-fallback dots are L.circleMarker (no getBounds) — use getLatLng.
+    const center = target.getBounds ? target.getBounds().getCenter() : target.getLatLng();
     target.fire('click', { latlng: center, originalEvent: {} });
     return { ok: true as const };
   }, slug);

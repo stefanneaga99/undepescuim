@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowLeft, Check, ChevronDown, Search } from 'lucide-react';
 import {
@@ -25,6 +25,17 @@ import { normalizeText, type Species } from '@/content/species';
 export function SpeciesSearch({ species }: { species: Species[] }) {
   const [open, setOpen] = useState(false);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+  // Escape closes the mobile search overlay too (plan edge case: keyboard
+  // nav in the species search — Escape closes). cmdk's own Escape handling
+  // only closes its list; the fullscreen overlay is app-controlled.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [panelPos, setPanelPos] = useState<{ top: number; left: number; width: number } | null>(null);
   const isMobile = useMediaQuery('(max-width: 767px)');

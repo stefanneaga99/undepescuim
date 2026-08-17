@@ -5,6 +5,7 @@
  */
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
+import { Selectors } from '../../helpers/selectors';
 
 test.describe('F6 — water detail card', () => {
   test('contracted river shows sector, size, association, 2 permit rows, validity, links', async ({
@@ -65,8 +66,10 @@ test.describe('F6 — water detail card', () => {
     await mapReady();
     const map = new MapPage(page);
 
-    // Uncontracted overlay is LOD-culled at national zoom — zoom in first.
-    await map.zoomTo(8);
+    // Uncontracted overlay is LOD-culled at national zoom AND viewport-culled —
+    // zoom in and center on the river before clicking (12.3 km river, Cluj).
+    await map.panTo(47.0, 23.2, 8);
+    await expect(page.getByTestId(Selectors.watersDrawn)).toBeAttached();
     await map.clickWater('valea-testului-necontractata');
     const card = map.waterCard;
 
