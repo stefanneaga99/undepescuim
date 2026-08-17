@@ -251,11 +251,23 @@ export function WaterFeatureLayer({
       // painted by the covered-slices layer instead. LAKE polygons are exempt:
       // they can't be sector-sliced and belong to a single contract, so their
       // whole-polygon coverage stays (Siriu lake under AJVPS BUZĂU).
+      //
+      // t_e66e5898: under a COUNTY filter the rendered geometry is already the
+      // per-county clip (use-filtered-waters swaps in `geometryByCounty`), which
+      // spans ONLY this county — it cannot leak the shared course into other
+      // counties'/associations' sectors. So the multi-contract-member guard
+      // must NOT neutralize the color here: a covered member's clip must render
+      // green (the association highlight must still work on top of the county
+      // filter). The t_5f5f2cce guard stays for the unfiltered (national) view
+      // where the full shared course is rendered. `assocHighlightFeatures` is
+      // likewise skipped under a county filter (the clip IS the sector), so the
+      // base layer is the member's only green source — it must carry it.
       const lineGeom =
         !!water?.geometry &&
         (water.geometry.type === 'LineString' || water.geometry.type === 'MultiLineString');
       const multiContractMember =
         coverageSlug !== null &&
+        countyFilter.length === 0 &&
         lineGeom &&
         !!water &&
         contractGroup(water, allWaters).length > 1;
@@ -279,7 +291,7 @@ export function WaterFeatureLayer({
         opacity: 1,
       };
     },
-    [coverageSlug, focusColor, selectedWaterSlug, focusRange, focusFeatures, allWaters],
+    [coverageSlug, countyFilter, focusColor, selectedWaterSlug, focusRange, focusFeatures, allWaters],
   );
 
   // Invisible wide hit layers for lines (added after the visible layer).
