@@ -4,7 +4,7 @@
  * a navigator stub, report 503/honeypot hit the REAL /api/report route.
  */
 import type { TestInfo } from '@playwright/test';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 import { ReportDialog } from '../../pages/ReportDialog';
@@ -170,7 +170,7 @@ test.describe('edge cases', () => {
       // when the server has NO REPORT_GITHUB_TOKEN. Locally .env.local sets one
       // (so this test would CREATE a real GitHub issue) — skip here; the path
       // is exercised in CI where no token is configured.
-      const localToken = readFileSync('.env.local', 'utf8').includes('REPORT_GITHUB_TOKEN=');
+      const localToken = existsSync('.env.local') && readFileSync('.env.local', 'utf8').includes('REPORT_GITHUB_TOKEN=');
       test.skip(localToken, 'REPORT_GITHUB_TOKEN configured locally — not_configured is a CI-only path');
 
       await mapReady();
