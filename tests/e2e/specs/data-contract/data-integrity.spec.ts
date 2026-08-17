@@ -39,9 +39,10 @@ test.describe('data contract — real served /public/data @data', () => {
       expect(String(w.name).length).toBeGreaterThan(0);
       expect(['lac', 'rau']).toContain(w.subtype);
       expect(typeof w.judet).toBe('string');
-      // bbox is OPTIONAL: river-group sector waters (no own geometry) carry
-      // `riverGroup` + `course_frac` instead (WaterFeatureLayer.tsx:179).
-      if (w.bbox !== undefined) expect(Array.isArray(w.bbox)).toBe(true);
+      // bbox is OPTIONAL and nullable: river-group sector waters (no own
+      // geometry) carry `riverGroup` + `course_frac` instead and emit either
+      // `bbox: null` or no bbox key at all (WaterFeatureLayer.tsx:179).
+      expect(w.bbox == null || Array.isArray(w.bbox)).toBe(true);
       const g = w.geometry as { type?: string; coordinates?: unknown[] } | undefined;
       if (g) {
         expect(['LineString', 'MultiLineString', 'Polygon', 'MultiPolygon']).toContain(g.type);
