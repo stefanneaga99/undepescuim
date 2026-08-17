@@ -1,12 +1,18 @@
 /**
- * i18n (t_920a7b7b) — RO⇄EN switcher, persistence, all pages in both
- * languages, no missing-key fallbacks, screenshot diff.
+ * i18n (t_920a7b7b + t_5a65abcf) — RO⇄EN flag switcher (🇷🇴/🇬🇧), persistence,
+ * all pages in both languages, no missing-key fallbacks, screenshot diff.
  *
  * The switcher lives in the Header (map page only, per task scope §2); the
  * choice is persisted to localStorage and applies site-wide — so /specii and
  * /permis are verified by seeding the persisted locale before navigating.
+ *
+ * t_5a65abcf: the switcher is now two flag buttons (`lang-ro` / `lang-en`)
+ * with the active flag highlighted (`aria-pressed`). RO is the HARD default —
+ * even a fresh visit with an English browser must render RO (the old
+ * navigator.language auto-switch is gone).
  */
 import { test, expect } from '../../fixtures/app';
+import { Selectors } from '../../helpers/selectors';
 
 const STORAGE_KEY = 'undepescuim.locale';
 
@@ -24,37 +30,72 @@ async function seedLocale(page: import('@playwright/test').Page, locale: 'ro' | 
   );
 }
 
-test.describe('i18n — RO⇄EN switcher', () => {
-  test('badge toggles RO⇄EN and persists across reload', async ({ page, mapReady }) => {
+test.describe('i18n — RO⇄EN flag switcher', () => {
+  test('renders both flags; EN flag switches all chrome; RO flag switches back; persists', async ({
+    page,
+    mapReady,
+  }) => {
     await mapReady('/');
-    const switcher = page.getByTestId('lang-switcher');
+    const langRo = page.getByTestId(Selectors.langRo);
+    const langEn = page.getByTestId(Selectors.langEn);
 
-    // Default: RO badge, RO chrome.
-    await expect(switcher).toContainText('RO');
+    // Both flag buttons render; RO is the default + active.
+    await expect(langRo).toBeVisible();
+    await expect(langEn).toBeVisible();
+    await expect(langRo).toHaveAttribute('aria-pressed', 'true');
+    await expect(langEn).toHaveAttribute('aria-pressed', 'false');
     await expect(page.getByText('Toate județele').filter({ visible: true }).first()).toBeVisible();
 
-    // Click → EN everywhere in the header + filter bar.
-    await switcher.click();
-    await expect(switcher).toContainText('EN');
+    // Click EN flag → EN chrome everywhere in the header + filter bar.
+    await langEn.click();
+    await expect(langEn).toHaveAttribute('aria-pressed', 'true');
+    await expect(langRo).toHaveAttribute('aria-pressed', 'false');
     await expect(page.getByText('All counties').filter({ visible: true }).first()).toBeVisible();
 
     // Reload → persisted EN, not reset to RO.
     await page.reload();
-    await expect(switcher).toContainText('EN');
+    await expect(page.getByTestId(Selectors.langEn)).toHaveAttribute('aria-pressed', 'true');
     await expect(page.getByText('All counties').filter({ visible: true }).first()).toBeVisible();
 
-    // Click back → RO.
-    await switcher.click();
-    await expect(switcher).toContainText('RO');
+    // Click RO flag → back to RO.
+    await page.getByTestId(Selectors.langRo).click();
+    await expect(page.getByTestId(Selectors.langRo)).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByTestId(Selectors.langEn)).toHaveAttribute('aria-pressed', 'false');
     await expect(page.getByText('Toate județele').filter({ visible: true }).first()).toBeVisible();
+  });
+
+  test.describe('hard RO default (t_5a65abcf §3)', () => {
+    // Override the global ro-RO emulation: an English browser must NOT flip
+    // the UI. (Playwright's `locale` sets navigator.language.)
+    test.use({ locale: 'en-US' });
+
+    test('fresh visit with an English browser still defaults to RO — no auto-switch', async ({
+      page,
+      mapReady,
+    }) => {
+      await mapReady('/');
+      await expect(page.getByTestId(Selectors.langRo)).toHaveAttribute('aria-pressed', 'true');
+      await expect(page.getByTestId(Selectors.langEn)).toHaveAttribute('aria-pressed', 'false');
+      await expect(page.getByText('Toate județele').filter({ visible: true }).first()).toBeVisible();
+    });
   });
 
   test('header nav + association search translate', async ({ page, mapReady }) => {
     await mapReady('/');
-    await page.getByTestId('lang-switcher').click();
+    await page.getByTestId(Selectors.langEn).click();
 
-    await expect(page.getByTestId('nav-permis').filter({ visible: true })).toContainText('Permit 2026');
-    await expect(page.getByTestId('nav-specii').filter({ visible: true })).toContainText('Species');
+    // ≥640px: inline header links. <640px (mobile): nav lives in the
+    // hamburger sheet (nav-sheet-*), the inline links are display:none.
+    const inlinePermis = page.getByTestId('nav-permis').filter({ visible: true });
+    if ((await inlinePermis.count()) > 0) {
+      await expect(inlinePermis).toContainText('Permit 2026');
+      await expect(page.getByTestId('nav-specii').filter({ visible: true })).toContainText('Species');
+    } else {
+      await page.getByTestId('hamburger').click();
+      await expect(page.getByTestId('nav-sheet-permis')).toContainText('Permit 2026');
+      await expect(page.getByTestId('nav-sheet-specii')).toContainText('Species');
+      await page.keyboard.press('Escape');
+    }
 
     // Open the association search on desktop? Mobile icon only at <768px;
     // the desktop trigger is hidden on mobile projects. Check the trigger
@@ -67,7 +108,7 @@ test.describe('i18n — RO⇄EN switcher', () => {
 
   test('no missing-key fallbacks leak into the DOM', async ({ page, mapReady }) => {
     await mapReady('/');
-    await page.getByTestId('lang-switcher').click();
+    await page.getByTestId(Selectors.langEn).click();
     // The missing-key guard logs console.error AND falls back to RO — neither
     // a raw key path nor RO text should leak under the EN locale for chrome keys.
     const body = await page.locator('body').innerText();
@@ -108,13 +149,12 @@ test.describe('i18n — /specii + /permis render in both languages (persisted lo
 test.describe('i18n — screenshot diff (user mandate)', () => {
   test('EN screenshot differs from RO across the map chrome', async ({ page, mapReady }) => {
     await mapReady('/');
-    const shot = (locale: 'ro' | 'en') =>
-      page.screenshot({ fullPage: false, clip: { x: 0, y: 0, width: 1280, height: 420 } });
+    const shot = () => page.screenshot({ fullPage: false, clip: { x: 0, y: 0, width: 1280, height: 420 } });
 
-    const roShot = await shot('ro');
-    await page.getByTestId('lang-switcher').click();
+    const roShot = await shot();
+    await page.getByTestId(Selectors.langEn).click();
     await expect(page.getByText('All counties').filter({ visible: true }).first()).toBeVisible();
-    const enShot = await shot('en');
+    const enShot = await shot();
 
     expect(enShot.length).toBeGreaterThan(0);
     expect(roShot.length).toBeGreaterThan(0);
