@@ -279,6 +279,9 @@ export function WaterFeatureLayer({
           : getFeatureStyle(
               multiContractMember ? null : (props?.asociatieSlug ?? null),
               coverageSlug,
+              // t_14463aec: county-filtered waters (neutral view, no
+              // association) get a heavier blue so the county visibly "pops".
+              countyFilter.length > 0,
             );
       if (!focusColor || !selectedWaterSlug) return base;
       const f = feature as WaterFeature | undefined;

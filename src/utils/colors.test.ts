@@ -35,6 +35,29 @@ describe('getFeatureStyle', () => {
     expect(s.weight).toBe(2);
   });
 
+  it('emphasizes the county-filtered neutral blue (heavier weight, t_14463aec)', () => {
+    const s = getFeatureStyle('assoc-1', null, true);
+    expect(s.color).toBe('#3b82f6'); // same hue, NEUTRAL_COLOR
+    expect(s.weight).toBe(4); // heavier than the weight-2 default
+    expect(s.opacity).toBe(1);
+    expect(s.fillOpacity).toBe(0.35);
+  });
+
+  it('keeps the default thin blue when no county emphasis (emphasizeNeutral falsy)', () => {
+    const s = getFeatureStyle('assoc-1', null, false);
+    expect(s.weight).toBe(2);
+    expect(s.fillOpacity).toBe(0.2);
+  });
+
+  it('county emphasis does not change covered green or uncovered grey', () => {
+    expect(getFeatureStyle('assoc-1', 'assoc-1', true)).toEqual(
+      getFeatureStyle('assoc-1', 'assoc-1'),
+    );
+    expect(getFeatureStyle('assoc-2', 'assoc-1', true)).toEqual(
+      getFeatureStyle('assoc-2', 'assoc-1'),
+    );
+  });
+
   it('returns strong green when the feature belongs to the selected association', () => {
     const s = getFeatureStyle('assoc-1', 'assoc-1');
     expect(s.color).toBe('#22c55e');

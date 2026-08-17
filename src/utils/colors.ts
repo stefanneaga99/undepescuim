@@ -18,8 +18,24 @@ import type { PathOptions } from 'leaflet';
 export function getFeatureStyle(
   asociatieSlug: string | null,
   coverageSlug: string | null,
+  emphasizeNeutral = false,
 ): PathOptions {
   if (coverageSlug === null) {
+    // t_14463aec: county-filtered waters (NEUTRAL_COLOR blue #3b82f6) get a
+    // VISUAL EMPHASIS when a county filter is active — heavier stroke + fuller
+    // fill — so the filter visibly "pops" the county's waters instead of
+    // rendering them identical to the unfiltered default (weight 2). Keeps the
+    // same hue (#3b82f6) per the coloring contract, only the weight/opacity
+    // change. Association green and click-focus orange still layer on top.
+    if (emphasizeNeutral) {
+      return {
+        color: '#3b82f6',
+        weight: 4,
+        opacity: 1,
+        fillColor: '#3b82f6',
+        fillOpacity: 0.35,
+      };
+    }
     return { color: '#3b82f6', weight: 2, fillColor: '#3b82f6', fillOpacity: 0.2 };
   }
   if (asociatieSlug === coverageSlug) {
