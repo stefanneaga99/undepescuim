@@ -140,22 +140,26 @@ test.describe('edge cases', () => {
   }) => {
     await mapReady();
     const map = new MapPage(page);
-    // uncontracted overlay is LOD-culled at national zoom — zoom in first,
-    // THEN snapshot the baseline (features render more densely at z8).
-    await map.zoomTo(8);
-
-    const all = await map.pathCount();
+    // Uncontracted overlays are LOD-culled AND viewport-culled — pan to the
+    // Cluj cluster (contracted somesul + uncontracted vale) so BOTH color
+    // families render; assert by color, not raw path count (counts include
+    // the invisible hit polylines and are viewport-dependent).
+    await map.panTo(47.0, 23.2, 8);
+    await expect.poll(async () => map.pathsByColor(['#14b8a6', '#2dd4bf'])).toBeGreaterThan(0);
+    await expect.poll(async () => map.pathsByColor(['#3b82f6'])).toBeGreaterThan(0);
 
     await map.filterBar.setContract('contractate');
-    // Filter applies on the next render cycle — poll, don't assert sync.
-    await expect.poll(async () => map.pathCount()).toBeLessThan(all);
+    // teal (uncontracted) disappears; contracted blue remains
+    await expect.poll(async () => map.pathsByColor(['#14b8a6', '#2dd4bf'])).toBe(0);
+    expect(await map.pathsByColor(['#3b82f6'])).toBeGreaterThan(0);
 
     await map.filterBar.setContract('necontractate');
-    expect(await map.pathCount()).toBeGreaterThan(0);
     await expect.poll(async () => map.pathsByColor(['#3b82f6'])).toBe(0); // no contracted blue left
+    await expect.poll(async () => map.pathsByColor(['#14b8a6', '#2dd4bf'])).toBeGreaterThan(0);
 
     await map.filterBar.setContract('all');
-    await expect.poll(async () => map.pathCount()).toBe(all);
+    await expect.poll(async () => map.pathsByColor(['#3b82f6'])).toBeGreaterThan(0);
+    await expect.poll(async () => map.pathsByColor(['#14b8a6', '#2dd4bf'])).toBeGreaterThan(0);
   });
 
   test('report without a configured token surfaces the error state (503 not_configured)', async ({
