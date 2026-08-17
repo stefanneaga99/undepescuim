@@ -4,6 +4,7 @@
  * a navigator stub, report 503/honeypot hit the REAL /api/report route.
  */
 import type { TestInfo } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 import { ReportDialog } from '../../pages/ReportDialog';
@@ -134,7 +135,8 @@ test.describe('edge cases', () => {
   }) => {
     await mapReady();
     const map = new MapPage(page);
-    // uncontracted overlay is LOD-culled at national zoom — zoom in first
+    // uncontracted overlay is LOD-culled at national zoom — zoom in first,
+    // THEN snapshot the baseline (features render more densely at z8).
     await map.zoomTo(8);
 
     const all = await map.pathCount();
@@ -151,11 +153,17 @@ test.describe('edge cases', () => {
   });
 
   test('report without a configured token surfaces the error state (503 not_configured)', async ({
-    mapReady,
-    page,
-  }) => {
-    // Real POST /api/report — no stub. Requires REPORT_GITHUB_TOKEN absent.
-    await mapReady();
+      mapReady,
+      page,
+    }) => {
+      // Real POST /api/report — no stub. The not_configured path only exists
+      // when the server has NO REPORT_GITHUB_TOKEN. Locally .env.local sets one
+      // (so this test would CREATE a real GitHub issue) — skip here; the path
+      // is exercised in CI where no token is configured.
+      const localToken = readFileSync('.env.local', 'utf8').includes('REPORT_GITHUB_TOKEN=');
+      test.skip(localToken, 'REPORT_GITHUB_TOKEN configured locally — not_configured is a CI-only path');
+
+      await mapReady();
     const map = new MapPage(page);
     const dialog = new ReportDialog(page);
 
@@ -178,7 +186,19 @@ test.describe('edge cases', () => {
     await map.clickWater('raul-somesul-test');
     await map.waterCard.clickButton(map.waterCard.reportFlag);
     await dialog.pickReason('other');
-    await dialog.dialog.locator('input[aria-hidden="true"]').fill('spam-bot', { force: true });
+    // React-controlled input: native value set + input event (a plain
+    // .fill() on the hidden input never reaches onChange, so the honeypot
+    // would stay empty and the report would NOT be dropped).
+    await dialog.dialog
+      .locator('input[aria-hidden]')
+      .evaluate((el) => {
+        const setter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          'value',
+        )?.set;
+        setter?.call(el, 'spam-bot');
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+      });
     await dialog.submit();
 
     await expect(dialog.successText).toBeVisible();

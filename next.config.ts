@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 // F6 (t_0618943a): PWA light — service worker via Serwist (offline-pwa-feasibility.md §3).
 // swSrc is compiled to public/sw.js at build time (gitignored — generated artifact).
 // NOTE: Serwist's webpack plugin only runs under a webpack build, so the `build`
@@ -10,9 +13,28 @@ const withSerwist = withSerwistInit({
   // Data JSONs are ~45MB total — they must NOT be precached at install
   // (offline-pwa-feasibility.md §3: data tier is runtime NetworkFirst via the
   // app-data cache; precaching them makes SW install crawl/hang). Default
-  // globPublicPatterns is ["**/*"] → exclude the whole /data dir, keep only
-  // shell assets (icons, SVG logos) in the precache.
-  globPublicPatterns: ["**/*", "!data/**"],
+  // globPublicPatterns is ["**/*"] → **everything in public/** including the
+  // data dir**; the glob library (v7) does not support "!pattern" negation in
+  // the array, so pass the shell assets explicitly instead.
+  additionalPrecacheEntries: [
+    // Icons + favicons — the ONLY public/ files the offline shell needs.
+    // Content-hash revisions so the cache invalidates when a file changes.
+    "/icons/icon-192.png",
+    "/icons/icon-512.png",
+    "/icons/icon-512-maskable.png",
+    "/icons/apple-touch-icon-180x180.png",
+    "/next.svg",
+    "/vercel.svg",
+    "/window.svg",
+    "/globe.svg",
+    "/file.svg",
+  ].map((url) => ({
+    url,
+    revision: createHash("md5")
+      .update(readFileSync(join(process.cwd(), "public", url)))
+      .digest("hex")
+      .slice(0, 16),
+  })),
   // serverless build: the precache manifest comes from the Next build
   // manifest. No globDirectory/globPatterns (that was the static-export path).
 });
