@@ -61,10 +61,20 @@ test.describe('dark mode', () => {
       const lightShot = testInfo.outputPath('light.png');
       await page.screenshot({ path: lightShot, fullPage: false });
 
-      // Dark capture: flip via the header toggle (same control a user uses).
-      const toggle = page.getByTestId(Selectors.themeToggle);
-      await expect(toggle).toBeVisible();
-      await toggle.click();
+      // Dark capture. The header toggle exists ONLY on the map page (/); the
+      // standalone info pages (/specii, /permis — back-link layout, no Header)
+      // fan out to dark automatically via the .dark CSS-var block, exactly as
+      // a user who toggled on the map would see after navigation. So: on /
+      // flip via the real control; on info pages store the preference
+      // (next-themes localStorage 'theme') and reload.
+      if (path === '/') {
+        const toggle = page.getByTestId(Selectors.themeToggle);
+        await expect(toggle).toBeVisible();
+        await toggle.click();
+      } else {
+        await page.evaluate(() => localStorage.setItem('theme', 'dark'));
+        await page.reload();
+      }
       await expect(page.locator('html')).toHaveClass(/dark/);
       const darkBg = await page.evaluate(
         () => getComputedStyle(document.body).backgroundColor,
