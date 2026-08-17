@@ -4,7 +4,6 @@
  */
 import type { TestInfo } from '@playwright/test';
 import { test, expect } from '../../fixtures/app';
-import { MapPage } from '../../pages/MapPage';
 import { Header } from '../../pages/Header';
 
 function skipTablet(testInfo: TestInfo): void {
