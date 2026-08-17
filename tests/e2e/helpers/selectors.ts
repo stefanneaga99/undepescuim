@@ -39,6 +39,7 @@ export const Selectors = {
   speciesSearchMobile: 'species-search-mobile',
   speciesOption: 'species-option',
   themeToggle: 'theme-toggle',
+  langSwitcher: 'lang-switcher',
   lastUpdated: 'last-updated',
   offlineBanner: 'offline-banner',
 } as const;

@@ -24,6 +24,11 @@ export class Header {
     return this.page.getByTestId(Selectors.hamburger);
   }
 
+  /** RO ⇄ EN language toggle (t_920a7b7b). */
+  get languageSwitcher() {
+    return this.page.getByTestId(Selectors.langSwitcher);
+  }
+
   get sheetSpeciiLink() {
     return this.page.getByTestId(Selectors.navSheetSpecii);
   }

@@ -28,6 +28,11 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     serviceWorkers: 'block',
+    // t_920a7b7b: the app defaults its UI language from navigator.language.
+    // Emulate a Romanian user so the RO-default assertions in the specs hold
+    // (i18n specs override the persisted locale to test EN explicitly).
+    locale: 'ro-RO',
+    timezoneId: 'Europe/Bucharest',
   },
   projects: [
     {
