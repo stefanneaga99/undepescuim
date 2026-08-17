@@ -39,6 +39,12 @@ interface UncontractedWaterLayerProps {
 export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWaterLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  // t_9529e678: an active locality filter is an explicit "show me THIS place"
+  // intent — the matched set is small (5–30 features), so the zoom LOD must
+  // NOT cull its small ponds/rivers (the reported bug: selecting a locality
+  // emptied the map because at national zoom every pond was < 100 ha). LOD
+  // stays for the county-only / national views.
+  const localityActive = useMapStore((s) => s.localityFilter.length > 0);
   const map = useMap();
 
   // Viewport snapshot (zoom + bounds) — re-captured on every pan/zoom end.
@@ -52,9 +58,10 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
   });
 
   // Zoom LOD thresholds: rivers by length (km), lakes by surface (ha). Only
-  // waters big enough to be meaningful at the current zoom render.
-  const minLengthKm = view.zoom < 8 ? 30 : view.zoom < 10 ? 10 : 0;
-  const minAreaHa = view.zoom < 8 ? 100 : view.zoom < 10 ? 10 : 0;
+  // waters big enough to be meaningful at the current zoom render. Bypassed
+  // entirely while a locality filter is active (t_9529e678).
+  const minLengthKm = localityActive ? 0 : view.zoom < 8 ? 30 : view.zoom < 10 ? 10 : 0;
+  const minAreaHa = localityActive ? 0 : view.zoom < 8 ? 100 : view.zoom < 10 ? 10 : 0;
 
   const visibleFeatures = useMemo(() => {
     const pad = view.bounds.pad(0.25);

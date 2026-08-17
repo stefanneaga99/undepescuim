@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef } from 'react';
+import L from 'leaflet';
 import { MapContainer, TileLayer, ZoomControl, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMapStore } from '@/stores/map-store';
@@ -95,9 +96,77 @@ export function MapView() {
       />
       <UserPositionLayer />
       <FlyToController />
+      <LocalityViewportController />
       <MapTestBridge />
     </MapContainer>
   );
+}
+
+/**
+ * t_9529e678: selecting a LOCALITY must visibly change the map. The county
+ * filter keeps the current (national) view, so the locality's waters — a
+ * handful of small ponds/short rivers — render as sub-pixel specks (or are
+ * LOD-culled at z7): the user saw "nothing happens". This controller flies
+ * to the filtered set's bounds when a locality is picked, and restores the
+ * pre-locality view when the locality filter is cleared (undo semantics —
+ * the county/type/contract view the user had before is exactly where they
+ * expect to land back).
+ *
+ * Only reacts to localityFilter CHANGES (like FlyToController does for the
+ * association slug) — panning/zooming after a selection is never fought.
+ */
+function LocalityViewportController() {
+  const map = useMap();
+  const localityFilter = useMapStore((s) => s.localityFilter);
+  const filteredWaters = useFilteredWaters();
+  const filteredUncontracted = useFilteredUncontracted();
+  // null = not initialized yet (skip the mount render).
+  const prevLocality = useRef<string[] | null>(null);
+  // View to restore on clear — captured ONCE when locality goes [] → non-[],
+  // so clearing a multi-locality selection returns to the pre-locality view.
+  const savedView = useRef<{ center: L.LatLng; zoom: number } | null>(null);
+
+  useEffect(() => {
+    const prev = prevLocality.current;
+    prevLocality.current = localityFilter;
+    if (prev === null) return; // initial mount — data gate already open, nothing to fly
+    if (prev.length === localityFilter.length && prev.every((l, i) => l === localityFilter[i])) {
+      return; // array identity changed, contents didn't
+    }
+    if (localityFilter.length === 0) {
+      // Cleared → restore the view captured before the first locality pick.
+      if (savedView.current) {
+        map.flyTo(savedView.current.center, savedView.current.zoom, { duration: 0.5 });
+      }
+      return;
+    }
+    const all = [...filteredWaters, ...filteredUncontracted];
+    const boxes = all
+      .map((w) => w.bbox)
+      .filter((b): b is [number, number, number, number] => Array.isArray(b) && b.length === 4);
+    if (boxes.length === 0) return;
+    if (prev.length === 0) {
+      savedView.current = { center: map.getCenter(), zoom: map.getZoom() };
+    }
+    const [minLon, minLat, maxLon, maxLat] = boxes.reduce<[number, number, number, number]>(
+      (acc, b) => [
+        Math.min(acc[0], b[0]),
+        Math.min(acc[1], b[1]),
+        Math.max(acc[2], b[2]),
+        Math.max(acc[3], b[3]),
+      ],
+      [180, 90, -180, -90],
+    );
+    map.fitBounds(
+      [
+        [minLat, minLon],
+        [maxLat, maxLon],
+      ],
+      { padding: [48, 48], maxZoom: 12, animate: true, duration: 0.6 },
+    );
+  }, [localityFilter, filteredWaters, filteredUncontracted, map]);
+
+  return null;
 }
 
 /**

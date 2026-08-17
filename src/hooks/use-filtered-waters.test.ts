@@ -58,6 +58,42 @@ describe('useFilteredWaters', () => {
     expect(result.current.map((w) => w.slug)).toEqual(['cluj-river', 'cluj-lake']);
   });
 
+  it('keeps geometry-less (bbox-fallback) waters under a county filter (t_9529e678)', () => {
+    // ANPA/Romsilva entries ship `geometry: null` (JSON null) — previously
+    // countyRenderGeometry returned that null as the hide-signal, so every
+    // bbox-fallback dot vanished under ANY county filter. They must survive
+    // and render as point dots (t_cdb614de).
+    useMapStore.setState({
+      countyFilter: ['Cluj'],
+      waters: [
+        water({
+          slug: 'cluj-dot',
+          name: 'Lacul Fără Geometrie',
+          judet: 'Cluj',
+          geometry: null as never,
+          bbox: [23.0, 46.0, 23.1, 46.1],
+        }),
+      ],
+    });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current.map((w) => w.slug)).toEqual(['cluj-dot']);
+    // A genuinely misattributed water (geometryByCounty entry null) is STILL
+    // hidden — the two cases must not be conflated.
+    useMapStore.setState({
+      waters: [
+        water({
+          slug: 'cluj-dot-2',
+          name: 'Lacul Fără Geometrie 2',
+          judet: 'Cluj',
+          geometry: null as never,
+          geometryByCounty: { cluj: null },
+        }),
+      ],
+    });
+    const { result: result2 } = renderHook(() => useFilteredWaters());
+    expect(result2.current).toEqual([]);
+  });
+
   it('replaces the full geometry with the per-county clip when one exists', () => {
     const clip = { type: 'LineString' as const, coordinates: [[23.0, 46.5], [23.5, 46.6]] };
     useMapStore.setState({

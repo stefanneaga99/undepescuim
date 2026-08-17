@@ -19,6 +19,13 @@ export function countyClipKey(county: string): string {
  *
  * - No `geometryByCounty` entry → the water lies fully inside its own county,
  *   so the full `geometry` is already correct (returns it unchanged).
+ *   t_9529e678: a water with NO geometry at all (geometry: null — the
+ *   ungeocoded ANPA/Romsilva bbox-fallback entries) must NOT be conflated
+ *   with "geometry outside its county": it returns `undefined` (no clip
+ *   needed) so the caller KEEPS it and the bbox-fallback point dot renders
+ *   (t_cdb614de). Previously `water.geometry` (null) leaked through as the
+ *   hide-signal and every geometry-less water silently vanished under any
+ *   county filter.
  * - `null` entry → the water's geometry does NOT touch its county (misattributed
  *   or foreign fragment) — returns null so the caller hides the water.
  * - GeoJSON entry → the per-county clip (possibly sector-sliced) to render.
@@ -31,9 +38,9 @@ export function countyRenderGeometry(
   water: Water,
 ): NonNullable<Water['geometry']> | null | undefined {
   const byCounty = water.geometryByCounty;
-  if (!byCounty) return water.geometry as NonNullable<Water['geometry']> | undefined;
+  if (!byCounty) return (water.geometry as NonNullable<Water['geometry']> | null) ?? undefined;
   const key = countyClipKey(water.judet ?? '');
-  if (!(key in byCounty)) return water.geometry as NonNullable<Water['geometry']> | undefined;
+  if (!(key in byCounty)) return (water.geometry as NonNullable<Water['geometry']> | null) ?? undefined;
   const clip = byCounty[key];
   if (!clip) return null;
   return clip as NonNullable<Water['geometry']>;

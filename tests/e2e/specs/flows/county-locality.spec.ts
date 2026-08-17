@@ -53,7 +53,7 @@ test.describe('F2 — county filter', () => {
 });
 
 test.describe('F3 — locality filter', () => {
-  test('pick locality narrows; clear resets; county change invalidates locality', async ({
+  test('pick locality narrows + zooms; clear resets; county change invalidates locality', async ({
     mapReady,
     page,
   }) => {
@@ -66,18 +66,20 @@ test.describe('F3 — locality filter', () => {
     await map.filterBar.toggleCounty('Cluj');
     await expect(map.filterBar.localityTrigger).toBeVisible();
 
-    // pick a locality → narrows (long-name water has locality: null → hidden)
+    // t_9529e678: picking a locality must VISIBLY change the map — it flies
+    // to the filtered set (national view otherwise shows sub-pixel specks /
+    // LOD-culled ponds, which was the reported "map doesn't change" bug).
     const before = await map.pathCount();
     await map.filterBar.selectLocality('Comuna Test');
-    await expect
-      .poll(async () => map.pathCount())
-      .toBeLessThan(before);
-    // the null-locality water is hidden but the locality-tagged river remains
+    await expect.poll(async () => map.zoom()).toBeGreaterThan(7);
+    // the locality-tagged water is present and clickable, the null-locality
+    // water (raul-cu-nume-lung) is hidden by the filter
     await map.clickWater('raul-somesul-test');
     await expect(map.waterCard.name).toHaveText('Râul Someșul Test');
     await page.keyboard.press('Escape'); // close the card sheet
+    await expect(map.clickWaterByGesture('raul-cu-nume-lung')).rejects.toThrow();
 
-    // reset clears the locality filter
+    // reset clears the locality filter AND restores the pre-locality view
     await map.filterBar.resetLocalities();
     await expect
       .poll(async () => map.pathCount())

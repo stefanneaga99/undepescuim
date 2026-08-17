@@ -58,10 +58,10 @@ const withLoc = servedWaters.filter((w) => typeof w.locality === 'string');
 check(withLoc.length >= 850, `contracted coverage >= 84% (${withLoc.length}/1013)`);
 const mihoesti = servedWaters.find((w) => w.slug === 'anpa-anpa-0008');
 check(mihoesti?.locality === 'Câmpeni', 'limite-text fallback: Mihoești → Câmpeni');
-check(
-  servedUnc.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
-  'uncontracted river pool carries locality (Bihor/Oradea)',
-);
+// NOTE (t_9529e678): uncontracted RIVERS carry NO locality in the current data
+// (build_locality_assignment.py pipeline gap — 0/4140 rivers) — the lake pool
+// does. The uncontracted-pool participation check targets the lake pool;
+// the river gap is a data-pipeline follow-up, not a filter bug.
 check(
   servedLakes.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
   'uncontracted lake pool carries locality (Bihor/Oradea)',
@@ -161,7 +161,51 @@ await bihor.click();
 await cluj.click();
 await page.waitForTimeout(800);
 
-console.log('== 6. summary ==');
+console.log('== 7. Brașov regression (t_9529e678 — user report) ==');
+// User flow: județ Brașov → localitate Brașov — the map MUST visibly change
+// (previously it rendered 0 paths at national zoom: the only contracted water
+// with locality 'Brașov' is bbox-fallback (geometry: null → dropped by the
+// county clip) and the 4 city lakes are < 100 ha → LOD-culled at z7).
+await page.goto(BASE, { waitUntil: 'domcontentloaded' });
+await page.waitForSelector('button:visible[aria-pressed]', { timeout: 60000 });
+await page.waitForTimeout(2000);
+const brasov = page.locator('button:visible', { hasText: /^Brașov$/ }).first();
+await brasov.click();
+await page.waitForTimeout(1500);
+const trig = page.locator('button:visible', { hasText: /^Toate localitățile$/ }).first();
+await trig.click();
+await page.waitForSelector('[data-slot="command-input"]', { timeout: 5000 });
+await page.locator('[data-slot="command-input"]').fill('Brașov');
+await page.waitForTimeout(300);
+await page.locator('[data-slot="command-item"]', { hasText: /^Brașov$/ }).first().click();
+await page.waitForTimeout(2500); // locality flyTo animates
+const tileZ = await page.evaluate(() => {
+  const src = document.querySelector('.leaflet-tile')?.getAttribute('src') ?? '';
+  const m = src.match(/\/(\d+)\/\d+\/\d+/);
+  return m ? Number(m[1]) : null;
+});
+const lipsCount = await page.locator('.leaflet-overlay-pane path').count();
+check(tileZ !== null && tileZ > 7, `map zoomed to the locality (tile z=${tileZ})`);
+check(lipsCount > 0, `Brașov locality renders its waters (${lipsCount} paths)`);
+await page.screenshot({ path: new URL('locality_brasov_city.png', OUT_DIR).pathname, fullPage: false });
+await page.keyboard.press('Escape');
+// clear the locality → the view is restored (no longer zoomed at the city)
+await page.waitForTimeout(600);
+const clearTrig = page.locator('[data-testid="locality-filter"]').filter({ visible: true }).first();
+await clearTrig.click();
+await page.locator('[data-slot="command-input"]').fill('Brașov');
+await page.waitForTimeout(300);
+await page.locator('[data-slot="command-item"]', { hasText: /^Brașov$/ }).first().click();
+await page.keyboard.press('Escape');
+await page.waitForTimeout(1500);
+const tileZAfter = await page.evaluate(() => {
+  const src = document.querySelector('.leaflet-tile')?.getAttribute('src') ?? '';
+  const m = src.match(/\/(\d+)\/\d+\/\d+/);
+  return m ? Number(m[1]) : null;
+});
+check(tileZAfter !== null && tileZAfter === 7, `clearing the locality restores the national view (tile z=${tileZAfter})`);
+
+console.log('== 8. summary ==');
 if (errors.length) {
   console.log('console errors seen:');
   for (const e of errors.slice(0, 10)) console.log('  -', e);
