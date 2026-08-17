@@ -2,6 +2,7 @@
 
 import { Building2, ChevronRight } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
+import { useI18n } from '@/i18n/provider';
 
 /**
  * Persistent association chip (F2a, docs/f2a-permit-validity.md §4 step 5-6).
@@ -16,6 +17,7 @@ export function AssociationChip() {
   const slug = useMapStore((s) => s.selectedAssociationSlug);
   const associations = useMapStore((s) => s.associations);
   const openAssociationSheet = useMapStore((s) => s.openAssociationSheet);
+  const { t } = useI18n();
 
   if (!slug) return null;
   const association = associations.find((a) => a.slug === slug);
@@ -27,7 +29,7 @@ export function AssociationChip() {
         type="button"
         onClick={openAssociationSheet}
         className="map-touch pointer-events-auto flex max-w-full items-center gap-2 rounded-full border bg-background/95 py-1.5 pl-2 pr-2.5 text-sm shadow-md backdrop-blur transition-colors hover:bg-accent"
-        aria-label={`Detalii ${association.name}`}
+        aria-label={t('assoc.detailsAria', { name: association.name })}
         data-testid="assoc-chip"
       >
         <Building2 className="h-4 w-4 shrink-0 text-primary" />

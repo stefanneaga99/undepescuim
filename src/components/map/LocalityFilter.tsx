@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/i18n/provider';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import {
   Command,
@@ -32,21 +33,22 @@ interface LocalityFilterProps {
  * pill language). The trigger pill mirrors the county chips.
  */
 export function LocalityFilter({ localities, selected, onToggle, onClear }: LocalityFilterProps) {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
 
   if (localities.length === 0) return null;
 
   const label =
     selected.length === 0
-      ? 'Toate localitățile'
+      ? t('filters.allLocalities')
       : selected.length <= 2
         ? selected.join(', ')
-        : `${selected.length} localități`;
+        : t('filters.localitiesCount', { n: selected.length });
 
   return (
     <div className="flex flex-col gap-1">
       <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-        Localitate
+        {t('filters.localityLabel')}
       </span>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
@@ -68,11 +70,11 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
         </PopoverTrigger>
         <PopoverContent align="start" sideOffset={6} className="z-[1500] w-72 p-1.5">
           <Command className="rounded-lg">
-            <CommandInput placeholder="Caută localitate..." />
+            <CommandInput placeholder={t('filters.searchLocality')} />
             <CommandList>
-              <CommandEmpty>Fără localități</CommandEmpty>
+              <CommandEmpty>{t('filters.noLocalities')}</CommandEmpty>
               {selected.length > 0 && (
-                <CommandGroup heading="Toate localitățile">
+                <CommandGroup heading={t('filters.allLocalities')}>
                   <CommandItem
                     value="__all__"
                     data-testid="locality-reset"
@@ -82,11 +84,11 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
                     }}
                   >
                     <X className="size-4 opacity-60" />
-                    <span>Resetează</span>
+                    <span>{t('filters.reset')}</span>
                   </CommandItem>
                 </CommandGroup>
               )}
-              <CommandGroup heading="Localități">
+              <CommandGroup heading={t('filters.localityLabel')}>
                 {localities.map((locality) => {
                   const active = selected.includes(locality);
                   return (

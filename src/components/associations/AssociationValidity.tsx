@@ -1,5 +1,6 @@
 'use client';
 
+import { useI18n } from '@/i18n/provider';
 import type { Association } from '@/types/data';
 
 /**
@@ -8,17 +9,18 @@ import type { Association } from '@/types/data';
  * Renders the "Permisul {X} este valabil pe N ape în județele: ..." sentence
  * plus the reciprocity status line. Pure presentational — data comes from
  * the association record (counties computed by scripts/recompute_assoc_validity.py).
+ * Text is i18n-driven (t_920a7b7b).
  */
 export function AssociationValidity({ association }: { association: Association }) {
+  const { t } = useI18n();
   const n = association.ape ?? 0;
   const counties = association.counties ?? [];
   const reciprocity = association.reciprocity ?? 'neconfirmată';
 
-  // TODO(i18n): hardcoded RO strings — next-intl is a documented follow-up milestone.
   if (n === 0) {
     return (
       <p className="text-sm text-muted-foreground">
-        Asociația nu are ape contractate afișate pe site.
+        {t('validity.noWaters')}
       </p>
     );
   }
@@ -28,36 +30,34 @@ export function AssociationValidity({ association }: { association: Association 
   return (
     <div className="flex flex-col gap-2 text-sm">
       <p>
-        Permisul <strong>{association.name}</strong> este valabil pe{' '}
+        {t('validity.validPrefix', { name: association.name })}{' '}
         <strong>
-          {n} {n === 1 ? 'apă' : 'ape'}
+          {n} {n === 1 ? t('validity.oneWater') : t('validity.manyWaters')}
         </strong>
         {!isAnpa && counties.length > 0 && (
           <>
             {' '}
-            în județele: <strong>{counties.join(', ')}</strong>
+            {t('validity.inCounties')} <strong>{counties.join(', ')}</strong>
           </>
         )}
         {isAnpa && (
           <>
             {' '}
-            administrate direct de ANPA / necontractate
+            {t('validity.anpaDirect')}
           </>
         )}
         .
       </p>
       {association.contract_ref && (
-        <p className="text-xs text-muted-foreground">Contract: {association.contract_ref}</p>
+        <p className="text-xs text-muted-foreground">{t('validity.contract', { ref: association.contract_ref })}</p>
       )}
       {reciprocity === 'confirmată' ? (
-        <p className="text-xs text-muted-foreground">Reciprocitate: confirmată.</p>
+        <p className="text-xs text-muted-foreground">{t('validity.reciprocityConfirmed')}</p>
       ) : (
-        <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900">
+        <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100">
           <p>
-            Reciprocitate: <strong>neconfirmată</strong> — nu am găsit o sursă publică care să
-            confirme că permisul acestei asociații este acceptat și de alte asociații. Legea
-            prevede valabilitatea pe bază de reciprocitate între asociațiile afiliate AGVPS;
-            verifică cu asociația înainte de a pescui.
+            {t('validity.reciprocityUnconfirmedTitle')}{' '}
+            {t('validity.reciprocityUnconfirmedBody')}
           </p>
         </div>
       )}

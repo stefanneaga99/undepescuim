@@ -1,27 +1,20 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { ArrowLeft, AlertTriangle, ExternalLink, FileText, HelpCircle, Scale, ShieldCheck, Sparkles } from 'lucide-react';
 import {
-  PERMIS_LAST_UPDATED,
-  PERMIS_PORTAL_URL,
-  PERMIS_WHAT_CHANGED,
-  PERMIS_GET_STATE,
-  PERMIS_GET_ASSOCIATION,
-  PERMIS_GET_DELTA,
-  PERMIS_GOLDEN_RULE,
-  PERMIS_RENEW,
-  PERMIS_GOTCHAS,
-  PERMIS_RULES,
-  PERMIS_UPCOMING,
-  PERMIS_FAQ,
-  PERMIS_SOURCES,
-} from '@/content/permis-2026';
+  useMemo,
+} from 'react';
+import { useI18n } from '@/i18n/provider';
+import * as RO from '@/content/permis-2026';
+import { PERMIS_EN } from '@/content/permis-2026.en';
 
-export const metadata: Metadata = {
-  title: 'Permis & Reguli 2026 — UndePescuim.ro',
-  description:
-    'Ghid 2026: tranziția ANPA→ANADSPA, cum obții și reînnoiești permisul de pescuit recreativ, capcane și reguli esențiale.',
-};
+/**
+ * Permis & Reguli 2026 — client component (t_920a7b7b) so the language
+ * switcher re-renders it instantly. RO content is the default; EN is the
+ * type-checked mirror from `permis-2026.en.ts`. SEO metadata lives in the
+ * sibling layout.tsx (server component).
+ */
 
 function SectionHeading({
   icon,
@@ -51,6 +44,13 @@ function GotchaCard({ title, body }: { title: string; body: string }) {
 }
 
 export default function PermisPage() {
+  const { locale, t } = useI18n();
+
+  // Pick the locale's content. `RO` is the current-locale shape source;
+  // PERMIS_EN is structurally identical (compile-checked).
+  const C = useMemo(() => (locale === 'en' ? PERMIS_EN : RO), [locale]);
+  const lastUpdated = C.PERMIS_LAST_UPDATED;
+
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 md:py-10">
       <Link
@@ -58,145 +58,143 @@ export default function PermisPage() {
         className="mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft className="h-4 w-4" />
-        Înapoi la hartă
+        {t('permis.backToMap')}
       </Link>
 
-      <h1 className="text-2xl font-bold tracking-tight md:text-3xl">Permis &amp; Reguli 2026</h1>
+      <h1 className="text-2xl font-bold tracking-tight md:text-3xl">{t('permis.title')}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Ultima verificare a faptelor: {PERMIS_LAST_UPDATED}. Informațiile se pot schimba —
-        verifică sursele oficiale (linkuri la finalul paginii) înainte de o decizie. Conținut
-        sensibil la timp: se re-verifică trimestrial.
+        {t('permis.intro', { date: lastUpdated })}
       </p>
 
-      {/* §1 Ce s-a schimbat */}
+      {/* §1 What changed */}
       <SectionHeading icon={<ShieldCheck className="h-4 w-4 text-primary" />}>
-        Ce s-a schimbat: ANPA → ANADSPA
+        {t('permis.whatChangedHeading')}
       </SectionHeading>
-      <p className="mt-2 text-sm leading-relaxed">{PERMIS_WHAT_CHANGED.lead}</p>
-      <p className="mt-3 text-sm font-medium">Ce înseamnă asta pentru tine, ca pescar recreativ, practic:</p>
+      <p className="mt-2 text-sm leading-relaxed">{C.PERMIS_WHAT_CHANGED.lead}</p>
+      <p className="mt-3 text-sm font-medium">{t('permis.whatChangedLead2')}</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_WHAT_CHANGED.bullets.map((b) => (
+        {C.PERMIS_WHAT_CHANGED.bullets.map((b) => (
           <li key={b}>{b}</li>
         ))}
       </ul>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{PERMIS_WHAT_CHANGED.unchanged}</p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{C.PERMIS_WHAT_CHANGED.unchanged}</p>
 
-      {/* §2 Cum obții */}
+      {/* §2 How to get it */}
       <SectionHeading icon={<FileText className="h-4 w-4 text-primary" />}>
-        Cum obții permisul în 2026
+        {t('permis.getPermitHeading')}
       </SectionHeading>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Există trei situații diferite, în funcție de unde pescuiești:
+        {t('permis.getPermitIntro')}
       </p>
 
-      <h3 className="mt-4 text-sm font-bold">{PERMIS_GET_STATE.title}</h3>
-      <p className="mt-1 text-sm leading-relaxed">{PERMIS_GET_STATE.intro}</p>
+      <h3 className="mt-4 text-sm font-bold">{C.PERMIS_GET_STATE.title}</h3>
+      <p className="mt-1 text-sm leading-relaxed">{C.PERMIS_GET_STATE.intro}</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_GET_STATE.items.map((i) => (
+        {C.PERMIS_GET_STATE.items.map((i) => (
           <li key={i}>{i}</li>
         ))}
       </ul>
       <p className="mt-2 text-sm leading-relaxed">
         <a
-          href={PERMIS_PORTAL_URL}
+          href={C.PERMIS_PORTAL_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-primary hover:underline"
         >
-          Deschide portalul de permise
+          {t('permis.openPortal')}
           <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </p>
 
-      <h3 className="mt-4 text-sm font-bold">{PERMIS_GET_ASSOCIATION.title}</h3>
-      <p className="mt-1 text-sm leading-relaxed">{PERMIS_GET_ASSOCIATION.intro}</p>
+      <h3 className="mt-4 text-sm font-bold">{C.PERMIS_GET_ASSOCIATION.title}</h3>
+      <p className="mt-1 text-sm leading-relaxed">{C.PERMIS_GET_ASSOCIATION.intro}</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_GET_ASSOCIATION.items.map((i) => (
+        {C.PERMIS_GET_ASSOCIATION.items.map((i) => (
           <li key={i}>{i}</li>
         ))}
       </ul>
 
-      <h3 className="mt-4 text-sm font-bold">{PERMIS_GET_DELTA.title}</h3>
-      <p className="mt-1 text-sm leading-relaxed">{PERMIS_GET_DELTA.intro}</p>
+      <h3 className="mt-4 text-sm font-bold">{C.PERMIS_GET_DELTA.title}</h3>
+      <p className="mt-1 text-sm leading-relaxed">{C.PERMIS_GET_DELTA.intro}</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_GET_DELTA.items.map((i) => (
+        {C.PERMIS_GET_DELTA.items.map((i) => (
           <li key={i}>{i}</li>
         ))}
       </ul>
 
       <div className="mt-4 rounded-md border border-teal-200 bg-teal-50 px-3 py-2.5 text-sm text-teal-900 dark:border-teal-900 dark:bg-teal-950/40 dark:text-teal-100">
-        <p className="font-medium">Regula de aur</p>
-        <p className="mt-0.5 text-xs leading-relaxed opacity-90">{PERMIS_GOLDEN_RULE}</p>
+        <p className="font-medium">{t('permis.goldenRuleTitle')}</p>
+        <p className="mt-0.5 text-xs leading-relaxed opacity-90">{C.PERMIS_GOLDEN_RULE}</p>
       </div>
 
-      {/* Link către /specii — dimensiunile minime pe specii */}
+      {/* Link to /specii — minimum sizes by species */}
       <div className="mt-3 rounded-md border bg-accent/40 px-3 py-2.5 text-sm">
-        <p className="font-medium">Cât de mare trebuie să fie peștele ca să-l poți reține?</p>
+        <p className="font-medium">{t('permis.retentionQuestion')}</p>
         <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-          Dimensiunile minime de reținere, pe specii, cu surse și ultima verificare.
+          {t('permis.retentionAnswer')}
         </p>
         <Link
           href="/specii"
           className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-primary underline-offset-2 hover:underline"
         >
-          Vezi dimensiunile minime pe specii →
+          {t('permis.retentionLink')}
         </Link>
       </div>
 
-      {/* §3 Cum reînnoiești */}
+      {/* §3 How to renew */}
       <SectionHeading icon={<Sparkles className="h-4 w-4 text-primary" />}>
-        Cum reînnoiești permisul
+        {t('permis.renewHeading')}
       </SectionHeading>
-      <p className="mt-2 text-sm leading-relaxed">{PERMIS_RENEW.intro}</p>
+      <p className="mt-2 text-sm leading-relaxed">{C.PERMIS_RENEW.intro}</p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        <li>{PERMIS_RENEW.currentRule}</li>
-        <li>{PERMIS_RENEW.changing}</li>
+        <li>{C.PERMIS_RENEW.currentRule}</li>
+        <li>{C.PERMIS_RENEW.changing}</li>
       </ul>
 
-      {/* §4 Capcane */}
+      {/* §4 Gotchas */}
       <SectionHeading icon={<AlertTriangle className="h-4 w-4 text-primary" />}>
-        Capcane cunoscute (gotchas)
+        {t('permis.gotchasHeading')}
       </SectionHeading>
       <div className="mt-2 flex flex-col gap-2">
-        {PERMIS_GOTCHAS.map((g) => (
+        {C.PERMIS_GOTCHAS.map((g) => (
           <GotchaCard key={g.title} title={g.title} body={g.body} />
         ))}
       </div>
 
-      {/* §5 Reguli */}
+      {/* §5 Rules */}
       <SectionHeading icon={<Scale className="h-4 w-4 text-primary" />}>
-        Reguli esențiale (pe scurt)
+        {t('permis.rulesHeading')}
       </SectionHeading>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Acestea sunt și regulile din care se dau întrebările de la chestionar:
+        {t('permis.rulesIntro')}
       </p>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_RULES.map((r) => (
+        {C.PERMIS_RULES.map((r) => (
           <li key={r}>{r}</li>
         ))}
       </ul>
 
-      {/* §6 Ce se pregătește */}
+      {/* §6 What's coming */}
       <SectionHeading icon={<Sparkles className="h-4 w-4 text-primary" />}>
-        Ce se pregătește (proiect de ordin MADR, mai 2026)
+        {t('permis.upcomingHeading')}
       </SectionHeading>
       <div className="mt-2 rounded-md border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100">
-        <p className="font-semibold">Încă NU în vigoare</p>
-        <p className="mt-0.5 text-xs leading-relaxed opacity-90">{PERMIS_UPCOMING.status}</p>
+        <p className="font-semibold">{t('permis.notInForce')}</p>
+        <p className="mt-0.5 text-xs leading-relaxed opacity-90">{C.PERMIS_UPCOMING.status}</p>
       </div>
       <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-        {PERMIS_UPCOMING.bullets.map((b) => (
+        {C.PERMIS_UPCOMING.bullets.map((b) => (
           <li key={b}>{b}</li>
         ))}
       </ul>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{PERMIS_UPCOMING.unchanged}</p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{C.PERMIS_UPCOMING.unchanged}</p>
 
       {/* FAQ */}
       <SectionHeading icon={<HelpCircle className="h-4 w-4 text-primary" />}>
-        FAQ
+        {t('permis.faqHeading')}
       </SectionHeading>
       <dl className="mt-2 flex flex-col gap-3">
-        {PERMIS_FAQ.map((f) => (
+        {C.PERMIS_FAQ.map((f) => (
           <div key={f.q} className="rounded-md border px-3 py-2.5">
             <dt className="text-sm font-semibold">{f.q}</dt>
             <dd className="mt-0.5 text-sm leading-relaxed text-muted-foreground">{f.a}</dd>
@@ -204,16 +202,15 @@ export default function PermisPage() {
         ))}
       </dl>
 
-      {/* Surse */}
+      {/* Sources */}
       <SectionHeading icon={<ExternalLink className="h-4 w-4 text-primary" />}>
-        Surse
+        {t('permis.sourcesHeading')}
       </SectionHeading>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Fiecare afirmație de pe această pagină se bazează pe sursele de mai jos (verificate la{' '}
-        {PERMIS_LAST_UPDATED}). Re-verifică-le trimestrial — conținutul este sensibil la timp.
+        {t('permis.sourcesIntro', { date: lastUpdated })}
       </p>
       <ul className="mt-2 flex flex-col gap-1.5">
-        {PERMIS_SOURCES.map((s) => (
+        {C.PERMIS_SOURCES.map((s) => (
           <li key={s.url} className="text-sm">
             <a
               href={s.url}
@@ -232,8 +229,7 @@ export default function PermisPage() {
       </ul>
 
       <p className="mt-8 border-t pt-4 text-xs text-muted-foreground">
-        Ultima verificare a faptelor: {PERMIS_LAST_UPDATED}. Conținutul se re-verifică trimestrial
-        (portalul de permise, madr.ro, Monitorul Oficial).
+        {t('permis.footer', { date: lastUpdated })}
       </p>
     </main>
   );

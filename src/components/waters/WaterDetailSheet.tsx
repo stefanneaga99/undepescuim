@@ -5,6 +5,7 @@ import { Drawer } from 'vaul';
 import { X } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import { useI18n } from '@/i18n/provider';
 import { WaterDetailCard } from '@/components/waters/WaterDetailCard';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { cn } from '@/lib/utils';
@@ -27,6 +28,7 @@ export function WaterDetailSheet() {
   const uncontracted = useMapStore((s) => s.uncontracted);
   const associations = useMapStore((s) => s.associations);
   const selectWater = useMapStore((s) => s.selectWater);
+  const { t } = useI18n();
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
   const [snap, setSnap] = useState<number | string | null>(0.35);
@@ -123,7 +125,7 @@ export function WaterDetailSheet() {
               />
             )}
             <Drawer.Content
-              aria-label={water ? `Detalii: ${water.name}` : 'Detalii apă'}
+              aria-label={water ? t('detailSheet.detailsAria', { name: water.name }) : t('detailSheet.detailsWater')}
               className="fixed inset-x-0 bottom-0 z-[1200] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
             >
               {/* drag handle */}
@@ -135,7 +137,7 @@ export function WaterDetailSheet() {
                     type="button"
                     onClick={() => selectWater(null)}
                     className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
-                    aria-label="Închide"
+                    aria-label={t('detailSheet.close')}
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -162,12 +164,12 @@ export function WaterDetailSheet() {
       {!isCompact && water && (
         <aside className="flex h-full w-[380px] shrink-0 flex-col border-l bg-background">
           <div className="flex h-12 shrink-0 items-center justify-between border-b px-4">
-            <h2 className="text-sm font-semibold">Detalii apă</h2>
+            <h2 className="text-sm font-semibold">{t('detailSheet.detailsWater')}</h2>
             <button
               type="button"
               onClick={() => selectWater(null)}
               className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
-              aria-label="Închide"
+              aria-label={t('detailSheet.close')}
             >
               <X className="h-4 w-4" />
             </button>

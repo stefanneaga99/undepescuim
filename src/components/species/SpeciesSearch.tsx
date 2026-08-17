@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/command';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { normalizeText, type Species } from '@/content/species';
+import { useI18n } from '@/i18n/provider';
 
 /**
  * Căutare de specii (cmdk Command) — pagina /specii.
@@ -23,6 +24,7 @@ import { normalizeText, type Species } from '@/content/species';
  * Căutarea e diacritic-insensitivă (custom filter pe Command).
  */
 export function SpeciesSearch({ species }: { species: Species[] }) {
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   // Escape closes the mobile search overlay too (plan edge case: keyboard
@@ -62,10 +64,10 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
       }
       className="rounded-lg border bg-popover text-popover-foreground shadow-md"
     >
-      <CommandInput placeholder="Caută după nume sau dimensiune (ex. somn, 40)…" autoFocus />
+      <CommandInput placeholder={t('speciesSearch.placeholder')} autoFocus />
       <CommandList className="max-h-[55dvh] overflow-y-auto">
-        <CommandEmpty>Nicio specie găsită</CommandEmpty>
-        <CommandGroup heading="Specii">
+        <CommandEmpty>{t('speciesSearch.empty')}</CommandEmpty>
+        <CommandGroup heading={t('speciesSearch.heading')}>
           {species.map((s) => (
             <CommandItem
               key={s.slug}
@@ -98,11 +100,11 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
         type="button"
         onClick={() => setOpen(true)}
         className="map-touch flex h-11 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground shadow-sm md:hidden"
-        aria-label="Caută o specie"
+        aria-label={t('speciesSearch.ariaSearch')}
         data-testid="species-search-mobile"
       >
         <Search className="h-4 w-4 shrink-0" />
-        <span className="flex-1 text-left">Caută o specie…</span>
+        <span className="flex-1 text-left">{t('speciesSearch.trigger')}</span>
       </button>
 
       {isMobile &&
@@ -114,11 +116,11 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
                 type="button"
                 onClick={() => setOpen(false)}
                 className="map-touch flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground"
-                aria-label="Înapoi"
+                aria-label={t('speciesSearch.ariaSearch')}
               >
                 <ArrowLeft className="h-5 w-5" />
               </button>
-              <span className="font-medium">Caută o specie</span>
+              <span className="font-medium">{t('speciesSearch.overlayTitle')}</span>
             </div>
             <div className="flex-1 overflow-hidden p-2">{panel}</div>
           </div>,
@@ -138,11 +140,11 @@ export function SpeciesSearch({ species }: { species: Species[] }) {
             setOpen((o) => !o);
           }}
           className="map-touch flex h-11 w-full items-center gap-2 rounded-md border bg-background px-3 text-sm shadow-sm transition-colors hover:bg-accent"
-          aria-label="Caută o specie"
+          aria-label={t('speciesSearch.ariaSearch')}
           data-testid="species-search"
         >
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
-          <span className="flex-1 truncate text-left text-muted-foreground">Caută o specie…</span>
+          <span className="flex-1 truncate text-left text-muted-foreground">{t('speciesSearch.trigger')}</span>
           <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
         </button>
 

@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import { useI18n, type I18nT } from '@/i18n/provider';
 import { cn } from '@/lib/utils';
 import type { PermitIssuer } from '@/types/data';
 
@@ -33,7 +34,7 @@ import type { PermitIssuer } from '@/types/data';
  * top-left filter panel and the bottom-right legend).
  */
 
-function issuerBadge(issuer: PermitIssuer | undefined) {
+function issuerBadge(issuer: PermitIssuer | undefined, t: I18nT) {
   if (issuer === 'anadspa') {
     return (
       <Badge variant="secondary" className="bg-blue-100 text-[10px] uppercase tracking-wide text-blue-700">
@@ -50,7 +51,7 @@ function issuerBadge(issuer: PermitIssuer | undefined) {
   }
   return (
     <Badge variant="secondary" className="bg-amber-100 text-[10px] uppercase tracking-wide text-amber-700">
-      Asociație
+      {t('nearby.issuerAssociation')}
     </Badge>
   );
 }
@@ -62,6 +63,7 @@ export function NearbyWatersSheet() {
   const waters = useMapStore((s) => s.waters);
   const selectWater = useMapStore((s) => s.selectWater);
   const clearUserPosition = useMapStore((s) => s.clearUserPosition);
+  const { t } = useI18n();
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
   const open = userPosition !== null && nearbyWaters.length > 0;
@@ -77,12 +79,12 @@ export function NearbyWatersSheet() {
 
   const header = (
     <div className="flex items-center justify-between gap-2">
-      <h2 className="text-sm font-semibold">Ape în apropiere</h2>
+      <h2 className="text-sm font-semibold">{t('nearby.title')}</h2>
       <button
         type="button"
         onClick={clearUserPosition}
         className="map-touch flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
-        aria-label="Închide lista"
+        aria-label={t('nearby.closeList')}
       >
         <X className="h-4 w-4" />
       </button>
@@ -92,8 +94,8 @@ export function NearbyWatersSheet() {
   const freshness = (
     <p className="flex items-center gap-1.5 text-[11px] leading-snug text-muted-foreground">
       <LocateFixed className="h-3 w-3 shrink-0" />
-      Poziția ta este live; datele despre ape sunt anuale (date 2026).
-      {nearbyRadiusKm > 0 && ` Rază: ${nearbyRadiusKm} km.`}
+      {t('nearby.freshness')}
+      {nearbyRadiusKm > 0 && ` ${t('nearby.radius', { km: nearbyRadiusKm })}`}
     </p>
   );
 
@@ -110,10 +112,10 @@ export function NearbyWatersSheet() {
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-1.5">
                 <span className="truncate text-sm font-medium">{water.name}</span>
-                {issuerBadge(water.asociatie?.permitIssuer)}
+                {issuerBadge(water.asociatie?.permitIssuer, t)}
               </div>
               <p className="mt-0.5 truncate text-xs text-muted-foreground">
-                {n.county ?? water.judet} · {water.asociatie?.name ?? 'Fără asociație'}
+                {n.county ?? water.judet} · {water.asociatie?.name ?? t('nearby.noAssociation')}
               </p>
             </div>
             <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">
@@ -142,7 +144,7 @@ export function NearbyWatersSheet() {
       >
         <Drawer.Portal>
           <Drawer.Content
-            aria-label="Ape în apropiere"
+            aria-label={t('nearby.ariaTitle')}
             data-nearby-sheet=""
             data-testid="nearby-sheet"
             className="fixed inset-x-0 bottom-0 z-[1050] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
@@ -172,7 +174,7 @@ export function NearbyWatersSheet() {
       {freshness}
       <div className="max-h-[45dvh] overflow-y-auto">{list}</div>
       <p className={cn('text-[11px] text-muted-foreground')}>
-        Doar apele contractate sunt listate aici — pentru râuri/bălți necontractate folosește filtrul „Necontractate”.
+        {t('nearby.footer')}
       </p>
     </div>
   );

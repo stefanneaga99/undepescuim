@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/command';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import { useI18n } from '@/i18n/provider';
 import { cn } from '@/lib/utils';
 
 /**
@@ -26,6 +27,7 @@ export function AssociationSearch() {
   const associations = useMapStore((s) => s.associations);
   const selectedSlug = useMapStore((s) => s.selectedAssociationSlug);
   const selectAssociation = useMapStore((s) => s.selectAssociation);
+  const { t } = useI18n();
   const [open, setOpen] = useState(false);
   // Escape closes the overlay on mobile too (plan edge case: keyboard nav in
   // the association search — Escape closes). cmdk's own Escape handling only
@@ -60,10 +62,10 @@ export function AssociationSearch() {
 
   const panel = (
     <Command className="rounded-lg border bg-popover text-popover-foreground shadow-md">
-      <CommandInput placeholder="Caută asociația…" autoFocus />
+      <CommandInput placeholder={t('search.placeholder')} autoFocus />
       <CommandList className="max-h-[55dvh] overflow-y-auto">
-        <CommandEmpty>Nicio asociație găsită</CommandEmpty>
-        <CommandGroup heading="Asociații">
+        <CommandEmpty>{t('search.empty')}</CommandEmpty>
+        <CommandGroup heading={t('search.groupHeading')}>
           {associations.map((a) => (
             <CommandItem
               key={a.slug}
@@ -89,7 +91,7 @@ export function AssociationSearch() {
             data-slug="__all__"
             onSelect={() => handleSelect(null)}
           >
-            <span className="flex-1">Toate asociațiile</span>
+            <span className="flex-1">{t('search.all')}</span>
             {selectedSlug === null && <Check className="ml-1 h-3.5 w-3.5 text-primary" />}
           </CommandItem>
         </CommandGroup>
@@ -106,7 +108,7 @@ export function AssociationSearch() {
         type="button"
         onClick={() => setOpen(true)}
         className="map-touch flex h-9 w-9 shrink-0 items-center justify-center rounded-md border text-muted-foreground md:hidden"
-        aria-label="Caută asociația"
+        aria-label={t('search.ariaSearch')}
         data-testid="assoc-search-mobile"
       >
         <Search className="h-4 w-4" />
@@ -121,11 +123,11 @@ export function AssociationSearch() {
                 type="button"
                 onClick={() => setOpen(false)}
                 className="map-touch flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground"
-                aria-label="Înapoi"
+                aria-label={t('search.ariaBack')}
               >
                 <ArrowLeft className="h-5 w-5" />
               </button>
-              <span className="font-medium">Caută asociația</span>
+              <span className="font-medium">{t('search.overlayTitle')}</span>
             </div>
             <div className="flex-1 overflow-hidden p-2">{panel}</div>
           </div>,
@@ -157,7 +159,7 @@ export function AssociationSearch() {
               !selected && 'text-muted-foreground',
             )}
           >
-            {selected ? selected.name : 'Caută asociația…'}
+            {selected ? selected.name : t('search.placeholder')}
           </span>
           <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
         </button>

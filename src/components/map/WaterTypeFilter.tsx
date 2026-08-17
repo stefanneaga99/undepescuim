@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/i18n/provider';
 import type { WaterTypeFilter as WaterTypeFilterValue } from '@/types/data';
 
 interface WaterTypeFilterProps {
@@ -8,22 +9,23 @@ interface WaterTypeFilterProps {
   onChange: (type: WaterTypeFilterValue) => void;
 }
 
-const OPTIONS: { value: WaterTypeFilterValue; label: string }[] = [
-  { value: 'all', label: 'Toate' },
-  { value: 'lac', label: 'Lacuri' },
-  { value: 'rau', label: 'Râuri' },
+const OPTIONS: { value: WaterTypeFilterValue; labelKey: 'filters.all' | 'filters.lakes' | 'filters.rivers' }[] = [
+  { value: 'all', labelKey: 'filters.all' },
+  { value: 'lac', labelKey: 'filters.lakes' },
+  { value: 'rau', labelKey: 'filters.rivers' },
 ];
 
 /** Segmented control: Toate / Lacuri / Râuri. Fully controlled. */
 export function WaterTypeFilter({ selected, onChange }: WaterTypeFilterProps) {
+  const { t } = useI18n();
   return (
     <div className="flex flex-col gap-1">
       <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-        Tip
+        {t('filters.typeLabel')}
       </span>
       <div
         role="group"
-        aria-label="Tipul apei"
+        aria-label={t('filters.typeAria')}
         data-testid="type-filter"
         className="inline-flex w-fit rounded-full border bg-muted/60 p-0.5"
       >
@@ -42,7 +44,7 @@ export function WaterTypeFilter({ selected, onChange }: WaterTypeFilterProps) {
                 : 'text-muted-foreground hover:text-foreground',
             )}
           >
-            {opt.label}
+            {t(opt.labelKey)}
           </button>
         ))}
       </div>

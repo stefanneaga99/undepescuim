@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
+import { useI18n } from '@/i18n/provider';
 import { NEUTRAL_COLOR, COVERED_COLOR, UNCOVERED_COLOR, UNCONTRACTED_COLOR, UNCONTRACTED_LAKE_FILL } from '@/utils/colors';
 
 interface LegendRow {
@@ -21,6 +22,7 @@ interface LegendRow {
 export function ColorLegend() {
   const coverageSlug = useMapStore((s) => s.selectedAssociationSlug);
   const contractFilter = useMapStore((s) => s.contractFilter);
+  const { t } = useI18n();
   const [expanded, setExpanded] = useState(false);
 
   // Auto-collapse 5s after manual expansion (mobile-layout-spec §6.1).
@@ -33,15 +35,15 @@ export function ColorLegend() {
   const showUncontracted = contractFilter !== 'contractate';
   const rows: LegendRow[] = [
     ...(coverageSlug === null
-      ? [{ color: NEUTRAL_COLOR, label: 'Vedere neutră' }]
+      ? [{ color: NEUTRAL_COLOR, label: t('legend.neutralView') }]
       : [
-          { color: COVERED_COLOR, label: 'Acoperit' },
-          { color: UNCOVERED_COLOR, label: 'Neacoperit' },
+          { color: COVERED_COLOR, label: t('legend.covered') },
+          { color: UNCOVERED_COLOR, label: t('legend.uncovered') },
         ]),
     ...(showUncontracted
       ? [
-          { color: UNCONTRACTED_COLOR, label: 'Râuri necontractate' },
-          { color: UNCONTRACTED_LAKE_FILL, label: 'Bălți / iazuri necontractate' },
+          { color: UNCONTRACTED_COLOR, label: t('legend.uncontractedRivers') },
+          { color: UNCONTRACTED_LAKE_FILL, label: t('legend.uncontractedLakes') },
         ]
       : []),
   ];

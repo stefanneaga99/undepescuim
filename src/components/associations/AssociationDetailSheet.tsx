@@ -5,6 +5,7 @@ import { Drawer } from 'vaul';
 import { ExternalLink, MapPin, Phone, X } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
+import { useI18n } from '@/i18n/provider';
 import { AssociationValidity } from '@/components/associations/AssociationValidity';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { cn } from '@/lib/utils';
@@ -25,6 +26,7 @@ export function AssociationDetailSheet() {
   const associations = useMapStore((s) => s.associations);
   const open = useMapStore((s) => s.associationSheetOpen);
   const closeAssociationSheet = useMapStore((s) => s.closeAssociationSheet);
+  const { t } = useI18n();
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
   const [snap, setSnap] = useState<number | string | null>(0.35);
@@ -96,7 +98,7 @@ export function AssociationDetailSheet() {
               />
             )}
             <Drawer.Content
-              aria-label={association ? `Detalii: ${association.name}` : 'Detalii asociație'}
+              aria-label={association ? t('assoc.detailsAria', { name: association.name }) : t('assoc.detailsTitle')}
               data-testid="assoc-detail-sheet"
               className="fixed inset-x-0 bottom-0 z-[1200] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
             >
@@ -109,7 +111,7 @@ export function AssociationDetailSheet() {
                     type="button"
                     onClick={closeAssociationSheet}
                     className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
-                    aria-label="Închide"
+                    aria-label={t('detailSheet.close')}
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -136,12 +138,12 @@ export function AssociationDetailSheet() {
           className="flex h-full w-[380px] shrink-0 flex-col border-l bg-background"
         >
           <div className="flex h-12 shrink-0 items-center justify-between border-b px-4">
-            <h2 className="text-sm font-semibold">Detalii asociație</h2>
+            <h2 className="text-sm font-semibold">{t('assoc.detailsTitle')}</h2>
             <button
               type="button"
               onClick={closeAssociationSheet}
               className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
-              aria-label="Închide"
+              aria-label={t('detailSheet.close')}
             >
               <X className="h-4 w-4" />
             </button>
@@ -157,6 +159,7 @@ export function AssociationDetailSheet() {
 
 /** Shared content for both the drawer and the desktop panel. */
 function AssociationDetailContent({ association }: { association: Association }) {
+  const { t } = useI18n();
   return (
     <div className="flex flex-col gap-3">
       <div>
@@ -171,7 +174,7 @@ function AssociationDetailContent({ association }: { association: Association })
       {(association.telefon || association.adresa || association.siteUrl) && (
         <div className="border-t pt-3">
           <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Contact
+            {t('assoc.contact')}
           </h3>
           <div className="flex flex-col gap-1.5 text-sm">
             {association.telefon && (

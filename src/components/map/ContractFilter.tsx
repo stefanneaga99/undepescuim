@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/i18n/provider';
 import type { ContractFilter as ContractFilterValue } from '@/types/data';
 
 interface ContractFilterProps {
@@ -8,22 +9,23 @@ interface ContractFilterProps {
   onChange: (filter: ContractFilterValue) => void;
 }
 
-const OPTIONS: { value: ContractFilterValue; label: string }[] = [
-  { value: 'all', label: 'Toate' },
-  { value: 'contractate', label: 'Contractate' },
-  { value: 'necontractate', label: 'Necontractate' },
+const OPTIONS: { value: ContractFilterValue; labelKey: 'filters.all' | 'filters.contracted' | 'filters.uncontracted' }[] = [
+  { value: 'all', labelKey: 'filters.all' },
+  { value: 'contractate', labelKey: 'filters.contracted' },
+  { value: 'necontractate', labelKey: 'filters.uncontracted' },
 ];
 
 /** Segmented control: Toate / Contractate / Necontractate (t_471dad64). */
 export function ContractFilter({ selected, onChange }: ContractFilterProps) {
+  const { t } = useI18n();
   return (
     <div className="flex flex-col gap-1">
       <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-        Contract
+        {t('filters.contractLabel')}
       </span>
       <div
         role="group"
-        aria-label="Statusul contractului"
+        aria-label={t('filters.contractAria')}
         data-testid="contract-filter"
         className="inline-flex w-fit rounded-full border bg-muted/60 p-0.5"
       >
@@ -42,7 +44,7 @@ export function ContractFilter({ selected, onChange }: ContractFilterProps) {
                 : 'text-muted-foreground hover:text-foreground',
             )}
           >
-            {opt.label}
+            {t(opt.labelKey)}
           </button>
         ))}
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/i18n/provider';
 
 interface CountyFilterProps {
   /** all counties (from useCounties — never filtered) */
@@ -16,17 +17,18 @@ interface CountyFilterProps {
  * "Toate județele" indicator shows while no county is selected.
  */
 export function CountyFilter({ counties, selected, onToggle }: CountyFilterProps) {
+  const { t } = useI18n();
   if (counties.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-1">
       <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-        Județ
+        {t('filters.countyLabel')}
       </span>
       <div className="no-scrollbar flex items-center gap-1.5 overflow-x-auto md:flex-wrap md:overflow-visible">
         {selected.length === 0 && (
           <span className="shrink-0 cursor-default rounded-full bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground">
-            Toate județele
+            {t('filters.allCounties')}
           </span>
         )}
         {counties.map((county) => {

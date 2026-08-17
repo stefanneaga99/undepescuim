@@ -9,14 +9,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { useI18n } from '@/i18n/provider';
 import type { ReportReason } from '@/types/data';
 
-const REASON_OPTIONS: { value: ReportReason; label: string }[] = [
-  { value: 'data_correct', label: 'Datele sunt corecte (am pescuit aici)' },
-  { value: 'water_invalid', label: 'Această apă nu mai există / nu se poate pescui' },
-  { value: 'association_changed', label: 'Asociația s-a schimbat' },
-  { value: 'wrong_coordinates', label: 'Coordonatele sunt greșite' },
-  { value: 'other', label: 'Altă problemă' },
+const REASON_OPTIONS: { value: ReportReason; labelKey: `report.reasons.${ReportReason}` }[] = [
+  { value: 'data_correct', labelKey: 'report.reasons.data_correct' },
+  { value: 'water_invalid', labelKey: 'report.reasons.water_invalid' },
+  { value: 'association_changed', labelKey: 'report.reasons.association_changed' },
+  { value: 'wrong_coordinates', labelKey: 'report.reasons.wrong_coordinates' },
+  { value: 'other', labelKey: 'report.reasons.other' },
 ];
 
 interface ReportFormProps {
@@ -31,6 +32,7 @@ interface ReportFormProps {
 type Phase = 'idle' | 'submitting' | 'success' | 'error';
 
 export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason }: ReportFormProps) {
+  const { t } = useI18n();
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [details, setDetails] = useState('');
   const [contactEmail, setContactEmail] = useState('');
@@ -82,22 +84,22 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
     >
       <DialogContent data-testid="report-dialog" className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Raportează o problemă</DialogTitle>
+          <DialogTitle>{t('report.title')}</DialogTitle>
           <DialogDescription>
-            {waterName ? <>Raportezi date pentru <strong>{waterName}</strong>.</> : 'Ajută-ne să ținem harta corectă.'}
+            {waterName ? t('report.descriptionWater', { name: waterName }) : t('report.descriptionGeneric')}
           </DialogDescription>
         </DialogHeader>
 
         {phase === 'success' ? (
           <div className="flex flex-col gap-2 py-2 text-sm">
-            <p className="font-medium text-green-700">Mulțumim! Raportul a fost trimis.</p>
-            <p className="text-muted-foreground">Îl verificăm în cel mult 7 zile și actualizăm datele.</p>
+            <p className="font-medium text-green-700">{t('report.successTitle')}</p>
+            <p className="text-muted-foreground">{t('report.successBody')}</p>
             {issueUrl && (
               <a href={issueUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                Vezi raportul pe GitHub
+                {t('report.viewIssue')}
               </a>
             )}
-            <Button className="mt-2" onClick={() => { reset(); onOpenChange(false); }}>Închide</Button>
+            <Button className="mt-2" onClick={() => { reset(); onOpenChange(false); }}>{t('report.cancel')}</Button>
           </div>
         ) : (
           <form
@@ -105,7 +107,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
             onSubmit={(e) => { e.preventDefault(); void submit(); }}
           >
             <fieldset className="flex flex-col gap-2">
-              <legend className="text-sm font-medium">Motivul raportului</legend>
+              <legend className="text-sm font-medium">{t('report.reasonLegend')}</legend>
               {REASON_OPTIONS.map((opt) => (
                 <label
                   key={opt.value}
@@ -121,34 +123,34 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
                     onChange={() => setReason(opt.value)}
                     className="size-4"
                   />
-                  {opt.label}
+                  {t(opt.labelKey)}
                 </label>
               ))}
             </fieldset>
 
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="report-details">Detalii (opțional)</Label>
+              <Label htmlFor="report-details">{t('report.detailsLabel')}</Label>
               <Textarea
                 id="report-details"
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
-                placeholder="Descrie ce e greșit, ce ai observat la fața locului…"
+                placeholder={t('report.detailsPlaceholder')}
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="report-email">Email (opțional, pentru clarificări)</Label>
+              <Label htmlFor="report-email">{t('report.emailLabel')}</Label>
               <Input
                 id="report-email"
                 type="email"
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
-                placeholder="tu@exemplu.ro"
+                placeholder={t('report.emailPlaceholder')}
               />
               {/* REM-4: explicit consent notice — the address is published in a
                   PUBLIC GitHub issue when provided. */}
               <p className="text-xs text-muted-foreground">
-                Dacă îl completezi, adresa va fi vizibilă în raportul public de pe GitHub.
+                {t('report.consent')}
               </p>
             </div>
 
@@ -164,14 +166,14 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
             />
 
             {phase === 'error' && (
-              <p className="text-sm text-destructive">Nu am putut trimite raportul. Încearcă din nou.</p>
+              <p className="text-sm text-destructive">{t('report.error')}</p>
             )}
 
             <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>Anulează</Button>
+              <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>{t('report.cancel')}</Button>
               <Button type="submit" disabled={!reason || phase === 'submitting'}>
                 <Flag className="size-4" />
-                {phase === 'submitting' ? 'Se trimite…' : 'Trimite raportul'}
+                {phase === 'submitting' ? t('report.submitting') : t('report.submit')}
               </Button>
             </DialogFooter>
           </form>

@@ -1,4 +1,5 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import {
   AlertTriangle,
@@ -10,6 +11,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from 'lucide-react';
+import { useI18n, type I18nT } from '@/i18n/provider';
 import {
   SPECIES,
   SPECIES_DAILY_LIMIT,
@@ -23,18 +25,12 @@ import {
 } from '@/content/species';
 import { SpeciesSearch } from '@/components/species/SpeciesSearch';
 
-export const metadata: Metadata = {
-  title: 'Specii — dimensiuni minime de reținere — UndePescuim.ro',
-  description:
-    'Dimensiunile minime legale de reținere pentru peștii de apă dulce din România, cu surse și ultima verificare. Valori naționale — bălțile private pot impune limite mai mari.',
-};
-
-function RetentionBadge({ species }: { species: Species }) {
+function RetentionBadge({ species, t }: { species: Species; t: I18nT }) {
   if (species.retention === 'interzis') {
     return (
       <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-red-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-700 dark:bg-red-950/60 dark:text-red-300">
         <ShieldCheck className="h-3 w-3" />
-        Interzis
+        {t('specii.retentionInterzis')}
       </span>
     );
   }
@@ -42,21 +38,21 @@ function RetentionBadge({ species }: { species: Species }) {
     return (
       <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-700 dark:bg-amber-950/60 dark:text-amber-300">
         <AlertTriangle className="h-3 w-3" />
-        Neconfirmat
+        {t('specii.retentionNeconfirmat')}
       </span>
     );
   }
   if (species.retention === 'fara-limita') {
     return (
       <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-        Fără limită
+        {t('specii.retentionFaraLimita')}
       </span>
     );
   }
   return null;
 }
 
-function SpeciesCard({ species }: { species: Species }) {
+function SpeciesCard({ species, t }: { species: Species; t: I18nT }) {
   return (
     <div
       id={`specii-${species.slug}`}
@@ -69,17 +65,17 @@ function SpeciesCard({ species }: { species: Species }) {
             <p className="truncate text-xs italic text-muted-foreground">{species.nameScientific}</p>
           )}
         </div>
-        <RetentionBadge species={species} />
+        <RetentionBadge species={species} t={t} />
       </div>
 
       <div className="flex items-baseline gap-1.5">
         {species.retention !== 'min-size' ? (
           <span className="text-sm text-muted-foreground">
             {species.retention === 'interzis'
-              ? 'Reținerea este interzisă.'
+              ? t('specii.retentionInterzisSentence')
               : species.retention === 'fara-limita'
-                ? 'Fără dimensiune minimă stabilită.'
-                : 'Dimensiune neconfirmată — vezi sursa.'}
+                ? t('specii.retentionFaraLimitaSentence')
+                : t('specii.retentionNeconfirmatSentence')}
           </span>
         ) : species.minSizeCm !== null ? (
           <>
@@ -87,10 +83,10 @@ function SpeciesCard({ species }: { species: Species }) {
               {species.minSizeCm}
               <span className="ml-0.5 text-sm font-semibold text-muted-foreground">cm</span>
             </span>
-            <span className="text-xs text-muted-foreground">dimensiune minimă de reținere</span>
+            <span className="text-xs text-muted-foreground">{t('specii.minSizeSuffix')}</span>
           </>
         ) : (
-          <span className="text-sm text-muted-foreground">Dimensiune neconfirmată — vezi sursa.</span>
+          <span className="text-sm text-muted-foreground">{t('specii.retentionNeconfirmatSentence')}</span>
         )}
       </div>
 
@@ -105,14 +101,15 @@ function SpeciesCard({ species }: { species: Species }) {
       )}
 
       <p className="mt-auto border-t pt-1.5 text-[10px] leading-relaxed text-muted-foreground">
-        Sursă: {species.sourceRef}
-        {species.lastUpdated ? ` · verificat ${species.lastUpdated}` : ''}
+        {t('specii.sourceLabel', { ref: species.sourceRef })}
+        {species.lastUpdated ? t('specii.verifiedLabel', { date: species.lastUpdated }) : ''}
       </p>
     </div>
   );
 }
 
 export default function SpeciiPage() {
+  const { t } = useI18n();
   const sizeCount = SPECIES_WITH_SIZE.length;
   const withoutCount = SPECIES_WITHOUT_SIZE.length;
 
@@ -123,25 +120,22 @@ export default function SpeciiPage() {
         className="mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft className="h-4 w-4" />
-        Înapoi la hartă
+        {t('specii.backToMap')}
       </Link>
 
       <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-        Dimensiuni minime de reținere, pe specii
+        {t('specii.title')}
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Ultima verificare a faptelor: {SPECIES_LAST_UPDATED}.
-        {SPECIES_ISSUING_BODY ? ` Emitent: ${SPECIES_ISSUING_BODY}.` : ''} Informațiile se pot
-        schimba anual prin ordin de ministru — verifică sursele oficiale (linkuri la finalul
-        paginii) înainte de o decizie. Conținut sensibil la timp: se re-verifică trimestrial.
+        {t('specii.introLastChecked', { date: SPECIES_LAST_UPDATED })}
+        {SPECIES_ISSUING_BODY ? ` ${t('specii.introIssuer', { issuer: SPECIES_ISSUING_BODY })}` : ''}{' '}
+        {t('specii.introRest')}
       </p>
 
       <div className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100">
-        <p className="font-medium">Valori naționale</p>
+        <p className="font-medium">{t('specii.nationalTitle')}</p>
         <p className="mt-0.5 text-xs leading-relaxed opacity-90">
-          Dimensiunile de mai jos sunt minimele legale naționale. Bălțile private sau asociațiile pot
-          impune limite <strong>mai mari, niciodată mai mici</strong>. În Delta Dunării (ARBDD)
-          regimul poate diferi.
+          {t('specii.nationalBody')}
         </p>
       </div>
 
@@ -154,17 +148,17 @@ export default function SpeciiPage() {
       <section className="mt-6">
         <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight">
           <Ruler className="h-4 w-4 text-primary" />
-          Specii cu dimensiune minimă ({sizeCount})
+          {t('specii.withSizeHeading', { n: sizeCount })}
         </h2>
         {sizeCount > 0 ? (
           <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {SPECIES_WITH_SIZE.map((s) => (
-              <SpeciesCard key={s.slug} species={s} />
+              <SpeciesCard key={s.slug} species={s} t={t} />
             ))}
           </div>
         ) : (
           <p className="mt-2 text-sm text-muted-foreground">
-            Momentan nicio dimensiune confirmată — datele sunt în verificare.
+            {t('specii.noConfirmed')}
           </p>
         )}
       </section>
@@ -173,11 +167,11 @@ export default function SpeciiPage() {
         <section className="mt-6">
           <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            Protejate / interzise / neconfirmate ({withoutCount})
+            {t('specii.withoutSizeHeading', { n: withoutCount })}
           </h2>
           <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {SPECIES_WITHOUT_SIZE.map((s) => (
-              <SpeciesCard key={s.slug} species={s} />
+              <SpeciesCard key={s.slug} species={s} t={t} />
             ))}
           </div>
         </section>
@@ -187,16 +181,16 @@ export default function SpeciiPage() {
       <div className="mt-6 rounded-md border border-teal-200 bg-teal-50 px-3 py-2.5 text-sm text-teal-900 dark:border-teal-900 dark:bg-teal-950/40 dark:text-teal-100">
         <p className="flex items-center gap-1.5 font-medium">
           <Fish className="h-3.5 w-3.5 shrink-0" />
-          Limita generală de captură
+          {t('specii.dailyLimitHeading')}
         </p>
         <p className="mt-0.5 text-xs leading-relaxed opacity-90">{SPECIES_DAILY_LIMIT}</p>
       </div>
 
       <p className="mt-4 flex items-start gap-1.5 text-xs leading-relaxed text-muted-foreground">
         <Sparkles className="mt-0.5 h-3 w-3 shrink-0" />
-        Mai multe reguli (permis, unelte, capcane) sunt pe pagina{' '}
+        {t('specii.moreRules')}{' '}
         <Link href="/permis" className="text-primary underline-offset-2 hover:underline">
-          Permis &amp; Reguli 2026
+          {t('specii.moreRulesLink')}
         </Link>
         .
       </p>
@@ -205,17 +199,16 @@ export default function SpeciiPage() {
       <section className="mt-8">
         <h2 className="flex items-center gap-2 text-lg font-bold tracking-tight">
           <ExternalLink className="h-4 w-4 text-primary" />
-          Surse
+          {t('specii.sourcesHeading')}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          Valorile din tabel au fost verificate față de sursele oficiale (data verificării:{' '}
-          {SPECIES_LAST_UPDATED}). Re-verifică-le trimestrial — conținutul este sensibil la timp.
+          {t('specii.sourcesIntro', { date: SPECIES_LAST_UPDATED })}
         </p>
         {SPECIES_ROW_SOURCES.length > 0 && (
           <ul className="mt-2 flex flex-col gap-1.5">
             {SPECIES_ROW_SOURCES.map((src) => (
               <li key={src} className="text-xs text-muted-foreground">
-                <span className="font-medium text-foreground">Valorile din tabel:</span> {src}
+                <span className="font-medium text-foreground">{t('specii.tableValuesLabel')}</span> {src}
               </li>
             ))}
           </ul>
@@ -241,8 +234,7 @@ export default function SpeciiPage() {
       </section>
 
       <p className="mt-8 border-t pt-4 text-xs text-muted-foreground">
-        Ultima verificare a faptelor: {SPECIES_LAST_UPDATED}. Conținutul se re-verifică trimestrial
-        (Monitorul Oficial, ANADSPA).
+        {t('specii.footer', { date: SPECIES_LAST_UPDATED })}
       </p>
     </main>
   );

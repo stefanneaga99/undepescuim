@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Crosshair, ExternalLink, Loader2 } from 'lucide-react';
 import { useGeolocation } from '@/hooks/use-geolocation';
 import { useMapStore } from '@/stores/map-store';
+import { useI18n } from '@/i18n/provider';
 import { cn } from '@/lib/utils';
 
 /**
@@ -26,6 +27,7 @@ function isIOS() {
 export function LocateButton() {
   const { state, locate } = useGeolocation();
   const applyUserPosition = useMapStore((s) => s.applyUserPosition);
+  const { t } = useI18n();
   const [dismissed, setDismissed] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -70,26 +72,24 @@ export function LocateButton() {
         >
           {denied ? (
             <>
-              <p className="font-medium">Accesul la locație este blocat.</p>
+              <p className="font-medium">{t('locate.deniedTitle')}</p>
               <p className="mt-0.5 text-muted-foreground">
-                {isIOS()
-                  ? 'Activează Serviciile de localizare pentru browser din Setări.'
-                  : 'Activează-l din setările browserului.'}
+                {isIOS() ? t('locate.deniedIos') : t('locate.deniedDefault')}
               </p>
               {isIOS() && (
                 <a
                   href="App-Prefs:Privacy?path=LOCATION"
                   className="mt-1 inline-flex items-center gap-1 font-medium text-primary hover:underline"
                 >
-                  Deschide Setările iPhone
+                  {t('locate.openIosSettings')}
                   <ExternalLink className="h-3 w-3" />
                 </a>
               )}
             </>
           ) : (
             <>
-              <p className="font-medium">Nu am putut determina locația.</p>
-              <p className="mt-0.5 text-muted-foreground">Continuă să explorezi harta manual.</p>
+              <p className="font-medium">{t('locate.errorTitle')}</p>
+              <p className="mt-0.5 text-muted-foreground">{t('locate.errorBody')}</p>
             </>
           )}
         </div>
@@ -99,7 +99,7 @@ export function LocateButton() {
         type="button"
         onClick={onLocate}
         disabled={requesting}
-        aria-label="Localizează-mă"
+        aria-label={t('locate.ariaLabel')}
         data-testid="locate-button"
         className={cn(
           'map-touch inline-flex items-center gap-2 rounded-full border bg-background/95 py-2 pl-3 pr-3.5 text-sm font-medium shadow-md backdrop-blur transition-colors hover:bg-accent disabled:opacity-70',
@@ -111,7 +111,7 @@ export function LocateButton() {
         ) : (
           <Crosshair className={cn('h-4 w-4', granted ? 'text-primary' : 'text-muted-foreground')} />
         )}
-        <span>{granted ? 'Poziție setată' : 'Localizează-mă'}</span>
+        <span>{granted ? t('locate.positionSet') : t('locate.locate')}</span>
       </button>
     </div>
   );

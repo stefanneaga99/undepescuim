@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
+import { I18nProvider } from "@/i18n/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,7 +61,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          {/* t_920a7b7b: i18n context — per-locale strings + the header
+              switcher. RO is the SSR default; persisted/browser locale is
+              applied client-side (no hydration mismatch). */}
+          <I18nProvider>{children}</I18nProvider>
         </ThemeProvider>
         {/* F6 PWA light: register the Serwist SW (prod builds only — dev has
             no cache tier and a stray SW would confuse HMR). */}

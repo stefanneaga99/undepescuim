@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import { CalendarClock, WifiOff } from "lucide-react";
 import { useMapStore } from "@/stores/map-store";
+import { useI18n } from "@/i18n/provider";
 
 /**
  * F6 PWA light (docs/offline-pwa-feasibility.md §4 + §6):
@@ -13,19 +14,8 @@ import { useMapStore } from "@/stores/map-store";
  *
  * Connectivity is a browser-global, so it's read with useSyncExternalStore
  * (server snapshot = online; no effect/setState cascade).
+ * Labels + date formatting are locale-aware (t_920a7b7b).
  */
-function formatDate(iso: string): string {
-  try {
-    return new Intl.DateTimeFormat("ro-RO", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    }).format(new Date(iso));
-  } catch {
-    return iso.slice(0, 10);
-  }
-}
-
 function subscribeOnline(callback: () => void): () => void {
   window.addEventListener("online", callback);
   window.addEventListener("offline", callback);
@@ -40,6 +30,7 @@ const getOnlineServerSnapshot = () => true;
 
 export function PwaStatusBar() {
   const dataUpdatedAt = useMapStore((s) => s.dataUpdatedAt);
+  const { locale, t } = useI18n();
   // Server render = online (no banner in SSR HTML); client subscribes to
   // online/offline so the banner appears the moment connectivity drops.
   const online = useSyncExternalStore(
@@ -48,7 +39,13 @@ export function PwaStatusBar() {
     getOnlineServerSnapshot,
   );
 
-  const dateLabel = dataUpdatedAt ? formatDate(dataUpdatedAt) : null;
+  const dateLabel = dataUpdatedAt
+    ? new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "ro-RO", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }).format(new Date(dataUpdatedAt))
+    : null;
 
   return (
     <>
@@ -56,10 +53,10 @@ export function PwaStatusBar() {
         <span
           data-testid="last-updated"
           className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
-          title="Ultima actualizare a datelor de pescuit"
+          title={t("pwa.lastUpdatedTitle")}
         >
           <CalendarClock className="h-3 w-3" />
-          <span className="hidden sm:inline">Date actualizate: </span>
+          <span className="hidden sm:inline">{t("pwa.lastUpdatedLabel")}</span>
           {dateLabel}
         </span>
       )}
@@ -71,8 +68,8 @@ export function PwaStatusBar() {
         >
           <WifiOff className="h-4 w-4 shrink-0" />
           <span>
-            Fără conexiune
-            {dateLabel ? ` — date din ${dateLabel}` : ""}
+            {t("pwa.offline")}
+            {dateLabel ? t("pwa.offlineFrom", { date: dateLabel }) : ""}
           </span>
         </div>
       )}
