@@ -51,4 +51,49 @@ describe('useLocalities', () => {
     const { result } = renderHook(() => useLocalities());
     expect(result.current).toEqual(['Oradea']);
   });
+
+  it('collapses visually-identical locality variants into one option (t_f6445fda)', () => {
+    // The reported bug: 'Brașov' appeared TWICE in the LOCALITATE dropdown.
+    // Distinct raw values that render the same (trailing space, case,
+    // missing diacritics) must collapse to a single option — the exact-string
+    // Set dedup kept them separate.
+    useMapStore.setState({
+      countyFilter: ['Brașov'],
+      waters: [
+        water({ slug: 'a', judet: 'Brașov', locality: 'Brașov' }),
+        water({ slug: 'b', judet: 'Brașov', locality: 'Brașov ' }), // trailing space
+        water({ slug: 'c', judet: 'Brașov', locality: 'BRASOV' }), // uppercase
+        water({ slug: 'd', judet: 'Brașov', locality: 'Brasov' }), // missing diacritic
+      ],
+      uncontracted: [
+        water({ slug: 'u1', judet: 'Brașov', locality: 'Brașov', uncontracted: true }),
+      ],
+    });
+    const { result } = renderHook(() => useLocalities());
+    expect(result.current).toEqual(['Brașov']);
+  });
+
+  it('skips whitespace-only locality values (t_f6445fda)', () => {
+    useMapStore.setState({
+      countyFilter: ['Cluj'],
+      waters: [water({ slug: 'a', judet: 'Cluj', locality: '   ' })],
+      uncontracted: [],
+    });
+    const { result } = renderHook(() => useLocalities());
+    expect(result.current).toEqual([]);
+  });
+
+  it('keeps genuinely distinct same-prefix localities (t_f6445fda)', () => {
+    // Normalization must NOT over-merge: different real UATs stay separate.
+    useMapStore.setState({
+      countyFilter: ['Cluj'],
+      waters: [
+        water({ slug: 'a', judet: 'Cluj', locality: 'Jucu' }),
+        water({ slug: 'b', judet: 'Cluj', locality: 'Jucu de Mijloc' }),
+      ],
+      uncontracted: [],
+    });
+    const { result } = renderHook(() => useLocalities());
+    expect(result.current).toEqual(['Jucu', 'Jucu de Mijloc']);
+  });
 });
