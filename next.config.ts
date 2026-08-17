@@ -1,4 +1,15 @@
 import type { NextConfig } from "next";
+// F6 (t_0618943a): PWA light — service worker via Serwist (offline-pwa-feasibility.md §3).
+// swSrc is compiled to public/sw.js at build time (gitignored — generated artifact).
+// NOTE: Serwist's webpack plugin only runs under a webpack build, so the `build`
+// script uses `next build --webpack` (package.json) — Turbopack skips the hook.
+import withSerwistInit from "@serwist/next";
+const withSerwist = withSerwistInit({
+  swSrc: "src/app/sw.ts",
+  swDest: "public/sw.js",
+  // serverless build: the precache manifest comes from the Next build
+  // manifest. No globDirectory/globPatterns (that was the static-export path).
+});
 
 // REM-7: hardening headers (docs/security-test-plan.md). Applied to every
 // Next-served route (pages + /api/*). The CSP starts permissive on purpose:
@@ -51,7 +62,21 @@ const nextConfig: NextConfig = {
   // ever dropped, swap ReportForm's submit handler to the Google-Form fallback
   // (t_c21762e3) instead of exporting statically.
   async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }];
+    const swHeaders = [
+      // F6 (t_0618943a): sw.js must NEVER be cached client-side — a stale
+      // service worker is the "stale-cache trap" (offline-pwa-feasibility.md
+      // §2 risk 2). Registration uses updateViaCache:"none"; this header is
+      // the server-side guarantee (self-hosted next start; vercel.json has
+      // the matching rule for the Vercel edge).
+      { key: "Cache-Control", value: "no-cache" },
+      // Allow the SW to control the whole origin (default scope would be
+      // /sw.js's dir "/" anyway — explicit is safer).
+      { key: "Service-Worker-Allowed", value: "/" },
+    ];
+    return [
+      { source: "/sw.js", headers: swHeaders },
+      { source: "/(.*)", headers: securityHeaders },
+    ];
   },
   /* config options here */
 };
@@ -63,4 +88,6 @@ const nextConfig: NextConfig = {
 import withBundleAnalyzer from "@next/bundle-analyzer";
 const analyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
-export default analyzer(nextConfig);
+// F6 (t_0618943a): Serwist wraps the (optionally analyzer-wrapped) config so
+// the build emits public/sw.js + precache manifest from the Next build output.
+export default withSerwist(analyzer(nextConfig));

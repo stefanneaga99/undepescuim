@@ -60,7 +60,21 @@ export function MapView() {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        // F6 (t_0618943a): single host, no {s}. subdomain — OSM Tile Usage
+        // Policy §1 (offline-pwa-feasibility.md §2.6); the SW's osm-tiles
+        // cache matcher keys on tile.openstreetmap.org (src/app/sw.ts).
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        // Offline pan: failed tile loads fire 'tileerror' — dim the tile to a
+        // neutral grey instead of leaving the broken-image icon + console
+        // error flood (offline-pwa-feasibility.md §4 / risk table).
+        eventHandlers={{
+          tileerror: (e) => {
+            const tile = e.tile as HTMLElement;
+            tile.style.opacity = "0.3";
+            tile.style.filter = "grayscale(1)";
+            tile.setAttribute("data-tileerror", "1");
+          },
+        }}
       />
       <ZoomControl position="topright" />
       {/* Uncontracted overlay renders BELOW contracted waters so clicks on a

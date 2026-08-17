@@ -62,6 +62,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           {children}
         </ThemeProvider>
+        {/* F6 PWA light: register the Serwist SW (prod builds only — dev has
+            no cache tier and a stray SW would confuse HMR). */}
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

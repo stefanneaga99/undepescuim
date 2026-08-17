@@ -39,6 +39,8 @@ export const Selectors = {
   speciesSearchMobile: 'species-search-mobile',
   speciesOption: 'species-option',
   themeToggle: 'theme-toggle',
+  lastUpdated: 'last-updated',
+  offlineBanner: 'offline-banner',
 } as const;
 
 export type TestId = (typeof Selectors)[keyof typeof Selectors];
