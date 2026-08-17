@@ -55,11 +55,12 @@ export function PwaStatusBar() {
       {dateLabel && (
         <span
           data-testid="last-updated"
-          className="hidden shrink-0 items-center gap-1 rounded-md border px-2 py-0.5 text-[11px] font-medium text-muted-foreground sm:inline-flex"
+          className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
           title="Ultima actualizare a datelor de pescuit"
         >
           <CalendarClock className="h-3 w-3" />
-          Date actualizate: {dateLabel}
+          <span className="hidden sm:inline">Date actualizate: </span>
+          {dateLabel}
         </span>
       )}
       {!online && (

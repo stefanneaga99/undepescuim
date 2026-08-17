@@ -141,13 +141,19 @@ test.describe('PWA light', () => {
     await expect(capabilityMeta).toHaveAttribute('content', 'yes');
   });
 
-  test('last updated freshness is visible in the header', async ({ page }) => {
+  test('last updated freshness is visible in the header', async ({ page }, testInfo) => {
     await page.goto('/');
     await waitForMapReady(page);
     const chip = page.getByTestId(Selectors.lastUpdated);
     await expect(chip).toBeVisible();
     // Intl 'ro-RO' emits e.g. "17 aug. 2026" (abbreviated month + period).
-    await expect(chip).toContainText(/Date actualizate: \d{1,2} \w+\.? \d{4}/);
+    // The visible date is the mandate — on <sm the full "Date actualizate:"
+    // prefix is hidden to fit the compact header, so assert the date for all
+    // viewports and the full label only where it renders (sm+).
+    await expect(chip).toContainText(/\d{1,2} \w+\.? \d{4}/);
+    if (testInfo.project.name !== 'mobile') {
+      await expect(chip).toContainText(/Date actualizate:/);
+    }
   });
 
   test('offline reload serves shell + data from the SW cache', async ({ page }) => {
