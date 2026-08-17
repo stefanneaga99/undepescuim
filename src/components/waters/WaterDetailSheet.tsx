@@ -2,14 +2,15 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Drawer } from 'vaul';
-import { X } from 'lucide-react';
+import { CheckCircle2, Flag, X } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { useI18n } from '@/i18n/provider';
 import { WaterDetailCard } from '@/components/waters/WaterDetailCard';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
+import { ReportForm } from '@/components/verification/ReportForm';
 import { cn } from '@/lib/utils';
-import type { Association } from '@/types/data';
+import type { Association, ReportReason } from '@/types/data';
 
 /**
  * Water detail UI (component_structure_plan.md §3.11 + mobile-layout-spec §3,
@@ -28,12 +29,20 @@ export function WaterDetailSheet() {
   const waters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
   const associations = useMapStore((s) => s.associations);
-  const selectWater = useMapStore((s) => s.selectWater);
   const closeWaterSheet = useMapStore((s) => s.closeWaterSheet);
   const { t } = useI18n();
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
   const [snap, setSnap] = useState<number | string | null>(0.35);
+
+  // F3 (t_5b1250b3): report dialog lives HERE (shared by the inline card
+  // buttons and the mobile fixed bottom action bar) so the report action is
+  // always reachable regardless of sheet snap/scoll (t_d9e8196e).
+  const [report, setReport] = useState<{ open: boolean; reason: ReportReason | null }>({
+    open: false,
+    reason: null,
+  });
+  const openReport = (reason: ReportReason | null) => setReport({ open: true, reason });
 
   // Contracted waters first, then uncontracted OSM rivers (t_471dad64).
   const water =
@@ -155,15 +164,49 @@ export function WaterDetailSheet() {
               {water && (
                 <div
                   key={water.slug}
-                  className="h-[calc(65dvh-44px)] shrink-0 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+16px)] animate-in fade-in-0 duration-200"
+                  className="h-[calc(65dvh-44px)] shrink-0 overflow-y-auto px-4 pb-[calc(env(safe-area-inset-bottom)+72px)] animate-in fade-in-0 duration-200"
                 >
                   <WaterDetailCard
                     water={water}
                     association={association}
+                    onReport={openReport}
                   />
                 </div>
               )}
             </Drawer.Content>
+
+            {/* t_d9e8196e: fixed bottom action bar — a SIBLING of
+                Drawer.Content, because vaul TRANSLATES Drawer.Content down at
+                low snaps (a transformed ancestor would capture `fixed`/`absolute`
+                descendants and push them off-screen). Rendered inside the portal
+                (→ body, untransformed) so `fixed bottom-0` anchors to the real
+                viewport: the report entry is always in view, for any snap/scroll.
+                Hidden while the report dialog is open (z-[1250] would otherwise
+                float above the z-50 dialog overlay). */}
+            {water && !report.open && (
+              <div className="pointer-events-auto fixed inset-x-0 bottom-0 z-[1250] border-t bg-background px-4 pt-2 pb-[max(env(safe-area-inset-bottom),0.625rem)] shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => openReport('data_correct')}
+                    data-testid="report-positive-fixed"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-green-600/40 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-800 transition-colors hover:bg-green-100 dark:border-green-500/40 dark:bg-green-950/40 dark:text-green-300 dark:hover:bg-green-950/70"
+                  >
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    {t('card.dataCorrect')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openReport(null)}
+                    data-testid="report-flag-fixed"
+                    className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  >
+                    <Flag className="h-3.5 w-3.5" />
+                    {t('card.reportProblem')}
+                  </button>
+                </div>
+              </div>
+            )}
           </Drawer.Portal>
         </Drawer.Root>
       )}
@@ -186,10 +229,21 @@ export function WaterDetailSheet() {
             <WaterDetailCard
               water={water}
               association={association}
+              onReport={openReport}
             />
           </div>
         </aside>
       )}
+
+      {/* F3: the report dialog — owned here so both the inline card buttons
+          and the mobile fixed bottom action bar share one dialog (t_d9e8196e). */}
+      <ReportForm
+        open={report.open}
+        onOpenChange={(o) => setReport((r) => ({ ...r, open: o }))}
+        waterSlug={water?.slug}
+        waterName={water?.name}
+        initialReason={report.reason}
+      />
     </>
   );
 }

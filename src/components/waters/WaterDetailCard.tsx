@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { CheckCircle2, ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Ticket } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
 import { NATIONAL_PERMIT_URL } from '@/lib/permit';
-import { ReportForm } from '@/components/verification/ReportForm';
 import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
   water: Water;
   association: Association | null;
+  /** Opens the report dialog with an optional pre-selected reason (F3). */
+  onReport?: (reason: ReportReason | null) => void;
 }
 
 /**
@@ -25,7 +25,7 @@ interface WaterDetailCardProps {
  * Missing fields simply don't render (no "—"/"N/A" placeholders).
  * "Raportează o problemă" is a placeholder.
  */
-export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
+export function WaterDetailCard({ water, association, onReport }: WaterDetailCardProps) {
   const { t } = useI18n();
   const isLake = water.subtype === 'lac';
   const isUncontracted = water.uncontracted === true;
@@ -36,15 +36,6 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
   const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
   const permitIssuer: PermitIssuer | undefined =
     association?.permitIssuer ?? water.asociatie?.permitIssuer;
-  // F3 (t_5b1250b3): report dialog state. `reportReason` pre-selects the reason
-  // for the lowest-friction positive-signal tap ("Datele sunt corecte").
-  const [reportOpen, setReportOpen] = useState(false);
-  const [reportReason, setReportReason] = useState<ReportReason | null>(null);
-
-  const openReport = (reason: ReportReason | null) => {
-    setReportReason(reason);
-    setReportOpen(true);
-  };
 
   return (
     <div data-testid="water-card" className="flex flex-col gap-3">
@@ -215,7 +206,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
       <div className="mt-1 flex flex-wrap items-center gap-2">
         <button
           type="button"
-          onClick={() => openReport('data_correct')}
+          onClick={() => onReport?.('data_correct')}
           data-testid="report-positive"
           className="inline-flex items-center gap-1.5 rounded-md border border-green-600/40 bg-green-50 px-3 py-1.5 text-xs font-medium text-green-800 transition-colors hover:bg-green-100 dark:border-green-500/40 dark:bg-green-950/40 dark:text-green-300 dark:hover:bg-green-950/70"
         >
@@ -224,7 +215,7 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
         </button>
         <button
           type="button"
-          onClick={() => openReport(null)}
+          onClick={() => onReport?.(null)}
           data-testid="report-flag"
           className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
@@ -248,14 +239,6 @@ export function WaterDetailCard({ water, association }: WaterDetailCardProps) {
           {t('card.retentionLink')}
         </Link>
       </div>
-
-      <ReportForm
-        open={reportOpen}
-        onOpenChange={setReportOpen}
-        waterSlug={water.slug}
-        waterName={water.name}
-        initialReason={reportReason}
-      />
     </div>
   );
 }
