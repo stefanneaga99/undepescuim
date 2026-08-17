@@ -265,13 +265,14 @@ describe('loadData', () => {
     } as Response;
   }
 
-  it('loads associations, waters, uncontracted rivers + lakes, and counties', async () => {
+  it('loads associations, waters, uncontracted rivers + lakes, counties, and freshness meta', async () => {
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(jsonResponse([{ slug: 'ajvps-cluj', name: 'AJVPS Cluj' }]))
       .mockResolvedValueOnce(jsonResponse(waters))
       .mockResolvedValueOnce(jsonResponse(uncontracted))
       .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-lake', uncontracted: true, asociatie: null })]))
-      .mockResolvedValueOnce(jsonResponse({ type: 'FeatureCollection', features: [] }));
+      .mockResolvedValueOnce(jsonResponse({ type: 'FeatureCollection', features: [] }))
+      .mockResolvedValueOnce(jsonResponse({ dataUpdatedAt: '2026-08-16T00:00:00Z' }));
     vi.stubGlobal('fetch', fetchMock);
 
     await useMapStore.getState().loadData();
@@ -281,7 +282,8 @@ describe('loadData', () => {
     expect(s.waters).toHaveLength(4);
     expect(s.uncontracted).toHaveLength(2); // rivers + lakes merged
     expect(s.counties).toEqual([]);
-    expect(fetchMock).toHaveBeenCalledTimes(5);
+    expect(s.dataUpdatedAt).toBe('2026-08-16T00:00:00Z');
+    expect(fetchMock).toHaveBeenCalledTimes(6);
     vi.unstubAllGlobals();
   });
 
