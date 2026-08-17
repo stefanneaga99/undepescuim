@@ -5,7 +5,7 @@ import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { waterToGeoJSON } from '@/utils/geo';
-import { getUncontractedLakeStyle, getUncontractedStyle } from '@/utils/colors';
+import { getUncontractedLakeStyle, getUncontractedStyle, NEUTRAL_COLOR } from '@/utils/colors';
 import type { Water, WaterFeature } from '@/types/data';
 
 interface UncontractedWaterLayerProps {
@@ -112,6 +112,22 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
 
   const riverStyle = useMemo(() => getUncontractedStyle(), []);
   const lakeStyle = useMemo(() => getUncontractedLakeStyle(), []);
+  // t_b0ac1e29: when a LOCALITY filter is active the user is drilled into one
+  // place and expects that place's waters to "pop" blue like the county's
+  // contracted waters do (county `emphasizeNeutral`). Brașov city's waters are
+  // almost all UNCONTRACTED, so under a locality filter we render them in the
+  // same emphasized blue as the contracted emphasis (NEUTRAL_COLOR weight 4),
+  // instead of the muted teal they show at national/county overview. The teal
+  // meaning ("no permit at this zoom/overview") is preserved whenever no
+  // locality is active.
+  const localityEmphasisRiver = useMemo<L.PathOptions>(
+    () => ({ color: NEUTRAL_COLOR, weight: 4, opacity: 1, dashArray: [] }),
+    [],
+  );
+  const localityEmphasisLake = useMemo<L.PathOptions>(
+    () => ({ color: NEUTRAL_COLOR, weight: 1, opacity: 1, fillColor: NEUTRAL_COLOR, fillOpacity: 0.35 }),
+    [],
+  );
 
   // Focus-aware style (t_b1547e24): the clicked water's own feature turns
   // orange — solid stroke for rivers (dash cleared), filled orange for ponds.
@@ -124,19 +140,26 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
       if (!f) return riverStyle;
       const focused =
         !!focusColor && !!selectedWaterSlug && f.properties?.slug === selectedWaterSlug;
-      if (!focused) return isPolygonFeature(f) ? lakeStyle : riverStyle;
-      if (isPolygonFeature(f)) {
-        return {
-          color: focusColor,
-          weight: 2,
-          opacity: 1,
-          fillColor: focusColor,
-          fillOpacity: 0.3,
-        };
+      if (focused) {
+        if (isPolygonFeature(f)) {
+          return {
+            color: focusColor,
+            weight: 2,
+            opacity: 1,
+            fillColor: focusColor,
+            fillOpacity: 0.3,
+          };
+        }
+        return { color: focusColor, weight: 4, opacity: 1, dashArray: [] };
       }
-      return { color: focusColor, weight: 4, opacity: 1, dashArray: [] };
+      // Locality drill-down emphasis (t_b0ac1e29): show THIS locality's
+      // uncontracted waters in blue, matching the contracted blue emphasis.
+      if (localityActive) {
+        return isPolygonFeature(f) ? localityEmphasisLake : localityEmphasisRiver;
+      }
+      return isPolygonFeature(f) ? lakeStyle : riverStyle;
     },
-    [focusColor, selectedWaterSlug, lakeStyle, riverStyle],
+    [focusColor, selectedWaterSlug, lakeStyle, riverStyle, localityActive, localityEmphasisLake, localityEmphasisRiver],
   );
 
   return (
