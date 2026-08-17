@@ -146,6 +146,22 @@ def cmd_manifest() -> None:
           f"{len(data['outputs'])} outputs, git {data['git_rev'][:8]})")
 
 
+def is_git_tracked(rel: str) -> bool:
+    """True if the file is committed to git (i.e. present in any checkout).
+
+    Untracked heavy OSM artifacts (data/cache/osm_river_clusters.pkl,
+    data/raw/overpass_water_polys.json) are gitignored and therefore absent
+    from the CI checkout — their absence is NOT a drift signal, but a change
+    to a tracked input is.
+    """
+    try:
+        r = subprocess.run(["git", "ls-files", "--error-unmatch", "--", rel],
+                           capture_output=True, cwd=ROOT)
+        return r.returncode == 0
+    except Exception:
+        return False
+
+
 def cmd_check() -> None:
     if not MANIFEST.exists():
         print("[check] no manifest — run --manifest first")
@@ -153,14 +169,28 @@ def cmd_check() -> None:
     pinned = json.loads(MANIFEST.read_text(encoding="utf-8"))
     current = collect()
     drift = []
+    skipped = []
     for rel, h in pinned["inputs"].items():
         cur = current["inputs"].get(rel)
-        if cur != h:
-            drift.append(("input", rel, h[:8], (cur or "MISSING")[:8]))
+        if cur is None:
+            # absent now: a gitignored artifact that CI can't have is a
+            # note, not a failure; a tracked file going missing is a real
+            # problem.
+            if not is_git_tracked(rel):
+                skipped.append(rel)
+                continue
+            drift.append(("input", rel, h[:8], "MISSING"))
+        elif cur != h:
+            drift.append(("input", rel, h[:8], cur[:8]))
+    for rel, h in current["inputs"].items():
+        if rel not in pinned["inputs"]:
+            drift.append(("input", rel, "(new)", h[:8]))
     for rel, h in pinned["outputs"].items():
         cur = current["outputs"].get(rel)
         if cur != h:
             drift.append(("output", rel, h[:8], (cur or "MISSING")[:8]))
+    for rel in sorted(skipped):
+        print(f"  note  {rel}: untracked artifact absent from this checkout — skipped")
     if drift:
         print(f"[check] DRIFT: {len(drift)} files changed since the pinned manifest")
         for kind, rel, old, new in drift:
