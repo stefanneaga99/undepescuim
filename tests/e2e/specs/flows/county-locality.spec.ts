@@ -83,7 +83,9 @@ test.describe('F3 — locality filter', () => {
     await map.filterBar.resetLocalities();
     await expect
       .poll(async () => map.pathCount())
-      .toBe(before);
+      .toBe(before + 1); // t_21d2f68d: the clicked water stays SELECTED after
+    // the card's Escape close (orange focus persists), so its focus-slice
+    // feature adds exactly one extra rendered path vs the untouched view.
 
     // re-pick, then toggling ANOTHER county invalidates the locality (store R)
     await map.filterBar.selectLocality('Comuna Test');

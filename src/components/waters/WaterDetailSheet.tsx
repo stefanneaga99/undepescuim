@@ -24,10 +24,12 @@ import type { Association } from '@/types/data';
  */
 export function WaterDetailSheet() {
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  const waterSheetOpen = useMapStore((s) => s.waterSheetOpen);
   const waters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
   const associations = useMapStore((s) => s.associations);
   const selectWater = useMapStore((s) => s.selectWater);
+  const closeWaterSheet = useMapStore((s) => s.closeWaterSheet);
   const { t } = useI18n();
 
   const isCompact = useMediaQuery('(max-width: 1023px)');
@@ -63,15 +65,18 @@ export function WaterDetailSheet() {
     };
   }, [water, associations]);
 
-  // ESC dismiss (works in any sheet state, mobile + desktop).
+  // ESC dismiss (works in any sheet state, mobile + desktop). t_21d2f68d:
+  // closing the sheet must NOT clear the selection — the orange click focus
+  // stays on the map (the reported bug: closing the card before using the
+  // filters wiped every highlight).
   useEffect(() => {
     if (!water) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') selectWater(null);
+      if (e.key === 'Escape') closeWaterSheet();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [water, selectWater]);
+  }, [water, closeWaterSheet]);
 
   // Expose the current snap height to ColorLegend (mobile-layout-spec §8.3).
   const handleSnap = (s: number | string | null) => {
@@ -88,11 +93,14 @@ export function WaterDetailSheet() {
     prevWaterSlug.current = slug;
   }, [water?.slug]);
 
-  // Sync the CSS var on open / snap change / close.
+  // Sync the CSS var on open / snap change / close. t_21d2f68d: the sheet can
+  // now close while `water` stays selected (orange focus persists), so the var
+  // resets on `waterSheetOpen` — not on the selection — or the legend/locate
+  // button would keep floating at the sheet's last height.
   useEffect(() => {
-    const vh = water ? (typeof snap === 'number' ? Math.round(snap * 100) : 35) : 0;
+    const vh = water && waterSheetOpen ? (typeof snap === 'number' ? Math.round(snap * 100) : 35) : 0;
     document.documentElement.style.setProperty('--sheet-snap-h', `${vh}vh`);
-  }, [water, snap]);
+  }, [water, waterSheetOpen, snap]);
 
   const backdropOpacity = snap === 0.1 ? 0 : snap === 0.35 ? 0.2 : 0.5;
   const backdropIntercepts = snap === 0.65;
@@ -102,9 +110,9 @@ export function WaterDetailSheet() {
       {/* ── Bottom sheet (mobile + tablet, <1024px) ───────────────────── */}
       {isCompact && (
         <Drawer.Root
-          open={!!water}
+          open={waterSheetOpen && !!water}
           onOpenChange={(open) => {
-            if (!open) selectWater(null);
+            if (!open) closeWaterSheet();
           }}
           snapPoints={[0.1, 0.35, 0.65]}
           activeSnapPoint={snap}
@@ -135,7 +143,7 @@ export function WaterDetailSheet() {
                 <div className="absolute right-3 top-12">
                   <button
                     type="button"
-                    onClick={() => selectWater(null)}
+                    onClick={closeWaterSheet}
                     className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
                     aria-label={t('detailSheet.close')}
                   >
@@ -161,13 +169,13 @@ export function WaterDetailSheet() {
       )}
 
       {/* ── Desktop (≥1024px): right side panel ──────────────────────── */}
-      {!isCompact && water && (
+      {!isCompact && water && waterSheetOpen && (
         <aside className="flex h-full w-[380px] shrink-0 flex-col border-l bg-background">
           <div className="flex h-12 shrink-0 items-center justify-between border-b px-4">
             <h2 className="text-sm font-semibold">{t('detailSheet.detailsWater')}</h2>
             <button
               type="button"
-              onClick={() => selectWater(null)}
+              onClick={closeWaterSheet}
               className="map-touch flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-accent"
               aria-label={t('detailSheet.close')}
             >

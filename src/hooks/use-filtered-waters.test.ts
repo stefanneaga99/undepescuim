@@ -110,6 +110,51 @@ describe('useFilteredWaters', () => {
     expect(result.current.map((w) => w.slug)).toEqual(['cluj-lake']);
   });
 
+  it('PINs the selected water through a locality filter that hides it (t_21d2f68d)', () => {
+    // The user clicks cluj-river (Cluj-Napoca), then picks locality Gilău —
+    // the river is not in Gilău, yet its feature must stay in the rendered
+    // set so the orange click focus remains visible.
+    useMapStore.setState({
+      countyFilter: ['Cluj'],
+      localityFilter: ['Gilău'],
+      selectedWaterSlug: 'cluj-river',
+    });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current.map((w) => w.slug).sort()).toEqual(['cluj-lake', 'cluj-river']);
+  });
+
+  it('does NOT pin a selection hidden by a county the filter does not include (t_21d2f68d)', () => {
+    // County filter is Bihor-only; the selected water is in Cluj — the pin
+    // must respect the county filter (selection persists in state, stays hidden).
+    useMapStore.setState({
+      countyFilter: ['Bihor'],
+      selectedWaterSlug: 'cluj-river',
+    });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current.map((w) => w.slug)).toEqual(['bihor-river']);
+  });
+
+  it('does NOT pin a selection hidden by the water-type filter (t_21d2f68d)', () => {
+    useMapStore.setState({
+      waterTypeFilter: 'lac',
+      selectedWaterSlug: 'cluj-river', // river; type filter says lakes
+    });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current.map((w) => w.slug)).toEqual(['cluj-lake']);
+  });
+
+  it('does NOT pin an uncontracted selection into the contracted pool (t_21d2f68d)', () => {
+    // The pools are disjoint — an uncontracted selection must not appear here.
+    useMapStore.setState({
+      uncontracted: [water({ slug: 'unc-selected', judet: 'Cluj', uncontracted: true, locality: 'Cluj-Napoca', asociatie: null })],
+      countyFilter: ['Cluj'],
+      localityFilter: ['Gilău'],
+      selectedWaterSlug: 'unc-selected',
+    });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current.some((w) => w.slug === 'unc-selected')).toBe(false);
+  });
+
   it('filters by water type', () => {
     useMapStore.setState({ waterTypeFilter: 'lac' });
     const { result } = renderHook(() => useFilteredWaters());

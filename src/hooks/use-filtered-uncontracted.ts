@@ -20,6 +20,7 @@ export function useFilteredUncontracted(): Water[] {
   const localityFilter = useMapStore((s) => s.localityFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
   const contractFilter = useMapStore((s) => s.contractFilter);
+  const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
 
   return useMemo(() => {
     if (contractFilter === 'contractate') return [];
@@ -41,6 +42,18 @@ export function useFilteredUncontracted(): Water[] {
     if (waterTypeFilter !== 'all') {
       result = result.filter((w) => w.subtype === waterTypeFilter);
     }
+    // t_21d2f68d: PIN the selected UNCONTRACTED water through the locality
+    // filter (mirror of use-filtered-waters) — the teal river / private pond
+    // the user clicked stays visible with its orange focus even when the
+    // picked UAT does not contain it. The LOD bypass for an active locality
+    // (UncontractedWaterLayer) renders small pinned features too.
+    if (selectedWaterSlug && result.every((w) => w.slug !== selectedWaterSlug)) {
+      const sel = uncontracted.find((w) => w.slug === selectedWaterSlug);
+      const countyOk = countyFilter.length === 0 || countyFilter.includes(sel?.judet ?? '');
+      if (sel && countyOk && (waterTypeFilter === 'all' || sel.subtype === waterTypeFilter)) {
+        result = [...result, sel];
+      }
+    }
     return result;
-  }, [uncontracted, countyFilter, localityFilter, waterTypeFilter, contractFilter]);
+  }, [uncontracted, countyFilter, localityFilter, waterTypeFilter, contractFilter, selectedWaterSlug]);
 }

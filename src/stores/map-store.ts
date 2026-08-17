@@ -14,7 +14,13 @@ export const NEARBY_LIMIT = 10;
  *
  * Rules:
  * - Selection and filters are INDEPENDENT (R10) — no action clears another's state.
- * - R9: if a filter change removes the selected water, the sheet auto-dismisses.
+ * - t_21d2f68d: filter changes NEVER clear the selected water (R9 removed).
+ *   A locality/county/type/contract filter narrows the VISIBLE waters but the
+ *   selection (orange focus + detail card) persists — the reported bug was a
+ *   locality pick silently dismissing the clicked water the moment it fell
+ *   outside the picked UAT ("all highlights disappear"). The selected water is
+ *   pinned into the rendered set instead (use-filtered-waters) so the focus
+ *   stays visible; clearing the filters restores the full view.
  *
  * t_471dad64: `waters` are the CONTRACTED waters (association cards);
  * `uncontracted` are the OSM rivers with NO contract (teal overlay,
@@ -40,6 +46,16 @@ interface MapStore {
   // Selection layer (mutually independent)
   selectedAssociationSlug: string | null; // null = no association selected
   selectedWaterSlug: string | null; // null = detail sheet closed
+  /**
+   * t_21d2f68d: the water detail sheet open flag, DECOUPLED from the
+   * selection. Closing the sheet (Escape / × / drag) keeps `selectedWaterSlug`
+   * set so the orange click focus stays on the map — the reported bug was the
+   * card close (the only way to reach the filters on mobile) silently wiping
+   * every highlight, which users perceived as "picking a locality clears all
+   * highlights". True deselection is `selectWater(null)` (clicking another
+   * water re-selects; there is no map-empty-click deselect today).
+   */
+  waterSheetOpen: boolean;
 
   // Filter layer
   countyFilter: string[]; // empty [] = all counties
@@ -70,6 +86,8 @@ interface MapStore {
   loadData: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
   selectWater: (slug: string | null) => void;
+  /** Close the water detail sheet WITHOUT clearing the selection (orange focus stays). */
+  closeWaterSheet: () => void;
   consumeAssociationFlyToSuppression: () => void;
   openAssociationSheet: () => void;
   closeAssociationSheet: () => void;
@@ -102,24 +120,6 @@ function markPerfDataLoaded() {
   }
 }
 
-/** R9: would `slug` survive the given filters? (checked across both pools) */
-function isFilteredOut(
-  slug: string | null,
-  allWaters: Water[],
-  countyFilter: string[],
-  waterTypeFilter: WaterTypeFilter,
-  localityFilter: string[],
-): boolean {
-  if (!slug) return false;
-  const water = allWaters.find((w) => w.slug === slug);
-  if (!water) return true;
-  if (countyFilter.length > 0 && !countyFilter.includes(water.judet)) return true;
-  if (waterTypeFilter !== 'all' && water.subtype !== waterTypeFilter) return true;
-  // A water without a locality is hidden by any active locality filter.
-  if (localityFilter.length > 0 && !localityFilter.includes(water.locality ?? '')) return true;
-  return false;
-}
-
 export const useMapStore = create<MapStore>((set, get) => ({
   associations: [],
   waters: [],
@@ -130,6 +130,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   selectedAssociationSlug: null,
   selectedWaterSlug: null,
+  waterSheetOpen: false,
 
   countyFilter: [],
   localityFilter: [],
@@ -194,13 +195,16 @@ export const useMapStore = create<MapStore>((set, get) => ({
   },
 
   selectAssociation: (slug) =>
-    set({ selectedAssociationSlug: slug, associationSheetOpen: false }),
+    // t_21d2f68d: selecting an association closes the water sheet but keeps
+    // the water selection (orange focus) — one panel at a time, highlight stays.
+    set({ selectedAssociationSlug: slug, associationSheetOpen: false, waterSheetOpen: false }),
 
   // F2a: the chip opens the association detail sheet; opening it dismisses
   // the water sheet (one-at-a-time, mirrors the existing selection rules).
   openAssociationSheet: () =>
-    set({ associationSheetOpen: true, selectedWaterSlug: null }),
+    set({ associationSheetOpen: true, selectedWaterSlug: null, waterSheetOpen: false }),
   closeAssociationSheet: () => set({ associationSheetOpen: false }),
+  closeWaterSheet: () => set({ waterSheetOpen: false }),
 
   selectWater: (slug) => {
     // t_7a7192ea Bug 2: clicking a river/lake takes over from any active
@@ -216,7 +220,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
     // defensive "as needed" — normally only waters that pass the filters are
     // rendered/clickable, but never leave a selection invisible).
     if (slug === null) {
-      set({ selectedWaterSlug: null });
+      set({ selectedWaterSlug: null, waterSheetOpen: false });
       return;
     }
     const { countyFilter, localityFilter, waterTypeFilter, waters, uncontracted, selectedAssociationSlug } = get();
@@ -241,6 +245,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
     const clearingAssociationByClick = !belongsToAssociation && selectedAssociationSlug !== null;
     set({
       selectedWaterSlug: slug,
+      waterSheetOpen: true,
       selectedAssociationSlug: belongsToAssociation ? selectedAssociationSlug : null,
       associationSheetOpen: false,
       suppressAssociationFlyTo: clearingAssociationByClick,
@@ -264,7 +269,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   consumeAssociationFlyToSuppression: () => set({ suppressAssociationFlyTo: false }),
 
   toggleCounty: (county) => {
-    const { countyFilter, waters, uncontracted, selectedWaterSlug, waterTypeFilter } = get();
+    const { countyFilter } = get();
     const next = countyFilter.includes(county)
       ? countyFilter.filter((c) => c !== county)
       : [...countyFilter, county];
@@ -275,48 +280,36 @@ export const useMapStore = create<MapStore>((set, get) => ({
       // county change invalidates any active locality filter (plan §7.4 /
       // risk 2: same-name UATs across counties must never leak).
       localityFilter: [],
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], next, waterTypeFilter, [])
-        ? null
-        : selectedWaterSlug,
+      // t_21d2f68d: do NOT dismiss the selected water — the filter may narrow
+      // the map but the click focus + detail card survive (R10).
     });
   },
 
   toggleLocality: (locality) => {
-    const { localityFilter, waters, uncontracted, selectedWaterSlug, countyFilter, waterTypeFilter } = get();
+    const { localityFilter } = get();
     const next = localityFilter.includes(locality)
       ? localityFilter.filter((l) => l !== locality)
       : [...localityFilter, locality];
     set({
       localityFilter: next,
-      // R9: a locality change that hides the selected water dismisses the sheet.
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, waterTypeFilter, next)
-        ? null
-        : selectedWaterSlug,
+      // t_21d2f68d: locality must NOT clear the selection — it narrows the
+      // visible waters only; the click focus + detail card stay (R10). The
+      // selected water is pinned into the rendered set by use-filtered-waters.
     });
   },
 
   clearLocalities: () => set({ localityFilter: [] }),
 
   setWaterTypeFilter: (type) => {
-    const { countyFilter, localityFilter, waters, uncontracted, selectedWaterSlug } = get();
-    set({
-      waterTypeFilter: type,
-      selectedWaterSlug: isFilteredOut(selectedWaterSlug, [...waters, ...uncontracted], countyFilter, type, localityFilter)
-        ? null
-        : selectedWaterSlug,
-    });
+    // t_21d2f68d: same as toggleLocality — the type filter narrows the visible
+    // waters but never clears the selected water.
+    set({ waterTypeFilter: type });
   },
 
   setContractFilter: (filter) => {
-    // R9: a filter change that hides the selected water dismisses the sheet.
-    const { selectedWaterSlug, uncontracted } = get();
-    let nextSlug = selectedWaterSlug;
-    if (selectedWaterSlug) {
-      const isUnc = uncontracted.some((w) => w.slug === selectedWaterSlug);
-      if (filter === 'contractate' && isUnc) nextSlug = null;
-      if (filter === 'necontractate' && !isUnc) nextSlug = null;
-    }
-    set({ contractFilter: filter, selectedWaterSlug: nextSlug });
+    // t_21d2f68d: same as toggleLocality — the contract filter narrows the
+    // visible waters but never clears the selected water.
+    set({ contractFilter: filter });
   },
 
   // Geolocation MVP (docs/geolocation-feasibility.md §5 AC4): adaptive radius

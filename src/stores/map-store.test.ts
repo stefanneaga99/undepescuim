@@ -41,6 +41,7 @@ function resetStore(extra: Partial<ReturnType<typeof useMapStore.getState>> = {}
     dataLoaded: false,
     selectedAssociationSlug: null,
     selectedWaterSlug: null,
+    waterSheetOpen: false,
     countyFilter: [],
     localityFilter: [],
     waterTypeFilter: 'all',
@@ -67,11 +68,19 @@ describe('selection basics', () => {
     expect(useMapStore.getState().associationSheetOpen).toBe(false);
   });
 
+  it('selectAssociation closes the water sheet but keeps the water selection (t_21d2f68d)', () => {
+    useMapStore.setState({ selectedWaterSlug: 'cluj-river', waterSheetOpen: true });
+    useMapStore.getState().selectAssociation('ajvps-cluj');
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river'); // orange focus stays
+    expect(useMapStore.getState().waterSheetOpen).toBe(false); // panel closes
+  });
+
   it('openAssociationSheet opens the sheet and dismisses the selected water', () => {
     useMapStore.setState({ selectedWaterSlug: 'cluj-river' });
     useMapStore.getState().openAssociationSheet();
     expect(useMapStore.getState().associationSheetOpen).toBe(true);
     expect(useMapStore.getState().selectedWaterSlug).toBeNull();
+    expect(useMapStore.getState().waterSheetOpen).toBe(false);
   });
 
   it('closeAssociationSheet closes it', () => {
@@ -84,7 +93,21 @@ describe('selection basics', () => {
     useMapStore.setState({ selectedWaterSlug: 'cluj-river', countyFilter: ['Cluj'] });
     useMapStore.getState().selectWater(null);
     expect(useMapStore.getState().selectedWaterSlug).toBeNull();
+    expect(useMapStore.getState().waterSheetOpen).toBe(false);
     expect(useMapStore.getState().countyFilter).toEqual(['Cluj']);
+  });
+
+  it('selectWater(slug) opens the sheet; closeWaterSheet keeps the selection (t_21d2f68d)', () => {
+    useMapStore.setState({ waters });
+    useMapStore.getState().selectWater('cluj-river');
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
+    expect(useMapStore.getState().waterSheetOpen).toBe(true);
+    // Closing the card (Escape / × / drag) must NOT clear the orange focus —
+    // the reported bug was the card close wiping every highlight before the
+    // user could pick a locality.
+    useMapStore.getState().closeWaterSheet();
+    expect(useMapStore.getState().waterSheetOpen).toBe(false);
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
   });
 });
 
@@ -133,7 +156,7 @@ describe('selectWater association-clear semantics (t_7a7192ea / t_abccfd6c / t_6
   });
 });
 
-describe('filters (R9: selection dismissed when hidden)', () => {
+describe('filters (t_21d2f68d: selection survives every filter change)', () => {
   beforeEach(() => {
     resetStore({ waters, uncontracted });
   });
@@ -149,44 +172,50 @@ describe('filters (R9: selection dismissed when hidden)', () => {
     expect(useMapStore.getState().countyFilter).toEqual(['Bihor']);
   });
 
-  it('a county change that hides the selected water dismisses the sheet (R9)', () => {
+  it('a county change that hides the selected water KEEPS the selection (t_21d2f68d, R9 removed)', () => {
     useMapStore.setState({ selectedWaterSlug: 'cluj-river', countyFilter: ['Cluj', 'Bihor'] });
     useMapStore.getState().toggleCounty('Cluj'); // remove Cluj → cluj-river hidden
     expect(useMapStore.getState().countyFilter).toEqual(['Bihor']);
-    expect(useMapStore.getState().selectedWaterSlug).toBeNull();
+    // Selection + card must NOT be dismissed: the filter narrows the visible
+    // waters only (the selected water stays pinned in the rendered set).
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
   });
 
-  it('toggleLocality adds/removes and dismisses a hidden selection', () => {
+  it('toggleLocality adds/removes and never dismisses a hidden selection (t_21d2f68d)', () => {
     useMapStore.setState({ countyFilter: ['Bihor'], selectedWaterSlug: 'bihor-river' });
     useMapStore.getState().toggleLocality('Oradea');
     expect(useMapStore.getState().localityFilter).toEqual(['Oradea']);
-    expect(useMapStore.getState().selectedWaterSlug).toBe('bihor-river'); // still matches
+    expect(useMapStore.getState().selectedWaterSlug).toBe('bihor-river'); // matches → kept
     useMapStore.getState().toggleLocality('Oradea');
     expect(useMapStore.getState().localityFilter).toEqual([]);
-    // a water WITHOUT the active locality is dismissed by the filter (R9)
+    // a water WITHOUT the active locality is NOT dismissed either — the
+    // locality only narrows the map, the click focus + card survive (the
+    // water is pinned into the rendered set by use-filtered-waters).
     useMapStore.setState({ selectedWaterSlug: 'cluj-river' }); // no locality
     useMapStore.getState().toggleLocality('Oradea');
     expect(useMapStore.getState().localityFilter).toEqual(['Oradea']);
-    expect(useMapStore.getState().selectedWaterSlug).toBeNull();
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
   });
 
   it('clearLocalities empties the locality filter', () => {
-    useMapStore.setState({ localityFilter: ['Oradea'] });
+    useMapStore.setState({ localityFilter: ['Oradea'], selectedWaterSlug: 'cluj-river' });
     useMapStore.getState().clearLocalities();
     expect(useMapStore.getState().localityFilter).toEqual([]);
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
   });
 
-  it('setWaterTypeFilter filters and dismisses a hidden selection', () => {
+  it('setWaterTypeFilter filters but never dismisses a hidden selection (t_21d2f68d)', () => {
     useMapStore.setState({ selectedWaterSlug: 'cluj-lake' });
     useMapStore.getState().setWaterTypeFilter('rau');
     expect(useMapStore.getState().waterTypeFilter).toBe('rau');
-    expect(useMapStore.getState().selectedWaterSlug).toBeNull(); // lake hidden by 'rau'
+    // lake hidden by 'rau' — selection stays (card + orange focus survive)
+    expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-lake');
     useMapStore.setState({ selectedWaterSlug: 'cluj-river' });
     useMapStore.getState().setWaterTypeFilter('rau');
     expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
   });
 
-  it('setContractFilter keeps a matching selection and dismisses a conflicting one', () => {
+  it('setContractFilter changes the filter but never dismisses the selection (t_21d2f68d)', () => {
     useMapStore.setState({ selectedWaterSlug: 'cluj-river' });
     useMapStore.getState().setContractFilter('contractate');
     expect(useMapStore.getState().contractFilter).toBe('contractate');
@@ -194,7 +223,9 @@ describe('filters (R9: selection dismissed when hidden)', () => {
 
     useMapStore.setState({ selectedWaterSlug: 'unc-river', uncontracted });
     useMapStore.getState().setContractFilter('contractate');
-    expect(useMapStore.getState().selectedWaterSlug).toBeNull(); // uncontracted hidden by 'contractate'
+    expect(useMapStore.getState().selectedWaterSlug).toBe('unc-river'); // NOT dismissed
+    useMapStore.getState().setContractFilter('necontractate');
+    expect(useMapStore.getState().selectedWaterSlug).toBe('unc-river'); // still kept
   });
 });
 

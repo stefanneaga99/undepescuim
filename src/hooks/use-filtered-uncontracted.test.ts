@@ -75,4 +75,36 @@ describe('useFilteredUncontracted', () => {
     useMapStore.setState({ countyFilter: ['Covasna'], localityFilter: ['Bățani'], waterTypeFilter: 'all' });
     expect(renderHook(() => useFilteredUncontracted()).result.current.map((w) => w.slug)).toEqual(['unc-lake']);
   });
+
+  it('PINs the selected uncontracted water through a locality filter that hides it (t_21d2f68d)', () => {
+    useMapStore.setState({
+      countyFilter: ['Harghita'],
+      localityFilter: ['Bățani'],
+      selectedWaterSlug: 'unc-river', // in Harghita / Gheorgheni — not in Bățani
+    });
+    const { result } = renderHook(() => useFilteredUncontracted());
+    // unc-lake is Covasna (excluded by the county filter); unc-river is pinned
+    // through the locality filter.
+    expect(result.current.map((w) => w.slug)).toEqual(['unc-river']);
+  });
+
+  it('does NOT pin an uncontracted selection outside the county filter (t_21d2f68d)', () => {
+    useMapStore.setState({
+      countyFilter: ['Harghita'],
+      selectedWaterSlug: 'unc-lake', // Covasna — outside the county filter
+    });
+    const { result } = renderHook(() => useFilteredUncontracted());
+    expect(result.current.map((w) => w.slug)).toEqual(['unc-river']);
+  });
+
+  it('does NOT pin a contracted selection into the uncontracted pool (t_21d2f68d)', () => {
+    useMapStore.setState({
+      waters: [{ slug: 'contracted-selected', judet: 'Harghita', subtype: 'rau', locality: 'Gheorgheni', asociatie: { name: 'X', slug: 'x' } } as Water],
+      countyFilter: ['Harghita'],
+      localityFilter: ['Bățani'],
+      selectedWaterSlug: 'contracted-selected',
+    });
+    const { result } = renderHook(() => useFilteredUncontracted());
+    expect(result.current.some((w) => w.slug === 'contracted-selected')).toBe(false);
+  });
 });

@@ -118,6 +118,7 @@ export function MapView() {
 function LocalityViewportController() {
   const map = useMap();
   const localityFilter = useMapStore((s) => s.localityFilter);
+  const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
   const filteredWaters = useFilteredWaters();
   const filteredUncontracted = useFilteredUncontracted();
   // null = not initialized yet (skip the mount render).
@@ -140,7 +141,13 @@ function LocalityViewportController() {
       }
       return;
     }
-    const all = [...filteredWaters, ...filteredUncontracted];
+    // t_21d2f68d: the selected water is PINNED into the filtered sets even
+    // when it is outside the picked locality — it must NOT pull the fitBounds
+    // away from the locality (the pin is a focus convenience, not part of the
+    // locality's geography).
+    const all = [...filteredWaters, ...filteredUncontracted].filter(
+      (w) => w.slug !== selectedWaterSlug,
+    );
     const boxes = all
       .map((w) => w.bbox)
       .filter((b): b is [number, number, number, number] => Array.isArray(b) && b.length === 4);
@@ -164,7 +171,7 @@ function LocalityViewportController() {
       ],
       { padding: [48, 48], maxZoom: 12, animate: true, duration: 0.6 },
     );
-  }, [localityFilter, filteredWaters, filteredUncontracted, map]);
+  }, [localityFilter, filteredWaters, filteredUncontracted, selectedWaterSlug, map]);
 
   return null;
 }
