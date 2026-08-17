@@ -58,14 +58,20 @@ const withLoc = servedWaters.filter((w) => typeof w.locality === 'string');
 check(withLoc.length >= 850, `contracted coverage >= 84% (${withLoc.length}/1013)`);
 const mihoesti = servedWaters.find((w) => w.slug === 'anpa-anpa-0008');
 check(mihoesti?.locality === 'Câmpeni', 'limite-text fallback: Mihoești → Câmpeni');
-// NOTE (t_9529e678): uncontracted RIVERS carry NO locality in the current data
-// (build_locality_assignment.py pipeline gap — 0/4140 rivers) — the lake pool
-// does. The uncontracted-pool participation check targets the lake pool;
-// the river gap is a data-pipeline follow-up, not a filter bug.
+// NOTE (t_5ebd076b): uncontracted RIVERS now carry locality again — the A1
+// rebuild (t_45a0beae) had silently wiped the field; build_locality_assignment.py
+// was re-run (3936/4140, 95.1%) and the builder preserves enrichment keys now.
+// Both uncontracted pools participate in the locality filter.
 check(
   servedLakes.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
   'uncontracted lake pool carries locality (Bihor/Oradea)',
 );
+check(
+  servedUnc.some((w) => w.judet === 'Bihor' && w.locality === 'Oradea'),
+  'uncontracted RIVER pool carries locality (Bihor/Oradea)',
+);
+const riverLocalityCoverage = (servedUnc.filter((w) => typeof w.locality === 'string').length / servedUnc.length) * 100;
+check(riverLocalityCoverage >= 90, `uncontracted river locality coverage >= 90% (${riverLocalityCoverage.toFixed(1)}%)`);
 check(!errors.length, `no console errors while loading (${errors.length})`);
 
 console.log('== 2. UI: locality gated behind county selection ==');

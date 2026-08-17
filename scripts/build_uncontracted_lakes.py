@@ -50,6 +50,34 @@ RAW = ROOT / "data" / "raw" / "overpass_water_polys.json"
 FE_WATERS = ROOT / "public" / "data" / "waters.json"
 OUT_FILE = ROOT / "public" / "data" / "uncontracted_lakes.json"
 
+# Enrichment fields added by later pipeline stages (build_locality_assignment.py)
+# that a from-source rebuild must NOT wipe (t_5ebd076b — the rivers builder had
+# the same bug and a rebuild dropped every river's locality).
+ENRICHMENT_KEYS = ("locality",)  # lakes carry no geometryByCounty
+
+
+def _preserve_enrichment(out: list[dict]) -> None:
+    """Copy enrichment keys from the previous file (by slug) onto rebuilt rows."""
+    try:
+        if not OUT_FILE.exists():
+            return
+        prev = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+    except Exception as exc:  # pragma: no cover — rebuild must not fail on a bad old file
+        print(f"[preserve] could not read previous {OUT_FILE.name}: {exc!r} — enrichment dropped", flush=True)
+        return
+    prev_by_slug = {w.get("slug"): w for w in prev}
+    carried = 0
+    for w in out:
+        old = prev_by_slug.get(w.get("slug"))
+        if not old:
+            continue
+        for key in ENRICHMENT_KEYS:
+            if key in old and key not in w:
+                w[key] = old[key]
+                carried += 1
+    if carried:
+        print(f"[preserve] carried {carried} enrichment fields from previous {OUT_FILE.name}", flush=True)
+
 # Minimum area (ha) for a NAMED polygon — kills sub-puddle noise (0.1 ha =
 # ~30 m square; the smallest mapped named ponds are ~0.3 ha).
 MIN_NAMED_AREA_HA = 0.1
@@ -459,6 +487,7 @@ def main() -> None:
             named_n += 1
 
     out.sort(key=lambda w: w["name"].lower())
+    _preserve_enrichment(out)
     OUT_FILE.write_text(
         _json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )

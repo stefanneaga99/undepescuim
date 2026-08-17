@@ -39,6 +39,36 @@ FE_WATERS = ROOT / "public" / "data" / "waters.json"
 OUT_FILE = ROOT / "public" / "data" / "uncontracted_rivers.json"
 OSM_INDEX_CACHE = ROOT / "data" / "cache" / "osm_river_clusters.pkl"
 
+# Enrichment fields added by later pipeline stages (build_locality_assignment.py,
+# build_county_clip_geoms.py) that a from-source rebuild must NOT wipe.
+# Preserved by slug from the previous file at write time (t_5ebd076b — the A1
+# rebuild dropped every river's locality because the builder emitted a fixed
+# key set and never carried the field over).
+ENRICHMENT_KEYS = ("locality", "geometryByCounty", "geometryByCountyUpdatedAt")
+
+
+def _preserve_enrichment(out: list[dict]) -> None:
+    """Copy enrichment keys from the previous file (by slug) onto rebuilt rows."""
+    try:
+        if not OUT_FILE.exists():
+            return
+        prev = json.loads(OUT_FILE.read_text(encoding="utf-8"))
+    except Exception as exc:  # pragma: no cover — rebuild must not fail on a bad old file
+        print(f"[preserve] could not read previous {OUT_FILE.name}: {exc!r} — enrichment dropped", flush=True)
+        return
+    prev_by_slug = {w.get("slug"): w for w in prev}
+    carried = 0
+    for w in out:
+        old = prev_by_slug.get(w.get("slug"))
+        if not old:
+            continue
+        for key in ENRICHMENT_KEYS:
+            if key in old and key not in w:
+                w[key] = old[key]
+                carried += 1
+    if carried:
+        print(f"[preserve] carried {carried} enrichment fields from previous {OUT_FILE.name}", flush=True)
+
 # Douglas-Peucker tolerance in degrees (~200 m) — invisible at the zoom levels
 # the overlay is drawn at, but cuts the point count by ~10x.
 SIMPLIFY_TOL_DEG = 0.002
@@ -577,6 +607,7 @@ def main() -> None:
         emitted_courses.append((norm(cl.get("raw_name") or cl["name"]), county, tuple(bbox), course))
 
     out.sort(key=lambda w: w["name"].lower())
+    _preserve_enrichment(out)
     OUT_FILE.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     size_mb = OUT_FILE.stat().st_size / 1e6
     print(f"[write] {len(out)} uncontracted rivers → {OUT_FILE} ({size_mb:.1f} MB)")
