@@ -54,6 +54,31 @@ BACKFILL = {
     "a-cerbul-carpatin": {
         "telefon": "0253 215 935",
     },
+    # locuridepescuit.ro scrape (data/processed/locuri_associations.jsonl) —
+    # second pass: associations whose phone/website the first merge missed.
+    "ajvps-bacau": {
+        "telefon": "0234543800",
+    },
+    "ajvps-satu-mare": {
+        "telefon": "0261717620",
+    },
+    "avps-campina": {
+        "telefon": "0244336931",
+    },
+    "ajvps-covasna": {
+        "siteUrl": "http://www.ajvpscovasna.ro/",
+    },
+    "ajvps-hunedoara": {
+        "siteUrl": "https://ajvpshunedoara.wgz.ro/",
+    },
+    "ajvps-valcea": {
+        "siteUrl": "https://ajvpsrmvl.wixsite.com/asociatia",
+    },
+    # Asociația Fly Fishing Rarău — official site (flyfishingrarau.ro, verified
+    # HTTP 200 on 2026-08-17; referenced by flyfishingoutlet.ro's partner page).
+    "asociatia-fly-fishing-rarau": {
+        "siteUrl": "https://flyfishingrarau.ro/",
+    },
 }
 
 
@@ -71,7 +96,7 @@ def main() -> None:
                 a[k] = v
                 filled += 1
 
-    FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1), encoding="utf-8")
+    FE_ASSOC.write_text(json.dumps(assocs, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     n = len(assocs)
     n_tel = sum(1 for a in assocs if (a.get("telefon") or "").strip())

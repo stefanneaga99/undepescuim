@@ -67,3 +67,10 @@ data/raw/overpass_water_polys.json
 
 # e2e screenshots
 .e2e/
+
+# playwright artifacts (e2e suite — regenerated per run, never committed)
+test-results/
+playwright-report/
+blob-report/
+test-results/
+public/sw.js

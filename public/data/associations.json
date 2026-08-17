@@ -108,7 +108,7 @@
   "ape": 9,
   "adresa": "Str. Cuza Vodă, Nr. FN, Bl. A, Cluj-Napoca",
   "telefon": "0745 515 208",
-  "siteUrl": "http://ajpscluj.ro/",
+  "siteUrl": "https://ajpscluj.ro/",
   "bbox": [
    23.0569618,
    46.7029011,
@@ -171,7 +171,7 @@
   "ape": 17,
   "adresa": "Strada Mihai Viteazul 29, Pitesti",
   "telefon": "0756652853",
-  "siteUrl": "https://ajvps-arges.ro/",
+  "siteUrl": "https://ajvpsarges.ro/",
   "bbox": [
    24.64858473669,
    44.73430445736,
@@ -203,7 +203,8 @@
    "Bacău"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "telefon": "0234543800"
  },
  {
   "slug": "ajvps-bihor",
@@ -412,7 +413,8 @@
    "Covasna"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "siteUrl": "http://www.ajvpscovasna.ro/"
  },
  {
   "slug": "ajvps-dambovita",
@@ -493,7 +495,7 @@
   "ape": 12,
   "adresa": "Str. Christian Tell, nr.28A, (Traian nr. 9), Târgu Jiu",
   "telefon": "0353801888",
-  "siteUrl": "https://www.ajvpsgorj.com/",
+  "siteUrl": "https://ajvpsgorj.webnode.ro/",
   "bbox": [
    22.549294,
    44.325495,
@@ -525,7 +527,8 @@
    "Hunedoara"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "siteUrl": "https://ajvpshunedoara.wgz.ro/"
  },
  {
   "slug": "ajvps-maramures",
@@ -639,7 +642,8 @@
    "Satu Mare"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "telefon": "0261717620"
  },
  {
   "slug": "ajvps-salaj",
@@ -751,7 +755,8 @@
    "Vâlcea"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "siteUrl": "https://ajvpsrmvl.wixsite.com/asociatia"
  },
  {
   "slug": "ajvps-vrancea",
@@ -1015,7 +1020,8 @@
    "Prahova"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "telefon": "0244336931"
  },
  {
   "slug": "avps-diana-turnu-arad",
@@ -1748,7 +1754,8 @@
    "Suceava"
   ],
   "reciprocity": "neconfirmată",
-  "permitIssuer": "asociatie"
+  "permitIssuer": "asociatie",
+  "siteUrl": "https://flyfishingrarau.ro/"
  },
  {
   "slug": "cs-hunedoara",

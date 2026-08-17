@@ -30,7 +30,8 @@ uncontracted overlays:
   - uncontracted == true; lengthKm/areaHa numeric > 0
   - no same-name + same-county features with >=90% bbox overlap (same-body
     duplicates — A1 regression gate)
-  - no non-Latin names (Cyrillic leak — review item, reported not fatal)
+  - no non-Latin-script LETTERS (Cyrillic leak like 'Бирда') and no legacy
+    ş/ţ/å orthography — review items, reported not fatal
 
 Usage:
   python3 scripts/audit_integrity.py [--json data/processed/integrity_report.json]
@@ -55,7 +56,10 @@ FE_SPECIES = ROOT / "data" / "species.json"
 
 SLUG_RE = re.compile(r"^[a-z0-9-]+$")
 PHONE_RE = re.compile(r"^(\+?40|0040|0)?\d{9}$")
-NON_LATIN_RE = re.compile(r"[^\x00-\x7F\u015e\u0218\u021a\u0102\u00c2\u00ce\u00c3\u0219\u021b\u0103\u00e2\u00ee\u00e3]")
+# pre-1993 Romanian orthography: s/t with cedilla (ş ţ) and a-ring (å) — the
+# modern forms are ș/ț (comma below) and â. Flagged as a review item, not
+# Cyrillic.
+LEGACY_ORTHO_RE = re.compile(r"[\u015e\u015f\u0162\u0163\u00c5\u00e5]")
 
 
 def norm(s: str) -> str:
@@ -69,6 +73,33 @@ def phone_plausible(t: str) -> bool:
     if not digits:
         return False
     return bool(PHONE_RE.match(digits))
+
+
+def has_non_latin_letter(s: str) -> bool:
+    """True if s contains a LETTER from a non-Latin script (Cyrillic, Greek…).
+
+    Romanian water names are Latin-script by law; a Cyrillic leak ('Бирда')
+    is the flag this gate exists for. Hungarian diacritics (ő ű á é…) ARE
+    Latin-script letters and are NOT flagged. Punctuation (en-dash, curly
+    quotes) is ignored.
+    """
+    for ch in s:
+        if not unicodedata.category(ch).startswith("L"):
+            continue
+        name = unicodedata.name(ch, "")
+        if name and not name.startswith("LATIN"):
+            return True
+    return False
+
+
+def name_flags(name: str):
+    """Return the finding checks a name triggers (review items, not failures)."""
+    checks = []
+    if has_non_latin_letter(name or ""):
+        checks.append("non_latin_name")
+    if LEGACY_ORTHO_RE.search(name or ""):
+        checks.append("legacy_orthography")
+    return checks
 
 
 def check_waters(waters, assoc_by_slug, violations, findings) -> None:
@@ -128,10 +159,11 @@ def check_waters(waters, assoc_by_slug, violations, findings) -> None:
         if w.get("type") == "ape" and "pescuit_interzis" not in w:
             violations.append({"check": "waters.pescuit_interzis_present", "slug": s})
 
-    # non-Latin names — review item (Cyrillic leak like 'Бирда'), not fatal
+    # name flags — review items (Cyrillic leak like 'Бирда', legacy ş/ţ/å),
+    # not fatal
     for w in waters:
-        if NON_LATIN_RE.search(w.get("name") or ""):
-            findings.append({"check": "waters.non_latin_name", "slug": w["slug"],
+        for check in name_flags(w.get("name")):
+            findings.append({"check": f"waters.{check}", "slug": w["slug"],
                              "name": w["name"]})
 
 
@@ -255,10 +287,10 @@ def check_overlay(entries, kind, violations, findings) -> None:
                         "check": f"overlay.{kind}.same_body_dup", "name": key[0],
                         "judet": key[1], "slugs": [s1, s2], "overlap": round(frac, 3),
                     })
-    # non-Latin names — review item
+    # name flags — review items (Cyrillic leak, legacy orthography)
     for e in entries:
-        if NON_LATIN_RE.search(e.get("name") or ""):
-            findings.append({"check": f"overlay.{kind}.non_latin_name",
+        for check in name_flags(e.get("name")):
+            findings.append({"check": f"overlay.{kind}.{check}",
                              "slug": e["slug"], "name": e["name"]})
 
 

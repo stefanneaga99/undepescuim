@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
@@ -8,18 +8,24 @@ import { Button } from '@/components/ui/button';
 /**
  * Sun/Moon toggle in the header (near the RO badge). Uses next-themes
  * resolvedTheme (not theme) so "system" renders the correct icon.
- * Mounted guard prevents the server/client icon mismatch (next-themes
- * returns undefined until mount).
+ * Hydration-safe: useSyncExternalStore reports false on the server and
+ * true on the client, so the icon can never mismatch between the server
+ * render and the first client render (next-themes returns undefined
+ * until mount).
  *
  * Two-state toggle (light ⇄ dark); "system" is only the initial default —
  * the first explicit click pins the choice (dark-mode-feasibility-plan §3).
  */
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // `false` during SSR / first client render, `true` after hydration.
+  const mounted = useSyncExternalStore(
+    () => () => {}, // subscribe — theme state is reactive via useTheme
+    () => true,
+    () => false,
+  );
 
-  const isDark = resolvedTheme === 'dark';
+  const isDark = mounted && resolvedTheme === 'dark';
 
   return (
     <Button
@@ -32,9 +38,7 @@ export function ThemeToggle() {
       className="shrink-0"
       suppressHydrationWarning
     >
-      {mounted ? (isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />) : (
-        <Moon className="h-5 w-5" />
-      )}
+      {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Button>
   );
 }
