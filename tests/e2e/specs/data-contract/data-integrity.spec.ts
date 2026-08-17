@@ -39,7 +39,9 @@ test.describe('data contract — real served /public/data @data', () => {
       expect(String(w.name).length).toBeGreaterThan(0);
       expect(['lac', 'rau']).toContain(w.subtype);
       expect(typeof w.judet).toBe('string');
-      expect(Array.isArray(w.bbox)).toBe(true);
+      // bbox is OPTIONAL: river-group sector waters (no own geometry) carry
+      // `riverGroup` + `course_frac` instead (WaterFeatureLayer.tsx:179).
+      if (w.bbox !== undefined) expect(Array.isArray(w.bbox)).toBe(true);
       const g = w.geometry as { type?: string; coordinates?: unknown[] } | undefined;
       if (g) {
         expect(['LineString', 'MultiLineString', 'Polygon', 'MultiPolygon']).toContain(g.type);
@@ -50,11 +52,14 @@ test.describe('data contract — real served /public/data @data', () => {
 
   test('sweep-fixed fixtures carry real geometry, not bbox fallbacks', async ({ page }) => {
     const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
-    const byName = new Map(waters.map((w) => [String(w.name).toLowerCase(), w]));
+    const bySlug = new Map(waters.map((w) => [w.slug, w]));
 
-    // t_a0e123da (Valea Pojorâtei), t_e3ae3121 (sebes family)
-    for (const probe of ['valea pojorâtei', 'râul sebesul mijlociu']) {
-      const w = byName.get(probe);
+    // t_a0e123da (Valea Pojorâtei), t_e3ae3121 (sebes family) — probed by
+    // SLUG: the by-name lookup is ambiguous now that a Romsilva-administered
+    // 'Râul Sebesul Mijlociu' (romsilva-alba-sebesul-mijlociu, no geometry,
+    // bbox fallback) exists alongside the sweep-fixed family.
+    for (const probe of ['anpa-anpa-0188', 'qsvhz93s', 'f02xtxw1', 'uyzo7o3j']) {
+      const w = bySlug.get(probe);
       expect(w, `fixture ${probe} present in waters.json`).toBeTruthy();
       const g = (w as Record<string, unknown>).geometry as { type?: string } | undefined;
       expect(g, `${probe} has real geometry`).toBeTruthy();
@@ -66,7 +71,14 @@ test.describe('data contract — real served /public/data @data', () => {
     page,
   }) => {
     const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
-    const withClips = waters.filter((w) => w.geometryByCounty);
+    // `geometryByCounty: {}` is a VALID state — the clip builder emits an empty
+    // map when the water lies (≥99.5%) inside its own county and the FE falls
+    // back to the full geometry (build_county_clip_geoms.py `skips` branch).
+    // Only waters with ≥1 clip entry must carry their own county key.
+    const withClips = waters.filter((w) => {
+      const g = w.geometryByCounty as Record<string, unknown> | undefined;
+      return g != null && Object.keys(g).length > 0;
+    });
     expect(withClips.length).toBeGreaterThan(100);
 
     for (const w of withClips.slice(0, 200)) {
@@ -100,7 +112,9 @@ test.describe('data contract — real served /public/data @data', () => {
     expect(lakes.length).toBeGreaterThan(500);
     for (const w of [...rivers.slice(0, 100), ...lakes.slice(0, 100)]) {
       expect(w.uncontracted).toBe(true);
-      expect(w.asociatie).toBeNull();
+      // The overlay builder omits the `asociatie` key entirely (undefined) —
+      // the app treats undefined and null identically (`w.asociatie` falsy).
+      expect(w.asociatie == null).toBe(true);
       expect(['lac', 'rau']).toContain(w.subtype);
     }
   });
