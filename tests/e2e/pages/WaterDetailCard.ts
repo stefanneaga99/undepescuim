@@ -38,7 +38,13 @@ export class WaterDetailCard {
   }
 
   get permisLink() {
-    return this.card.getByRole('link', { name: /Permis.*Reguli 2026/ });
+    // The card can render TWO /permis links (the standard button on contracted
+    // cards + the teal guide link on uncontracted notices) — both target the
+    // guide. Prefer the guide link ("Vezi ghidul"), fall back to the button.
+    return this.card
+      .getByRole('link', { name: /Vezi ghidul „Permis/ })
+      .or(this.card.getByRole('link', { name: 'Permis & Reguli 2026', exact: true }))
+      .first();
   }
 
   get speciiLink() {

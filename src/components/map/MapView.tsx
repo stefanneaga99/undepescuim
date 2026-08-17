@@ -64,6 +64,11 @@ export function MapView() {
         // Policy §1 (offline-pwa-feasibility.md §2.6); the SW's osm-tiles
         // cache matcher keys on tile.openstreetmap.org (src/app/sw.ts).
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        // CORS: without this the <img> loads are no-cors → opaque responses
+        // (status 0) in the SW fetch handler, which CacheableResponsePlugin
+        // (statuses [200]) drops → tiles never enter the osm-tiles cache.
+        // OSM sends Access-Control-Allow-Origin: * so anonymous is safe.
+        crossOrigin="anonymous"
         // Offline pan: failed tile loads fire 'tileerror' — dim the tile to a
         // neutral grey instead of leaving the broken-image icon + console
         // error flood (offline-pwa-feasibility.md §4 / risk table).

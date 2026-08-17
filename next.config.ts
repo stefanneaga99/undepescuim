@@ -10,6 +10,12 @@ import withSerwistInit from "@serwist/next";
 const withSerwist = withSerwistInit({
   swSrc: "src/app/sw.ts",
   swDest: "public/sw.js",
+  // Registration is done explicitly by ServiceWorkerRegister.tsx (with
+  // updateViaCache:"none" — the anti-stale-cache trap). Serwist's automatic
+  // registration (register: true default) would ALSO try to register and
+  // reads registration.waiting on failure — a pageerror in any context that
+  // blocks service workers (e.g. Playwright's serviceWorkers:'block').
+  register: false,
   // Data JSONs are ~45MB total — they must NOT be precached at install
   // (offline-pwa-feasibility.md §3: data tier is runtime NetworkFirst via the
   // app-data cache; precaching them makes SW install crawl/hang). Default

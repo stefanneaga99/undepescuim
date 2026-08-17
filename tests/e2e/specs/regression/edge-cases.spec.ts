@@ -114,10 +114,10 @@ test.describe('edge cases', () => {
     await page.getByTestId(Selectors.speciesSearchMobile).or(
       page.getByTestId(Selectors.speciesSearch),
     ).filter({ visible: true }).click();
-    await page.getByRole('combobox').fill('pastrav');
+    await page.getByRole('combobox').fill('somn'); // single match — Enter is unambiguous
     await page.keyboard.press('ArrowDown');
     await page.keyboard.press('Enter');
-    await expect(page.locator('#specii-pastrav-indigen')).toHaveClass(/species-flash/);
+    await expect(page.locator('#specii-somn')).toHaveClass(/species-flash/);
   });
 
   test('768px boundary → desktop panel layout (no hamburger, inline links)', async (

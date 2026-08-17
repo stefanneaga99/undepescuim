@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { CalendarClock, WifiOff } from "lucide-react";
 import { useMapStore } from "@/stores/map-store";
 
@@ -11,9 +11,8 @@ import { useMapStore } from "@/stores/map-store";
  * - Offline banner — visible whenever the browser reports no connectivity,
  *   showing the data date so the user knows what they're looking at.
  *
- * Detection: `navigator.onLine` + online/offline events. The chip is hidden
- * on the smallest screens (header is dense there); the offline pill renders on
- * every viewport.
+ * Connectivity is a browser-global, so it's read with useSyncExternalStore
+ * (server snapshot = online; no effect/setState cascade).
  */
 function formatDate(iso: string): string {
   try {
@@ -27,22 +26,27 @@ function formatDate(iso: string): string {
   }
 }
 
+function subscribeOnline(callback: () => void): () => void {
+  window.addEventListener("online", callback);
+  window.addEventListener("offline", callback);
+  return () => {
+    window.removeEventListener("online", callback);
+    window.removeEventListener("offline", callback);
+  };
+}
+
+const getOnlineSnapshot = () => navigator.onLine;
+const getOnlineServerSnapshot = () => true;
+
 export function PwaStatusBar() {
   const dataUpdatedAt = useMapStore((s) => s.dataUpdatedAt);
-  const [online, setOnline] = useState(true);
-
-  useEffect(() => {
-    // SSR-safe initial read; the event listeners keep it live afterwards.
-    setOnline(typeof navigator === "undefined" ? true : navigator.onLine);
-    const on = () => setOnline(true);
-    const off = () => setOnline(false);
-    window.addEventListener("online", on);
-    window.addEventListener("offline", off);
-    return () => {
-      window.removeEventListener("online", on);
-      window.removeEventListener("offline", off);
-    };
-  }, []);
+  // Server render = online (no banner in SSR HTML); client subscribes to
+  // online/offline so the banner appears the moment connectivity drops.
+  const online = useSyncExternalStore(
+    subscribeOnline,
+    getOnlineSnapshot,
+    getOnlineServerSnapshot,
+  );
 
   const dateLabel = dataUpdatedAt ? formatDate(dataUpdatedAt) : null;
 
