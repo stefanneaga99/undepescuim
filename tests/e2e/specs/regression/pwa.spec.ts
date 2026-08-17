@@ -33,11 +33,24 @@ async function stubTiles(page: Page) {
 
 /** Wait until the service worker is active (registered + activated). */
 async function waitForSwReady(page: Page): Promise<void> {
-  await page.waitForFunction(() =>
-    navigator.serviceWorker
-      .getRegistration('/sw.js')
-      .then((r) => r?.active != null),
+  await page.waitForFunction(
+    () =>
+      navigator.serviceWorker
+        .getRegistration('/sw.js')
+        .then((r) => r?.active?.state === 'activated'),
+    { timeout: 30_000 },
   );
+}
+
+/**
+ * Wait for SW activation AFTER the app data has finished loading. On a cold
+ * prod edge the page's ~45 MB data download can starve the SW install's
+ * precache fetches (observed: worker stuck in 'installing' for 30s+), so we
+ * wait for the map first — the install then has the network to itself.
+ */
+async function waitForMapThenSw(page: Page): Promise<void> {
+  await waitForMapReady(page);
+  await waitForSwReady(page);
 }
 
 /** Reload so the SW controls the page (controller set on next navigation). */
@@ -59,6 +72,7 @@ async function cacheSummary(page: Page) {
 }
 
 test.describe('PWA light', () => {
+  test.setTimeout(120_000);
   test('service worker registers and takes control', async ({ page }) => {
     const swEvents: string[] = [];
     page.on('console', (m) => {
@@ -67,7 +81,7 @@ test.describe('PWA light', () => {
       }
     });
     await page.goto('/');
-    await waitForSwReady(page);
+    await waitForMapThenSw(page);
     // Give the SW a moment to settle, then dump ALL registrations.
     await page.waitForTimeout(1500);
     const reg = await page.evaluate(async () => {
@@ -161,8 +175,7 @@ test.describe('PWA light', () => {
 
     // First visit ONLINE: SW registers, data fetches populate app-data.
     await page.goto('/');
-    await waitForSwReady(page);
-    await waitForMapReady(page);
+    await waitForMapThenSw(page);
 
     // Second load is CONTROLLED by the SW (clientsClaim claims the page on
     // activation; the reload makes the controller observable) — this pass also
@@ -208,8 +221,7 @@ test.describe('PWA light', () => {
   test('visited tiles are cached with a 7-day TTL (no prefetch)', async ({ page }) => {
     await stubTiles(page);
     await page.goto('/');
-    await waitForSwReady(page);
-    await waitForMapReady(page);
+    await waitForMapThenSw(page);
     // IMPORTANT: tiles are only cached for CONTROLLED pages (fetch events only
     // fire for clients the SW controls). The first load registers but does not
     // control the page — reload once so the SW intercepts the tiles.
