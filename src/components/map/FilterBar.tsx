@@ -2,6 +2,7 @@
 
 import { useCounties } from '@/hooks/use-counties';
 import { useLocalities } from '@/hooks/use-localities';
+import { useLocalityCounts } from '@/hooks/use-locality-counts';
 import { useMapStore } from '@/stores/map-store';
 import { CountyFilter } from '@/components/map/CountyFilter';
 import { LocalityFilter } from '@/components/map/LocalityFilter';
@@ -21,6 +22,7 @@ import { ContractFilter } from '@/components/map/ContractFilter';
 export function FilterBar() {
   const counties = useCounties();
   const localities = useLocalities();
+  const localityCounts = useLocalityCounts();
   const countyFilter = useMapStore((s) => s.countyFilter);
   const localityFilter = useMapStore((s) => s.localityFilter);
   const waterTypeFilter = useMapStore((s) => s.waterTypeFilter);
@@ -38,6 +40,7 @@ export function FilterBar() {
         <LocalityFilter
           localities={localities}
           selected={localityFilter}
+          counts={localityCounts}
           onToggle={toggleLocality}
           onClear={clearLocalities}
         />

@@ -16,7 +16,7 @@ import { useMapStore } from '@/stores/map-store';
  * into one option while keeping the first-seen (canonical) spelling for
  * display.
  */
-function localityKey(locality: string): string {
+export function localityKey(locality: string): string {
   return locality
     .normalize('NFC')
     .trim()

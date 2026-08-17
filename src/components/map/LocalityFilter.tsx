@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ChevronDown, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
+import { localityKey } from '@/hooks/use-localities';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import {
   Command,
@@ -19,6 +20,9 @@ interface LocalityFilterProps {
   localities: string[];
   /** currently toggled localities */
   selected: string[];
+  /** display-name → water count for each locality (useLocalityCounts,
+   *  keyed by the same normalized key as useLocalities) — t_e70099a9 */
+  counts?: Map<string, number>;
   onToggle: (locality: string) => void;
   onClear: () => void;
 }
@@ -32,7 +36,13 @@ interface LocalityFilterProps {
  * 40–100 localities (mobile-first constraint; consistent with FilterBar's
  * pill language). The trigger pill mirrors the county chips.
  */
-export function LocalityFilter({ localities, selected, onToggle, onClear }: LocalityFilterProps) {
+export function LocalityFilter({
+  localities,
+  selected,
+  counts,
+  onToggle,
+  onClear,
+}: LocalityFilterProps) {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
 
@@ -91,15 +101,25 @@ export function LocalityFilter({ localities, selected, onToggle, onClear }: Loca
               <CommandGroup heading={t('filters.localityLabel')}>
                 {localities.map((locality) => {
                   const active = selected.includes(locality);
+                  const count = counts?.get(localityKey(locality));
                   return (
                     <CommandItem
                       key={locality}
                       value={locality}
                       data-checked={active}
                       data-testid="locality-option"
+                      data-count={count ?? ''}
                       onSelect={() => onToggle(locality)}
                     >
                       <span className="truncate">{locality}</span>
+                      {count != null && (
+                        <span
+                          className="ml-auto shrink-0 rounded-full bg-muted px-1.5 py-0.5 text-[10px] font-medium tabular-nums text-muted-foreground"
+                          data-testid="locality-count"
+                        >
+                          {count}
+                        </span>
+                      )}
                     </CommandItem>
                   );
                 })}

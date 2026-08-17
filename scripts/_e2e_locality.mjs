@@ -183,7 +183,8 @@ await trig.click();
 await page.waitForSelector('[data-slot="command-input"]', { timeout: 5000 });
 await page.locator('[data-slot="command-input"]').fill('Brașov');
 await page.waitForTimeout(300);
-await page.locator('[data-slot="command-item"]', { hasText: /^Brașov$/ }).first().click();
+const brasovOption = page.locator('[data-slot="command-item"]', { hasText: /^Brașov/ }).first();
+await brasovOption.click();
 await page.waitForTimeout(2500); // locality flyTo animates
 const tileZ = await page.evaluate(() => {
   const src = document.querySelector('.leaflet-tile')?.getAttribute('src') ?? '';
@@ -193,6 +194,11 @@ const tileZ = await page.evaluate(() => {
 const lipsCount = await page.locator('.leaflet-overlay-pane path').count();
 check(tileZ !== null && tileZ > 7, `map zoomed to the locality (tile z=${tileZ})`);
 check(lipsCount > 0, `Brașov locality renders its waters (${lipsCount} paths)`);
+// t_e70099a9: the dropdown surfaces a per-locality count so the user SEES the
+// filter matched even when the rendered streams are faint — the Brașov option
+// must carry a positive water count (1 contracted + 44 uncontracted rivers).
+const brasovCount = await brasovOption.getAttribute('data-count');
+check(brasovCount !== null && Number(brasovCount) > 0, `Brașov locality shows a count (${brasovCount})`);
 await page.screenshot({ path: new URL('locality_brasov_city.png', OUT_DIR).pathname, fullPage: false });
 await page.keyboard.press('Escape');
 // clear the locality → the view is restored (no longer zoomed at the city)
@@ -201,7 +207,7 @@ const clearTrig = page.locator('[data-testid="locality-filter"]').filter({ visib
 await clearTrig.click();
 await page.locator('[data-slot="command-input"]').fill('Brașov');
 await page.waitForTimeout(300);
-await page.locator('[data-slot="command-item"]', { hasText: /^Brașov$/ }).first().click();
+await page.locator('[data-slot="command-item"]', { hasText: /^Brașov/ }).first().click();
 await page.keyboard.press('Escape');
 await page.waitForTimeout(1500);
 const tileZAfter = await page.evaluate(() => {
