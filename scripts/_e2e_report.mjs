@@ -37,7 +37,15 @@ const cardText = () =>
     const aside = document.querySelector('aside:has(h2)');
     const drawer = document.querySelector('[data-vaul-drawer]');
     const el = aside || drawer;
-    return el ? (el.textContent || '').trim() : '';
+    // Mobile (compact): the report buttons live in a FIXED bottom action bar
+    // that's a sibling of the drawer (t_d9e8196e) — append its labels so the
+    // entry-point checks cover the mobile branch too.
+    const fixedReport = document.querySelector('[data-testid="report-flag-fixed"], [data-testid="report-positive-fixed"]');
+    let txt = el ? (el.textContent || '').trim() : '';
+    if (fixedReport && fixedReport.parentElement) {
+      txt += ' ' + (fixedReport.closest('.fixed')?.textContent || '');
+    }
+    return txt.trim();
   });
 
 const readCardText = async (timeoutMs = 12000) => {
