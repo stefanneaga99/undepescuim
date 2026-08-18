@@ -1,0 +1,11 @@
+{
+  "cells": [],
+  "rivers": [],
+  "schema_version": 1,
+  "snapshot_sha256": "730a174b3146d5bab8f59617d51eae9a0fa721cb82f6d5508410d81cea87ba80",
+  "summary": {},
+  "thresholds": {
+    "coverage_tol_m": 125,
+    "min_report_segment_m": 250
+  }
+}

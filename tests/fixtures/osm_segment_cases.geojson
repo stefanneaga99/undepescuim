@@ -1,0 +1,7 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"case":"complete"},"geometry":{"type":"LineString","coordinates":[[24.0,46.0],[24.01,46.0],[24.02,46.0],[24.03,46.0]]}},
+    {"type":"Feature","properties":{"case":"gap"},"geometry":{"type":"LineString","coordinates":[[25.0,46.0],[25.01,46.0],[25.02,46.0],[25.03,46.0]]}}
+  ]
+}

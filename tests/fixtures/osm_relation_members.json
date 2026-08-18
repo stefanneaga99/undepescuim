@@ -1,7 +1,4 @@
-{
-  "schema_version": 1,
-  "relations": [
-    {"id": 10, "members": [{"type": "way", "ref": 1, "role": "main"}, {"type": "way", "ref": 2, "role": "main"}]},
-    {"id": 11, "members": [{"type": "way", "ref": 99, "role": "main"}]}
-  ]
-}
+[
+  {"relation_id":100,"members":[{"way_id":1,"role":"main_stream","sequence":0},{"way_id":2,"role":"main_stream","sequence":1}]},
+  {"relation_id":101,"members":[{"way_id":3,"role":"main_stream","sequence":0},{"way_id":999,"role":"main_stream","sequence":1}]}
+]

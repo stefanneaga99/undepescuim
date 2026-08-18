@@ -1,7 +1,6 @@
 {
   "schema_version": 1,
-  "baseline": "empty",
-  "summary": {},
   "rivers": [],
-  "cells": []
+  "summary": {},
+  "notes": "Baseline is intentionally empty; CI compares blockers and never masks hard failures. Refresh only with reviewed audit output."
 }

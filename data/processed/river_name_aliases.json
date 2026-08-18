@@ -1,4 +1,5 @@
 {
   "schema_version": 1,
-  "aliases": []
+  "aliases": [],
+  "notes": "Only source-backed aliases belong here; entries require review before use."
 }

@@ -17,7 +17,22 @@ jobs:
       - name: Install deps
         run: pip install --quiet shapely==2.1.2 pytest requests
 
-      # Layer 5 — consistency invariants (slug uniqueness incl. the A1
+      # Layer 0 — deterministic, offline relation+ways segment audit. The
+      # pinned index is committed; refresh is a separate workflow and never
+      # performs HTTP in pull requests.
+      - name: River segment audit (offline, @data)
+        run: |
+          python3 scripts/audit_river_segments.py \
+            --osm-index data/cache/osm_river_segments_v1.jsonl.gz \
+            --out-json data/processed/river_segment_audit.json \
+            --out-md data/processed/river_segment_audit.md \
+            --baseline data/processed/river_segment_audit_baseline.json \
+            --gate
+          git diff --exit-code -- data/processed/river_segment_audit.json data/processed/river_segment_audit.md
+
+      - name: Segment audit unit and sector parity tests
+        run: pytest tests/test_river_segment_audit.py tests/test_river_segment_sector_resolution.py -q
+
       # duplicate-slug gate, assoc resolution, geometry/bbox ranges, overlay
       # same-body duplicates, contact placeholders)
       - name: Consistency invariants (Layer 5)

@@ -1,0 +1,745 @@
+{
+ "fixed": [
+  {
+   "slug": "anpa-anpa-0035",
+   "name": "Lac Hortop",
+   "judet": "Arad",
+   "source": "lake",
+   "osmc": "Hortop",
+   "in_county_pts": 24,
+   "majority": "Arad"
+  },
+  {
+   "slug": "romsilva-arad-halmagiu",
+   "name": "Râul Hălmagiu",
+   "judet": "Arad",
+   "source": "river",
+   "osmc": "Hălmăgel",
+   "in_county_pts": 66,
+   "majority": "Arad"
+  },
+  {
+   "slug": "romsilva-arad-leuca",
+   "name": "Râul Leuca",
+   "judet": "Arad",
+   "source": "river",
+   "osmc": "Valea Leucii",
+   "in_county_pts": 52,
+   "majority": "Arad"
+  },
+  {
+   "slug": "romsilva-bihor-vl-finis-finisului",
+   "name": "Râul Vl. Finiş (Finişului)",
+   "judet": "Bihor",
+   "source": "river",
+   "osmc": "Finiș",
+   "in_county_pts": 66,
+   "majority": "Bihor"
+  },
+  {
+   "slug": "anpa-anpa-0347",
+   "name": "Pârâul Aszo Mitacs",
+   "judet": "Harghita",
+   "source": "river",
+   "osmc": "Pârâul Mitaci",
+   "in_county_pts": 65,
+   "majority": "Harghita"
+  },
+  {
+   "slug": "anpa-anpa-0348",
+   "name": "Pârâul Vermet",
+   "judet": "Harghita",
+   "source": "river",
+   "osmc": "Pârâul Vermed",
+   "in_county_pts": 70,
+   "majority": "Harghita"
+  },
+  {
+   "slug": "anpa-anpa-0362",
+   "name": "Lac Cinciș",
+   "judet": "Hunedoara",
+   "source": "lake",
+   "osmc": "Lacul Cinciș",
+   "in_county_pts": 65,
+   "majority": "Hunedoara"
+  },
+  {
+   "slug": "anpa-anpa-0382",
+   "name": "Lac Tăul Teliuc",
+   "judet": "Hunedoara",
+   "source": "lake",
+   "osmc": "Tăul Teliucului",
+   "in_county_pts": 109,
+   "majority": "Hunedoara"
+  },
+  {
+   "slug": "romsilva-hunedoara-valea-dobrei",
+   "name": "Valea Dobrei",
+   "judet": "Hunedoara",
+   "source": "river",
+   "osmc": "Dobra",
+   "in_county_pts": 63,
+   "majority": "Hunedoara"
+  },
+  {
+   "slug": "anpa-anpa-0371",
+   "name": "Valea Luncanilor",
+   "judet": "Hunedoara",
+   "source": "river",
+   "osmc": "Luncani",
+   "in_county_pts": 64,
+   "majority": "Hunedoara"
+  }
+ ],
+ "unmatchable": [
+  {
+   "slug": "anpa-anpa-0024",
+   "name": "Balta Ghilin I și II",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0023",
+   "name": "Canalele din zona Turnu",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0026",
+   "name": "Canalele hidroameliorative Socodor",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0034",
+   "name": "Lac Mortărel",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "u74mudgv",
+   "name": "Lac Pâncota",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": [
+    21.67572497249,
+    46.32443094224,
+    21.68044601433,
+    46.32935876107
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "v568f04x",
+   "name": "Lac Zădăreni",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": [
+    21.22868673248,
+    46.13897753307,
+    21.24055528889,
+    46.14483583538
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-avram-iancu",
+   "name": "Râul Avram Iancu",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [
+    {
+     "kind": "lake",
+     "name": "Lacul Avram Iancu",
+     "bb": [
+      24.0658232,
+      45.8749355,
+      24.0668926,
+      45.8755936
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-beliu",
+   "name": "Râul Beliu",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-iacobini",
+   "name": "Râul Iacobini",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-pamesti",
+   "name": "Râul Pămești",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-stejar",
+   "name": "Râul Stejar",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-toc",
+   "name": "Râul Toc",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-arad-zimbru",
+   "name": "Râul Zimbru",
+   "judet": "Arad",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0094",
+   "name": "Canalul Cefa III",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0097",
+   "name": "Canalul Tăut – Barmod",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0091",
+   "name": "Canalul colector",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "0dsbiw28",
+   "name": "Râul Holod",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.03064023912,
+    46.76178526982,
+    22.18680379629,
+    46.7805308
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "dre11dij",
+   "name": "Râul Poiana",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.31205760896,
+    46.93556857523,
+    22.39561914325,
+    46.9660135446
+   ],
+   "candidates": [
+    {
+     "kind": "river",
+     "name": "Poiana",
+     "bb": [
+      23.901589,
+      47.8212308,
+      23.9245138,
+      47.8288386
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Poiana",
+     "bb": [
+      24.4342382,
+      47.4590962,
+      24.4502059,
+      47.5049332
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Poiana",
+     "bb": [
+      24.6151312,
+      47.1787436,
+      24.7203009,
+      47.1947541
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Valea Poiana",
+     "bb": [
+      23.703306,
+      47.2778312,
+      23.775777,
+      47.3786928
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "ab4t7anb",
+   "name": "Râul Tărcăița",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.2495462,
+    46.5112485,
+    22.36812650889,
+    46.63266916675
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "nb7yzcmh",
+   "name": "Valea Buduresei",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.34060314907,
+    46.66265413688,
+    22.55908369482,
+    46.70020313099
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-bihor-valea-draganului",
+   "name": "Valea Drăganului",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Drăgan course already drawn under 'Drăgan' (romsilva-bihor-dragan); sector-join deferred to merge task"
+  },
+  {
+   "slug": "gunskubl",
+   "name": "Valea Gepiș",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.46520101488,
+    47.0420668,
+    22.48095899552,
+    47.07777217173
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "0b5imfgi",
+   "name": "Valea Ierului",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    21.8890306,
+    47.2870153,
+    22.1879198,
+    47.4463171
+   ],
+   "note": "Ier course already drawn under 'Râul Ierul' (anpa-anpa-0040); full-cluster attach would overlap"
+  },
+  {
+   "slug": "7jpc32e8",
+   "name": "Valea Omului",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.4760371393,
+    47.02628840647,
+    22.53358661592,
+    47.0674910878
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "msh7jb28",
+   "name": "Valea Șoimului",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": [
+    22.37999108044,
+    47.05046383736,
+    22.4137272,
+    47.09390040955
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0098",
+   "name": "Văratic",
+   "judet": "Bihor",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0344",
+   "name": "Fondul piscicol 24 Ciceu: include Pârâul Tekero – 5 km, Pârâul Ferii – 6 km, Pârâul Cetății – 9 km, Pârâul Fierăstrăului- 9 km, Pârâul Stâncii - 8 km",
+   "judet": "Harghita",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-harghita-lac-baraj-paraul-rosu",
+   "name": "Lac baraj pârâul Roșu",
+   "judet": "Harghita",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Lacul Roșu polygon already drawn under 'Lacul Roșu' (3klq13bv); no separate 3 Ha barrage polygon in OSM"
+  },
+  {
+   "slug": "anpa-anpa-0329",
+   "name": "Râul Ivo",
+   "judet": "Harghita",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0354",
+   "name": "Valea Corbului",
+   "judet": "Harghita",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [
+    {
+     "kind": "river",
+     "name": "Pârâul Corbului",
+     "bb": [
+      22.6418147,
+      46.459273,
+      22.6419719,
+      46.4637185
+     ]
+    },
+    {
+     "kind": "river",
+     "name": "Valea Corbului",
+     "bb": [
+      24.0212456,
+      47.8283212,
+      24.0259684,
+      47.8309706
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0373",
+   "name": "Bulzești",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0365",
+   "name": "Lac Hațeg",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0363",
+   "name": "Lac Ostrov",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no named Ostrov reservoir polygon in OSM dump; OSM 'Ostrov' lake is in Hungary"
+  },
+  {
+   "slug": "romsilva-hunedoara-gradistea-superioara",
+   "name": "Râul Grădiștea superioară",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0356",
+   "name": "Râul Mare inf. II",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "Râul Mare course already drawn under 'Râul Mare Superior' (romsilva-hunedoara-raul-mare-superior); attaching would double-draw"
+  },
+  {
+   "slug": "anpa-anpa-0355",
+   "name": "Râul Steiul montan inferior",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0370",
+   "name": "Râul Steiul montan mijlociu",
+   "judet": "Hunedoara",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  }
+ ],
+ "group_shared": [
+  {
+   "slug": "do8k78x0",
+   "name": "Râul Crișul Repede Mijlociu",
+   "judet": "Bihor",
+   "group": "crisul-repede",
+   "note": "group 'crisul-repede' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "u84uqnip",
+   "name": "Râul Crișul Repede inferior",
+   "judet": "Bihor",
+   "group": "crisul-repede",
+   "note": "group 'crisul-repede' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-harghita-bicazul-mijlociu",
+   "name": "Râul Bicazul Mijlociu",
+   "judet": "Harghita",
+   "group": "bicaz",
+   "note": "group 'bicaz' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-harghita-bistricioara-tronson-ii",
+   "name": "Râul Bistricioara tronson II",
+   "judet": "Harghita",
+   "group": "bistricioara-harghita",
+   "note": "group 'bistricioara-harghita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0331",
+   "name": "Râul Iuhodul Praidului",
+   "judet": "Harghita",
+   "group": "iuhod",
+   "note": "group 'iuhod' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0337",
+   "name": "Râul Mureș I",
+   "judet": "Harghita",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0323",
+   "name": "Râul Mureș II",
+   "judet": "Harghita",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0339",
+   "name": "Râul Oltul superior",
+   "judet": "Harghita",
+   "group": "olt",
+   "note": "group 'olt' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0334",
+   "name": "Râul Târnava Mare inferior",
+   "judet": "Harghita",
+   "group": "tarnava-mare",
+   "note": "group 'tarnava-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0333",
+   "name": "Râul Târnava Mare mijlocie",
+   "judet": "Harghita",
+   "group": "tarnava-mare",
+   "note": "group 'tarnava-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0332",
+   "name": "Râul Târnava Mare superior",
+   "judet": "Harghita",
+   "group": "tarnava-mare",
+   "note": "group 'tarnava-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-harghita-tarnava-mica-5",
+   "name": "Râul Târnava Mică",
+   "judet": "Harghita",
+   "group": "tarnava-mica",
+   "note": "group 'tarnava-mica' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0341",
+   "name": "Râul Uzul superior",
+   "judet": "Harghita",
+   "group": "uzul",
+   "note": "group 'uzul' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0326",
+   "name": "Târnava Mare",
+   "judet": "Harghita",
+   "group": "tarnava-mare",
+   "note": "group 'tarnava-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0379",
+   "name": "Râul Crișul Alb, cu afluenții",
+   "judet": "Hunedoara",
+   "group": "crisul-alb",
+   "note": "group 'crisul-alb' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "fanvixkg",
+   "name": "Râul Jiul Inferior",
+   "judet": "Hunedoara",
+   "group": "jiu",
+   "note": "group 'jiu' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "dcomrepi",
+   "name": "Râul Jiul de vest mijlociu",
+   "judet": "Hunedoara",
+   "group": "jiul-de-vest",
+   "note": "group 'jiul-de-vest' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0377",
+   "name": "Râul Mureș, cu afluenții",
+   "judet": "Hunedoara",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-hunedoara-raul-barbat-inferior",
+   "name": "Râul Râul Bărbat Inferior",
+   "judet": "Hunedoara",
+   "group": "raul-barbat",
+   "note": "group 'raul-barbat' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0378",
+   "name": "Râul Strei, cu afluenții",
+   "judet": "Hunedoara",
+   "group": "streiul",
+   "note": "group 'streiul' has 1 geometry owner(s); member shares course"
+  }
+ ],
+ "sector_fixed": [
+  {
+   "slug": "romsilva-hunedoara-nucsorul-superior",
+   "name": "Râul Nucşorul Superior",
+   "judet": "Hunedoara",
+   "group": "nucsor",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.3818,
+   "owner": true
+  },
+  {
+   "slug": "romsilva-hunedoara-nucsorul-inferior",
+   "name": "Râul Nucşorul Inferior",
+   "judet": "Hunedoara",
+   "group": "nucsor",
+   "sectorStart": 0.3818,
+   "sectorEnd": 1.0,
+   "owner": false
+  },
+  {
+   "slug": "romsilva-arad-moneasa-superioara",
+   "name": "Râul Moneasa Superioară",
+   "judet": "Arad",
+   "group": "moneasa",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.7069,
+   "owner": true
+  },
+  {
+   "slug": "romsilva-arad-moneasa-inferioara",
+   "name": "Râul Moneasa Inferioară",
+   "judet": "Arad",
+   "group": "moneasa",
+   "sectorStart": 0.7069,
+   "sectorEnd": 1.0,
+   "owner": false
+  },
+  {
+   "slug": "romsilva-bihor-valea-iadului-superior",
+   "name": "Valea Iadului Superior",
+   "judet": "Bihor",
+   "group": "iadului",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.5227,
+   "owner": true
+  },
+  {
+   "slug": "romsilva-bihor-valea-iadului-inferior",
+   "name": "Valea Iadului Inferior",
+   "judet": "Bihor",
+   "group": "iadului",
+   "sectorStart": 0.5227,
+   "sectorEnd": 1.0,
+   "owner": false
+  }
+ ]
+}

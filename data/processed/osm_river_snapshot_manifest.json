@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "nodes": 3,
+    "relations": 1,
+    "ways": 2
+  },
+  "index": {
+    "entries": 3,
+    "sha256": "730a174b3146d5bab8f59617d51eae9a0fa721cb82f6d5508410d81cea87ba80"
+  },
+  "indexer_version": "river-segment-index-v1",
+  "schema_version": 1,
+  "snapshot": {
+    "path": "tests/fixtures/osm_snapshot_fixture.json",
+    "sha256": "a6775e7013f5f9e587f72dcd9a4a117118a72a0b44f02ff15d8e90bc873bce58",
+    "size_bytes": 501
+  }
+}

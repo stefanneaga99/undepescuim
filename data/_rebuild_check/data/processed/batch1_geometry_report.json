@@ -1,0 +1,813 @@
+{
+ "fixed": [
+  {
+   "slug": "anpa-anpa-0405",
+   "name": "Râul Iza",
+   "judet": "Maramureș",
+   "source": "owner_reattach",
+   "osmc": "Iza (full course)",
+   "in_county_pts": null,
+   "majority": null
+  },
+  {
+   "slug": "romsilva-alba-canciu-bosorogu",
+   "name": "Râul Canciu- Bosorogu",
+   "judet": "Alba",
+   "source": "river",
+   "osmc": "Valea Canciului + Boșorogul",
+   "in_county_pts": null,
+   "majority": null
+  },
+  {
+   "slug": "anpa-anpa-0013",
+   "name": "Râul Mogoș - Cotu",
+   "judet": "Alba",
+   "source": "river",
+   "osmc": "Valea Mogoșului",
+   "in_county_pts": 62,
+   "majority": "Alba"
+  },
+  {
+   "slug": "romsilva-alba-salane",
+   "name": "Râul Salane",
+   "judet": "Alba",
+   "source": "river",
+   "osmc": "Sălanele",
+   "in_county_pts": 74,
+   "majority": "Alba"
+  },
+  {
+   "slug": "anpa-anpa-0409",
+   "name": "Marele Novat",
+   "judet": "Maramureș",
+   "source": "river",
+   "osmc": "Novăț",
+   "in_county_pts": 63,
+   "majority": "Maramureș"
+  },
+  {
+   "slug": "romsilva-maramures-baita-nistru",
+   "name": "Râul Băița Nistru",
+   "judet": "Maramureș",
+   "source": "river",
+   "osmc": "Băița",
+   "in_county_pts": 65,
+   "majority": "Maramureș"
+  },
+  {
+   "slug": "anpa-anpa-0557",
+   "name": "Acumulare Bucecea",
+   "judet": "Suceava",
+   "source": "lake",
+   "osmc": "Lacul Bucecea",
+   "in_county_pts": 36,
+   "majority": "Suceava"
+  },
+  {
+   "slug": "anpa-anpa-0556",
+   "name": "Acumulare Rogojești",
+   "judet": "Suceava",
+   "source": "lake",
+   "osmc": "Rogojești 2",
+   "in_county_pts": 66,
+   "majority": "Suceava"
+  },
+  {
+   "slug": "anpa-anpa-0647",
+   "name": "Acumularea Băbeni cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "source": "lake",
+   "osmc": "Acumularea Băbeni",
+   "in_county_pts": 66,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "anpa-anpa-0646",
+   "name": "Acumularea Govora cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "source": "lake",
+   "osmc": "Acumularea Govora",
+   "in_county_pts": 39,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "anpa-anpa-0643",
+   "name": "Acumularea Râmnicu Vâlcea cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "source": "lake",
+   "osmc": "Acumularea Râmnicu Vâlcea",
+   "in_county_pts": 64,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "anpa-anpa-0645",
+   "name": "Acumularea Râureni cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "source": "lake",
+   "osmc": "Acumularea Râureni",
+   "in_county_pts": 91,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "romsilva-valcea-lotrisor-draganesti",
+   "name": "Râul Lotrișor Drăgănești",
+   "judet": "Vâlcea",
+   "source": "river",
+   "osmc": "Lotrișor",
+   "in_county_pts": 70,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "anpa-anpa-0655",
+   "name": "Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor",
+   "judet": "Vâlcea",
+   "source": "river",
+   "osmc": "Călinești",
+   "in_county_pts": 61,
+   "majority": "Vâlcea"
+  },
+  {
+   "slug": "anpa-anpa-0644",
+   "name": "Valea Urii cu pâraiele Uria și Murgoci",
+   "judet": "Vâlcea",
+   "source": "river",
+   "osmc": "Uria",
+   "in_county_pts": 62,
+   "majority": "Vâlcea"
+  }
+ ],
+ "unmatchable": [
+  {
+   "slug": "anpa-anpa-0008",
+   "name": "Mihoești",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-alba-fenesasa",
+   "name": "Râul Fenesasa",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-alba-izvoarele-ampoiului",
+   "name": "Râul Izvoarele Ampoiului",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "anpa-anpa-0011",
+   "name": "Râul Sălciuța",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "fee3lhad",
+   "name": "Râul Valea Morilor",
+   "judet": "Alba",
+   "action": "drop-geometry",
+   "old_bbox": [
+    23.4447869,
+    46.3808093,
+    23.4620463,
+    46.4060547
+   ],
+   "note": "no credible in-county OSM course (same-name river exists in another county)"
+  },
+  {
+   "slug": "romsilva-alba-viltori-fenes",
+   "name": "Râul Vîltori - Feneș",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "ys4a4vw8",
+   "name": "Valea Bistrei",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": [
+    23.01418080792,
+    46.36815281579,
+    23.08363258302,
+    46.49703334619
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "p3puv4bx",
+   "name": "Valea Bistrei",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": [
+    23.07985603273,
+    46.37624756718,
+    23.10870587289,
+    46.45135238972
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0015",
+   "name": "Valea Bistricioarei",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-alba-valea-galzii",
+   "name": "Valea Gâlzii",
+   "judet": "Alba",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-maramures-borjuc",
+   "name": "Borjuc",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-maramures-botiza",
+   "name": "Râul Botiza",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [
+    {
+     "kind": "river",
+     "name": "Botiza",
+     "bb": [
+      25.7970312,
+      44.2818386,
+      25.8222908,
+      44.2981166
+     ]
+    }
+   ],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0417",
+   "name": "Râul Băiuț",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0399",
+   "name": "Râul Chechiș",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-maramures-chiuzbaia",
+   "name": "Râul Chiuzbaia",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0413",
+   "name": "Râul Craica",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-maramures-faina-wasser",
+   "name": "Râul Făina-Wasser",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0415",
+   "name": "Râul Groșii Dămăcușeni, cu afluenții",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0420",
+   "name": "Râul Minghet",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0416",
+   "name": "Râul Ruoaia Lăpuș",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0400",
+   "name": "Râul Sălăjel",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0425",
+   "name": "Valea Dobric",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0423",
+   "name": "Valea Rohia",
+   "judet": "Maramureș",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0422",
+   "name": "Valea Rotundă",
+   "judet": "Maramureș",
+   "action": "drop-geometry",
+   "old_bbox": null,
+   "note": "no credible in-county OSM course (same-name river exists in another county)"
+  },
+  {
+   "slug": "anpa-anpa-0559",
+   "name": "Acumulare Dragomira",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "anpa-anpa-0560",
+   "name": "Balta Rădășeni",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0574",
+   "name": "Izvoarele Moldovei și Sucevei",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "4fg24m45",
+   "name": "Lacul Pojorâta (Iezer)",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": [
+    25.44010810677,
+    47.54192488779,
+    25.44384302414,
+    47.54463396849
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-suceava-afluentii-suhei",
+   "name": "Râul Afluenţii Suhei",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "romsilva-suceava-brodina",
+   "name": "Râul Brodina",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-suceava-barnarel",
+   "name": "Râul Bărnărel",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-suceava-izvoarele-dornei",
+   "name": "Râul Izvoarele Dornei",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "anpa-anpa-0555",
+   "name": "Râul Șomuzul Mic și afluenții",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-suceava-valea-putnei",
+   "name": "Valea Putnei",
+   "judet": "Suceava",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "anpa-anpa-0649",
+   "name": "Acumularea Drăgășani cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0648",
+   "name": "Acumularea Ionești cu bălțile adiacente",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0638",
+   "name": "Acumularea Robești si Valea Robești",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "0tzvnk1y",
+   "name": "Lacul Vlădești ",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": [
+    24.2982515,
+    45.1163209,
+    24.3011048,
+    45.1174043
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "ii25s9zo",
+   "name": "Pârâul Murgoci",
+   "judet": "Vâlcea",
+   "action": "drop-geometry",
+   "old_bbox": [
+    24.18410084445,
+    45.47340413726,
+    24.22219714445,
+    45.48375463804
+   ],
+   "note": "no credible in-county OSM course (same-name river exists in another county)"
+  },
+  {
+   "slug": "aksrc2lo",
+   "name": "Râul Grotului ",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": [
+    24.0387266,
+    45.3089793,
+    24.0461242,
+    45.35311032954
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "romsilva-valcea-izvoarele-latoritei",
+   "name": "Râul Izvoarele Latoriței",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "note": "no attachable geometry (see KEEP_BBOX rationale)"
+  },
+  {
+   "slug": "tozghzao",
+   "name": "Râul Râmești",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": [
+    23.9316232,
+    45.1395675,
+    23.9987305,
+    45.2723949
+   ],
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0671",
+   "name": "Râul Sturișori",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0669",
+   "name": "Râul „Izvor”",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  },
+  {
+   "slug": "anpa-anpa-0631",
+   "name": "Valea Curpenului",
+   "judet": "Vâlcea",
+   "action": "keep-bbox",
+   "old_bbox": null,
+   "candidates": [],
+   "note": "no OSM candidate touching declared county (or no candidate at all)"
+  }
+ ],
+ "group_shared": [
+  {
+   "slug": "romsilva-alba-ariesul-mare",
+   "name": "Râul Ariesul Mare",
+   "judet": "Alba",
+   "group": "aries-mare",
+   "note": "group 'aries-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-alba-ariesul-mare-inferior",
+   "name": "Râul Arieșul Mare Inferior",
+   "judet": "Alba",
+   "group": "aries-mare",
+   "note": "group 'aries-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-alba-ariesul-mare-mijlociu",
+   "name": "Râul Arieșul Mare Mijlociu",
+   "judet": "Alba",
+   "group": "aries-mare",
+   "note": "group 'aries-mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "yu63lkif",
+   "name": "Râul Mureș",
+   "judet": "Alba",
+   "group": "mures",
+   "note": "group 'mures' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-alba-sebesul-mijlociu",
+   "name": "Râul Sebesul Mijlociu",
+   "judet": "Alba",
+   "group": "sebes",
+   "note": "group 'sebes' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-alba-sebesul-inferior",
+   "name": "Râul Sebeșul Inferior",
+   "judet": "Alba",
+   "group": "sebes",
+   "note": "group 'sebes' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-alba-valea-mare",
+   "name": "Valea Mare",
+   "judet": "Alba",
+   "group": "mare",
+   "note": "group 'mare' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-maramures-ruscova-inferioara",
+   "name": "Râul Ruscova Inferioară",
+   "judet": "Maramureș",
+   "group": "ruscova",
+   "note": "group 'ruscova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0402",
+   "name": "Râul Someș",
+   "judet": "Maramureș",
+   "group": "somes",
+   "note": "group 'somes' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-maramures-viseul-inferior",
+   "name": "Râul Vișeul inferior",
+   "judet": "Maramureș",
+   "group": "vise",
+   "note": "group 'vise' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-maramures-viseul-mijlociu",
+   "name": "Râul Vișeul mijlociu",
+   "judet": "Maramureș",
+   "group": "vise",
+   "note": "group 'vise' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0570",
+   "name": "Râul Bistrița Aurie I",
+   "judet": "Suceava",
+   "group": "bistrita",
+   "note": "group 'bistrita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0562",
+   "name": "Râul Bistrița Aurie III",
+   "judet": "Suceava",
+   "group": "bistrita",
+   "note": "group 'bistrita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0563",
+   "name": "Râul Bistrița I Zugreni",
+   "judet": "Suceava",
+   "group": "bistrita",
+   "note": "group 'bistrita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0569",
+   "name": "Râul Bistrița II",
+   "judet": "Suceava",
+   "group": "bistrita",
+   "note": "group 'bistrita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-suceava-moldova-59",
+   "name": "Râul Moldova",
+   "judet": "Suceava",
+   "group": "moldova",
+   "note": "group 'moldova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0566",
+   "name": "Râul Moldova I",
+   "judet": "Suceava",
+   "group": "moldova",
+   "note": "group 'moldova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0567",
+   "name": "Râul Moldova II",
+   "judet": "Suceava",
+   "group": "moldova",
+   "note": "group 'moldova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0565",
+   "name": "Râul Moldova III",
+   "judet": "Suceava",
+   "group": "moldova",
+   "note": "group 'moldova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0568",
+   "name": "Râul Moldova IV",
+   "judet": "Suceava",
+   "group": "moldova",
+   "note": "group 'moldova' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-suceava-neagra-inferioara",
+   "name": "Râul Neagra Inferioară",
+   "judet": "Suceava",
+   "group": "neagra",
+   "note": "group 'neagra' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "anpa-anpa-0552",
+   "name": "Râul Siret",
+   "judet": "Suceava",
+   "group": "siret",
+   "note": "group 'siret' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-valcea-izvorul-lotrului",
+   "name": "Râul Izvorul Lotrului",
+   "judet": "Vâlcea",
+   "group": "lotru",
+   "note": "group 'lotru' has 2 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-valcea-latorita-inferioara",
+   "name": "Râul Latorița Inferioară",
+   "judet": "Vâlcea",
+   "group": "latorita",
+   "note": "group 'latorita' has 1 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "romsilva-valcea-lotru-superior",
+   "name": "Râul Lotru Superior",
+   "judet": "Vâlcea",
+   "group": "lotru",
+   "note": "group 'lotru' has 2 geometry owner(s); member shares course"
+  },
+  {
+   "slug": "3e8t20hn",
+   "name": "Râul Olt",
+   "judet": "Vâlcea",
+   "group": "olt",
+   "note": "group 'olt' has 1 geometry owner(s); member shares course"
+  }
+ ],
+ "sector_fixed": [
+  {
+   "slug": "anpa-anpa-0407",
+   "name": "Izvorul Izei",
+   "judet": "Maramureș",
+   "group": "iza",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.1205
+  },
+  {
+   "slug": "anpa-anpa-0408",
+   "name": "Râul Iza superioară",
+   "judet": "Maramureș",
+   "group": "iza",
+   "sectorStart": 0.1205,
+   "sectorEnd": 0.6024
+  },
+  {
+   "slug": "anpa-anpa-0405",
+   "name": "Râul Iza",
+   "judet": "Maramureș",
+   "group": "iza",
+   "sectorStart": 0.6024,
+   "sectorEnd": 1.0
+  },
+  {
+   "slug": "z8u6g69z",
+   "name": "Râul Geoagiu Superior",
+   "judet": "Alba",
+   "group": "geoagiu",
+   "sectorStart": 0.0,
+   "sectorEnd": 0.2432
+  },
+  {
+   "slug": "4pouq9sd",
+   "name": "Råul Geoagiu Inferior",
+   "judet": "Alba",
+   "group": "geoagiu",
+   "sectorStart": 0.2432,
+   "sectorEnd": 1.0
+  }
+ ]
+}

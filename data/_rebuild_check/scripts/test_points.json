@@ -1,0 +1,108 @@
+{
+ "olt": [
+  {"label": "Bălan (source)", "lon": 25.8113436, "lat": 46.6525952, "expect": "AVPS GHEORGHIENI"},
+  {"label": "Sf. Gheorghe", "lon": 25.7865367, "lat": 45.8659935, "expect": "AJVPS COVASNA"},
+  {"label": "Augustin (Rupea)", "lon": 25.5533305, "lat": 46.0461298, "expect": "AVPS RUPEA"},
+  {"label": "Veneția de Jos", "lon": 25.2122393, "lat": 45.875065, "expect": "AVPS FĂGĂRAȘ"},
+  {"label": "Feldioara", "lon": 24.6880361, "lat": 45.8052412, "expect": "AVPS FĂGĂRAȘ"},
+  {"label": "Avrig (Sibiu)", "lon": 24.3770302, "lat": 45.7256555, "expect": "AJVPS SIBIU"},
+  {"label": "Râmnicu Vâlcea", "lon": 24.3647209, "lat": 45.1031731, "expect": "AJVPS VÂLCEA"},
+  {"label": "Drăgășani", "lon": 24.2643412, "lat": 44.6592011, "expect": "AJVPS VÂLCEA"},
+  {"label": "Slatina", "lon": 24.3631837, "lat": 44.4299971, "expect": "AJVPS OLT"},
+  {"label": "Izbiceni", "lon": 24.6617102, "lat": 43.8245492, "expect": "AJVPS OLT"},
+  {"label": "Turnu Măgurele (vărsare)", "lon": 24.8691717, "lat": 43.7518306, "expect": "AJVPS TELEORMAN"}
+ ],
+ "mures": [
+  {"label": "Subcetate (Mureș I)", "lon": 25.4327535, "lat": 46.8557879, "expect": "AVPS TÂRNAVA MARE"},
+  {"label": "Deda (Mureș IV)", "lon": 24.8717651, "lat": 46.947477, "expect": "AJVPS MUREȘ"},
+  {"label": "Târgu Mureș", "lon": 24.561196, "lat": 46.5446253, "expect": "AJVPS MUREȘ"},
+  {"label": "Deva (Hunedoara)", "lon": 22.9008611, "lat": 45.8817402, "expect": "AJVPS HUNEDOARA"},
+  {"label": "Periam (Timiș)", "lon": 20.8711212, "lat": 46.0422872, "expect": "AJVPS TIMIȘ"},
+  {"label": "Arad (vărsare)", "lon": 21.3196342, "lat": 46.1753793, "expect": "AJVPS ARAD"}
+ ],
+ "siret": [
+  {"label": "Siret (Suceava)", "lon": 26.0692763, "lat": 47.9516479, "expect": "AJVPS BOTOȘANI"},
+  {"label": "Tudora (Botoșani)", "lon": 26.6345914, "lat": 47.5074742, "expect": "AJVPS BOTOȘANI"},
+  {"label": "Lespezi (Iași)", "lon": 26.6909998, "lat": 47.3582254, "expect": "AVPS IAȘI"},
+  {"label": "Roman (Neamț)", "lon": 26.9284165, "lat": 46.92528, "expect": "AVPS ROMAN"},
+  {"label": "Bacău", "lon": 26.9153557, "lat": 46.5560493, "expect": "Centrul Regional de Ecologie Bacău"},
+  {"label": "Suraia (Vrancea)", "lon": 27.372976, "lat": 45.6737133, "expect": "AJVPS VRANCEA"},
+  {"label": "Șendreni (Brăila, vărsare)", "lon": 27.9104102, "lat": 45.4515984, "expect": "AJVPS Brăila"}
+ ],
+ "prut": [
+  {"label": "Bădărăi (Botoșani)", "lon": 27.3819669, "lat": 47.5900696, "expect": "AJVPS BOTOȘANI"},
+  {"label": "Gorban (Iași)", "lon": 28.0737819, "lat": 46.9114325, "expect": "AVPS IAȘI"},
+  {"label": "Drânceni (Vaslui)", "lon": 28.1238447, "lat": 46.7933814, "expect": "AJVPS VASLUI"},
+  {"label": "Vădeni (Galați)", "lon": 28.0862277, "lat": 46.0665632, "expect": "AJVPS GALAȚI"},
+  {"label": "Galați (vărsare)", "lon": 28.0549395, "lat": 45.4338215, "expect": "AJVPS GALAȚI"}
+ ],
+ "somes": [
+  {"label": "Dej (Cluj)", "lon": 23.8759884, "lat": 47.1426672, "expect": "AJVPS CLUJ"},
+  {"label": "Seini (Maramureș)", "lon": 23.2831939, "lat": 47.7484996, "expect": "AJVPS MARAMUREȘ"},
+  {"label": "Satu Mare", "lon": 22.8725598, "lat": 47.7891763, "expect": "AJVPS SATU MARE"}
+ ],
+ "crisul-repede": [
+  {"label": "Oradea", "lon": 21.9285231, "lat": 47.0549163, "expect": "AJVPS BIHOR"},
+  {"label": "Vadu Crișului (inferior)", "lon": 22.5169342, "lat": 46.9860493, "expect": "AJVPS BIHOR"},
+  {"label": "Bucea (mijlociu)", "lon": 22.6948114, "lat": 46.9491304, "expect": "AJVPS BIHOR"},
+  {"label": "Huedin (Cluj mijlociu)", "lon": 23.0246871, "lat": 46.8656535, "expect": "D.S. Cluj"},
+  {"label": "Valea Drăganului (superior)", "lon": 22.83146, "lat": 46.9028476, "expect": "D.S. Cluj"}
+ ],
+ "arges": [
+  {"label": "Pitești (Argeș)", "lon": 24.8721156, "lat": 44.8572882, "expect": "AJVPS ARGEȘ"},
+  {"label": "Potlogi (Dâmbovița)", "lon": 25.5881292, "lat": 44.5606869, "expect": "AJVPS DÂMBOVIȚA"},
+  {"label": "Hotarele (Giurgiu)", "lon": 26.3678106, "lat": 44.1759333, "expect": "AJVPS GIURGIU"},
+  {"label": "Oltenița (Călărași, vărsare)", "lon": 26.6406794, "lat": 44.0905153, "expect": "AJVPS CĂLĂRAȘI"}
+ ],
+ "ialomita": [
+  {"label": "Fieni (Dâmbovița)", "lon": 25.4195745, "lat": 45.130649, "expect": "AJVPS DÂMBOVIȚA"},
+  {"label": "Dridu (Ialomița)", "lon": 26.453252, "lat": 44.6952079, "expect": "AVPS IALOMIȚA"}
+ ],
+ "dambovita": [
+  {"label": "Dragoslavele (superioară)", "lon": 25.169071, "lat": 45.348165, "expect": "APS AQUA CRISIUS"},
+  {"label": "Stoenești (mijlocie)", "lon": 25.1753525, "lat": 45.2626828, "expect": "AJVPS ARGEȘ"},
+  {"label": "Brezoaele (Dâmbovița)", "lon": 25.7478265, "lat": 44.5758132, "expect": "AJVPS DÂMBOVIȚA"},
+  {"label": "Cernica (Ilfov)", "lon": 26.2817239, "lat": 44.417714, "expect": "AVPS ACVILA"}
+ ],
+ "jiu": [
+  {"label": "Târgu Jiu", "lon": 23.2728118, "lat": 45.0422947, "expect": "AJVPS GORJ"},
+  {"label": "Țânțăreni (Gorj)", "lon": 23.5403118, "lat": 44.6207127, "expect": "AJVPS GORJ"},
+  {"label": "Bâlta (Dolj)", "lon": 23.4697639, "lat": 44.5357652, "expect": "AJVPS DOLJ"},
+  {"label": "Bechet (vărsare)", "lon": 23.9574422, "lat": 43.784314, "expect": "AJVPS DOLJ"}
+ ],
+ "moldova": [
+  {"label": "Câmpulung Moldovenesc (I/II)", "lon": 25.5597, "lat": 47.5298, "expect": "AJVPS BOTOȘANI"},
+  {"label": "Frasin (III/IV)", "lon": 25.7188, "lat": 47.5792, "expect": "AJVPS BOTOȘANI"},
+  {"label": "Pașcani (Iași)", "lon": 26.7213187, "lat": 47.2466214, "expect": "AVPS IAȘI"}
+ ],
+ "tarnava-mare": [
+  {"label": "Zetea (superior)", "lon": 25.3659, "lat": 46.3883, "expect": "AVPS TÂRNAVA MARE"},
+  {"label": "Sighișoara (Mureș)", "lon": 24.792433, "lat": 46.219853, "expect": "AJVPS MUREȘ"},
+  {"label": "Dumbrăveni (Sibiu)", "lon": 24.5791722, "lat": 46.2231601, "expect": "AJVPS SIBIU"},
+  {"label": "Blaj (Alba, vărsare)", "lon": 23.9225, "lat": 46.1742, "expect": "AJVPS ALBA"}
+ ],
+ "colentina": [
+  {"label": "Vlădeni (Dâmbovița, izvor)", "lon": 25.7753, "lat": 44.8756, "expect": "AJVPS DÂMBOVIȚA"},
+  {"label": "Cernica (Ilfov, vărsare)", "lon": 26.2817, "lat": 44.4177, "expect": "AVPS ACVILA"}
+ ],
+ "aries": [
+  {"label": "Baia de Arieș (Alba)", "lon": 23.2812, "lat": 46.3803, "expect": "AJVPS ALBA"},
+  {"label": "Gligorești (Cluj)", "lon": 23.9775, "lat": 46.4446, "expect": "AJVPS CLUJ"}
+ ],
+ "somesul-mic": [
+  {"label": "Gilău (AJPS Cluj)", "lon": 23.389, "lat": 46.7538, "expect": "AJPS Cluj"},
+  {"label": "Dej (AJVPS Cluj)", "lon": 23.876, "lat": 47.1427, "expect": "AJVPS CLUJ"}
+ ],
+ "somesul-mare": [
+  {"label": "Feldru (BN)", "lon": 24.5974, "lat": 47.2775, "expect": "AJVPS BISTRIŢA NĂSĂUD"},
+  {"label": "Dej (Cluj)", "lon": 23.876, "lat": 47.1427, "expect": "AJVPS CLUJ"}
+ ],
+ "barzava": [
+  {"label": "Anina (inferioară)", "lon": 21.8532, "lat": 45.0881, "expect": "AJVPS CARAȘ-SEVERIN"},
+  {"label": "Bocșa (Banatul)", "lon": 21.7313, "lat": 45.3782, "expect": "AP BANATUL"},
+  {"label": "Jamu Mare (Timiș)", "lon": 21.417516, "lat": 45.2928113, "expect": "AJVPS TIMIȘ"}
+ ],
+ "bistrita-gorj": [
+  {"label": "Peștișani (Gorj)", "lon": 23.0482339, "lat": 45.0790472, "expect": "AJVPS GORJ"}
+ ]
+}
