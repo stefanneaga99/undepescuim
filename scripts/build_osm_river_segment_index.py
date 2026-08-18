@@ -33,12 +33,15 @@ def build(doc):
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argument('--out',required=True); p.add_argument('--manifest',required=True); p.add_argument('--no-network',action='store_true'); a=p.parse_args()
-    raw=Path(a.input).read_bytes(); entries,n,w,r=build(load(a.input)); out=Path(a.out); out.parent.mkdir(parents=True,exist_ok=True)
+    raw=Path(a.input).read_bytes()
+    doc=load(a.input)
+    entries,n,w,r=build(doc); out=Path(a.out); out.parent.mkdir(parents=True,exist_ok=True)
     with out.open('wb') as raw_out:
         with gzip.GzipFile(filename='',fileobj=raw_out,mode='wb',mtime=0) as gz:
             import io
             with io.TextIOWrapper(gz,encoding='utf-8',newline='\n') as f:
                 for item in entries: f.write(json.dumps(item,ensure_ascii=False,sort_keys=True,separators=(',',':'))+'\n')
-    manifest={'schema_version':1,'indexer_version':'river-segment-index-v1','snapshot':{'path':str(Path(a.input)),'sha256':hashlib.sha256(raw).hexdigest(),'size_bytes':len(raw)},'index':{'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'entries':len(entries)},'counts':{'nodes':n,'ways':w,'relations':r}}
+    meta=load(a.input).get('osm3s',{}) if isinstance(load(a.input),dict) else {}
+    manifest={'schema_version':1,'indexer_version':'river-segment-index-v1','source':{'url':'https://overpass-api.de/api/interpreter','snapshot_timestamp':meta.get('timestamp_osm_base'),'copyright':meta.get('copyright')},'snapshot':{'path':str(Path(a.input)),'sha256':hashlib.sha256(raw).hexdigest(),'size_bytes':len(raw)},'index':{'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'entries':len(entries)},'counts':{'nodes':n,'ways':w,'relations':r}}
     Path(a.manifest).write_text(json.dumps(manifest,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf-8')
 if __name__=='__main__': main()

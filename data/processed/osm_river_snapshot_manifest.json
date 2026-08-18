@@ -1,18 +1,23 @@
 {
   "counts": {
-    "nodes": 3,
-    "relations": 1,
-    "ways": 2
+    "nodes": 2906679,
+    "relations": 2551,
+    "ways": 69593
   },
   "index": {
-    "entries": 3,
-    "sha256": "730a174b3146d5bab8f59617d51eae9a0fa721cb82f6d5508410d81cea87ba80"
+    "entries": 72144,
+    "sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4"
   },
   "indexer_version": "river-segment-index-v1",
   "schema_version": 1,
   "snapshot": {
-    "path": "tests/fixtures/osm_snapshot_fixture.json",
-    "sha256": "a6775e7013f5f9e587f72dcd9a4a117118a72a0b44f02ff15d8e90bc873bce58",
-    "size_bytes": 501
+    "path": "data/raw/overpass_water_all.json",
+    "sha256": "f7ba218227f49611cf59611f896c03effebf7bfc933c753cc56bab80e0b2bce9",
+    "size_bytes": 258592837
+  },
+  "source": {
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+    "snapshot_timestamp": "2026-08-12T15:00:14Z",
+    "url": "https://overpass-api.de/api/interpreter"
   }
 }

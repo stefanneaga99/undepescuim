@@ -1,9 +1,1316 @@
 {
   "cells": [],
-  "rivers": [],
+  "rivers": [
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11551057,
+        "relation_ids": [
+          11551057
+        ],
+        "way_ids": [
+          187021434,
+          187097301,
+          912853217
+        ]
+      },
+      "owner_slug": "qjz7g9se",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11551057:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0326"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11551058,
+        "relation_ids": [
+          11551058
+        ],
+        "way_ids": [
+          186378710,
+          186648170,
+          186648171,
+          186648176
+        ]
+      },
+      "owner_slug": "zughmn94",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11551058:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-0666",
+        "abp-0354"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11555144,
+        "relation_ids": [
+          11555144
+        ],
+        "way_ids": [
+          88344409,
+          841801790
+        ]
+      },
+      "owner_slug": "ec2faven",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11555144:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0330"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11952672,
+        "relation_ids": [
+          11952672
+        ],
+        "way_ids": [
+          350013713,
+          878092285
+        ]
+      },
+      "owner_slug": "owq68ima",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11952672:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0010"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 12393788,
+        "relation_ids": [
+          12393788
+        ],
+        "way_ids": [
+          857235704,
+          913246106
+        ]
+      },
+      "owner_slug": "qvwbzauf",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "12393788:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0331"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.7090909090909091,
+        "published_to_osm": 0.005747126436781609
+      },
+      "findings": [
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 16023493,
+        "relation_ids": [
+          16023493
+        ],
+        "way_ids": [
+          1185218205,
+          1185218206
+        ]
+      },
+      "owner_slug": "414x091y",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "16023493:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0140",
+        "abp-0287"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 17068098,
+        "relation_ids": [
+          17068098
+        ],
+        "way_ids": [
+          26955429,
+          642307132
+        ]
+      },
+      "owner_slug": "3klq13bv",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "17068098:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-romsilva-0256",
+        "abp-0160"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 2445024,
+        "relation_ids": [
+          2445024
+        ],
+        "way_ids": [
+          169852659,
+          183630295
+        ]
+      },
+      "owner_slug": "axdnd0sx",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "2445024:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-romsilva-0284",
+        "abp-0167"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 9062865,
+        "relation_ids": [
+          9062865
+        ],
+        "way_ids": [
+          650863541,
+          913295869,
+          913295870,
+          913295871,
+          913295872,
+          913295873,
+          913295874
+        ]
+      },
+      "owner_slug": "eu0onj97",
+      "river_group": null,
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "9062865:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0008"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [
+        {
+          "code": "missing_segment",
+          "end_index": 116,
+          "length_m": 7844.795,
+          "midpoint": [
+            22.952438,
+            45.8813234
+          ],
+          "start_index": 0
+        },
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11873257,
+        "relation_ids": [
+          11873257
+        ],
+        "way_ids": [
+          87915974,
+          869718848
+        ]
+      },
+      "owner_slug": "5bbhtdfc",
+      "river_group": "cerna-valcea",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11873257:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0633",
+        "anpa-romsilva-0338",
+        "abp-0318"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": [
+          {
+            "end_index": 116,
+            "length_m": 7844.795,
+            "midpoint": [
+              22.952438,
+              45.8813234
+            ],
+            "start_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.9549531981279251,
+        "published_to_osm": 0.35228212647567486
+      },
+      "findings": [
+        {
+          "code": "missing_segment",
+          "end_index": 745,
+          "length_m": 622.934,
+          "midpoint": [
+            25.6225159,
+            44.8690155
+          ],
+          "start_index": 734
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 864,
+          "length_m": 474.296,
+          "midpoint": [
+            25.5480586,
+            44.9088873
+          ],
+          "start_index": 856
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 1473,
+          "length_m": 605.081,
+          "midpoint": [
+            25.6115588,
+            44.8777337
+          ],
+          "start_index": 1465
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 1503,
+          "length_m": 485.745,
+          "midpoint": [
+            25.6373263,
+            44.8615638
+          ],
+          "start_index": 1499
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 1956,
+          "length_m": 424.085,
+          "midpoint": [
+            25.770368,
+            44.788924
+          ],
+          "start_index": 1946
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 1996,
+          "length_m": 761.837,
+          "midpoint": [
+            25.7375256,
+            44.7903049
+          ],
+          "start_index": 1989
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 2017,
+          "length_m": 288.66,
+          "midpoint": [
+            25.718901,
+            44.792304
+          ],
+          "start_index": 2013
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 2046,
+          "length_m": 987.98,
+          "midpoint": [
+            25.701309,
+            44.79767
+          ],
+          "start_index": 2026
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 2155,
+          "length_m": 340.668,
+          "midpoint": [
+            25.648173,
+            44.84651
+          ],
+          "start_index": 2151
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 2181,
+          "length_m": 390.489,
+          "midpoint": [
+            25.63394,
+            44.8596158
+          ],
+          "start_index": 2178
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 4179,
+          "length_m": 455.798,
+          "midpoint": [
+            25.7631246,
+            44.7964001
+          ],
+          "start_index": 4169
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 4663,
+          "length_m": 1040.105,
+          "midpoint": [
+            25.5859621,
+            44.8932312
+          ],
+          "start_index": 4645
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 4873,
+          "length_m": 267.839,
+          "midpoint": [
+            25.8245538,
+            44.7316105
+          ],
+          "start_index": 4843
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 5040,
+          "length_m": 340.49,
+          "midpoint": [
+            25.4039734,
+            44.9734857
+          ],
+          "start_index": 5038
+        },
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 1308445,
+        "relation_ids": [
+          1308445
+        ],
+        "way_ids": [
+          17389124,
+          17389155,
+          17389211,
+          17389282,
+          17389323,
+          17389417,
+          17389475,
+          88344687,
+          88344893,
+          240988415,
+          240988940,
+          240989007,
+          240989025,
+          240989078,
+          248077189,
+          248077851,
+          913253955,
+          935322035,
+          935322036,
+          935322037,
+          1087809114
+        ]
+      },
+      "owner_slug": "3ek8e82l",
+      "river_group": "ialomita",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "1308445:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0267",
+        "anpa-0388",
+        "abp-0306"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": [
+          {
+            "end_index": 745,
+            "length_m": 622.934,
+            "midpoint": [
+              25.6225159,
+              44.8690155
+            ],
+            "start_index": 734
+          },
+          {
+            "end_index": 864,
+            "length_m": 474.296,
+            "midpoint": [
+              25.5480586,
+              44.9088873
+            ],
+            "start_index": 856
+          },
+          {
+            "end_index": 1473,
+            "length_m": 605.081,
+            "midpoint": [
+              25.6115588,
+              44.8777337
+            ],
+            "start_index": 1465
+          },
+          {
+            "end_index": 1503,
+            "length_m": 485.745,
+            "midpoint": [
+              25.6373263,
+              44.8615638
+            ],
+            "start_index": 1499
+          },
+          {
+            "end_index": 1956,
+            "length_m": 424.085,
+            "midpoint": [
+              25.770368,
+              44.788924
+            ],
+            "start_index": 1946
+          },
+          {
+            "end_index": 1996,
+            "length_m": 761.837,
+            "midpoint": [
+              25.7375256,
+              44.7903049
+            ],
+            "start_index": 1989
+          },
+          {
+            "end_index": 2017,
+            "length_m": 288.66,
+            "midpoint": [
+              25.718901,
+              44.792304
+            ],
+            "start_index": 2013
+          },
+          {
+            "end_index": 2046,
+            "length_m": 987.98,
+            "midpoint": [
+              25.701309,
+              44.79767
+            ],
+            "start_index": 2026
+          },
+          {
+            "end_index": 2155,
+            "length_m": 340.668,
+            "midpoint": [
+              25.648173,
+              44.84651
+            ],
+            "start_index": 2151
+          },
+          {
+            "end_index": 2181,
+            "length_m": 390.489,
+            "midpoint": [
+              25.63394,
+              44.8596158
+            ],
+            "start_index": 2178
+          },
+          {
+            "end_index": 4179,
+            "length_m": 455.798,
+            "midpoint": [
+              25.7631246,
+              44.7964001
+            ],
+            "start_index": 4169
+          },
+          {
+            "end_index": 4663,
+            "length_m": 1040.105,
+            "midpoint": [
+              25.5859621,
+              44.8932312
+            ],
+            "start_index": 4645
+          },
+          {
+            "end_index": 4873,
+            "length_m": 267.839,
+            "midpoint": [
+              25.8245538,
+              44.7316105
+            ],
+            "start_index": 4843
+          },
+          {
+            "end_index": 5040,
+            "length_m": 340.49,
+            "midpoint": [
+              25.4039734,
+              44.9734857
+            ],
+            "start_index": 5038
+          }
+        ]
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 13030220,
+        "relation_ids": [
+          13030220
+        ],
+        "way_ids": [
+          182932739,
+          182932750,
+          183145601
+        ]
+      },
+      "owner_slug": "y6i6nikh",
+      "river_group": "olt",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "13030220:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-0172",
+        "anpa-0250",
+        "anpa-0482",
+        "anpa-0519",
+        "anpa-0581",
+        "anpa-0628",
+        "abp-0304",
+        "abp-0316",
+        "abp-0386"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 2435464,
+        "relation_ids": [
+          2435464
+        ],
+        "way_ids": [
+          29075178,
+          88019641,
+          88342740,
+          88342826,
+          88344153,
+          88344212,
+          88344409,
+          88362957,
+          182932745,
+          183313632,
+          183828451,
+          183865416,
+          184713142,
+          185038875,
+          185257739,
+          185949652,
+          185952964,
+          186378710,
+          186452813,
+          186648170,
+          186648171,
+          186648176,
+          187008935,
+          187021434,
+          187097301,
+          187629282,
+          187629284,
+          187630766,
+          187630771,
+          674679403,
+          841801784,
+          841801785,
+          841801787,
+          841801789,
+          857235704,
+          912853213,
+          912853214,
+          913246107,
+          913246108,
+          1299061992,
+          1328215944,
+          1328215945,
+          1328215946,
+          1328350459,
+          1328350460,
+          1328350461,
+          1328350462
+        ]
+      },
+      "owner_slug": "y6i6nikh",
+      "river_group": "olt",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "2435464:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-0172",
+        "anpa-0250",
+        "anpa-0482",
+        "anpa-0519",
+        "anpa-0581",
+        "anpa-0628",
+        "abp-0304",
+        "abp-0316",
+        "abp-0386"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 10534882,
+        "relation_ids": [
+          10534882
+        ],
+        "way_ids": [
+          88357638,
+          88357756,
+          93594760,
+          203115373,
+          217584493,
+          217584538,
+          220180582,
+          220180586,
+          220180587,
+          760625335,
+          760625337,
+          760625340,
+          760630997,
+          760631000,
+          760631001,
+          760642238,
+          760642239
+        ]
+      },
+      "owner_slug": "sopv2vba",
+      "river_group": "siret",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "10534882:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-0066",
+        "anpa-0144",
+        "anpa-0200",
+        "anpa-0296",
+        "anpa-0390",
+        "anpa-0469",
+        "anpa-0552",
+        "anpa-0674",
+        "abp-0295",
+        "abp-0299"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 2911656,
+        "relation_ids": [
+          2911656
+        ],
+        "way_ids": [
+          12374742,
+          760630997,
+          888453393,
+          892740750,
+          906884401,
+          909196569
+        ]
+      },
+      "owner_slug": "sopv2vba",
+      "river_group": "siret",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "2911656:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-0066",
+        "anpa-0144",
+        "anpa-0200",
+        "anpa-0296",
+        "anpa-0390",
+        "anpa-0469",
+        "anpa-0552",
+        "anpa-0674",
+        "abp-0295",
+        "abp-0299"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.9558823529411765,
+        "published_to_osm": 0.03707833844438249
+      },
+      "findings": [
+        {
+          "code": "missing_segment",
+          "end_index": 675,
+          "length_m": 559.198,
+          "midpoint": [
+            21.9440744,
+            45.6677068
+          ],
+          "start_index": 664
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 807,
+          "length_m": 436.713,
+          "midpoint": [
+            21.9435083,
+            45.6681301
+          ],
+          "start_index": 795
+        },
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 12840145,
+        "relation_ids": [
+          12840145
+        ],
+        "way_ids": [
+          953547997,
+          953547999,
+          953548000,
+          953548002,
+          953548004,
+          953548005,
+          953548006,
+          957465670,
+          957465675,
+          957465679,
+          957465682,
+          957465684,
+          957469270,
+          957471903,
+          960706813,
+          1453150562,
+          1453150563,
+          1453150564,
+          1453150565,
+          1459349464,
+          1459349466,
+          1459349467,
+          1459362920,
+          1459362921,
+          1459362923
+        ]
+      },
+      "owner_slug": "anpa-anpa-0582",
+      "river_group": "timis",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "12840145:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0582"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": [
+          {
+            "end_index": 675,
+            "length_m": 559.198,
+            "midpoint": [
+              21.9440744,
+              45.6677068
+            ],
+            "start_index": 664
+          },
+          {
+            "end_index": 807,
+            "length_m": 436.713,
+            "midpoint": [
+              21.9435083,
+              45.6681301
+            ],
+            "start_index": 795
+          }
+        ]
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 1.0,
+        "published_to_osm": 0.03345413994981879
+      },
+      "findings": [
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 12843822,
+        "relation_ids": [
+          12843822
+        ],
+        "way_ids": [
+          953960145,
+          960693979,
+          1459362917,
+          1459362919
+        ]
+      },
+      "owner_slug": "anpa-anpa-0582",
+      "river_group": "timis",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "12843822:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0582"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 1.0,
+        "published_to_osm": 0.018120992472818512
+      },
+      "findings": [
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 12909804,
+        "relation_ids": [
+          12909804
+        ],
+        "way_ids": [
+          953960142,
+          1459362915,
+          1459362916,
+          1459362918
+        ]
+      },
+      "owner_slug": "anpa-anpa-0582",
+      "river_group": "timis",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "12909804:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0582"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.8626760563380281,
+        "published_to_osm": 0.01031502648452746
+      },
+      "findings": [
+        {
+          "code": "missing_segment",
+          "end_index": 73,
+          "length_m": 293.605,
+          "midpoint": [
+            21.8947542,
+            45.6950146
+          ],
+          "start_index": 54
+        },
+        {
+          "code": "missing_segment",
+          "end_index": 246,
+          "length_m": 402.796,
+          "midpoint": [
+            21.8945771,
+            45.6947092
+          ],
+          "start_index": 228
+        },
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 12909825,
+        "relation_ids": [
+          12909825
+        ],
+        "way_ids": [
+          46706494,
+          953960138,
+          953960139,
+          960703004,
+          1459362913,
+          1459362914,
+          1459362922,
+          1459362924
+        ]
+      },
+      "owner_slug": "anpa-anpa-0582",
+      "river_group": "timis",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "12909825:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0582"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": [
+          {
+            "end_index": 73,
+            "length_m": 293.605,
+            "midpoint": [
+              21.8947542,
+              45.6950146
+            ],
+            "start_index": 54
+          },
+          {
+            "end_index": 246,
+            "length_m": 402.796,
+            "midpoint": [
+              21.8945771,
+              45.6947092
+            ],
+            "start_index": 228
+          }
+        ]
+      }
+    }
+  ],
   "schema_version": 1,
-  "snapshot_sha256": "730a174b3146d5bab8f59617d51eae9a0fa721cb82f6d5508410d81cea87ba80",
-  "summary": {},
+  "snapshot_sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
+  "summary": {
+    "PASS_CONTRACTED": 12,
+    "UNRESOLVED_NO_OSM_MATCH": 7
+  },
   "thresholds": {
     "coverage_tol_m": 125,
     "min_report_segment_m": 250
