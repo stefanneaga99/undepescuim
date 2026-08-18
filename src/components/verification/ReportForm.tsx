@@ -103,7 +103,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
                 {t('report.viewIssue')}
               </a>
             )}
-            <Button className="mt-2" onClick={() => { reset(); onOpenChange(false); }}>{t('report.cancel')}</Button>
+            <Button className="mt-2" onClick={() => { reset(); onOpenChange(false); }}>{t('report.close')}</Button>
           </div>
         ) : (
           <form
@@ -174,7 +174,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
             )}
 
             <DialogFooter>
-              <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>{t('report.cancel')}</Button>
+              <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>{t('report.close')}</Button>
               <Button type="submit" disabled={!reason || phase === 'submitting'}>
                 <Flag className="size-4" />
                 {phase === 'submitting' ? t('report.submitting') : t('report.submit')}

@@ -132,6 +132,9 @@ async function runPass(width, height, label) {
   const radioCount = await radios.count();
   check(radioCount === 5, `5 reason radios rendered (got ${radioCount})`);
   check(!!(await dialog.textContent()).includes('Raportezi date pentru'), 'dialog shows water context');
+  const formText = await dialog.textContent();
+  check(formText.includes('Închide'), 'form close button labelled Închide (not Anulează)');
+  check(!formText.includes('Anulează'), 'no ambiguous Anulează label in form');
 
   const submitBtn = dialog.locator('button[type="submit"]');
   check(await submitBtn.isDisabled(), 'submit disabled until a reason is chosen');
@@ -144,6 +147,8 @@ async function runPass(width, height, label) {
   const after = await dialog.textContent();
   check(after.includes('Mulțumim'), 'success/confirmation state shown');
   check(after.includes('GitHub'), 'confirmation links to the GitHub issue');
+  check(after.includes('Închide'), 'confirmation close button labelled Închide');
+  check(!after.includes('Anulează'), 'confirmation close is not the ambiguous Anulează');
   await p.screenshot({ path: `.e2e/report_${width}_success.png` });
 
   // Close the dialog via its X button (present in both form and success

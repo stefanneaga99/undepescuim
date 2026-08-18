@@ -168,7 +168,7 @@ const ro = {
     emailPlaceholder: 'tu@exemplu.ro',
     consent: 'Dacă îl completezi, adresa va fi vizibilă în raportul public de pe GitHub.',
     error: 'Nu am putut trimite raportul. Încearcă din nou.',
-    cancel: 'Anulează',
+    close: 'Închide',
     submitting: 'Se trimite…',
     submit: 'Trimite raportul',
   },
@@ -403,7 +403,7 @@ const en: Messages = {
     consent:
       'If you fill it in, the address will be visible in the public GitHub report.',
     error: "Couldn't send the report. Try again.",
-    cancel: 'Cancel',
+    close: 'Close',
     submitting: 'Sending…',
     submit: 'Send report',
   },
