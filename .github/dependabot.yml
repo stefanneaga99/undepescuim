@@ -15,6 +15,23 @@ updates:
         patterns: ['next', 'eslint-config-next']
       react:
         patterns: ['react', 'react-dom']
+    # Major pins — both majors are BLOCKED upstream. These ignore rules stop
+    # Dependabot from re-opening unmergeable major PRs; only the major bump is
+    # suppressed, so eslint 9.x / typescript 5.x minor+patch PRs keep flowing.
+    #
+    # eslint 10 removes RuleContext.getFilename() and hard-crashes
+    # eslint-plugin-react@7.37.5. Unblock once eslint-config-next supports
+    # eslint 10 (it must first bump eslint-plugin-react/import/jsx-a11y).
+    # Tracking: vercel/next.js#91702 ; jsx-eslint/eslint-plugin-react#3977 (fix PR #3979)
+    ignore:
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      # typescript 7 (tsgo) has no programmatic API; typescript-eslint (<6.1.0)
+      # and Next.js don't support it. Unblock once typescript-eslint ships TS 7
+      # support (expected after TS 7.1).
+      # Tracking: typescript-eslint/typescript-eslint#12518
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
