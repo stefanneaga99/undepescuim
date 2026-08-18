@@ -28,13 +28,16 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'public', 'data');
 
 // First-load = the files loadData() AWAITS before first paint (map-store.ts):
-// associations + waters + counties. The uncontracted overlay (deferred to a
-// background fetch after dataLoaded) and the county clips (waters_county_clips.json,
-// lazy on first county activation) are NOT part of the critical path.
+// associations + waters + counties + the P1 §4.5 "majors" subset of the
+// uncontracted overlay (rivers ≥30km + lakes ≥100ha). The FULL uncontracted
+// rivers/lakes (streamed in the background after dataLoaded) and the county
+// clips (waters_county_clips.json, lazy on first county activation) are NOT
+// part of the critical path.
 const FETCHED = [
   'associations.json',
   'waters.json',
   'counties.geojson',
+  'uncontracted_majors.json',
 ];
 // Dead weight: must NOT ship to every visitor (never fetched, regenerated).
 const DEAD_WEIGHT = ['waters_geocoded.geojson', 'waters.geojson', 'reciprocity.json'];

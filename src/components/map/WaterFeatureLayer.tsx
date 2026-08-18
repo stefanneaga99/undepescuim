@@ -1,20 +1,19 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import L from 'leaflet';
-import { GeoJSON as LeafletGeoJSON } from 'react-leaflet';
+import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
 import { countyRenderGeometry } from '@/utils/county-clip';
+import { bboxInBounds, lodThresholds, passesLod, viewSuffix } from '@/utils/lod';
 import {
   contractAtFraction,
   contractGroup,
   contractInterval,
   fractionAtPoint,
   groupKeyOf,
-  isMainCourse,
-  orderParts,
   sliceMultiLine,
   waterKey,
 } from '@/utils/river-course';
@@ -22,7 +21,10 @@ import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
-  /** all waters (unfiltered) — needed to resolve which contract a click belongs to */
+  /** all waters (unfiltered, UN-culled) — focus/association slices MUST resolve
+   * against this full pool so selecting an association off-screen keeps its
+   * highlight even when viewport culling drops the feature from the base layer
+   * (plan §4.4 / §7.3 risk 3). */
   allWaters: Water[];
   /** selected association slug — colors features green/grey (or all blue when null) */
   coverageSlug: string | null;
@@ -40,6 +42,16 @@ interface WaterFeatureLayerProps {
  *    opacity 0) that catches clicks/taps on thin rivers,
  * 2. the visible thin line (weight 2-3) on top.
  * This makes clicking a river reliable on both desktop and mobile.
+ *
+ * Performance (P1 §4.4): the contracted layer mirrors the uncontracted overlay
+ * pattern:
+ *  1. VIEWPORT CULLING — only features whose bbox intersects the current map
+ *     viewport are added as Leaflet layers; re-evaluated on every moveend.
+ *  2. ZOOM LOD — at low zoom only big waters render (shared {@link lodThresholds}).
+ *  3. The invisible 16px hit layer is dropped at zoom < 10 (rivers are too
+ *     dense to tap individually at national view — plan §4.4 item 3).
+ * CRITICAL: the focus + association slices are computed from `allWaters`
+ * (unculled) so a selected association OFF-SCREEN still keeps its highlight.
  */
 export function WaterFeatureLayer({
   waters,
@@ -52,10 +64,43 @@ export function WaterFeatureLayer({
   const selectWater = useMapStore((s) => s.selectWater);
   const countyFilter = useMapStore((s) => s.countyFilter);
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  // t_9529e678 (mirrored from the uncontracted layer): an active locality
+  // filter is an explicit "show me THIS place" — the matched set is small, so
+  // the zoom LOD must NOT cull its small contracted waters/ponds either.
+  const localityActive = useMapStore((s) => s.localityFilter.length > 0);
 
-  const featureCollection = useMemo(() => watersToFeatureCollection(waters), [waters]);
+  const map = useMap();
+  const [view, setView] = useState<{ zoom: number; bounds: L.LatLngBounds }>(() => ({
+    zoom: map.getZoom(),
+    bounds: map.getBounds(),
+  }));
 
-  const layerKey = `${coverageSlug ?? 'neutral'}|${waters.map((w) => w.slug).join(',')}`;
+  useMapEvents({
+    moveend: () => setView({ zoom: map.getZoom(), bounds: map.getBounds() }),
+  });
+
+  // Viewport culling: only contracted waters whose bbox intersects the padded
+  // viewport AND pass the shared zoom-LOD gate become Leaflet features.
+  // A selected association's members + the selected water are PINNED through
+  // the cull so their highlight/the orange focus never vanish on pan/zoom
+  // (plan §4.4 — focus/assoc must survive culling).
+  const lod = lodThresholds(view.zoom, localityActive);
+  const visibleWaters = useMemo(() => {
+    const pinned = new Set<string>();
+    if (selectedWaterSlug) pinned.add(selectedWaterSlug);
+    if (coverageSlug) {
+      for (const w of allWaters) {
+        if (w.asociatie?.slug === coverageSlug) pinned.add(w.slug);
+      }
+    }
+    return waters.filter(
+      (w) => pinned.has(w.slug) || (passesLod(w, lod) && bboxInBounds(w.bbox, view.bounds)),
+    );
+  }, [waters, allWaters, view, lod, coverageSlug, selectedWaterSlug]);
+
+  const featureCollection = useMemo(() => watersToFeatureCollection(visibleWaters), [visibleWaters]);
+
+  const layerKey = `${viewSuffix(view.zoom, view.bounds)}|${coverageSlug ?? 'neutral'}|${visibleWaters.map((w) => w.slug).join(',')}`;
 
   // Exact river-group key of the focused contract (t_ac697770) — matches
   // focus slices across name variants ('Râul Oltul superior' / 'Râul Olt').
@@ -105,17 +150,11 @@ export function WaterFeatureLayer({
   const handleEachFeature = useCallback(
     (feature: GeoJSON.Feature, layer: L.Path) => {
       const f = feature as WaterFeature;
-      const isLine = f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString';
-      if (isLine) {
-        // All styling (incl. the association coverage weights) lives in the
-        // `style` prop — react-leaflet v5 re-applies it on every re-render,
-        // while per-feature setStyle here would be wiped (t_b6a0e2fe).
-        layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
-        layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
-      } else {
-        layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
-        layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
-      }
+      // All styling (incl. the association coverage weights) lives in the
+      // `style` prop — react-leaflet v5 re-applies it on every re-render,
+      // while per-feature setStyle here would be wiped (t_b6a0e2fe).
+      layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
+      layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
     },
     [handleClick],
   );
@@ -123,6 +162,10 @@ export function WaterFeatureLayer({
   // Focus slice: when a contract owns a km-range of a multi-contract river,
   // render ONLY that sector as a thick colored line (the shared course is
   // sliced by fraction). Single-contract rivers use the full-course style above.
+  //
+  // P1 §4.4 (plan §7.3 risk 3): the slice is computed from `allWaters`
+  // (UNCULLED), NOT the viewport-culled `featureCollection` — a focused
+  // contract whose shared course is off-screen must keep its orange highlight.
   const focusFeatures = useMemo(() => {
     if (!focusGroupKey || !focusRange) return null;
     // County filter active (t_117f0b99): the rendered geometry is already the
@@ -146,14 +189,16 @@ export function WaterFeatureLayer({
     }
     const [f0, f1] = focusRange;
     const features: GeoJSON.Feature[] = [];
-    for (const f of featureCollection.features) {
-      if (groupKeyOf(f.properties ?? {}) !== focusGroupKey) continue;
-      const g = f.geometry;
+    for (const x of allWaters) {
+      if (groupKeyOf(x) !== focusGroupKey) continue;
+      const g = x.geometry;
+      if (!g) continue;
       if (g.type === 'MultiLineString') {
         const sliced = sliceMultiLine(g.coordinates as [number, number][][], f0, f1);
         if (sliced.length) {
           features.push({
-            ...f,
+            type: 'Feature',
+            properties: { slug: x.slug, name: x.name },
             geometry: { type: 'MultiLineString', coordinates: sliced },
           });
         }
@@ -161,14 +206,15 @@ export function WaterFeatureLayer({
         const sliced = sliceMultiLine([g.coordinates as [number, number][]], f0, f1);
         if (sliced.length) {
           features.push({
-            ...f,
+            type: 'Feature',
+            properties: { slug: x.slug, name: x.name },
             geometry: { type: 'MultiLineString', coordinates: sliced },
           });
         }
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focusRange, featureCollection, countyFilter, allWaters, selectedWaterSlug, focusKey]);
+  }, [focusGroupKey, focusRange, countyFilter, allWaters, selectedWaterSlug, focusKey]);
 
   // Association highlight slices (t_b6a0e2fe + t_5f5f2cce): every member of
   // the selected association that belongs to a MULTI-CONTRACT group is drawn
@@ -183,13 +229,15 @@ export function WaterFeatureLayer({
   //    geometry green would highlight every other county's/association's
   //    sector (the whole-Jiu-highlight bug). The slice paints ONLY the
   //    member's own sector.
+  // P1 §4.4 (plan §7.3 risk 3): computed from `allWaters` (UNCULLED) so an
+  // association selected with its waters off-screen still draws its highlight.
   // Skipped under a county filter: the rendered geometry is a per-county
   // clip, which full-course fractions must not slice.
   const assocHighlightFeatures = useMemo(() => {
     if (!coverageSlug) return null;
     if (countyFilter.length > 0) return null;
     const out: GeoJSON.Feature[] = [];
-    for (const w of waters) {
+    for (const w of allWaters) {
       if ((w.asociatie?.slug ?? null) !== coverageSlug) continue;
       const gk = groupKeyOf(w);
       if (!gk) continue;
@@ -225,7 +273,7 @@ export function WaterFeatureLayer({
       });
     }
     return out.length ? out : null;
-  }, [coverageSlug, waters, allWaters, countyFilter]);
+  }, [coverageSlug, allWaters, countyFilter]);
 
   // Focus-aware style (t_b1547e24): the orange highlight for ALL waters.
   // react-leaflet v5 re-applies the `style` prop on every re-render
@@ -244,24 +292,6 @@ export function WaterFeatureLayer({
     (feature?: GeoJSON.Feature<GeoJSON.Geometry, GeoJSON.GeoJsonProperties>): L.PathOptions => {
       const props = feature?.properties as WaterFeatureProperties | undefined;
       const water = props?.slug ? allWaters.find((x) => x.slug === props.slug) : undefined;
-      // t_5f5f2cce: a LINE member of a multi-contract group (e.g. the 'jiu'
-      // group's geometry owner holding the FULL shared course) must NOT be
-      // base-covered by its asociatie — the whole shared course would turn
-      // green including other counties'/associations' sectors. Its sector is
-      // painted by the covered-slices layer instead. LAKE polygons are exempt:
-      // they can't be sector-sliced and belong to a single contract, so their
-      // whole-polygon coverage stays (Siriu lake under AJVPS BUZĂU).
-      //
-      // t_e66e5898: under a COUNTY filter the rendered geometry is already the
-      // per-county clip (use-filtered-waters swaps in `geometryByCounty`), which
-      // spans ONLY this county — it cannot leak the shared course into other
-      // counties'/associations' sectors. So the multi-contract-member guard
-      // must NOT neutralize the color here: a covered member's clip must render
-      // green (the association highlight must still work on top of the county
-      // filter). The t_5f5f2cce guard stays for the unfiltered (national) view
-      // where the full shared course is rendered. `assocHighlightFeatures` is
-      // likewise skipped under a county filter (the clip IS the sector), so the
-      // base layer is the member's only green source — it must carry it.
       const lineGeom =
         !!water?.geometry &&
         (water.geometry.type === 'LineString' || water.geometry.type === 'MultiLineString');
@@ -303,7 +333,11 @@ export function WaterFeatureLayer({
   // cloning is too late — instead we render a SECOND GeoJSON purely for hits.
   // t_cdb614de: bbox-fallback POINTS get a fat invisible circle hit too, so a
   // small dot is still tappable on mobile.
+  // P1 §4.4 item 3: the hit layer is DROPPED at zoom < 10 (rivers are too
+  // dense to tap individually at national view; hiding it halves the SVG
+  // node count — M14). The visible layer still carries its own click handler.
   const hitCollection = useMemo(() => {
+    if (view.zoom < 10) return null;
     const fc = featureCollection;
     return {
       ...fc,
@@ -315,7 +349,7 @@ export function WaterFeatureLayer({
             f.geometry.type === 'Point'),
       ),
     };
-  }, [featureCollection]);
+  }, [featureCollection, view.zoom]);
 
   return (
     <>
@@ -326,7 +360,9 @@ export function WaterFeatureLayer({
       )}
       {/* key forces remount on filter change — react-leaflet v5 ignores data
           prop changes without a key change (stale hit targets otherwise). */}
-      <GeoJSONHits key={`hits-${layerKey}`} data={hitCollection} onFeatureClick={handleClick} />
+      {hitCollection && (
+        <GeoJSONHits key={`hits-${layerKey}`} data={hitCollection} onFeatureClick={handleClick} />
+      )}
       <LeafletGeoJSON
         key={layerKey}
         data={featureCollection}

@@ -29,6 +29,7 @@ Normalize the FE commodity: click-resolution (fractionAtPoint) walks the FULL
 Usage: .venv/bin/python3 scripts/simplify_waters_geometry.py
 """
 import json
+import math
 import sys
 from pathlib import Path
 from typing import Optional
@@ -42,8 +43,54 @@ UNC_LAKES = ROOT / "public/data/uncontracted_lakes.json"
 TOLERANCE_DEG = 0.001   # ~110 m
 ROUND_DP = 5
 
+# P1 §4.4: contracted waters are given lengthKm (line geometry) / areaHa
+# (polygon geometry) so the FE WaterFeatureLayer can apply the SAME zoom-LOD
+# thresholds as the uncontracted overlay (plan §4.4). Geodesic length uses the
+# same haversine accumulating the uncontracted rivers builder uses; polygon
+# area uses the same cos-lat scaling as build_uncontracted_lakes.
+R_KM = 6371.0
+
+
+def _haversine_km(a, b):
+    dlat = math.radians(b[1] - a[1])
+    dlon = math.radians(b[0] - a[0])
+    la1 = math.radians(a[1])
+    la2 = math.radians(b[1])
+    h = math.sin(dlat / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin(dlon / 2) ** 2
+    return 2 * R_KM * math.asin(math.sqrt(h))
+
+
+def line_length_km(coords):
+    """Sum of haversine segment lengths over a list of [lon, lat] points."""
+    return sum(_haversine_km(coords[i - 1], coords[i]) for i in range(1, len(coords)))
+
+
+def poly_area_ha(geom, mean_lat):
+    a_deg2 = geom.area
+    m2 = a_deg2 * (111320.0 ** 2) * math.cos(math.radians(mean_lat))
+    return m2 / 10000.0
+
+
+def annotate_size(w, g):
+    """Set lengthKm (lines) or areaHa (polygons) on a contracted water from its
+    geometry. Waters without line/polygon geometry (bbox-fallback points)
+    keep no size field — the FE treats a missing size as 'always pass LOD' so
+    discrete dots still render at any zoom (plan §4.4: culling is the win)."""
+    t = g.get("type")
+    lat = (w.get("coordinates") or [25.0, 45.8])[1]
+    if t in ("LineString", "MultiLineString"):
+        coords = g.get("coordinates", [])
+        total = 0.0
+        for part in (coords if t == "MultiLineString" else [coords]):
+            total += line_length_km(part)
+        w["lengthKm"] = round(total, 1)
+    elif t in ("Polygon", "MultiPolygon"):
+        s = shape(g)
+        w["areaHa"] = round(poly_area_ha(s, lat), 2)
+
+
 stats = {"simplified": 0, "kept_full_res": 0, "polys_simplified": 0,
-         "round_only": 0, "no_geom": 0}
+         "round_only": 0, "no_geom": 0, "annotated_size": 0}
 
 
 def _round_coords(c):
@@ -87,6 +134,10 @@ def round_only_geometry(g: dict) -> dict:
 
 
 def process_pool(pool: list, simplify: bool = True, multi_rg: Optional[dict] = None) -> None:
+    """simplify=True → the CONTRACTED pool: geometry simplified/rounded AND each
+    water with line/polygon geometry gets a P1 §4.4 lengthKm/areaHa annotation.
+    simplify=False → the uncontracted pools (already simplified): round-only,
+    never re-annotate (they already carry lengthKm/areaHa from their builders)."""
     multi_rg = multi_rg or {}
     for w in pool:
         g = w.get("geometry")
@@ -96,6 +147,8 @@ def process_pool(pool: list, simplify: bool = True, multi_rg: Optional[dict] = N
         if not simplify:
             w["geometry"] = round_only_geometry(g)
         else:
+            annotate_size(w, g)
+            stats["annotated_size"] += 1
             rg = w.get("riverGroup")
             keep = bool(rg) and multi_rg.get(rg, 1) > 1 and g.get("type") in ("LineString", "MultiLineString")
             w["geometry"] = simplify_geometry(g, keep)

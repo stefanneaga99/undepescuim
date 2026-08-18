@@ -6,6 +6,7 @@ import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { waterToGeoJSON } from '@/utils/geo';
 import { getUncontractedLakeStyle, getUncontractedStyle, NEUTRAL_COLOR } from '@/utils/colors';
+import { bboxInBounds, lodThresholds, passesLod, viewSuffix } from '@/utils/lod';
 import type { Water, WaterFeature } from '@/types/data';
 
 interface UncontractedWaterLayerProps {
@@ -59,31 +60,19 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
 
   // Zoom LOD thresholds: rivers by length (km), lakes by surface (ha). Only
   // waters big enough to be meaningful at the current zoom render. Bypassed
-  // entirely while a locality filter is active (t_9529e678).
-  const minLengthKm = localityActive ? 0 : view.zoom < 8 ? 30 : view.zoom < 10 ? 10 : 0;
-  const minAreaHa = localityActive ? 0 : view.zoom < 8 ? 100 : view.zoom < 10 ? 10 : 0;
+  // entirely while a locality filter is active (t_9529e678). Shared with the
+  // contracted layer via utils/lod.ts (plan §7.4 — one source of truth).
+  const lod = lodThresholds(view.zoom, localityActive);
 
   const visibleFeatures = useMemo(() => {
-    const pad = view.bounds.pad(0.25);
-    const west = pad.getWest();
-    const east = pad.getEast();
-    const south = pad.getSouth();
-    const north = pad.getNorth();
     const out: GeoJSON.Feature[] = [];
     for (const w of waters) {
-      // lake/pond (Polygon data) → area LOD; river → length LOD
-      const isLake = w.areaHa != null;
-      if (isLake) {
-        if (w.areaHa! < minAreaHa) continue;
-      } else if ((w.lengthKm ?? 0) < minLengthKm) {
-        continue;
-      }
-      const [bl, bt, br, bb] = w.bbox;
-      if (bl > east || br < west || bt > north || bb < south) continue;
+      if (!passesLod(w, lod)) continue;
+      if (!bboxInBounds(w.bbox, view.bounds)) continue;
       out.push(waterToGeoJSON(w) as GeoJSON.Feature);
     }
     return out;
-  }, [waters, view, minLengthKm, minAreaHa]);
+  }, [waters, view, lod]);
 
   const handleClick = (feature: WaterFeature) => {
     selectWater(feature.properties.slug);
@@ -94,21 +83,25 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
   // data prop change without a key change, so the teal layer would otherwise
   // keep stale rivers after a filter toggle (t_117f0b99).
   const filterSig = waters.length ? `${waters.length}:${waters[0].slug}:${waters[waters.length - 1].slug}` : 'empty';
-  const layerKey = `${view.zoom}|${view.bounds.getWest().toFixed(2)},${view.bounds.getSouth().toFixed(2)},${view.bounds.getEast().toFixed(2)},${view.bounds.getNorth().toFixed(2)}|${filterSig}`;
+  const layerKey = `${viewSuffix(view.zoom, view.bounds)}|${filterSig}`;
 
   const isPolygonFeature = (f: GeoJSON.Feature) =>
     f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon';
 
   // Invisible wide hit polylines — reliable click/tap on thin rivers.
   // (Polygons don't need this: their filled area is the click target.)
-  const hitCollection = useMemo<GeoJSON.FeatureCollection>(() => {
+  // P1 §4.4 item 3 (mirrored from the contracted layer): at zoom < 10 rivers
+  // are too dense to tap individually, so the hit layer is dropped — it
+  // halves the SVG path count at national view (M14).
+  const hitCollection = useMemo<GeoJSON.FeatureCollection | null>(() => {
+    if (view.zoom < 10) return null;
     return {
       type: 'FeatureCollection',
       features: visibleFeatures.filter(
         (f) => f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString',
       ),
     } as GeoJSON.FeatureCollection;
-  }, [visibleFeatures]);
+  }, [visibleFeatures, view.zoom]);
 
   const riverStyle = useMemo(() => getUncontractedStyle(), []);
   const lakeStyle = useMemo(() => getUncontractedLakeStyle(), []);
@@ -164,16 +157,19 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
 
   return (
     <>
-      {/* Invisible wide hit polylines — reliable click/tap on thin rivers */}
-      <LeafletGeoJSON
-        key={`hits-${layerKey}`}
-        data={hitCollection}
-        style={() => ({ weight: 14, opacity: 0 })}
-        onEachFeature={(feature, layer: L.Path) => {
-          const f = feature as WaterFeature;
-          layer.on('click', () => handleClick(f));
-        }}
-      />
+      {/* Invisible wide hit polylines — reliable click/tap on thin rivers.
+          Dropped at zoom < 10 (M14 — rivers too dense to tap individually). */}
+      {hitCollection && (
+        <LeafletGeoJSON
+          key={`hits-${layerKey}`}
+          data={hitCollection}
+          style={() => ({ weight: 14, opacity: 0 })}
+          onEachFeature={(feature, layer: L.Path) => {
+            const f = feature as WaterFeature;
+            layer.on('click', () => handleClick(f));
+          }}
+        />
+      )}
       {/* Visible layer: dashed teal rivers + filled teal ponds (orange when focused) */}
       <LeafletGeoJSON
         key={`vis-${layerKey}`}

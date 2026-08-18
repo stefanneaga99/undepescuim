@@ -18,6 +18,13 @@ export async function routeData(page: Page, seed: SeedData): Promise<void> {
   await page.route('**/data/waters.json', (r) => r.fulfill({ json: seed.waters }));
   await page.route('**/data/uncontracted_rivers.json', (r) => r.fulfill({ json: seed.rivers }));
   await page.route('**/data/uncontracted_lakes.json', (r) => r.fulfill({ json: seed.lakes }));
+  // P1 §4.5: first-paint awaits the "majors" subset of the uncontracted pool.
+  // The seed's uncontracted waters are a handful already below the zoom-7 LOD
+  // threshold, so serve the full seed pool as the majors response — identical
+  // net effect to the old single background load (all uncontracted present).
+  await page.route('**/data/uncontracted_majors.json', (r) =>
+    r.fulfill({ json: [...seed.rivers, ...seed.lakes] }),
+  );
   await page.route('**/data/counties.geojson', (r) => r.fulfill({ json: seed.counties }));
   // Tile hosts — the map draws vector data regardless; tiles are scenery.
   await page.route('**/tile.openstreetmap.org/**', (r) =>

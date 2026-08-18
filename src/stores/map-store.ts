@@ -164,25 +164,31 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   loadData: async () => {
     try {
-      // P0 §4.2 / plan §4.5 (simpler alternative): ONLY the first-paint
-      // files are awaited — associations + waters + counties + meta. The
-      // uncontracted overlay (teal rivers/lakes) is fetched in the
-      // background right after dataLoaded so the map paints immediately and
-      // the teal pops in a beat later (budgets M7/M8/M9 — the uncontracted
-      // 1.2 MB gzip is off the critical parse path).
-      const [assocRes, watersRes, countiesRes, metaRes] = await Promise.all([
+      // P1 §4.5: first-paint is re-baselined to 'majors-only' — the map's
+      // national view (the zoom-7 LOD subset) is visually complete on cold
+      // load by AWAITING the tiny uncontracted_majors.json (~0.17 MB gzip:
+      // rivers ≥30km + lakes ≥100ha) alongside the core files. The FULL
+      // uncontracted_rivers.json + uncontracted_lakes.json stream in the
+      // background right after dataLoaded and replace the majors with no
+      // visual pop (majors are a strict subset). Budgets M7/M8/M9 — see
+      // check-data-budget.mjs (majors joins the claimed first-load set).
+      const [assocRes, watersRes, countiesRes, metaRes, majorsRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
         fetch('/data/counties.geojson'),
         // F6: freshness meta (network-first via SW app-data tier). Optional —
         // 404 in dev (prebuild generates it only) leaves dataUpdatedAt null.
         fetch('/data/meta.json'),
+        fetch('/data/uncontracted_majors.json'),
       ]);
-      if (!assocRes.ok || !watersRes.ok) throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status}`);
-      const [associations, waters] = (await Promise.all([
+      if (!assocRes.ok || !watersRes.ok || !majorsRes.ok) {
+        throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status} / ${majorsRes.status}`);
+      }
+      const [associations, waters, majors] = (await Promise.all([
         assocRes.json(),
         watersRes.json(),
-      ])) as [Association[], Water[]];
+        majorsRes.json(),
+      ])) as [Association[], Water[], Water[]];
       // t_6c2ac870: county polygons for the nearby-waters chip. Optional —
       // the chip falls back to the contract county when missing.
       let counties: CountyFeature[] = [];
@@ -196,11 +202,11 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const meta = (await metaRes.json()) as { dataUpdatedAt?: string };
         dataUpdatedAt = typeof meta.dataUpdatedAt === "string" ? meta.dataUpdatedAt : null;
       }
-      set({ associations, waters, counties, dataUpdatedAt, dataLoaded: true });
+      set({ associations, waters, uncontracted: majors, counties, dataUpdatedAt, dataLoaded: true });
       markPerfDataLoaded();
-      // P0 §4.2: uncontracted overlay deferred — load in the background once
-      // the map is up. t_51e028c4: ponds/lakes join the same uncontracted
-      // pool (county/type/contract filters and 'Necontractat' UX apply).
+      // P1 §4.5: the FULL uncontracted overlay streams in the background once
+      // the map is up (it replaces the majors subset). t_51e028c4:
+      // ponds/lakes join the same uncontracted pool.
       void (async () => {
         try {
           const [uncRes, uncLakesRes] = await Promise.all([

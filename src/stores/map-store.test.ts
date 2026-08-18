@@ -296,25 +296,40 @@ describe('loadData', () => {
     } as Response;
   }
 
-  it('loads associations, waters, uncontracted rivers + lakes, counties, and freshness meta', async () => {
+  it('loads assoc/waters/counties/meta + majors first-paint, then streams full uncontracted in the background', async () => {
+    const majors: Water[] = [water({ slug: 'unc-major', uncontracted: true, asociatie: null })];
     const fetchMock = vi.fn()
+      // first-paint Promise.all (5): assoc, waters, counties, meta, majors
       .mockResolvedValueOnce(jsonResponse([{ slug: 'ajvps-cluj', name: 'AJVPS Cluj' }]))
       .mockResolvedValueOnce(jsonResponse(waters))
-      .mockResolvedValueOnce(jsonResponse(uncontracted))
-      .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-lake', uncontracted: true, asociatie: null })]))
       .mockResolvedValueOnce(jsonResponse({ type: 'FeatureCollection', features: [] }))
-      .mockResolvedValueOnce(jsonResponse({ dataUpdatedAt: '2026-08-16T00:00:00Z' }));
+      .mockResolvedValueOnce(jsonResponse({ dataUpdatedAt: '2026-08-16T00:00:00Z' }))
+      .mockResolvedValueOnce(jsonResponse(majors))
+      // background full uncontracted (2): rivers, lakes
+      .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-river', uncontracted: true, asociatie: null })]))
+      .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-lake', uncontracted: true, asociatie: null })]));
     vi.stubGlobal('fetch', fetchMock);
 
     await useMapStore.getState().loadData();
-    const s = useMapStore.getState();
+    let s = useMapStore.getState();
     expect(s.dataLoaded).toBe(true);
     expect(s.associations).toHaveLength(1);
     expect(s.waters).toHaveLength(4);
-    expect(s.uncontracted).toHaveLength(2); // rivers + lakes merged
+    // P1 §4.5: first paint is majors-only — uncontracted = the majors subset
+    // immediately (the national view is visually complete), before the full
+    // pool streams in.
+    expect(s.uncontracted.map((w) => w.slug)).toEqual(['unc-major']);
     expect(s.counties).toEqual([]);
     expect(s.dataUpdatedAt).toBe('2026-08-16T00:00:00Z');
-    expect(fetchMock).toHaveBeenCalledTimes(6);
+    expect(fetchMock).toHaveBeenCalledTimes(7); // 5 first-paint + 2 background
+
+    // wait for the background full-uncontracted stream to replace the majors
+    const deadline = Date.now() + 2000;
+    while (Date.now() < deadline && useMapStore.getState().uncontracted.length < 2) {
+      await new Promise((r) => setTimeout(r, 20));
+    }
+    s = useMapStore.getState();
+    expect(s.uncontracted.map((w) => w.slug).sort()).toEqual(['unc-lake', 'unc-river']);
     vi.unstubAllGlobals();
   });
 

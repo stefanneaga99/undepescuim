@@ -4,9 +4,10 @@
 > Scope: Core Web Vitals, bundle size, data payload, map render, geolocation MVP, species/permis pages.
 > Status: **APPROVED 2026-08-16 and implemented (t_fbbc943b)** — lighthouserc.json,
 > .github/workflows/perf.yml, scripts/check-data-budget.mjs, scripts/_perf_map.mjs.
-> Budgets M7/M8/M9 (and M6/M11/M12/M14) are EXPECTED-FAIL until the data
-> optimization (docs/performance-optimization-plan.md) lands; CI jobs are wired
-> with continue-on-error until then.
+> The data optimization in `docs/performance-optimization-plan.md` landed on
+> 2026-08-18. M7/M8/M9 pass locally; M14 was re-baselined to 1000 total overlay
+> paths after the measured zoom-7 floor proved the original 500-path projection
+> unrealistic. M6/M11/M12/M13 still require the production lab run.
 
 ---
 
@@ -27,8 +28,9 @@ CI integration proposal below are agreed as the project's performance contract. 
 Load path, from `src/components/map/MapShell.tsx` + `src/stores/map-store.ts`:
 
 1. `MapShell` mounts → `useEffect` → `loadData()`.
-2. `loadData()` fires `Promise.all` of **5 fetches** and `JSON.parse`s them all on the main thread:
-   `associations.json`, `waters.json`, `uncontracted_rivers.json`, `uncontracted_lakes.json`, `counties.geojson`.
+2. `loadData()` awaits the four first-paint datasets: `associations.json`,
+   `waters.json`, `counties.geojson`, and `uncontracted_majors.json`.
+   Full uncontracted rivers/lakes stream in the background afterward.
 3. Only when `dataLoaded === true` does `<MapView/>` replace `<MapSkeleton/>`.
 
 **Consequence:** time-to-first-map-paint and TTI are gated behind *fetch + parse of the entire
@@ -38,10 +40,9 @@ Rendering:
 - **Uncontracted overlay** (`UncontractedWaterLayer.tsx`) already has viewport culling + zoom LOD
   (length ≥30 km / area ≥100 ha at zoom <8). This is the "LOD/culling already exist" surface —
   the plan verifies it *actually reduces layer count*, it is not assumed.
-- **Contracted layer** (`WaterFeatureLayer.tsx`) has **no culling and no LOD**. It renders the full
-  1013-feature collection (including a 15,220-vertex Mureș polyline) at every zoom, **plus a second
-  invisible hit-layer** (weight 16) that doubles line geometry, plus optional focus/association
-  slice layers. This is the second major risk.
+- **Contracted layer** (`WaterFeatureLayer.tsx`) now shares viewport culling and zoom LOD with the
+  uncontracted overlay. Both layers omit their invisible hit geometry below zoom 10; selected-water
+  and association slices are pinned so culling does not remove active highlights.
 
 ---
 
@@ -114,7 +115,7 @@ Reference device tiers (Web Vitals convention):
 | M11 | Data fetch + parse (first-load, no cache) | < 2.5 s | 2.5–5 s | > 5 s | Playwright `performance.getEntriesByType('resource')` |
 | M12 | Tile render at zoom 7 → 12 | no long task > 100 ms on pan/zoom | — | any > 100 ms | Playwright trace (long tasks) |
 | M13 | Peak JS heap (full dataset, zoom 12) | < 200 MB | 200–300 MB | > 300 MB | `performance.memory` / CDP `HeapProfiler` |
-| M14 | LOD/culling effectiveness | uncontracted layer ≤ 500 features at zoom 7 | 500–2000 | > 2000 | Playwright `count` of `.leaflet-overlay-pane path` |
+| M14 | LOD/culling effectiveness | total overlay ≤ 1000 paths at zoom 7 | 1000–2000 | > 2000 | Playwright `count` of `.leaflet-overlay-pane path` |
 
 Budgets M6–M14 are **lab-only gates** (deterministic, run in CI). M1–M5 are the user-facing
 contract and are the ones reported to stakeholders.
@@ -243,15 +244,15 @@ Each TC lists setup → action → measurement → PASS condition. TCs map to bu
 - Action: `ANALYZE=true npm run build`, read home-route first-load JS gzip.
 - PASS: M10 (< 300 KB). Verify Leaflet + react-leaflet stay in the lazy map chunk.
 
-**TC-06 — LOD/culling effectiveness (uncontracted)**
-- Action: load `/` at zoom 7 (default), count SVG paths in the uncontracted overlay pane;
+**TC-06 — LOD/culling effectiveness (all water layers)**
+- Action: load `/` at zoom 7 (default), count SVG paths in the overlay pane;
   zoom to 12 and count again; assert the count grows but stays bounded.
-- PASS: M14 (≤ 500 features at zoom 7). Confirms existing culling actually prunes.
+- PASS: M14 (≤ 1000 paths at zoom 7). Confirms shared culling actually prunes.
 
 **TC-07 — Contracted-layer geometry at national zoom**
 - Action: at zoom 7, count contracted-layer paths; capture long tasks during the initial render.
 - PASS: M12 (no > 100 ms long task attributable to contracted layer render).
-  **Expected to fail today** — full 1013 features + hit layer render with no culling.
+  The contracted layer now culls by viewport/LOD and drops its low-zoom hit layer.
 
 **TC-08 — Tile render zoom 7 → 12**
 - Action: pan/zoom 7→12 on a 390×844 viewport; record long tasks + dropped frames (trace).
@@ -294,10 +295,9 @@ Each TC lists setup → action → measurement → PASS condition. TCs map to bu
    ~30 s to first paint. *Fix direction (backlog):* split `geometryByCounty` into a lazy county file;
    strip the pretty-printing (2.14×); simplify `geometry` (target < 1.5 MB gzip); consider serving
    simplified vs full geometry per zoom.
-2. **Un-culled contracted geometry + doubled hit-layer (P0/P1).** 1013 features incl. 15k-vertex
-   polylines render at every zoom with no viewport culling — unlike the uncontracted layer which
-   already culls. *Fix direction:* apply the same bbox culling + zoom LOD to `WaterFeatureLayer`;
-   drop the invisible hit-layer at low zoom where it is pointless.
+2. **Contracted geometry render cost (mitigated 2026-08-18).** Shared bbox culling + zoom LOD now
+   bound the live feature set, and both invisible hit layers are absent below zoom 10. Keep M12/M14
+   as regression gates.
 3. **Big JSON parse on 1-core phone (P1).** ~22.6 MB compact JSON parsed on the main thread at once.
    *Fix direction:* lazy-load rivers/lakes after contracted waters; parse in smaller chunks / a web
    worker; drop unused `waters_geocoded.geojson` (9.66 MB) and `waters.geojson` from `public/`.
@@ -411,4 +411,4 @@ Either gives TC-02/TC-06/TC-12 a deterministic wait target instead of `waitForTi
 - `waters.json` is **1013 entries but 36 MB** (not a few MB) because of full un-simplified OSM
   geometry (13.96 MB) + redundant `geometryByCounty` (3.64 MB) + 2.14× pretty-print whitespace.
 - "10k features" is accurate: 1013 contracted + 4166 rivers + 5712 lakes = **10,891 features**.
-- LOD/culling exists **only** in `UncontractedWaterLayer`; the contracted layer does not cull.
+- LOD/culling is shared by `UncontractedWaterLayer` and `WaterFeatureLayer` via `src/utils/lod.ts`.

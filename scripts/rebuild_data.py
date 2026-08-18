@@ -69,6 +69,7 @@ OUTPUTS = [
     "public/data/counties.geojson",
     "public/data/uncontracted_rivers.json",
     "public/data/uncontracted_lakes.json",
+    "public/data/uncontracted_majors.json",
     "public/data/waters_county_clips.json",
     "data/species.json",
 ]
@@ -87,6 +88,9 @@ FULL_STEPS = [
     "scripts/audit_missing_rivers.py",        # attach OSM geometry to fixable rows
     "scripts/build_uncontracted_rivers.py",
     "scripts/build_uncontracted_lakes.py",
+    # P1 §4.5 — the zoom-7 majors subset (rivers ≥30km + lakes ≥100ha) that the
+    # first paint awaits; full pools stream in the background after the gate.
+    "scripts/build_uncontracted_majors.py",
     "scripts/sweep_uncontracted_overlay.py",
     "scripts/recompute_assoc_validity.py",
     "scripts/recompute_assoc_counts.py",

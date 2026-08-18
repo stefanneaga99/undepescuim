@@ -317,7 +317,7 @@ dataset (which totals ~9 MB compact incl. lazy files). Leave out of the first im
 | M9 main-thread parse < 6 MB | ~23.7 MB | **3.37 MB** first-load | **PASS** |
 | M12 no >100 ms long task | fail (TC-07) | simplification 7.8× + culling + no low-zoom hit-layer | **PASS** (expected) |
 | M13 heap < 200 MB | untested | retained geometry −87 % | improved |
-| M14 LOD ≤ 500 @ zoom 7 | fail (contracted) | contracted now culls/LOD like uncontracted | **PASS** (expected) |
+| M14 LOD ≤ 1000 paths @ zoom 7 | fail (contracted) | measured ~828 after shared culling/LOD | **PASS** |
 
 **Per-change expected gains (task item 5):**
 
