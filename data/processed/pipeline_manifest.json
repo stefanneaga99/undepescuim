@@ -1,5 +1,5 @@
 {
- "git_rev": "09d50fa8a62ddb0d117c1c49edc8c9c56a8d754a",
+ "git_rev": "cfe25e2ea88234aa62ecbc8e33fe7fba53666977",
  "inputs": {
   "data/processed/anpa_waters.jsonl": "af1311584384ae75290b43a442e6b78cb9067924a506c3c4bc6eb93033215a9d",
   "data/processed/anpa_contracts.jsonl": "e49b90f7d9c2d2faa214eef7d2d75ce92c4ef32ec325c615fec23a61253eb27b",
@@ -57,13 +57,14 @@
   "src/content/permis-2026.ts": "2c54c9a0efbeb34c16af9ce0124cc17bf5c038a8550440e7136d626d4cb0cadb"
  },
  "outputs": {
-  "public/data/waters.json": "7a307e429f61f344c911d220bc6f9f1fc08e8eb06fa7ee472ec25c2f7d5e0a33",
+  "public/data/waters.json": "fe87d14b224c99998a5f8c49e09609285559bc3ba2c8d9b8fc20420202f2351a",
   "public/data/associations.json": "388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9",
   "public/data/counties.geojson": "3b6c0dc382db4d61707f133db7d9876c80981a9f3d74e84ed19651c298d81ac5",
   "public/data/uncontracted_rivers.json": "06414eb6c569770513c10d90d8a68d3338d7f4508ef5c7d76cb20add195db4dd",
   "public/data/uncontracted_lakes.json": "59c9b9969f3c501e06bdabc2cf33d06e4ccf1c055680169264cbce636e17f44e",
+  "public/data/uncontracted_majors.json": "d3a0d657d28fa74cadbd8e0ab28ae78f15eac756993e4190071d94889101256c",
   "public/data/waters_county_clips.json": "65b29985ee1f883105b3e81ca7012724f85dee0fb9d2a85efdf3272902d1257e",
   "data/species.json": "7ba58a78126f69c4ea1c827acdc4f0e6ddaefd1c0bc0a57d0aec9facc35324c8"
  },
- "generated_at": "2026-08-18T10:40:49"
+ "generated_at": "2026-08-18T18:35:39"
 }

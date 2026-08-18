@@ -107,6 +107,16 @@ FULL_STEPS = [
     "scripts/fix_sweep_gate_duplicates.py",    # B4: overlay vs contracted cleanup
 ]
 
+# Inputs copied into a canonical scratch rebuild. Keep this list explicit so
+# canonical steps cannot silently run with missing tracked fixtures.
+SCRATCH_COPY_DIRS = (
+    "scripts",
+    "public/data",
+    "data/processed",
+    "data/raw/county_boundaries",
+    "data/raw/localities",
+)
+
 PY = sys.executable
 
 
@@ -233,7 +243,9 @@ def cmd_to(dest: Path) -> None:
     if dest.exists():
         shutil.rmtree(dest)
     print(f"[to] scratch rebuild at {dest}")
-    for sub in ("scripts", "public/data", "data/processed", "data/raw/county_boundaries"):
+    # Locality assignment is a canonical step and needs its tracked UAT
+    # boundary/index inputs in the scratch checkout as well.
+    for sub in SCRATCH_COPY_DIRS:
         shutil.copytree(ROOT / sub, dest / sub)
     (dest / "data" / "cache").mkdir(parents=True, exist_ok=True)
     (dest / "data" / "raw").mkdir(parents=True, exist_ok=True)
@@ -246,7 +258,9 @@ def cmd_to(dest: Path) -> None:
         if src.exists():
             (dest / big).symlink_to(src)
     for p in ROOT.glob("data/raw/*.json"):
-        (dest / "data" / "raw" / p.name).symlink_to(p)
+        target = dest / "data" / "raw" / p.name
+        if not target.exists():
+            target.symlink_to(p)
     # run the canonical sequence INSIDE the copy
     for step in FULL_STEPS:
         print(f"[to] running {step} ...")
