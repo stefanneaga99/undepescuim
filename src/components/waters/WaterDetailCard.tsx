@@ -13,6 +13,8 @@ interface WaterDetailCardProps {
   association: Association | null;
   /** Opens the report dialog with an optional pre-selected reason (F3). */
   onReport?: (reason: ReportReason | null) => void;
+  /** Hide the inline report buttons (mobile uses the fixed bottom action bar). */
+  compact?: boolean;
 }
 
 /**
@@ -25,7 +27,7 @@ interface WaterDetailCardProps {
  * Missing fields simply don't render (no "—"/"N/A" placeholders).
  * "Raportează o problemă" is a placeholder.
  */
-export function WaterDetailCard({ water, association, onReport }: WaterDetailCardProps) {
+export function WaterDetailCard({ water, association, onReport, compact = false }: WaterDetailCardProps) {
   const { t } = useI18n();
   const isLake = water.subtype === 'lac';
   const isUncontracted = water.uncontracted === true;
@@ -202,7 +204,10 @@ export function WaterDetailCard({ water, association, onReport }: WaterDetailCar
         </div>
       )}
 
-      {/* F3 (t_5b1250b3): report entry points — positive-signal quick tap + full form. */}
+      {/* F3 (t_5b1250b3): report entry points — positive-signal quick tap + full form.
+          Hidden on compact (mobile) — the fixed bottom action bar (t_d9e8196e)
+          replaces them so the report action is never duplicated below/inside the sheet. */}
+      {!compact && (
       <div className="mt-1 flex flex-wrap items-center gap-2">
         <button
           type="button"
@@ -223,6 +228,7 @@ export function WaterDetailCard({ water, association, onReport }: WaterDetailCar
           {t('card.reportProblem')}
         </button>
       </div>
+      )}
       <div className="mt-1 flex flex-wrap items-center gap-2">
         <Link
           href="/permis"

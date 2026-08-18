@@ -170,6 +170,7 @@ export function WaterDetailSheet() {
                     water={water}
                     association={association}
                     onReport={openReport}
+                    compact={isCompact}
                   />
                 </div>
               )}

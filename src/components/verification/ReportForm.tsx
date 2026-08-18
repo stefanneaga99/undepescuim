@@ -82,7 +82,11 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
       open={open}
       onOpenChange={(o) => { if (!o) reset(); onOpenChange(o); }}
     >
-      <DialogContent data-testid="report-dialog" className="sm:max-w-md">
+      <DialogContent
+        data-testid="report-dialog"
+        data-vaul-no-drag
+        className="z-[1300] sm:max-w-md"
+      >
         <DialogHeader>
           <DialogTitle>{t('report.title')}</DialogTitle>
           <DialogDescription>
