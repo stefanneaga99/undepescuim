@@ -5,7 +5,6 @@
  */
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
-import { Selectors } from '../../helpers/selectors';
 
 test.describe('F6 — water detail card', () => {
   test('contracted river shows sector, size, association, 2 permit rows, validity, links', async ({

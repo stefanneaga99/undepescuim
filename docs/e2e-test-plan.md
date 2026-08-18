@@ -41,7 +41,11 @@ tests are data-integrity assertions on the served JSON. The plan keeps that tier
 
 ---
 
-## 2. Inventory — existing e2e scripts (`scripts/_e2e_*.mjs`)
+## 2. Historical inventory — superseded e2e scripts
+
+> Migration completed 2026-08-18: the ad-hoc `scripts/_e2e_*.mjs` files were
+> removed after their reusable assertions moved into `tests/e2e/`. The table
+> below is retained only as migration history.
 
 All 28 are **standalone Node scripts** using `import { chromium } from 'playwright'`
 (no `@playwright/test`, no runner, no fixtures, no POM, no config, no retries, no HTML
@@ -499,9 +503,8 @@ Execute in dependency order; each step ends with a green command.
    in the spec file header so nothing is lost).
 9. **Add `.github/workflows/e2e.yml`** (§7). Verify: push a branch, watch the PR
    check go green.
-10. **Archive old scripts.** Move remaining `_e2e_*.mjs` that aren't ported into
-    `scripts/_e2e_legacy/` with a README noting their `@data`/flow successor; delete
-    after one green week.
+10. **Remove old scripts.** Completed 2026-08-18 after the structured suite passed
+    across mobile, tablet, and desktop.
 
 ---
 
@@ -527,7 +530,7 @@ Execute in dependency order; each step ends with a green command.
 - [ ] `npx playwright test --grep @data` green against real `/public/data`.
 - [ ] `.github/workflows/e2e.yml` runs on PR + main + nightly; report artifact uploads on failure.
 - [ ] Zero remaining `waitForTimeout` outside `helpers/map.ts`.
-- [ ] Every `_e2e_*.mjs` assertion is either ported (with a mapping note) or explicitly dropped with a reason.
+- [x] Ad-hoc `_e2e_*.mjs` scripts removed after migration to the structured suite.
 - [ ] A deliberately introduced regression in one flow (e.g. break county filter) fails exactly that spec.
 
 ---

@@ -272,12 +272,12 @@ process.exit(bad.length?1:0);
 
 ### SEC-09 — End-to-end report flow (automated, existing)
 
-`scripts/_e2e_report.mjs` already stubs `/api/report` and asserts the form
+`tests/e2e/specs/flows/report.spec.ts` stubs `/api/report` and asserts the form
 (5 radios, disabled-until-reason, success state, positive-tap preselect). Re-run it
 as the functional baseline, then layer the security cases on top:
 
 ```bash
-cd ~/undepescuim && node scripts/_e2e_report.mjs http://localhost:3000
+cd ~/undepescuim && npx playwright test tests/e2e/specs/flows/report.spec.ts
 ```
 
 ---
@@ -334,7 +334,7 @@ Also enable **Dependabot** (GitHub → Settings → Code security → Dependabot
 - [ ] **REM-3** Issue title/body sanitized (strip markdown / escape user text).
 - [ ] **REM-4** `contactEmail` removed from the public issue body, or the form adds an
       explicit "your email will be visible in a public GitHub issue" notice.
-- [ ] **SEC-09** `_e2e_report.mjs` green.
+- [ ] **SEC-09** `tests/e2e/specs/flows/report.spec.ts` green.
 - [ ] **SEC-06** XSS-sink lint gate in CI.
 - [ ] Vercel env `REPORT_GITHUB_TOKEN` scoped Production + Preview; `report` label
       exists on the repo (else issue creation 422s).

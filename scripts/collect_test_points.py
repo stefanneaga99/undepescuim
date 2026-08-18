@@ -2,7 +2,8 @@
 """Collect geocoded test points for the river click-resolution verification.
 
 Reads the geocode cache (geocoding any missing query), then writes
-scripts/test_points.json consumed by scripts/verify_river_fix.js.
+Legacy point collector retained for data investigation; reusable course-math
+assertions now live in the shared parity fixtures under tests/fixtures/.
 """
 import json
 import sys

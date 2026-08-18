@@ -12,6 +12,12 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Generated/runtime-owned artifacts, never source code.
+    "coverage/**",
+    ".venv/**",
+    "public/sw.js",
+    "public/sw.js.map",
+    "public/swe-worker*.js",
     // Raw research artifacts (probe downloads, scraped JS/HTML) — not app code.
     "data/**",
   ]),

@@ -15,9 +15,6 @@ import { expect, type Page } from '@playwright/test';
 import { Selectors } from './selectors';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-function mapOf(page: Page) {
-  return page.evaluate(() => (window as any).__UNDEPESCUIM_MAP__ ?? null);
-}
 
 /** Live Leaflet zoom level (via the test bridge — DPR/UA agnostic). */
 export async function mapZoom(page: Page): Promise<number> {

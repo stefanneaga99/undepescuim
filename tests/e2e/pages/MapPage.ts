@@ -78,6 +78,8 @@ export class MapPage {
   async panTo(lat: number, lon: number, zoom?: number): Promise<void> {
     await this.page.evaluate(
       ([la, lo, z]) => {
+        // Leaflet is exposed only through the E2E test bridge.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const map = (window as any).__UNDEPESCUIM_MAP__;
         if (!map) throw new Error('panTo: leaflet map bridge not available');
         map.setView([la, lo], z ?? map.getZoom());

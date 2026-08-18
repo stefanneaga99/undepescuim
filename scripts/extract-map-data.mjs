@@ -102,7 +102,6 @@ mkdirSync(outDir, { recursive: true });
 // field survive re-extraction even if the upstream probe later drops link_permis.
 function mergePermitEnrichment(list, bySlugKey) {
   const enrichPath = join(root, 'data/processed/permit_enrichment.json');
-  const overridesPath = join(root, 'data/processed/permit_overrides.json');
   const known = new Map();
   const overrides = new Map();
   try {

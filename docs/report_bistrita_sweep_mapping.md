@@ -18,7 +18,7 @@ Raportul „mai sunt ape nemapate" în jurul Broșteni / Borsec / Parcul Națion
    - Râul Târnava Mică HARGHITA (5 km) + MUREȘ (96 km)
 3. **Geometrie atașată** pentru Romsilva din zonă care era invizibilă: Bistricioara tronson I (Harghita, curs OSM complet), Izvoarele Cracăului (Neamț). Sabasa (Neamț) — fără curs OSM cu nume → geocodat (bbox clickabil la 47.20N 25.82E).
 
-### Verificare click (scripts/verify_bistrita_basin.js — replică fidelă a contractAtFraction din FE)
+### Verificare click (acoperită acum de testele `river-course` și E2E `map-segment-qa`)
 23/23 PASS: Broșteni→Bistrița II (A.LUCIOPERCA), Bicaz→AJVPS NEAMȚ, Piatra Neamț→AJVPS NEAMȚ (32 km), Bacău→AJVPS BACĂU (39 km), Bistricioara→D.S. Harghita, Moldova (gura)→AVPS ROMAN, Târnava Mică→sectoarele corecte.
 
 ## 2. Sweep național — toate rândurile rămase „missing"

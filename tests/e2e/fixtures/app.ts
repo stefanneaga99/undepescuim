@@ -9,6 +9,10 @@ import { seed, type SeedData } from './seed-data';
 import { routeData } from './routes';
 import { waitForMapReady } from '../helpers/map';
 
+// Playwright fixtures conventionally name their continuation callback `use`;
+// it is not React's hook.
+/* eslint-disable react-hooks/rules-of-hooks */
+
 type AppFixtures = {
   seedData: SeedData;
   /** Navigate (default `/`) with seeded data and wait until the map is drawn. */

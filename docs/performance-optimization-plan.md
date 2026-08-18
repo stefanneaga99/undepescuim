@@ -387,8 +387,8 @@ re-introduces un-simplified geometry **fails the job** before it can commit.
 7. **`scripts/check-data-budget.mjs` + wire into `data-refresh.yml`** (P1, ~1 h).
 8. **(Optional) web-worker parse** (P2, ~3 h) — only if M9 re-scoped.
 
-Each item is independently verifiable via the existing `scripts/_e2e_*.mjs` Playwright pattern
-(notably `_e2e_county_clip.mjs`, `_e2e_focus_*.mjs`, `_e2e_association_highlight.mjs`) plus the new
+Each item is independently verifiable through the structured Playwright suite in `tests/e2e/`
+(notably county/locality, water-detail, association, and map-segment regression specs), plus
 `check-data-budget.mjs` and `_perf_spike_measure*.py`.
 
 ---

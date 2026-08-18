@@ -133,8 +133,8 @@ contract and are the ones reported to stakeholders.
 | `@next/bundle-analyzer` | JS bundle budget | `npm i -D @next/bundle-analyzer` |
 | `playwright` | perf traces, CLS sampler, interaction INP proxy | **already present** (1.62.1, extraneous — promote to devDependency) |
 
-No Jest/Vitest — the existing 28 `scripts/_e2e_*.mjs` Playwright scripts are the established
-pattern; performance traces should follow the same script style.
+Vitest and the structured Playwright suite under `tests/e2e/` are now established;
+performance traces follow the same local/CDP approach.
 
 ### 5.2 Lighthouse CI (local + CI)
 
@@ -172,7 +172,7 @@ Fast 3G throttling (Lighthouse's "mobile" preset already applies 4× CPU + simul
 
 ### 5.3 Playwright performance traces (map-specific)
 
-Follow the existing `_e2e_*.mjs` pattern. Example skeleton:
+Follow the structured Playwright fixture/POM pattern under `tests/e2e/`. Example skeleton:
 
 ```js
 import { chromium } from 'playwright';
@@ -367,8 +367,8 @@ npm run build && npm run start          # production build (perf must be measure
 # Local Lighthouse (one-off)
 npx lighthouse http://localhost:3000/ --preset=perf --output=html --output-path=./.e2e/lh-home.html
 
-# Existing e2e script pattern (Playwright, against the running server)
-PLAYWRIGHT_CDP=http://localhost:3000 node scripts/_e2e_menu_mobile.mjs http://localhost:3000
+# Focused Playwright flow against the configured test server
+npx playwright test tests/e2e/specs/flows/nav.spec.ts --project=mobile
 
 # Bundle analyzer
 ANALYZE=true npm run build
@@ -389,7 +389,7 @@ Either gives TC-02/TC-06/TC-12 a deterministic wait target instead of `waitForTi
 1. `npm run build` succeeds today → confirms the CI path is real.
 2. `curl -sI https://undepescuim.vercel.app/data/waters.json` → confirm `Content-Encoding: gzip`/`br`
    and the ~5 MB transfer (not 36 MB) so budget M7 measures the right number.
-3. Run one `_e2e_*.mjs` script against a local prod build to confirm the Playwright harness pattern.
+3. Run one focused `tests/e2e` spec against a local prod build to confirm the Playwright harness.
 4. Spot-check TC-02 manually in Chrome DevTools (Network throttled Fast 3G): the map should
    currently take > 25 s to first paint — confirming the P0 risk and validating the budget.
 
