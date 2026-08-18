@@ -20,7 +20,7 @@
         ]
       },
       "owner_slug": "qjz7g9se",
-      "river_group": null,
+      "river_group": "acumularea govora",
       "segments": [
         {
           "fraction": [
@@ -48,19 +48,17 @@
       "findings": [],
       "osm": {
         "match_status": "confirmed",
-        "osm_id": 11551058,
+        "osm_id": 12393788,
         "relation_ids": [
-          11551058
+          12393788
         ],
         "way_ids": [
-          186378710,
-          186648170,
-          186648171,
-          186648176
+          857235704,
+          913246106
         ]
       },
-      "owner_slug": "zughmn94",
-      "river_group": null,
+      "owner_slug": "qvwbzauf",
+      "river_group": "acumularea ramnicu valcea",
       "segments": [
         {
           "fraction": [
@@ -68,13 +66,12 @@
             1
           ],
           "length_m": 0,
-          "segment_id": "11551058:main",
+          "segment_id": "12393788:main",
           "status": "PASS_CONTRACTED"
         }
       ],
       "source_rows": [
-        "anpa-0666",
-        "abp-0354"
+        "abp-0331"
       ],
       "topology": {
         "components": 1,
@@ -99,7 +96,7 @@
         ]
       },
       "owner_slug": "ec2faven",
-      "river_group": null,
+      "river_group": "acumularea raureni",
       "segments": [
         {
           "fraction": [
@@ -127,17 +124,19 @@
       "findings": [],
       "osm": {
         "match_status": "confirmed",
-        "osm_id": 11952672,
+        "osm_id": 11551058,
         "relation_ids": [
-          11952672
+          11551058
         ],
         "way_ids": [
-          350013713,
-          878092285
+          186378710,
+          186648170,
+          186648171,
+          186648176
         ]
       },
-      "owner_slug": "owq68ima",
-      "river_group": null,
+      "owner_slug": "zughmn94",
+      "river_group": "acumularea zavideni",
       "segments": [
         {
           "fraction": [
@@ -145,217 +144,13 @@
             1
           ],
           "length_m": 0,
-          "segment_id": "11952672:main",
+          "segment_id": "11551058:main",
           "status": "PASS_CONTRACTED"
         }
       ],
       "source_rows": [
-        "abp-0010"
-      ],
-      "topology": {
-        "components": 1,
-        "internal_gaps": []
-      }
-    },
-    {
-      "coverage": {
-        "osm_to_published": 0.0,
-        "published_to_osm": 0.0
-      },
-      "findings": [],
-      "osm": {
-        "match_status": "confirmed",
-        "osm_id": 12393788,
-        "relation_ids": [
-          12393788
-        ],
-        "way_ids": [
-          857235704,
-          913246106
-        ]
-      },
-      "owner_slug": "qvwbzauf",
-      "river_group": null,
-      "segments": [
-        {
-          "fraction": [
-            0,
-            1
-          ],
-          "length_m": 0,
-          "segment_id": "12393788:main",
-          "status": "PASS_CONTRACTED"
-        }
-      ],
-      "source_rows": [
-        "abp-0331"
-      ],
-      "topology": {
-        "components": 1,
-        "internal_gaps": []
-      }
-    },
-    {
-      "coverage": {
-        "osm_to_published": 0.7090909090909091,
-        "published_to_osm": 0.005747126436781609
-      },
-      "findings": [
-        {
-          "code": "truncated_head"
-        },
-        {
-          "code": "truncated_mouth"
-        }
-      ],
-      "osm": {
-        "match_status": "confirmed",
-        "osm_id": 16023493,
-        "relation_ids": [
-          16023493
-        ],
-        "way_ids": [
-          1185218205,
-          1185218206
-        ]
-      },
-      "owner_slug": "414x091y",
-      "river_group": null,
-      "segments": [
-        {
-          "fraction": [
-            0,
-            1
-          ],
-          "length_m": 0,
-          "segment_id": "16023493:main",
-          "status": "UNRESOLVED_NO_OSM_MATCH"
-        }
-      ],
-      "source_rows": [
-        "anpa-0140",
-        "abp-0287"
-      ],
-      "topology": {
-        "components": 1,
-        "internal_gaps": []
-      }
-    },
-    {
-      "coverage": {
-        "osm_to_published": 0.0,
-        "published_to_osm": 0.0
-      },
-      "findings": [],
-      "osm": {
-        "match_status": "confirmed",
-        "osm_id": 17068098,
-        "relation_ids": [
-          17068098
-        ],
-        "way_ids": [
-          26955429,
-          642307132
-        ]
-      },
-      "owner_slug": "3klq13bv",
-      "river_group": null,
-      "segments": [
-        {
-          "fraction": [
-            0,
-            1
-          ],
-          "length_m": 0,
-          "segment_id": "17068098:main",
-          "status": "PASS_CONTRACTED"
-        }
-      ],
-      "source_rows": [
-        "anpa-romsilva-0256",
-        "abp-0160"
-      ],
-      "topology": {
-        "components": 1,
-        "internal_gaps": []
-      }
-    },
-    {
-      "coverage": {
-        "osm_to_published": 0.0,
-        "published_to_osm": 0.0
-      },
-      "findings": [],
-      "osm": {
-        "match_status": "confirmed",
-        "osm_id": 2445024,
-        "relation_ids": [
-          2445024
-        ],
-        "way_ids": [
-          169852659,
-          183630295
-        ]
-      },
-      "owner_slug": "axdnd0sx",
-      "river_group": null,
-      "segments": [
-        {
-          "fraction": [
-            0,
-            1
-          ],
-          "length_m": 0,
-          "segment_id": "2445024:main",
-          "status": "PASS_CONTRACTED"
-        }
-      ],
-      "source_rows": [
-        "anpa-romsilva-0284",
-        "abp-0167"
-      ],
-      "topology": {
-        "components": 1,
-        "internal_gaps": []
-      }
-    },
-    {
-      "coverage": {
-        "osm_to_published": 0.0,
-        "published_to_osm": 0.0
-      },
-      "findings": [],
-      "osm": {
-        "match_status": "confirmed",
-        "osm_id": 9062865,
-        "relation_ids": [
-          9062865
-        ],
-        "way_ids": [
-          650863541,
-          913295869,
-          913295870,
-          913295871,
-          913295872,
-          913295873,
-          913295874
-        ]
-      },
-      "owner_slug": "eu0onj97",
-      "river_group": null,
-      "segments": [
-        {
-          "fraction": [
-            0,
-            1
-          ],
-          "length_m": 0,
-          "segment_id": "9062865:main",
-          "status": "PASS_CONTRACTED"
-        }
-      ],
-      "source_rows": [
-        "abp-0008"
+        "anpa-0666",
+        "abp-0354"
       ],
       "topology": {
         "components": 1,
@@ -770,6 +565,126 @@
       "findings": [],
       "osm": {
         "match_status": "confirmed",
+        "osm_id": 9062865,
+        "relation_ids": [
+          9062865
+        ],
+        "way_ids": [
+          650863541,
+          913295869,
+          913295870,
+          913295871,
+          913295872,
+          913295873,
+          913295874
+        ]
+      },
+      "owner_slug": "eu0onj97",
+      "river_group": "lacul de acumulare belis fantanele",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "9062865:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0008"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 11952672,
+        "relation_ids": [
+          11952672
+        ],
+        "way_ids": [
+          350013713,
+          878092285
+        ]
+      },
+      "owner_slug": "owq68ima",
+      "river_group": "lacul de acumulare gilau",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "11952672:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "abp-0010"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 17068098,
+        "relation_ids": [
+          17068098
+        ],
+        "way_ids": [
+          26955429,
+          642307132
+        ]
+      },
+      "owner_slug": "3klq13bv",
+      "river_group": "lacul rosu",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "17068098:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-romsilva-0256",
+        "abp-0160"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
         "osm_id": 13030220,
         "relation_ids": [
           13030220
@@ -902,6 +817,52 @@
     },
     {
       "coverage": {
+        "osm_to_published": 0.7090909090909091,
+        "published_to_osm": 0.005747126436781609
+      },
+      "findings": [
+        {
+          "code": "truncated_head"
+        },
+        {
+          "code": "truncated_mouth"
+        }
+      ],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 16023493,
+        "relation_ids": [
+          16023493
+        ],
+        "way_ids": [
+          1185218205,
+          1185218206
+        ]
+      },
+      "owner_slug": "414x091y",
+      "river_group": "sieu",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "16023493:main",
+          "status": "UNRESOLVED_NO_OSM_MATCH"
+        }
+      ],
+      "source_rows": [
+        "anpa-0140",
+        "abp-0287"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
@@ -1007,6 +968,45 @@
         "anpa-0674",
         "abp-0295",
         "abp-0299"
+      ],
+      "topology": {
+        "components": 1,
+        "internal_gaps": []
+      }
+    },
+    {
+      "coverage": {
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
+      },
+      "findings": [],
+      "osm": {
+        "match_status": "confirmed",
+        "osm_id": 2445024,
+        "relation_ids": [
+          2445024
+        ],
+        "way_ids": [
+          169852659,
+          183630295
+        ]
+      },
+      "owner_slug": "axdnd0sx",
+      "river_group": "taul tapului",
+      "segments": [
+        {
+          "fraction": [
+            0,
+            1
+          ],
+          "length_m": 0,
+          "segment_id": "2445024:main",
+          "status": "PASS_CONTRACTED"
+        }
+      ],
+      "source_rows": [
+        "anpa-romsilva-0284",
+        "abp-0167"
       ],
       "topology": {
         "components": 1,
