@@ -67,6 +67,28 @@ export async function clickWaterBySlug(page: Page, slug: string): Promise<void> 
   if (!res.ok) throw new Error(`clickWaterBySlug failed: ${res.reason}`);
 }
 
+/** Click a specific fraction of a rendered LineString (for sector contracts). */
+export async function clickWaterBySlugAtFraction(page: Page, slug: string, fraction: number): Promise<void> {
+  const res = await page.evaluate(({ slug, fraction }) => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
+    let target: any = null;
+    map?.eachLayer((layer: any) => {
+      if (!target && layer.feature?.properties?.slug === slug && layer._path) target = layer;
+    });
+    const coords = target?.feature?.geometry?.coordinates;
+    if (!target || !Array.isArray(coords) || coords.length < 2) return { ok: false as const };
+    const line = coords[0]?.[0] instanceof Array ? coords[0] : coords;
+    const scaled = Math.max(0, Math.min(0.999999, fraction)) * (line.length - 1);
+    const i = Math.floor(scaled);
+    const t = scaled - i;
+    const a = line[i];
+    const b = line[i + 1];
+    target.fire('click', { latlng: { lat: a[1] + (b[1] - a[1]) * t, lng: a[0] + (b[0] - a[0]) * t }, originalEvent: {} });
+    return { ok: true as const };
+  }, { slug, fraction });
+  if (!res.ok) throw new Error(`clickWaterBySlugAtFraction failed: ${slug}`);
+}
+
 /**
  * REAL pointer click on the water's rendered path — the full user gesture
  * through Leaflet's hit-testing. Samples the SVG path (handling thin/dashed
@@ -109,7 +131,7 @@ export async function clickWaterByPixel(page: Page, slug: string): Promise<void>
 export async function countPathsByColor(page: Page, colors: readonly string[]): Promise<number> {
   return page.evaluate((colors) => {
     const set = new Set(colors.map((c) => c.toLowerCase()));
-    return [...document.querySelectorAll('.leaflet-overlay-pane path')].filter(
+    return [...document.querySelectorAll('.leaflet-overlay-pane path, .water-focus-pane path, .water-association-pane path')].filter(
       (p) => set.has((p.getAttribute('stroke') || '').toLowerCase()),
     ).length;
   }, colors as string[]);
@@ -117,6 +139,25 @@ export async function countPathsByColor(page: Page, colors: readonly string[]): 
 
 /** Total vector overlay paths (contracted + uncontracted + slices). */
 export async function countAllPaths(page: Page): Promise<number> {
-  return page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane path').length);
+  return page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane path, .water-focus-pane path, .water-association-pane path').length);
+}
+
+/** Semantic snapshot of the dedicated focus pane (style + geometry, not store state). */
+export async function focusSnapshot(page: Page): Promise<{
+  slug: string;
+  zIndex: string;
+  orangePaths: number;
+  paths: string[];
+}> {
+  return page.evaluate(() => {
+    const pane = document.querySelector<HTMLElement>('.water-focus-pane');
+    const paths = [...(pane?.querySelectorAll('path') ?? [])];
+    return {
+      slug: pane?.dataset.focusSlug ?? '',
+      zIndex: pane ? getComputedStyle(pane).zIndex : '',
+      orangePaths: paths.filter((p) => p.getAttribute('stroke')?.toLowerCase() === '#f97316').length,
+      paths: paths.map((p) => p.getAttribute('d') ?? ''),
+    };
+  });
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */

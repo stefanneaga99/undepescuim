@@ -9,6 +9,7 @@ import {
   clickWaterBySlug,
   countAllPaths,
   countPathsByColor,
+  focusSnapshot,
   mapZoom,
   setMapZoom,
 } from '../helpers/map';
@@ -94,5 +95,9 @@ export class MapPage {
 
   pathsByColor(colors: readonly string[]): Promise<number> {
     return countPathsByColor(this.page, colors);
+  }
+
+  focusSnapshot() {
+    return focusSnapshot(this.page);
   }
 }

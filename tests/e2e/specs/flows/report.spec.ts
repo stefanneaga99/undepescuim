@@ -7,6 +7,12 @@ import type { TestInfo } from '@playwright/test';
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 import { ReportDialog } from '../../pages/ReportDialog';
+import { clickWaterBySlugAtFraction } from '../../helpers/map';
+import {
+  MULTI_CONTRACT_SELECTED_SLUG,
+  REPORT_MULTI_CONTRACT_WATERS,
+  seed,
+} from '../../fixtures/seed-data';
 
 function skipTablet(testInfo: TestInfo): void {
   test.skip(testInfo.project.name === 'tablet', 'F8 runs on desktop + mobile (plan §3)');
@@ -15,6 +21,11 @@ function skipTablet(testInfo: TestInfo): void {
 test.describe('F8 — report flow', () => {
 
   test.beforeEach(async ({ page }) => {
+    // Keep the multi-contract fixture local to report tests: the rest of the
+    // seeded suite has exact path-count assertions over its baseline dataset.
+    await page.route('**/data/waters.json', (route) =>
+      route.fulfill({ json: [...seed.waters, ...REPORT_MULTI_CONTRACT_WATERS] }),
+    );
     // Never create real GitHub issues — stub the endpoint (as _e2e_report.mjs).
     await page.route('**/api/report', async (route) => {
       if (route.request().method() !== 'POST') return route.continue();
@@ -96,5 +107,47 @@ test.describe('F8 — report flow', () => {
     expect(body.waterName).toBe('Râul Someșul Test');
     expect(body.details).toContain('Bariera lipsește');
     expect(body.contactEmail).toBe('pescar@exemplu.ro');
+  });
+
+  test('mobile report success preserves multi-contract sector focus pane', async ({ mapReady, page, collectedErrors }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'focus persistence regression is mobile-only');
+    await mapReady();
+    const map = new MapPage(page);
+    const dialog = new ReportDialog(page);
+
+    await clickWaterBySlugAtFraction(page, 'raul-multi-contract-test', 0.9);
+    await expect(map.waterCard.card).toBeVisible();
+    const before = await map.focusSnapshot();
+    expect(before.slug).toBe(MULTI_CONTRACT_SELECTED_SLUG);
+    expect(before.orangePaths).toBeGreaterThan(0);
+    expect(Number(before.zIndex)).toBeGreaterThan(400);
+
+    await map.waterCard.clickButton(map.waterCard.reportPositive);
+    await dialog.submit();
+    await expect(dialog.successText).toBeVisible();
+    expect(await map.focusSnapshot()).toEqual(before);
+    await dialog.dialog.getByRole('button', { name: 'Închide' }).click();
+    await expect(dialog.dialog).toBeHidden();
+    expect(await map.focusSnapshot()).toEqual(before);
+    expect(collectedErrors).toEqual([]);
+  });
+
+  test('mobile report success preserves whole-feature single-contract focus', async ({ mapReady, page, collectedErrors }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile', 'focus persistence regression is mobile-only');
+    await mapReady();
+    const map = new MapPage(page);
+    const dialog = new ReportDialog(page);
+
+    await map.clickWater('raul-somesul-test');
+    const before = await map.focusSnapshot();
+    expect(before.slug).toBe('raul-somesul-test');
+    expect(before.orangePaths).toBeGreaterThan(0);
+    await map.waterCard.clickButton(map.waterCard.reportPositive);
+    await dialog.submit();
+    await expect(dialog.successText).toBeVisible();
+    expect(await map.focusSnapshot()).toEqual(before);
+    await dialog.dialog.getByRole('button', { name: 'Închide' }).click();
+    expect(await map.focusSnapshot()).toEqual(before);
+    expect(collectedErrors).toEqual([]);
   });
 });

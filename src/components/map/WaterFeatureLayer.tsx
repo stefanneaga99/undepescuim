@@ -70,6 +70,24 @@ export function WaterFeatureLayer({
   const localityActive = useMapStore((s) => s.localityFilter.length > 0);
 
   const map = useMap();
+  // Keep focus rendering in a stable pane instead of relying on React/Leaflet
+  // sibling insertion order.  The report dialog and mobile sheets are portaled
+  // above the map; z-index 450 wins over ordinary/association paths while
+  // remaining below those UI layers.
+  const focusPane = useMemo(() => {
+    const pane = map.getPane('water-focus') ?? map.createPane('water-focus');
+    pane.classList.add('water-focus-pane');
+    pane.style.zIndex = '450';
+    return 'water-focus';
+  }, [map]);
+  const associationPane = useMemo(() => {
+    const pane = map.getPane('water-association') ?? map.createPane('water-association');
+    pane.classList.add('water-association-pane');
+    pane.style.zIndex = '440';
+    return 'water-association';
+  }, [map]);
+  const focusPaneElement = map.getPane(focusPane);
+  if (focusPaneElement) focusPaneElement.dataset.focusSlug = selectedWaterSlug ?? '';
   const [view, setView] = useState<{ zoom: number; bounds: L.LatLngBounds }>(() => ({
     zoom: map.getZoom(),
     bounds: map.getBounds(),
@@ -378,6 +396,7 @@ export function WaterFeatureLayer({
       {/* Focus slice on top: only the selected contract's sector, thick + colored */}
       {focusFeatures && focusColor && (
         <LeafletGeoJSON
+          pane={focusPane}
           data={
             {
               type: 'FeatureCollection',
@@ -405,6 +424,7 @@ export function WaterFeatureLayer({
           mis-map it). */}
       {assocHighlightFeatures && (
         <LeafletGeoJSON
+          pane={associationPane}
           data={
             {
               type: 'FeatureCollection',

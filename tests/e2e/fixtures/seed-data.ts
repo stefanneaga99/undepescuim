@@ -138,6 +138,40 @@ const raulSomesulTest: Water = {
   locality: 'Comuna Test',
 };
 
+/** Multi-contract course: only the owner has geometry; sectors are resolved
+ * from shared course fractions and rendered by the focus slice layer. */
+export const MULTI_CONTRACT_SELECTED_SLUG = 'sector-test-downstream';
+const multiContractOwner: Water = {
+  ...raulSomesulTest,
+  slug: 'raul-multi-contract-test',
+  name: 'Râul Multi Contract Test',
+  riverGroup: 'multi-contract-test',
+  course_frac: 0.1,
+};
+const multiContractMiddle: Water = {
+  ...raulSomesulTest,
+  slug: 'sector-test-middle',
+  name: 'Sector Test Mijlociu',
+  riverGroup: 'multi-contract-test',
+  course_frac: 0.5,
+  geometry: undefined,
+};
+const multiContractSelected: Water = {
+  ...raulSomesulTest,
+  slug: MULTI_CONTRACT_SELECTED_SLUG,
+  name: 'Sector Test Aval',
+  riverGroup: 'multi-contract-test',
+  course_frac: 0.9,
+  asociatie: alphaEmbedded,
+  geometry: undefined,
+};
+
+export const REPORT_MULTI_CONTRACT_WATERS: Water[] = [
+  multiContractOwner,
+  multiContractMiddle,
+  multiContractSelected,
+];
+
 /** Contracted lake — association (alpha) HAS permitUrl, so permit rows = 2. */
 const laculTestBrasov: Water = {
   slug: 'lacul-test-brasov',
