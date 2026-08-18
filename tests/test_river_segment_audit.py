@@ -5,6 +5,8 @@ from pathlib import Path
 from build_osm_river_segment_index import build
 from river_segment_audit_lib import connected_components, coverage, line_length_m, main_stem, topology
 
+FIXTURE = json.loads((Path(__file__).parent / "fixtures/river_segment_parity.json").read_text(encoding="utf-8"))
+
 
 def test_index_is_sorted_and_marks_truncated_relation(tmp_path):
     snapshot = tmp_path / "snapshot.json"
@@ -44,3 +46,18 @@ def test_coverage_detects_gap_without_mutating_geometry():
     assert result["osm_to_published"] < 1
     assert published == [[0, 0], [0.01, 0]]
     assert line_length_m(published) > 1000
+
+
+def test_multi_sector_overlay_probe_is_stable_and_local_only():
+    ways = FIXTURE["multi_sector_ways"]
+    assert topology(ways)["components"] == 2
+    assert len(connected_components(ways)[0]) == 3
+    assert sorted(sum(connected_components(ways), [])) == [101, 102, 103, 201]
+
+
+def test_tarnava_injected_gap_and_truncation_are_reported():
+    published = FIXTURE["tarnava"]["published"]
+    gap = FIXTURE["tarnava"]["gap"]
+    truncated = FIXTURE["tarnava"]["truncated"]
+    assert coverage(published, gap, tolerance_m=1)["published_to_osm"] < 1
+    assert coverage(published, truncated, tolerance_m=1)["published_to_osm"] < 1
