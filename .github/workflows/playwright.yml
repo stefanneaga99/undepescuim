@@ -1,7 +1,8 @@
 # Playwright E2E — docs/e2e-test-plan.md §7.
 # Runs the full seeded suite (all 3 viewports) on PR + main; the real-data
-# contract tier (@data) only on main / nightly / manual (it loads the 38 MB
-# waters.json and is not needed on every PR).
+# contract tier (@data) only on main / nightly / manual (it loads the real
+# production dataset, currently about 4.8 MB for waters.json, and is not
+# needed on every PR).
 name: e2e
 
 on:

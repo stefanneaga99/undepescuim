@@ -1,68 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UndePescuim.ro
 
-## Getting Started
+Hartă interactivă a apelor de pescuit din România, cu informații despre ape
+contractate și necontractate, asociații, permise și reguli.
 
-First, run the development server:
+Aplicația este disponibilă la [undepescuim.vercel.app](https://undepescuim.vercel.app)
+și este publicată automat de Vercel la fiecare push pe `main`.
+
+## Funcționalități
+
+- hartă Leaflet/OpenStreetMap cu geometrii reale pentru râuri și lacuri;
+- ape contractate și necontractate, cu nivel de detaliu adaptat zoom-ului și
+  randare limitată la viewport;
+- filtre după județ, localitate, tip de apă și statut contractual;
+- căutare și detalii pentru asociațiile de pescuit;
+- localizare și listă de ape din apropiere;
+- ghid bilingv română/engleză pentru permise și reguli (`/permis`);
+- dimensiuni minime și perioade de prohibiție pe specii (`/specii`);
+- raportarea problemelor de date direct ca GitHub issues;
+- mod luminos/întunecat și suport PWA cu cache offline pentru shell și date.
+
+## Tehnologii
+
+- Next.js 16 (App Router), React 19 și TypeScript;
+- Leaflet și React Leaflet pentru hartă;
+- Tailwind CSS 4 și componente shadcn/ui/Radix;
+- Zustand pentru starea clientului;
+- Serwist pentru service worker și PWA;
+- Vitest, Playwright și pytest pentru testare;
+- Vercel pentru hosting și funcția serverless de raportare.
+
+Arhitectura curentă este descrisă în
+[`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Documentele cu `plan`,
+`feasibility` sau `report` în nume păstrează contextul și deciziile de la
+momentul implementării și nu reprezintă neapărat starea curentă.
+
+## Dezvoltare locală
+
+Cerințe:
+
+- Node.js 22 recomandat (CI folosește Node.js 22 pentru testele unitare);
+- npm, folosind lockfile-ul inclus;
+- Python 3.12 și un mediu virtual pentru testele pipeline-ului de date.
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deschide [http://localhost:3000](http://localhost:3000). Pagina principală
+este în `src/app/page.tsx`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Comenzi uzuale:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint             # ESLint
+npm test                 # teste unitare TypeScript
+npm run test:coverage    # teste + praguri de coverage
+npm run build            # build de producție cu webpack + Serwist
+npm run test:e2e         # suită Playwright
+npm run perf:budget      # bugete pentru payload-urile de date
+```
 
-## Learn More
+Pentru testele Python:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements-dev.txt
+.venv/bin/python -m pytest
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Date
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Fișierele livrate clientului se află în `public/data/`. În prezent, setul
+principal conține 1.013 ape contractate și 96 de asociații; straturile
+necontractate și geometriile pe județe sunt păstrate separat pentru încărcare
+și randare eficientă.
 
-## Deploy on Vercel
+Reîmprospătarea completă se poate porni cu:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run data:refresh
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Workflow-ul `Monthly Data Refresh` rulează și lunar. Pipeline-ul are verificări
+de integritate, trasabilitate, determinism și bugete de dimensiune înainte ca
+datele regenerate să fie acceptate.
 
-Live at [https://undepescuim.vercel.app](https://undepescuim.vercel.app) — auto-deployed from `main` via Vercel.
+## Raportarea problemelor de date
 
-## Raportarea problemelor de date (F3)
+Formularul din cardul unei ape trimite `POST /api/report`. Endpointul serverless
+creează un issue în acest repository cu eticheta `report`.
 
-Cardurile de apă au două butoane:
+Este necesară variabila server-side:
 
-- **„Datele sunt corecte"** — semnal pozitiv rapid (deschide formularul cu motivul `data_correct` preselectat).
-- **„Raportează o problemă"** — formular complet (motiv + detalii opționale + email opțional).
+```text
+REPORT_GITHUB_TOKEN
+```
 
-Formularul trimite un POST la `POST /api/report` (serverless function pe Vercel),
-care creează un **GitHub issue** pe `neagastefan99/undepescuim` cu eticheta
-`report` — coada de review pentru mentenanța datelor.
+Tokenul trebuie să aibă acces de scriere la Issues pentru repository. Local se
+pune în `.env.local`; în producție se configurează în Vercel pentru mediile
+dorite. Nu folosi prefixul `NEXT_PUBLIC_`, deoarece tokenul nu trebuie expus în
+browser. Fără variabilă, endpointul răspunde cu `503 not_configured`.
 
-### Variabila de mediu (secret)
+Aplicația are nevoie de runtime-ul serverless pentru acest endpoint; nu activa
+`output: "export"` în `next.config.ts`.
 
-`REPORT_GITHUB_TOKEN` — token GitHub cu scop **Issues: Read & Write** pe
-`neagastefan99/undepescuim` (sau scope `repo` clasic).
+## CI și deploy
 
-- **Local:** în `.env.local` (ignorat de git) — poți folosi `gh auth token`.
-- **Producție:** Vercel → Project → Settings → Environment Variables →
-  `REPORT_GITHUB_TOKEN` (Production + Preview). **Niciodată `NEXT_PUBLIC_`** —
-  tokenul e folosit doar server-side în `src/app/api/report/route.ts`.
+GitHub Actions verifică:
 
-Fără token, endpointul răspunde `503 not_configured`, iar formularul afișează
-starea de eroare (fără eșecuri silențioase).
+- testele TypeScript și Python, inclusiv pragurile de coverage;
+- fluxurile E2E și contractele datelor reale;
+- integritatea și bugetele payload-urilor de date;
+- auditul de securitate și dependențe;
+- bugetele Lighthouse și urmele de performanță ale hărții;
+- disponibilitatea periodică a URL-urilor asociațiilor.
 
-Eticheta `report` trebuie să existe pe repo (`gh label create report`), altfel
-crearea issue-ului eșuează cu 422.
-
-**Notă:** `/api/report` necesită runtime serverless — nu seta `output: "export"`
-în `next.config.ts`, altfel endpointul dispare din build.
+Push-urile pe `main` declanșează automat build-ul și deploy-ul Vercel.
