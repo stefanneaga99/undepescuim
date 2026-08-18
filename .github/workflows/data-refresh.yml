@@ -33,12 +33,10 @@ jobs:
       - name: Run data refresh
         run: npm run data:refresh
 
-      # Perf regression guard on freshly regenerated data (M7/M8/M9). Runs
-      # report-only while the payloads still exceed the budgets (expected-fail
-      # until the data optimization lands); flip continue-on-error to false
-      # once check-data-budget.mjs goes green so a bloated re-commit blocks.
+      # Perf regression guard on freshly regenerated data (M7/M8/M9). PASSING
+      # since P0 — a monthly refresh that re-introduces un-simplified geometry
+      # or re-ships dead files now BLOCKS the commit that follows.
       - name: Enforce data payload budgets (M7/M8/M9)
-        continue-on-error: true
         run: node scripts/check-data-budget.mjs
 
       - name: Commit & Push changes

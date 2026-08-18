@@ -50,3 +50,13 @@ jobs:
       # re-verified before trusting the committed data
       - name: Pipeline manifest input pinning (Layer 6)
         run: python3 scripts/rebuild_data.py --check
+
+      # P0 §4.6 — data payload BLOCK gate (user decision #4): M7 (<2.5 MB
+      # gzip), M8 (<1.5 MB waters.json gzip), M9 (<6 MB main-thread parse)
+      # + dead-weight absence. BLOCK (exit 1) on exceed so any re-commit that
+      # re-introduces un-simplified geometry or re-ships dead files fails CI.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Enforce data payload budgets (M7/M8/M9) — BLOCK
+        run: node scripts/check-data-budget.mjs

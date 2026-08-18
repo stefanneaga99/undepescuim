@@ -50,6 +50,7 @@ const ro = {
   filters: {
     countyLabel: 'Județ',
     allCounties: 'Toate județele',
+    clipsLoading: 'Se încarcă județele…',
     localityLabel: 'Localitate',
     allLocalities: 'Toate localitățile',
     localitiesCount: '{n} localități',
@@ -284,6 +285,7 @@ const en: Messages = {
   filters: {
     countyLabel: 'County',
     allCounties: 'All counties',
+    clipsLoading: 'Loading counties…',
     localityLabel: 'Locality',
     allLocalities: 'All localities',
     localitiesCount: '{n} localities',

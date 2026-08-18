@@ -29,9 +29,14 @@ Key format: normalized county name — lowercase, diacritics stripped, all
 separators removed ('Bistrița-Năsăud' → 'bistritanasaud', matching the FE's
 countyClipKey()).
 
-Writes to public/data/waters.json and public/data/uncontracted_rivers.json
-preserving the committed serialization (indent=1, ensure_ascii=False, NO
-trailing newline).
+Writes geometryByCounty into public/data/waters.json and
+public/data/uncontracted_rivers.json preserving the committed serialization
+(indent=1, ensure_ascii=False, NO trailing newline).
+
+P0 §4.2: the clips are then moved OUT of both source files into a single lazy
+`public/data/waters_county_clips.json` by scripts/split_county_clips.py (never
+fetch on first paint). Run order: ... build_county_clip_geoms.py ->
+split_county_clips.py -> simplify_waters_geometry.py.
 """
 import json
 import math

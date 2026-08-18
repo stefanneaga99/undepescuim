@@ -69,6 +69,7 @@ OUTPUTS = [
     "public/data/counties.geojson",
     "public/data/uncontracted_rivers.json",
     "public/data/uncontracted_lakes.json",
+    "public/data/waters_county_clips.json",
     "data/species.json",
 ]
 
@@ -92,6 +93,12 @@ FULL_STEPS = [
     "scripts/backfill_permit_urls.py",
     "scripts/build_locality_assignment.py",
     "scripts/build_counties_geojson.py",
+    # P0 §4.2/§4.1: county-clip split + geometry simplification. Order:
+    # compute clips (inline) -> move them to waters_county_clips.json ->
+    # round/simplify the waters geometry (clips already split, untouched).
+    "scripts/build_county_clip_geoms.py",
+    "scripts/split_county_clips.py",
+    "scripts/simplify_waters_geometry.py",
     "scripts/fix_duplicate_slugs_overlay.py",  # A1: same-body dedupe + translit
     "scripts/fix_sweep_gate_duplicates.py",    # B4: overlay vs contracted cleanup
 ]

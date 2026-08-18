@@ -42,6 +42,21 @@ interface MapStore {
    */
   dataUpdatedAt: string | null;
   dataLoaded: boolean;
+  /**
+   * P0 §4.2 (plan §4.2/§4.2b): per-county render clips are split OUT of
+   * waters.json into public/data/waters_county_clips.json and fetched LAZILY
+   * on the first county activation (0.73 MB gzip ≈ 3 s Fast 3G, ~50 ms
+   * broadband). `countyClipsLoaded` flips once fetched (idempotent);
+   * `countyClipsLoading` drives the county-chip spinner.
+   */
+  countyClipsLoaded: boolean;
+  countyClipsLoading: boolean;
+  /**
+   * Raw slug -> countyKey->clip map, cached after the first lazy fetch. Kept
+   * so a background uncontracted load that lands after the clips merge can
+   * still apply clips to the freshly-loaded teal waters.
+   */
+  countyClipsBySlug: Record<string, Water['geometryByCounty']>;
 
   // Selection layer (mutually independent)
   selectedAssociationSlug: string | null; // null = no association selected
@@ -84,6 +99,7 @@ interface MapStore {
 
   // Actions
   loadData: () => Promise<void>;
+  loadCountyClips: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
   selectWater: (slug: string | null) => void;
   /** Close the water detail sheet WITHOUT clearing the selection (orange focus stays). */
@@ -127,6 +143,9 @@ export const useMapStore = create<MapStore>((set, get) => ({
   counties: [],
   dataUpdatedAt: null,
   dataLoaded: false,
+  countyClipsLoaded: false,
+  countyClipsLoading: false,
+  countyClipsBySlug: {},
 
   selectedAssociationSlug: null,
   selectedWaterSlug: null,
@@ -145,11 +164,15 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   loadData: async () => {
     try {
-      const [assocRes, watersRes, uncRes, uncLakesRes, countiesRes, metaRes] = await Promise.all([
+      // P0 §4.2 / plan §4.5 (simpler alternative): ONLY the first-paint
+      // files are awaited — associations + waters + counties + meta. The
+      // uncontracted overlay (teal rivers/lakes) is fetched in the
+      // background right after dataLoaded so the map paints immediately and
+      // the teal pops in a beat later (budgets M7/M8/M9 — the uncontracted
+      // 1.2 MB gzip is off the critical parse path).
+      const [assocRes, watersRes, countiesRes, metaRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
-        fetch('/data/uncontracted_rivers.json'),
-        fetch('/data/uncontracted_lakes.json'),
         fetch('/data/counties.geojson'),
         // F6: freshness meta (network-first via SW app-data tier). Optional —
         // 404 in dev (prebuild generates it only) leaves dataUpdatedAt null.
@@ -160,17 +183,6 @@ export const useMapStore = create<MapStore>((set, get) => ({
         assocRes.json(),
         watersRes.json(),
       ])) as [Association[], Water[]];
-      let uncontracted: Water[] = [];
-      if (uncRes.ok) {
-        uncontracted = (await uncRes.json()) as Water[];
-      }
-      // t_51e028c4: ponds/lakes with no contract join the same uncontracted
-      // pool — county/type/contract filters and the 'Necontractat' card UX
-      // apply to them automatically.
-      if (uncLakesRes.ok) {
-        const lakes = (await uncLakesRes.json()) as Water[];
-        uncontracted = [...uncontracted, ...lakes];
-      }
       // t_6c2ac870: county polygons for the nearby-waters chip. Optional —
       // the chip falls back to the contract county when missing.
       let counties: CountyFeature[] = [];
@@ -184,13 +196,84 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const meta = (await metaRes.json()) as { dataUpdatedAt?: string };
         dataUpdatedAt = typeof meta.dataUpdatedAt === "string" ? meta.dataUpdatedAt : null;
       }
-      set({ associations, waters, uncontracted, counties, dataUpdatedAt, dataLoaded: true });
+      set({ associations, waters, counties, dataUpdatedAt, dataLoaded: true });
       markPerfDataLoaded();
+      // P0 §4.2: uncontracted overlay deferred — load in the background once
+      // the map is up. t_51e028c4: ponds/lakes join the same uncontracted
+      // pool (county/type/contract filters and 'Necontractat' UX apply).
+      void (async () => {
+        try {
+          const [uncRes, uncLakesRes] = await Promise.all([
+            fetch('/data/uncontracted_rivers.json'),
+            fetch('/data/uncontracted_lakes.json'),
+          ]);
+          let extra: Water[] = [];
+          if (uncRes.ok) extra = (await uncRes.json()) as Water[];
+          if (uncLakesRes.ok) {
+            const lakes = (await uncLakesRes.json()) as Water[];
+            extra = [...extra, ...lakes];
+          }
+          set((s) => {
+            // If the county clips already loaded, apply them to the fresh
+            // teal waters too (they were empty when loadCountyClips ran).
+            let pool = extra;
+            const bySlug = s.countyClipsBySlug;
+            if (Object.keys(bySlug).length > 0) {
+              pool = extra.map((w) =>
+                bySlug[w.slug] ? { ...w, geometryByCounty: bySlug[w.slug] } : w,
+              );
+            }
+            return { ...s, uncontracted: pool };
+          });
+        } catch (e) {
+          // Teal overlay is enhancement-only; never break the map over it.
+          console.error('[map-store] background uncontracted load failed:', e);
+        }
+      })();
     } catch (err) {
       // Never leave the skeleton spinning forever — render an empty map instead.
       console.error('[map-store] loadData failed:', err);
       set({ dataLoaded: true });
       markPerfDataLoaded();
+    }
+  },
+
+  /**
+   * P0 §4.2 (plan §4.2): fetch the county render clips ONCE, lazily, on the
+   * first county activation. Splits geometryByCounty out of waters.json (the
+   * shipped file has none), keyed by slug. Merges each water's clips back into
+   * the in-memory object so countyRenderGeometry() works unchanged. Idempotent
+   * (guarded by countyClipsLoaded); countyClipsLoading drives the chip spinner.
+   */
+  loadCountyClips: async () => {
+    const { countyClipsLoaded, countyClipsLoading } = get();
+    if (countyClipsLoaded || countyClipsLoading) return;
+    set({ countyClipsLoading: true });
+    try {
+      const res = await fetch('/data/waters_county_clips.json');
+      if (!res.ok) throw new Error(`county clips fetch failed: ${res.status}`);
+      const clips = (await res.json()) as Record<string, Record<string, JSON | null>>;
+      set((s) => {
+        const bySlug: Record<string, Water['geometryByCounty']> = {};
+        const merge = (pool: Water[]) =>
+          pool.map((w) => {
+            const c = clips[w.slug];
+            if (!c) return w;
+            bySlug[w.slug] = c as Water['geometryByCounty'];
+            return { ...w, geometryByCounty: bySlug[w.slug] };
+          });
+        return {
+          ...s,
+          waters: merge(s.waters),
+          uncontracted: merge(s.uncontracted),
+          countyClipsBySlug: bySlug,
+          countyClipsLoaded: true,
+          countyClipsLoading: false,
+        };
+      });
+    } catch (err) {
+      console.error('[map-store] loadCountyClips failed:', err);
+      set({ countyClipsLoading: false });
     }
   },
 
@@ -273,6 +356,10 @@ export const useMapStore = create<MapStore>((set, get) => ({
     const next = countyFilter.includes(county)
       ? countyFilter.filter((c) => c !== county)
       : [...countyFilter, county];
+    // P0 §4.2: the first county activation lazily fetches the split-out
+    // county render clips (waters_county_clips.json). Idempotent — drives
+    // the chip spinner via countyClipsLoading while it's on the wire.
+    if (next.length > 0) void get().loadCountyClips();
     set({
       countyFilter: next,
       // t_dd918db7: locality is a REFINEMENT of the county selection — a

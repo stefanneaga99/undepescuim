@@ -1,13 +1,18 @@
 /* eslint-disable no-console */
 /**
- * E2E smoke test for the county-clip fix (t_117f0b99).
+ * E2E smoke test for the county-clip fix (t_117f0b99) on the P0 split
+ * (plan §4.2): geometryByCounty was moved OUT of waters.json into
+ * public/data/waters_county_clips.json and is fetched LAZILY on the first
+ * county activation.
  *
- * 1. Intercepts /data/waters.json and asserts the served file carries
- *    geometryByCounty (the Olt Brașov entry must have a 'brasov' clip).
- * 2. Loads the map, waits for data, clicks the 'Brașov' county chip and
- *    asserts no console errors / no crash — the clipped geometries render.
+ * 1. Intercepts /data/waters.json / data/waters_county_clips.json; asserts
+ *    waters.json does NOT carry geometryByCounty (split) and the clips file
+ *    does (the Olt Brașov entry has a 'brasov' clip).
+ * 2. Loads the map, waits for data, clicks the 'Brașov' county chip; asserts
+ *    the clips file is fetched lazily, the spinner shows while loading, and
+ *    no console errors —
  * 3. Zooms toward the Brașov Olt passage and screenshots for the record.
- * 4. Verifies the uncontracted overlay request too.
+ * 4. Verifies the uncontracted overlay request too (background/deferred).
  *
  * Run: node scripts/_e2e_county_clip.mjs (dev server must be on :3000)
  */
@@ -19,11 +24,13 @@ const OUT_DIR = new URL('../.e2e/', import.meta.url);
 const errors = [];
 const watersResp = {};
 const uncResp = {};
+const clipsResp = {};
 
 const CDP = process.env.PLAYWRIGHT_CDP;
+// WSL: the bundled chromium needs --no-sandbox and the local-chromium path.
 const browser = CDP
   ? await chromium.connectOverCDP(CDP)
-  : await chromium.launch();
+  : await chromium.launch({ args: ['--no-sandbox'] });
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 
 page.on('console', (msg) => {
@@ -33,6 +40,10 @@ page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
 page.on('request', (req) => {
   if (req.url().includes('/data/waters.json')) watersResp.url = req.url();
   if (req.url().includes('/data/uncontracted_rivers.json')) uncResp.url = req.url();
+  if (req.url().includes('/data/waters_county_clips.json')) {
+    clipsResp.url = req.url();
+    clipsResp.requestedAt = Date.now();
+  }
 });
 page.on('response', async (res) => {
   try {
@@ -45,6 +56,11 @@ page.on('response', async (res) => {
     if (res.url().includes('/data/uncontracted_rivers.json')) {
       uncResp.ok = res.ok();
       uncResp.json = await res.json();
+    }
+    if (res.url().includes('/data/waters_county_clips.json')) {
+      clipsResp.ok = res.ok();
+      clipsResp.status = res.status();
+      clipsResp.json = await res.json();
     }
   } catch (e) {
     watersResp.err = String(e);
@@ -63,32 +79,47 @@ const check = (cond, label) => {
 
 console.log('== 1. served data ==');
 await page.goto(BASE, { waitUntil: 'domcontentloaded' });
-// waters.json is ~40 MB — parsing takes a while; wait for the county chips
-// (they only render after the data has loaded).
+// waters.json is simplified now (~5 MB, was ~40) — still wait for the county
+// chips (they render only after the data has loaded).
 await page.waitForSelector('button:visible[aria-pressed]', { timeout: 60000 });
-await page.waitForTimeout(2000);
-// Validate the SERVED files directly (the CDP inspector cache evicts the 40 MB
-// body before the response event can read it — fetch it with Node instead).
+await page.waitForTimeout(1200);
+// Validate the SERVED files directly (the CDP inspector cache evicts the body
+// before the response event can read it — fetch it with Node instead).
 const wres = await fetch(`${BASE}/data/waters.json`);
 const ures = await fetch(`${BASE}/data/uncontracted_rivers.json`);
-check(wres.ok && ures.ok, 'waters.json + uncontracted_rivers.json served 200');
+const cres = await fetch(`${BASE}/data/waters_county_clips.json`);
+check(wres.ok && ures.ok && cres.ok, 'waters.json + uncontracted_rivers.json + waters_county_clips.json served 200');
 const servedWaters = await wres.json();
 const servedUnc = await ures.json();
+const servedClips = await cres.json();
 // Count drifts as data-pipeline tasks merge/sweep waters; the assertion's job
 // is a parse sanity check, not an exact-count pin.
 check(Array.isArray(servedWaters) && servedWaters.length >= 1000, `waters.json parses (${servedWaters.length} waters)`);
-const ehwpvgwh = servedWaters.find((w) => w.slug === 'ehwpvgwh');
-check(!!ehwpvgwh?.geometryByCounty?.brasov, 'Olt Brașov entry carries a brasov clip');
-const oltV = servedWaters.find((w) => w.slug === '3e8t20hn');
-check(!!oltV?.geometryByCounty?.valcea, 'Olt Vâlcea entry carries a valcea clip');
-const siretG = servedWaters.find((w) => w.slug === 'anpa-anpa-0296');
-check(!!siretG?.geometryByCounty?.galati, 'Siret Galați entry carries a galati clip');
-check(!!servedUnc.find((w) => w.geometryByCounty), 'uncontracted pool has clips');
+// P0 §4.2: geometryByCounty is NO LONGER inside waters.json / uncontracted —
+// it lives in waters_county_clips.json keyed by slug.
+check(
+  !servedWaters.some((w) => w.geometryByCounty) && !servedUnc.some((w) => w.geometryByCounty),
+  'geometryByCounty is split OUT of waters.json + uncontracted (not inline)',
+);
+check(
+  servedClips && typeof servedClips === 'object' && Object.keys(servedClips).length >= 900,
+  `waters_county_clips.json carries ${Object.keys(servedClips).length} clip entries`,
+);
+const ehwpvgwh = servedClips['ehwpvgwh'];
+check(!!ehwpvgwh?.brasov, 'Olt Brașov entry has a brasov clip (in clips file)');
+const oltV = servedClips['3e8t20hn'];
+check(!!oltV?.valcea, 'Olt Vâlcea entry has a valcea clip');
+const siretG = servedClips['anpa-anpa-0296'];
+check(!!siretG?.galati, 'Siret Galați entry has a galati clip');
+check(Object.keys(servedClips).some((k) => k.startsWith('unc-')), 'uncontracted clips present (unc-* slugs)');
 
-console.log('== 2. county filter interaction ==');
+console.log('== 2. county filter interaction (lazy clip load) ==');
+check(!(clipsResp.requestedAt), 'clips file NOT fetched before any county click (lazy)');
 const chip = page.locator('button:visible', { hasText: /^Brașov$/ }).first();
 await chip.click();
-await page.waitForTimeout(2000);
+await page.waitForTimeout(2400);
+check(!!clipsResp.requestedAt, 'county click triggered a fetch of waters_county_clips.json');
+check(!!clipsResp.ok, `clips fetch ok (${clipsResp.status})`);
 check(await chip.getAttribute('aria-pressed') === 'true', 'Brașov chip toggled active');
 check(!errors.length, `no console/page errors after county select (${errors.length})`);
 

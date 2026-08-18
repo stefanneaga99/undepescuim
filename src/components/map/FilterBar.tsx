@@ -32,10 +32,17 @@ export function FilterBar() {
   const clearLocalities = useMapStore((s) => s.clearLocalities);
   const setWaterTypeFilter = useMapStore((s) => s.setWaterTypeFilter);
   const setContractFilter = useMapStore((s) => s.setContractFilter);
+  // P0 §4.2: spinner on the county chips while the split-out clips load lazily.
+  const countyClipsLoading = useMapStore((s) => s.countyClipsLoading);
 
   const content = (
     <>
-      <CountyFilter counties={counties} selected={countyFilter} onToggle={toggleCounty} />
+      <CountyFilter
+        counties={counties}
+        selected={countyFilter}
+        onToggle={toggleCounty}
+        clipsLoading={countyClipsLoading}
+      />
       {countyFilter.length > 0 && (
         <LocalityFilter
           localities={localities}

@@ -68,24 +68,34 @@ test.describe('data contract — real served /public/data @data', () => {
     }
   });
 
-  test('county attribution: geometryByCounty always keyed by the water own county', async ({
+  test('county attribution: clips live in waters_county_clips.json keyed by the water own county', async ({
     page,
   }) => {
+    // P0 §4.2: geometryByCounty was split OUT of waters.json into
+    // public/data/waters_county_clips.json (lazy on county activation).
+    const clips = (await fetchJson(page, '/data/waters_county_clips.json')) as Record<
+      string,
+      Record<string, unknown>
+    >;
+    const slugs = Object.keys(clips);
+    expect(slugs.length).toBeGreaterThan(100);
+    // Map each clip owner back to its water to check the OWN-county key rule.
     const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
-    // `geometryByCounty: {}` is a VALID state — the clip builder emits an empty
-    // map when the water lies (≥99.5%) inside its own county and the FE falls
-    // back to the full geometry (build_county_clip_geoms.py `skips` branch).
-    // Only waters with ≥1 clip entry must carry their own county key.
-    const withClips = waters.filter((w) => {
-      const g = w.geometryByCounty as Record<string, unknown> | undefined;
-      return g != null && Object.keys(g).length > 0;
-    });
-    expect(withClips.length).toBeGreaterThan(100);
-
-    for (const w of withClips.slice(0, 200)) {
+    const bySlug = new Map(waters.map((w) => [String(w.slug), w]));
+    let checked = 0;
+    for (const slug of slugs) {
+      if (checked >= 200) break;
+      const w = bySlug.get(slug);
+      if (!w) continue; // uncontracted slugs (unc-*) aren't in waters.json
+      checked += 1;
       const ownKey = countyKey(String(w.judet));
-      expect((w.geometryByCounty as Record<string, unknown>), `own-county clip for ${w.slug}`).toHaveProperty(ownKey);
+      expect(clips[slug], `own-county clip for ${slug}`).toHaveProperty(ownKey);
     }
+    expect(checked).toBeGreaterThan(50);
+    // waters.json itself carries NO inline clips (split).
+    expect(waters.some((w) => (w as Record<string, unknown>).geometryByCounty)).toBe(false);
+    // Both pools present: contracted slugs + uncontracted (unc-*) slugs.
+    expect(slugs.some((s) => s.startsWith('unc-'))).toBe(true);
   });
 
   test('associations.json parses with required fields', async ({ page }) => {

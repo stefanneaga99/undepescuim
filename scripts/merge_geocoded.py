@@ -114,7 +114,9 @@ def main():
         "features": features,
     }
 
-    for out in (gc.OUT_MERGED, gc.OUT_PUBLIC_DATA):
+    # P0 §4.3: only the CANONICAL non-public artifact (data/waters_geocoded.geojson).
+    # The public/data copy was dead weight shipped to every visitor — removed.
+    for out in (gc.OUT_MERGED,):
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "w", encoding="utf-8") as fh:
             json.dump(fc, fh, ensure_ascii=False)

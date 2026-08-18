@@ -27,14 +27,17 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'public', 'data');
 
+// First-load = the files loadData() AWAITS before first paint (map-store.ts):
+// associations + waters + counties. The uncontracted overlay (deferred to a
+// background fetch after dataLoaded) and the county clips (waters_county_clips.json,
+// lazy on first county activation) are NOT part of the critical path.
 const FETCHED = [
   'associations.json',
   'waters.json',
-  'uncontracted_rivers.json',
-  'uncontracted_lakes.json',
   'counties.geojson',
 ];
-const DEAD_WEIGHT = ['waters_geocoded.geojson', 'waters.geojson'];
+// Dead weight: must NOT ship to every visitor (never fetched, regenerated).
+const DEAD_WEIGHT = ['waters_geocoded.geojson', 'waters.geojson', 'reciprocity.json'];
 
 const MB = 1024 * 1024;
 const LIMITS = {

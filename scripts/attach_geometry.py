@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WATERS = ROOT / "public" / "data" / "waters.json"
-GEOCODED = ROOT / "public" / "data" / "waters_geocoded.geojson"
+GEOCODED = ROOT / "data" / "waters_geocoded.geojson"
 
 
 def main() -> None:

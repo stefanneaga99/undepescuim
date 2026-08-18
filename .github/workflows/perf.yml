@@ -11,15 +11,12 @@ permissions:
 
 jobs:
   # M7/M8/M9 — static data payload gates (docs/performance-test-plan.md §8.2).
-  # EXPECTED-FAIL today: waters.json is 4.7 MB gzip / total ~6 MB / 22.5 MB
-  # parsed (measured 2026-08-16). The data optimization task flips these
-  # green — until then the job reports the numbers WITHOUT blocking PRs.
-  # Flip continue-on-error to false once the optimizations land.
+  # PASSING since P0 (2026-08-17): simplification + county-clip split bring
+  # waters.json to ~1.3 MB gzip / first-load ~1.4 MB — these now BLOCK.
   data-budget:
     name: Data payload budgets (M7/M8/M9)
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    continue-on-error: true # expected-fail until data optimization lands
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
