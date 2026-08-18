@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "relations": [
+    {"id": 10, "members": [{"type": "way", "ref": 1, "role": "main"}, {"type": "way", "ref": 2, "role": "main"}]},
+    {"id": 11, "members": [{"type": "way", "ref": 99, "role": "main"}]}
+  ]
+}

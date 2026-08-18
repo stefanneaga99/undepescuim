@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"name": "complete-chain", "ways": [1, 2], "expected_components": 1},
+    {"name": "truncated-relation", "missing_way_ids": [99]},
+    {"name": "duplicate-and-branch", "ways": [1, 1, 2, 3], "expected_branch": true}
+  ]
+}
