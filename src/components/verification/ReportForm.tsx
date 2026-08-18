@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Flag } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
@@ -40,6 +40,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   const [phase, setPhase] = useState<Phase>('idle');
   const [issueUrl, setIssueUrl] = useState<string | null>(null);
   const [prevOpen, setPrevOpen] = useState(open);
+  const isSubmittingRef = useRef(false);
 
   // Render-phase adjustment (React docs: "adjusting state when a prop changes"):
   // apply the quick-tap reason each time the dialog opens, without an effect.
@@ -51,10 +52,12 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   const reset = () => {
     setReason(null); setDetails(''); setContactEmail(''); setWebsite('');
     setPhase('idle'); setIssueUrl(null);
+    isSubmittingRef.current = false;
   };
 
   const submit = async () => {
-    if (!reason) return;
+    if (!reason || isSubmittingRef.current) return;
+    isSubmittingRef.current = true;
     setPhase('submitting');
     try {
       const res = await fetch('/api/report', {
@@ -71,8 +74,9 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
       });
       const data = (await res.json()) as { ok: boolean; issueUrl?: string | null };
       if (data.ok) { setIssueUrl(data.issueUrl ?? null); setPhase('success'); }
-      else setPhase('error');
+      else { isSubmittingRef.current = false; setPhase('error'); }
     } catch {
+      isSubmittingRef.current = false;
       setPhase('error');
     }
   };
@@ -108,6 +112,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
         ) : (
           <form
             className="flex flex-col gap-4"
+            aria-busy={phase === 'submitting'}
             onSubmit={(e) => { e.preventDefault(); void submit(); }}
           >
             <fieldset className="flex flex-col gap-2">

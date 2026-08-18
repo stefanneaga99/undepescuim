@@ -1,6 +1,8 @@
+import { createHash } from 'node:crypto';
 import { NextResponse } from 'next/server';
 import { getClientIp, reportRateLimiter } from '@/lib/rate-limit';
 import { buildIssueText } from '@/lib/issue-text';
+import { reportDeduper } from '@/lib/report-dedupe';
 
 const REPO = 'neagastefan99/undepescuim';
 
@@ -12,6 +14,10 @@ const REASON_LABELS: Record<string, string> = {
   other: 'Altă problemă',
 };
 const REASONS = new Set(Object.keys(REASON_LABELS));
+
+function reportDigest(fields: [string, string, string, string, string]): string {
+  return createHash('sha256').update(JSON.stringify(fields), 'utf8').digest('hex');
+}
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -41,56 +47,60 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, issueUrl: null });
   }
 
-  // REM-1: in-memory per-IP sliding window (~5 req / 10 min). Runs before the
-  // token check so the 429 path is reachable even when REPORT_GITHUB_TOKEN is
-  // unset (e.g. local e2e). Serverless caveat: per-instance, not global — see
-  // src/lib/rate-limit.ts.
-  const clientIp = getClientIp(request);
-  const limit = reportRateLimiter.check(clientIp);
-  if (!limit.allowed) {
-    const retryAfter = String(limit.retryAfterSec ?? 600);
-    return NextResponse.json(
-      { ok: false, error: 'rate_limited' },
-      { status: 429, headers: { 'Retry-After': retryAfter } },
-    );
+  const digest = reportDigest([reason, waterSlug, waterName, details, contactEmail]);
+
+  // Validated human request → dedupe/coalesce → first request uses the rate
+  // limit → GitHub issue creation. Duplicate joins do not consume quota.
+  let result: { issueUrl: string | null };
+  try {
+    result = await reportDeduper.run(digest, async () => {
+    // REM-1: in-memory per-IP sliding window (~5 req / 10 min). Runs before
+    // the token check so the 429 path is reachable without a token.
+    const clientIp = getClientIp(request);
+    const limit = reportRateLimiter.check(clientIp);
+    if (!limit.allowed) {
+      const retryAfter = String(limit.retryAfterSec ?? 600);
+      throw new ReportHttpError('rate_limited', 429, { 'Retry-After': retryAfter });
+    }
+
+    const token = process.env.REPORT_GITHUB_TOKEN;
+    if (!token) throw new ReportHttpError('not_configured', 503);
+
+    const { title, body: bodyText } = buildIssueText({
+      reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName,
+      waterSlug, details, contactEmail,
+    });
+    const res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ title, body: bodyText, labels: ['report'] }),
+    });
+    if (!res.ok) {
+      console.error('[report] create issue failed', res.status);
+      throw new ReportHttpError('github_error', 502);
+    }
+    const issue = (await res.json()) as { html_url: string };
+    return { issueUrl: issue.html_url };
+    });
+  } catch (error) {
+    if (error instanceof ReportHttpError) {
+      return NextResponse.json({ ok: false, error: error.code }, { status: error.status, headers: error.headers });
+    }
+    throw error;
   }
 
-  const token = process.env.REPORT_GITHUB_TOKEN;
-  if (!token) {
-    return NextResponse.json({ ok: false, error: 'not_configured' }, { status: 503 });
+  return NextResponse.json({ ok: true, issueUrl: result.issueUrl });
+}
+
+class ReportHttpError extends Error {
+  constructor(readonly code: string, readonly status: number, readonly headers: Record<string, string> = {}) {
+    super(code);
   }
-
-  // REM-3/REM-4: build the issue text through the sanitizer (markdown-
-  // neutralized title/body, fenced details, control-char-stripped email).
-  const { title, body: bodyText } = buildIssueText({
-    reasonLabel: REASON_LABELS[reason],
-    reasonKey: reason,
-    waterName,
-    waterSlug,
-    details,
-    contactEmail,
-  });
-
-  const res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ title, body: bodyText, labels: ['report'] }),
-  });
-
-  if (!res.ok) {
-    // Log status only; the response body never contains the token, and logging
-    // the request/response headers could — keep error logging body-free.
-    console.error('[report] create issue failed', res.status);
-    return NextResponse.json({ ok: false, error: 'github_error' }, { status: 502 });
-  }
-
-  const issue = (await res.json()) as { html_url: string };
-  return NextResponse.json({ ok: true, issueUrl: issue.html_url });
 }
 
 // Only POST is meaningful here.

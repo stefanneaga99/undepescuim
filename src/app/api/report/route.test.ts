@@ -1,5 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { POST } from '@/app/api/report/route';
+import { resetReportDeduper } from '@/lib/report-dedupe';
+import { resetReportRateLimiter } from '@/lib/rate-limit';
 
 // The route reads process.env.REPORT_GITHUB_TOKEN at request time.
 const REAL_TOKEN = process.env.REPORT_GITHUB_TOKEN;
@@ -23,6 +25,8 @@ function githubResponse(ok: boolean, status: number, body: { html_url?: string }
 
 beforeEach(() => {
   vi.restoreAllMocks();
+  resetReportDeduper();
+  resetReportRateLimiter();
 });
 
 afterEach(() => {
@@ -98,5 +102,46 @@ describe('POST /api/report', () => {
     const sent = JSON.parse(init.body as string);
     expect(sent.title).toContain('Râul Buzău');
     expect(sent.labels).toEqual(['report']);
+  });
+
+  it('coalesces overlapping identical requests into one GitHub issue', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    let resolve!: (response: Response) => void;
+    const fetchMock = vi.fn(() => new Promise<Response>((r) => { resolve = r; }));
+    vi.stubGlobal('fetch', fetchMock);
+    const payload = { waterSlug: 'same', waterName: 'Same', reason: 'other', details: 'A' };
+    const first = POST(request(payload));
+    const second = POST(request(payload));
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledOnce());
+    resolve(githubResponse(true, 201, { html_url: 'https://github.com/issues/2' }));
+    const responses = await Promise.all([first, second]);
+    for (const res of responses) {
+      expect(res.status).toBe(200);
+      await expect(res.json()).resolves.toEqual({ ok: true, issueUrl: 'https://github.com/issues/2' });
+    }
+  });
+
+  it('returns the cached URL for a sequential identical retry', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/3' }));
+    vi.stubGlobal('fetch', fetchMock);
+    const payload = { waterSlug: 'same', waterName: 'Same', reason: 'other' };
+    await POST(request(payload));
+    const retry = await POST(request(payload));
+    expect(retry.status).toBe(200);
+    expect(await retry.json()).toEqual({ ok: true, issueUrl: 'https://github.com/issues/3' });
+    expect(fetchMock).toHaveBeenCalledOnce();
+  });
+
+  it('does not merge reports with different details', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(githubResponse(true, 201, { html_url: 'https://github.com/issues/4' }))
+      .mockResolvedValueOnce(githubResponse(true, 201, { html_url: 'https://github.com/issues/5' }));
+    vi.stubGlobal('fetch', fetchMock);
+    const base = { waterSlug: 'same', waterName: 'Same', reason: 'other' };
+    await POST(request({ ...base, details: 'A' }));
+    await POST(request({ ...base, details: 'B' }));
+    expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 });
