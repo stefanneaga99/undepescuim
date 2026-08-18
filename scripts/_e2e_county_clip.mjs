@@ -80,8 +80,13 @@ const check = (cond, label) => {
 console.log('== 1. served data ==');
 await page.goto(BASE, { waitUntil: 'domcontentloaded' });
 // waters.json is simplified now (~5 MB, was ~40) — still wait for the county
-// chips (they render only after the data has loaded).
-await page.waitForSelector('button:visible[aria-pressed]', { timeout: 60000 });
+// chips (they render only after the data has loaded). The FilterBar renders
+// TWICE (hidden mobile + desktop panel), so `waitForSelector` / `:visible`
+// flake on the mirrored markup — poll the DOM for ≥1 visible copy instead.
+await page.waitForFunction(() =>
+  [...document.querySelectorAll('[data-testid="county-chip"]')].some((el) => el.offsetParent !== null),
+  { timeout: 60000 },
+);
 await page.waitForTimeout(1200);
 // Validate the SERVED files directly (the CDP inspector cache evicts the body
 // before the response event can read it — fetch it with Node instead).
