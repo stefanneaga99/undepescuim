@@ -30,11 +30,18 @@ export class WaterDetailCard {
   }
 
   get reportPositive() {
-    return this.card.getByTestId(Selectors.reportPositive);
+    // desktop → inline card button; mobile/compact → fixed bottom action bar
+    // (t_d9e8196e). `.or()` picks whichever locator actually exists on screen.
+    const fixed = this.page.getByTestId(Selectors.reportPositiveFixed).first();
+    const inline = this.card.getByTestId(Selectors.reportPositive);
+    return fixed.or(inline);
   }
 
   get reportFlag() {
-    return this.card.getByTestId(Selectors.reportFlag);
+    // desktop → inline card button; mobile/compact → fixed bottom action bar
+    const fixed = this.page.getByTestId(Selectors.reportFlagFixed).first();
+    const inline = this.card.getByTestId(Selectors.reportFlag);
+    return fixed.or(inline);
   }
 
   get permisLink() {

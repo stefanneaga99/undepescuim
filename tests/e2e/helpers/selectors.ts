@@ -26,6 +26,8 @@ export const Selectors = {
   permitRow: 'permit-row',
   reportPositive: 'report-positive',
   reportFlag: 'report-flag',
+  reportFlagFixed: 'report-flag-fixed',
+  reportPositiveFixed: 'report-positive-fixed',
   nearbySheet: 'nearby-sheet',
   nearbyRow: 'nearby-row',
   reportDialog: 'report-dialog',

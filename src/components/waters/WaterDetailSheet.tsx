@@ -184,7 +184,7 @@ export function WaterDetailSheet() {
                 viewport: the report entry is always in view, for any snap/scroll.
                 Hidden while the report dialog is open (z-[1250] would otherwise
                 float above the z-50 dialog overlay). */}
-            {water && !report.open && (
+            {water && isCompact && !report.open && (
               <div className="pointer-events-auto fixed inset-x-0 bottom-0 z-[1250] border-t bg-background px-4 pt-2 pb-[max(env(safe-area-inset-bottom),0.625rem)] shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
                 <div className="flex items-center gap-2">
                   <button
