@@ -8,6 +8,12 @@ import {
   CacheableResponsePlugin,
   Serwist,
 } from "serwist";
+import {
+  BASEMAP_CACHE_NAME,
+  DEFAULT_BASEMAP_CACHE_LIMIT_BYTES,
+  boundedCachePlugin,
+  cleanupObsoleteBasemapCaches,
+} from "@/lib/bounded-cache";
 
 declare global {
   interface WorkerGlobalScope extends SerwistGlobalConfig {
@@ -32,9 +38,14 @@ const serwist = new Serwist({
       // download (policy §4 prohibits it).
       matcher: ({ url }) => url.hostname === "tile.openstreetmap.org",
       handler: new CacheFirst({
-        cacheName: "osm-tiles",
+        cacheName: BASEMAP_CACHE_NAME,
         plugins: [
-          new ExpirationPlugin({ maxEntries: 1000, maxAgeSeconds: 7 * DAY }),
+          boundedCachePlugin({
+            // Tiles are cached only as viewed; never prefetch or fill the map.
+            limitBytes: DEFAULT_BASEMAP_CACHE_LIMIT_BYTES,
+            maxEntries: 1000,
+          }),
+          new ExpirationPlugin({ maxAgeSeconds: 7 * DAY }),
           new CacheableResponsePlugin({ statuses: [200] }),
         ],
       }),
@@ -67,3 +78,9 @@ const serwist = new Serwist({
 });
 
 serwist.addEventListeners();
+
+// Runtime caches are not part of Serwist's precache cleanup. Remove old
+// versions during activation so deployments cannot strand obsolete tiles.
+self.addEventListener("activate", (event) => {
+  event.waitUntil(cleanupObsoleteBasemapCaches());
+});
