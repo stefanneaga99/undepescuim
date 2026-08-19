@@ -168,6 +168,7 @@ const ro = {
     emailLabel: 'Email (opțional, pentru clarificări)',
     emailPlaceholder: 'tu@exemplu.ro',
     consent: 'Dacă îl completezi, adresa va fi vizibilă în raportul public de pe GitHub.',
+    contextConsent: 'Include contextul aproximativ al hărții în raportul public (opțional). Nu se încarcă screenshot-uri și GPS-ul nu este solicitat.',
     error: 'Nu am putut trimite raportul. Încearcă din nou.',
     close: 'Închide',
     submitting: 'Se trimite…',
@@ -404,6 +405,7 @@ const en: Messages = {
     emailPlaceholder: 'you@example.com',
     consent:
       'If you fill it in, the address will be visible in the public GitHub report.',
+    contextConsent: 'Include approximate map context in the public report (optional). Screenshots are not uploaded and GPS is never requested.',
     error: "Couldn't send the report. Try again.",
     close: 'Close',
     submitting: 'Sending…',

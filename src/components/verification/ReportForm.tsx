@@ -11,6 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useI18n } from '@/i18n/provider';
 import type { ReportReason } from '@/types/data';
+import type { ReportContextV1 } from '@/types/report-context';
 
 const REASON_OPTIONS: { value: ReportReason; labelKey: `report.reasons.${ReportReason}` }[] = [
   { value: 'data_correct', labelKey: 'report.reasons.data_correct' },
@@ -27,11 +28,12 @@ interface ReportFormProps {
   waterName?: string;
   /** Pre-select a reason when the dialog opens (used by the quick positive-signal tap). */
   initialReason?: ReportReason | null;
+  buildReportContext?: () => ReportContextV1 | null;
 }
 
 type Phase = 'idle' | 'submitting' | 'success' | 'error';
 
-export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason }: ReportFormProps) {
+export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason, buildReportContext }: ReportFormProps) {
   const { t } = useI18n();
   const [reason, setReason] = useState<ReportReason | null>(null);
   const [details, setDetails] = useState('');
@@ -39,6 +41,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   const [website, setWebsite] = useState(''); // honeypot
   const [phase, setPhase] = useState<Phase>('idle');
   const [issueUrl, setIssueUrl] = useState<string | null>(null);
+  const [includeContext, setIncludeContext] = useState(false);
   const [prevOpen, setPrevOpen] = useState(open);
   const isSubmittingRef = useRef(false);
 
@@ -50,7 +53,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   }
 
   const reset = () => {
-    setReason(null); setDetails(''); setContactEmail(''); setWebsite('');
+    setReason(null); setDetails(''); setContactEmail(''); setWebsite(''); setIncludeContext(false);
     setPhase('idle'); setIssueUrl(null);
     isSubmittingRef.current = false;
   };
@@ -70,6 +73,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
           details,
           contactEmail,
           website,
+          ...(includeContext && buildReportContext ? { reportContext: buildReportContext() } : {}),
         }),
       });
       const data = (await res.json()) as { ok: boolean; issueUrl?: string | null };
@@ -162,6 +166,13 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
                 {t('report.consent')}
               </p>
             </div>
+
+            {buildReportContext && (
+              <label className="flex items-start gap-2 rounded-md border p-2 text-xs">
+                <input type="checkbox" checked={includeContext} onChange={(e) => setIncludeContext(e.target.checked)} className="mt-0.5" data-testid="report-context-consent" />
+                <span>{t('report.contextConsent')}</span>
+              </label>
+            )}
 
             {/* honeypot — hidden from humans, filled by bots */}
             <input

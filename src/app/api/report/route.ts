@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { getClientIp, reportRateLimiter } from '@/lib/rate-limit';
 import { buildIssueText } from '@/lib/issue-text';
 import { reportDeduper } from '@/lib/report-dedupe';
+import { parseReportContext } from '@/lib/report-context';
 
 const REPO = 'neagastefan99/undepescuim';
 
@@ -34,6 +35,13 @@ export async function POST(request: Request) {
   const details = typeof b.details === 'string' ? b.details.trim().slice(0, 2000) : '';
   const contactEmail = typeof b.contactEmail === 'string' ? b.contactEmail.trim().slice(0, 254) : '';
   const honeypot = typeof b.website === 'string' ? b.website.trim() : '';
+  const parsedContext = parseReportContext(b.reportContext);
+  // The public context must describe the same water as the canonical report
+  // fields; stale A→B payloads degrade to a base report, never a mixed issue.
+  const reportContext = parsedContext &&
+    parsedContext.subject.water.slug === waterSlug &&
+    parsedContext.subject.water.name === waterName
+    ? parsedContext : null;
 
   if (!REASONS.has(reason)) {
     return NextResponse.json({ ok: false, error: 'invalid_reason' }, { status: 400 });
@@ -68,7 +76,7 @@ export async function POST(request: Request) {
 
     const { title, body: bodyText } = buildIssueText({
       reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName,
-      waterSlug, details, contactEmail,
+      waterSlug, details, contactEmail, reportContext,
     });
     const res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
       method: 'POST',

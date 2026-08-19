@@ -12,6 +12,7 @@ import { contractInterval } from '@/utils/river-course';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
+import { registerReportMapReader } from '@/hooks/use-report-context';
 
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
@@ -186,8 +187,14 @@ function MapTestBridge() {
   const map = useMap();
   useEffect(() => {
     (window as unknown as Record<string, unknown>).__UNDEPESCUIM_MAP__ = map;
+    registerReportMapReader(() => {
+      const center = map.getCenter();
+      const bounds = map.getBounds();
+      return { center: { lat: center.lat, lon: center.lng }, zoom: map.getZoom(), bounds: { south: bounds.getSouth(), west: bounds.getWest(), north: bounds.getNorth(), east: bounds.getEast() } };
+    });
     return () => {
       delete (window as unknown as Record<string, unknown>).__UNDEPESCUIM_MAP__;
+      registerReportMapReader(null);
     };
   }, [map]);
   return null;

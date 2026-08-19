@@ -104,6 +104,22 @@ describe('POST /api/report', () => {
     expect(sent.labels).toEqual(['report']);
   });
 
+  it('sanitizes matching context and drops stale A→B context', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/context' }));
+    vi.stubGlobal('fetch', fetchMock);
+    const context = { schemaVersion: 1, captureVersion: 'map-report-context-v1', subject: { water: { slug: 'b', name: 'B' }, selection: { selectedWaterSlug: 'b', segment: null, associationSlug: null, contractRef: null } }, map: null, filters: { counties: [], localities: [], waterType: 'all', contractStatus: 'all', selectedAssociationSlug: null }, page: { pathname: '/' }, client: { formFactor: 'desktop' }, provenance: { appVersion: null, dataUpdatedAt: null, gitSha: null }, consent: { approximateMap: true, preciseLocation: false, screenshot: false } };
+    await POST(request({ waterSlug: 'b', waterName: 'B', reason: 'other', reportContext: context }));
+    const sent = JSON.parse((fetchMock.mock.calls[0][1] as RequestInit).body as string);
+    expect(sent.body).toContain('Context hartă');
+    resetReportDeduper();
+    fetchMock.mockClear();
+    await POST(request({ waterSlug: 'b', waterName: 'B', reason: 'other', reportContext: { ...context, subject: { ...context.subject, water: { slug: 'a', name: 'A' }, selection: { ...context.subject.selection, selectedWaterSlug: 'a' } } } }));
+    const staleSent = JSON.parse((fetchMock.mock.calls[0][1] as RequestInit).body as string);
+    expect(staleSent.body).toContain('nepartajat');
+    expect(staleSent.body).not.toContain('— A');
+  });
+
   it('coalesces overlapping identical requests into one GitHub issue', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     let resolve!: (response: Response) => void;

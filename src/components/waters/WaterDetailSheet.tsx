@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Drawer } from 'vaul';
 import { CheckCircle2, Flag, X } from 'lucide-react';
 import { useMapStore } from '@/stores/map-store';
@@ -11,6 +11,8 @@ import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { ReportForm } from '@/components/verification/ReportForm';
 import { cn } from '@/lib/utils';
 import type { Association, ReportReason } from '@/types/data';
+import type { ReportContextV1 } from '@/types/report-context';
+import { readReportMapContext } from '@/hooks/use-report-context';
 
 /**
  * Water detail UI (component_structure_plan.md §3.11 + mobile-layout-spec §3,
@@ -73,6 +75,28 @@ export function WaterDetailSheet() {
       permitType: water.asociatie.permitType,
     };
   }, [water, associations]);
+
+  // Built at Submit time, so a changed A→B selection cannot reuse stale data.
+  const buildReportContext = useCallback((): ReportContextV1 | null => {
+    if (!water) return null;
+    const state = useMapStore.getState();
+    return {
+      schemaVersion: 1, captureVersion: 'map-report-context-v1',
+      subject: { water: { slug: water.slug, name: water.name }, selection: {
+        selectedWaterSlug: state.selectedWaterSlug ?? '',
+        segment: water.sectorStart !== undefined || water.sectorEnd !== undefined
+          ? { kind: 'river-interval', riverGroup: water.riverGroup ?? null, startFraction: water.sectorStart ?? null, endFraction: water.sectorEnd ?? null }
+          : null,
+        associationSlug: water.asociatie?.slug ?? null, contractRef: association?.contract_ref ?? null,
+      } },
+      map: readReportMapContext(),
+      filters: { counties: state.countyFilter, localities: state.localityFilter, waterType: state.waterTypeFilter, contractStatus: state.contractFilter, selectedAssociationSlug: state.selectedAssociationSlug },
+      page: { pathname: (window.location.pathname === '/permis' || window.location.pathname === '/specii' ? window.location.pathname : '/') as '/' | '/permis' | '/specii' },
+      client: { formFactor: window.innerWidth < 768 ? 'mobile' : window.innerWidth < 1024 ? 'tablet' : 'desktop' },
+      provenance: { appVersion: null, dataUpdatedAt: state.dataUpdatedAt, gitSha: null },
+      consent: { approximateMap: true, preciseLocation: false, screenshot: false },
+    };
+  }, [water, association]);
 
   // ESC dismiss (works in any sheet state, mobile + desktop). t_21d2f68d:
   // closing the sheet must NOT clear the selection — the orange click focus
@@ -244,6 +268,7 @@ export function WaterDetailSheet() {
         waterSlug={water?.slug}
         waterName={water?.name}
         initialReason={report.reason}
+        buildReportContext={buildReportContext}
       />
     </>
   );
