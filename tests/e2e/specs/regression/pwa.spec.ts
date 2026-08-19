@@ -2,7 +2,7 @@
  * F6 PWA light (docs/offline-pwa-feasibility.md §9 — TESTS, user mandate):
  *   1. SW registers and controls the page
  *   2. offline reload serves shell + data (Playwright offline mode)
- *   3. visited map tiles cached with a 7-day TTL (no prefetch)
+ *   3. visited map tiles cached with bounded storage and a 7-day TTL (no prefetch)
  *   4. installability: manifest link + icons resolve
  *   5. "last updated" freshness visible in the header
  *
@@ -130,7 +130,8 @@ test.describe('PWA light', () => {
       start_url: string;
       icons: { src: string; sizes: string; purpose?: string }[];
     };
-    expect(manifest.name).toBe('UndePescuim');
+    // The public brand includes the site suffix in deployed metadata.
+    expect(manifest.name).toBe('UndePescuim.ro');
     expect(manifest.display).toBe('standalone');
     expect(manifest.start_url).toBe('/');
 
@@ -218,7 +219,7 @@ test.describe('PWA light', () => {
     await page.context().setOffline(false);
   });
 
-  test('visited tiles are cached with a 7-day TTL (no prefetch)', async ({ page }) => {
+  test('visited tiles are cached with bounded storage and a 7-day TTL (no prefetch)', async ({ page }) => {
     await stubTiles(page);
     await page.goto('/');
     await waitForMapThenSw(page);
@@ -230,22 +231,22 @@ test.describe('PWA light', () => {
 
     // Let the controlled page load + cache its initial viewport tiles.
     await page.waitForFunction(async () => {
-      const c = await caches.open('osm-tiles');
+      const c = await caches.open('osm-tiles-v2');
       return (await c.keys()).length > 0;
     });
 
     const summary = await cacheSummary(page);
-    const tileUrls = summary['osm-tiles'] ?? [];
+    const tileUrls = summary['osm-tiles-v2'] ?? [];
     expect(tileUrls.length).toBeGreaterThan(0);
     expect(tileUrls.every((u) => u.includes('tile.openstreetmap.org'))).toBe(true);
 
     // TTL: the deployed sw.js must carry the 7-day expiration (604800 s) for
-    // the osm-tiles tier — the ExpirationPlugin enforces it at read time.
+    // the bounded osm-tiles-v2 tier — the ExpirationPlugin enforces it at read time.
     const swText = await page.evaluate(() =>
       fetch('/sw.js').then((r) => r.text()),
     );
     expect(swText).toContain('604800');
-    expect(swText).toContain('osm-tiles');
+    expect(swText).toContain('osm-tiles-v2');
 
     // NO prefetch: the precache manifest must not contain any OSM tile URLs.
     const precacheKeys = Object.keys(summary).filter((n) => n.includes('precache'));

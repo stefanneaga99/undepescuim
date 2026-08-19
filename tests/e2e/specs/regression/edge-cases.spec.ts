@@ -4,7 +4,6 @@
  * a navigator stub, report 503/honeypot hit the REAL /api/report route.
  */
 import type { TestInfo } from '@playwright/test';
-import { existsSync, readFileSync } from 'node:fs';
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 import { ReportDialog } from '../../pages/ReportDialog';
@@ -166,12 +165,15 @@ test.describe('edge cases', () => {
       mapReady,
       page,
     }) => {
-      // Real POST /api/report — no stub. The not_configured path only exists
-      // when the server has NO REPORT_GITHUB_TOKEN. Locally .env.local sets one
-      // (so this test would CREATE a real GitHub issue) — skip here; the path
-      // is exercised in CI where no token is configured.
-      const localToken = existsSync('.env.local') && readFileSync('.env.local', 'utf8').includes('REPORT_GITHUB_TOKEN=');
-      test.skip(localToken, 'REPORT_GITHUB_TOKEN configured locally — not_configured is a CI-only path');
+      // Stub the server response so this regression is deterministic and can
+      // never create a real GitHub issue, regardless of local/CI secrets.
+      await page.route('**/api/report', (route) =>
+        route.fulfill({
+          status: 503,
+          contentType: 'application/json',
+          body: JSON.stringify({ ok: false, error: 'not_configured' }),
+        }),
+      );
 
       await mapReady();
     const map = new MapPage(page);

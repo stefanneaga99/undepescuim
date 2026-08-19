@@ -44,7 +44,7 @@ export class ReportDialog {
   }
 
   get errorText() {
-    return this.dialog.getByText(/Nu am putut trimite raportul/);
+    return this.dialog.getByRole('alert');
   }
 
   async pickReason(value: string): Promise<void> {

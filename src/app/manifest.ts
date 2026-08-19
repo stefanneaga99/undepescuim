@@ -9,8 +9,8 @@ import type { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "UndePescuim",
-    short_name: "UndePescuim",
+    name: "UndePescuim.ro",
+    short_name: "UndePescuim.ro",
     description: "Harta apelor de pescuit din România — Romanian fishing waters map",
     start_url: "/",
     scope: "/",
