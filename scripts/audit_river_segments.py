@@ -53,6 +53,13 @@ def alias_match(name, aliases):
  n=norm(name)
  return any(n == alias or n == canonical for canonical, values in aliases.items() for alias in values)
 
+def alias_equivalent(left, right, aliases):
+ """Return whether names are equal or members of the same reviewed alias set."""
+ l, r = norm(left), norm(right)
+ if l == r:
+  return True
+ return any({l, r} <= ({canonical, *values}) for canonical, values in aliases.items())
+
 def exception_for(finding, river_group, entries, as_of=date(2099, 1, 1)):
  """Exceptions can control only the gate; original findings remain visible."""
  for entry in entries:
@@ -126,7 +133,7 @@ def audit(index, root, alias_path=None, exception_path=None):
   ids=rel.get('all_way_ids',[]); member=[ways[i] for i in ids if i in ways]
   name=rel.get('name') or (rel.get('named_aliases') or [''])[0]
   names=[name]+list(rel.get('named_aliases') or [])
-  candidates=[w for w in waters if any(norm(w.get('name'))==norm(n) for n in names)]
+  candidates=[w for w in waters if any(alias_equivalent(w.get('name'), n, aliases) for n in names)]
   alias_used=any(alias_match(n, aliases) for n in names)
   if not candidates and not any(norm(n) in src_names or alias_match(n, aliases) for n in names): continue
   owner=candidates[0] if candidates else None; pub=geometry_points(owner) if owner else []

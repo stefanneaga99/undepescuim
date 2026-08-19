@@ -79,6 +79,66 @@ def test_valid_fixture_passes_and_reports_no_findings(tmp_path):
     assert all(text in markdown for text in spec["expected"]["markdown_must_contain"])
 
 
+def test_reviewed_alias_resolves_owner_without_hiding_gap(tmp_path):
+    root, index = materialize_case(tmp_path, "tarnava_injected_gap")
+    records = []
+    with gzip.open(index, "rt", encoding="utf-8") as stream:
+        records = [json.loads(line) for line in stream if line.strip()]
+    relation = next(record for record in records if record["kind"] == "relation")
+    relation["name"] = "Tarnava Mare"
+    relation["named_aliases"] = ["Tarnava Mare"]
+    with index.open("wb") as raw:
+        with gzip.GzipFile(filename="", fileobj=raw, mode="wb", mtime=0) as compressed:
+            import io
+            stream = io.TextIOWrapper(compressed, encoding="utf-8", newline="\n")
+            for record in records:
+                stream.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n")
+            stream.flush()
+    aliases = root / "data/processed/river_name_aliases.json"
+    aliases.write_text(json.dumps({"aliases": [{
+        "canonical": "Târnava Fixture", "aliases": ["Tarnava Mare"],
+        "justification": "OSM alternate name", "source": "osm:9010",
+        "expires_on": "2099-01-01"
+    }]}, ensure_ascii=False), encoding="utf-8")
+    output_json, output_md = root / "report.json", root / "report.md"
+    result = subprocess.run([
+        sys.executable, str(ROOT / "scripts/audit_river_segments.py"),
+        "--osm-index", str(index), "--root", str(root),
+        "--aliases", str(aliases), "--out-json", str(output_json),
+        "--out-md", str(output_md), "--gate"
+    ], cwd=ROOT, capture_output=True, text=True)
+    report = json.loads(output_json.read_text())
+    assert result.returncode == 1
+    assert report["rivers"][0]["owner_slug"] == "tarnava-fixture"
+    assert report["rivers"][0]["registry"]["alias_used"] is True
+    assert [finding["code"] for finding in report["rivers"][0]["findings"]] == ["missing_segment"]
+
+
+def test_exception_allows_gate_but_preserves_raw_finding(tmp_path):
+    root, index = materialize_case(tmp_path, "tarnava_injected_gap")
+    exceptions = root / "data/processed/river_segment_exceptions.json"
+    exceptions.write_text(json.dumps({"exceptions": [{
+        "id": "review-tarnava-gap", "code": "missing_segment",
+        "river_group": "tarnava-fixture", "gate": "allow",
+        "justification": "Reviewed source snapshot gap", "source": "osm:9010",
+        "expires_on": "2099-01-01"
+    }]}, ensure_ascii=False), encoding="utf-8")
+    output_json, output_md = root / "report.json", root / "report.md"
+    result = subprocess.run([
+        sys.executable, str(ROOT / "scripts/audit_river_segments.py"),
+        "--osm-index", str(index), "--root", str(root),
+        "--exceptions", str(exceptions), "--out-json", str(output_json),
+        "--out-md", str(output_md), "--gate"
+    ], cwd=ROOT, capture_output=True, text=True)
+    report = json.loads(output_json.read_text())
+    finding = report["rivers"][0]["findings"][0]
+    assert result.returncode == 0
+    assert report["gate"] == {"status": "PASS", "blocking_findings": []}
+    assert finding["code"] == "missing_segment"
+    assert finding["gate_exception"] == {"id": "review-tarnava-gap", "expires_on": "2099-01-01"}
+    assert "**missing_segment**" in output_md.read_text()
+
+
 def test_tarnava_fixture_gap_blocks_gate_and_remains_explicit(tmp_path):
     spec, result, report, markdown = run_case(tmp_path, "tarnava_injected_gap")
     assert result.returncode == 1
