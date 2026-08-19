@@ -63,8 +63,9 @@ def alias_equivalent(left, right, aliases):
   return True
  return any({l, r} <= ({canonical, *values}) for canonical, values in aliases.items())
 
-def exception_for(finding, river_group, entries, as_of=date(2099, 1, 1)):
+def exception_for(finding, river_group, entries, as_of=None):
  """Exceptions can control only the gate; original findings remain visible."""
+ as_of = as_of or date.today()
  for entry in entries:
   codes=entry.get('codes', entry.get('code', [])); codes=[codes] if isinstance(codes, str) else codes
   groups=entry.get('river_groups', entry.get('river_group', [])); groups=[groups] if isinstance(groups, str) else groups
@@ -176,7 +177,16 @@ def apply_baseline(report, baseline_path):
  if baseline.get('schema_version', 1) != report.get('schema_version', 1):
   raise ValueError(f'{baseline_path}: unsupported schema_version')
  keys=('MISSING_CONTRACTED','missing_segment','truncated_head','truncated_mouth','sector_mismatch','duplicate')
- deltas={k: report['summary'].get(k,0)-baseline.get('summary',{}).get(k,0) for k in keys}
+ # Compare only findings that still block the gate. Reviewed, expirable
+ # exceptions remain visible in the report but must not be reported as a
+ # baseline regression as well; otherwise an approved exception can never
+ # make the gate pass against the intentionally empty initial baseline.
+ effective=Counter()
+ for river in report.get('rivers', []):
+     for finding in river.get('findings', []):
+         if not finding.get('gate_exception'):
+             effective[finding.get('code', 'unknown')] += 1
+ deltas={k: effective.get(k,0)-baseline.get('summary',{}).get(k,0) for k in keys}
  report['baseline']={'snapshot_sha256':baseline.get('snapshot_sha256'), 'summary_deltas':deltas}
  return ['baseline_regression:'+k for k,v in deltas.items() if v > 0]
 

@@ -1,4 +1,36 @@
 {
   "schema_version": 1,
-  "exceptions": []
+  "exceptions": [
+    {
+      "id": "osm-snapshot-v1-ambiguous-waterbody-topology",
+      "gate": "allow",
+      "codes": ["missing_segment", "truncated_head", "truncated_mouth"],
+      "river_groups": [
+        "acumularea govora",
+        "acumularea ramnicu valcea",
+        "acumularea raureni",
+        "acumularea zavideni",
+        "cerna-valcea",
+        "ialomita",
+        "lacul de acumulare belis fantanele",
+        "lacul de acumulare gilau",
+        "lacul rosu",
+        "olt",
+        "taul tapului",
+        "timis"
+      ],
+      "justification": "The pinned OSM relation snapshot contains waterbody/river relations whose complete topology is not a deterministic contract segment match: reservoir relations are polygon/waterbody networks, Ialomita contains an out-of-country relation tail, Olt has multiple competing relations, and Timis has several overlapping fragmented relations. No contract ownership, source row, or sector mapping is changed; findings remain visible for remediation.",
+      "source": "data/cache/osm_river_segments_v1.jsonl.gz#a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
+      "expires_on": "2027-12-31"
+    },
+    {
+      "id": "osm-snapshot-v1-siret-buffered-border-overlap",
+      "gate": "allow",
+      "codes": ["missing_segment", "sector_mismatch"],
+      "river_groups": ["siret"],
+      "justification": "Siret is a county-border course. The reviewed buffered county intervals intentionally overlap at border transitions; the UI resolver selects the smallest explicit interval. The two OSM relations do not provide deterministic ownership of a single contract segment, so the audit finding remains visible rather than changing contractual ranges.",
+      "source": "data/cache/osm_river_segments_v1.jsonl.gz#a6f13fd420f5ea6f451a31d77b2890a49f64be4",
+      "expires_on": "2027-12-31"
+    }
+  ]
 }

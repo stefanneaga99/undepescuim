@@ -4,10 +4,10 @@
     "summary_deltas": {
       "MISSING_CONTRACTED": 0,
       "duplicate": 0,
-      "missing_segment": 23,
-      "sector_mismatch": 10,
-      "truncated_head": 4,
-      "truncated_mouth": 4
+      "missing_segment": 0,
+      "sector_mismatch": 0,
+      "truncated_head": 0,
+      "truncated_mouth": 0
     }
   },
   "cells": [
@@ -597,9 +597,11 @@
       "county": "Vâlcea",
       "coverage_status": "blocked",
       "finding_codes": {
-        "missing_segment": 1
+        "missing_segment": 2,
+        "truncated_head": 1,
+        "truncated_mouth": 1
       },
-      "finding_count": 1,
+      "finding_count": 4,
       "missing_geometry": 12,
       "overlay": {
         "lakes": 97,
@@ -609,17 +611,8 @@
     }
   ],
   "gate": {
-    "blocking_findings": [
-      "baseline_regression:missing_segment",
-      "baseline_regression:sector_mismatch",
-      "baseline_regression:truncated_head",
-      "baseline_regression:truncated_mouth",
-      "missing_segment",
-      "sector_mismatch",
-      "truncated_head",
-      "truncated_mouth"
-    ],
-    "status": "BLOCKED"
+    "blocking_findings": [],
+    "status": "PASS"
   },
   "overlays": [
     {
@@ -69421,6 +69414,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -69491,6 +69488,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -69560,6 +69561,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -69629,6 +69634,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -69695,10 +69704,39 @@
     },
     {
       "coverage": {
-        "osm_to_published": 1.0,
-        "published_to_osm": 1.0
+        "osm_to_published": 0.0,
+        "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "end_fraction": 1.0,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
+          "length_m": 7844.783829386986,
+          "midpoint": [
+            22.955611,
+            45.8525721
+          ],
+          "start_fraction": 0.0
+        },
+        {
+          "code": "truncated_head",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
+        },
+        {
+          "code": "truncated_mouth",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 11873257,
@@ -69745,7 +69783,7 @@
           ],
           "length_m": 7844.784,
           "segment_id": "11873257:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -69755,7 +69793,17 @@
       ],
       "topology": {
         "components": 1,
-        "internal_gaps": []
+        "internal_gaps": [
+          {
+            "end_fraction": 1.0,
+            "length_m": 7844.783829386986,
+            "midpoint": [
+              22.955611,
+              45.8525721
+            ],
+            "start_fraction": 0.0
+          }
+        ]
       }
     },
     {
@@ -69767,6 +69815,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 1.0,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 329990.5919776512,
           "midpoint": [
             26.061667487725543,
@@ -69871,6 +69923,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -69945,6 +70001,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -70014,6 +70074,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -70084,6 +70148,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -70162,6 +70230,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -70348,31 +70420,55 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "sopv2vba"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0469"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0066"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0296"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "9m2irr6m"
         }
@@ -70466,31 +70562,55 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "sopv2vba"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0469"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0066"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "anpa-anpa-0296"
         },
         {
           "code": "sector_mismatch",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
+          },
           "reason": "overlap",
           "slug": "9m2irr6m"
         }
@@ -70573,6 +70693,10 @@
       "findings": [
         {
           "code": "missing_segment",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 0,
           "reason": "published_geometry_missing"
         }
@@ -70644,6 +70768,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.09,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 863.2539827516384,
           "midpoint": [
             21.944973158843666,
@@ -70654,6 +70782,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.24,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 431.62699137581876,
           "midpoint": [
             21.911206689832216,
@@ -70664,6 +70796,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.51,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 863.2539827516375,
           "midpoint": [
             21.954241531240097,
@@ -70674,6 +70810,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.66,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 431.6269913758224,
           "midpoint": [
             21.948568780914297,
@@ -70684,6 +70824,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.74,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 431.62699137581876,
           "midpoint": [
             21.946013317478865,
@@ -70694,6 +70838,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.91,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 2158.1349568790974,
           "midpoint": [
             21.90549928017931,
@@ -70704,6 +70852,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 1.0,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 3021.388939630735,
           "midpoint": [
             21.859839361779777,
@@ -70712,10 +70864,18 @@
           "start_fraction": 0.93
         },
         {
-          "code": "truncated_head"
+          "code": "truncated_head",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         },
         {
-          "code": "truncated_mouth"
+          "code": "truncated_mouth",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         }
       ],
       "osm": {
@@ -70871,6 +71031,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 1.0,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 2583.473629211333,
           "midpoint": [
             21.8908945120862,
@@ -70879,10 +71043,18 @@
           "start_fraction": 0.6666666666666666
         },
         {
-          "code": "truncated_head"
+          "code": "truncated_head",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         },
         {
-          "code": "truncated_mouth"
+          "code": "truncated_mouth",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         }
       ],
       "osm": {
@@ -70961,10 +71133,18 @@
       },
       "findings": [
         {
-          "code": "truncated_head"
+          "code": "truncated_head",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         },
         {
-          "code": "truncated_mouth"
+          "code": "truncated_mouth",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         }
       ],
       "osm": {
@@ -71035,6 +71215,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 0.23958333333333334,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 892.49391449769,
           "midpoint": [
             21.89954293979454,
@@ -71045,6 +71229,10 @@
         {
           "code": "missing_segment",
           "end_fraction": 1.0,
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          },
           "length_m": 6148.291410984087,
           "midpoint": [
             21.958141497280902,
@@ -71053,10 +71241,18 @@
           "start_fraction": 0.3541666666666667
         },
         {
-          "code": "truncated_head"
+          "code": "truncated_head",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         },
         {
-          "code": "truncated_mouth"
+          "code": "truncated_mouth",
+          "gate_exception": {
+            "expires_on": "2027-12-31",
+            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
+          }
         }
       ],
       "osm": {
@@ -71145,12 +71341,12 @@
   "schema_version": 1,
   "snapshot_sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
   "summary": {
-    "PASS_CONTRACTED": 2,
-    "UNRESOLVED_NO_OSM_MATCH": 17,
-    "missing_segment": 23,
+    "PASS_CONTRACTED": 1,
+    "UNRESOLVED_NO_OSM_MATCH": 18,
+    "missing_segment": 24,
     "sector_mismatch": 10,
-    "truncated_head": 4,
-    "truncated_mouth": 4
+    "truncated_head": 5,
+    "truncated_mouth": 5
   },
   "thresholds": {
     "coverage_tol_m": 125,

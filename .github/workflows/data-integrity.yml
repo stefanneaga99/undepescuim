@@ -27,6 +27,7 @@ jobs:
             --out-json data/processed/river_segment_audit.json \
             --out-md data/processed/river_segment_audit.md \
             --baseline data/processed/river_segment_audit_baseline.json \
+            --exceptions data/processed/river_segment_exceptions.json \
             --gate
           git diff --exit-code -- data/processed/river_segment_audit.json data/processed/river_segment_audit.md
 

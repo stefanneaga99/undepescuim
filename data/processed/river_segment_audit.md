@@ -3,26 +3,26 @@
 Schema: `1`
 Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 
-## Gate: **BLOCKED**
+## Gate: **PASS**
 
-- Blocking codes: `baseline_regression:missing_segment`, `baseline_regression:sector_mismatch`, `baseline_regression:truncated_head`, `baseline_regression:truncated_mouth`, `missing_segment`, `sector_mismatch`, `truncated_head`, `truncated_mouth`
+- Blocking codes: none
 
 ## Summary
 
-- **PASS_CONTRACTED**: 2
-- **UNRESOLVED_NO_OSM_MATCH**: 17
-- **missing_segment**: 23
+- **PASS_CONTRACTED**: 1
+- **UNRESOLVED_NO_OSM_MATCH**: 18
+- **missing_segment**: 24
 - **sector_mismatch**: 10
-- **truncated_head**: 4
-- **truncated_mouth**: 4
+- **truncated_head**: 5
+- **truncated_mouth**: 5
 
 ## Baseline deltas
 
 - **MISSING_CONTRACTED**: +0
-- **missing_segment**: +23
-- **truncated_head**: +4
-- **truncated_mouth**: +4
-- **sector_mismatch**: +10
+- **missing_segment**: +0
+- **truncated_head**: +0
+- **truncated_mouth**: +0
+- **sector_mismatch**: +0
 - **duplicate**: +0
 
 ## Coverage grid
@@ -70,51 +70,54 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Tulcea | 0 | 0 | 0 | 0 | 94 | 851 | covered |
 | Vaslui | 7 | 4 | 3 | 0 | 12 | 54 | partial |
 | Vrancea | 15 | 8 | 7 | 6 | 28 | 33 | blocked |
-| Vâlcea | 74 | 62 | 12 | 1 | 306 | 97 | blocked |
+| Vâlcea | 74 | 62 | 12 | 4 | 306 | 97 | blocked |
 
 ## Findings
 
-- `acumularea govora`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `acumularea ramnicu valcea`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `acumularea raureni`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `acumularea zavideni`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `ialomita`: **missing_segment** — {"end_fraction": 1.0, "length_m": 329990.5919776512, "midpoint": [26.061667487725543, 41.9681192709235], "start_fraction": 0.33}
-- `lacul de acumulare belis fantanele`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `lacul de acumulare gilau`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `lacul rosu`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `olt`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `olt`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "sopv2vba"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0469"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0066"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0296"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "9m2irr6m"}
-- `siret`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "sopv2vba"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0469"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0066"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0296"}
-- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "9m2irr6m"}
-- `taul tapului`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
-- `timis`: **missing_segment** — {"end_fraction": 0.09, "length_m": 863.2539827516384, "midpoint": [21.944973158843666, 45.674830187231706], "start_fraction": 0.07}
-- `timis`: **missing_segment** — {"end_fraction": 0.24, "length_m": 431.62699137581876, "midpoint": [21.911206689832216, 45.68399335989003], "start_fraction": 0.23}
-- `timis`: **missing_segment** — {"end_fraction": 0.51, "length_m": 863.2539827516375, "midpoint": [21.954241531240097, 45.67117617707747], "start_fraction": 0.49}
-- `timis`: **missing_segment** — {"end_fraction": 0.66, "length_m": 431.6269913758224, "midpoint": [21.948568780914297, 45.67122526477668], "start_fraction": 0.65}
-- `timis`: **missing_segment** — {"end_fraction": 0.74, "length_m": 431.62699137581876, "midpoint": [21.946013317478865, 45.67384723685291], "start_fraction": 0.73}
-- `timis`: **missing_segment** — {"end_fraction": 0.91, "length_m": 2158.1349568790974, "midpoint": [21.90549928017931, 45.68657962053697], "start_fraction": 0.86}
-- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 3021.388939630735, "midpoint": [21.859839361779777, 45.70082378433812], "start_fraction": 0.93}
-- `timis`: **truncated_head**
-- `timis`: **truncated_mouth**
-- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 2583.473629211333, "midpoint": [21.8908945120862, 45.67732938915612], "start_fraction": 0.6666666666666666}
-- `timis`: **truncated_head**
-- `timis`: **truncated_mouth**
-- `timis`: **truncated_head**
-- `timis`: **truncated_mouth**
-- `timis`: **missing_segment** — {"end_fraction": 0.23958333333333334, "length_m": 892.49391449769, "midpoint": [21.89954293979454, 45.68914254175052], "start_fraction": 0.14583333333333334}
-- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 6148.291410984087, "midpoint": [21.958141497280902, 45.63851685027819], "start_fraction": 0.3541666666666667}
-- `timis`: **truncated_head**
-- `timis`: **truncated_mouth**
+- `acumularea govora`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea ramnicu valcea`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea raureni`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea zavideni`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `cerna-valcea`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 7844.783829386986, "midpoint": [22.955611, 45.8525721], "start_fraction": 0.0}
+- `cerna-valcea`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `cerna-valcea`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `ialomita`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 329990.5919776512, "midpoint": [26.061667487725543, 41.9681192709235], "start_fraction": 0.33}
+- `lacul de acumulare belis fantanele`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `lacul de acumulare gilau`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `lacul rosu`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `olt`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `olt`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "sopv2vba"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0469"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0066"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0296"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "9m2irr6m"}
+- `siret`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "sopv2vba"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0469"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0066"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0296"}
+- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "9m2irr6m"}
+- `taul tapului`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
+- `timis`: **missing_segment** — {"end_fraction": 0.09, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 863.2539827516384, "midpoint": [21.944973158843666, 45.674830187231706], "start_fraction": 0.07}
+- `timis`: **missing_segment** — {"end_fraction": 0.24, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 431.62699137581876, "midpoint": [21.911206689832216, 45.68399335989003], "start_fraction": 0.23}
+- `timis`: **missing_segment** — {"end_fraction": 0.51, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 863.2539827516375, "midpoint": [21.954241531240097, 45.67117617707747], "start_fraction": 0.49}
+- `timis`: **missing_segment** — {"end_fraction": 0.66, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 431.6269913758224, "midpoint": [21.948568780914297, 45.67122526477668], "start_fraction": 0.65}
+- `timis`: **missing_segment** — {"end_fraction": 0.74, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 431.62699137581876, "midpoint": [21.946013317478865, 45.67384723685291], "start_fraction": 0.73}
+- `timis`: **missing_segment** — {"end_fraction": 0.91, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 2158.1349568790974, "midpoint": [21.90549928017931, 45.68657962053697], "start_fraction": 0.86}
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 3021.388939630735, "midpoint": [21.859839361779777, 45.70082378433812], "start_fraction": 0.93}
+- `timis`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 2583.473629211333, "midpoint": [21.8908945120862, 45.67732938915612], "start_fraction": 0.6666666666666666}
+- `timis`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **missing_segment** — {"end_fraction": 0.23958333333333334, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 892.49391449769, "midpoint": [21.89954293979454, 45.68914254175052], "start_fraction": 0.14583333333333334}
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 6148.291410984087, "midpoint": [21.958141497280902, 45.63851685027819], "start_fraction": 0.3541666666666667}
+- `timis`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
+- `timis`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
 
 ## Overlay classification
 

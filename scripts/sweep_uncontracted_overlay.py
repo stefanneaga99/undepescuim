@@ -351,7 +351,7 @@ def main() -> None:
              "TRIBUTARY": 2, "NAME_COLLISION": 3}
     conf_order = {"high": 0, "medium": 1, "low": 2}
     hits.sort(key=lambda h: (order.get(h["label"], 9), conf_order.get(h["confidence"], 9),
-                             h["unc_name"].lower()))
+                             h["unc_name"].lower(), h["unc_slug"], h["water_slug"]))
 
     # write JSON
     OUT_JSON.write_text(json.dumps(hits, ensure_ascii=False, indent=1), encoding="utf-8")

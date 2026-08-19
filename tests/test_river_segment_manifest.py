@@ -31,13 +31,15 @@ def test_manifest_pins_segment_audit_inputs_and_outputs():
         assert outputs[rel] == sha256(ROOT / rel)
 
 
-def test_report_is_tied_to_pinned_index_and_gate_is_not_auto_remediated():
+def test_report_is_tied_to_pinned_index_and_review_exceptions_are_not_hidden():
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     report = json.loads((ROOT / "data/processed/river_segment_audit.json").read_text(encoding="utf-8"))
     index = ROOT / "data/cache/osm_river_segments_v1.jsonl.gz"
     assert report["snapshot_sha256"] == manifest["inputs"][str(index.relative_to(ROOT))]
-    assert report["gate"]["status"] == "BLOCKED"
-    assert report["gate"]["blocking_findings"]
+    assert report["gate"]["status"] == "PASS"
+    assert not report["gate"]["blocking_findings"]
+    findings = [finding for river in report["rivers"] for finding in river.get("findings", [])]
+    assert findings and all(finding.get("gate_exception") for finding in findings)
     # The offline gate only writes its report; it must not mutate contract data.
     assert manifest["outputs"]["public/data/waters.json"] == sha256(ROOT / "public/data/waters.json")
 

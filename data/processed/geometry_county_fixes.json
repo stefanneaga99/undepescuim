@@ -1,0 +1,27 @@
+{
+ "fixed": [
+  {
+   "slug": "5bbhtdfc",
+   "name": "Râul Cerna",
+   "judet": "Vâlcea",
+   "source": "river",
+   "osmc": "Cerna",
+   "in_county_pts": 62,
+   "majority": "Vâlcea",
+   "seat_d": 0.464,
+   "old_bbox": [
+    23.85101,
+    44.61212,
+    24.0577,
+    45.17554
+   ],
+   "new_bbox": [
+    23.851,
+    44.6121,
+    24.0577,
+    45.1755
+   ]
+  }
+ ],
+ "unresolved": []
+}

@@ -1,5 +1,5 @@
 {
- "git_rev": "0535001ba92c14788f7657de425fcdace69b601b",
+ "git_rev": "4219be3f9475797e2c0a3153cf8e75b863bbe455",
  "inputs": {
   "data/processed/anpa_waters.jsonl": "af1311584384ae75290b43a442e6b78cb9067924a506c3c4bc6eb93033215a9d",
   "data/processed/anpa_contracts.jsonl": "e49b90f7d9c2d2faa214eef7d2d75ce92c4ef32ec325c615fec23a61253eb27b",
@@ -57,11 +57,11 @@
   "src/content/permis-2026.ts": "2c54c9a0efbeb34c16af9ce0124cc17bf5c038a8550440e7136d626d4cb0cadb",
   "data/cache/osm_river_segments_v1.jsonl.gz": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
   "data/processed/river_name_aliases.json": "122941a791ed9b585b2c2a9a71680d143f14ba525aa1e7af6c742b7b9c207e21",
-  "data/processed/river_segment_exceptions.json": "81a515050e5d312ac4a453fa1bdaa999cfc11ad6a652659776bf5747c6b69168",
+  "data/processed/river_segment_exceptions.json": "fcbd75d230cdd392229f9c92ae36957140d32483f6ca641cf2802a1536e2794b",
   "data/processed/river_segment_audit_baseline.json": "d4c263950a0ccc8b21bea6e69ff809f797fae27cc95404ca5eb81fcd37cce499"
  },
  "outputs": {
-  "public/data/waters.json": "4354ed2a0e308ac581207e06c9eedf3bd56fa42e2a0af0ece6ae0f3a34e60137",
+  "public/data/waters.json": "459215ccef97e9e950454dbcd5452e79abbd8e65cf93574d914ac06fdb81c454",
   "public/data/associations.json": "388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9",
   "public/data/counties.geojson": "3b6c0dc382db4d61707f133db7d9876c80981a9f3d74e84ed19651c298d81ac5",
   "public/data/uncontracted_rivers.json": "06414eb6c569770513c10d90d8a68d3338d7f4508ef5c7d76cb20add195db4dd",
@@ -69,8 +69,8 @@
   "public/data/uncontracted_majors.json": "d3a0d657d28fa74cadbd8e0ab28ae78f15eac756993e4190071d94889101256c",
   "public/data/waters_county_clips.json": "65b29985ee1f883105b3e81ca7012724f85dee0fb9d2a85efdf3272902d1257e",
   "data/species.json": "7ba58a78126f69c4ea1c827acdc4f0e6ddaefd1c0bc0a57d0aec9facc35324c8",
-  "data/processed/river_segment_audit.json": "bbf2b6b6a844d9b49fc8319be8258836f12c806747de2c583dcb28fbe4929a05",
-  "data/processed/river_segment_audit.md": "a866f6aafdb16095b9d3aa40e97bfb6b2e57c132a499939bdc931b319e32b757"
+  "data/processed/river_segment_audit.json": "3a492c7e7a19888d783df88bc9091d0975c72d806687fa45079db5eb67e393f1",
+  "data/processed/river_segment_audit.md": "ba1bad157565e737e818c976c6577eb5abc931df33ee6958d6611efebfbbffaf"
  },
- "generated_at": "2026-08-19T11:38:43"
+ "generated_at": "2026-08-19T13:53:23"
 }
