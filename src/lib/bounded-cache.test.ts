@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { boundedCachePlugin, evictToBudget } from './bounded-cache';
+import { boundedCachePlugin, estimateResponseBytes, evictToBudget } from './bounded-cache';
 
 function fakeCache() {
   const values = new Map<string, Response>();
@@ -56,5 +56,27 @@ describe('bounded basemap cache', () => {
     }
     await evictToBudget(cache, entries, 100, 2);
     expect(cache.values.size).toBe(2);
+  });
+
+  it('uses content-length when available and tolerates a missing update response', async () => {
+    const response = new Response('tile', { headers: { 'content-length': '42' } });
+    expect(await estimateResponseBytes(response)).toBe(42);
+
+    const plugin = boundedCachePlugin();
+    await expect(plugin.cacheDidUpdate({
+      request: new Request('https://tile.openstreetmap.org/1/0/0.png'),
+    })).resolves.toBeUndefined();
+  });
+
+  it('records successful updates and enforces the configured byte budget', async () => {
+    const cache = fakeCache();
+    const original = globalThis.caches;
+    Object.defineProperty(globalThis, 'caches', { configurable: true, value: { open: vi.fn().mockResolvedValue(cache) } });
+    const plugin = boundedCachePlugin({ limitBytes: 1 });
+    const request = new Request('https://tile.openstreetmap.org/1/0/0.png');
+    await cache.put(request, new Response('tile'));
+    await expect(plugin.cacheDidUpdate({ request, response: new Response('tile') })).resolves.toBeUndefined();
+    expect(cache.values.size).toBe(0);
+    Object.defineProperty(globalThis, 'caches', { configurable: true, value: original });
   });
 });
