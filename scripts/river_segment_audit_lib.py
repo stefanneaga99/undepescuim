@@ -204,6 +204,24 @@ def sector_findings(contracts: Sequence[dict]) -> list[dict]:
             findings.append({"code": "sector_mismatch", "slug": right.get("slug"), "reason": "overlap"})
     return findings
 
+def resolve_contract(fraction: float, contracts: Sequence[dict]) -> dict | None:
+    """Mirror the UI resolver: smallest explicit interval, then Voronoi."""
+    if not contracts:
+        return None
+    exact = [w for w in contracts if isinstance(w.get("sectorStart"), (int, float)) and isinstance(w.get("sectorEnd"), (int, float)) and w["sectorStart"] <= fraction < w["sectorEnd"]]
+    if exact:
+        return min(exact, key=lambda w: (w["sectorEnd"] - w["sectorStart"], w.get("slug", "")))
+    ranked = sorted(contracts, key=lambda w: (w.get("course_frac", 0.5), w.get("slug", "")))
+    if len(ranked) == 1:
+        return None
+    for i, water in enumerate(ranked):
+        center = water.get("course_frac", i / (len(ranked) - 1))
+        left = (ranked[i - 1].get("course_frac", (i - 1) / (len(ranked) - 1)) + center) / 2 if i else float("-inf")
+        right = (center + ranked[i + 1].get("course_frac", (i + 1) / (len(ranked) - 1))) / 2 if i < len(ranked) - 1 else float("inf")
+        if left <= fraction < right:
+            return water
+    return None
+
 def stable_report(report: dict) -> dict:
     report["rivers"] = sorted(report.get("rivers", []), key=lambda r: (str(r.get("river_group") or ""), str(r.get("osm", {}).get("osm_id") or "")))
     report["cells"] = sorted(report.get("cells", []), key=lambda c: (c.get("cell_id", ""), c.get("county", "")))

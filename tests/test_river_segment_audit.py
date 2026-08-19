@@ -16,13 +16,13 @@ def test_index_is_sorted_and_marks_truncated_relation(tmp_path):
         {"type": "way", "id": 20, "nodes": [1, 2], "tags": {"name": "Test"}},
         {"type": "relation", "id": 3, "members": [{"type": "way", "ref": 20}, {"type": "way", "ref": 99}], "tags": {"name": "Test"}},
     ]}), encoding="utf-8")
-    out, manifest = tmp_path / "index.jsonl.gz", tmp_path / "manifest.json"
-    result = build(snapshot, out, manifest)
-    with gzip.open(out, "rt", encoding="utf-8") as fh:
-        records = [json.loads(line) for line in fh]
-    assert [r["osm_id"] for r in records] == [20, 3]
-    assert records[1]["missing_way_ids"] == [99]
-    assert result["counts"] == {"nodes": 2, "ways": 1, "relations": 1}
+    doc = json.loads(snapshot.read_text(encoding="utf-8"))
+    records, nodes, ways, relations = build(doc)
+    assert [r["osm_id"] for r in records] == [3, 20]
+    relation = records[0]
+    assert relation["members"][1]["way_id"] == 99
+    assert relation["members"][1]["present"] is False
+    assert (nodes, ways, relations) == (2, 1, 1)
 
 
 def way(osm_id, coords):
