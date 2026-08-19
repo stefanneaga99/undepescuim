@@ -34,7 +34,7 @@ jobs:
         run: python3 scripts/rebuild_data.py --check
 
       - name: Segment audit, manifest and registry tests
-        run: pytest tests/test_river_segment_audit.py tests/test_river_segment_sector_resolution.py tests/test_river_segment_fixture_reports.py tests/test_river_segment_manifest.py -q
+        run: python3 -m pytest tests/test_river_segment_audit.py tests/test_river_segment_sector_resolution.py tests/test_river_segment_fixture_reports.py tests/test_river_segment_manifest.py -q
 
       # duplicate-slug gate, assoc resolution, geometry/bbox ranges, overlay
       # same-body duplicates, contact placeholders)
@@ -57,7 +57,7 @@ jobs:
       # Layer 3.5 — species fixture vs Monitorul Oficial values + /permis
       # discipline (pytest: tests/test_data_gates.py)
       - name: Species fixture + /permis gates
-        run: pytest tests/test_data_gates.py -q
+        run: python3 -m pytest tests/test_data_gates.py -q
 
       # Layer 6 — determinism of the derivable outputs (assoc validity/counts,
       # counties geojson must reproduce byte-identical)

@@ -36,8 +36,11 @@ def load_registry(path, key):
  for i, entry in enumerate(entries):
   if not isinstance(entry, dict) or any(not entry.get(k) for k in ('justification','source','expires_on')):
    raise ValueError(f'{p}: {key}[{i}] requires justification, source and expires_on')
-  try: date.fromisoformat(str(entry['expires_on']))
+  try:
+   expiry = date.fromisoformat(str(entry['expires_on']))
   except ValueError as exc: raise ValueError(f'{p}: invalid expires_on at {i}') from exc
+  if expiry < date.today():
+   raise ValueError(f'{p}: {key}[{i}] expired on {expiry.isoformat()}')
  return entries
 
 def registry_aliases(entries):
@@ -168,6 +171,10 @@ def audit(index, root, alias_path=None, exception_path=None):
 def apply_baseline(report, baseline_path):
  if not baseline_path or not Path(baseline_path).exists(): return []
  baseline=json.loads(Path(baseline_path).read_text(encoding='utf8'))
+ if not isinstance(baseline, dict) or not isinstance(baseline.get('summary'), dict):
+  raise ValueError(f'{baseline_path}: baseline requires a summary object')
+ if baseline.get('schema_version', 1) != report.get('schema_version', 1):
+  raise ValueError(f'{baseline_path}: unsupported schema_version')
  keys=('MISSING_CONTRACTED','missing_segment','truncated_head','truncated_mouth','sector_mismatch','duplicate')
  deltas={k: report['summary'].get(k,0)-baseline.get('summary',{}).get(k,0) for k in keys}
  report['baseline']={'snapshot_sha256':baseline.get('snapshot_sha256'), 'summary_deltas':deltas}
