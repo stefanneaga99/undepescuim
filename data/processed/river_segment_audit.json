@@ -6,7 +6,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 11551057,
@@ -20,16 +26,41 @@
         ]
       },
       "owner_slug": "qjz7g9se",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "acumularea govora",
       "segments": [
         {
+          "evidence": [
+            [
+              24.3384801,
+              45.0540081
+            ],
+            [
+              24.3200341,
+              45.0431931
+            ],
+            [
+              24.3269462,
+              45.0355077
+            ],
+            [
+              24.3240187,
+              45.0279749
+            ],
+            [
+              24.308407,
+              45.03701
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 24843.394,
           "segment_id": "11551057:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -45,7 +76,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 12393788,
@@ -58,16 +95,41 @@
         ]
       },
       "owner_slug": "qvwbzauf",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "acumularea ramnicu valcea",
       "segments": [
         {
+          "evidence": [
+            [
+              24.384495,
+              45.148699
+            ],
+            [
+              24.4005232,
+              45.136189
+            ],
+            [
+              24.3821201,
+              45.1245217
+            ],
+            [
+              24.3761314,
+              45.1284034
+            ],
+            [
+              24.3867938,
+              45.1346295
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 9844.097,
           "segment_id": "12393788:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -83,7 +145,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 11555144,
@@ -96,16 +164,41 @@
         ]
       },
       "owner_slug": "ec2faven",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "acumularea raureni",
       "segments": [
         {
+          "evidence": [
+            [
+              24.3796786,
+              45.1046961
+            ],
+            [
+              24.3799434,
+              45.0874846
+            ],
+            [
+              24.3619696,
+              45.0734784
+            ],
+            [
+              24.3739909,
+              45.0746419
+            ],
+            [
+              24.3836345,
+              45.0870818
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 9490.251,
           "segment_id": "11555144:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -121,7 +214,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 11551058,
@@ -136,16 +235,41 @@
         ]
       },
       "owner_slug": "zughmn94",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "acumularea zavideni",
       "segments": [
         {
+          "evidence": [
+            [
+              24.2784604,
+              44.8349769
+            ],
+            [
+              24.2637791,
+              44.8374134
+            ],
+            [
+              24.2515938,
+              44.8455917
+            ],
+            [
+              24.2572453,
+              44.8477136
+            ],
+            [
+              24.2784604,
+              44.8349769
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 29037.986,
           "segment_id": "11551058:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -165,13 +289,13 @@
       "findings": [
         {
           "code": "missing_segment",
-          "end_index": 116,
-          "length_m": 7844.795,
+          "end_fraction": 1.0,
+          "length_m": 7844.783829386986,
           "midpoint": [
-            22.952438,
-            45.8813234
+            22.955611,
+            45.8525721
           ],
-          "start_index": 0
+          "start_fraction": 0.0
         },
         {
           "code": "truncated_head"
@@ -192,14 +316,39 @@
         ]
       },
       "owner_slug": "5bbhtdfc",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "cerna-valcea",
       "segments": [
         {
+          "evidence": [
+            [
+              22.955611,
+              45.8525721
+            ],
+            [
+              22.9570822,
+              45.8663263
+            ],
+            [
+              22.9520005,
+              45.8838955
+            ],
+            [
+              22.955103,
+              45.8771041
+            ],
+            [
+              22.958093,
+              45.865262
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 7844.784,
           "segment_id": "11873257:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -213,162 +362,52 @@
         "components": 1,
         "internal_gaps": [
           {
-            "end_index": 116,
-            "length_m": 7844.795,
+            "end_fraction": 1.0,
+            "length_m": 7844.783829386986,
             "midpoint": [
-              22.952438,
-              45.8813234
+              22.955611,
+              45.8525721
             ],
-            "start_index": 0
+            "start_fraction": 0.0
           }
         ]
       }
     },
     {
       "coverage": {
-        "osm_to_published": 0.9549531981279251,
-        "published_to_osm": 0.35228212647567486
+        "osm_to_published": 0.9588533541341654,
+        "published_to_osm": 0.35386119257087
       },
       "findings": [
         {
           "code": "missing_segment",
-          "end_index": 745,
-          "length_m": 622.934,
+          "end_fraction": 0.13,
+          "length_m": 39401.861728674776,
           "midpoint": [
-            25.6225159,
-            44.8690155
+            25.4284591804039,
+            45.08159500696998
           ],
-          "start_index": 734
+          "start_fraction": 0.05
         },
         {
           "code": "missing_segment",
-          "end_index": 864,
-          "length_m": 474.296,
+          "end_fraction": 0.2,
+          "length_m": 14775.69814825304,
           "midpoint": [
-            25.5480586,
-            44.9088873
+            25.60586621976741,
+            44.876208273716394
           ],
-          "start_index": 856
+          "start_fraction": 0.17
         },
         {
           "code": "missing_segment",
-          "end_index": 1473,
-          "length_m": 605.081,
+          "end_fraction": 1.0,
+          "length_m": 349691.5228419886,
           "midpoint": [
-            25.6115588,
-            44.8777337
+            26.061667487725543,
+            41.9681192709235
           ],
-          "start_index": 1465
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 1503,
-          "length_m": 485.745,
-          "midpoint": [
-            25.6373263,
-            44.8615638
-          ],
-          "start_index": 1499
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 1956,
-          "length_m": 424.085,
-          "midpoint": [
-            25.770368,
-            44.788924
-          ],
-          "start_index": 1946
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 1996,
-          "length_m": 761.837,
-          "midpoint": [
-            25.7375256,
-            44.7903049
-          ],
-          "start_index": 1989
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 2017,
-          "length_m": 288.66,
-          "midpoint": [
-            25.718901,
-            44.792304
-          ],
-          "start_index": 2013
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 2046,
-          "length_m": 987.98,
-          "midpoint": [
-            25.701309,
-            44.79767
-          ],
-          "start_index": 2026
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 2155,
-          "length_m": 340.668,
-          "midpoint": [
-            25.648173,
-            44.84651
-          ],
-          "start_index": 2151
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 2181,
-          "length_m": 390.489,
-          "midpoint": [
-            25.63394,
-            44.8596158
-          ],
-          "start_index": 2178
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 4179,
-          "length_m": 455.798,
-          "midpoint": [
-            25.7631246,
-            44.7964001
-          ],
-          "start_index": 4169
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 4663,
-          "length_m": 1040.105,
-          "midpoint": [
-            25.5859621,
-            44.8932312
-          ],
-          "start_index": 4645
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 4873,
-          "length_m": 267.839,
-          "midpoint": [
-            25.8245538,
-            44.7316105
-          ],
-          "start_index": 4843
-        },
-        {
-          "code": "missing_segment",
-          "end_index": 5040,
-          "length_m": 340.49,
-          "midpoint": [
-            25.4039734,
-            44.9734857
-          ],
-          "start_index": 5038
+          "start_fraction": 0.29
         },
         {
           "code": "truncated_head"
@@ -408,14 +447,39 @@
         ]
       },
       "owner_slug": "3ek8e82l",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "ialomita",
       "segments": [
         {
+          "evidence": [
+            [
+              25.8245981,
+              44.7436547
+            ],
+            [
+              25.4476786,
+              44.9413195
+            ],
+            [
+              25.6956555,
+              44.8037489
+            ],
+            [
+              25.8687414,
+              44.7325344
+            ],
+            [
+              25.7093358,
+              44.7966112
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 492523.272,
           "segment_id": "1308445:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -429,130 +493,31 @@
         "components": 1,
         "internal_gaps": [
           {
-            "end_index": 745,
-            "length_m": 622.934,
+            "end_fraction": 0.13,
+            "length_m": 39401.861728674776,
             "midpoint": [
-              25.6225159,
-              44.8690155
+              25.4284591804039,
+              45.08159500696998
             ],
-            "start_index": 734
+            "start_fraction": 0.05
           },
           {
-            "end_index": 864,
-            "length_m": 474.296,
+            "end_fraction": 0.2,
+            "length_m": 14775.69814825304,
             "midpoint": [
-              25.5480586,
-              44.9088873
+              25.60586621976741,
+              44.876208273716394
             ],
-            "start_index": 856
+            "start_fraction": 0.17
           },
           {
-            "end_index": 1473,
-            "length_m": 605.081,
+            "end_fraction": 1.0,
+            "length_m": 349691.5228419886,
             "midpoint": [
-              25.6115588,
-              44.8777337
+              26.061667487725543,
+              41.9681192709235
             ],
-            "start_index": 1465
-          },
-          {
-            "end_index": 1503,
-            "length_m": 485.745,
-            "midpoint": [
-              25.6373263,
-              44.8615638
-            ],
-            "start_index": 1499
-          },
-          {
-            "end_index": 1956,
-            "length_m": 424.085,
-            "midpoint": [
-              25.770368,
-              44.788924
-            ],
-            "start_index": 1946
-          },
-          {
-            "end_index": 1996,
-            "length_m": 761.837,
-            "midpoint": [
-              25.7375256,
-              44.7903049
-            ],
-            "start_index": 1989
-          },
-          {
-            "end_index": 2017,
-            "length_m": 288.66,
-            "midpoint": [
-              25.718901,
-              44.792304
-            ],
-            "start_index": 2013
-          },
-          {
-            "end_index": 2046,
-            "length_m": 987.98,
-            "midpoint": [
-              25.701309,
-              44.79767
-            ],
-            "start_index": 2026
-          },
-          {
-            "end_index": 2155,
-            "length_m": 340.668,
-            "midpoint": [
-              25.648173,
-              44.84651
-            ],
-            "start_index": 2151
-          },
-          {
-            "end_index": 2181,
-            "length_m": 390.489,
-            "midpoint": [
-              25.63394,
-              44.8596158
-            ],
-            "start_index": 2178
-          },
-          {
-            "end_index": 4179,
-            "length_m": 455.798,
-            "midpoint": [
-              25.7631246,
-              44.7964001
-            ],
-            "start_index": 4169
-          },
-          {
-            "end_index": 4663,
-            "length_m": 1040.105,
-            "midpoint": [
-              25.5859621,
-              44.8932312
-            ],
-            "start_index": 4645
-          },
-          {
-            "end_index": 4873,
-            "length_m": 267.839,
-            "midpoint": [
-              25.8245538,
-              44.7316105
-            ],
-            "start_index": 4843
-          },
-          {
-            "end_index": 5040,
-            "length_m": 340.49,
-            "midpoint": [
-              25.4039734,
-              44.9734857
-            ],
-            "start_index": 5038
+            "start_fraction": 0.29
           }
         ]
       }
@@ -562,7 +527,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 9062865,
@@ -580,16 +551,41 @@
         ]
       },
       "owner_slug": "eu0onj97",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "lacul de acumulare belis fantanele",
       "segments": [
         {
+          "evidence": [
+            [
+              22.8823557,
+              46.6445613
+            ],
+            [
+              22.9686387,
+              46.6583221
+            ],
+            [
+              23.0466663,
+              46.6696466
+            ],
+            [
+              23.0057511,
+              46.6571892
+            ],
+            [
+              22.9990894,
+              46.6318177
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 97016.7,
           "segment_id": "9062865:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -605,7 +601,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 11952672,
@@ -618,16 +620,41 @@
         ]
       },
       "owner_slug": "owq68ima",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "lacul de acumulare gilau",
       "segments": [
         {
+          "evidence": [
+            [
+              23.350953,
+              46.7317979
+            ],
+            [
+              23.3568112,
+              46.7368679
+            ],
+            [
+              23.3658824,
+              46.7462082
+            ],
+            [
+              23.3704866,
+              46.7429643
+            ],
+            [
+              23.3614606,
+              46.7362714
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 5260.074,
           "segment_id": "11952672:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -643,7 +670,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 17068098,
@@ -656,16 +689,41 @@
         ]
       },
       "owner_slug": "3klq13bv",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "lacul rosu",
       "segments": [
         {
+          "evidence": [
+            [
+              29.5470187,
+              45.0427787
+            ],
+            [
+              29.5243035,
+              45.044653
+            ],
+            [
+              29.5468686,
+              45.0606112
+            ],
+            [
+              29.6130212,
+              45.0644973
+            ],
+            [
+              29.6046376,
+              45.0516786
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 22789.538,
           "segment_id": "17068098:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -682,7 +740,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 13030220,
@@ -696,16 +760,41 @@
         ]
       },
       "owner_slug": "y6i6nikh",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "olt",
       "segments": [
         {
+          "evidence": [
+            [
+              24.7800621,
+              43.7451935
+            ],
+            [
+              24.7362168,
+              43.7926287
+            ],
+            [
+              24.7317898,
+              43.7907409
+            ],
+            [
+              24.7766032,
+              43.7493644
+            ],
+            [
+              24.8031381,
+              43.7169212
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 52561.299,
           "segment_id": "13030220:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -729,7 +818,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 2435464,
@@ -787,16 +882,41 @@
         ]
       },
       "owner_slug": "y6i6nikh",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "olt",
       "segments": [
         {
+          "evidence": [
+            [
+              24.3763562,
+              45.1562796
+            ],
+            [
+              24.3550144,
+              44.3729712
+            ],
+            [
+              24.3297542,
+              44.6059174
+            ],
+            [
+              24.2739755,
+              44.8355199
+            ],
+            [
+              24.3139527,
+              45.2745669
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 1514143.776,
           "segment_id": "2435464:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -817,7 +937,7 @@
     },
     {
       "coverage": {
-        "osm_to_published": 0.7090909090909091,
+        "osm_to_published": 1.0,
         "published_to_osm": 0.005747126436781609
       },
       "findings": [
@@ -840,14 +960,39 @@
         ]
       },
       "owner_slug": "414x091y",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "sieu",
       "segments": [
         {
+          "evidence": [
+            [
+              24.5857503,
+              47.0030914
+            ],
+            [
+              24.5862968,
+              47.0026968
+            ],
+            [
+              24.5859443,
+              47.0030695
+            ],
+            [
+              24.5854442,
+              47.0026781
+            ],
+            [
+              24.5842747,
+              47.0029595
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 499.604,
           "segment_id": "16023493:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -866,7 +1011,38 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "sopv2vba"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0469"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0066"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0296"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "9m2irr6m"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 10534882,
@@ -894,16 +1070,41 @@
         ]
       },
       "owner_slug": "sopv2vba",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "siret",
       "segments": [
         {
+          "evidence": [
+            [
+              27.2478501,
+              45.9485614
+            ],
+            [
+              27.526152,
+              45.524301
+            ],
+            [
+              27.528763,
+              45.585795
+            ],
+            [
+              27.3429562,
+              45.7725039
+            ],
+            [
+              27.8607863,
+              45.3969809
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 401034.279,
           "segment_id": "10534882:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -928,7 +1129,38 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "sopv2vba"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0469"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0066"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "anpa-anpa-0296"
+        },
+        {
+          "code": "sector_mismatch",
+          "reason": "overlap",
+          "slug": "9m2irr6m"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 2911656,
@@ -945,16 +1177,41 @@
         ]
       },
       "owner_slug": "sopv2vba",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "siret",
       "segments": [
         {
+          "evidence": [
+            [
+              28.0141435,
+              45.401762
+            ],
+            [
+              27.9724208,
+              45.3964458
+            ],
+            [
+              27.9898494,
+              45.3940357
+            ],
+            [
+              27.9751743,
+              45.3951746
+            ],
+            [
+              28.0206379,
+              45.4017459
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 43579.142,
           "segment_id": "2911656:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -979,7 +1236,13 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [],
+      "findings": [
+        {
+          "code": "missing_segment",
+          "length_m": 0,
+          "reason": "published_geometry_missing"
+        }
+      ],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 2445024,
@@ -992,16 +1255,41 @@
         ]
       },
       "owner_slug": "axdnd0sx",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "taul tapului",
       "segments": [
         {
+          "evidence": [
+            [
+              22.9234504,
+              45.3755252
+            ],
+            [
+              22.9239109,
+              45.3766081
+            ],
+            [
+              22.9251229,
+              45.3764726
+            ],
+            [
+              22.9258309,
+              45.3754272
+            ],
+            [
+              22.9236572,
+              45.3754191
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 816.257,
           "segment_id": "2445024:main",
-          "status": "PASS_CONTRACTED"
+          "status": "UNRESOLVED_NO_OSM_MATCH"
         }
       ],
       "source_rows": [
@@ -1015,29 +1303,79 @@
     },
     {
       "coverage": {
-        "osm_to_published": 0.9558823529411765,
+        "osm_to_published": 0.9678308823529411,
         "published_to_osm": 0.03707833844438249
       },
       "findings": [
         {
           "code": "missing_segment",
-          "end_index": 675,
-          "length_m": 559.198,
+          "end_fraction": 0.09,
+          "length_m": 863.2539827516384,
           "midpoint": [
-            21.9440744,
-            45.6677068
+            21.944973158843666,
+            45.674830187231706
           ],
-          "start_index": 664
+          "start_fraction": 0.07
         },
         {
           "code": "missing_segment",
-          "end_index": 807,
-          "length_m": 436.713,
+          "end_fraction": 0.24,
+          "length_m": 431.62699137581876,
           "midpoint": [
-            21.9435083,
-            45.6681301
+            21.911206689832216,
+            45.68399335989003
           ],
-          "start_index": 795
+          "start_fraction": 0.23
+        },
+        {
+          "code": "missing_segment",
+          "end_fraction": 0.51,
+          "length_m": 863.2539827516375,
+          "midpoint": [
+            21.954241531240097,
+            45.67117617707747
+          ],
+          "start_fraction": 0.49
+        },
+        {
+          "code": "missing_segment",
+          "end_fraction": 0.66,
+          "length_m": 431.6269913758224,
+          "midpoint": [
+            21.948568780914297,
+            45.67122526477668
+          ],
+          "start_fraction": 0.65
+        },
+        {
+          "code": "missing_segment",
+          "end_fraction": 0.74,
+          "length_m": 431.62699137581876,
+          "midpoint": [
+            21.946013317478865,
+            45.67384723685291
+          ],
+          "start_fraction": 0.73
+        },
+        {
+          "code": "missing_segment",
+          "end_fraction": 0.91,
+          "length_m": 2158.1349568790974,
+          "midpoint": [
+            21.90549928017931,
+            45.68657962053697
+          ],
+          "start_fraction": 0.86
+        },
+        {
+          "code": "missing_segment",
+          "end_fraction": 1.0,
+          "length_m": 3021.388939630735,
+          "midpoint": [
+            21.859839361779777,
+            45.70082378433812
+          ],
+          "start_fraction": 0.93
         },
         {
           "code": "truncated_head"
@@ -1081,14 +1419,39 @@
         ]
       },
       "owner_slug": "anpa-anpa-0582",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "timis",
       "segments": [
         {
+          "evidence": [
+            [
+              21.9355546,
+              45.6772035
+            ],
+            [
+              21.9226859,
+              45.680272
+            ],
+            [
+              21.9264451,
+              45.6786793
+            ],
+            [
+              21.9456975,
+              45.6683543
+            ],
+            [
+              21.9314394,
+              45.6763949
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 43162.699,
           "segment_id": "12840145:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -1100,22 +1463,67 @@
         "components": 1,
         "internal_gaps": [
           {
-            "end_index": 675,
-            "length_m": 559.198,
+            "end_fraction": 0.09,
+            "length_m": 863.2539827516384,
             "midpoint": [
-              21.9440744,
-              45.6677068
+              21.944973158843666,
+              45.674830187231706
             ],
-            "start_index": 664
+            "start_fraction": 0.07
           },
           {
-            "end_index": 807,
-            "length_m": 436.713,
+            "end_fraction": 0.24,
+            "length_m": 431.62699137581876,
             "midpoint": [
-              21.9435083,
-              45.6681301
+              21.911206689832216,
+              45.68399335989003
             ],
-            "start_index": 795
+            "start_fraction": 0.23
+          },
+          {
+            "end_fraction": 0.51,
+            "length_m": 863.2539827516375,
+            "midpoint": [
+              21.954241531240097,
+              45.67117617707747
+            ],
+            "start_fraction": 0.49
+          },
+          {
+            "end_fraction": 0.66,
+            "length_m": 431.6269913758224,
+            "midpoint": [
+              21.948568780914297,
+              45.67122526477668
+            ],
+            "start_fraction": 0.65
+          },
+          {
+            "end_fraction": 0.74,
+            "length_m": 431.62699137581876,
+            "midpoint": [
+              21.946013317478865,
+              45.67384723685291
+            ],
+            "start_fraction": 0.73
+          },
+          {
+            "end_fraction": 0.91,
+            "length_m": 2158.1349568790974,
+            "midpoint": [
+              21.90549928017931,
+              45.68657962053697
+            ],
+            "start_fraction": 0.86
+          },
+          {
+            "end_fraction": 1.0,
+            "length_m": 3021.388939630735,
+            "midpoint": [
+              21.859839361779777,
+              45.70082378433812
+            ],
+            "start_fraction": 0.93
           }
         ]
       }
@@ -1126,6 +1534,16 @@
         "published_to_osm": 0.03345413994981879
       },
       "findings": [
+        {
+          "code": "missing_segment",
+          "end_fraction": 1.0,
+          "length_m": 2583.473629211333,
+          "midpoint": [
+            21.8908945120862,
+            45.67732938915612
+          ],
+          "start_fraction": 0.6666666666666666
+        },
         {
           "code": "truncated_head"
         },
@@ -1147,14 +1565,39 @@
         ]
       },
       "owner_slug": "anpa-anpa-0582",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "timis",
       "segments": [
         {
+          "evidence": [
+            [
+              21.8714297,
+              45.7102906
+            ],
+            [
+              21.8686643,
+              45.7198437
+            ],
+            [
+              21.8704748,
+              45.709901
+            ],
+            [
+              21.8772447,
+              45.7046808
+            ],
+            [
+              21.877588,
+              45.7049299
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 7750.421,
           "segment_id": "12843822:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -1164,7 +1607,17 @@
       ],
       "topology": {
         "components": 1,
-        "internal_gaps": []
+        "internal_gaps": [
+          {
+            "end_fraction": 1.0,
+            "length_m": 2583.473629211333,
+            "midpoint": [
+              21.8908945120862,
+              45.67732938915612
+            ],
+            "start_fraction": 0.6666666666666666
+          }
+        ]
       }
     },
     {
@@ -1194,14 +1647,39 @@
         ]
       },
       "owner_slug": "anpa-anpa-0582",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "timis",
       "segments": [
         {
+          "evidence": [
+            [
+              21.878162,
+              45.7017249
+            ],
+            [
+              21.8849373,
+              45.7001795
+            ],
+            [
+              21.8894944,
+              45.6965058
+            ],
+            [
+              21.8869436,
+              45.6977291
+            ],
+            [
+              21.8826038,
+              45.7010187
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 2658.401,
           "segment_id": "12909804:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -1222,23 +1700,23 @@
       "findings": [
         {
           "code": "missing_segment",
-          "end_index": 73,
-          "length_m": 293.605,
+          "end_fraction": 0.23958333333333334,
+          "length_m": 892.49391449769,
           "midpoint": [
-            21.8947542,
-            45.6950146
+            21.89954293979454,
+            45.68914254175052
           ],
-          "start_index": 54
+          "start_fraction": 0.14583333333333334
         },
         {
           "code": "missing_segment",
-          "end_index": 246,
-          "length_m": 402.796,
+          "end_fraction": 1.0,
+          "length_m": 6148.291410984087,
           "midpoint": [
-            21.8945771,
-            45.6947092
+            21.958141497280902,
+            45.63851685027819
           ],
-          "start_index": 228
+          "start_fraction": 0.3541666666666667
         },
         {
           "code": "truncated_head"
@@ -1265,14 +1743,39 @@
         ]
       },
       "owner_slug": "anpa-anpa-0582",
+      "registry": {
+        "alias_used": false
+      },
       "river_group": "timis",
       "segments": [
         {
+          "evidence": [
+            [
+              21.8910916,
+              45.696444
+            ],
+            [
+              21.8959638,
+              45.6947223
+            ],
+            [
+              21.8991773,
+              45.6929807
+            ],
+            [
+              21.8939629,
+              45.696888
+            ],
+            [
+              21.8911911,
+              45.6959373
+            ]
+          ],
           "fraction": [
             0,
             1
           ],
-          "length_m": 0,
+          "length_m": 9519.935,
           "segment_id": "12909825:main",
           "status": "UNRESOLVED_NO_OSM_MATCH"
         }
@@ -1284,22 +1787,22 @@
         "components": 1,
         "internal_gaps": [
           {
-            "end_index": 73,
-            "length_m": 293.605,
+            "end_fraction": 0.23958333333333334,
+            "length_m": 892.49391449769,
             "midpoint": [
-              21.8947542,
-              45.6950146
+              21.89954293979454,
+              45.68914254175052
             ],
-            "start_index": 54
+            "start_fraction": 0.14583333333333334
           },
           {
-            "end_index": 246,
-            "length_m": 402.796,
+            "end_fraction": 1.0,
+            "length_m": 6148.291410984087,
             "midpoint": [
-              21.8945771,
-              45.6947092
+              21.958141497280902,
+              45.63851685027819
             ],
-            "start_index": 228
+            "start_fraction": 0.3541666666666667
           }
         ]
       }
@@ -1308,8 +1811,11 @@
   "schema_version": 1,
   "snapshot_sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
   "summary": {
-    "PASS_CONTRACTED": 12,
-    "UNRESOLVED_NO_OSM_MATCH": 7
+    "UNRESOLVED_NO_OSM_MATCH": 19,
+    "missing_segment": 26,
+    "sector_mismatch": 10,
+    "truncated_head": 7,
+    "truncated_mouth": 7
   },
   "thresholds": {
     "coverage_tol_m": 125,
