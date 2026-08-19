@@ -1,6 +1,7 @@
 import { create } from 'zustand';
-import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
+import type { Association, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
+import { mergeAssociationLocations } from '@/lib/association-locations';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -192,27 +193,15 @@ export const useMapStore = create<MapStore>((set, get) => ({
         watersRes.json(),
         majorsRes.json(),
       ])) as [Association[], Water[], Water[]];
-      let locations: AssociationLocation[] = [];
+      let locationArtifact: unknown = null;
       if (locationsRes?.ok) {
         try {
-          const artifact = (await locationsRes.json()) as { schemaVersion?: number; locations?: AssociationLocation[] };
-          if (artifact.schemaVersion === 1 && Array.isArray(artifact.locations)) {
-            locations = artifact.locations.filter((location) => location.public && location.review?.status === 'approved');
-          }
+          locationArtifact = await locationsRes.json();
         } catch (error) {
           console.warn('[map-store] association locations ignored:', error);
         }
       }
-      const locationsById = new Map<string, AssociationLocation[]>();
-      for (const location of locations) {
-        const current = locationsById.get(location.associationId) ?? [];
-        current.push(location);
-        locationsById.set(location.associationId, current);
-      }
-      const associations = rawAssociations.map((association) => ({
-        ...association,
-        locations: locationsById.get(association.id) ?? [],
-      }));
+      const associations = mergeAssociationLocations(rawAssociations, locationArtifact);
       // t_6c2ac870: county polygons for the nearby-waters chip. Optional —
       // the chip falls back to the contract county when missing.
       let counties: CountyFeature[] = [];
