@@ -4,6 +4,7 @@
  */
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
+import { waitForMapIdle } from '../../helpers/map';
 
 // Coverage color contract (src/utils/colors.ts getFeatureStyle):
 const NEUTRAL_COLOR = '#3b82f6'; // no association selected — blue
@@ -61,12 +62,14 @@ test.describe('F4 — association select + highlight', () => {
     const map = new MapPage(page);
 
     await map.associationSearch.select('asociatia-alpha');
+    await waitForMapIdle(page);
     await expect(map.associationChip.chip).toBeVisible();
     const zoomSelected = await map.zoom();
 
     // lacul-buc-1 belongs to beta → the click must clear alpha WITHOUT the
     // map flying back to the national view (suppressAssociationFlyTo).
     await map.clickWater('lacul-buc-1');
+    await waitForMapIdle(page);
     await expect(map.associationChip.chip).toHaveCount(0);
     await expect(map.waterCard.name).toHaveText('Lacul București 1');
     expect(await map.zoom()).toBe(zoomSelected);

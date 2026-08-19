@@ -23,6 +23,14 @@ export async function mapZoom(page: Page): Promise<number> {
   return z;
 }
 
+/** Wait for Leaflet's animated fit/fly transition to settle before reading view state. */
+export async function waitForMapIdle(page: Page): Promise<void> {
+  await page.waitForFunction(() => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
+    return Boolean(map) && !map._animatingZoom && !map._panAnim?._inProgress;
+  });
+}
+
 /** Set the map zoom programmatically (LOD tests need zoom ≥ 8). */
 export async function setMapZoom(page: Page, zoom: number): Promise<void> {
   await page.evaluate(
