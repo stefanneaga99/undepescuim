@@ -1,46 +1,62 @@
 #!/usr/bin/env python3
-"""Deterministic offline link validator; live mode is deliberately not CI-enabled."""
+"""Safe deterministic fixture validator and explicitly opt-in live checker."""
 from __future__ import annotations
-import argparse, json, sys
+import argparse, json, socket, sys, time
+from urllib.parse import urljoin
 from datetime import datetime, timezone
 from pathlib import Path
-from link_validation_lib import LinkTarget, build_report, enumerate_targets, repair_record, result_for
+import requests
+from link_validation_lib import USER_AGENT, LinkTarget, build_report, enumerate_targets, policy_error, repair_record, result_for, sanitize_url
+ROOT=Path(__file__).resolve().parent.parent
+RETRYABLE={408,425,429,500,502,503,504}
 
-ROOT = Path(__file__).resolve().parent.parent
+def now(): return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+def resolve(host, port):
+    return {x[4][0] for x in socket.getaddrinfo(host,port,type=socket.SOCK_STREAM)}
+def live_one(target, exceptions):
+    checked=[]; started=now(); err=policy_error(target.original_url,exceptions,resolver=resolve)
+    if err: return result_for(target,now=started,outcome={"failureReason":err},http_exceptions=exceptions)
+    url=target.original_url; chain=[]; retry_after=None; last=None
+    for attempt in range(3):
+        checked.append(now())
+        if attempt: time.sleep(min((1,3)[attempt-1],60))
+        try:
+            r=requests.head(url,allow_redirects=False,timeout=(3,7),headers={"User-Agent":USER_AGENT,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.1"},verify=True)
+            if r.status_code in {405,403,501}:
+                r.close(); r=requests.get(url,allow_redirects=False,stream=True,timeout=(3,7),headers={"User-Agent":USER_AGENT,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.1"},verify=True); r.close()
+            last=r
+            if 300<=r.status_code<400 and r.headers.get("Location"):
+                nxt=urljoin(url,r.headers["Location"])
+                hoperr=policy_error(nxt,exceptions,resolver=resolve)
+                if hoperr: return result_for(target,now=started,outcome={"status":"blocked","failureReason":"unsafe_redirect","httpStatus":r.status_code,"redirect":{"count":len(chain)+1,"chain":chain+[ {"url":sanitize_url(url),"status":r.status_code}],"crossHost":False,"downgradedToHttp":False}},http_exceptions=exceptions)
+                if any(x["url"]==sanitize_url(nxt) for x in chain): return result_for(target,now=started,outcome={"status":"blocked","failureReason":"redirect_loop","httpStatus":r.status_code},http_exceptions=exceptions)
+                chain.append({"url":sanitize_url(url),"status":r.status_code}); url=nxt; continue
+            if r.status_code in RETRYABLE:
+                retry_after=min(int(r.headers.get("Retry-After","0")) if r.headers.get("Retry-After","").isdigit() else 0,60); last=r
+                if attempt<2: continue
+                status="transient_error"; reason="http_%s"%r.status_code
+            elif 400<=r.status_code<500: status="client_error"; reason="http_%s"%r.status_code
+            elif 200<=r.status_code<300: status="redirected" if chain else "ok"; reason=None
+            else: status="server_error"; reason="http_%s"%r.status_code
+            return result_for(target,now=started,outcome={"status":status,"httpStatus":r.status_code,"finalUrl":url,"failureReason":reason,"redirect":{"count":len(chain),"chain":chain,"crossHost":False,"downgradedToHttp":False},"retry":{"attempts":attempt+1,"attemptedAt":checked,"retryAfterSeconds":retry_after,"exhausted":attempt==2}},http_exceptions=exceptions)
+        except (requests.RequestException, OSError, TimeoutError):
+            last=None
+            if attempt==2: return result_for(target,now=started,outcome={"status":"transient_error","failureReason":"network_error","redirect":{"count":len(chain),"chain":chain,"crossHost":False,"downgradedToHttp":False},"retry":{"attempts":3,"attemptedAt":checked,"retryAfterSeconds":None,"exhausted":True}},http_exceptions=exceptions)
+    return result_for(target,now=started,outcome={"status":"transient_error","failureReason":"network_error"},http_exceptions=exceptions)
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=("fixtures", "live"), default="fixtures")
-    ap.add_argument("--report", default="data/processed/link_validation_report.json")
-    ap.add_argument("--repairs", default="data/processed/link_validation_repairs.jsonl")
-    ap.add_argument("--limit", type=int, default=0)
-    ap.add_argument("--only-source")
-    ap.add_argument("--fail-on", choices=("critical", "none"), default="critical")
-    args = ap.parse_args()
-    now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    if args.mode == "live":
-        print("live reachability is scheduled/manual only; use a reviewed transport runner", file=sys.stderr)
-        return 2
-    fixture_path = ROOT / "tests/fixtures/link_validation/targets.json"
-    fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
-    targets = []
-    for item in fixture:
-        targets.append((LinkTarget(item.get("associationSlug"), item["field"], item["sourcePath"], item["sourceKind"], item["url"]), item.get("outcome")))
-    if not fixture:
-        targets = [(t, None) for t in enumerate_targets(ROOT)]
-    if args.only_source: targets = [(t, o) for t, o in targets if t.source_kind == args.only_source]
-    if args.limit: targets = targets[:args.limit]
-    records = [result_for(t, now=now, outcome=o) for t, o in targets]
-    records.sort(key=lambda r: (r["sourceKind"], r["associationSlug"] is None, r["associationSlug"] or "", r["field"], r["sourcePath"]))
-    report = build_report(records, mode=args.mode, generated_at=now)
-    report_path = Path(args.report); report_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = report_path.with_suffix(report_path.suffix + ".tmp")
-    tmp.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"); tmp.replace(report_path)
-    repairs = [repair_record(r) for r in records]; repairs = [r for r in repairs if r]
-    repair_path = Path(args.repairs); repair_path.parent.mkdir(parents=True, exist_ok=True)
-    repair_path.write_text("".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in repairs), encoding="utf-8")
-    print(json.dumps(report["summary"], sort_keys=True))
-    if args.fail_on == "critical" and any(r["status"] == "blocked" for r in records): return 1
-    return 0
-
-if __name__ == "__main__": sys.exit(main())
+def main():
+    ap=argparse.ArgumentParser(); ap.add_argument("--mode",choices=("fixtures","live"),default="fixtures"); ap.add_argument("--report",default="data/processed/link_validation_report.json"); ap.add_argument("--repairs",default="data/processed/link_validation_repairs.jsonl"); ap.add_argument("--limit",type=int,default=0); ap.add_argument("--only-source"); ap.add_argument("--fail-on",choices=("critical","none"),default="critical"); args=ap.parse_args()
+    stamp=now(); exc_path=ROOT/"data/processed/link_validation_http_exceptions.json"; exceptions=json.loads(exc_path.read_text()) if exc_path.exists() else []
+    if args.mode=="fixtures":
+        fixture=json.loads((ROOT/"tests/fixtures/link_validation/targets.json").read_text()); pairs=[(LinkTarget(i.get("associationSlug"),i["field"],i["sourcePath"],i["sourceKind"],i["url"]),i.get("outcome")) for i in fixture]
+        if not fixture: pairs=[(t,None) for t in enumerate_targets(ROOT)]
+        records=[result_for(t,now=stamp,outcome=o,http_exceptions=exceptions) for t,o in pairs]
+    else:
+        targets=enumerate_targets(ROOT); pairs=[(t,None) for t in targets]; records=[live_one(t,exceptions) for t,_ in pairs]
+    if args.only_source: records=[r for r in records if r["sourceKind"]==args.only_source]
+    if args.limit: records=records[:args.limit]
+    records.sort(key=lambda r:(r["sourceKind"],r["associationSlug"] is None,r["associationSlug"] or "",r["field"],r["sourcePath"]))
+    report=build_report(records,mode=args.mode,generated_at=stamp); rp=Path(args.report); rp.parent.mkdir(parents=True,exist_ok=True); tmp=rp.with_suffix(rp.suffix+".tmp"); tmp.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n"); tmp.replace(rp)
+    repairs=[repair_record(r) for r in records]; repairs=[r for r in repairs if r]; pp=Path(args.repairs); pp.parent.mkdir(parents=True,exist_ok=True); pp.write_text("".join(json.dumps(r,ensure_ascii=False,sort_keys=True)+"\n" for r in repairs))
+    print(json.dumps(report["summary"],sort_keys=True)); return 1 if args.fail_on=="critical" and any(r["status"] in {"blocked","client_error","server_error"} for r in records) else 0
+if __name__=="__main__": sys.exit(main())

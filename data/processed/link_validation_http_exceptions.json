@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://permise.anpa.ro:12443/portal-public/permis",
+    "allowedPorts": true,
+    "reason": "Official ANADSPA permit portal currently publishes on port 12443",
+    "owner": "data-maintainers",
+    "approvedAt": "2026-08-19",
+    "expiresAt": "2027-08-19"
+  }
+]

@@ -12,4 +12,4 @@ Statuses are `ok`, `redirected`, `client_error`, `server_error`, `transient_erro
 
 Supported runtime and curated fields include association site/permit URLs, embedded water association URLs, `association_locations` contact/source URLs, and provenance URL fields. The fixture registry is intentionally explicit so a new URL-bearing field requires a test update. Live reachability belongs in the scheduled/manual audit, not pull-request CI.
 
-For a local live audit, use the separate reviewed live transport runner when available; do not change fixture mode to make network calls in CI.
+For a local live audit, run `python3 scripts/link_validation.py --mode live --report data/processed/link_validation_report.json --repairs data/processed/link_validation_repairs.jsonl --fail-on none`. Live mode uses bounded HEAD/GET requests, DNS/IP policy checks, TLS verification, safe redirect revalidation and retries; it never edits source URLs. The weekly/manual workflow uploads the two generated artifacts and is intentionally separate from regular CI.
