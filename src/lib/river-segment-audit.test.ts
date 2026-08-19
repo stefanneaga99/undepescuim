@@ -32,4 +32,14 @@ describe('offline river segment parity probes', () => {
     coverage(sectors[0].coordinates, sectors[2].coordinates, 1);
     expect(JSON.stringify(sectors)).toBe(before);
   });
+
+  it('keeps negative findings explicit for a multi-sector fixture', () => {
+    const cases = (parityFixture as unknown as { cases: Array<{ id: string; status: string; finding_codes: string[] }> }).cases;
+    expect(cases.find((item) => item.id === 'pass')).toMatchObject({ status: 'PASS_CONTRACTED', finding_codes: [] });
+    for (const id of ['missing-segment', 'truncation', 'sector-mismatch', 'duplicate', 'tarnava-gap']) {
+      const item = cases.find((candidate) => candidate.id === id);
+      expect(item?.status, `${id} must remain blocking`).toBe('BLOCKED');
+      expect(item?.finding_codes.length, `${id} must retain a finding`).toBeGreaterThan(0);
+    }
+  });
 });

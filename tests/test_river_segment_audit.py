@@ -3,7 +3,15 @@ import json
 from pathlib import Path
 
 from build_osm_river_segment_index import build
-from river_segment_audit_lib import connected_components, coverage, line_length_m, main_stem, topology
+from river_segment_audit_lib import (
+    connected_components,
+    coverage,
+    duplicate_way_ids,
+    line_length_m,
+    main_stem,
+    sector_findings,
+    topology,
+)
 from audit_river_segments import exception_for, load_registry, registry_aliases, alias_match
 
 FIXTURE = json.loads((Path(__file__).parent / "fixtures/river_segment_parity.json").read_text(encoding="utf-8"))
@@ -62,6 +70,18 @@ def test_tarnava_injected_gap_and_truncation_are_reported():
     truncated = FIXTURE["tarnava"]["truncated"]
     assert coverage(published, gap, tolerance_m=1)["published_to_osm"] < 1
     assert coverage(published, truncated, tolerance_m=1)["published_to_osm"] < 1
+
+
+def test_multi_sector_contract_probe_rejects_overlap_and_duplicate_ways():
+    contracts = [
+        {"slug": "upstream", "sectorStart": 0.0, "sectorEnd": 0.46},
+        {"slug": "downstream", "sectorStart": 0.46, "sectorEnd": 1.0},
+        {"slug": "overlap", "sectorStart": 0.45, "sectorEnd": 0.5},
+    ]
+    findings = sector_findings(contracts)
+    assert [finding["code"] for finding in findings] == ["sector_mismatch", "sector_mismatch"]
+    assert [finding["slug"] for finding in findings] == ["overlap", "downstream"]
+    assert duplicate_way_ids([101, 102, 101, "102", "bad"]) == [101, 102]
 
 
 def test_registry_entries_are_auditable_and_alias_does_not_hide_finding(tmp_path):
