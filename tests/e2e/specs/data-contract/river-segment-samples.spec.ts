@@ -1,29 +1,54 @@
 import { test, expect } from '@playwright/test';
+import fixture from '../../fixtures/river-segments.json';
 
-/** Physical probes for the segment resolver. Tagged data so PR smoke does not
- * silently depend on a live map; the contract assertions remain browser-level. */
-test.describe('river segment probes @data @river-segments', () => {
-  test('published sectors are finite and ordered', async ({ page }) => {
-    const response = await page.request.get('/data/waters.json');
-    expect(response.ok()).toBeTruthy();
-    const waters = (await response.json()) as Array<Record<string, unknown>>;
-    const groups = new Map<string, Array<Record<string, unknown>>>();
-    for (const water of waters) {
-      if (typeof water.riverGroup !== 'string') continue;
-      const list = groups.get(water.riverGroup) ?? [];
-      list.push(water);
-      groups.set(water.riverGroup, list);
-      for (const key of ['sectorStart', 'sectorEnd', 'course_frac']) {
-        if (key in water) {
-          expect(typeof water[key]).toBe('number');
-          expect(water[key] as number).toBeGreaterThanOrEqual(0);
-          expect(water[key] as number).toBeLessThanOrEqual(1);
-        }
+test.describe('offline river segment probes @data @river-segments', () => {
+  test.beforeEach(async ({ page }) => {
+    // The @data tier is deliberately local: no OSM, API, tile, or remote
+    // fixture is allowed to make a contract assertion nondeterministic.
+    await page.route('**/*', async (route) => {
+      const url = new URL(route.request().url());
+      if (url.pathname === '/data/waters.json') {
+        await route.fulfill({
+          status: 200,
+          contentType: 'application/json',
+          body: JSON.stringify(fixture),
+        });
+        return;
       }
-      if (typeof water.sectorStart === 'number' && typeof water.sectorEnd === 'number') {
-        expect(water.sectorStart).toBeLessThan(water.sectorEnd);
+      if (url.hostname !== 'localhost' && url.hostname !== '127.0.0.1') {
+        await route.abort();
+        return;
       }
+      await route.continue();
+    });
+  });
+
+  test('all mandatory findings remain explicit and blocking', async ({ page }) => {
+    await page.goto('/');
+    const result = await page.evaluate(async () => {
+      const response = await fetch('/data/waters.json');
+      return response.json();
+    });
+    expect(result.schema_version).toBe(1);
+    expect(result.cases).toHaveLength(6);
+    const byId = new Map<string, { status: string; finding_codes: string[] }>(
+      result.cases.map((item: { id: string; status: string; finding_codes: string[] }) => [item.id, item]),
+    );
+    expect(byId.get('pass')).toMatchObject({ status: 'PASS_CONTRACTED', finding_codes: [] });
+    for (const id of ['missing-segment', 'truncation', 'sector-mismatch', 'duplicate', 'tarnava-gap']) {
+      expect(byId.get(id)?.status, `${id} must block`).toBe('BLOCKED');
+      expect(byId.get(id)?.finding_codes.length, `${id} must report a finding`).toBeGreaterThan(0);
     }
-    expect(groups.size).toBeGreaterThan(0);
+  });
+
+  test('fixture is served without an external request', async ({ page }) => {
+    const external: string[] = [];
+    page.on('request', (request) => {
+      const url = new URL(request.url());
+      if (!['localhost', '127.0.0.1'].includes(url.hostname)) external.push(request.url());
+    });
+    await page.goto('/');
+    await expect.poll(() => external.length).toBe(0);
+    await expect.poll(async () => page.evaluate(() => document.readyState)).toBe('complete');
   });
 });

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id": "pass", "status": "PASS_CONTRACTED", "finding_codes": []},
+    {"id": "missing-segment", "status": "BLOCKED", "finding_codes": ["missing_segment"]},
+    {"id": "truncation", "status": "BLOCKED", "finding_codes": ["truncated_head", "truncated_mouth"]},
+    {"id": "sector-mismatch", "status": "BLOCKED", "finding_codes": ["sector_mismatch"]},
+    {"id": "duplicate", "status": "BLOCKED", "finding_codes": ["duplicate"]},
+    {"id": "tarnava-gap", "status": "BLOCKED", "finding_codes": ["missing_segment"]}
+  ]
+}

@@ -60,6 +60,13 @@ INPUTS = [
     "data/raw/county_boundaries/*.json",
     "data/species.json",
     "src/content/permis-2026.ts",
+    # Offline river-segment audit inputs and reviewed registries. These are
+    # pinned alongside the source data so a PR cannot silently audit a
+    # different snapshot or extend an exception without manifest drift.
+    "data/cache/osm_river_segments_v1.jsonl.gz",
+    "data/processed/river_name_aliases.json",
+    "data/processed/river_segment_exceptions.json",
+    "data/processed/river_segment_audit_baseline.json",
 ]
 
 # committed OUTPUTS whose determinism we assert
@@ -72,6 +79,8 @@ OUTPUTS = [
     "public/data/uncontracted_majors.json",
     "public/data/waters_county_clips.json",
     "data/species.json",
+    "data/processed/river_segment_audit.json",
+    "data/processed/river_segment_audit.md",
 ]
 
 # Directories copied into scratch rebuilds. Keep locality inputs local: unlike

@@ -30,8 +30,11 @@ jobs:
             --gate
           git diff --exit-code -- data/processed/river_segment_audit.json data/processed/river_segment_audit.md
 
-      - name: Segment audit unit and sector parity tests
-        run: pytest tests/test_river_segment_audit.py tests/test_river_segment_sector_resolution.py -q
+      - name: Validate pinned audit manifest and registries (offline)
+        run: python3 scripts/rebuild_data.py --check
+
+      - name: Segment audit, manifest and registry tests
+        run: pytest tests/test_river_segment_audit.py tests/test_river_segment_sector_resolution.py tests/test_river_segment_fixture_reports.py tests/test_river_segment_manifest.py -q
 
       # duplicate-slug gate, assoc resolution, geometry/bbox ranges, overlay
       # same-body duplicates, contact placeholders)
