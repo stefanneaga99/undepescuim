@@ -30,6 +30,31 @@ test.describe('F6 — water detail card', () => {
     await expect(card.speciiLink).toBeVisible();
   });
 
+  test('card link labels and external attributes identify safe destinations', async ({ mapReady, page }) => {
+    await mapReady();
+    const map = new MapPage(page);
+    await map.clickWater('raul-somesul-test');
+    const card = map.waterCard.card;
+
+    await expect(card.getByTestId('permit-row').first()).toContainText('Permis național');
+    await expect(card.getByRole('link', { name: /alpha\.example\.ro/ })).toHaveAttribute(
+      'href',
+      'https://alpha.example.ro/',
+    );
+    await expect(card.getByTestId('permit-row').nth(1)).toHaveAttribute(
+      'href',
+      'https://permis.alpha.example.ro/',
+    );
+    for (const link of await card.locator('a[target="_blank"]').all()) {
+      await expect(link).toHaveAttribute('href', /^https:\/\//);
+      await expect(link).toHaveAttribute('rel', /(^|\s)noopener(\s|$)/);
+      await expect(link).toHaveAttribute('rel', /(^|\s)noreferrer(\s|$)/);
+    }
+    for (const link of await card.locator('a').all()) {
+      await expect(link).toHaveAttribute('href', /^(?:https:\/\/|tel:|mailto:|\/)/);
+    }
+  });
+
   test('contracted water without an online permit shows "verifică cu asociația"', async ({
     mapReady,
     page,

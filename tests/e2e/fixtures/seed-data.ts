@@ -22,6 +22,7 @@
  */
 import type {
   Association,
+  AssociationLocation,
   Water,
 } from '../../../src/types/data';
 
@@ -53,6 +54,37 @@ const alpha: Association = {
   bbox: [22.5, 45.4, 26.3, 47.6],
   id: 'asociatia-alpha',
 };
+
+const alphaLocations: AssociationLocation[] = [{
+  id: 'alpha-office-test',
+  associationId: alpha.id,
+  associationSlug: alpha.slug,
+  type: 'office',
+  label: 'Sediu test',
+  address: 'Str. Locației 1',
+  locality: 'Cluj-Napoca',
+  county: 'Cluj',
+  country: 'RO',
+  contacts: [
+    { kind: 'phone', value: '0264 111 222' },
+    { kind: 'email', value: 'contact@alpha.example.ro' },
+    { kind: 'url', value: 'https://office.alpha.example.ro' },
+    { kind: 'url', value: 'javascript:alert(1)' },
+  ],
+  sources: [{
+    url: 'https://source.alpha.example.ro/locations',
+    publisher: 'Alpha',
+    sourceType: 'official',
+    retrievedAt: '2026-08-19',
+  }],
+  status: 'verified',
+  confidence: 'high',
+  freshness: 'current',
+  checkedAt: '2026-08-19',
+  public: true,
+  review: { status: 'approved' },
+}];
+alpha.locations = alphaLocations;
 
 const beta: Association = {
   slug: 'asociatia-beta',

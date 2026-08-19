@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
 import { NATIONAL_PERMIT_URL } from '@/lib/permit';
+import { safeExternalUrl, safeTelephone } from '@/lib/safe-url';
 import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
@@ -33,9 +34,9 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
   const isUncontracted = water.uncontracted === true;
   const telefon = association?.telefon ?? water.asociatie?.telefon;
   const adresa = association?.adresa ?? water.asociatie?.adresa;
-  const siteUrl = association?.siteUrl ?? water.asociatie?.siteUrl;
+  const siteUrl = safeExternalUrl(association?.siteUrl ?? water.asociatie?.siteUrl);
   // F1a: permit info — association record first, water's embedded block as fallback.
-  const permitUrl = association?.permitUrl ?? water.asociatie?.permitUrl;
+  const permitUrl = safeExternalUrl(association?.permitUrl ?? water.asociatie?.permitUrl);
   const permitIssuer: PermitIssuer | undefined =
     association?.permitIssuer ?? water.asociatie?.permitIssuer;
 
@@ -117,9 +118,9 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
           {association ? (
             <div className="flex flex-col gap-1.5 text-sm">
               <p className="font-medium">{association.name}</p>
-              {telefon && (
+              {safeTelephone(telefon) && (
                 <a
-                  href={`tel:${telefon.replace(/\s+/g, '')}`}
+                  href={safeTelephone(telefon)!}
                   className="flex items-center gap-2 text-primary hover:underline"
                 >
                   <Phone className="h-3.5 w-3.5 shrink-0" />

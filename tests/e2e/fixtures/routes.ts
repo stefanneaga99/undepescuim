@@ -15,6 +15,9 @@ const TRANSPARENT_PNG = Buffer.from(
 
 export async function routeData(page: Page, seed: SeedData): Promise<void> {
   await page.route('**/data/associations.json', (r) => r.fulfill({ json: seed.associations }));
+  await page.route('**/data/association_locations.json', (r) =>
+    r.fulfill({ json: { schemaVersion: 1, locations: seed.associations.flatMap((association) => association.locations ?? []) } }),
+  );
   await page.route('**/data/waters.json', (r) => r.fulfill({ json: seed.waters }));
   await page.route('**/data/uncontracted_rivers.json', (r) => r.fulfill({ json: seed.rivers }));
   await page.route('**/data/uncontracted_lakes.json', (r) => r.fulfill({ json: seed.lakes }));

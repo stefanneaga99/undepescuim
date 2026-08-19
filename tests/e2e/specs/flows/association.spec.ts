@@ -97,4 +97,37 @@ test.describe('F5 — association detail sheet', () => {
     await page.keyboard.press('Escape');
     await expect(map.associationChip.detailSheet).toHaveCount(0);
   });
+
+  test('association, location, provenance and contact links use safe destinations and labels', async ({ mapReady, page }) => {
+    await mapReady();
+    const map = new MapPage(page);
+    await map.associationSearch.select('asociatia-alpha');
+    await map.associationChip.openDetail();
+
+    const sheet = map.associationChip.detailSheet;
+    await expect(sheet).toContainText('Sediu test');
+    await expect(sheet.getByRole('link', { name: 'Sursa oficială' })).toHaveAttribute(
+      'href',
+      'https://source.alpha.example.ro/locations',
+    );
+    await expect(sheet.getByRole('link', { name: 'Site contact' })).toHaveAttribute(
+      'href',
+      'https://office.alpha.example.ro/',
+    );
+    await expect(sheet.getByRole('link', { name: 'contact@alpha.example.ro' })).toHaveAttribute(
+      'href',
+      'mailto:contact@alpha.example.ro',
+    );
+
+    const externalLinks = sheet.locator('a[target="_blank"]');
+    await expect(externalLinks).not.toHaveCount(0);
+    for (const link of await externalLinks.all()) {
+      await expect(link).toHaveAttribute('rel', /(^|\s)noopener(\s|$)/);
+      await expect(link).toHaveAttribute('rel', /(^|\s)noreferrer(\s|$)/);
+      await expect(link).toHaveAttribute('href', /^https:\/\//);
+    }
+    // The fixture includes an unsafe javascript: contact URL; it must not
+    // become a clickable destination.
+    await expect(sheet.locator('a[href^="javascript:"]')).toHaveCount(0);
+  });
 });
