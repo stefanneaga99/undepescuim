@@ -73,7 +73,11 @@ jobs:
       # Offline URL policy and fixture gate. No DNS/HTTP is permitted here.
       - name: Association URL integrity (offline)
         run: |
-          python3 scripts/link_validation.py --mode fixtures --fail-on critical \
+          # Fixture outcomes intentionally include blocked/4xx/5xx cases to
+          # prove classification and redaction. The Python tests assert those
+          # negative cases; the offline fixture runner must not treat expected
+          # negatives as live data failures. Live mode remains fail-on-critical.
+          python3 scripts/link_validation.py --mode fixtures --fail-on none \
             --report data/processed/link_validation_report.json \
             --repairs data/processed/link_validation_repairs.jsonl
           python3 -m pytest tests/test_link_validation.py -q
