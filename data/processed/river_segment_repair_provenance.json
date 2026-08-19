@@ -1,0 +1,51 @@
+{
+  "repairs": [
+    {
+      "method": "ordered_complete_relation_ways",
+      "osm_relation_id": 11873257,
+      "osm_way_ids": [
+        87915974,
+        869718848
+      ],
+      "river_group": "cerna-valcea"
+    },
+    {
+      "method": "ordered_complete_relation_ways",
+      "osm_relation_id": 1308445,
+      "osm_way_ids": [
+        17389124,
+        17389155,
+        17389211,
+        17389282,
+        17389323,
+        17389417,
+        17389475,
+        88344687,
+        88344893,
+        240988415,
+        240988940,
+        240989007,
+        240989025,
+        240989078,
+        248077189,
+        248077851,
+        913253955,
+        935322035,
+        935322036,
+        935322037,
+        1087809114
+      ],
+      "river_group": "ialomita"
+    },
+    {
+      "method": "ordered_complete_relation_ways",
+      "osm_relation_id": 16023493,
+      "osm_way_ids": [
+        1185218205,
+        1185218206
+      ],
+      "river_group": "sieu"
+    }
+  ],
+  "schema_version": 1
+}

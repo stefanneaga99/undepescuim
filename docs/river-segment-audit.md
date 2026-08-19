@@ -17,10 +17,16 @@ Example:
   --no-network
 ```
 
-The command is read-only with respect to the snapshot and public data. A
-relation with an absent member, a way with missing nodes, or fewer than two
-resolved coordinates is retained and marked incomplete; no geometry is
-invented. `river_segment_audit_lib.py` provides pure haversine, graph,
+The command is read-only with respect to the snapshot and public data unless
+`--repair` is explicitly supplied. With `--repair`, only the approved
+Cerna–Vâlcea, Ialomița, Șieu and Timiș scope is considered. A repair requires
+one complete, unambiguous OSM relation per owner and geometry-only findings;
+ambiguous or incomplete evidence remains blocking. Repairs preserve
+`public/data/waters.json.audit-backup.json`, emit a before/after JSON diff and
+OSM provenance, and re-run the audit before evaluating the gate. Contract
+ownership, association, source rows and contractual fractions are never
+modified.
+
 component, main-stem, sampling and bidirectional coverage primitives. It uses
 endpoint connectivity rather than the legacy degree-based matching gaps.
 

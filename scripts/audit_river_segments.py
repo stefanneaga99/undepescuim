@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Offline contractual river segment audit; read-only by default."""
 from __future__ import annotations
-import argparse, gzip, hashlib, json, sys, unicodedata
+import argparse, copy, gzip, hashlib, json, sys, unicodedata
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -107,6 +107,70 @@ def audit(index, root, alias_path=None, exception_path=None):
    counts[finding.get('code','unknown')] += 1
  return stable_report({'schema_version':1,'snapshot_sha256':hashlib.sha256(Path(index).read_bytes()).hexdigest(),'thresholds':{'coverage_tol_m':125,'min_report_segment_m':250},'summary':dict(sorted(counts.items())),'rivers':out,'cells':[]}),hard
 
+def _repairable_geometry(index, river, scope):
+ """Return deterministic OSM geometry or None; ambiguity is never guessed."""
+ group = norm(river.get('river_group'))
+ owner = river.get('owner_slug')
+ names = {group}
+ osm = river.get('osm') or {}
+ entries = load_jsonl(index)
+ relations = [e for e in entries if e.get('kind') == 'relation' and e.get('osm_id') in osm.get('relation_ids', [])]
+ if len(relations) != 1 or group not in scope:
+  return None
+ rel = relations[0]
+ ways = {e.get('osm_id'): e for e in entries if e.get('kind') == 'way'}
+ ids = rel.get('all_way_ids') or []
+ if not ids or len(ids) != len(set(ids)) or any(i not in ways for i in ids):
+  return None
+ coords = [list(p) for i in ids for p in (ways[i].get('coordinates') or [])]
+ if len(coords) < 2 or any(len(p) < 2 for p in coords):
+  return None
+ # Repairs are restricted to geometry-only findings. Contract/sector and
+ # ownership findings remain blocking and therefore cannot be auto-repaired.
+ codes = {f.get('code') for f in river.get('findings', [])}
+ if codes - {'missing_segment', 'truncated_head', 'truncated_mouth'}:
+  return None
+ return {'type': 'LineString', 'coordinates': coords}, {'osm_relation_id': rel.get('osm_id'), 'osm_way_ids': ids, 'method': 'ordered_complete_relation_ways'}
+
+def repair_geometries(index, root, report, scope, diff_path, provenance_path):
+ """Apply only unambiguous OSM-backed geometry repairs, preserving all other fields."""
+ waters_path = root / 'public/data/waters.json'
+ original = waters_path.read_bytes()
+ waters = json.loads(original.decode('utf-8'))
+ by_slug = {w.get('slug'): w for w in waters}
+ owner_counts = Counter(r.get('owner_slug') for r in report.get('rivers', []) if r.get('owner_slug'))
+ changes, skipped = [], []
+ for river in report.get('rivers', []):
+  if owner_counts.get(river.get('owner_slug'), 0) != 1:
+   if norm(river.get('river_group')) in scope:
+    skipped.append({'river_group': river.get('river_group'), 'reason': 'multiple_relations_for_owner'})
+   continue
+  result = _repairable_geometry(index, river, scope)
+  if not result:
+   if norm(river.get('river_group')) in scope:
+    skipped.append({'river_group': river.get('river_group'), 'reason': 'ambiguous_or_incomplete_evidence'})
+   continue
+  geometry, provenance = result
+  water = by_slug.get(river.get('owner_slug'))
+  if not water:
+   skipped.append({'river_group': river.get('river_group'), 'reason': 'owner_not_found'})
+   continue
+  before = copy.deepcopy(water.get('geometry'))
+  if before == geometry:
+   continue
+  water['geometry'] = geometry
+  changes.append({'river_group': river.get('river_group'), 'owner_slug': water.get('slug'), 'before': before, 'after': geometry, 'provenance': provenance})
+ if changes:
+  backup = waters_path.with_name('waters.json.audit-backup.json')
+  if backup.exists() and backup.read_bytes() != original:
+   raise RuntimeError(f'refusing to overwrite non-matching backup: {backup}')
+  if not backup.exists(): backup.write_bytes(original)
+  waters_path.write_text(json.dumps(waters, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+ artifact = {'schema_version': 1, 'source_snapshot_sha256': hashlib.sha256(Path(index).read_bytes()).hexdigest(), 'changes': changes, 'skipped': skipped}
+ Path(diff_path).write_text(json.dumps(artifact, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+ Path(provenance_path).write_text(json.dumps({'schema_version': 1, 'repairs': [{'river_group': c['river_group'], **c['provenance']} for c in changes]}, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
+ return artifact
+
 def markdown(report):
  lines=['# River segment audit','',f"Schema: `{report['schema_version']}`",'', '## Summary','']
  for k,v in report['summary'].items(): lines.append(f'- **{k}**: {v}')
@@ -115,7 +179,17 @@ def markdown(report):
   if r['findings']: lines.append(f"- `{r['river_group']}`: "+', '.join(f['code'] for f in r['findings']))
  return '\n'.join(lines)+'\n'
 def main():
- p=argparse.ArgumentParser(); p.add_argument('--osm-index',required=True); p.add_argument('--out-json',required=True); p.add_argument('--out-md',required=True); p.add_argument('--root',type=Path,default=ROOT, help='fixture/project root containing public/data and data/processed'); p.add_argument('--baseline'); p.add_argument('--aliases'); p.add_argument('--exceptions'); p.add_argument('--gate',action='store_true'); a=p.parse_args(); report,hard=audit(Path(a.osm_index),a.root,a.aliases,a.exceptions)
+ p=argparse.ArgumentParser(); p.add_argument('--osm-index',required=True); p.add_argument('--out-json',required=True); p.add_argument('--out-md',required=True); p.add_argument('--root',type=Path,default=ROOT, help='fixture/project root containing public/data and data/processed'); p.add_argument('--baseline'); p.add_argument('--aliases'); p.add_argument('--exceptions'); p.add_argument('--gate',action='store_true'); p.add_argument('--repair',action='store_true', help='apply only deterministic OSM-backed geometry repairs'); p.add_argument('--repair-diff', default='data/processed/river_segment_repairs.json'); p.add_argument('--repair-provenance', default='data/processed/river_segment_repair_provenance.json'); p.add_argument('--repair-scope', default='cerna,cerna valcea,ialomita,sieu,timis', help='comma-separated normalized river groups eligible for repair'); a=p.parse_args()
+ report,hard=audit(Path(a.osm_index),a.root,a.aliases,a.exceptions)
+ if a.repair:
+  scope={norm(x) for x in a.repair_scope.split(',') if norm(x)}
+  diff=Path(a.repair_diff); provenance=Path(a.repair_provenance)
+  if not diff.is_absolute(): diff=a.root/diff
+  if not provenance.is_absolute(): provenance=a.root/provenance
+  repair_geometries(Path(a.osm_index),a.root,report,scope,diff,provenance)
+  # Re-audit after mutation. The original report remains recoverable in the
+  # diff artifact, while the emitted report is the post-repair gate result.
+  report,hard=audit(Path(a.osm_index),a.root,a.aliases,a.exceptions)
  Path(a.out_json).write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf8'); Path(a.out_md).write_text(markdown(report),encoding='utf8')
  if a.baseline and Path(a.baseline).exists():
   base=json.loads(Path(a.baseline).read_text()); b=base.get('summary',{})

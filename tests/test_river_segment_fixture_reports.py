@@ -9,6 +9,7 @@ FIXTURE = json.loads(
     (Path(__file__).parent / "fixtures/river_segment_audit_cases.json").read_text(encoding="utf-8")
 )
 ROOT = Path(__file__).resolve().parents[1]
+from audit_river_segments import repair_geometries
 
 
 def materialize_case(tmp_path, case):
@@ -89,3 +90,31 @@ def test_tarnava_fixture_gap_blocks_gate_and_remains_explicit(tmp_path):
     assert river["owner_slug"] == "tarnava-fixture"
     assert river["registry"]["alias_used"] is False
     assert all(text in markdown for text in spec["expected"]["markdown_must_contain"])
+
+
+def test_repair_preserves_contract_fields_and_emits_provenance(tmp_path):
+    root, index = materialize_case(tmp_path, "valid")
+    waters_path = root / "public/data/waters.json"
+    before = json.loads(waters_path.read_text())
+    before[0]["geometry"] = {"type": "LineString", "coordinates": [[23.49, 46.4], [23.52, 46.4]]}
+    waters_path.write_text(json.dumps(before), encoding="utf-8")
+    report = {"rivers": [{"river_group": "aries-fixture", "owner_slug": "raul-aries-fixture", "osm": {"relation_ids": [9001]}, "findings": [{"code": "truncated_head"}]}]}
+    diff, provenance = root / "repairs.json", root / "provenance.json"
+    artifact = repair_geometries(index, root, report, {"aries fixture"}, diff, provenance)
+    after = json.loads(waters_path.read_text())
+    assert len(artifact["changes"]) == 1
+    assert before[0]["id"] == after[0]["id"]
+    assert before[0]["asociatie"] == after[0]["asociatie"]
+    assert before[0]["riverGroup"] == after[0]["riverGroup"]
+    assert before[0]["geometry"] != after[0]["geometry"]
+    assert json.loads((root / "public/data/waters.json.audit-backup.json").read_text()) == before
+    assert json.loads(diff.read_text())["changes"][0]["provenance"]["osm_relation_id"] == 9001
+    assert json.loads(provenance.read_text())["repairs"][0]["osm_way_ids"] == [9101, 9102]
+
+
+def test_repair_leaves_unapproved_tarnava_blocked(tmp_path):
+    root, index = materialize_case(tmp_path, "tarnava_injected_gap")
+    report = {"rivers": [{"river_group": "tarnava-fixture", "owner_slug": "tarnava-fixture", "osm": {"relation_ids": [9010]}, "findings": [{"code": "missing_segment"}]}]}
+    artifact = repair_geometries(index, root, report, {"cerna", "ialomita", "sieu", "timis"}, root / "repairs.json", root / "provenance.json")
+    assert artifact["changes"] == []
+    assert json.loads((root / "public/data/waters.json").read_text())[0]["geometry"]["coordinates"] == [[24.0, 46.2], [24.01, 46.2]]
