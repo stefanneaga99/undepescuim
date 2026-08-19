@@ -56,6 +56,9 @@ def audit(index, root):
   if status!='PASS_CONTRACTED' or findings: hard.extend([f.get('code',status) for f in findings] or [status])
   out.append({'river_group':(owner.get('riverGroup') or norm(name)) if owner else norm(name),'owner_slug':owner.get('slug') if owner else None,'source_rows':[r.get('id') for r in src if norm(r.get('water_name') or r.get('name'))==norm(name)],'osm':{'osm_id':rel['osm_id'],'relation_ids':[rel['osm_id']],'way_ids':ids,'match_status':'confirmed' if owner else 'unresolved'},'topology':{'components':1 if len(member)==len(ids) else 2,'internal_gaps':runs},'coverage':{'osm_to_published':coverage_fraction(osm,pub) if pub else 0.0,'published_to_osm':coverage_fraction(pub,osm) if osm else 0.0},'segments':[{'segment_id':f"{rel['osm_id']}:main",'status':status,'fraction':[0,1],'length_m':round(line_length(osm),3),'evidence':list(osm[::max(1,len(osm)//5)])[:5]}], 'findings':findings})
  counts=Counter(r['segments'][0]['status'] for r in out)
+ for river in out:
+  for finding in river['findings']:
+   counts[finding.get('code','unknown')] += 1
  return stable_report({'schema_version':1,'snapshot_sha256':hashlib.sha256(Path(index).read_bytes()).hexdigest(),'thresholds':{'coverage_tol_m':125,'min_report_segment_m':250},'summary':dict(sorted(counts.items())),'rivers':out,'cells':[]}),hard
 
 def markdown(report):
