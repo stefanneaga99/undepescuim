@@ -15,6 +15,9 @@ const eslintConfig = defineConfig([
     // Generated/runtime-owned artifacts, never source code.
     "coverage/**",
     ".venv/**",
+    // Kanban worktrees are separate checkouts and may contain generated builds.
+    ".worktrees/**",
+    ".hermes/**",
     "public/sw.js",
     "public/sw.js.map",
     "public/swe-worker*.js",
