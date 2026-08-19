@@ -8,6 +8,7 @@ import { useI18n } from '@/i18n/provider';
 import { NATIONAL_PERMIT_URL } from '@/lib/permit';
 import { safeExternalUrl, safeTelephone } from '@/lib/safe-url';
 import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
+import { AssociationLocations } from '@/components/associations/AssociationLocations';
 
 interface WaterDetailCardProps {
   water: Water;
@@ -194,6 +195,8 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
           )}
         </div>
       )}
+
+      {association && <AssociationLocations locations={association.locations} />}
 
       {/* Legal reference (permit-note stand-in) */}
       {water.referinta && (
