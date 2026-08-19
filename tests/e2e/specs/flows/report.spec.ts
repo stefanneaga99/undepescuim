@@ -7,10 +7,11 @@ import type { TestInfo } from '@playwright/test';
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 import { ReportDialog } from '../../pages/ReportDialog';
-import { clickWaterBySlugAtFraction } from '../../helpers/map';
+import { clickWaterBySlugAtFraction, clickWaterBySlugAtFractionWithProbe } from '../../helpers/map';
 import {
   MULTI_CONTRACT_SELECTED_SLUG,
   REPORT_MULTI_CONTRACT_WATERS,
+  TRANSITION_WATERS,
   seed,
 } from '../../fixtures/seed-data';
 
@@ -24,7 +25,7 @@ test.describe('F8 — report flow', () => {
     // Keep the multi-contract fixture local to report tests: the rest of the
     // seeded suite has exact path-count assertions over its baseline dataset.
     await page.route('**/data/waters.json', (route) =>
-      route.fulfill({ json: [...seed.waters, ...REPORT_MULTI_CONTRACT_WATERS] }),
+      route.fulfill({ json: [...seed.waters, ...REPORT_MULTI_CONTRACT_WATERS, ...TRANSITION_WATERS] }),
     );
     // Never create real GitHub issues — stub the endpoint (as _e2e_report.mjs).
     await page.route('**/api/report', async (route) => {
@@ -150,4 +151,80 @@ test.describe('F8 — report flow', () => {
     expect(await map.focusSnapshot()).toEqual(before);
     expect(collectedErrors).toEqual([]);
   });
+
+  const transitions = [
+    {
+      kind: 'single',
+      a: { slug: 'transition-single-a', name: 'Râu Tranziție A', fraction: 0.5 },
+      b: { slug: 'transition-single-b', name: 'Râu Tranziție B', fraction: 0.5 },
+      center: 46.25,
+    },
+    {
+      kind: 'multi',
+      a: { slug: 'transition-multi-a', name: 'Sector Tranziție A', fraction: 0.2 },
+      b: { slug: 'transition-multi-b', name: 'Sector Tranziție B', fraction: 0.7, target: 'transition-multi-b' },
+      center: 46.6,
+      owner: 'transition-multi-owner',
+    },
+  ] as const;
+
+  for (const scenario of transitions) {
+    for (const phase of ['direct', 'report-close', 'report-success'] as const) {
+      test(`A → B ${scenario.kind} transition survives ${phase}`, async ({
+        mapReady,
+        page,
+        collectedErrors,
+      }, testInfo) => {
+        skipTablet(testInfo);
+        await mapReady();
+        const map = new MapPage(page);
+        const dialog = new ReportDialog(page);
+        await map.panTo(scenario.center, 24.0, 10);
+
+        const click = async (selection: { slug: string; name: string; fraction: number; target?: string }) => {
+          const target = 'target' in selection
+            ? selection.target!
+            : scenario.kind === 'multi' ? scenario.owner! : selection.slug;
+          const probe = await clickWaterBySlugAtFractionWithProbe(page, target, selection.fraction);
+          expect(probe.tagName).toBe('path');
+          expect(probe.pane).toMatch(/leaflet-overlay-pane|water-focus-pane|water-association-pane/);
+          await expect(map.waterCard.name).toContainText(selection.name);
+          await expect.poll(() => map.focusSnapshot()).toMatchObject({ slug: selection.slug });
+          const snapshot = await map.focusSnapshot();
+          expect(snapshot.orangePaths).toBeGreaterThan(0);
+          return snapshot;
+        };
+
+        const beforeA = await click(scenario.a);
+        if (phase !== 'direct') {
+          await map.waterCard.clickButton(
+            phase === 'report-close' ? map.waterCard.reportFlag : map.waterCard.reportPositive,
+          );
+          await expect(dialog.dialog).toBeVisible();
+          if (phase === 'report-success') {
+            await dialog.submit();
+            await expect(dialog.successText).toBeVisible();
+          } else {
+            await dialog.cancelButton.click();
+          }
+          if (phase === 'report-success') {
+            await dialog.dialog.getByRole('button', { name: 'Închide' }).click();
+          }
+          await expect(dialog.dialog).toBeHidden();
+        }
+        // The compact drawer owns the pointer route while open; real users
+        // close it before tapping a second water on the map.
+        if (await page.evaluate(() => window.innerWidth < 1024)) {
+          await page.keyboard.press('Escape');
+          await expect(map.waterCard.card).toBeHidden();
+          await page.waitForTimeout(250);
+        }
+        const afterB = await click(scenario.b);
+        expect(afterB.slug).toBe(scenario.b.slug);
+        expect(afterB.slug).not.toBe(scenario.a.slug);
+        expect(afterB.paths).not.toEqual(beforeA.paths);
+        expect(collectedErrors).toEqual([]);
+      });
+    }
+  }
 });

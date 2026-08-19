@@ -89,6 +89,53 @@ export async function clickWaterBySlugAtFraction(page: Page, slug: string, fract
   if (!res.ok) throw new Error(`clickWaterBySlugAtFraction failed: ${slug}`);
 }
 
+/** Real-pointer sector click with hit-chain diagnostics for transition tests. */
+export async function clickWaterBySlugAtFractionWithProbe(page: Page, slug: string, fraction: number): Promise<{
+  x: number;
+  y: number;
+  tagName: string;
+  className: string;
+  pane: string;
+  pointerEvents: string;
+  zIndex: string;
+}> {
+  const result = await page.evaluate(({ slug, fraction }) => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
+    let target: any = null;
+    map?.eachLayer((layer: any) => {
+      if (!layer.feature?.properties || layer.feature.properties.slug !== slug || !layer._path) return;
+      // After A is selected, the focus slice also carries the owner's slug.
+      // Prefer the ordinary overlay path so the next fraction is measured
+      // against the full shared course, not A's already-focused slice.
+      if (!target || layer._pane?.classList?.contains('leaflet-overlay-pane')) target = layer;
+    });
+    const path = target?._path as SVGPathElement | undefined;
+    const ctm = path?.ownerSVGElement?.getScreenCTM();
+    if (!path || !ctm) return { ok: false as const, reason: `no-path:${slug}` };
+    const point = path.getPointAtLength(path.getTotalLength() * Math.max(0.05, Math.min(0.95, fraction)));
+    const screen = new DOMPoint(point.x, point.y).matrixTransform(ctm);
+    const element = document.elementFromPoint(screen.x, screen.y);
+    const pane = element?.closest<HTMLElement>('.leaflet-pane');
+    if (!element || !pane || !element.closest('.leaflet-overlay-pane, .water-focus-pane, .water-association-pane')) {
+      return { ok: false as const, reason: `not-in-leaflet-hit-chain:${slug}` };
+    }
+    const style = getComputedStyle(element);
+    return {
+      ok: true as const,
+      x: screen.x,
+      y: screen.y,
+      tagName: element.tagName,
+      className: typeof element.className === 'string' ? element.className : '',
+      pane: pane.className,
+      pointerEvents: style.pointerEvents,
+      zIndex: getComputedStyle(pane).zIndex,
+    };
+  }, { slug, fraction });
+  if (!result.ok) throw new Error(`clickWaterBySlugAtFractionWithProbe failed: ${result.reason}`);
+  await page.mouse.click(result.x, result.y);
+  return result;
+}
+
 /**
  * REAL pointer click on the water's rendered path — the full user gesture
  * through Leaflet's hit-testing. Samples the SVG path (handling thin/dashed

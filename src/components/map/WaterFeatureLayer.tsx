@@ -234,6 +234,18 @@ export function WaterFeatureLayer({
     return features.length ? features : null;
   }, [focusGroupKey, focusRange, countyFilter, allWaters, selectedWaterSlug, focusKey]);
 
+  // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
+  // data prop changes.  The base layer already has a lifecycle key; the focus
+  // slice needs the same treatment or a fast A → B selection can leave A's
+  // SVG geometry mounted in the focus pane.
+  const focusLayerKey = [
+    selectedWaterSlug ?? 'none',
+    focusKey ?? 'none',
+    focusRange?.join(':') ?? 'whole',
+    countyFilter.join(','),
+    focusFeatures?.map((f) => JSON.stringify(f.geometry)).join('|') ?? 'empty',
+  ].join('|');
+
   // Association highlight slices (t_b6a0e2fe + t_5f5f2cce): every member of
   // the selected association that belongs to a MULTI-CONTRACT group is drawn
   // as its contract interval SLICE of the group's shared course, in the
@@ -396,6 +408,7 @@ export function WaterFeatureLayer({
       {/* Focus slice on top: only the selected contract's sector, thick + colored */}
       {focusFeatures && focusColor && (
         <LeafletGeoJSON
+          key={`focus-${focusLayerKey}`}
           pane={focusPane}
           data={
             {

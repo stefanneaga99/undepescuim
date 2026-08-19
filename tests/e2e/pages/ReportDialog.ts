@@ -23,7 +23,8 @@ export class ReportDialog {
   }
 
   get cancelButton() {
-    return this.dialog.getByRole('button', { name: 'Anulează' });
+    // Dismiss-only report controls intentionally use the neutral close label.
+    return this.dialog.getByRole('button', { name: 'Închide' });
   }
 
   get details() {

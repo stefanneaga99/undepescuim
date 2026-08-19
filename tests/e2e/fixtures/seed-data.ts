@@ -172,6 +172,78 @@ export const REPORT_MULTI_CONTRACT_WATERS: Water[] = [
   multiContractSelected,
 ];
 
+/** Non-overlapping A → B transition fixtures. These stay test-only so pointer
+ * transitions do not depend on the production dataset's current geometry. */
+const transitionSingleA: Water = {
+  ...raulSomesulTest,
+  slug: 'transition-single-a',
+  name: 'Râu Tranziție A',
+  coordinates: [24.0, 46.1],
+  bbox: [23.8, 46.02, 24.2, 46.18],
+  geometry: { type: 'LineString', coordinates: [[23.8, 46.02], [24.0, 46.1], [24.2, 46.18]] },
+  riverGroup: 'transition-single-a',
+};
+const transitionSingleB: Water = {
+  ...transitionSingleA,
+  slug: 'transition-single-b',
+  name: 'Râu Tranziție B',
+  coordinates: [24.0, 46.35],
+  bbox: [23.8, 46.27, 24.2, 46.43],
+  geometry: { type: 'LineString', coordinates: [[23.8, 46.27], [24.0, 46.35], [24.2, 46.43]] },
+  riverGroup: 'transition-single-b',
+};
+const transitionMultiOwner: Water = {
+  ...transitionSingleA,
+  slug: 'transition-multi-owner',
+  name: 'Râu Tranziție Comun',
+  coordinates: [24.0, 46.6],
+  bbox: [23.8, 46.5, 24.2, 46.7],
+  geometry: { type: 'LineString', coordinates: [[23.8, 46.5], [24.0, 46.6], [24.2, 46.7]] },
+  riverGroup: 'transition-multi',
+  course_frac: 0.1,
+};
+const transitionMultiA: Water = {
+  ...transitionMultiOwner,
+  slug: 'transition-multi-a',
+  name: 'Sector Tranziție A',
+  geometry: undefined,
+  course_frac: 0.25,
+  sectorStart: 0.1,
+  sectorEnd: 0.45,
+};
+const transitionMultiB: Water = {
+  ...transitionMultiOwner,
+  slug: 'transition-multi-b',
+  name: 'Sector Tranziție B',
+  // Dedicated non-overlapping pointer target; the owner remains the shared
+  // course source used to build the focus slices.
+  bbox: [23.8, 46.72, 24.2, 46.88],
+  geometry: { type: 'LineString', coordinates: [[23.8, 46.8], [24.0, 46.8], [24.2, 46.8]] },
+  // This pointer target is deliberately outside the shared geometry so the
+  // first sector's focus stroke cannot intercept the second real tap.
+  riverGroup: 'transition-multi-pointer',
+  course_frac: 0.75,
+  sectorStart: 0.55,
+  sectorEnd: 0.9,
+};
+const transitionMultiC: Water = {
+  ...transitionMultiA,
+  slug: 'transition-multi-c',
+  name: 'Sector Tranziție C',
+  course_frac: 0.95,
+  sectorStart: 0.9,
+  sectorEnd: 1,
+};
+
+export const TRANSITION_WATERS: Water[] = [
+  transitionSingleA,
+  transitionSingleB,
+  transitionMultiOwner,
+  transitionMultiA,
+  transitionMultiB,
+  transitionMultiC,
+];
+
 /** Contracted lake — association (alpha) HAS permitUrl, so permit rows = 2. */
 const laculTestBrasov: Water = {
   slug: 'lacul-test-brasov',
