@@ -30,6 +30,23 @@ def test_registered_field_coverage_is_explicit():
     assert set(fixture["fields"]) == ALLOWED_FIELDS
 
 
+def test_enumerator_covers_sources_and_provenance_fields():
+    from scripts.link_validation_lib import enumerate_targets
+    targets = enumerate_targets(ROOT)
+    fields = {target.field for target in targets}
+    assert {"guideSourceUrl", "provenance.permit_url", "provenance.raw_file_url"} <= fields
+    assert sum(target.field == "guideSourceUrl" for target in targets) >= 2
+    assert any(target.source_path.endswith(".permit_url") for target in targets if target.field == "provenance.permit_url")
+
+
+def test_policy_blocks_expired_exception():
+    from scripts.link_validation_lib import LinkTarget, result_for
+    target = LinkTarget(None, "guideUrl", "fixture", "test", "https://example.com:8443/permit")
+    record = result_for(target, now="2026-01-01T00:00:00Z", http_exceptions=[{"url": "https://example.com:8443/permit", "allowedPorts": True, "expiresAt": "2020-01-01"}])
+    assert record["status"] == "blocked"
+    assert record["failureReason"] == "port_not_allowed"
+
+
 def test_policy_blocks_without_transport():
     from scripts.link_validation_lib import LinkTarget, result_for
     target = LinkTarget("x", "association.siteUrl", "fixture", "test", "http://localhost:8080/a")

@@ -2,6 +2,7 @@
 from __future__ import annotations
 import hashlib, ipaddress, json, re, socket
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -24,10 +25,23 @@ def sanitize_url(value: str | None) -> str | None:
         return urlunsplit((p.scheme.lower(), p.netloc.rsplit("@",1)[-1], p.path, urlencode(query), ""))
     except ValueError: return value.split("#",1)[0]
 
+def _active_exception(item: dict) -> bool:
+    if not item.get("approved", True):
+        return False
+    expires = item.get("expiresAt")
+    if not expires:
+        return False
+    try:
+        return date.fromisoformat(str(expires)[:10]) >= date.today()
+    except ValueError:
+        return False
+
+
 def _exception_matches(raw: str, exceptions: list[dict]) -> dict | None:
     safe = sanitize_url(raw)
     for item in exceptions:
-        if item.get("url") == safe and item.get("approved", True): return item
+        if item.get("url") == safe and _active_exception(item):
+            return item
     return None
 
 def policy_error(value: str, http_exceptions: list[dict] | None = None, resolver=None) -> str | None:
@@ -42,7 +56,7 @@ def policy_error(value: str, http_exceptions: list[dict] | None = None, resolver
         if not ipaddress.ip_address(host).is_global: return "private_target"
     except ValueError: pass
     if p.scheme.lower() == "http" and not _exception_matches(raw, exceptions): return "http_not_approved"
-    if p.scheme.lower() == "https" and port not in (None,443) and not any(e.get("url") == sanitize_url(raw) and e.get("allowedPorts") for e in exceptions): return "port_not_allowed"
+    if p.scheme.lower() == "https" and port not in (None,443) and not any(e.get("url") == sanitize_url(raw) and e.get("allowedPorts") and _active_exception(e) for e in exceptions): return "port_not_allowed"
     if resolver:
         try: answers = resolver(host, port or (443 if p.scheme.lower()=="https" else 80))
         except Exception: return "dns_failure"
@@ -66,17 +80,32 @@ def enumerate_targets(root: Path) -> list[LinkTarget]:
                 if c.get("kind")=="url": add(r.get("associationSlug"),"associationLocation.contactUrl",f"data/processed/association_locations.json.locations[{i}].contacts[{j}].value","curated-location",c.get("value"))
             for j,s in enumerate(r.get("sources",[])): add(r.get("associationSlug"),"associationLocation.sourceUrl",f"data/processed/association_locations.json.locations[{i}].sources[{j}].url","curated-location",s.get("url"))
     # Explicit constants and provenance adapters (never crawl arbitrary text).
-    patterns=[("nationalPermitUrl","src/lib/permit.ts","national-permit",r"NATIONAL_PERMIT_URL\s*=\s*['\"]([^'\"]+)"),("guideUrl","src/content/permis-2026.ts","permit-guide",r"PERMIS_PORTAL_URL\s*=\s*['\"]([^'\"]+)"),("guideUrl","src/content/permis-2026.en.ts","permit-guide-en",r"PERMIS_PORTAL_URL\s*=\s*['\"]([^'\"]+)")]
+    patterns=[
+        ("nationalPermitUrl","src/lib/permit.ts","national-permit",r"NATIONAL_PERMIT_URL\s*=\s*['\"]([^'\"]+)"),
+        ("guideUrl","src/content/permis-2026.ts","permit-guide",r"PERMIS_PORTAL_URL\s*=\s*['\"]([^'\"]+)"),
+        ("guideUrl","src/content/permis-2026.en.ts","permit-guide-en",r"PERMIS_PORTAL_URL['\"]?\s*:\s*['\"]([^'\"]+)") ,
+    ]
     for field,fn,kind,pat in patterns:
         text=(root/fn).read_text() if (root/fn).exists() else ""
         for m in re.finditer(pat,text): add(None,field,f"{fn}:{m.start()}",kind,m.group(1))
-    for fn,field in [("arebaltapeste_associations.jsonl","provenance.website"),("locuri_associations.jsonl","provenance.website")]:
+    # PERMIS_SOURCES is a rendered, URL-bearing contract in both language files.
+    for fn,kind in (("src/content/permis-2026.ts","permit-guide-source"),("src/content/permis-2026.en.ts","permit-guide-source-en")):
+        text=(root/fn).read_text() if (root/fn).exists() else ""
+        for m in re.finditer(r"url:\s*['\"]([^'\"]+)",text):
+            add(None,"guideSourceUrl",f"{fn}:{m.start()}",kind,m.group(1))
+    provenance=[
+        ("arebaltapeste_associations.jsonl",("website","permit_url")),
+        ("locuri_associations.jsonl",("website",)),
+        ("sources.jsonl",("raw_file_url",)),
+    ]
+    for fn,keys in provenance:
         p=root/"data/processed"/fn
         if p.exists():
             for i,line in enumerate(p.read_text().splitlines()):
                 try: r=json.loads(line)
                 except json.JSONDecodeError: continue
-                for key in (("website","permit_url") if field.endswith("website") and "arebaltapeste" in fn else ("website",)):
+                for key in keys:
+                    field={"website":"provenance.website","permit_url":"provenance.permit_url","raw_file_url":"provenance.raw_file_url"}[key]
                     add(r.get("slug"),field,f"data/processed/{fn}[{i}].{key}","provenance",r.get(key))
     return sorted(out,key=lambda t:(t.source_kind,t.association_slug is None,t.association_slug or "",t.field,t.source_path))
 
