@@ -52,6 +52,7 @@ export function PwaStatusBar() {
       {dateLabel && (
         <span
           data-testid="last-updated"
+          role="status"
           className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
           title={t("pwa.lastUpdatedTitle")}
         >
@@ -64,6 +65,7 @@ export function PwaStatusBar() {
         <div
           data-testid="offline-banner"
           role="status"
+          aria-live="polite"
           className="fixed bottom-3 left-3 z-[1300] flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-lg border border-amber-500/40 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900 shadow-lg dark:border-amber-400/30 dark:bg-amber-950/90 dark:text-amber-200"
         >
           <WifiOff className="h-4 w-4 shrink-0" />

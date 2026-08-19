@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "UndePescuim.ro",
   description: "Harta apelor de pescuit contractate din România — contracted fishing waters in Romania",
+  manifest: "/manifest.webmanifest",
   // F6 (t_0618943a): PWA installability (offline-pwa-feasibility.md §5).
   // iOS has no beforeinstallprompt — users install via "Share → Add to Home
   // Screen"; these meta tags make the result a standalone, chrome-less app.
@@ -42,6 +43,10 @@ export const metadata: Metadata = {
 // Android/Chromium status-bar color (matches the manifest theme_color).
 export const viewport: Viewport = {
   themeColor: "#171717",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -54,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overscroll-none">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

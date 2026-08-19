@@ -123,6 +123,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    padding-bottom: env(safe-area-inset-bottom);
   }
   html {
     @apply font-sans;
@@ -248,6 +249,25 @@ html [data-vaul-handle-hitarea] {
   }
 }
 
+/* WCAG 2.2 keyboard visibility and coarse-pointer target sizing. */
+*:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+@media (pointer: coarse) {
+  [data-slot="button"],
+  a:not(.leaflet-control-zoom a) { min-height: 44px; }
+  [data-slot="button"][data-size="icon-xs"],
+  [data-slot="button"][data-size="icon-sm"] { min-width: 44px; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 /* /specii — flash de evidențiere după selectarea unei specii din căutare. */
 .species-flash {
   animation: species-flash-pulse 1.8s ease-out;

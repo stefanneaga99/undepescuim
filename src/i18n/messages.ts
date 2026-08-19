@@ -25,6 +25,7 @@ const ro = {
   header: {
     logoAria: 'UndePescuim.ro — acasă',
     menu: 'Meniu',
+    navigation: 'Navigare',
     navPermis: 'Permis 2026',
     navSpecii: 'Specii',
     sheetSpeciiDesc: 'Dimensiuni de reținere',
@@ -261,6 +262,7 @@ const en: Messages = {
   header: {
     logoAria: 'UndePescuim.ro — home',
     menu: 'Menu',
+    navigation: 'Navigation',
     navPermis: 'Permit 2026',
     navSpecii: 'Species',
     sheetSpeciiDesc: 'Retention sizes',

@@ -55,7 +55,7 @@ export function Header() {
         <AssociationSearch />
       </div>
 
-      <nav className="flex shrink-0 items-center gap-1.5">
+      <nav aria-label={t('header.navigation')} className="flex shrink-0 items-center gap-1.5">
         <Link
           href="/permis"
           data-testid="nav-permis"

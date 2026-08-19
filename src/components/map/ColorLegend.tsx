@@ -58,6 +58,7 @@ export function ColorLegend() {
         type="button"
         onClick={() => setExpanded((e) => !e)}
         aria-expanded={expanded}
+        aria-label="Legendă culori"
         className="map-touch rounded-lg bg-black/60 px-2.5 py-1.5 text-xs text-white shadow-md backdrop-blur-sm md:hidden"
       >
         {!expanded ? (
