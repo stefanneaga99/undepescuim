@@ -196,7 +196,29 @@ def cmd_check() -> None:
     if not MANIFEST.exists():
         print("[check] no manifest — run --manifest first")
         sys.exit(1)
-    pinned = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    try:
+        pinned = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"[check] invalid manifest: {exc}")
+        sys.exit(1)
+    if not isinstance(pinned, dict) or not isinstance(pinned.get("inputs"), dict) or not isinstance(pinned.get("outputs"), dict):
+        print("[check] invalid manifest: inputs and outputs must be objects")
+        sys.exit(1)
+    # A manifest that silently omits a registry or audit artifact is not a
+    # pin.  Check the concrete expected paths (including expanded globs)
+    # before comparing hashes, so missing/expired review registries cannot be
+    # hidden by a hand-edited manifest.
+    required_inputs = {str(p.relative_to(ROOT)) for p in expand_inputs()}
+    required_outputs = {p for p in OUTPUTS if (ROOT / p).exists()}
+    missing_inputs = sorted(required_inputs - set(pinned["inputs"]))
+    missing_outputs = sorted(required_outputs - set(pinned["outputs"]))
+    if missing_inputs or missing_outputs:
+        print("[check] invalid manifest: missing pinned paths")
+        for rel in missing_inputs:
+            print(f"  input  {rel}")
+        for rel in missing_outputs:
+            print(f"  output {rel}")
+        sys.exit(1)
     current = collect()
     drift = []
     skipped = []
