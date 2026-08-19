@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
 import { NATIONAL_PERMIT_URL } from '@/lib/permit';
-import { safeExternalUrl, safeTelephone } from '@/lib/safe-url';
+import { safeEmail, safeExternalUrl, safeTelephone } from '@/lib/safe-url';
 import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
@@ -143,6 +143,38 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
                   <ExternalLink className="h-3.5 w-3.5 shrink-0" />
                   {siteUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                 </a>
+              )}
+              {association.locations && association.locations.length > 0 && (
+                <div className="mt-1 border-t pt-2" data-testid="water-card-association-locations">
+                  <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    Locații și contacte publice
+                  </h4>
+                  <div className="flex flex-col gap-2">
+                    {association.locations.map((location) => {
+                      const phone = location.contacts?.find((contact) => contact.kind === 'phone')?.value;
+                      const email = location.contacts?.find((contact) => contact.kind === 'email')?.value;
+                      const url = location.contacts?.find((contact) => contact.kind === 'url')?.value;
+                      const source = location.sources[0];
+                      return (
+                        <div key={location.id} className="rounded-md border px-2.5 py-2 text-xs">
+                          <p className="font-medium">{location.label ?? location.type}</p>
+                          <p className="text-muted-foreground">{location.locality}, {location.county}</p>
+                          <p className="flex items-start gap-1.5 text-muted-foreground">
+                            <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
+                            {location.address}
+                          </p>
+                          {safeTelephone(phone) && <a href={safeTelephone(phone)!} className="flex items-center gap-1.5 text-primary hover:underline"><Phone className="h-3 w-3" />{phone}</a>}
+                          {safeEmail(email) && <a href={safeEmail(email)!} className="text-primary hover:underline">{email}</a>}
+                          {safeExternalUrl(url) && <a href={safeExternalUrl(url)!} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Site contact</a>}
+                          <div className="mt-1 flex flex-wrap gap-2 text-[11px] text-muted-foreground">
+                            <span>{location.freshness === 'needs_confirmation' ? 'Necesită reconfirmare' : location.freshness === 'historical' ? 'Istoric' : 'Verificat la sursă'}</span>
+                            {safeExternalUrl(source?.url) && <a href={safeExternalUrl(source.url)!} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Sursa oficială</a>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               )}
               {/* F1a: permit block — national permit (required on EVERY
                   contracted water) + the association's own permit store when

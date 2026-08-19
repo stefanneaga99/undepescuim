@@ -37,7 +37,7 @@ test.describe('F6 — water detail card', () => {
     const card = map.waterCard.card;
 
     await expect(card.getByTestId('permit-row').first()).toContainText('Permis național');
-    await expect(card.getByRole('link', { name: /alpha\.example\.ro/ })).toHaveAttribute(
+    await expect(card.getByRole('link', { name: 'alpha.example.ro', exact: true })).toHaveAttribute(
       'href',
       'https://alpha.example.ro/',
     );
