@@ -2,6 +2,7 @@ import hashlib
 import json
 import subprocess
 import sys
+from types import SimpleNamespace
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
@@ -41,3 +42,19 @@ def test_existing_source_data_is_not_modified(tmp_path):
     before = {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in tracked}
     run(tmp_path)
     assert before == {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in tracked}
+
+
+def test_content_classification_is_safe_and_body_free():
+    from scripts.link_validation import content_reason
+    html = SimpleNamespace(headers={"Content-Type": "text/html; charset=utf-8"}, _validator_sample=b"Welcome")
+    assert content_reason(html, "association.siteUrl") is None
+    parked = SimpleNamespace(headers={"Content-Type": "text/html"}, _validator_sample=b"Domain is for sale")
+    assert content_reason(parked, "association.siteUrl") == "parked_domain"
+    binary = SimpleNamespace(headers={"Content-Type": "application/octet-stream"}, _validator_sample=b"")
+    assert content_reason(binary, "association.siteUrl") == "wrong_content_type"
+
+
+def test_retryable_statuses_are_explicit():
+    from scripts.link_validation import RETRYABLE
+    assert {408, 425, 429, 500, 502, 503, 504}.issubset(RETRYABLE)
+    assert 404 not in RETRYABLE

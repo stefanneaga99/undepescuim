@@ -2,30 +2,55 @@
 """Safe deterministic fixture validator and explicitly opt-in live checker."""
 from __future__ import annotations
 import argparse, json, socket, sys, time
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
 from link_validation_lib import USER_AGENT, LinkTarget, build_report, enumerate_targets, policy_error, repair_record, result_for, sanitize_url
 ROOT=Path(__file__).resolve().parent.parent
 RETRYABLE={408,425,429,500,502,503,504}
+_HTML_TYPES = ("text/html", "application/xhtml+xml")
+_PARKED_MARKERS = ("domain is for sale", "buy this domain", "domain parking", "parked free", "coming soon")
+_HOST_LAST_REQUEST = {}
 
 def now(): return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
 def resolve(host, port):
     return {x[4][0] for x in socket.getaddrinfo(host,port,type=socket.SOCK_STREAM)}
+def pace(host):
+    wait = 1.0 - (time.monotonic() - _HOST_LAST_REQUEST.get(host, 0.0))
+    if wait > 0: time.sleep(wait)
+    _HOST_LAST_REQUEST[host] = time.monotonic()
+def content_reason(response, field):
+    content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
+    if field.endswith("permitUrl") or field in {"nationalPermitUrl", "guideUrl"}:
+        allowed = _HTML_TYPES + ("application/pdf",)
+    else:
+        allowed = _HTML_TYPES
+    if content_type and content_type not in allowed:
+        return "wrong_content_type"
+    sample = getattr(response, "_validator_sample", b"")
+    if any(marker in sample.decode("utf-8", "ignore").lower() for marker in _PARKED_MARKERS):
+        return "parked_domain"
+    return None
 def live_one(target, exceptions):
     checked=[]; started=now(); err=policy_error(target.original_url,exceptions,resolver=resolve)
     if err: return result_for(target,now=started,outcome={"failureReason":err},http_exceptions=exceptions)
     url=target.original_url; chain=[]; retry_after=None; last=None
     for attempt in range(3):
         checked.append(now())
-        if attempt: time.sleep(min((1,3)[attempt-1],60))
+        if attempt:
+            delay = retry_after if retry_after else (1,3)[attempt-1]
+            time.sleep(min(delay,60))
         try:
+            pace(urlsplit(url).hostname or "")
             r=requests.head(url,allow_redirects=False,timeout=(3,7),headers={"User-Agent":USER_AGENT,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.1"},verify=True)
             if r.status_code in {405,403,501}:
-                r.close(); r=requests.get(url,allow_redirects=False,stream=True,timeout=(3,7),headers={"User-Agent":USER_AGENT,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.1"},verify=True); r.close()
-            last=r
+                r.close(); pace(urlsplit(url).hostname or ""); r=requests.get(url,allow_redirects=False,stream=True,timeout=(3,7),headers={"User-Agent":USER_AGENT,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.1"},verify=True)
+                r._validator_sample = next(r.iter_content(65536), b"")
             if 300<=r.status_code<400 and r.headers.get("Location"):
+                if len(chain) >= 5:
+                    r.close()
+                    return result_for(target,now=started,outcome={"status":"blocked","failureReason":"redirect_limit","httpStatus":r.status_code,"redirect":{"count":len(chain),"chain":chain,"crossHost":False,"downgradedToHttp":False}},http_exceptions=exceptions)
                 nxt=urljoin(url,r.headers["Location"])
                 hoperr=policy_error(nxt,exceptions,resolver=resolve)
                 if hoperr: return result_for(target,now=started,outcome={"status":"blocked","failureReason":"unsafe_redirect","httpStatus":r.status_code,"redirect":{"count":len(chain)+1,"chain":chain+[ {"url":sanitize_url(url),"status":r.status_code}],"crossHost":False,"downgradedToHttp":False}},http_exceptions=exceptions)
@@ -36,8 +61,11 @@ def live_one(target, exceptions):
                 if attempt<2: continue
                 status="transient_error"; reason="http_%s"%r.status_code
             elif 400<=r.status_code<500: status="client_error"; reason="http_%s"%r.status_code
-            elif 200<=r.status_code<300: status="redirected" if chain else "ok"; reason=None
+            elif 200<=r.status_code<300:
+                reason = content_reason(r, target.field)
+                status = "client_error" if reason else ("redirected" if chain else "ok")
             else: status="server_error"; reason="http_%s"%r.status_code
+            r.close()
             return result_for(target,now=started,outcome={"status":status,"httpStatus":r.status_code,"finalUrl":url,"failureReason":reason,"redirect":{"count":len(chain),"chain":chain,"crossHost":False,"downgradedToHttp":False},"retry":{"attempts":attempt+1,"attemptedAt":checked,"retryAfterSeconds":retry_after,"exhausted":attempt==2}},http_exceptions=exceptions)
         except (requests.RequestException, OSError, TimeoutError):
             last=None
