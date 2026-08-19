@@ -1,0 +1,9 @@
+{
+  "fields": [
+    "association.siteUrl", "association.permitUrl", "water.asociatie.siteUrl",
+    "water.asociatie.permitUrl", "associationLocation.contactUrl",
+    "associationLocation.sourceUrl", "nationalPermitUrl", "guideUrl",
+    "guideSourceUrl", "provenance.website", "provenance.permit_url",
+    "provenance.raw_file_url"
+  ]
+}

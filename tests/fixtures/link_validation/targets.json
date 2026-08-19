@@ -1,0 +1,11 @@
+[
+  {"associationSlug":"valid","field":"association.siteUrl","sourcePath":"fixture[0]","sourceKind":"runtime-association","url":"https://example.com/contact","outcome":{"status":"ok","httpStatus":200}},
+  {"associationSlug":"redirect","field":"association.siteUrl","sourcePath":"fixture[1]","sourceKind":"runtime-association","url":"https://example.com/old?token=secret#fragment","outcome":{"status":"redirected","httpStatus":200,"finalUrl":"https://example.com/new","redirect":{"count":1,"chain":[{"url":"https://example.com/old","status":301}],"crossHost":false,"downgradedToHttp":false}}},
+  {"associationSlug":"client","field":"association.permitUrl","sourcePath":"fixture[2]","sourceKind":"runtime-association","url":"https://example.com/missing","outcome":{"status":"client_error","httpStatus":404,"failureReason":"http_404"}},
+  {"associationSlug":"server","field":"association.permitUrl","sourcePath":"fixture[3]","sourceKind":"runtime-association","url":"https://example.com/down","outcome":{"status":"server_error","httpStatus":503,"failureReason":"http_503","retry":{"attempts":3,"attemptedAt":["2026-01-01T00:00:00Z"],"retryAfterSeconds":null,"exhausted":true}}},
+  {"associationSlug":"parked","field":"association.siteUrl","sourcePath":"fixture[4]","sourceKind":"runtime-association","url":"https://parked.example/","outcome":{"status":"client_error","httpStatus":200,"failureReason":"parked_content"}},
+  {"associationSlug":"wrong","field":"association.siteUrl","sourcePath":"fixture[5]","sourceKind":"runtime-association","url":"https://example.com/wrong","outcome":{"status":"client_error","httpStatus":200,"failureReason":"wrong_content"}},
+  {"associationSlug":"unsafe","field":"association.siteUrl","sourcePath":"fixture[6]","sourceKind":"runtime-association","url":"javascript:alert(1)"},
+  {"associationSlug":"private","field":"association.siteUrl","sourcePath":"fixture[7]","sourceKind":"runtime-association","url":"http://127.0.0.1/admin"},
+  {"associationSlug":"location","field":"associationLocation.sourceUrl","sourcePath":"locations[0].sources[0].url","sourceKind":"curated-location","url":"https://source.example/evidence?email=person@example.com"}
+]

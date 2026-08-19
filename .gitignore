@@ -92,3 +92,7 @@ public/swe-worker*.js
 # (git log -- public/data = deployed data source of truth). Present in every
 # built/CI artifact via the prebuild hook.
 public/data/meta.json
+
+# URL validation reports are generated evidence, not source data
+/data/processed/link_validation_report.json
+/data/processed/link_validation_repairs.jsonl
