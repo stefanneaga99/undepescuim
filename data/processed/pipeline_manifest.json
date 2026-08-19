@@ -1,5 +1,5 @@
 {
- "git_rev": "4219be3f9475797e2c0a3153cf8e75b863bbe455",
+ "git_rev": "a6694ca29130d280958b602248733b17c16df054",
  "inputs": {
   "data/processed/anpa_waters.jsonl": "af1311584384ae75290b43a442e6b78cb9067924a506c3c4bc6eb93033215a9d",
   "data/processed/anpa_contracts.jsonl": "e49b90f7d9c2d2faa214eef7d2d75ce92c4ef32ec325c615fec23a61253eb27b",
@@ -72,5 +72,5 @@
   "data/processed/river_segment_audit.json": "3a492c7e7a19888d783df88bc9091d0975c72d806687fa45079db5eb67e393f1",
   "data/processed/river_segment_audit.md": "ba1bad157565e737e818c976c6577eb5abc931df33ee6958d6611efebfbbffaf"
  },
- "generated_at": "2026-08-19T13:53:23"
+ "generated_at": "2026-08-19T13:58:43"
 }
