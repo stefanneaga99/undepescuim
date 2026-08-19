@@ -9,9 +9,13 @@ import { defineConfig, devices } from '@playwright/test';
  */
 const PORT = process.env.E2E_PORT ?? (process.env.CI ? '3000' : '3100');
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? `http://localhost:${PORT}`;
+const RUN_ID = process.env.PLAYWRIGHT_RUN_ID ?? process.env.GITHUB_RUN_ID ?? String(process.pid);
+const OUTPUT_DIR = process.env.PLAYWRIGHT_OUTPUT_DIR ?? `test-results/${RUN_ID}`;
 
 export default defineConfig({
   testDir: './tests/e2e/specs',
+  globalSetup: './tests/e2e/global-setup.ts',
+  outputDir: OUTPUT_DIR,
   timeout: 60_000,
   expect: { timeout: 10_000 },
   // Leaflet + a single prod server: keep sequential to avoid zoom/tile flake
@@ -20,7 +24,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : 1,
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI
-    ? [['list'], ['html', { open: 'never' }], ['github']]
+    ? [['list'], ['./tests/e2e/reporters/lifecycle.ts'], ['html', { open: 'never' }], ['github']]
     : [['list']],
   use: {
     baseURL: BASE_URL,
@@ -41,18 +45,29 @@ export default defineConfig({
       // 390×844 — the mobile branch (hamburger nav, vaul bottom sheets).
       // iPhone 14 device presets + forced chromium (only chromium is installed).
       name: 'mobile',
+      grepInvert: /@data/,
       use: { ...devices['iPhone 14'], browserName: 'chromium' },
     },
     {
       // 768×1024 — the `md` breakpoint boundary: desktop filter panel but
       // still the compact (<1024px) vaul drawer for detail sheets.
       name: 'tablet',
+      grepInvert: /@data/,
       use: { ...devices['iPad (gen 7)'], browserName: 'chromium' },
     },
     {
       // 1280×800 — desktop: inline nav, side panel, floating nearby panel.
       name: 'desktop',
+      grepInvert: /@data/,
       use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } },
+    },
+    {
+      // Keep real-data probes in this same Playwright invocation so the
+      // server/build lifecycle is not repeated. Its browser context remains
+      // independent from the seeded projects.
+      name: 'data',
+      grep: /@data/,
+      use: { ...devices['Desktop Chrome'], browserName: 'chromium' },
     },
   ],
   webServer: {

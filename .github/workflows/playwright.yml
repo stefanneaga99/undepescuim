@@ -34,8 +34,8 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Build & run E2E (logic + flows, seeded data)
-        run: npx playwright test --grep-invert @data
+      - name: Build & run E2E (isolated seeded + offline data projects)
+        run: npx playwright test
         env:
           CI: 'true'
 
@@ -46,11 +46,3 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
-
-      # The fixture-backed @data contract probes are offline and therefore run
-      # on pull requests as well as on main/nightly. They never load production
-      # waters or contact OSM/API endpoints.
-      - name: Offline river-segment browser probes (@data)
-        run: npx playwright test --grep @data --project=mobile --project=tablet --project=desktop
-        env:
-          CI: 'true'
