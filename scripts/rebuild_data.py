@@ -67,6 +67,7 @@ INPUTS = [
     "data/processed/river_name_aliases.json",
     "data/processed/river_segment_exceptions.json",
     "data/processed/river_segment_audit_baseline.json",
+    "data/processed/association_locations.json",
 ]
 
 # committed OUTPUTS whose determinism we assert
@@ -81,6 +82,7 @@ OUTPUTS = [
     "data/species.json",
     "data/processed/river_segment_audit.json",
     "data/processed/river_segment_audit.md",
+    "public/data/association_locations.json",
 ]
 
 # Directories copied into scratch rebuilds. Keep locality inputs local: unlike

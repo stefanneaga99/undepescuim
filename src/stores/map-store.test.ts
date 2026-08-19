@@ -299,12 +299,13 @@ describe('loadData', () => {
   it('loads assoc/waters/counties/meta + majors first-paint, then streams full uncontracted in the background', async () => {
     const majors: Water[] = [water({ slug: 'unc-major', uncontracted: true, asociatie: null })];
     const fetchMock = vi.fn()
-      // first-paint Promise.all (5): assoc, waters, counties, meta, majors
+      // first-paint Promise.all (6): assoc, waters, counties, meta, majors, locations
       .mockResolvedValueOnce(jsonResponse([{ slug: 'ajvps-cluj', name: 'AJVPS Cluj' }]))
       .mockResolvedValueOnce(jsonResponse(waters))
       .mockResolvedValueOnce(jsonResponse({ type: 'FeatureCollection', features: [] }))
       .mockResolvedValueOnce(jsonResponse({ dataUpdatedAt: '2026-08-16T00:00:00Z' }))
       .mockResolvedValueOnce(jsonResponse(majors))
+      .mockResolvedValueOnce(jsonResponse({ schemaVersion: 1, locations: [] }))
       // background full uncontracted (2): rivers, lakes
       .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-river', uncontracted: true, asociatie: null })]))
       .mockResolvedValueOnce(jsonResponse([water({ slug: 'unc-lake', uncontracted: true, asociatie: null })]));
@@ -321,7 +322,7 @@ describe('loadData', () => {
     expect(s.uncontracted.map((w) => w.slug)).toEqual(['unc-major']);
     expect(s.counties).toEqual([]);
     expect(s.dataUpdatedAt).toBe('2026-08-16T00:00:00Z');
-    expect(fetchMock).toHaveBeenCalledTimes(7); // 5 first-paint + 2 background
+    expect(fetchMock).toHaveBeenCalledTimes(8); // 6 first-paint + background started
 
     // wait for the background full-uncontracted stream to replace the majors
     const deadline = Date.now() + 2000;

@@ -206,6 +206,35 @@ function AssociationDetailContent({ association }: { association: Association })
           </div>
         </div>
       )}
+
+      {association.locations && association.locations.length > 0 && (
+        <div className="border-t pt-3" data-testid="association-locations">
+          <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Locații și contacte publice
+          </h3>
+          <div className="flex flex-col gap-3">
+            {association.locations.map((location) => {
+              const phone = location.contacts?.find((contact) => contact.kind === 'phone')?.value;
+              const email = location.contacts?.find((contact) => contact.kind === 'email')?.value;
+              const source = location.sources[0];
+              return (
+                <div key={location.id} className="rounded-md border px-3 py-2 text-sm">
+                  <p className="font-medium">{location.label ?? location.type}</p>
+                  <p className="text-muted-foreground">{location.locality}, {location.county}</p>
+                  <p className="flex items-start gap-2 text-muted-foreground"><MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />{location.address}</p>
+                  {phone && <a href={`tel:${phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 text-primary hover:underline"><Phone className="h-3.5 w-3.5" />{phone}</a>}
+                  {email && <a href={`mailto:${email}`} className="text-primary hover:underline">{email}</a>}
+                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                    <span>{location.freshness === 'needs_confirmation' ? 'Necesită reconfirmare' : location.freshness === 'historical' ? 'Istoric' : 'Verificat la sursă'}</span>
+                    {source && <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline"><ExternalLink className="h-3 w-3" />Sursa oficială</a>}
+                  </div>
+                  {location.notes && <p className="mt-1 text-xs text-muted-foreground">{location.notes}</p>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

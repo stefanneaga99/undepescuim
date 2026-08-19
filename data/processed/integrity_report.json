@@ -4,7 +4,8 @@
   "associations": 96,
   "rivers": 4140,
   "lakes": 5687,
-  "species": 29
+  "species": 29,
+  "association_locations": 11
  },
  "violations": [],
  "findings": [

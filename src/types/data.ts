@@ -22,6 +22,50 @@ export type ContractFilter = 'all' | 'contractate' | 'necontractate';
 /** County name as stored in water.judet (e.g. "Cluj", "Bihor") */
 export type County = string;
 
+export type AssociationLocationType =
+  | 'headquarters'
+  | 'registered_office'
+  | 'branch'
+  | 'office'
+  | 'club_contact_point'
+  | 'permit_pickup_point'
+  | 'partner_location';
+export type AssociationLocationFreshness = 'current' | 'needs_confirmation' | 'historical';
+
+export interface AssociationLocationContact {
+  kind: 'phone' | 'email' | 'url';
+  value: string;
+}
+
+export interface AssociationLocationSource {
+  url: string;
+  publisher: string;
+  sourceType: string;
+  publishedAt?: string;
+  retrievedAt: string;
+}
+
+export interface AssociationLocation {
+  id: string;
+  associationId: string;
+  associationSlug: string;
+  type: AssociationLocationType;
+  label?: string;
+  address: string;
+  locality: string;
+  county: County;
+  country: 'RO';
+  contacts?: AssociationLocationContact[];
+  sources: AssociationLocationSource[];
+  status: 'verified' | 'ambiguous' | 'stale' | 'unverified';
+  confidence: 'high' | 'medium' | 'low';
+  freshness: AssociationLocationFreshness;
+  checkedAt: string;
+  notes?: string;
+  public: boolean;
+  review: { status: 'approved' | 'needs_review'; approvedAt?: string };
+}
+
 /**
  * A county boundary feature from /data/counties.geojson (t_6c2ac870) —
  * simplified Nominatim polygons, one per county. Used by the nearby-waters
@@ -64,6 +108,7 @@ export interface Association {
   permitType?: PermitType;
   bbox: BBox;
   id: string;
+  locations?: AssociationLocation[];
 }
 
 /** A public fishing water (lake or river section) */

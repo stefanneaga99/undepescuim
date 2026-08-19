@@ -53,6 +53,7 @@ FE_ASSOC = ROOT / "public" / "data" / "associations.json"
 FE_RIVERS = ROOT / "public" / "data" / "uncontracted_rivers.json"
 FE_LAKES = ROOT / "public" / "data" / "uncontracted_lakes.json"
 FE_SPECIES = ROOT / "data" / "species.json"
+FE_ASSOC_LOCATIONS = ROOT / "public" / "data" / "association_locations.json"
 
 SLUG_RE = re.compile(r"^[a-z0-9-]+$")
 PHONE_RE = re.compile(r"^(\+?40|0040|0)?\d{9}$")
@@ -314,10 +315,19 @@ def main() -> None:
     check_species(species, violations)
     check_overlay(rivers, "rivers", violations, findings)
     check_overlay(lakes, "lakes", violations, findings)
+    # Separate provenance-backed association locations are independently
+    # validated; a malformed optional artifact must still fail the data gate.
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from validate_association_locations import validate
+        validate(FE_ASSOC_LOCATIONS)
+    except (SystemExit, ImportError) as exc:
+        violations.append({"check": "association_locations.schema", "error": str(exc)})
 
     report = {
         "checked": {"waters": len(waters), "associations": len(assocs),
-                    "rivers": len(rivers), "lakes": len(lakes), "species": len(species)},
+                    "rivers": len(rivers), "lakes": len(lakes), "species": len(species),
+                    "association_locations": len(json.loads(FE_ASSOC_LOCATIONS.read_text(encoding="utf-8")).get("locations", []))},
         "violations": violations,
         "findings": findings,
     }

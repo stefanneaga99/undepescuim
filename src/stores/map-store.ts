@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Association, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
+import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
@@ -172,7 +172,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
       // background right after dataLoaded and replace the majors with no
       // visual pop (majors are a strict subset). Budgets M7/M8/M9 — see
       // check-data-budget.mjs (majors joins the claimed first-load set).
-      const [assocRes, watersRes, countiesRes, metaRes, majorsRes] = await Promise.all([
+      const [assocRes, watersRes, countiesRes, metaRes, majorsRes, locationsRes] = await Promise.all([
         fetch('/data/associations.json'),
         fetch('/data/waters.json'),
         fetch('/data/counties.geojson'),
@@ -180,15 +180,39 @@ export const useMapStore = create<MapStore>((set, get) => ({
         // 404 in dev (prebuild generates it only) leaves dataUpdatedAt null.
         fetch('/data/meta.json'),
         fetch('/data/uncontracted_majors.json'),
+        // Separate, optional artifact: legacy association contact fields remain
+        // usable when this file is unavailable or malformed.
+        fetch('/data/association_locations.json').catch(() => null),
       ]);
       if (!assocRes.ok || !watersRes.ok || !majorsRes.ok) {
         throw new Error(`fetch failed: ${assocRes.status} / ${watersRes.status} / ${majorsRes.status}`);
       }
-      const [associations, waters, majors] = (await Promise.all([
+      const [rawAssociations, waters, majors] = (await Promise.all([
         assocRes.json(),
         watersRes.json(),
         majorsRes.json(),
       ])) as [Association[], Water[], Water[]];
+      let locations: AssociationLocation[] = [];
+      if (locationsRes?.ok) {
+        try {
+          const artifact = (await locationsRes.json()) as { schemaVersion?: number; locations?: AssociationLocation[] };
+          if (artifact.schemaVersion === 1 && Array.isArray(artifact.locations)) {
+            locations = artifact.locations.filter((location) => location.public && location.review?.status === 'approved');
+          }
+        } catch (error) {
+          console.warn('[map-store] association locations ignored:', error);
+        }
+      }
+      const locationsById = new Map<string, AssociationLocation[]>();
+      for (const location of locations) {
+        const current = locationsById.get(location.associationId) ?? [];
+        current.push(location);
+        locationsById.set(location.associationId, current);
+      }
+      const associations = rawAssociations.map((association) => ({
+        ...association,
+        locations: locationsById.get(association.id) ?? [],
+      }));
       // t_6c2ac870: county polygons for the nearby-waters chip. Optional —
       // the chip falls back to the contract county when missing.
       let counties: CountyFeature[] = [];
