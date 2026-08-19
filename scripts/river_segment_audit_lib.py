@@ -145,3 +145,66 @@ def coverage(published: Sequence[Coord], osm: Sequence[Coord], tolerance_m: floa
     return {"published_to_osm": sum(s["distance_m"] <= tolerance_m for s in pub) / len(pub) if pub else 0.0,
             "osm_to_published": sum(s["distance_m"] <= tolerance_m for s in raw) / len(raw) if raw else 0.0,
             "published_samples": pub, "osm_samples": raw}
+
+def distance_m(a: Coord, b: Coord) -> float:
+    return haversine_m(a, b)
+
+def line_length(coords: Sequence[Coord]) -> float:
+    return line_length_m(coords)
+
+def coverage_fraction(points: Sequence[Coord], published: Sequence[Coord], tolerance_m: float = 125.0) -> float:
+    if not points:
+        return 0.0
+    return sum(_nearest_distance(p, published) <= tolerance_m for p in points) / len(points)
+
+def uncovered_runs(source: Sequence[Coord], published: Sequence[Coord], tolerance_m: float = 125.0, min_report_m: float = 250.0) -> list[dict]:
+    samples = sample_line(source, max(100.0, line_length_m(source) / 100))
+    for sample in samples:
+        sample["distance_m"] = _nearest_distance(sample["coordinate"], published)
+    return uncovered_intervals(samples, tolerance_m, min_report_m)
+
+def terminal_findings(osm: Sequence[Coord], published: Sequence[Coord], terminal_gap_m: float = 250.0) -> list[str]:
+    if not osm or not published:
+        return []
+    findings = []
+    if _nearest_distance(published[0], osm) > terminal_gap_m:
+        findings.append("truncated_head")
+    if _nearest_distance(published[-1], osm) > terminal_gap_m:
+        findings.append("truncated_mouth")
+    return findings
+
+def canonical_county(value: str) -> str:
+    import unicodedata
+    s = " ".join((value or "").replace("Ţ", "Ț").replace("ţ", "ț").split()).strip()
+    return s[:1].upper() + s[1:].lower() if s else s
+
+def duplicate_way_ids(way_ids: Sequence[int | str]) -> list[int]:
+    seen, repeated = set(), set()
+    for value in way_ids:
+        try:
+            wid = int(value)
+        except (TypeError, ValueError):
+            continue
+        if wid in seen:
+            repeated.add(wid)
+        seen.add(wid)
+    return sorted(repeated)
+
+def sector_findings(contracts: Sequence[dict]) -> list[dict]:
+    findings = []
+    for water in contracts:
+        start, end = water.get("sectorStart"), water.get("sectorEnd")
+        if start is None and end is None:
+            continue
+        if not isinstance(start, (int, float)) or not isinstance(end, (int, float)) or not (0 <= start < end <= 1):
+            findings.append({"code": "sector_mismatch", "slug": water.get("slug"), "reason": "invalid_interval"})
+    ordered = sorted((w for w in contracts if isinstance(w.get("sectorStart"), (int, float)) and isinstance(w.get("sectorEnd"), (int, float))), key=lambda w: (w["sectorStart"], w["sectorEnd"], w.get("slug", "")))
+    for left, right in zip(ordered, ordered[1:]):
+        if right["sectorStart"] < left["sectorEnd"]:
+            findings.append({"code": "sector_mismatch", "slug": right.get("slug"), "reason": "overlap"})
+    return findings
+
+def stable_report(report: dict) -> dict:
+    report["rivers"] = sorted(report.get("rivers", []), key=lambda r: (str(r.get("river_group") or ""), str(r.get("osm", {}).get("osm_id") or "")))
+    report["cells"] = sorted(report.get("cells", []), key=lambda c: (c.get("cell_id", ""), c.get("county", "")))
+    return report
