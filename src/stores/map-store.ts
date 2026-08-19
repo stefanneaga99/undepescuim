@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
+import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -41,6 +42,7 @@ interface MapStore {
    * scripts/gen-meta.mjs during prebuild). null = meta not available (dev).
    */
   dataUpdatedAt: string | null;
+  dataStale: boolean;
   dataLoaded: boolean;
   /**
    * P0 §4.2 (plan §4.2/§4.2b): per-county render clips are split OUT of
@@ -142,6 +144,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   uncontracted: [],
   counties: [],
   dataUpdatedAt: null,
+  dataStale: true,
   dataLoaded: false,
   countyClipsLoaded: false,
   countyClipsLoading: false,
@@ -163,6 +166,26 @@ export const useMapStore = create<MapStore>((set, get) => ({
   nearbyRadiusKm: DEFAULT_RADIUS_KM,
 
   loadData: async () => {
+    // Offline launches must never even attempt a network request. The local
+    // snapshot is deliberately all-or-nothing; corrupt/partial data is ignored.
+    const offline = typeof navigator !== 'undefined' && !navigator.onLine;
+    if (offline) {
+      const cached = await readOfflineDataset();
+      if (cached) {
+        set({
+          associations: cached.associations,
+          waters: cached.waters,
+          uncontracted: cached.uncontracted,
+          dataUpdatedAt: cached.dataUpdatedAt,
+          dataStale: isDataStale(cached.dataUpdatedAt),
+          dataLoaded: true,
+        });
+      } else {
+        set({ dataLoaded: true, dataStale: true });
+      }
+      markPerfDataLoaded();
+      return;
+    }
     try {
       // P1 §4.5: first-paint is re-baselined to 'majors-only' — the map's
       // national view (the zoom-7 LOD subset) is visually complete on cold
@@ -226,7 +249,12 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const meta = (await metaRes.json()) as { dataUpdatedAt?: string };
         dataUpdatedAt = typeof meta.dataUpdatedAt === "string" ? meta.dataUpdatedAt : null;
       }
-      set({ associations, waters, uncontracted: majors, counties, dataUpdatedAt, dataLoaded: true });
+      set({ associations, waters, uncontracted: majors, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
+      try {
+        await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
+      } catch (error) {
+        console.warn('[map-store] offline snapshot not persisted:', error);
+      }
       markPerfDataLoaded();
       // P1 §4.5: the FULL uncontracted overlay streams in the background once
       // the map is up (it replaces the majors subset). t_51e028c4:
@@ -253,6 +281,14 @@ export const useMapStore = create<MapStore>((set, get) => ({
                 bySlug[w.slug] ? { ...w, geometryByCounty: bySlug[w.slug] } : w,
               );
             }
+            void writeOfflineDataset({
+              schemaVersion: 1,
+              syncedAt: new Date().toISOString(),
+              dataUpdatedAt: s.dataUpdatedAt,
+              associations: s.associations,
+              waters: s.waters,
+              uncontracted: pool,
+            }).catch((error) => console.warn('[map-store] complete offline snapshot not persisted:', error));
             return { ...s, uncontracted: pool };
           });
         } catch (e) {

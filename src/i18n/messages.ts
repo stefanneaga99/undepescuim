@@ -180,6 +180,8 @@ const ro = {
     lastUpdatedLabel: 'Date actualizate: ',
     offline: 'Fără conexiune',
     offlineFrom: '— date din {date}',
+    stale: 'Necesită reîmprospătare',
+    staleTitle: 'Datele au peste 30 de zile; reîmprospătează când revine conexiunea.',
   },
   speciesSearch: {
     placeholder: 'Caută după nume sau dimensiune (ex. somn, 40)…',
@@ -418,6 +420,8 @@ const en: Messages = {
     lastUpdatedLabel: 'Data updated: ',
     offline: 'Offline',
     offlineFrom: '— data from {date}',
+    stale: 'Refresh required',
+    staleTitle: 'Data is older than 30 days; refresh when connectivity returns.',
   },
   speciesSearch: {
     placeholder: 'Search by name or size (e.g. catfish, 40)…',

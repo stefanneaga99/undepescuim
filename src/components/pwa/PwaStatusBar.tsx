@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import { CalendarClock, WifiOff } from "lucide-react";
+import { CalendarClock, WifiOff, TriangleAlert } from "lucide-react";
 import { useMapStore } from "@/stores/map-store";
 import { useI18n } from "@/i18n/provider";
 
@@ -30,6 +30,7 @@ const getOnlineServerSnapshot = () => true;
 
 export function PwaStatusBar() {
   const dataUpdatedAt = useMapStore((s) => s.dataUpdatedAt);
+  const dataStale = useMapStore((s) => s.dataStale);
   const { locale, t } = useI18n();
   // Server render = online (no banner in SSR HTML); client subscribes to
   // online/offline so the banner appears the moment connectivity drops.
@@ -53,12 +54,12 @@ export function PwaStatusBar() {
         <span
           data-testid="last-updated"
           role="status"
-          className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
-          title={t("pwa.lastUpdatedTitle")}
+          className={`inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-md border px-2 py-0.5 text-[11px] font-medium ${dataStale ? 'border-amber-500/50 text-amber-700 dark:text-amber-300' : 'text-muted-foreground'}`}
+          title={dataStale ? t("pwa.staleTitle") : t("pwa.lastUpdatedTitle")}
         >
-          <CalendarClock className="h-3 w-3" />
-          <span className="hidden sm:inline">{t("pwa.lastUpdatedLabel")}</span>
-          {dateLabel}
+          {dataStale ? <TriangleAlert className="h-3 w-3" /> : <CalendarClock className="h-3 w-3" />}
+          <span className="hidden sm:inline">{dataStale ? t("pwa.stale") : t("pwa.lastUpdatedLabel")}</span>
+          {!dataStale && dateLabel}
         </span>
       )}
       {!online && (
