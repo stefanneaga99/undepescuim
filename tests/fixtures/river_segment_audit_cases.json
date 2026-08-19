@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "description": "Offline end-to-end audit fixtures. Each case contains its complete contract, association, OSM relation and ways.",
+  "cases": {
+    "valid": {
+      "association": {
+        "name": "Asociația Fixture Alba",
+        "slug": "asociatia-fixture-alba"
+      },
+      "contract": {
+        "id": "fixture-valid-1",
+        "water_name": "Râul Arieș Fixture",
+        "name": "Râul Arieș Fixture",
+        "slug": "raul-aries-fixture",
+        "riverGroup": "aries-fixture",
+        "asociatie": {
+          "name": "Asociația Fixture Alba",
+          "slug": "asociatia-fixture-alba"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [[23.5, 46.4], [23.51, 46.4], [23.52, 46.4]]
+        }
+      },
+      "relation": {
+        "osm_id": 9001,
+        "kind": "relation",
+        "name": "Râul Arieș Fixture",
+        "named_aliases": ["Râul Arieș Fixture"],
+        "all_way_ids": [9101, 9102]
+      },
+      "ways": [
+        {"osm_id": 9101, "kind": "way", "name": "Râul Arieș Fixture", "coordinates": [[23.5, 46.4], [23.51, 46.4]]},
+        {"osm_id": 9102, "kind": "way", "name": "Râul Arieș Fixture", "coordinates": [[23.51, 46.4], [23.52, 46.4]]}
+      ],
+      "expected": {
+        "gate": "pass",
+        "finding_codes": [],
+        "markdown_must_contain": ["PASS_CONTRACTED"]
+      }
+    },
+    "tarnava_injected_gap": {
+      "association": {
+        "name": "Asociația Fixture Mureș",
+        "slug": "asociatia-fixture-mures"
+      },
+      "contract": {
+        "id": "fixture-tarnava-1",
+        "water_name": "Târnava Fixture",
+        "name": "Târnava Fixture",
+        "slug": "tarnava-fixture",
+        "riverGroup": "tarnava-fixture",
+        "asociatie": {
+          "name": "Asociația Fixture Mureș",
+          "slug": "asociatia-fixture-mures"
+        },
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [[24.0, 46.2], [24.01, 46.2]]
+        }
+      },
+      "relation": {
+        "osm_id": 9010,
+        "kind": "relation",
+        "name": "Târnava Fixture",
+        "named_aliases": ["Târnava Fixture"],
+        "all_way_ids": [9110, 9111]
+      },
+      "ways": [
+        {"osm_id": 9110, "kind": "way", "name": "Târnava Fixture", "coordinates": [[24.0, 46.2], [24.002, 46.204], [24.004, 46.204]]},
+        {"osm_id": 9111, "kind": "way", "name": "Târnava Fixture", "coordinates": [[24.004, 46.204], [24.006, 46.204], [24.008, 46.204], [24.01, 46.2]]}
+      ],
+      "expected": {
+        "gate": "blocked",
+        "finding_codes": ["missing_segment"],
+        "markdown_must_contain": ["tarnava-fixture", "missing_segment"]
+      }
+    }
+  }
+}

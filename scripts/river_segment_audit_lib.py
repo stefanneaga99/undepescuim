@@ -127,14 +127,22 @@ def sample_line(line: Sequence[Coord], spacing_m: float = 100.0) -> list[dict]:
 
 def uncovered_intervals(samples: Sequence[dict], tolerance_m: float = 125.0, min_length_m: float = 250.0) -> list[dict]:
     """Collapse consecutive uncovered samples into deterministic intervals."""
-    bad = [s for s in samples if s.get("distance_m", float("inf")) > tolerance_m]
     out = []
-    for a, b in zip(bad, bad[1:]):
-        if b["fraction"] - a["fraction"] <= 0: continue
-        length = b.get("cumulative_m", 0) - a.get("cumulative_m", 0)
-        if length >= min_length_m:
-            out.append({"start_fraction": a["fraction"], "end_fraction": b["fraction"], "length_m": length,
-                        "midpoint": b.get("coordinate")})
+    run_start = run_end = None
+    for sample in list(samples) + [{"distance_m": 0}]:
+        is_bad = sample.get("distance_m", float("inf")) > tolerance_m
+        if is_bad:
+            if run_start is None:
+                run_start = sample
+            run_end = sample
+            continue
+        if run_start is None or run_end is None:
+            continue
+        length = run_end.get("cumulative_m", 0) - run_start.get("cumulative_m", 0)
+        if length >= min_length_m and run_end["fraction"] > run_start["fraction"]:
+            out.append({"start_fraction": run_start["fraction"], "end_fraction": run_end["fraction"], "length_m": length,
+                        "midpoint": run_end.get("coordinate")})
+        run_start = run_end = None
     return out
 
 def coverage(published: Sequence[Coord], osm: Sequence[Coord], tolerance_m: float = 125.0) -> dict:

@@ -115,7 +115,7 @@ def markdown(report):
   if r['findings']: lines.append(f"- `{r['river_group']}`: "+', '.join(f['code'] for f in r['findings']))
  return '\n'.join(lines)+'\n'
 def main():
- p=argparse.ArgumentParser(); p.add_argument('--osm-index',required=True); p.add_argument('--out-json',required=True); p.add_argument('--out-md',required=True); p.add_argument('--baseline'); p.add_argument('--aliases'); p.add_argument('--exceptions'); p.add_argument('--gate',action='store_true'); a=p.parse_args(); report,hard=audit(Path(a.osm_index),ROOT,a.aliases,a.exceptions)
+ p=argparse.ArgumentParser(); p.add_argument('--osm-index',required=True); p.add_argument('--out-json',required=True); p.add_argument('--out-md',required=True); p.add_argument('--root',type=Path,default=ROOT, help='fixture/project root containing public/data and data/processed'); p.add_argument('--baseline'); p.add_argument('--aliases'); p.add_argument('--exceptions'); p.add_argument('--gate',action='store_true'); a=p.parse_args(); report,hard=audit(Path(a.osm_index),a.root,a.aliases,a.exceptions)
  Path(a.out_json).write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf8'); Path(a.out_md).write_text(markdown(report),encoding='utf8')
  if a.baseline and Path(a.baseline).exists():
   base=json.loads(Path(a.baseline).read_text()); b=base.get('summary',{})
