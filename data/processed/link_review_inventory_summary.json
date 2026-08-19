@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "reportTotal": 730,
+  "failedTotal": 292,
+  "repairProposalTotal": 292,
+  "byCategory": {
+    "blocked/policy": 130,
+    "client_error": 28,
+    "ok": 438,
+    "redirect": 47,
+    "transient_error": 87
+  },
+  "duplicateOriginalUrlRows": 215,
+  "duplicateOriginalUrlGroups": 26,
+  "candidateUrlCount": 0,
+  "policy": "Candidates and redirects are never accepted automatically; first-party evidence is mandatory."
+}
