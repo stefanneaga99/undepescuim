@@ -1,2 +1,0 @@
-# Pipeline output directory — populated by src/pipeline scripts (phases 2-7).
-# Keep this directory in the repo so the scaffold survives clean clones.
