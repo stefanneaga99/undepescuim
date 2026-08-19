@@ -74,6 +74,16 @@ OUTPUTS = [
     "data/species.json",
 ]
 
+# Directories copied into scratch rebuilds. Keep locality inputs local: unlike
+# the large OSM artifacts, these are small deterministic pipeline inputs.
+SCRATCH_COPY_DIRS = (
+    "scripts",
+    "public/data",
+    "data/processed",
+    "data/raw/county_boundaries",
+    "data/raw/localities",
+)
+
 # canonical in-place derivation sequence (deterministic given pinned inputs)
 VERIFY_STEPS = [
     "scripts/recompute_assoc_validity.py",
@@ -233,8 +243,10 @@ def cmd_to(dest: Path) -> None:
     if dest.exists():
         shutil.rmtree(dest)
     print(f"[to] scratch rebuild at {dest}")
-    for sub in ("scripts", "public/data", "data/processed", "data/raw/county_boundaries"):
-        shutil.copytree(ROOT / sub, dest / sub)
+    for sub in SCRATCH_COPY_DIRS:
+        source = ROOT / sub
+        if source.exists():
+            shutil.copytree(source, dest / sub)
     (dest / "data" / "cache").mkdir(parents=True, exist_ok=True)
     (dest / "data" / "raw").mkdir(parents=True, exist_ok=True)
     (dest / "data" / "test").mkdir(parents=True, exist_ok=True)
