@@ -81,7 +81,7 @@ jobs:
             {
               printf 'project=%s started_at=%s\n' "$name" "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
               timeout --signal=TERM --kill-after=30s 18m \
-                npx playwright test --project="$name" --workers=2 --reporter=line
+                npx playwright test --project="$name" --workers=1 --reporter=line
               status=$?
               printf 'project=%s duration_seconds=%s exit_code=%s\n' "$name" "$(( $(date +%s) - project_started ))" "$status"
               exit "$status"
