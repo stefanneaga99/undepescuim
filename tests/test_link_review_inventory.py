@@ -50,3 +50,29 @@ def test_redirects_are_observations_not_accepted_replacements():
     assert all(row["errorCategory"] == "redirect" for row in redirects)
     assert all(row["candidateUrl"] is None for row in redirects)
     assert all(row["reviewStatus"] == "needs_first_party_review" for row in redirects)
+    assert all(row["actionability"] == "non_actionable" for row in redirects)
+
+
+def test_inventory_retains_validator_and_repair_audit_trails():
+    rows = [
+        json.loads(line)
+        for line in (ROOT / "data/processed/link_review_inventory.jsonl").read_text().splitlines()
+    ]
+    report = json.loads((ROOT / "data/processed/link_validation_report.json").read_text())
+    repairs = {
+        item["repairKey"]: item
+        for item in (
+            json.loads(line)
+            for line in (ROOT / "data/processed/link_validation_repairs.jsonl").read_text().splitlines()
+        )
+    }
+    for row, source in zip(rows, report["records"]):
+        assert row["validationResults"] == [source]
+        if row["repairProposal"]:
+            repair = repairs[row["repairHistory"][0]["repairKey"]]
+            assert row["repairHistory"] == [repair]
+        else:
+            assert row["repairHistory"] == []
+        if row["actionability"] == "non_actionable":
+            assert row["candidateUrl"] is None
+            assert row["firstPartyEvidence"]["reviewed"] is False

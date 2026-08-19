@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from copy import deepcopy
 from collections import Counter
 from pathlib import Path
 
@@ -43,9 +44,42 @@ def build(report: dict, repairs: list[dict]) -> tuple[list[dict], dict]:
         url_seen[original] += 1
         duplicate_total = url_counts.get(original, 0)
         failed = status != "ok"
+        # Keep the source records verbatim.  The compact fields below are for
+        # consumers, while these arrays are the audit trail and must not lose
+        # confidence, retry attempts, or future validator fields.
+        validation_result = deepcopy(record)
+        repair_history = [deepcopy(item) for item in repairs if item.get("repairKey") == (repair or {}).get("repairKey")]
+        reviewed_evidence = next(
+            (
+                item.get("firstPartyEvidence")
+                for item in repair_history
+                if isinstance(item.get("firstPartyEvidence"), dict)
+            ),
+            None,
+        )
+        candidate = next(
+            (item.get("candidateUrl") for item in repair_history if item.get("candidateUrl")),
+            None,
+        )
+        # A candidate is actionable only when a reviewer explicitly marked it
+        # reviewed and the candidate itself is among the first-party sources.
+        evidence_reviewed = bool(
+            isinstance(reviewed_evidence, dict)
+            and reviewed_evidence.get("reviewed") is True
+            and candidate
+            and candidate in (reviewed_evidence.get("urls") or [])
+        )
+        if not failed:
+            review_status = "not_in_repair_scope"
+        elif evidence_reviewed:
+            review_status = "reviewed_repair_ready"
+        else:
+            # Keep the established review status for compatibility; the
+            # explicit actionability field below distinguishes uncertain rows.
+            review_status = "needs_first_party_review"
         rows.append(
             {
-                "schemaVersion": 1,
+                "schemaVersion": 2,
                 "recordKey": key_for(record),
                 "associationSlug": record.get("associationSlug"),
                 "field": record["field"],
@@ -62,17 +96,21 @@ def build(report: dict, repairs: list[dict]) -> tuple[list[dict], dict]:
                     "redirect": record.get("redirect"),
                     "retry": record.get("retry"),
                 },
+                "validationResults": [validation_result],
+                "repairHistory": repair_history,
                 "firstPartyEvidence": {
-                    "status": "missing" if failed else "not_required",
-                    "urls": [],
+                    "status": "reviewed" if evidence_reviewed else ("missing" if failed else "not_required"),
+                    "urls": list(reviewed_evidence.get("urls") or []) if isinstance(reviewed_evidence, dict) else [],
+                    "reviewed": evidence_reviewed,
                     "note": (
                         "No first-party evidence is attached; do not invent or accept a destination."
                         if failed
                         else "Original URL passed the live check."
                     ),
                 },
-                "candidateUrl": None,
-                "reviewStatus": "needs_first_party_review" if failed else "not_in_repair_scope",
+                "candidateUrl": candidate if evidence_reviewed else None,
+                "reviewStatus": review_status,
+                "actionability": "actionable" if evidence_reviewed else ("not_applicable" if not failed else "non_actionable"),
                 "repairProposal": bool(repair),
                 "duplicate": {
                     "key": hashlib.sha256(str(original or "").encode()).hexdigest()[:16],
@@ -87,7 +125,7 @@ def build(report: dict, repairs: list[dict]) -> tuple[list[dict], dict]:
     if sum(row["repairProposal"] for row in rows) != len(repairs):
         raise ValueError("repair proposals do not map one-to-one to report records")
     summary = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "reportTotal": len(rows),
         "failedTotal": sum(row["reviewStatus"] == "needs_first_party_review" for row in rows),
         "repairProposalTotal": len(repairs),
