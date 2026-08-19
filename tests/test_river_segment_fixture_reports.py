@@ -118,3 +118,35 @@ def test_repair_leaves_unapproved_tarnava_blocked(tmp_path):
     artifact = repair_geometries(index, root, report, {"cerna", "ialomita", "sieu", "timis"}, root / "repairs.json", root / "provenance.json")
     assert artifact["changes"] == []
     assert json.loads((root / "public/data/waters.json").read_text())[0]["geometry"]["coordinates"] == [[24.0, 46.2], [24.01, 46.2]]
+
+
+def test_report_schema_contains_gate_grid_and_is_reproducible(tmp_path):
+    _, first_result, first, first_md = run_case(tmp_path / "first", "tarnava_injected_gap")
+    _, second_result, second, second_md = run_case(tmp_path / "second", "tarnava_injected_gap")
+    assert first_result.returncode == second_result.returncode == 1
+    assert first["schema_version"] == 1
+    assert first["gate"]["status"] == "BLOCKED"
+    assert first["cells"] and first["cells"][0]["finding_codes"]["missing_segment"] == 1
+    assert "## Coverage grid" in first_md
+    assert "**missing_segment**" in first_md
+    assert first == second
+    assert first_md == second_md
+
+
+def test_report_keeps_each_overlay_classification(tmp_path):
+    root, index = materialize_case(tmp_path, "valid")
+    overlay_dir = root / "public/data"
+    (overlay_dir / "uncontracted_rivers.json").write_text(json.dumps([
+        {"slug": "unc-river", "name": "Pârâu test", "judet": "Alba", "uncontracted": True}
+    ], ensure_ascii=False))
+    (overlay_dir / "uncontracted_lakes.json").write_text(json.dumps([
+        {"slug": "unc-lake", "name": "Lac test", "judet": "Alba", "uncontracted": True}
+    ], ensure_ascii=False))
+    output_json, output_md = root / "report.json", root / "report.md"
+    subprocess.run([sys.executable, str(ROOT / "scripts/audit_river_segments.py"),
+                    "--osm-index", str(index), "--root", str(root),
+                    "--out-json", str(output_json), "--out-md", str(output_md)],
+                   cwd=ROOT, check=True)
+    report = json.loads(output_json.read_text())
+    assert {x["slug"] for x in report["overlays"]} == {"unc-river", "unc-lake"}
+    assert report["cells"][0]["overlay"] == {"rivers": 1, "lakes": 1}

@@ -1,6 +1,11 @@
 # River segment audit
 
 Schema: `1`
+Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
+
+## Gate: **BLOCKED**
+
+- Blocking codes: `baseline_regression:missing_segment`, `baseline_regression:sector_mismatch`, `baseline_regression:truncated_head`, `baseline_regression:truncated_mouth`, `missing_segment`, `sector_mismatch`, `truncated_head`, `truncated_mouth`
 
 ## Summary
 
@@ -11,22 +16,9932 @@ Schema: `1`
 - **truncated_head**: 4
 - **truncated_mouth**: 4
 
+## Baseline deltas
+
+- **MISSING_CONTRACTED**: +0
+- **missing_segment**: +23
+- **truncated_head**: +4
+- **truncated_mouth**: +4
+- **sector_mismatch**: +10
+- **duplicate**: +0
+
+## Coverage grid
+
+| County | Contracted | Geometry | Missing | Findings | Overlay rivers | Overlay lakes | Status |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Alba | 49 | 32 | 17 | 0 | 132 | 112 | partial |
+| Arad | 34 | 22 | 12 | 0 | 41 | 138 | partial |
+| Argeș | 36 | 27 | 9 | 0 | 154 | 183 | partial |
+| Bacău | 24 | 21 | 3 | 6 | 79 | 62 | blocked |
+| Bihor | 41 | 23 | 18 | 0 | 138 | 280 | partial |
+| Bistrița-Năsăud | 31 | 21 | 10 | 0 | 108 | 49 | partial |
+| Botoșani | 28 | 14 | 14 | 6 | 25 | 128 | blocked |
+| Brașov | 33 | 28 | 5 | 3 | 270 | 123 | blocked |
+| Brăila | 8 | 5 | 3 | 6 | 11 | 70 | blocked |
+| București | 0 | 0 | 0 | 0 | 0 | 47 | covered |
+| Buzău | 14 | 7 | 7 | 0 | 65 | 63 | partial |
+| Caraș-Severin | 41 | 32 | 9 | 4 | 128 | 60 | blocked |
+| Cluj | 42 | 33 | 9 | 0 | 218 | 156 | partial |
+| Constanța | 3 | 1 | 2 | 0 | 23 | 109 | partial |
+| Covasna | 22 | 13 | 9 | 1 | 68 | 87 | blocked |
+| Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
+| Dolj | 18 | 12 | 6 | 0 | 40 | 182 | partial |
+| Dâmbovița | 17 | 12 | 5 | 2 | 51 | 151 | blocked |
+| Galați | 2 | 0 | 2 | 6 | 15 | 100 | blocked |
+| Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
+| Gorj | 26 | 19 | 7 | 0 | 49 | 58 | partial |
+| Harghita | 44 | 29 | 15 | 1 | 429 | 72 | blocked |
+| Hunedoara | 70 | 60 | 10 | 0 | 139 | 120 | partial |
+| Ialomița | 6 | 3 | 3 | 1 | 4 | 113 | blocked |
+| Iași | 6 | 2 | 4 | 6 | 76 | 244 | blocked |
+| Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
+| Maramureș | 50 | 32 | 18 | 0 | 129 | 58 | partial |
+| Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
+| Mureș | 41 | 31 | 10 | 0 | 198 | 142 | partial |
+| Neamț | 22 | 13 | 9 | 6 | 382 | 53 | blocked |
+| Olt | 15 | 13 | 2 | 1 | 69 | 235 | blocked |
+| Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
+| Satu Mare | 11 | 7 | 4 | 0 | 20 | 72 | partial |
+| Sibiu | 48 | 38 | 10 | 1 | 89 | 169 | blocked |
+| Suceava | 36 | 18 | 18 | 6 | 103 | 62 | blocked |
+| Sălaj | 15 | 9 | 6 | 0 | 37 | 40 | partial |
+| Teleorman | 6 | 5 | 1 | 1 | 34 | 160 | blocked |
+| Timiș | 41 | 34 | 7 | 4 | 48 | 236 | blocked |
+| Tulcea | 0 | 0 | 0 | 0 | 94 | 851 | covered |
+| Vaslui | 7 | 4 | 3 | 0 | 12 | 54 | partial |
+| Vrancea | 15 | 8 | 7 | 6 | 28 | 33 | blocked |
+| Vâlcea | 74 | 62 | 12 | 1 | 306 | 97 | blocked |
+
 ## Findings
 
-- `acumularea govora`: missing_segment
-- `acumularea ramnicu valcea`: missing_segment
-- `acumularea raureni`: missing_segment
-- `acumularea zavideni`: missing_segment
-- `ialomita`: missing_segment
-- `lacul de acumulare belis fantanele`: missing_segment
-- `lacul de acumulare gilau`: missing_segment
-- `lacul rosu`: missing_segment
-- `olt`: missing_segment
-- `olt`: missing_segment
-- `siret`: missing_segment, sector_mismatch, sector_mismatch, sector_mismatch, sector_mismatch, sector_mismatch
-- `siret`: missing_segment, sector_mismatch, sector_mismatch, sector_mismatch, sector_mismatch, sector_mismatch
-- `taul tapului`: missing_segment
-- `timis`: missing_segment, missing_segment, missing_segment, missing_segment, missing_segment, missing_segment, missing_segment, truncated_head, truncated_mouth
-- `timis`: missing_segment, truncated_head, truncated_mouth
-- `timis`: truncated_head, truncated_mouth
-- `timis`: missing_segment, missing_segment, truncated_head, truncated_mouth
+- `acumularea govora`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea ramnicu valcea`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea raureni`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `acumularea zavideni`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `ialomita`: **missing_segment** — {"end_fraction": 1.0, "length_m": 329990.5919776512, "midpoint": [26.061667487725543, 41.9681192709235], "start_fraction": 0.33}
+- `lacul de acumulare belis fantanele`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `lacul de acumulare gilau`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `lacul rosu`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `olt`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `olt`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "sopv2vba"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0469"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0066"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0296"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "9m2irr6m"}
+- `siret`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "sopv2vba"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0469"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0066"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "anpa-anpa-0296"}
+- `siret`: **sector_mismatch** — {"reason": "overlap", "slug": "9m2irr6m"}
+- `taul tapului`: **missing_segment** — {"length_m": 0, "reason": "published_geometry_missing"}
+- `timis`: **missing_segment** — {"end_fraction": 0.09, "length_m": 863.2539827516384, "midpoint": [21.944973158843666, 45.674830187231706], "start_fraction": 0.07}
+- `timis`: **missing_segment** — {"end_fraction": 0.24, "length_m": 431.62699137581876, "midpoint": [21.911206689832216, 45.68399335989003], "start_fraction": 0.23}
+- `timis`: **missing_segment** — {"end_fraction": 0.51, "length_m": 863.2539827516375, "midpoint": [21.954241531240097, 45.67117617707747], "start_fraction": 0.49}
+- `timis`: **missing_segment** — {"end_fraction": 0.66, "length_m": 431.6269913758224, "midpoint": [21.948568780914297, 45.67122526477668], "start_fraction": 0.65}
+- `timis`: **missing_segment** — {"end_fraction": 0.74, "length_m": 431.62699137581876, "midpoint": [21.946013317478865, 45.67384723685291], "start_fraction": 0.73}
+- `timis`: **missing_segment** — {"end_fraction": 0.91, "length_m": 2158.1349568790974, "midpoint": [21.90549928017931, 45.68657962053697], "start_fraction": 0.86}
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 3021.388939630735, "midpoint": [21.859839361779777, 45.70082378433812], "start_fraction": 0.93}
+- `timis`: **truncated_head**
+- `timis`: **truncated_mouth**
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 2583.473629211333, "midpoint": [21.8908945120862, 45.67732938915612], "start_fraction": 0.6666666666666666}
+- `timis`: **truncated_head**
+- `timis`: **truncated_mouth**
+- `timis`: **truncated_head**
+- `timis`: **truncated_mouth**
+- `timis`: **missing_segment** — {"end_fraction": 0.23958333333333334, "length_m": 892.49391449769, "midpoint": [21.89954293979454, 45.68914254175052], "start_fraction": 0.14583333333333334}
+- `timis`: **missing_segment** — {"end_fraction": 1.0, "length_m": 6148.291410984087, "midpoint": [21.958141497280902, 45.63851685027819], "start_fraction": 0.3541666666666667}
+- `timis`: **truncated_head**
+- `timis`: **truncated_mouth**
+
+## Overlay classification
+
+- `uncl-01e8bff05c` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-01ec158987` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-09c02a0df0` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-0b1c5ec895` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-0b4abf1938` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-0e21d2a873` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-14619e73a1` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-15336b727e` — lake / uncontracted / Alba / La Timbuș
+- `uncl-19cf5a1917` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-1b8a7bd833` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-1d6edf0c46` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-1e24b3c881` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-1f368dbf5a` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-20827b8dfb` — lake / uncontracted / Alba / Tăul Țapului
+- `uncl-20cd1e9b94` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-22f06a8054` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-29c8a15040` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-2b26179087` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-2d6a52324a` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-33527b6cc3` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-33cd74b009` — lake / uncontracted / Alba / Lacul 23 August
+- `uncl-34ad6515f8` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-34b92c1488` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-361e3ee559` — lake / uncontracted / Alba / Balta Păgida
+- `uncl-364f554fc6` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-36e5d36695` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-3b1e3953b1` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-3c7b9bc28e` — lake / uncontracted / Alba / Tăușor
+- `uncl-3f3b72dcd9` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-41e526cde2` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-4277c52033` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-434f582d69` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-49c4778027` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-4b26a8baa0` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-4c7a50a5a7` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-53b633b1da` — lake / uncontracted / Alba / Lacul de agrement Stremț
+- `uncl-5a07361b31` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-5b4068019e` — lake / uncontracted / Alba / Ecotam Lake
+- `uncl-5de3f27468` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-5f8f16d74e` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-5fd9200087` — lake / uncontracted / Alba / Tăul Pănăzii
+- `uncl-60bbb65cce` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-63d2594920` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-64cb032bce` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-687b4ab4f1` — lake / uncontracted / Alba / Balta Păgida
+- `uncl-6cb38349e9` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-6f5c971a04` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-7282a085cd` — lake / uncontracted / Alba / Balta Gabud
+- `uncl-7530f3840a` — lake / uncontracted / Alba / Balta 2- Pescaria Radesti
+- `uncl-7695d72f61` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-7a9cc2be25` — lake / uncontracted / Alba / Tăul Lung
+- `uncl-7d08dd2336` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-7d86cef979` — lake / uncontracted / Alba / Pescaria La Micutu
+- `uncl-7f86a75183` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-7fcb2f0d1f` — lake / uncontracted / Alba / Lacul Chereteu
+- `uncl-80d6f08f2c` — lake / uncontracted / Alba / Tăul Mare
+- `uncl-823c626166` — lake / uncontracted / Alba / Tăul Brazi
+- `uncl-827f99dd0f` — lake / uncontracted / Alba / Tăul Corna
+- `uncl-834ec960b8` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-89ebaecd9d` — lake / uncontracted / Alba / Baraj Dostat Alba
+- `uncl-8ab6cad977` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-8cd5c75a7b` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-8f0904dc93` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-924cd1da74` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-931f2388f7` — lake / uncontracted / Alba / Lacul Toxicomiei
+- `uncl-943eda5353` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-96ad056345` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-98a4a845f9` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-993049dd01` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-9f8c54c25c` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a1446bb9cb` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a256bb65b7` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a33c157a2b` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a356dc088f` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a3d2f71832` — lake / uncontracted / Alba / Balta 1 - Pescaria Radesti
+- `uncl-a5852d60ce` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a7a05a191f` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-a97ab2c738` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-abb723d2d3` — lake / uncontracted / Alba / Lacul lui Galoș
+- `uncl-aeae196675` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-af679030e6` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-b005c8079a` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-ba777bedb4` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-bc59726914` — lake / uncontracted / Alba / Tăul Țarina
+- `uncl-bf3c1f0211` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-c08464f41f` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-c1e77032fd` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-c22155ea38` — lake / uncontracted / Alba / Tăul
+- `uncl-c479d2e282` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-cbaa88ba46` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-cc95d8fb82` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-cdd273637e` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-cf76c44908` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-d1a3e8d091` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-d5fc315bc9` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-d68b498edb` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-dcadda492d` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-dcc9db02c2` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e041561951` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e1b2aff1b3` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e3090f7c01` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e37e0b12ef` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e4e59d5fd1` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e4ef28ba50` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e84d5b0ad1` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-e9be808763` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-eca2517bfb` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-ef48e388e3` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-f2c9f6d7d1` — lake / uncontracted / Alba / Tăul Găuri
+- `uncl-f5c1d0e14f` — lake / uncontracted / Alba / Iaz neidentificat
+- `uncl-ff07a60674` — lake / uncontracted / Alba / Tăul Anghel
+- `uncl-ff4e059551` — lake / uncontracted / Alba / Balta Valea Ciorii
+- `uncl-0355b836a3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-038655326d` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-07685e5def` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-078e6554ad` — lake / uncontracted / Arad / Balta Nadăș
+- `uncl-094cacf0b8` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-09e9c4823a` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-0a0d079088` — lake / uncontracted / Arad / Balta Mura
+- `uncl-0aeed7e100` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-0b8898dddb` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-133a721a10` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-1597e1f98a` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-159a25a110` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-15c596d0f0` — lake / uncontracted / Arad / Lacul Brătcoaia
+- `uncl-1d8dbd250b` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-1efb4d385d` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-1f616bf142` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-1ff5fe35d4` — lake / uncontracted / Arad / Gârla
+- `uncl-23a09d49e5` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-243af19494` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-261b1c9cff` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-27c968a915` — lake / uncontracted / Arad / Monster Carp Lake
+- `uncl-28cdc816b3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-2971e04fad` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-2cb9375f52` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-2da3178905` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-2dd2f4e964` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-2f555702ea` — lake / uncontracted / Arad / Balta Sakit
+- `uncl-3097759cd7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-33a1acd029` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-35fe8c0704` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-36d905b612` — lake / uncontracted / Arad / Lacul Rovina
+- `uncl-39781d511e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-39aa185745` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-3f3454ae30` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-410e74169c` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-41ab685064` — lake / uncontracted / Arad / Lacul Măltăreț
+- `uncl-41bffea44a` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-42893ef0e9` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-43d63f7e51` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-46884277a3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-4714841600` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-49fe9040bb` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-4a758a400d` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-4b0141bb88` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-4b373b3d21` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-4bc69bad27` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-52dbf61602` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-5497ac7604` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-555c4fef83` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-57297e5421` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-583834c1d9` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-58e22c9c16` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-58efc06890` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-599e3a32b8` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-5cf1090d94` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-5e56e383b2` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6306c671ef` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-647f78c8d4` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-655af02250` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-671bada5f5` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6b81ec2e16` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6bbd059fff` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6cb5c1f5d7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6e07f6f633` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6e54dd0d60` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-6e56048b00` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-72241f8715` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-74175142fb` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-7480c1efb7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-75a832c4df` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-7643dcae80` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-77cef99ccb` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-7852908107` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-7927f5541b` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-8008d22983` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-811e91f2d3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-81674587c7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-84690c275e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-89fed7bfa7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-8abe4204cd` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-8ec11561d3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-9019c2cf8b` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-9243644b14` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-931701f2fe` — lake / uncontracted / Arad / Lacul Pădurice
+- `uncl-94d35dae5e` — lake / uncontracted / Arad / Balta Albastra
+- `uncl-979dad6dac` — lake / uncontracted / Arad / Pescăria Colonie
+- `uncl-99e33bc90e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-9a5fc5ff52` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-9e505d94cb` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-9e9cec4790` — lake / uncontracted / Arad / Lacul linistit
+- `uncl-9f0ae49458` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-a1cda3987f` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-a2f12de231` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-a3d911f69c` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-a980d1c12b` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-ab97c2b327` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-aea62bd091` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-af0d41db9e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-b223ca8a83` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-b43ba6952a` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-b5a5bd992c` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-bb0e75abe4` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-bd08f59d83` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-c09e200cbd` — lake / uncontracted / Arad / Lac de Acumulare Tăuț
+- `uncl-c5b7f9dcf8` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-c63557eeb1` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-c8f80192d8` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-ca6f59c0a6` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-cb026649da` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-cb606e8828` — lake / uncontracted / Arad / Lac
+- `uncl-d026657d42` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d192a7eae3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d40f299caf` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d4d8e76f83` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d4e344c2c3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d5323d20b7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-d8dc1978dd` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-dbe4531cf7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-dd0e534b11` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-de8b23284f` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e0df6930a1` — lake / uncontracted / Arad / Balta de Pescuit Șânmartin
+- `uncl-e28fc4da07` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e365804f29` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e39d3f778d` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e39f07efbc` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e563d6a88c` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e604f0c444` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e731cc2aff` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-e91c580816` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-eadbd98db4` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-eb774dfa58` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-ed18bc40f3` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-efe6e2785e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-f07e30da11` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-f2dd181961` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-f485b33153` — lake / uncontracted / Arad / Balta pescuit
+- `uncl-fabb2d24c7` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-febebae37e` — lake / uncontracted / Arad / Iaz neidentificat
+- `uncl-001a99a970` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-00dd73e710` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-016ec713a0` — lake / uncontracted / Argeș / Iezerul Triunghiular
+- `uncl-0234fbcfac` — lake / uncontracted / Argeș / Acumularea Dâmbovnic
+- `uncl-04fd354a26` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-058fd4e4fb` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-05ad0d2c56` — lake / uncontracted / Argeș / Lacul Turcești
+- `uncl-090d4f397b` — lake / uncontracted / Argeș / Balta Oarja
+- `uncl-0912f72df9` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-0b49c93b8d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-0dd3b1930e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-0e51e7d8e5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-0e8b674a6f` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-0ebcb4310c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-1093cf8756` — lake / uncontracted / Argeș / Paltinu
+- `uncl-11241867be` — lake / uncontracted / Argeș / Lacul Scoica
+- `uncl-11468abb2e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-12ce35d485` — lake / uncontracted / Argeș / Lacul Lerești
+- `uncl-134d6a9eac` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-136754fcb5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-13fa3dcf66` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-1532eb43b7` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-15acfa5733` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-16c79c749d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-17931b21f2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-1baffce054` — lake / uncontracted / Argeș / Lacul Luțele
+- `uncl-1c446a8f01` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-1e654772ee` — lake / uncontracted / Argeș / Iezerul Valea Rea
+- `uncl-1f00056fd2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-24db6f0dde` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-24e9efe47c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-2938418189` — lake / uncontracted / Argeș / Lacul Parc Izvoru
+- `uncl-299e6a4574` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-2a033a0a83` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-2a0734e9cc` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-2bf9f9d334` — lake / uncontracted / Argeș / Lacul Mușetescu
+- `uncl-2ecc7f1a44` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-310f982b29` — lake / uncontracted / Argeș / Eleșteul Cioranilor
+- `uncl-352b750b26` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-35836fcd63` — lake / uncontracted / Argeș / Lacul Vulpoaia
+- `uncl-35c8dfb682` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-366fbb5922` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-37a514bdbd` — lake / uncontracted / Argeș / Acumularea Dâmbovnic
+- `uncl-39efa3ad1b` — lake / uncontracted / Argeș / Lacul Văsălatu
+- `uncl-3adda4ab8f` — lake / uncontracted / Argeș / Lacul Buda
+- `uncl-3af42a056c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-3b3ab2a199` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-3b770482ee` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-3debb895d1` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-3e80fc1768` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-3f9277254a` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-4310dc51a8` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-433a67efa2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-439ca1b0f4` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-49469ee9c8` — lake / uncontracted / Argeș / Lacul Vâlsan
+- `uncl-4fd5f890ca` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-51153714e1` — lake / uncontracted / Argeș / Lacul Geamăna de Sus
+- `uncl-553e276479` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-555a1c0d63` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-569283ef40` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-57c93350b8` — lake / uncontracted / Argeș / Lacul Medeleni
+- `uncl-584d6189b6` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-58e6b1e45b` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-5fe7b9f0d0` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-61317eb8c1` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-623a2f7314` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-64b003eb70` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-64b8579764` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-662914ec61` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-675a8e9657` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-68b51aed46` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-69158c5e58` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-6a4700928c` — lake / uncontracted / Argeș / Lacul Jgheburoasa
+- `uncl-6a8d832491` — lake / uncontracted / Argeș / Lunca Corbului
+- `uncl-6bcffdcf11` — lake / uncontracted / Argeș / Lacul La Moara
+- `uncl-6d8a2e48d5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-6e80d812a0` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-6ef01133bb` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-7130d0d59c` — lake / uncontracted / Argeș / Balta La Firel
+- `uncl-725748339d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-73d4e0a2a6` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-74045e78f2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-74a3792dce` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-78972e9af4` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-798d2e8054` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-7d7d5ceed1` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-7f00bfbcc5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8005370521` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8150e7db4f` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-82be768f02` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-85c5524b3e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8936a3d1ee` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8a4bfbd3ad` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8b014f145b` — lake / uncontracted / Argeș / Lac parcul Ștrand
+- `uncl-8d9eacf2f9` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8dc2967324` — lake / uncontracted / Argeș / Lacul Galbena
+- `uncl-8e5eef7eb8` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8e645a4790` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-8eedc0e35b` — lake / uncontracted / Argeș / Balta Teiu Mavexim
+- `uncl-906861283a` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-91698add0f` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-91c73bbf0c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-96155de924` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-96d4134a00` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-97dc6ce38b` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9808972fb3` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9ae74085ff` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9b52d617d7` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9c47b8bdfd` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9dd3e12f57` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9e22d29d54` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-9fa87577d5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-a1165b86ce` — lake / uncontracted / Argeș / Podu Giurgiului
+- `uncl-a24fe736e5` — lake / uncontracted / Argeș / Balta Cateasca
+- `uncl-a33660e6bb` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-a5c997c5e1` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-aae2dc88d5` — lake / uncontracted / Argeș / Căprița
+- `uncl-ac2f35566a` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-af3f9db2a8` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-b0ff3e6a5b` — lake / uncontracted / Argeș / Călțun
+- `uncl-b3292efc78` — lake / uncontracted / Argeș / Capra
+- `uncl-b5c4ad2d26` — lake / uncontracted / Argeș / Mozacu
+- `uncl-b675501d54` — lake / uncontracted / Argeș / Lacul Zârna
+- `uncl-b906e684ff` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ba4a11b23f` — lake / uncontracted / Argeș / Heleșteu Greculescu
+- `uncl-baa08383ee` — lake / uncontracted / Argeș / Bălți Pescuit Babaroaga
+- `uncl-bcee8bf56d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c091669e28` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c0a67b6522` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c1ae6d19de` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c2072a1f38` — lake / uncontracted / Argeș / Lacul Nucșoara
+- `uncl-c30aedde6c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c4268a5013` — lake / uncontracted / Argeș / Lacul Voinești
+- `uncl-c8c512d120` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-c98b867e94` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ca62c7fcdf` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-cbc4410da5` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-cdf8a6520c` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d2c2eb91ce` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d31fd843b4` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d3e6eb1212` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d434793b55` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d5d1274aae` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d70a11e86d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-d822db9b5f` — lake / uncontracted / Argeș / Lacul Iezer
+- `uncl-d848fa182b` — lake / uncontracted / Argeș / Lacul Mozacu
+- `uncl-d8d252243c` — lake / uncontracted / Argeș / Lacul Krețulescu
+- `uncl-da09f892a2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-db1f7329fa` — lake / uncontracted / Argeș / Belegani
+- `uncl-dd55939268` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ddb7dae0a2` — lake / uncontracted / Argeș / Lacul Roșu
+- `uncl-de398e1327` — lake / uncontracted / Argeș / Lacul Mioarele
+- `uncl-dfc7fd88b2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e07796bad2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e24d41798a` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e36e7ef737` — lake / uncontracted / Argeș / Bălănești
+- `uncl-e394e8369d` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e3df790dfc` — lake / uncontracted / Argeș / Lipăr
+- `uncl-e76e3b5829` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e799b8df2f` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e8b0545812` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e90d69aa68` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-e9e7df331e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ebc18c3cdd` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ecfd9c1d1d` — lake / uncontracted / Argeș / Lacul Siliștea
+- `uncl-ef47bb24da` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ef6a5b81c2` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-f144f79b4d` — lake / uncontracted / Argeș / Barajul Cochinești
+- `uncl-f267050f6f` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-f3be037d6e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-f527238819` — lake / uncontracted / Argeș / Lacul Sătic
+- `uncl-f8118f1baa` — lake / uncontracted / Argeș / Lacul Râiosu
+- `uncl-f901ea6a58` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-f933c25ed1` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-f938c42196` — lake / uncontracted / Argeș / Lacul Căldăraru
+- `uncl-f95700ddc7` — lake / uncontracted / Argeș / Lacul Geamăna de Jos
+- `uncl-f98331cc43` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-fbd3f89584` — lake / uncontracted / Argeș / La cai
+- `uncl-fc94bb9679` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-fcf103a36e` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ff340a85de` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-ff55281012` — lake / uncontracted / Argeș / Purcareni
+- `uncl-ff98d18fa8` — lake / uncontracted / Argeș / Iaz neidentificat
+- `uncl-12917c0503` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-158ec7a75b` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-16850db132` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-1fc8fb8739` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-205c71146d` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-24e3e0a521` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-2a17b6498f` — lake / uncontracted / Bacău / Lacul Stirigoi III
+- `uncl-2c6ff51de9` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-2efe6e54f8` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-3840effa0a` — lake / uncontracted / Bacău / Baraj Pârâul Drăcoiului 1
+- `uncl-3bab328889` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-3cbf4b18c4` — lake / uncontracted / Bacău / Baraj Pârâul Drăcoiului 3
+- `uncl-40f797d795` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-43b7defaec` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-44d1b4d837` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-46f60936df` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-4c67304dd6` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-58ea08ef31` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-5dcf307105` — lake / uncontracted / Bacău / Lacul Boiereasca Modarzau
+- `uncl-5ed88d676a` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-6144842f81` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-61623d1cac` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-61fff8fc1f` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-64fcb75007` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-6515e2094d` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-671c34a38e` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-73269783f4` — lake / uncontracted / Bacău / Lacul Foroja
+- `uncl-7833ebce52` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-787c1bb0de` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-7c32bec62d` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-7febe3754b` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-83321e4f17` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-83420e4b18` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-85a77fdadf` — lake / uncontracted / Bacău / Lacul Tarnita
+- `uncl-8d64fdb5c4` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-92deaec0c3` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-96cbaaf6c1` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-97c89068ee` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-99b6698aed` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-9aeb7729f3` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-ac435eb55a` — lake / uncontracted / Bacău / Lac
+- `uncl-b0ea6f62e4` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-b94c202a7c` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-ba2b29acac` — lake / uncontracted / Bacău / Lacul Asău
+- `uncl-bf3f501c19` — lake / uncontracted / Bacău / Bălțile Nemirei
+- `uncl-c384f049cb` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-c3be6b6d6c` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-c50ff3175b` — lake / uncontracted / Bacău / Lacul Horgești
+- `uncl-c6026f8153` — lake / uncontracted / Bacău / Lacul Natural Agăș
+- `uncl-c960618aa5` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-cacf7fcd3e` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-cf92fb270a` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-d749f563c6` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-dbf2f482d7` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-ddf104dd04` — lake / uncontracted / Bacău / Groapa Burlacu
+- `uncl-e4e40627d3` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-e6d869a22a` — lake / uncontracted / Bacău / Lacul Stirigoi II
+- `uncl-e9b347b58d` — lake / uncontracted / Bacău / Lacul Gaiceana
+- `uncl-f2d4cca46e` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-f44d0163ce` — lake / uncontracted / Bacău / Iaz neidentificat
+- `uncl-fa6b2eb4e3` — lake / uncontracted / Bacău / Baraj Pârâul Drăcoiului 2
+- `uncl-fb08ddf043` — lake / uncontracted / Bacău / Lacul Bibirești
+- `uncl-003481f2fc` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0107f85771` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-01f1fc31d6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-022403030c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-02bf31fa84` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-040c6337d7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-056e252152` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0936402d0a` — lake / uncontracted / Bihor / Tăul Vărășoaia
+- `uncl-094c61dccd` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-098b187979` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0a2f8cb563` — lake / uncontracted / Bihor / Baltă
+- `uncl-0a7105930f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0abb052872` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0db11d1639` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0f3ad2c49b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-11534abe16` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-11785a0af5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-11dcf94ac1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-11de2ae1e3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-127dd0e5c6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-13d86efe40` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-13e64e74dd` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-1463be3ea8` — lake / uncontracted / Bihor / Baltă
+- `uncl-19958f5dbd` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-1d682c7c34` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-1de08d2d1a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-1e272353a4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-1e557bf02c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-203ae200bb` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2041f3e5d4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-204c532db1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-211586936a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-224cf559ed` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2405b4fb8a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-258048d61c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-262b60819c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-27e1153b07` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-284089b234` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-29ff6702e5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2a34e23893` — lake / uncontracted / Bihor / Lacul Petea
+- `uncl-2a71684289` — lake / uncontracted / Bihor / Lac Șuncuiuș
+- `uncl-2b1b74770a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2d0a5eeef6` — lake / uncontracted / Bihor / balta3
+- `uncl-2e5d01cf18` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2f2fb11fdb` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-2f52e7c649` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3231206345` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-32673957dd` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-32f4da8e14` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-333fcf3777` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-33948b2ce1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-36b5ddfefd` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-376dfda306` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-378d2aa934` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-38da964e4d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-39d16644c1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3bf2f68395` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3c9c6b52fe` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3d131e8645` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3d2da9e3de` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3d7a0169da` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3e7db3d5e0` — lake / uncontracted / Bihor / Tăul lui Ghib
+- `uncl-3ec99e1d36` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-3fc6c36cb1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-41a9361af0` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-429011dc00` — lake / uncontracted / Bihor / Lacul Ștei
+- `uncl-4331f1880b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-45625f3e61` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-47dd09b7b1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-492eb257ac` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-496697add5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4abf5c7153` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4b016c5a68` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4c794a8757` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4d58e87ec8` — lake / uncontracted / Bihor / Lac de acumulare
+- `uncl-4dec37b4f8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4e1e6e7f4c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4ec11a137d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4f39a60a14` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4f3e1c94c6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-4fc5af92c1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5103d6c700` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-51bc3bddb1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-55def1ead7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-56486fcbb4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5728d198e4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5771b0f95d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5986e79493` — lake / uncontracted / Bihor / Lacul Steluța
+- `uncl-5a7537373b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5b18d06e63` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-5c8e86919a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6332915710` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-639351cef6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6412eeb1cf` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-651d8f128b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-658f765dad` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6642284202` — lake / uncontracted / Bihor / Balta Moțului
+- `uncl-66789add0b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-67ac47ddc6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6927d3cf9d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6bc2c0f957` — lake / uncontracted / Bihor / Cameo Resort
+- `uncl-6be1fdda6d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6be5f65845` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6c29e4ac68` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6e21b2c513` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6f0d325afb` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-6f937807fb` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-70fef299ea` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-71012b4320` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-71a83ab7fc` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-73930e3bca` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-73f9cfe962` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-73ff03405c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-742d5fb1e3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-76cd3b49e8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7703980bd8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-77be7d8d56` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-78aada6aa4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-791c527763` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-79c2c53ce5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7b20968d01` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7b4eb9afb5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7b7720b580` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7cc0e7a43f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7de8a27a7a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-7f1a12e542` — lake / uncontracted / Bihor / balta1
+- `uncl-80b38af0f6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-80f2274251` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-81496d2ed7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-81c6286e85` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-828df416e0` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-86165c067d` — lake / uncontracted / Bihor / Lac Munteni
+- `uncl-8818429579` — lake / uncontracted / Bihor / balta 2
+- `uncl-89d26a2554` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-89f0873c44` — lake / uncontracted / Bihor / Lacul Ianis
+- `uncl-8a41a3b18c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8af8bb5aab` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8b1400ce5b` — lake / uncontracted / Bihor / Lacul Șișterea
+- `uncl-8b1af7d695` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8b24154059` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8c5643f425` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8c81fb09e6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-8e7b87cbf7` — lake / uncontracted / Bihor / Baltă
+- `uncl-8faa61935f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-900ea46e1d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-90fc900635` — lake / uncontracted / Bihor / Lac Frontiera Borș - Borsi horgásztó
+- `uncl-912b76c315` — lake / uncontracted / Bihor / Valea Roșia
+- `uncl-91da316c44` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-976c37011c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-988da428f5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-98f959d570` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-98fc5796ad` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9aafc7c6af` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9b14b94a3e` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9dc6cd4a8f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9ea3c36a51` — lake / uncontracted / Bihor / Baltă
+- `uncl-9eaf57e0c1` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9eb6bc4db9` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9ecb077cab` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-9f901516c2` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a06ed52a90` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a073accf37` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a29c173b61` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a2f3392d74` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a3fc734088` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a457cc17e3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a50d231c58` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a5d444d8b8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a82b2ab230` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a83843ce5c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a892733e2b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a94b92baa5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a9a54f1cfb` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-a9f004dad0` — lake / uncontracted / Bihor / Balta La Ficuț
+- `uncl-a9f8d001a2` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ac2e266a2d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ac7891b45b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ad590e58e5` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-adbc8d533e` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ae56de7199` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ae57402582` — lake / uncontracted / Bihor / Biharia
+- `uncl-af71be04e3` — lake / uncontracted / Bihor / Acumulare Suplacu de Barcău
+- `uncl-afedfc0b42` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b0afe4427c` — lake / uncontracted / Bihor / Lacul Antropic Vascau
+- `uncl-b16833bd48` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b18610c966` — lake / uncontracted / Bihor / Lacul Colești
+- `uncl-b4ff4048ad` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b50871478e` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b61cba5ece` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b622ccfd13` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b649e9d605` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b680b1374f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b717547fed` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-b72799876f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ba596e574a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-baf483a0ef` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bb3f31deea` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bb5974011c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bb651ab4ad` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bbfdf50871` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bc4ec52e0f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bcd0871be2` — lake / uncontracted / Bihor / Baltă
+- `uncl-bdcfeb1c17` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-be69e78c0e` — lake / uncontracted / Bihor / Balta
+- `uncl-bf0027e56e` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-bf8302de67` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c18f1c813c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c1bdebd9d7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c2aa47511f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c3cf2e45b7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c3d8b32f4f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c43789cefa` — lake / uncontracted / Bihor / Balta Cheresig
+- `uncl-c58ff3bdf8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c686b99157` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-c751e96cfa` — lake / uncontracted / Bihor / Lacul de acumulare Tileagd
+- `uncl-ca23a4388c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ca2c65373f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ca4498ac45` — lake / uncontracted / Bihor / Baltă
+- `uncl-ca45b13268` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-cbad1872a9` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-cc8685ae86` — lake / uncontracted / Bihor / Lacul Cetariu-Valea Vițeilor
+- `uncl-ccae934010` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-cdc335f8d0` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ceb5222aef` — lake / uncontracted / Bihor / Lacul Hanul Pescarilor
+- `uncl-cfe38a0fb2` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d188e500d3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d2a2a4231b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d2c4486c0f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d5646f9f83` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d5be43bd2e` — lake / uncontracted / Bihor / Ferma de Crap
+- `uncl-d64802827d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d7e6f40ece` — lake / uncontracted / Bihor / Balta lu' Dani
+- `uncl-d8840c9c9d` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d90bd50108` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d91b5a3592` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d961dc6f13` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-d99437d947` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-db66008ba4` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-dbcd7b6af9` — lake / uncontracted / Bihor / Balta Kings Land
+- `uncl-dcb8bda019` — lake / uncontracted / Bihor / Laguna Albastră
+- `uncl-dce6bb468c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-dd3f391ee4` — lake / uncontracted / Bihor / Lacul Cârnațului
+- `uncl-dd5521f4e0` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-dda79fd948` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ddb0aa1aad` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-dfeaec1eda` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e0c5fe3e1a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e1001b8f80` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e1b9a17bab` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e29d06d37f` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e460829635` — lake / uncontracted / Bihor / Lacul de acumulare Lugașu
+- `uncl-e503becd79` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e7a1ec4d16` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e8be79feb9` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e90b061f98` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-e95762db61` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ea862aa918` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ed57a5f5a3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-ee4b9e95e8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-efc570fa48` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f07bfa52fa` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f07feb7337` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f10c3204d4` — lake / uncontracted / Bihor / balta 4
+- `uncl-f168aa76b7` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f19564208c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f1e5e77511` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f3d5fd78e9` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f5eb660b64` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f630f4892b` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f6402250d3` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f66f96d71c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f84be505a6` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f84d211b98` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-f9f4ba377c` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-faab5932d4` — lake / uncontracted / Bihor / Lacul Carligate
+- `uncl-fb832d3c63` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-fb923d2ce8` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-fdb4d7824a` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-fdb4f329ff` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-fea4af9177` — lake / uncontracted / Bihor / Iaz neidentificat
+- `uncl-0a583f40f1` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-1144bf8ab8` — lake / uncontracted / Bistrița-Năsăud / Lacul Lala Mare
+- `uncl-155171299b` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-206312a003` — lake / uncontracted / Bistrița-Năsăud / Lacul Tonciu
+- `uncl-2353f20be2` — lake / uncontracted / Bistrița-Năsăud / Balta lui Otto
+- `uncl-33b92ea2fa` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-38acb57c44` — lake / uncontracted / Bistrița-Năsăud / Poiana Corbilor
+- `uncl-3c209c3d8d` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-43426f0024` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-473cfc21e8` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-4c486762b4` — lake / uncontracted / Bistrița-Năsăud / Lacul Brăteni
+- `uncl-4f30da4b23` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-5f1b7e7f20` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-6b58460357` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-6deb8ecd54` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-70fab2cf4c` — lake / uncontracted / Bistrița-Năsăud / Lacul Lala Mică
+- `uncl-74a2fda063` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-77cdc4a0b2` — lake / uncontracted / Bistrița-Năsăud / Șieu
+- `uncl-798d661b21` — lake / uncontracted / Bistrița-Năsăud / Hubertus
+- `uncl-7a96005b69` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-80ef28b779` — lake / uncontracted / Bistrița-Năsăud / Acumularea Piscicolă Budurleni
+- `uncl-8ba41131a0` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-8ca9599596` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-8f3febe119` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-943e59f049` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-985da4fba4` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-a00a7f34aa` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-a00ef09104` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-a46b588886` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-ab40f5f1f4` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-b11768e30c` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-b4dca72039` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-b8c3a79c36` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-baf2ad31e2` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-bb413bbc1d` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-c10081ce2c` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-c5ed45fda1` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-c713daea9a` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-ca04194b18` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-cb065148a1` — lake / uncontracted / Bistrița-Năsăud / Lacul Anieș
+- `uncl-cb7b8d7252` — lake / uncontracted / Bistrița-Năsăud / Lacul Paradisul Verde
+- `uncl-cc2ef62e90` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-cfd4e3ab43` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-d88b9e719c` — lake / uncontracted / Bistrița-Năsăud / Lacul de agrement
+- `uncl-e180e7ac09` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-e4c1ad6533` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-e6ab61db4e` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-ed585da77f` — lake / uncontracted / Bistrița-Năsăud / Hubertus
+- `uncl-fcaa913308` — lake / uncontracted / Bistrița-Năsăud / Iaz neidentificat
+- `uncl-00bb88dd9d` — lake / uncontracted / Botoșani / Iazul Ivascoaia
+- `uncl-0161fa7f17` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-021f114083` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-06d7b83760` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-07b1e0d89d` — lake / uncontracted / Botoșani / Lacul Stăuceni
+- `uncl-0900e1251c` — lake / uncontracted / Botoșani / Lacul Pârlogeanu
+- `uncl-0949fe5852` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-0a4af96a27` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-0bb8d0a32e` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-0c03c15ad6` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-0ec3d01b34` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-0edbdd93b4` — lake / uncontracted / Botoșani / Ciornohal Lake
+- `uncl-123603995f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-13669e2241` — lake / uncontracted / Botoșani / Lacul Pârlogeanu
+- `uncl-147c481509` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-168638e46a` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-186abc5104` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-1afd5da3be` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-1c1f4ca9be` — lake / uncontracted / Botoșani / Lacul Starostea
+- `uncl-1dda939d7c` — lake / uncontracted / Botoșani / Lacul Miron Costin
+- `uncl-1ed424116c` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-1f13585d83` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-23adaced2f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-28cb42067d` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-2c65193104` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-2e1934106a` — lake / uncontracted / Botoșani / Iaz la Stâni - Balta 2
+- `uncl-3101353a4e` — lake / uncontracted / Botoșani / Iaz
+- `uncl-311d26720c` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-32ea42edf7` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-335bec1290` — lake / uncontracted / Botoșani / Lacul Hănești
+- `uncl-33cb7574cc` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-33fcafe214` — lake / uncontracted / Botoșani / Lacul lui Eminescu
+- `uncl-37051f14e0` — lake / uncontracted / Botoșani / Ochiul Alb
+- `uncl-37763c23bf` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-3f3d6c2d5f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-3fbdeaf0a8` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-450eed5cfe` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-48139172c8` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-4b400a200c` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-4ba87988c5` — lake / uncontracted / Botoșani / Lacul Cătămărăști
+- `uncl-4bcb9dda81` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-4e09bac15f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-509ed4c224` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-5831a70e35` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-5a1ffdccf5` — lake / uncontracted / Botoșani / Poienita Agrotur
+- `uncl-5b6367bcf9` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-5b8dc56740` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-5d8d204e0f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-61041f1c85` — lake / uncontracted / Botoșani / Lacul Dracșani
+- `uncl-6bfd3ecf35` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-7423af36f3` — lake / uncontracted / Botoșani / Iazul Codreni
+- `uncl-7cec11f7e3` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-7e8cb9653e` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-8313188633` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-83722819cb` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-83ec184d94` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-88f4db0f20` — lake / uncontracted / Botoșani / In Groapă
+- `uncl-8b0f5827e2` — lake / uncontracted / Botoșani / Lacul Taraseni
+- `uncl-8b858c5840` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-8e18cff2da` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-9089e83ad1` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-90c94c3c62` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-93ffb14356` — lake / uncontracted / Botoșani / Bașeu
+- `uncl-9957ac3538` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-9998707898` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-9a76a3706d` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-9ff325207f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-a1b1921638` — lake / uncontracted / Botoșani / Iaz Lebada
+- `uncl-a6c4545a59` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-a6da7349d4` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-a75c6133bf` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-a7cd36b7db` — lake / uncontracted / Botoșani / Iazul Loesti
+- `uncl-a827ed7679` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-a9e7ec4949` — lake / uncontracted / Botoșani / Iaz
+- `uncl-aad1109217` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ac358e6878` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ad57b31b8c` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-adffee4427` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ae2e9f8942` — lake / uncontracted / Botoșani / Rămnic
+- `uncl-b11b7f9e42` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-b1c428b710` — lake / uncontracted / Botoșani / Prutul Mort
+- `uncl-b1e4f6a4f8` — lake / uncontracted / Botoșani / Iaz la Stâni- Balta1
+- `uncl-b667fb3639` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-b7cb5461a8` — lake / uncontracted / Botoșani / Lacul Unțeni
+- `uncl-b8e7f008c9` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-b9b8fcacd7` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ba2abb92d9` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-bce4d1bfe0` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-bf320d3bc2` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c28d5b45e2` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c2bc4dc96a` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c2e5d90651` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c3759afa2d` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c4743f10cf` — lake / uncontracted / Botoșani / Iazul Drăgulea
+- `uncl-c764ce1001` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-c9f7b18d73` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-cba58927b4` — lake / uncontracted / Botoșani / Clubul de pescuit Navodul Star
+- `uncl-cdf7d82e71` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-d1850a51f0` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-d20e1d048b` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-d5f531fe68` — lake / uncontracted / Botoșani / Luizoaia
+- `uncl-d672ff6069` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-d7a8b24ec3` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-d9ff44f745` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-daf19bac07` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-db8e011081` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-dcc096c4cc` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-def389d9a7` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-df317d32ca` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-e0d9ead0b2` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-e30e273e66` — lake / uncontracted / Botoșani / Iazul Suharău
+- `uncl-e67ff79927` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-e793bf1eca` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-e7f1bf8df7` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-e8f5f03876` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ecb0870d3f` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-ed6f0126f1` — lake / uncontracted / Botoșani / Lacul Ghidu
+- `uncl-ef67dbc9d7` — lake / uncontracted / Botoșani / Iazul Mare
+- `uncl-f0df24808f` — lake / uncontracted / Botoșani / Sauca
+- `uncl-f10377aefa` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-f2a8128c59` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-f3769e5283` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-f4561506de` — lake / uncontracted / Botoșani / Iaz la Capraru
+- `uncl-f4dd64e605` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-f530db53d7` — lake / uncontracted / Botoșani / Lacul Melic
+- `uncl-f6d8f08cce` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-fa1def558c` — lake / uncontracted / Botoșani / Iaz neidentificat
+- `uncl-fb520d589a` — lake / uncontracted / Botoșani / Lacul Trei Coline
+- `uncl-044e0f5249` — lake / uncontracted / Brașov / Balta Stigma
+- `uncl-066e993d05` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-0a90698910` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-0c2921484e` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-0eefed0cf0` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-14e8404c52` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-17c460b8eb` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-1865f14738` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-198f312d3e` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-1c39a97f63` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-229796df7d` — lake / uncontracted / Brașov / Balta nr. 4
+- `uncl-231747baf1` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-2505a1b0dc` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-256c09eda8` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-2896fe2447` — lake / uncontracted / Brașov / Lac balastiera 3
+- `uncl-28acd955d2` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-2d8d4aa1b6` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-2f494fd4df` — lake / uncontracted / Brașov / Balta Cristian
+- `uncl-2f6359fbdc` — lake / uncontracted / Brașov / Lac vegetatie
+- `uncl-2fb9b93adf` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-2fee6176a7` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-32b8f2a404` — lake / uncontracted / Brașov / Lacul de Smarald
+- `uncl-3391c45a8a` — lake / uncontracted / Brașov / Lacul Noua
+- `uncl-35170c265e` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-3b1a8793d9` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-3e79bf8c65` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-4303ecf236` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-441b43dddd` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-456ab98da1` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-47e29308e3` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-4b61a24d90` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-4e0883cf84` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-522a23db78` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-5c4792ea71` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-5d052ca6ac` — lake / uncontracted / Brașov / Balta Arini
+- `uncl-600244e8d2` — lake / uncontracted / Brașov / Balta nr. 5
+- `uncl-634eec14e3` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-64d0759c87` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-678dd95c13` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-69f7edcfbb` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-6d76438f97` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-6e31d26a2d` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-70a72b343e` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-7112479428` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-734be949f7` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-73f081d0fb` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-74732ac684` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-7511cc59af` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-7965513b14` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8119521804` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8137073c1c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-850636a4b8` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-855d89e832` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-861ddf639d` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8787930c4a` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8886ca0ef0` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-895ea9f832` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-8b17604f04` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8ca929cbb4` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8e34f1af22` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-8f004b4ed9` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-968cdeba06` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-96dc5d1768` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-986002c493` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-9902b42389` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-9967f105ee` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-99d0151497` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-9c59695310` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-9c5d8b1ce6` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-9cba1cdd6f` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-9d6caeff76` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-9f6198371c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-a27b887aac` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-a387145467` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-a41fa775f2` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-a4f8463a5a` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-a5cf3af368` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-a63f89ed6c` — lake / uncontracted / Brașov / Lac balastiera 1
+- `uncl-a8478da5bd` — lake / uncontracted / Brașov / Lacul Miorița
+- `uncl-aa29f0a3f3` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-aca05d87b4` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-add268824a` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-afdba0412c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-b12554870e` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-b1ea66bab0` — lake / uncontracted / Brașov / FISH4LIFE
+- `uncl-b4da9104a6` — lake / uncontracted / Brașov / Vistisoara
+- `uncl-ba5d22f045` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-ba776009e3` — lake / uncontracted / Brașov / Balta Măieruș
+- `uncl-bcf83166ac` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-becf2ef2e8` — lake / uncontracted / Brașov / Acumularea Ghimbav
+- `uncl-c1baa12f90` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-c4bcc3ea96` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-c7c5da52dd` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-c7dfbff36c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-c8bb8853bc` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-cbf7e03b46` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-cc5aad24b2` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-cd19f5ee80` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-cd5edbc50a` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-d12122b87c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-d1a5715aba` — lake / uncontracted / Brașov / Lacul 1 Mai
+- `uncl-d34571c539` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-d4b1733286` — lake / uncontracted / Brașov / Cariera
+- `uncl-d65235452c` — lake / uncontracted / Brașov / Lacul Poiana Ruia
+- `uncl-d6879f7321` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-d92718a270` — lake / uncontracted / Brașov / Lac balastiera 2
+- `uncl-da8397fd9a` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-da83b632d1` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-dcfdbe30c1` — lake / uncontracted / Brașov / Tăul dintre Brazi
+- `uncl-dda0f853dd` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-e8709e74a0` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-eb749e207a` — lake / uncontracted / Brașov / Lacul Tărlung
+- `uncl-ed0730a364` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-ed5260227c` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-f18ac673ad` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-f5c337fd32` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-f63147cbe5` — lake / uncontracted / Brașov / lac mic
+- `uncl-f6a2aa6233` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-f6fcaf5b51` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-f813ab3227` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-fcb0b4c2a0` — lake / uncontracted / Brașov / Dumbrăvița
+- `uncl-fd24638432` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-fec92e4b48` — lake / uncontracted / Brașov / Iaz neidentificat
+- `uncl-03c0ea2a1d` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-08ea300eb5` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-0a47357a72` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-116070fa9e` — lake / uncontracted / Brăila / Jirlău
+- `uncl-138cfc9be8` — lake / uncontracted / Brăila / Lacul Opreanu
+- `uncl-146c6f7468` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-168dbe03b7` — lake / uncontracted / Brăila / Iezerul Popii
+- `uncl-1ae20001de` — lake / uncontracted / Brăila / Lacul Zăton
+- `uncl-1cf56dca08` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-20a1c0b36c` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-2736075556` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-27a0af3e0b` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-2b4aa6211a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-30a53fae20` — lake / uncontracted / Brăila / Ghiolul Sinetelor
+- `uncl-315f57377c` — lake / uncontracted / Brăila / Balta Însurăței
+- `uncl-31bef69a4d` — lake / uncontracted / Brăila / Ganea
+- `uncl-3ca11052b4` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-475cb61f45` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-486186a9d2` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-496e7e5f35` — lake / uncontracted / Brăila / Lacul Sărat
+- `uncl-49f8b2f7f8` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-4b8602b35b` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-4d26cc08ab` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-4e62372af6` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-53026fa8e4` — lake / uncontracted / Brăila / Lacul Fundul mare
+- `uncl-543352325e` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-5dac124bcd` — lake / uncontracted / Brăila / Lacul Misăilă
+- `uncl-614bac5646` — lake / uncontracted / Brăila / Lacul lui Traian
+- `uncl-633f154941` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-634f5794d0` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-650e2aea19` — lake / uncontracted / Brăila / Lacul Sărat
+- `uncl-688bbf87b8` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-6a51182594` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-714a2a1b33` — lake / uncontracted / Brăila / Lacul Stenghiozul
+- `uncl-72590e3d80` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-735fb68e8f` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-7605fc4578` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-77ed018773` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-79651d4495` — lake / uncontracted / Brăila / Balta Blasova
+- `uncl-7b2720ee1b` — lake / uncontracted / Brăila / Acumularea Galbenu
+- `uncl-818421f66d` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-84f6ca8540` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-8843c2e0d9` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-8c64766e3a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-9183bc388a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-9bdbb04aa0` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-9d383cbfb2` — lake / uncontracted / Brăila / Lacul Sărat
+- `uncl-a44afa2e06` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-a4b4dc0d1c` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-a6a4cc2aa0` — lake / uncontracted / Brăila / Buzoel
+- `uncl-af3b692e2d` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-af52eba602` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-af9d6816c8` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-b5fca8ea8a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-bb36bcb033` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-c40e5ee918` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-c99a8daa50` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-cd70fc1429` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-cf49435c08` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-d1c501e862` — lake / uncontracted / Brăila / Groapa Stâncii
+- `uncl-d76e3a662a` — lake / uncontracted / Brăila / Lacul Plopul
+- `uncl-dad8816a9c` — lake / uncontracted / Brăila / Lacul Arupu
+- `uncl-f0a15c5b8a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-f1b50aa501` — lake / uncontracted / Brăila / Lacul Seaca
+- `uncl-f220d7e778` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-f5529a3f3b` — lake / uncontracted / Brăila / Lacul Ianca
+- `uncl-f9c9d66e81` — lake / uncontracted / Brăila / Lacul Alb
+- `uncl-fbe12e8e90` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-fc560b462e` — lake / uncontracted / Brăila / Lacul Dulce
+- `uncl-feb50d796a` — lake / uncontracted / Brăila / Iaz neidentificat
+- `uncl-0060c6d328` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-01716747d6` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-043d2f1690` — lake / uncontracted / București / Lacul IOR
+- `uncl-0865c90f8a` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-0ddaea7944` — lake / uncontracted / București / Lacul Grivița
+- `uncl-12070b653c` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-129fb6813c` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-131a6c546c` — lake / uncontracted / București / Lacul Fundeni
+- `uncl-2133f74914` — lake / uncontracted / București / Lacul Plumbuita
+- `uncl-21c4f6fdd0` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-263590d86e` — lake / uncontracted / București / Lacul Drumul Taberei
+- `uncl-26b66b5624` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-2bd9e265d8` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-2e3fdaee4d` — lake / uncontracted / București / Lacul Dobroești
+- `uncl-30043879fb` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-39646eabd2` — lake / uncontracted / București / Lacul Cișmigiu
+- `uncl-42a53fe987` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-499b8870ea` — lake / uncontracted / București / Lacul Carol
+- `uncl-4d142cbf20` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-502f873c10` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-5030865a43` — lake / uncontracted / București / Lacul Străulești
+- `uncl-529c171199` — lake / uncontracted / București / Lacul Morarilor
+- `uncl-5699c0bf84` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-61c1e46c97` — lake / uncontracted / București / Lacul Herăstrău
+- `uncl-63695283fd` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-6635e69396` — lake / uncontracted / București / Lacul Național
+- `uncl-67922ca7ba` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-67f086aeb3` — lake / uncontracted / București / Balta Pipera
+- `uncl-7e33d9e032` — lake / uncontracted / București / Tonola
+- `uncl-7ea847b4c8` — lake / uncontracted / București / Lacul Floreasca
+- `uncl-84ad7550a4` — lake / uncontracted / București / Lacul Lebedelor
+- `uncl-9d4898636e` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-a202715536` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-a5f3000752` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-afcd271a51` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-bba005d60f` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-bde0337a54` — lake / uncontracted / București / Bazin apa Cotroceni
+- `uncl-c8a35661de` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-d022e92af5` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-d4fb09f741` — lake / uncontracted / București / Lacul Tei
+- `uncl-d956dfc828` — lake / uncontracted / București / Lacul Tineretului
+- `uncl-e93bbcaca2` — lake / uncontracted / București / Lacul mic
+- `uncl-f1c7c14886` — lake / uncontracted / București / Lacul Morii
+- `uncl-f4839e372b` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-fad07d084e` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-fbf063d49b` — lake / uncontracted / București / Iaz neidentificat
+- `uncl-fe9a17acd9` — lake / uncontracted / București / Lacul Tei
+- `uncl-0096887679` — lake / uncontracted / Buzău / Lacul Balta Alba
+- `uncl-047c5ef824` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-0918f4ab92` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-0b544b6928` — lake / uncontracted / Buzău / Acumularea Ghergheasa
+- `uncl-147601cdfd` — lake / uncontracted / Buzău / Pescuit Sportiv - Balta Ziduri
+- `uncl-15d606110f` — lake / uncontracted / Buzău / Balta Lunca Mihăilești
+- `uncl-160909248f` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-1897a43518` — lake / uncontracted / Buzău / Lac Heleșteu Crâng
+- `uncl-1f3743c9ff` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-2b0a5f9a42` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-2d50bb7bfb` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-34c8b8f3d6` — lake / uncontracted / Buzău / Lacul Mocearu
+- `uncl-3a7e496e76` — lake / uncontracted / Buzău / Lacul Luciu
+- `uncl-3a900961c3` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-3cd2316b70` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-43ae94233e` — lake / uncontracted / Buzău / Lacul Boldu
+- `uncl-4599e82b35` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-4a0003d85f` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-4d44c2f042` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-4fa6db8752` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-5193a71eaa` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-53e59c8dd0` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-55cce64dc7` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-60243d5ff1` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-60501480e8` — lake / uncontracted / Buzău / Acumulare Cochirjeanca
+- `uncl-67deb5b5fe` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-6af70079ed` — lake / uncontracted / Buzău / Acumularea Bălăceanu
+- `uncl-6c3fc05020` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-6ceb62c3ff` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-70537935c6` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-739d111e6e` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-74d1d39ebe` — lake / uncontracted / Buzău / Lacul Sec
+- `uncl-7aad20f6f2` — lake / uncontracted / Buzău / Barajul Siriu
+- `uncl-7b21e629e7` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-7b9045d17b` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-80d08ebe51` — lake / uncontracted / Buzău / Lacu Mare/Meledic
+- `uncl-8154462d76` — lake / uncontracted / Buzău / Lacul Vulturilor
+- `uncl-818cc7e583` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-82302bbe4b` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-824e17c803` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-8279f3670a` — lake / uncontracted / Buzău / Balta Ceorpelarilor
+- `uncl-8743c2b8ed` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-8978ad2cdd` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-89e3f11ec7` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-95ba2380f5` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-96a4668de6` — lake / uncontracted / Buzău / Pool
+- `uncl-99369b52db` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-9964837ce6` — lake / uncontracted / Buzău / Balta Amara
+- `uncl-9a882243b9` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-9e841d7635` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-a833505e4d` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-ae5345f0a7` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-b1ebc1dc51` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-b415f2a6d6` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-beca4f4b68` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-ca819f2bef` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-ccd15d8177` — lake / uncontracted / Buzău / Acumularea Bălăceanu
+- `uncl-d2796101a8` — lake / uncontracted / Buzău / Lacul Marghiloman
+- `uncl-d306154af8` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-dcc055db91` — lake / uncontracted / Buzău / Lacu Castelului
+- `uncl-e7fc47b975` — lake / uncontracted / Buzău / Lac Parcul Tineretului
+- `uncl-ed336bcac9` — lake / uncontracted / Buzău / Balta Costică
+- `uncl-f37998757f` — lake / uncontracted / Buzău / Iaz neidentificat
+- `uncl-013d06c0ca` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-05ac6fdcd2` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-06ae7c7764` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-091a348c1f` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-0f30c8aa97` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-0f922e5a72` — lake / uncontracted / Caraș-Severin / Șuculețu
+- `uncl-12c5f0b8a1` — lake / uncontracted / Caraș-Severin / Lacul Valea Locai
+- `uncl-13cb70ab75` — lake / uncontracted / Caraș-Severin / Lacul Mic
+- `uncl-14ecd978b4` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-16c8d42a3f` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-207ae5311e` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-30837e2899` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-30a8e00010` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-3835a0b607` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-408c6c2c0e` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-438c6f8919` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4a047178ce` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4bc0772d6e` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4c629d22e8` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4cd02cd5a4` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4cdee5940b` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-4d696187b7` — lake / uncontracted / Caraș-Severin / Poiana Rusca
+- `uncl-4fedea49f4` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-55a334fa1d` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-55af5060f5` — lake / uncontracted / Caraș-Severin / Lacul Moraru
+- `uncl-5e5f58eea2` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-63da2e04cb` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-6680f34995` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-66d902268d` — lake / uncontracted / Caraș-Severin / Balta "Avicola"
+- `uncl-762b1dcbfa` — lake / uncontracted / Caraș-Severin / Lacul Pietrele Albe
+- `uncl-7fcb143523` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-8083db57fc` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-8084f5f6ca` — lake / uncontracted / Caraș-Severin / La Lac
+- `uncl-8392e0ab9f` — lake / uncontracted / Caraș-Severin / Balta Paradis
+- `uncl-8705c9288d` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-8950960d03` — lake / uncontracted / Caraș-Severin / Lacul Iezer
+- `uncl-8fec7fb8c8` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-92287b80ca` — lake / uncontracted / Caraș-Severin / Lacul Gugu
+- `uncl-93cfbdd063` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-9e1ab780c5` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-9f906ba023` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-a0ae660e7d` — lake / uncontracted / Caraș-Severin / Lacul Mare
+- `uncl-a314129180` — lake / uncontracted / Caraș-Severin / Doman
+- `uncl-adb8ce1d3c` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-b5959b408e` — lake / uncontracted / Caraș-Severin / Grebla
+- `uncl-ba8603f0a3` — lake / uncontracted / Caraș-Severin / Balta Șoșdea
+- `uncl-ba88f01c51` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-ba920ce9a7` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-c164a7cf4c` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-c8d671c033` — lake / uncontracted / Caraș-Severin / Lac Dănila
+- `uncl-ca490350bf` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-d1a4f530f6` — lake / uncontracted / Caraș-Severin / Gropița
+- `uncl-d412f95801` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-d466c630db` — lake / uncontracted / Caraș-Severin / Lac Vârtoape
+- `uncl-d4985b23d8` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-eab342b81a` — lake / uncontracted / Caraș-Severin / Balta Mehadia
+- `uncl-ecbaeaaa56` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-f369ba3687` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-faa0070add` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-ff6eb99e0e` — lake / uncontracted / Caraș-Severin / Iaz neidentificat
+- `uncl-0021a577e7` — lake / uncontracted / Cluj / Lacul Căprioarelor
+- `uncl-024eb0db45` — lake / uncontracted / Cluj / Gold Fish
+- `uncl-04bc9d89a9` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-0774eff6f9` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-087cd00d57` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-09133f9050` — lake / uncontracted / Cluj / La Găvrila
+- `uncl-0e719f25db` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-113477b5b4` — lake / uncontracted / Cluj / Lacul Sulfuros
+- `uncl-1155c9aa76` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-1603b9de84` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-1a3f214449` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-1ec0114b5d` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-1fe7b684f8` — lake / uncontracted / Cluj / Lacul Pădureni
+- `uncl-20f5c1ee6e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-231ca419fd` — lake / uncontracted / Cluj / Lac Santioana la Costică
+- `uncl-23fcce6bbc` — lake / uncontracted / Cluj / Acumularea Berchieș
+- `uncl-25819cd370` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-26bc6bfac4` — lake / uncontracted / Cluj / Lacul de acumulare Scrind-Frăsinet
+- `uncl-2831eb6199` — lake / uncontracted / Cluj / Lacul Becas
+- `uncl-2adedc6ea2` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-2ae4d26ac4` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-2c262bb2b5` — lake / uncontracted / Cluj / Balta Dabaca
+- `uncl-2cb13b004a` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-2cbe662c5e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-2d6afa3361` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-2e2f7e7a76` — lake / uncontracted / Cluj / Lacul Csiky
+- `uncl-2f4a2dba7f` — lake / uncontracted / Cluj / Lac Filea Mare
+- `uncl-31a3c2fa6f` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-32b2867167` — lake / uncontracted / Cluj / Lacul Țaga Mică
+- `uncl-330850b563` — lake / uncontracted / Cluj / Lacul Mare
+- `uncl-3466768153` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-34a2ad5936` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-34ed200e22` — lake / uncontracted / Cluj / Lacul Volvo
+- `uncl-382c874887` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-396ca75a6d` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-3aaf69eb88` — lake / uncontracted / Cluj / Lacul Kőhegy
+- `uncl-3c8ef39ee9` — lake / uncontracted / Cluj / Lac de acumulare Hidroelectrica Florești
+- `uncl-3e643da8c6` — lake / uncontracted / Cluj / Lac Pescuit Sportiv Câmpenești
+- `uncl-3fee57ae61` — lake / uncontracted / Cluj / Lacul Durgău
+- `uncl-405bbb5c2f` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-4421dd98ad` — lake / uncontracted / Cluj / Lac de agrement
+- `uncl-45175e5414` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-45b7da0973` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-477a051023` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-4bae216307` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-4de221e2ed` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-4dfc77182d` — lake / uncontracted / Cluj / Lacul Stejeriș
+- `uncl-4ec59f94be` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-4f93dec678` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-5043d98380` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-506fe53d7b` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-518d78b7cc` — lake / uncontracted / Cluj / Dărvăștău
+- `uncl-545185b147` — lake / uncontracted / Cluj / Câmpenești 3
+- `uncl-545a6c6c89` — lake / uncontracted / Cluj / Lac Pescuit Panticeu
+- `uncl-58a988b041` — lake / uncontracted / Cluj / Lac Căprioara
+- `uncl-58e3a61bf9` — lake / uncontracted / Cluj / Máté tava
+- `uncl-5c0c66350c` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-5c6ebcf3ac` — lake / uncontracted / Cluj / Lacul Sântejude
+- `uncl-5e0ac31928` — lake / uncontracted / Cluj / Lacul Sub Pădure Mărtinești
+- `uncl-5ea4f10801` — lake / uncontracted / Cluj / Tăul Mare
+- `uncl-5f0f7d568c` — lake / uncontracted / Cluj / Lacul Chinteni
+- `uncl-60cc522c30` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-6295e56886` — lake / uncontracted / Cluj / Lac Bărăi
+- `uncl-637aedeea9` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-644b183b09` — lake / uncontracted / Cluj / Laguna Albastră
+- `uncl-64fe6c22c4` — lake / uncontracted / Cluj / Lacul lui Jack
+- `uncl-65672c1c41` — lake / uncontracted / Cluj / Lac Luncani
+- `uncl-6af5459b5a` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-6ccddcffdf` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-6cd363a707` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-6fd131750a` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-7171c37e9d` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-71aef1b625` — lake / uncontracted / Cluj / La Balastieră
+- `uncl-739dda9432` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-74d9f04972` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-7ad732ab5b` — lake / uncontracted / Cluj / Lac Năsal
+- `uncl-7c559caf02` — lake / uncontracted / Cluj / Lacul Geaca 3
+- `uncl-81171fbfc8` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-821ed04449` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-824696ce4e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-885573068c` — lake / uncontracted / Cluj / Lac Fodora
+- `uncl-890bf5bca9` — lake / uncontracted / Cluj / Lacul Sucutard
+- `uncl-8a2b03247b` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8a5d22d4ce` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8aa06f1893` — lake / uncontracted / Cluj / Lac Suatu
+- `uncl-8af631a2f7` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8b4292677c` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8c1cbe1411` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8c6217c39b` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-8f3678df3e` — lake / uncontracted / Cluj / Iaz
+- `uncl-8ff72efa25` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-90cc1e28a9` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-9353f82b44` — lake / uncontracted / Cluj / Lac Alcatraz Câmpenești
+- `uncl-9435277aea` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-973b79ab0e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-997d13c54f` — lake / uncontracted / Cluj / Horaițele Sâncraiului
+- `uncl-9983df65c1` — lake / uncontracted / Cluj / Câmpenești 1
+- `uncl-9997481fcb` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-99d956321b` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-9aa8ffd7c8` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-9d913434d1` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-a16ec00133` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-a59882a0ea` — lake / uncontracted / Cluj / Lacul Chios
+- `uncl-a5e7356954` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-a5eca19c61` — lake / uncontracted / Cluj / Iaz Mărtinești
+- `uncl-a684044f30` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-a72556f375` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-a8b3681d51` — lake / uncontracted / Cluj / Câmpenești 2
+- `uncl-abd3216e75` — lake / uncontracted / Cluj / Hălăștău
+- `uncl-acb40d36a9` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-ae1de973dd` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-ae49cd231e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-af489b90d7` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-afca7289e1` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-aff2891a63` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-b04a1ef47e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-b193e7133d` — lake / uncontracted / Cluj / Balta Mică
+- `uncl-bd30615fb4` — lake / uncontracted / Cluj / Lacul Micești
+- `uncl-bffdfd0bda` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-c16063c871` — lake / uncontracted / Cluj / Lac Filea 2
+- `uncl-c240647cf9` — lake / uncontracted / Cluj / Lac Filea 1
+- `uncl-c41512a57d` — lake / uncontracted / Cluj / Lacul Țaga Mare
+- `uncl-c9c7dc4773` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-cb4aa00657` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-ccb0c088c3` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-cd10044b3c` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-ce2f5ff5d7` — lake / uncontracted / Cluj / Roșieni
+- `uncl-cebbd2df42` — lake / uncontracted / Cluj / Lac Săliștea Veche
+- `uncl-d090c807a1` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-d179371b05` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-d3356ccf9d` — lake / uncontracted / Cluj / Câmpenești 4
+- `uncl-d7773f4a8b` — lake / uncontracted / Cluj / Lac Sampei
+- `uncl-da12bbdaf7` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-da88dac6a5` — lake / uncontracted / Cluj / Lac Pescuit Fizeșu Gherlii
+- `uncl-dabb5cf60d` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-db348dd2ec` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-dc9bed2e39` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-dd7cc474e4` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-dd9bdc245a` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-de044f16c2` — lake / uncontracted / Cluj / Lac Casa Părăsită
+- `uncl-e104a322a8` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-e88fd1adec` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-eabc5a57a1` — lake / uncontracted / Cluj / Balta Sâncraiu
+- `uncl-eb3b8286de` — lake / uncontracted / Cluj / Toroc-Durgău
+- `uncl-eb6e06ce2e` — lake / uncontracted / Cluj / Lac Sânmărghita
+- `uncl-ec80b5947e` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-ee5a36b277` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-eec885ee15` — lake / uncontracted / Cluj / Lacul Ocnei
+- `uncl-f1b1d9be1d` — lake / uncontracted / Cluj / Lacul Roman
+- `uncl-f2b2a9bc06` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-f42c070529` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-f4e006566c` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-f8f73ddde7` — lake / uncontracted / Cluj / Lac Șutu
+- `uncl-fa9aff356e` — lake / uncontracted / Cluj / Lacul lui Tibi
+- `uncl-fc7f3c69f4` — lake / uncontracted / Cluj / Iaz neidentificat
+- `uncl-fc890e1250` — lake / uncontracted / Cluj / La Sote
+- `uncl-05153ff70f` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-06a901fe73` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-0759ad00b1` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-07956d24c5` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-0a9be3cd7b` — lake / uncontracted / Constanța / Lacul Geamurlia
+- `uncl-11dc3286b3` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-1456f366d1` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-16ac1bff3b` — lake / uncontracted / Constanța / Lacul Corbu
+- `uncl-17b53853d8` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-1b7b5a4a61` — lake / uncontracted / Constanța / Lacul Agigea
+- `uncl-1cbbbacc6b` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-1dd38b2cc0` — lake / uncontracted / Constanța / Lacul Tăbăcăriei
+- `uncl-205a9adcac` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-213a89d368` — lake / uncontracted / Constanța / Buhazu Mare
+- `uncl-21e82c00b9` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-25a6e98756` — lake / uncontracted / Constanța / Lacul Techirghiol
+- `uncl-2923be9697` — lake / uncontracted / Constanța / Lacul Conacu
+- `uncl-29b5b78169` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-2a2908ff7c` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-2aca3f66d5` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-2af546ae23` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-2b4f64d63c` — lake / uncontracted / Constanța / Halda de steril nr. 4
+- `uncl-2e96dca3fd` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-334c19c01a` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-356a36893b` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-35ed690ad4` — lake / uncontracted / Constanța / Lacul Iortmac
+- `uncl-36486b5185` — lake / uncontracted / Constanța / Lacul Neptun III
+- `uncl-3ae220705d` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-3e334f115b` — lake / uncontracted / Constanța / Halda de steril nr. 3
+- `uncl-3fafa0903d` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-45c287a315` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-46d55942ff` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-4981f10b82` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-49aa0a202c` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-4ec90ccc58` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-4f66b762fe` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-4f9e47ba52` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-52c6175f35` — lake / uncontracted / Constanța / Buhazu Mare
+- `uncl-554d7246ec` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-571b1add06` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-57f3e855ad` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-5977c44248` — lake / uncontracted / Constanța / Lacul Tașaul
+- `uncl-6403db3b79` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-648b557620` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-68afe53d3b` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-6aba353013` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-6b2f1cc186` — lake / uncontracted / Constanța / Lacul Oltina
+- `uncl-6cd2ff9dbd` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-70040a81eb` — lake / uncontracted / Constanța / Lacul Belona
+- `uncl-7093e25565` — lake / uncontracted / Constanța / Lacul Casian
+- `uncl-750c3b1796` — lake / uncontracted / Constanța / Domneasca
+- `uncl-753632468f` — lake / uncontracted / Constanța / Halda de steril nr. 1
+- `uncl-7546f22b81` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-76dedd7308` — lake / uncontracted / Constanța / Lacul Baciului
+- `uncl-7754770b0d` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-7b1f836149` — lake / uncontracted / Constanța / Balta Canalul Vechi
+- `uncl-7b53b6fde8` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-7ee96a8423` — lake / uncontracted / Constanța / Lacul Siutghiol
+- `uncl-7f82ec983d` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-8120124726` — lake / uncontracted / Constanța / Lacul Corbu
+- `uncl-8484ad7e91` — lake / uncontracted / Constanța / Tuzla
+- `uncl-8543a58eb9` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-873633e1a1` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-8e347744d1` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-907468a829` — lake / uncontracted / Constanța / Lacul Venus
+- `uncl-910d1901d4` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-92ccef6154` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-9458e0c63b` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-94eca9dc91` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-9619563ed5` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-99c68bc5c2` — lake / uncontracted / Constanța / Lacul Corbu 2
+- `uncl-9c66ffa8f6` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-9d2344241b` — lake / uncontracted / Constanța / Lacul Costinești
+- `uncl-a06632b87e` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-a0c9f47c29` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-a0d977585f` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-a128244a25` — lake / uncontracted / Constanța / Lacul Bugeac
+- `uncl-a26466fe4e` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-a7ec3723c1` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-a8dd66eba8` — lake / uncontracted / Constanța / Lacul de cretă
+- `uncl-b38ada5201` — lake / uncontracted / Constanța / Lacul Neptun I
+- `uncl-b3d0545994` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-b3e27d12f2` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-b50a898f39` — lake / uncontracted / Constanța / Halda de steril nr. 2
+- `uncl-ba2f7d2530` — lake / uncontracted / Constanța / Lacul Histria
+- `uncl-be3a78eb88` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-befb826f21` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-c094a17f3a` — lake / uncontracted / Constanța / Tismana
+- `uncl-c436a5f6a5` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-c60d598bc5` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-c8a98d0279` — lake / uncontracted / Constanța / Lacul Tătlăgeac
+- `uncl-d3a98aa1c3` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-d43261b445` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-d4a33f83fa` — lake / uncontracted / Constanța / Balta Blebea
+- `uncl-d69ab668de` — lake / uncontracted / Constanța / Buhazu Mic
+- `uncl-d6ac944ecf` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-d901c269b4` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-d91d67a555` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-da9dbabda0` — lake / uncontracted / Constanța / Balta Saturn
+- `uncl-e0671d3a58` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-e0b134b474` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-e794e8863a` — lake / uncontracted / Constanța / Lacul Nuntași
+- `uncl-edb00b8657` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-f10412c737` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-f3f2402fc7` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-f485f6cd8f` — lake / uncontracted / Constanța / Lacul Neptun II
+- `uncl-f4ad787543` — lake / uncontracted / Constanța / Acumularea Movilița
+- `uncl-fccaedb352` — lake / uncontracted / Constanța / Acumularea Valea Gospodăriei
+- `uncl-fec5a34aba` — lake / uncontracted / Constanța / Iaz neidentificat
+- `uncl-00104f5abe` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-00e5990e26` — lake / uncontracted / Covasna / Lacul Chiuruș
+- `uncl-034c1dcce7` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-03c41ac46e` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-04fb23245e` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-0893dc6fd3` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-0eeb361dea` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-1340a070da` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-141da89ec5` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-15d4d502af` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-1e104d1ce9` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-1ed9fb998f` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-1f91a93874` — lake / uncontracted / Covasna / Lacul Reci
+- `uncl-209dfbd660` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-25cbc3992e` — lake / uncontracted / Covasna / Lacul Criș
+- `uncl-2670ec8a15` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-26e8802a19` — lake / uncontracted / Covasna / Balta cu Movile
+- `uncl-29e9aae6c0` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-2d4056a179` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-322ec27a79` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-32a854423d` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-35170bb490` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-3a2e047cc3` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-3b02ad3a3b` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-3d3f8daca7` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-3efcadd4de` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-4467adaf1d` — lake / uncontracted / Covasna / Lacul Pădureni
+- `uncl-476aaa8510` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-48d3f10505` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-49656f3d2e` — lake / uncontracted / Covasna / Balta Valea Mare
+- `uncl-4ee8284aab` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-51bf0cd768` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-5b24aaca59` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-5cca094fe7` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-5d06be65b1` — lake / uncontracted / Covasna / Nyires-tó
+- `uncl-5d7f8cd7e9` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-60c5e9448f` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-67a1ba31be` — lake / uncontracted / Covasna / Lacul din Ilieni
+- `uncl-693a2abe23` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-69c13dfd2f` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-71fe18e6a6` — lake / uncontracted / Covasna / Bányató 2.-Lacul de mină 1.
+- `uncl-78b3767e13` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-7e6ba7b7da` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-8a1bb961f2` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-8bf336c9bb` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-8f8fa23956` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-90f97929fd` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-9647486de8` — lake / uncontracted / Covasna / Lacul Reci
+- `uncl-98eaf35ba4` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-9af9a0e164` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-9e1cb46608` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-a28d68932f` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-a3d44eb32d` — lake / uncontracted / Covasna / Lacul din Ilieni
+- `uncl-a4bed5934a` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-a6bb2d3052` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-a75d804364` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-a8844616be` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-acc7ccf97e` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-aed298960d` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-af764847b2` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-b251ec28e8` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-b460cbe1d6` — lake / uncontracted / Covasna / Lacul Gémvári
+- `uncl-b56b552c0a` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-b5cd97a606` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-bdf2c2aa4c` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-c03381bea5` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-c38026b3af` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-c3bacad4cc` — lake / uncontracted / Covasna / New Carp Lake
+- `uncl-c5e75b421f` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-cb09c247ee` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-cd4eb19bc2` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-d61e2a4657` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-d6b12d4acd` — lake / uncontracted / Covasna / Lac artificial
+- `uncl-d9f203294e` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-da680e4719` — lake / uncontracted / Covasna / Balta Măieruș
+- `uncl-dc5e884710` — lake / uncontracted / Covasna / Lacul Reci
+- `uncl-e68b0f02fa` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-e6e2d3f1c8` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-ea1515e1b0` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-eab4ad3692` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-eaba694227` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-ed7cbd2cfd` — lake / uncontracted / Covasna / La Belin
+- `uncl-f0e40f56f9` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-f5d22398b3` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-fdf041556c` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-fe8f86617c` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-fffa44e23d` — lake / uncontracted / Covasna / Iaz neidentificat
+- `uncl-022712331f` — lake / uncontracted / Călărași / Lacul Dârvari
+- `uncl-033cc5d23a` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-04ac9002e4` — lake / uncontracted / Călărași / Acumularea Iezerul Mostiștei
+- `uncl-07f1923cc7` — lake / uncontracted / Călărași / Balta Mostiștei
+- `uncl-08ff1c4c2a` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-0e05a1ef1f` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-0f4f8138e3` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-11479b5a63` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-1156757726` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-123aa9809b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-12ac352a91` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-18f8b45191` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-1a44131a74` — lake / uncontracted / Călărași / Candeasca Lakes Baziunul 1
+- `uncl-1b83da961e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-1ce1a38008` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-20f9629d78` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-21078ac0a6` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-215a7e9f56` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-27233d322f` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-28fd828612` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-29bb799822` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-2ecf9e4f02` — lake / uncontracted / Călărași / Candeasca Lakes Baziunul 2
+- `uncl-2fbf5dfa94` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3359d43a06` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-358b1a82f9` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3670874c85` — lake / uncontracted / Călărași / Aculumarea Călăreți IV
+- `uncl-377d6f1a91` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-37a1e51edc` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3a317246c3` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3aefa6bf94` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3cf7feb641` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-3ffd03107e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-444c3cf89b` — lake / uncontracted / Călărași / Balta Nicula
+- `uncl-44b45d1117` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-44eed8b410` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4550a3e242` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4616aba4af` — lake / uncontracted / Călărași / Acumularea Iezerul Mostiștei
+- `uncl-4779e22479` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-49a427c284` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-49e93e0eed` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4a461c7ac2` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4affe9d839` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4bf96cdeca` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-4db58b0b26` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-506cfacd0a` — lake / uncontracted / Călărași / Balta Mataraua
+- `uncl-5398d6012e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-5b4fa04e5c` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-5fcbd997dc` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-6334e71a67` — lake / uncontracted / Călărași / Balta Gruiu
+- `uncl-6503d2e820` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-69806ec270` — lake / uncontracted / Călărași / Bagăr
+- `uncl-6a1f1f60c2` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-6a96e063e8` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-6ae50afc44` — lake / uncontracted / Călărași / Balta Ileana Razoare
+- `uncl-6e1a2e97a0` — lake / uncontracted / Călărași / Balta Tătaru
+- `uncl-70f97256ed` — lake / uncontracted / Călărași / Balta Mataraua 2
+- `uncl-7969da077f` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-7a24358615` — lake / uncontracted / Călărași / Iaz piscicol
+- `uncl-7c3f0da0f1` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-7d3b7173d8` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-7d6639437b` — lake / uncontracted / Călărași / Candeasca Lakes Baziunul 3
+- `uncl-7d66af027b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-7edb2b86e2` — lake / uncontracted / Călărași / Candeasca Lakes Baziunul 0
+- `uncl-8514d043d5` — lake / uncontracted / Călărași / Balta Roșu
+- `uncl-85fb66f80c` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-880a212324` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-8932e0b612` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-8a468f9622` — lake / uncontracted / Călărași / Lacul Cătălui
+- `uncl-8a5e2428d6` — lake / uncontracted / Călărași / Lacul Gălățui
+- `uncl-8a81183b54` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-8e10e34c45` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-90187e99dd` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-9276e2aa90` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-98d0b790a0` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-9d75828128` — lake / uncontracted / Călărași / Iezerul Călărași
+- `uncl-9dc2205028` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-9f5d11d4d3` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-a3cc698277` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-a71d72e31d` — lake / uncontracted / Călărași / Balta Podarilor
+- `uncl-ab28e5ecd5` — lake / uncontracted / Călărași / Lacul Gostilele
+- `uncl-ab6d53d738` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-abbd1fe91b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-acacd85f58` — lake / uncontracted / Călărași / Balta Podarilor
+- `uncl-ad89c8356b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-b6b63a56d0` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-bd365e3718` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c0de5f5248` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c179d3bb59` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c2c5261237` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c31ebcb1fc` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c4330222d7` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c4556cf9ad` — lake / uncontracted / Călărași / Lacul Nucetu
+- `uncl-c4cbe4eaed` — lake / uncontracted / Călărași / Lacul Belciugatele
+- `uncl-c52d02a5fa` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-c73a6b699b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-cd3a19d0f5` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-ce3365b2c7` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-cf4b7f0668` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-cf845280aa` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-d141a54bda` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-d30931185c` — lake / uncontracted / Călărași / Balta Tătaru
+- `uncl-d3ee02aab3` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-d6f87dd3c5` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-d70548e884` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-db7f47f90e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-dcfb00c299` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-ddde21dfc5` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-de3beeb465` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-de8ce4956c` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-e1b63ad590` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-e2d3662c31` — lake / uncontracted / Călărași / Balta Fundulea 6
+- `uncl-e4a5944da1` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-e6d51c4fb0` — lake / uncontracted / Călărași / Lacul Cocorilor
+- `uncl-e70fd3a935` — lake / uncontracted / Călărași / Lacul de Argint
+- `uncl-e81952c20e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-e9502958e2` — lake / uncontracted / Călărași / Balta Valea lui Ilie
+- `uncl-eed0ecfe6a` — lake / uncontracted / Călărași / Lacul Băile Mitreni
+- `uncl-eefdf23b0b` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-ef17d59498` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-f43d50d4e1` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-f49a3c79e8` — lake / uncontracted / Călărași / Balta Maiorul
+- `uncl-f5167f5b44` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-fadb07db67` — lake / uncontracted / Călărași / Balta Solacolu
+- `uncl-fb1129ecf9` — lake / uncontracted / Călărași / Balta Măgura 9
+- `uncl-fe6168f76e` — lake / uncontracted / Călărași / Iaz neidentificat
+- `uncl-010c75fffb` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-0172c80f3c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-01e9a7e467` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-0356fa196b` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-05f4511ef7` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-0b30ea677d` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-0cc9dcc770` — lake / uncontracted / Dolj / Acumularea Caraula
+- `uncl-0d3fb225b2` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-0fac284af4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-102d1a0e5f` — lake / uncontracted / Dolj / Lacul Fântâna Banului
+- `uncl-1628963453` — lake / uncontracted / Dolj / Balta Coceanu
+- `uncl-169d6af9a2` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-1a45f49296` — lake / uncontracted / Dolj / Cornu
+- `uncl-1d410cd2e4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-1dbba8b371` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-1f33ca7155` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-21098be07f` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-23bf9f817f` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-23f6196021` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-24acdd4985` — lake / uncontracted / Dolj / Lacul Coica
+- `uncl-258c5265a8` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-263f61d73b` — lake / uncontracted / Dolj / Lac
+- `uncl-268e045d67` — lake / uncontracted / Dolj / Lacul Călugăreni
+- `uncl-27cd3623c2` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-280b2e9c6a` — lake / uncontracted / Dolj / Bistreț
+- `uncl-289a506e86` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-29c0d9474e` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-2a8be7432e` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-2ccff3a891` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-2d90c4cee0` — lake / uncontracted / Dolj / Acumularea Fântânele
+- `uncl-302eb9a7db` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-3223764952` — lake / uncontracted / Dolj / Balta Pușcăriei
+- `uncl-32dd5e8f41` — lake / uncontracted / Dolj / Balta Ciupercanilor
+- `uncl-3344a7e560` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-3523fc3c29` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-35795797f3` — lake / uncontracted / Dolj / Lacurile Preajba-Făcăi
+- `uncl-35b32d5705` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-37953f94ed` — lake / uncontracted / Dolj / Lacul Izvorului
+- `uncl-3876a50a41` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-3a74fd2ecc` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-3ba4971f07` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-3be3328d41` — lake / uncontracted / Dolj / Lacul Hanul Doctorului
+- `uncl-3eebbdaae0` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-40ff52a70b` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-41b040cd24` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-460c2c1c01` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-4908442070` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-495dc871ed` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-498c72abb6` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-4b756e8ab9` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-4b8df73c3c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-4d5241612a` — lake / uncontracted / Dolj / Lacul Renca
+- `uncl-4de89788d3` — lake / uncontracted / Dolj / Balta Lată
+- `uncl-4eeedc732a` — lake / uncontracted / Dolj / Balta Colț de Rai
+- `uncl-505358b1ee` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-546d463ca0` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-5702447b47` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-57b361aa9c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-5816b2959f` — lake / uncontracted / Dolj / Balta Poliției
+- `uncl-5e61dabb33` — lake / uncontracted / Dolj / Lacul lui Hasan
+- `uncl-6120d7f039` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-64a965125a` — lake / uncontracted / Dolj / Lacul Dănoaiaca
+- `uncl-6b2fbcfd0f` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-6ca491db7c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-6e2813c444` — lake / uncontracted / Dolj / Balta Catoaica
+- `uncl-6e28bac782` — lake / uncontracted / Dolj / Bistrețul
+- `uncl-6eba589d5e` — lake / uncontracted / Dolj / Măgura Dracului
+- `uncl-6fdb323463` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-6ff713e7bf` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-716624ff8d` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-719a8a7a4c` — lake / uncontracted / Dolj / Lacul Victoria
+- `uncl-72e935d447` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-748024e55e` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-75435c7114` — lake / uncontracted / Dolj / Balta Teslui
+- `uncl-76052ddf87` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-76a06d0481` — lake / uncontracted / Dolj / Balta Mofleni
+- `uncl-76f82359be` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-797517d976` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-7af9dc6193` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-7b52f35127` — lake / uncontracted / Dolj / Heleșteul Verbița
+- `uncl-7f0199ccf8` — lake / uncontracted / Dolj / Lacul Mare
+- `uncl-85371c821e` — lake / uncontracted / Dolj / Balta Teslui
+- `uncl-85698d87e1` — lake / uncontracted / Dolj / Balta Golenți
+- `uncl-85f9dfe1aa` — lake / uncontracted / Dolj / Bistreț
+- `uncl-882a42c9c9` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-89944b9b86` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-89bbfd475f` — lake / uncontracted / Dolj / Lacul Tuglui
+- `uncl-8c23541287` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-8c28082b74` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-8e6037f46d` — lake / uncontracted / Dolj / Lacul Tarova
+- `uncl-8e840427b0` — lake / uncontracted / Dolj / Acumularea Perișor
+- `uncl-90582699ba` — lake / uncontracted / Dolj / Balta Copăcelu
+- `uncl-9172917883` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-92574baf99` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-926bf40b79` — lake / uncontracted / Dolj / Balta Arcerului
+- `uncl-96ae9c9cd3` — lake / uncontracted / Dolj / Lacurile Preajba-Făcăi
+- `uncl-9706b6bf53` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-9711febb7c` — lake / uncontracted / Dolj / Balta Craioviței
+- `uncl-9cf0d4cb3f` — lake / uncontracted / Dolj / Lacul Mare
+- `uncl-9f32b9c77b` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-9f8c069119` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-a0a680c913` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-a32c71ecca` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-a3a2a9e4d4` — lake / uncontracted / Dolj / Lac
+- `uncl-a50d8d8ad6` — lake / uncontracted / Dolj / Balta Ciliboaica
+- `uncl-a576dda2b5` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-a6106c3450` — lake / uncontracted / Dolj / Balta Neagră
+- `uncl-a789b1f90e` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-aa73e32780` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-aa8bc7e5f5` — lake / uncontracted / Dolj / Lacul Călugăreni
+- `uncl-ab19977cc0` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-acbe9ba97c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ae93b1c8f2` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-afa82eb97d` — lake / uncontracted / Dolj / Balta Serazu
+- `uncl-afd3e3eea2` — lake / uncontracted / Dolj / Lacul Oarca
+- `uncl-aff170ac3f` — lake / uncontracted / Dolj / Balta Popii
+- `uncl-b1744af6b5` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b1ff596653` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b20e4b64fb` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b33ef54f09` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b440bf58ff` — lake / uncontracted / Dolj / Leul
+- `uncl-b4625270c7` — lake / uncontracted / Dolj / Vârtop
+- `uncl-b570737a9e` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b58b451fcd` — lake / uncontracted / Dolj / Acumularea Castranova
+- `uncl-b92569936c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-b9f05fd8a9` — lake / uncontracted / Dolj / Lacul Valea Fetii
+- `uncl-bb39487592` — lake / uncontracted / Dolj / Bazinul de Denisipare
+- `uncl-bb461cedd0` — lake / uncontracted / Dolj / Lacul Lebedelor
+- `uncl-bb524dd32f` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-bc4472c7af` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-bc89d63773` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-beeb2e0967` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-c0fb920855` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-c334616f9c` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-c42a68b5b4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-c5529479e7` — lake / uncontracted / Dolj / Lacul Maglavit
+- `uncl-c808b9cafd` — lake / uncontracted / Dolj / Lacurile Preajba-Făcăi
+- `uncl-ca34557768` — lake / uncontracted / Dolj / Lacurile Preajba-Făcăi
+- `uncl-ca83f49743` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ccb07473a4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ccdacdfcc6` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-cd8f75b225` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-cdf268805a` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d026538f6a` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d0c597c526` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d2dc423200` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d2ef2e12df` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d45911ed63` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-d5ff5b7d01` — lake / uncontracted / Dolj / Lacul Metița
+- `uncl-d8a6a62167` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-da7f4fdf78` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-dc2b47ae19` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-dcead26f34` — lake / uncontracted / Dolj / Balta Cârcea
+- `uncl-de3986160d` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-df84c088a7` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-e27a050f20` — lake / uncontracted / Dolj / Balta lui Pastorel
+- `uncl-e39da038a4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-e427d2f041` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-e667a52b20` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-e73270bbb6` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-e8b1f038d9` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ea87250474` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ea9f3f28b9` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ed0d030470` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ed5154d51a` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ed95b2de1f` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-ee89c3fda8` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f0ba0477fa` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f20aeab5cd` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f32eada5f9` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f46353a728` — lake / uncontracted / Dolj / Bistreț
+- `uncl-f47e07b33b` — lake / uncontracted / Dolj / Băile Ionele
+- `uncl-f4e275798b` — lake / uncontracted / Dolj / Balta Fântâna Hanului
+- `uncl-f5d12dbf76` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f6a54b2a9d` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f6fd10fea4` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f71f7aeb23` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-f81236b9d1` — lake / uncontracted / Dolj / Balta I
+- `uncl-f8872fc323` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-fa977f3e7b` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-fc5543da39` — lake / uncontracted / Dolj / Balta Craioviței
+- `uncl-fc8f9c4bd2` — lake / uncontracted / Dolj / Iaz neidentificat
+- `uncl-00337725b0` — lake / uncontracted / Dâmbovița / Lacul Cureasca
+- `uncl-02476aecea` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-030bdf4b25` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-036ed44263` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-0487052c8c` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-07b0270388` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-08daad7c42` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-0a174691a6` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-0a43b63577` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-0b01f7abd6` — lake / uncontracted / Dâmbovița / Lacul Lazuri 5
+- `uncl-0b131e3df6` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-0d70a746cd` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-0e744b012f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-0f82683eba` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-10332dca2c` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-1643f04fde` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-1713fc17ad` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-187852b66a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-197128195f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-1badc3a563` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-1be9f68dc3` — lake / uncontracted / Dâmbovița / Lacul Lazuri 2
+- `uncl-1e20fe8689` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-208a921017` — lake / uncontracted / Dâmbovița / Balta EYA
+- `uncl-216dc7d85d` — lake / uncontracted / Dâmbovița / Lacul Priseaca 1
+- `uncl-260d0a2361` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-274876a961` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-2c151fbd86` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-2e2456ec9d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-2e818591a8` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-31c868b7ca` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-3544446523` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-36946ae238` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-39eadec0e6` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-4113320e04` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-426451f53a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-449dd38c16` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-46e4a1bea4` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-4809dca07b` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-48740f1e29` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-4afb3524a8` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-4c4064caed` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-4ca9103081` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-55ba85a889` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-5688dce88d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-5ace37e9fb` — lake / uncontracted / Dâmbovița / Lacul Lazuri 4
+- `uncl-5d2b3fd76b` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-5e6659b94a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-5eaf25caad` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-602b202aef` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-6050dd8e8a` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-61f8ab3672` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-62437f02b9` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-6432a14b36` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-652e855a9f` — lake / uncontracted / Dâmbovița / Bazin disipator
+- `uncl-6780deca34` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-695b9e17c6` — lake / uncontracted / Dâmbovița / Balta Barbuceanu
+- `uncl-6b827ed100` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-6e1e878df8` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-6e4f2642c7` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-6f836018bd` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-70db6760fe` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-72c8e2fcf9` — lake / uncontracted / Dâmbovița / Lacul Rațelor
+- `uncl-7303628b49` — lake / uncontracted / Dâmbovița / Racovița
+- `uncl-73e0e410ac` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-7722ab4e42` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-7aac260e5c` — lake / uncontracted / Dâmbovița / Farlow Pike Arena
+- `uncl-7cfad3f185` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-7efe20f341` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-8180d74530` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-82cea66f58` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-82fbce4738` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-83fb82d58f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-84fe5527e3` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-85aa18b4f2` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-85d1faeb4f` — lake / uncontracted / Dâmbovița / Pușcoi (Urlătoarea)
+- `uncl-85f518b185` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-87a86cfb3d` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-88abb598f2` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-890e060b32` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-8e633467a4` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9159451d72` — lake / uncontracted / Dâmbovița / Balta Bunget 2
+- `uncl-9323313bc1` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-979e00421e` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-97bb4da12d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9bb64c109e` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9cd6a2988f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9d2d283efb` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9d32ac7c62` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-9db613bc69` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a0216b5343` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-a1312a54f5` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a1651f9e64` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a166845236` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a18245ee04` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a3588eb074` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a60841967c` — lake / uncontracted / Dâmbovița / Balta Bunget 1
+- `uncl-a6d80c3c97` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a7680c5e62` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-a9c0bed891` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-abf63b577e` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ac2f617c26` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-b0e6e4019f` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-b1fe92bb7d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-b35012606c` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-b77c0b44cc` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-b7f9d0b01a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ba7344e1f4` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ba85da7307` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-bab5ca7e43` — lake / uncontracted / Dâmbovița / Lacul Lazuri 3
+- `uncl-bb1853ed01` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-bc0c09fd42` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-bc9df1bdfc` — lake / uncontracted / Dâmbovița / Lacul Priseaca 2
+- `uncl-bcbecc5de4` — lake / uncontracted / Dâmbovița / Balta Conțești
+- `uncl-bcc9c877eb` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-be9f918333` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-beaa54f27a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-c049dfea75` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-c44da50c67` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-cc8ec846a6` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ccdaafb34f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ce320f6222` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d1b78217d8` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d245925a80` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d25c40fad2` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d347556544` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d4b707ae6c` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d4d91986a9` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d5364f3fa5` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d75bb1822a` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-d819834384` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-df7997cb0e` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e1dcfce414` — lake / uncontracted / Dâmbovița / Lacul Zmeului
+- `uncl-e23d44a0df` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e24eaeae89` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e40c5bb8bf` — lake / uncontracted / Dâmbovița / Lacul Lazuri 1
+- `uncl-e4e1d0b3f1` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e4ffe7986c` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e672cd015d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e7cccf5b7c` — lake / uncontracted / Dâmbovița / Lacul Chindia
+- `uncl-e81dacdca0` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e8de1624ad` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-e8f7eb4fe9` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ea69c63cd6` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-eac950aa0f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ec756dd05b` — lake / uncontracted / Dâmbovița / Lacul Buftea
+- `uncl-ed4e7171b8` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-ef1eca754f` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-f418a17140` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-fb3e15fd89` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-fb66128d53` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-fb78fe083d` — lake / uncontracted / Dâmbovița / Iaz neidentificat
+- `uncl-038f535d5b` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-0505d5b9dc` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-09558765a5` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-0b3ac87a69` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-0cc10230b7` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-0ea2dedc8e` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-10ffe0fb4d` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-12453902bb` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-140cda1a3f` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-161fdda257` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-1906e9658d` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-1a846b7e65` — lake / uncontracted / Galați / Lacul Cătușa
+- `uncl-1cfc318a97` — lake / uncontracted / Galați / Mălina
+- `uncl-1f9b5524b1` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-2b003f2c73` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-2b9224701a` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-2cac7fc101` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-2fe1b7349a` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-31b03d2e86` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-362273557d` — lake / uncontracted / Galați / Lacul Brateș
+- `uncl-37c656f044` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-38e0e2327e` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-39bf041df6` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-3cb3e557d7` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-3d7d668b69` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-3fddbb0e92` — lake / uncontracted / Galați / Lacul Sovârca
+- `uncl-4036fb1236` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-41e1dca21c` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-4570115dc7` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-4631012516` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-4887d0f41c` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-4eb3d72590` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-52c7f8845b` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-53112bd843` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-564ebabbbf` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-5e1d560653` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-614c1da2f7` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-6258014410` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-6460e8eebe` — lake / uncontracted / Galați / Lozova
+- `uncl-6920be19d9` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-6a4c4ed9bb` — lake / uncontracted / Galați / Lacul Sere
+- `uncl-6ea2dd1272` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-7163e56759` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-730c72815c` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-7378ea0f4a` — lake / uncontracted / Galați / Balta Cătușa
+- `uncl-746127ed4f` — lake / uncontracted / Galați / Mălina
+- `uncl-7510384c19` — lake / uncontracted / Galați / Lacul Pochina
+- `uncl-79407ad4d8` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-7c433a87d7` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-7de0fefc0d` — lake / uncontracted / Galați / Lacul Vânători
+- `uncl-806ace1cde` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-8120a1e554` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-83d037f514` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-870594e4b5` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-8b03f1562c` — lake / uncontracted / Galați / Balta Corni
+- `uncl-8c87c3b907` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-932b81989e` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-96b147b67f` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-973a2189e8` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-9838f147b9` — lake / uncontracted / Galați / Balta Zătun
+- `uncl-98dc65b89e` — lake / uncontracted / Galați / Siret
+- `uncl-9d56e9269e` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-9edf132f18` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-a0dd2b892f` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-a1cf71fb8d` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-a23ba91268` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-a290469cd9` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-aeac5eb41b` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-b006920027` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-b20c0adae5` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-b767f180cc` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-b91217cf30` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-ba931240b4` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-bf29d625e5` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-bfd214412f` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-c12ed38497` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-c578cfa556` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-cbe309f710` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-ceb3962856` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-d123b45d1b` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-d202903145` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-d30f3249a6` — lake / uncontracted / Galați / Siretul Mort
+- `uncl-d60b6c680d` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-d9b0519d49` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-d9d9f8066b` — lake / uncontracted / Galați / Uzina de apă
+- `uncl-da43f99082` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-e4a89cb8b9` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-e88721d318` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-ecfd2c9fcd` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-ee87ebe777` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-f10b551f30` — lake / uncontracted / Galați / Balta Mălina
+- `uncl-f15001aa4d` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-f15afe3f13` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-f3f7000482` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-f70280d8d4` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-f73419ab30` — lake / uncontracted / Galați / Siretul Mort
+- `uncl-f8594f2377` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-fb90f9fbbb` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-fc27494894` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-fdf5c5f89a` — lake / uncontracted / Galați / Iaz neidentificat
+- `uncl-00ca51065e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-01174d4802` — lake / uncontracted / Giurgiu / Lacul Lung
+- `uncl-01f10ab3bc` — lake / uncontracted / Giurgiu / Balta Soare
+- `uncl-02a7ad8bcf` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-038f104f6c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-03eb8b581a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0450c6d7d6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-04990bd820` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-084aae2dd6` — lake / uncontracted / Giurgiu / Lacul Ciobănașul
+- `uncl-090623765d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-095cb01c39` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-097612c536` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0ad0f448ca` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0d09b7a8d9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0d24385a7a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0da26ed114` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0e3600bbbb` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0edb01383a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-0f7b3e8005` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-102c467264` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-12ee714f96` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1563e446f1` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1574a27fb2` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-169e4f4ed5` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1723c60076` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-17edfa588a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1a13830fc4` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1a55b5c3c8` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1a6c59c77c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1bf1288324` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1ce531d269` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1d168f8f0a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1d3d1d5770` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1d8cd7db9d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1f1b78e566` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-1f6f2d802c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-213803b278` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-222b9ccc38` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2277e1b2a8` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-22a7d1cbef` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2420d8d87a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2480eb5228` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2557b0e2be` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-275db4a021` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-28fa07e68d` — lake / uncontracted / Giurgiu / Balta Chita 2
+- `uncl-29935c2ce7` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-29d3d160ad` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2d8cfe428f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2dac71042f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-2dc0683629` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3018b4f19d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3144cdce14` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-32f3188f4f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-334a75e757` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-33b9473d30` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-34b1aec5b8` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-35239e5629` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-352e2f2d83` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-357d0ca68d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-36b889bdbd` — lake / uncontracted / Giurgiu / Groapa de cenușă
+- `uncl-37526a9215` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3b58fe163e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3bd7a70b0f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3c52aba45e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3e23659abf` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-3f827c1055` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4068a8a0bf` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-40d2878d1a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-40e1f998dd` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4154557b0e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-422d554acf` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-44580fb19d` — lake / uncontracted / Giurgiu / Lacul Varlaam
+- `uncl-4646f71682` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-46bd9576be` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-47316cda42` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-47f13e9291` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-49499cc977` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4a0709b489` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4b385a561e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4bfc272f2a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4c3c80be15` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4ca5df956e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4d30cd859e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4d3d61c975` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4e7594c19e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-4e97d160e3` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-50746cf174` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-50af3a04d0` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-52263b652b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5263f3fc30` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-52f0e0450e` — lake / uncontracted / Giurgiu / Lacul piscicol Valea Zânei
+- `uncl-5356f58773` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-53a5229636` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-543d245672` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-544e921d60` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-570f1bf6aa` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-577c9d02ea` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-586138cd59` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-58fbe8161a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5a66fc1582` — lake / uncontracted / Giurgiu / Lacul Lupilor
+- `uncl-5aa2bcf980` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5b3257a320` — lake / uncontracted / Giurgiu / Bazinul Veriga
+- `uncl-5c7a59c2c2` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5dbeb16bce` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5de7b152ce` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5e1d518a7c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5e9b41f3b9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-5fec1a5180` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6003528068` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-663312bd51` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6776482ab6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-67b660f89f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-68467068c1` — lake / uncontracted / Giurgiu / Lacul Mare
+- `uncl-68b9e86f0b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-68f4f82508` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-69ef25f541` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6a097b462b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6b7a42c4dd` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6bc6da929f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6cbc99b86c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6cdb23e89e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6fa56686d1` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-6fc04e0b86` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-70ca132b69` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-714feba039` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-720bccb9b0` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-739c65a09b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-748733c5f1` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-74d8a33176` — lake / uncontracted / Giurgiu / Balta Valea Dragnei
+- `uncl-76dd290872` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7761ec2bc5` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7827697115` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-784d8e7cda` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7978466fb9` — lake / uncontracted / Giurgiu / Lacul Steaua Dunării
+- `uncl-79b7a7c865` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7a0a00e0f2` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7a1042415e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7a71921f17` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7c1b280568` — lake / uncontracted / Giurgiu / Lacul Veriga
+- `uncl-7c43f30d91` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7cae5e35f9` — lake / uncontracted / Giurgiu / Oncești 2
+- `uncl-7dbeaec0d5` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-7e50bbc487` — lake / uncontracted / Giurgiu / Râul Milcovăț
+- `uncl-7f8d2772e3` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-80ab7fa532` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-812fd0f687` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-81619f3412` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-85cda6b4aa` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-889883f88c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-88ad3fbe8c` — lake / uncontracted / Giurgiu / Lacul Neamțului
+- `uncl-8985e9afbe` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8a5722cec6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8ce3f76449` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8dc26f7818` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8ea2bb6fce` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8f3f8ca657` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-8f582daee0` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9079c6144a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-90ab4fe1fa` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-92ffd543fa` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-93224b9f7f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9435c466f6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-95018f1c24` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-985905a32f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-98ab3c7cde` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-99b042d068` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-99fc0b119e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9a4915035b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9a6c476e67` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9c0a1a3631` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9c2399ebdd` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-9ce8b05e9b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-a2a0161bb4` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-a3c52a7b4b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-a593a345a6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-a79339f1d7` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-a8678b09ca` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-aa995d85fd` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-aac5235a5c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-aadc1bd2bb` — lake / uncontracted / Giurgiu / Balta Vlașin
+- `uncl-ae35262963` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-aec50cb9fc` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-afbdf647ff` — lake / uncontracted / Giurgiu / Mihăilești
+- `uncl-b00c02dc8c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b031ecc777` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b2df0d540c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b39f8bf341` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b5cefc1401` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b70412e447` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-b9c2ad6850` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-baa26ff9d9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-bb1a508bce` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-bc9c346a92` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-bed207ef85` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-bf0203c5e8` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-bf9c8e7cdd` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c03c14b2f9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c0cd2108a0` — lake / uncontracted / Giurgiu / Addam Fishing
+- `uncl-c2b6e30001` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c43c769cd6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c4a546aa01` — lake / uncontracted / Giurgiu / Oncești 1
+- `uncl-c50dd0527b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c525a12f0d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c60178c426` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c63560993b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c64bd49d7b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c72b91799b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c7352de9a5` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c74d808a68` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c79c936895` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c86f56ccba` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c88b7540a9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-c9dee83b2f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-cb4fbaedfb` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-ccab98d3fe` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-cd09d75636` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-cd2852df1f` — lake / uncontracted / Giurgiu / Balta Făcău
+- `uncl-ced266a315` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-cfd0fd0dfb` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d010a91663` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d1e301b2ba` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d5448c3818` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d6d463e3ab` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d88bf48331` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d8bce55e1d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-d8c29eb876` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-dab78b2faf` — lake / uncontracted / Giurgiu / Lacul Radu Vodă
+- `uncl-dbc886aad1` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-dc0a972cfa` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-dc548bc826` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-dce14f5f7b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-df2230c414` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-dfa764b28f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e259a2b2da` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e2de88ae2d` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e337938363` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e4555c620b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e4e681d34e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e617e52048` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e641fc4cc6` — lake / uncontracted / Giurgiu / Acumularea Berceni II
+- `uncl-e75faa1459` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e85177cd04` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e8e5b4fd77` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-e920b1a7be` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-ea29992f5e` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-eabb41a2dc` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-eae94d434a` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-ecedb33d27` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f01a3f9143` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f12cf4d0b3` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f2826bd572` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f2939a1b67` — lake / uncontracted / Giurgiu / Gârla lui Manea
+- `uncl-f3c237ac40` — lake / uncontracted / Giurgiu / Balta Chita 3
+- `uncl-f3e1819bab` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f5bb34e93f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f5c1f404f9` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f5d1d83b6f` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f5f11046ed` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f5f34200d5` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f62701d77c` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f76d069511` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f778ed5f02` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-f982ea4cd6` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-fab6f68151` — lake / uncontracted / Giurgiu / Balta Valea Lungă
+- `uncl-fbb4084284` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-fc4641485b` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-fd979b6a60` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-ffe3b314e7` — lake / uncontracted / Giurgiu / Iaz neidentificat
+- `uncl-05f4aeacc4` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-06f95b10ae` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-0fc773e469` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-11f393b510` — lake / uncontracted / Gorj / Iezerul Godeanu
+- `uncl-1aa9782b6b` — lake / uncontracted / Gorj / Lac Moi 2
+- `uncl-1cd581176e` — lake / uncontracted / Gorj / Lac Moi
+- `uncl-22766e93b1` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-273be54db9` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-278b3bc3cc` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-2e581bf713` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-2f548d7fc9` — lake / uncontracted / Gorj / Lac de Acumulare Ciocoliș
+- `uncl-2fa071d4bc` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-33b9bf1449` — lake / uncontracted / Gorj / Lac Sâmbotin
+- `uncl-34f62f6b38` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-3957a9492c` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-3bc2b5b07c` — lake / uncontracted / Gorj / Lac Sâmbotin 2
+- `uncl-3dd813fb01` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-440e8891ae` — lake / uncontracted / Gorj / Lacul Gârdomanu
+- `uncl-46cb7eebf7` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-4d48182bc9` — lake / uncontracted / Gorj / Lac de Acumulare Sadu
+- `uncl-4ddb3c8279` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-579e852fa4` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-58dce28c27` — lake / uncontracted / Gorj / Lacul Vădeni
+- `uncl-65ec2e8cee` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-6bcb4f65d5` — lake / uncontracted / Gorj / Lacul Debarcader 2
+- `uncl-6d077e838b` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-795c08b9c0` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-7bf458cdbc` — lake / uncontracted / Gorj / Lacul Panduraș
+- `uncl-808006e2cf` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-8214f47133` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-913baddf7a` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-92050706cd` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-99c918023a` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-9b2c86c8a7` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-a9c6abed51` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-aeeaacf0e8` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-b2d1e348c6` — lake / uncontracted / Gorj / Lacul Debarcader
+- `uncl-b308827919` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-bbb5bf3546` — lake / uncontracted / Gorj / Lacul Debarcader 3
+- `uncl-bf18fcebee` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-c3900eac0d` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-c660e825c2` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-c6ab11235f` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-c8dd75310e` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-cd324b8bc9` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-d3da5dcd1b` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-d59b964e9e` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-db32f468cf` — lake / uncontracted / Gorj / Lac Sâmbotin 3
+- `uncl-defc3d147e` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-e714fef9f3` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-ea48d86270` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-ea648f0f18` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-eacddeec52` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-ec518448fb` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-edfcbc8211` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-f21407ff32` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-fb424b9efa` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-fd480ef6f4` — lake / uncontracted / Gorj / Iaz neidentificat
+- `uncl-03da7808d7` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-05961b095f` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-05e6d5de54` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-0dfbddb67e` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-0fc5465e00` — lake / uncontracted / Harghita / Lacul Șuta
+- `uncl-13644b6418` — lake / uncontracted / Harghita / Csíkmadarasi bányató
+- `uncl-1f8dd0dff7` — lake / uncontracted / Harghita / Matula Tó
+- `uncl-2a4ad5a32c` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-2c2f418fa9` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-2d70946adf` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-316d874626` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-358a003789` — lake / uncontracted / Harghita / Matula Tó
+- `uncl-366f1c9f64` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-38f0e10fdf` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-3e907c69a3` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-43f647c9da` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-49ac699c5b` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-4b7d229b0b` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-4f92d24bb0` — lake / uncontracted / Harghita / Eszenyői horgásztó
+- `uncl-51d0744e30` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-52bde8797e` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-5c34a2c70a` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-5cdaac65c4` — lake / uncontracted / Harghita / Matula Tó
+- `uncl-5d987f6e09` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-62f987b6f9` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-6339d0e980` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-6548150085` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-6a380f6eaf` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-6b2c114a5b` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-70fa7f535b` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-78634f33c0` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-7884c85c79` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-78a58a95aa` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-7aff3951e5` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-7b4e0b4af0` — lake / uncontracted / Harghita / Lacul Rugănești
+- `uncl-7ceac0ab58` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-800989f9ec` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-801d56f42a` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-818cc557b3` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-81cbdd0629` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-8575277cc2` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-87db6cfb6d` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-884c6b748b` — lake / uncontracted / Harghita / Lacul Ciucaș
+- `uncl-8bcc9ea473` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-94baa4de65` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-976c2ee9a5` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-98a4c2214e` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-9d7555e88e` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-a1650c1d90` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-a588d8dd85` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-a7dbfb14f9` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-a99c2a3979` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-aaddd43136` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-ac56b812e7` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-b283c2add3` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-b6c3caff15` — lake / uncontracted / Harghita / Lacul Sfânta Ana
+- `uncl-b6fcbc75bf` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-b7e5406190` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-b99fdeea0f` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-b9f9a7ddca` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-d10a60535f` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-d2fe80d230` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-d5a8240966` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-d821ff4863` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-e7ea4fe177` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-ea37be1041` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-ec3e95d01a` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-f081e6e55d` — lake / uncontracted / Harghita / Balta de la Sânpaul
+- `uncl-f104133748` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-f2e60b2f4c` — lake / uncontracted / Harghita / Liberty Fishing & Recreation
+- `uncl-f4d41b7973` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-fffeaee8b3` — lake / uncontracted / Harghita / Iaz neidentificat
+- `uncl-010e42bb97` — lake / uncontracted / Hunedoara / Lacul Mutătorii
+- `uncl-020e0a16aa` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0286e29bfe` — lake / uncontracted / Hunedoara / Pietricelele
+- `uncl-041fea40a9` — lake / uncontracted / Hunedoara / Gemenele
+- `uncl-070f95247a` — lake / uncontracted / Hunedoara / Stânișoara
+- `uncl-0746d74b8e` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0ad29101cc` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0b197270ba` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0caf3410f2` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0d0ac1869a` — lake / uncontracted / Hunedoara / Lacul Scărișoara
+- `uncl-0e420e9887` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0ed98272bb` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-0f511ff5ea` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-11d1e9879a` — lake / uncontracted / Hunedoara / Tăul Ascuns
+- `uncl-1222c45e90` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-122aa8e05e` — lake / uncontracted / Hunedoara / Tău Turcelu
+- `uncl-127ff8ff43` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-147be47c50` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-14d1dc195b` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-15498c4c1c` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-160ce6b7a7` — lake / uncontracted / Hunedoara / Caprelor
+- `uncl-16cdf68baa` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-18c946a5ea` — lake / uncontracted / Hunedoara / Lacul Lung
+- `uncl-193dd8cd39` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-19a44b7e03` — lake / uncontracted / Hunedoara / Ciomfu Mic
+- `uncl-1a5b57b3a8` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-1b1395b202` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-1fcdc68c16` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-20a1b826a7` — lake / uncontracted / Hunedoara / Tăurile Radeșului
+- `uncl-243e3fc990` — lake / uncontracted / Hunedoara / Judele
+- `uncl-24f27c5122` — lake / uncontracted / Hunedoara / Ciomfu Mare
+- `uncl-24f7b26fdb` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-25021c7eb6` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-290d3d4623` — lake / uncontracted / Hunedoara / Lacul cu Pietriș
+- `uncl-2933c87dc8` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-2ad3431f09` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-2add48b91c` — lake / uncontracted / Hunedoara / Zănoaga Stânei
+- `uncl-3020a848e8` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-305f75e808` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-318cdbccf9` — lake / uncontracted / Hunedoara / Zănoaga Mică
+- `uncl-37df81e169` — lake / uncontracted / Hunedoara / Tăul Porții
+- `uncl-3ad7a27229` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-3db0dd95ec` — lake / uncontracted / Hunedoara / Tău Urât
+- `uncl-44d54efd95` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-458f664703` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-470ae8891b` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-4bcb5d79d0` — lake / uncontracted / Hunedoara / Lonea
+- `uncl-51e011626c` — lake / uncontracted / Hunedoara / Tău
+- `uncl-5572e105aa` — lake / uncontracted / Hunedoara / Lacul Știrbu
+- `uncl-5704d8ccba` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-57cbddd959` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-5a87619c4a` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-618bb4aa89` — lake / uncontracted / Hunedoara / Lac Termal
+- `uncl-6240dd9562` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-67275abe9a` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-6870a930a4` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-6a1b0917d4` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-6c96a5c5f4` — lake / uncontracted / Hunedoara / Lacul Șăulești
+- `uncl-6c9e946f36` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-6d715d139c` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-6fa14c4b29` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-706261b19c` — lake / uncontracted / Hunedoara / Bucurelu
+- `uncl-78b71e19ec` — lake / uncontracted / Hunedoara / Unex
+- `uncl-793fbfb937` — lake / uncontracted / Hunedoara / La Băltuțe
+- `uncl-7a78896a6d` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-7d78ec2f87` — lake / uncontracted / Hunedoara / Baltă
+- `uncl-7e1d5b573a` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-80bc68dd5c` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-830ad91528` — lake / uncontracted / Hunedoara / Balta Ben
+- `uncl-832546f02e` — lake / uncontracted / Hunedoara / Lac de Acumulare Sântămăria-Orlea
+- `uncl-8341bef092` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-862066ff65` — lake / uncontracted / Hunedoara / Lacul Adânc
+- `uncl-86f8a92a5f` — lake / uncontracted / Hunedoara / Lacul Mare din Valea Rea
+- `uncl-899f067a4f` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-89c7a67af7` — lake / uncontracted / Hunedoara / Știurț
+- `uncl-8d89a2965a` — lake / uncontracted / Hunedoara / Captarea de pe Cerna
+- `uncl-8fc03bdeb0` — lake / uncontracted / Hunedoara / La Lac Maleia
+- `uncl-92848bd0fc` — lake / uncontracted / Hunedoara / Lacul Netiș
+- `uncl-93645c1d79` — lake / uncontracted / Hunedoara / Lacul Scurtele
+- `uncl-94cb30f630` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-96597a7035` — lake / uncontracted / Hunedoara / Lacul Mutu
+- `uncl-9c4a177eed` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-9d2c5a7b46` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-9d86c2cb88` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-a02a6913d3` — lake / uncontracted / Hunedoara / Lacul Buta
+- `uncl-a21263ba4b` — lake / uncontracted / Hunedoara / Negru
+- `uncl-a7e4f7b2a1` — lake / uncontracted / Hunedoara / Peleguța
+- `uncl-adfb80e0b8` — lake / uncontracted / Hunedoara / Tăul Cârligului
+- `uncl-b343b72ee7` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-b41f6a3fd9` — lake / uncontracted / Hunedoara / Tău Răsucit
+- `uncl-b5121f0dff` — lake / uncontracted / Hunedoara / Balta Hășdățel
+- `uncl-b70df46af4` — lake / uncontracted / Hunedoara / Pietrele
+- `uncl-bb61143d90` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-c14edda2bd` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-c40ac2ebac` — lake / uncontracted / Hunedoara / Pietricelele
+- `uncl-c4fc851ea8` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-cea5dca2cc` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-d315b90764` — lake / uncontracted / Hunedoara / Șumuștău
+- `uncl-d51fe12c3e` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-d5910557bb` — lake / uncontracted / Hunedoara / Balta Cerbu
+- `uncl-d627bed108` — lake / uncontracted / Hunedoara / Lacul Verde
+- `uncl-d80b8f2a46` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-db9e38935f` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-dbd8f15d13` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-de43630471` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-e225b2c16f` — lake / uncontracted / Hunedoara / Cârja
+- `uncl-e323c2a35a` — lake / uncontracted / Hunedoara / lacul keops
+- `uncl-e37f2f9167` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-e529c491bf` — lake / uncontracted / Hunedoara / Iezilor
+- `uncl-e73d53c632` — lake / uncontracted / Hunedoara / Barajul Wasserleiter 1890
+- `uncl-e8ef69e2de` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-ea032d04a3` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-ea6605a754` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-eaf4860fb9` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-edaf1178b5` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-f2b51c20e9` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-f7879a9d78` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-f95bab3bfb` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-fe7420e372` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-ff588c9f6c` — lake / uncontracted / Hunedoara / Iaz neidentificat
+- `uncl-019ff73b01` — lake / uncontracted / Ialomița / Lacul Jilavele
+- `uncl-02b7bce334` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-052ec68a31` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-05920ce2c7` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0623be440b` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0926ffd44d` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0bdab1e431` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0c4ee23db2` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0fb51ee60c` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-10e9bd5758` — lake / uncontracted / Ialomița / Lacul Slătioarele
+- `uncl-110b5dad06` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-134b02bc48` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-168949077d` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-17fa1d9d3e` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-1977929adb` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-1ab14ea2f3` — lake / uncontracted / Ialomița / Lacul Cătrunești 3
+- `uncl-1b543555af` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-1cfadcf66e` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-2395f01bef` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-263b36e01e` — lake / uncontracted / Ialomița / Balta Vie - Movilita
+- `uncl-277a70f753` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-277d77dfc5` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-2d5684fcd6` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-2fc881279f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-30327987c9` — lake / uncontracted / Ialomița / Balta Cotorca
+- `uncl-342dad50f8` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-34b1e5da4f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-35e827c785` — lake / uncontracted / Ialomița / Balta Plină
+- `uncl-3917cf4edd` — lake / uncontracted / Ialomița / Balta Sinești 1
+- `uncl-3b8d413e81` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-3c5e0e75c1` — lake / uncontracted / Ialomița / Ferma Piscicola Maia
+- `uncl-3cd80bdf1c` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-3eaab632be` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-409c8720f0` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-40bc0753fb` — lake / uncontracted / Ialomița / Perii
+- `uncl-4328d35d21` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-4390b4b53a` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-43d40673b0` — lake / uncontracted / Ialomița / Lacul Iezer - Gheorghe Lazăr
+- `uncl-4493cba7b1` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-44d390402f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-45e54581cb` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-4898371ed2` — lake / uncontracted / Ialomița / Balta Ratca
+- `uncl-48e4205c0e` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-4a4cf7fa97` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-4a737e4ebc` — lake / uncontracted / Ialomița / Lacul Hagiești 1
+- `uncl-4ecec2f41a` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-4ffe9cb526` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-529e23dde5` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-54c2ddab34` — lake / uncontracted / Ialomița / King Lake
+- `uncl-564cfc20be` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-5ef22aee04` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-605d4a7bbf` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-63e929fbfb` — lake / uncontracted / Ialomița / Balta Movilița
+- `uncl-66a30cffc0` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-67b91557db` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-6c135b82ed` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-6d3f6ca1e8` — lake / uncontracted / Ialomița / Lacul Strachina
+- `uncl-70c98a6146` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-739523690e` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-74567864cb` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-7617ff36e7` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-77090d6adf` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-791a61fea1` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-7b49b305e8` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-7ca8c04fcf` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-7efa910b4f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-7f1d39e363` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-85c74aa462` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-85dcb8f726` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-8a71c23e2b` — lake / uncontracted / Ialomița / Balta Bitina
+- `uncl-91d8234122` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-95290d71ba` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-95d77c170d` — lake / uncontracted / Ialomița / Lacul Amara
+- `uncl-98a805b49c` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-990809d54f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-9a7fc69fc4` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-9b82ecf531` — lake / uncontracted / Ialomița / Balta Colceag 3
+- `uncl-9c3ed4cf5a` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-9c603b8a97` — lake / uncontracted / Ialomița / Lacul Fundata
+- `uncl-9dede41b72` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-a283630cf9` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-a2b015775c` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-a310249a20` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-a703c05969` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-a883d856dd` — lake / uncontracted / Ialomița / Lacul Piua Petrii
+- `uncl-aad3835242` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-adff49f378` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-b4f7ecd5df` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-b704d58848` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-bc81ddf600` — lake / uncontracted / Ialomița / Balta Valea Bisericii
+- `uncl-bccbfbd03f` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-bd2b945ca7` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-bd54df92e3` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-c1cf5d0810` — lake / uncontracted / Ialomița / Balta Colceag 2
+- `uncl-c3ea1da0f9` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-c43011e5b5` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-c9c94a9d60` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-cfae573218` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-cff8953584` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-d477801be2` — lake / uncontracted / Ialomița / Balta Saraturi
+- `uncl-d80256477b` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-dd1e2a03ce` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-df6fea0d5c` — lake / uncontracted / Ialomița / Balta Ciocarlia 4
+- `uncl-df97556952` — lake / uncontracted / Ialomița / Saratuica
+- `uncl-e53c1667f2` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-e8003f49e3` — lake / uncontracted / Ialomița / Lacul Fundata
+- `uncl-e8f2fed87a` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-ea8286c7ba` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-ebe4562607` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-eed3013ca7` — lake / uncontracted / Ialomița / Privalul Vărsăturii
+- `uncl-f335e9ec8a` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-fdcecb0fbe` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-ff0c5f1c72` — lake / uncontracted / Ialomița / Iaz neidentificat
+- `uncl-0071eb0bf3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-00ee56cc41` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-01ddfb1052` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-02e0da7007` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-02e66db451` — lake / uncontracted / Iași / Lacul Bogdănești
+- `uncl-02eed2281a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-030793974c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0373e0f96e` — lake / uncontracted / Iași / Acumularea Tungujel
+- `uncl-05e38b8ae7` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0609b1e15a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-06b5323e02` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-080da020dc` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-084efa3530` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0a5bf583c1` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0a839070ab` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0b0a2cbbed` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0c161f532d` — lake / uncontracted / Iași / Iazul Frasin
+- `uncl-0c90e35b37` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0f8ba398e2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-0f9507e530` — lake / uncontracted / Iași / Vlaicu
+- `uncl-114b50f0c1` — lake / uncontracted / Iași / Balta Boureni - balta2
+- `uncl-143838df6e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-15c0632a7d` — lake / uncontracted / Iași / Iaz secat
+- `uncl-162c887b77` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-16640f9e65` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-16d1105840` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1a0dce6f1b` — lake / uncontracted / Iași / Bârca
+- `uncl-1aec9ce53d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1c75516311` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1c8f60814d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1d6baecda5` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1dad9e20d8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-1fd4a2d8a8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-2129859797` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-238c70d8b4` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-2507a0d429` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-269fc9e1bd` — lake / uncontracted / Iași / Căzănești
+- `uncl-2751383adf` — lake / uncontracted / Iași / Lacul Gorban
+- `uncl-28427fb7e6` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-290526046e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-29741b5805` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-2a9cd7ceaf` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-2cd4916f0c` — lake / uncontracted / Iași / Piscicola Valea Oilor
+- `uncl-2d444886cc` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-322ecc38ec` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-324186b3ab` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-32d4bf711f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-34ed2520c6` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-369e870b56` — lake / uncontracted / Iași / Balta Ciurea
+- `uncl-377f543418` — lake / uncontracted / Iași / Balta Paradisul Verde
+- `uncl-39c59ecce5` — lake / uncontracted / Iași / Lac CUG 2
+- `uncl-3bbd3b4897` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-3e3d1a03ff` — lake / uncontracted / Iași / Lacul Hălceni
+- `uncl-3e5e2e461e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-400af5912d` — lake / uncontracted / Iași / Lacul Grădinii Botanice Anastasie Fătu
+- `uncl-430f223b51` — lake / uncontracted / Iași / Iaz Butea. Sat Miclauseni
+- `uncl-4388bc436e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-4491430ace` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-454fcdeb5c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-47286f5d62` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-47fad0eaf3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-48bcf0d056` — lake / uncontracted / Iași / Iaz Cabanutele Pescarilor
+- `uncl-49c4887791` — lake / uncontracted / Iași / L Cogeasca
+- `uncl-49e6c8faf8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-4b008236aa` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-4bc137161e` — lake / uncontracted / Iași / Iazul Poseidon
+- `uncl-4ea2795a43` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-4eb86b2ee7` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-50295b1fdd` — lake / uncontracted / Iași / Iazul Tăutești
+- `uncl-51059ef4f8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-5173cbb698` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-55a7668308` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-560ffeab52` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-5a16194ffb` — lake / uncontracted / Iași / Balta Vladnic
+- `uncl-5ce4ef86de` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-5d576235e6` — lake / uncontracted / Iași / Iazul Grozești
+- `uncl-5e4ecce8ad` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-5e6b56d712` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-5f12d287bc` — lake / uncontracted / Iași / Ferma Piscicola Podisului
+- `uncl-5f2968cfec` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-60c404117b` — lake / uncontracted / Iași / Iaz de Pescuit
+- `uncl-619ec23a7c` — lake / uncontracted / Iași / Lacul Copilasi
+- `uncl-66870a7034` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-66d2e6676c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-66ea5ee04d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-679f76816b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6a39650db2` — lake / uncontracted / Iași / Lacul Vlădeni
+- `uncl-6ac471793b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6c86f59852` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6ee1ec0303` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6f03d93d5f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6f3be91d47` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-6fb7071350` — lake / uncontracted / Iași / Balta
+- `uncl-70921c4d5f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-70b8a1afd4` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-721d5514b5` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-7493a9ff40` — lake / uncontracted / Iași / Lacul Ciric II
+- `uncl-76f0e972e2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-77790196c7` — lake / uncontracted / Iași / Lacul Habasesti
+- `uncl-784f4991fe` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-79a9f87a65` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-7b4284cfae` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-7c46f2a99d` — lake / uncontracted / Iași / Balta Boureni - balta1
+- `uncl-7f1bac282a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-7f2854bd6f` — lake / uncontracted / Iași / Doi Peri
+- `uncl-803ec485ae` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-815dc6d359` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-833abea2af` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-83621410e5` — lake / uncontracted / Iași / L Gurguiata
+- `uncl-84f6c19e5d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-86843af5dc` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-89e6058dc1` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-89ec1639c7` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-8a4215a927` — lake / uncontracted / Iași / Lacul Starcea
+- `uncl-8a717a8541` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-8e1efc6be5` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-900d98214b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-90877e8cca` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9231552f3c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9279433ab2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-93f7e52629` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9487d0ae78` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-950d4d97dd` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-97b50c9501` — lake / uncontracted / Iași / Iazul lui Dumnezeu (Lacul Mihaila)
+- `uncl-97c13fd163` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-97cb34d58d` — lake / uncontracted / Iași / Lacul Lebedei
+- `uncl-97e9dd439b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-99bc518655` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9a52d42cd8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9ac5ede7c1` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9bb1f9663c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9ccbe64e38` — lake / uncontracted / Iași / Lacul Veneția
+- `uncl-9eafacad7a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9f0078de0d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-9f939347ba` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a0e3709072` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a150541079` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a170c04f7b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a2c4313dca` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a3e2f106ac` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a42cde2066` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a52f3fc7f8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a5cada17f5` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a6d9b56c4e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a7c94b0e8c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a7d6ed60d4` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-a8467180c1` — lake / uncontracted / Iași / Iazul Dumești
+- `uncl-a8ec3f22a2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-aaf62f0833` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ac48e97dfd` — lake / uncontracted / Iași / Lacul Ciric I
+- `uncl-ac4eab372b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-acb3da2078` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ad75c52432` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-aebea65d05` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-aeddf5ee46` — lake / uncontracted / Iași / Balta Trofee Pausesti
+- `uncl-b316c21470` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b424b896eb` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b473fbab11` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b4990cb98d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b4b9f43c0a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b5542c9b98` — lake / uncontracted / Iași / Lacul Chirița
+- `uncl-b66234cae2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b7252dcbba` — lake / uncontracted / Iași / Acumularea Aroneanu
+- `uncl-b767066b0e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-b8487b3c79` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-baa643122d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bba5df9d1f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bcb40aebe8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bdcac584b0` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bdfec4826b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bec90d1a98` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-bf165fb872` — lake / uncontracted / Iași / Iaz Vocotesti
+- `uncl-c06901d6c0` — lake / uncontracted / Iași / Acumularea Dorobanț
+- `uncl-c247801194` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c299a811a5` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c2cfe5aa45` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c36d417858` — lake / uncontracted / Iași / Iazul Grozești
+- `uncl-c4204e38c2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c44b1f3955` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c4d4dfc601` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c561669568` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c75fcbf05c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c876bd112f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c87db65feb` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-c8ee954a24` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cab07e2828` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cb950732c3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cbfdfe76b1` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cc600ac5e6` — lake / uncontracted / Iași / Moara
+- `uncl-cc8f241d6b` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cece5cd94a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ceeccb57cf` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-cef552e8af` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d042ccd3cc` — lake / uncontracted / Iași / Balta Vladnic
+- `uncl-d20839fcf4` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d20f6cf67d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d3be8d5489` — lake / uncontracted / Iași / Iaz Chilia
+- `uncl-d499c50eff` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d4f277700a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d5ce59e82d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d6897521b2` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d71446f375` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-d8936f160f` — lake / uncontracted / Iași / Iazul Huc
+- `uncl-d8aa120106` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-dbc521b88c` — lake / uncontracted / Iași / Lacul Ciurbești
+- `uncl-dcdb168389` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ddf752d1a7` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-de3093e033` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-de33c932a8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-de7c95db6a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e15f609635` — lake / uncontracted / Iași / Eleșteele Jijiei și Miletinului
+- `uncl-e193918233` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e1bf859540` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e249f10a48` — lake / uncontracted / Iași / Balta din Lunca
+- `uncl-e272f25038` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e2cfb3d360` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e34431fbb8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e4a20e3af3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e4c7aa914c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e62a3403d9` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-e9b8df9db9` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ec3843a802` — lake / uncontracted / Iași / Lacul Ezăreni
+- `uncl-ee2a62f65d` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ee706f3a4f` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-eee40a10e3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f0272fc967` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f347f46f57` — lake / uncontracted / Iași / Iaz Totoești
+- `uncl-f402db4d5c` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f55e77acc4` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f58056210a` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f6a964c6b8` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f76030ae49` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f8d3924624` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-f900185bf6` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fad3c4ef12` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-faed9b55c3` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fb4a0c1c61` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fc6226d95e` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fc7ed204b0` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fd72f4025a` — lake / uncontracted / Iași / Iazul Botez
+- `uncl-fe970df415` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-febc2774ee` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-fec177f687` — lake / uncontracted / Iași / Iaz neidentificat
+- `uncl-ffec1a5b3c` — lake / uncontracted / Iași / Lacul Peștișorul
+- `uncl-0084306dff` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-030c706971` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-04c15347eb` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-070e8975ae` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-0a2a57bff4` — lake / uncontracted / Ilfov / Cociovalistea
+- `uncl-0eee44b563` — lake / uncontracted / Ilfov / Balta Neagră
+- `uncl-115921e809` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-11bb6a4391` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-140a5620c9` — lake / uncontracted / Ilfov / Balta Pescarului (bazinul 1)
+- `uncl-141a02103c` — lake / uncontracted / Ilfov / Lacul Durbac
+- `uncl-15935fd556` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-16b5adf1bf` — lake / uncontracted / Ilfov / Cociovalistea
+- `uncl-171d93044c` — lake / uncontracted / Ilfov / Balta Glina-Bălăceanca
+- `uncl-18113e70dc` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-184aaa3945` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-1a25b242ac` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-1c5a5f251b` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-1cbc9feac8` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-1d2d7d2afc` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-1d8089741c` — lake / uncontracted / Ilfov / Iazul Aladdin
+- `uncl-1f92918dcc` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2048f52729` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-215c605bc7` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-21fe21ed2e` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-249cfe9699` — lake / uncontracted / Ilfov / Lacul Mănăstirii
+- `uncl-250c1d7e22` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-25ef200b3d` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-262b5a532e` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-2939377128` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-29cf0f2f18` — lake / uncontracted / Ilfov / Lacul Durbac
+- `uncl-2bb3cdccff` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2bd655b19e` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2c2ff746f9` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2d18bf731a` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2d591ed5e7` — lake / uncontracted / Ilfov / Lacul Mogoșoaia
+- `uncl-2e28f6219d` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-2edc3e58cc` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-33afa43daf` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-35b1b66d73` — lake / uncontracted / Ilfov / Lacul Nicmar Clinceni
+- `uncl-38433e5089` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-3b5a8f9725` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-3b611a6215` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-3b8ea3f37c` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-3c78a9cb75` — lake / uncontracted / Ilfov / Lacul Mamina
+- `uncl-3cd2c1b4cb` — lake / uncontracted / Ilfov / Lacul Podișor 1
+- `uncl-3f92ef784e` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-405bff2263` — lake / uncontracted / Ilfov / Axa
+- `uncl-41357a5b33` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-4273e9e9b9` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-442fd26566` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-471255b4c5` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-475a47331a` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-4795f1a96c` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-48806d0a66` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-48c9cd3ee5` — lake / uncontracted / Ilfov / Balta Moara Vlăsiei 1
+- `uncl-4904ab4503` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-4a49605d9a` — lake / uncontracted / Ilfov / Acumularea Berceni
+- `uncl-4e02396249` — lake / uncontracted / Ilfov / Lacul Mamina
+- `uncl-4f118b35d0` — lake / uncontracted / Ilfov / Lacul Vlasia
+- `uncl-5029d9a74c` — lake / uncontracted / Ilfov / Balta Creața 1
+- `uncl-50c6e3bc08` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-528763bea6` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-52ee8832da` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-576c6a28a0` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-58b7d344c3` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-5d172d58bd` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-5ea5280ed3` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-6373aa0ae6` — lake / uncontracted / Ilfov / Balta Piteasca 3
+- `uncl-63b7580e65` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-643f6a071a` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-65ca47922d` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-662f05c07c` — lake / uncontracted / Ilfov / Batal
+- `uncl-67a77d397d` — lake / uncontracted / Ilfov / Balta Pescarului (bazinul salbatic)
+- `uncl-68b5bca2bd` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-6b0e6cf3d8` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-6c4ccb0d24` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-6e1466cc04` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-6e5e2a2cc6` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-6ff7415360` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-726cd937a9` — lake / uncontracted / Ilfov / Balta Creața 3
+- `uncl-73745ef631` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-7650497e41` — lake / uncontracted / Ilfov / Dană Port Bucureşti
+- `uncl-7821954d24` — lake / uncontracted / Ilfov / Balta de pescuit Clinceni
+- `uncl-793f1f5d00` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-79cc2f978a` — lake / uncontracted / Ilfov / Bazinul Piscicol Creata 3
+- `uncl-7a5996c0d9` — lake / uncontracted / Ilfov / Lacul Cozieni
+- `uncl-7ce6972171` — lake / uncontracted / Ilfov / Tâncăbești
+- `uncl-7cf8bf6db1` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-7edb987c6e` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-80d080456e` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-8110e74c24` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-825c269057` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-834c6c34c0` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-84e01f9e99` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-85bb5ee0c1` — lake / uncontracted / Ilfov / Cociovalistea
+- `uncl-869a261ca4` — lake / uncontracted / Ilfov / Tâncăbești 2
+- `uncl-8a752163ca` — lake / uncontracted / Ilfov / Acumularea Cocioc
+- `uncl-8b059723ba` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-8dcecca133` — lake / uncontracted / Ilfov / Lacul Cernica
+- `uncl-92f8f58697` — lake / uncontracted / Ilfov / Lacul Pantelimon
+- `uncl-931903001b` — lake / uncontracted / Ilfov / Lacul Chitila
+- `uncl-9557fcb68a` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-9c300c6af9` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-a80724c316` — lake / uncontracted / Ilfov / Balta Floarea Popeștiului
+- `uncl-aa1742af98` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-aa4f35a24c` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-abf4b98197` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-ad339d0485` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-adc8b20439` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-adcd9e112a` — lake / uncontracted / Ilfov / Balta Pescuit Șindrilița
+- `uncl-b3738b0db1` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-b3a917adac` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-b40e2bac66` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-b61c1feeb4` — lake / uncontracted / Ilfov / Lacul Vadul lui Moșu
+- `uncl-b64437ada8` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-b7d5db7085` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-b942f82aac` — lake / uncontracted / Ilfov / Lacul Negru
+- `uncl-b9cf4fd3fa` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-ba26d7b48d` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-ba8c515db5` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-bb2c5f8461` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-bc1543ab48` — lake / uncontracted / Ilfov / Hermes Periș
+- `uncl-bd08475591` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-c01d67cc16` — lake / uncontracted / Ilfov / Fieni
+- `uncl-c1160a756c` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-c2af26588f` — lake / uncontracted / Ilfov / Lacul Podișor 2
+- `uncl-c311e0d932` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-c516457766` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-ca2d9adb11` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-cb88b9eb89` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-cc7b3187f8` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-cd9defb5eb` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-d3ae451393` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-d72927e34e` — lake / uncontracted / Ilfov / Lacul Macarie
+- `uncl-d731580416` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-dbe7134448` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-dc61cf358b` — lake / uncontracted / Ilfov / Balta Vitan 3
+- `uncl-e1f78a9c18` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-e6920ed45f` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-e8741cc355` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-e911a19c6c` — lake / uncontracted / Ilfov / Bazin decantare
+- `uncl-ea3afb4206` — lake / uncontracted / Ilfov / Balta Pescarului (bazinul 2)
+- `uncl-ef1ff17a29` — lake / uncontracted / Ilfov / Lacul Căldărușani
+- `uncl-f221dbd9bb` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-f680fceead` — lake / uncontracted / Ilfov / Lacul Bidăriei
+- `uncl-f7a588c930` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-f876c86f61` — lake / uncontracted / Ilfov / Fieni
+- `uncl-f9a07f0718` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-fbf26a3200` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-fde331a979` — lake / uncontracted / Ilfov / Iaz neidentificat
+- `uncl-04ce70e915` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-052a884dc5` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-053de968ab` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-07d1a0eb86` — lake / uncontracted / Maramureș / Iaz Decantare Aurul
+- `uncl-0d2d3f54e9` — lake / uncontracted / Maramureș / Două Veverițe
+- `uncl-0f70828dcb` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-10814c52f8` — lake / uncontracted / Maramureș / Lacul Mogoșa
+- `uncl-178c0634c6` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-180291dd45` — lake / uncontracted / Maramureș / Balta Majestic
+- `uncl-1cf387ac66` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-1d9cf212be` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-21124a6cb2` — lake / uncontracted / Maramureș / Lacul Nistru
+- `uncl-25529a17b2` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-2fb265c598` — lake / uncontracted / Maramureș / Teplita
+- `uncl-3a64c1771f` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-3f574d16c8` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-4633f72979` — lake / uncontracted / Maramureș / Resort Fishing Ardusat
+- `uncl-4a7755ceec` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-4ae75ceb4e` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-4bf771b610` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-4f686d7a7f` — lake / uncontracted / Maramureș / Iezer
+- `uncl-545a9314bf` — lake / uncontracted / Maramureș / Baia de Sare
+- `uncl-5cc17272e4` — lake / uncontracted / Maramureș / Păstrăvărie
+- `uncl-63cd946711` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-6ddc9384ec` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-705f8c076c` — lake / uncontracted / Maramureș / Taurile Buhaiescului
+- `uncl-749a4f57dc` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-78e606f65f` — lake / uncontracted / Maramureș / Balta Visa
+- `uncl-791a0ff59e` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-7a55c8df8e` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-838e5b817f` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-841cddabe6` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-8cb96da2e6` — lake / uncontracted / Maramureș / Lacul Țuli
+- `uncl-8ed2bc880a` — lake / uncontracted / Maramureș / Balta Coas
+- `uncl-943132618d` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-98cd251446` — lake / uncontracted / Maramureș / Balta Mircea
+- `uncl-9b5ed4fa89` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-9bd1a22e1c` — lake / uncontracted / Maramureș / Iaz Decantare Aurul
+- `uncl-9cdd6711a7` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-9e05a991d4` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-a4951d5bbc` — lake / uncontracted / Maramureș / Lacul Gavril
+- `uncl-aa70c76f13` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-afe181ee43` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-b239001123` — lake / uncontracted / Maramureș / Mlaștina Vlășinescu
+- `uncl-b4682b7f59` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-b709fb3dcd` — lake / uncontracted / Maramureș / Balta Arinis
+- `uncl-be26439485` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-c131f28baa` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-c6e7b3c561` — lake / uncontracted / Maramureș / Lacul Minei
+- `uncl-c981236507` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-d2d6500579` — lake / uncontracted / Maramureș / Balta Satulung
+- `uncl-d6cb358add` — lake / uncontracted / Maramureș / Iaz Decantare Aurul
+- `uncl-dc1a55a0b7` — lake / uncontracted / Maramureș / Balta Boiu Mare
+- `uncl-e0ddc0e53d` — lake / uncontracted / Maramureș / Iezerul Mare
+- `uncl-e2b8235043` — lake / uncontracted / Maramureș / Lacul Albastru
+- `uncl-ec230227be` — lake / uncontracted / Maramureș / Băile Coștiui
+- `uncl-ed633e4dc0` — lake / uncontracted / Maramureș / Taul Morărenilor
+- `uncl-ef6439b1c7` — lake / uncontracted / Maramureș / Iaz neidentificat
+- `uncl-0048c56141` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-012c1cf2e1` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-0336b67848` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-05bec52cf8` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-1802c0fba5` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-1e54c59a27` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-242c5253e4` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-2a98bfe5b1` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-2ae9a5bc89` — lake / uncontracted / Mehedinți / Balta Hotarani
+- `uncl-2ee9321b12` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-3206d6e5f9` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-356c9803a1` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-369ade3e92` — lake / uncontracted / Mehedinți / Balta Mare
+- `uncl-37a20d46a5` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-3c5a970d82` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-3e3da2566d` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-416cf626b5` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-4b5390d970` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-4c21050c7a` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-4c901b0ddf` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-56ba5102d8` — lake / uncontracted / Mehedinți / Zătonul Mare
+- `uncl-58b178df7a` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-5a873bce8f` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-5c46279691` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-60285bb897` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-653b5141ae` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-6554e42b2b` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-6e54fef552` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-75a1878284` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-75e910851d` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-7a7c29e43e` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-7d5cdda8bb` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-8b2825b774` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-8b7fea743c` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-8cf7ee1f2b` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-91054da815` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-93c4f6d437` — lake / uncontracted / Mehedinți / Balta lui Vintilă
+- `uncl-95498b140d` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-9a625d8d7e` — lake / uncontracted / Mehedinți / Balta Salcia
+- `uncl-a597315872` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-a6dc06e29b` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-a9a957c1d7` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-a9b8f3ef37` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-a9ba6c9ab4` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-af17551325` — lake / uncontracted / Mehedinți / Lacul Dumbrava de Sus
+- `uncl-b8805b01a8` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-bc290cf19a` — lake / uncontracted / Mehedinți / Zătonul Mic
+- `uncl-c4f8f45c35` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-cd68d40f00` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-ce93a433e7` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-cf82e9d699` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-d83e1c0db7` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-d92d9a7b04` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-db87a6ba96` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-e21d258d5f` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-e39445b4a1` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-e64b0241af` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-e655ba3077` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-e956e6648f` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-ec072a87f6` — lake / uncontracted / Mehedinți / Balta Mare
+- `uncl-f064b9ce0e` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-f8db81554a` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-fc176e6774` — lake / uncontracted / Mehedinți / Iaz neidentificat
+- `uncl-00480e523e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-00d5e609ed` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-020f3dcd56` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-04846527ec` — lake / uncontracted / Mureș / Lacul Şerpilor
+- `uncl-054a0d9692` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-09daac8bc9` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-0abb698863` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-0f0cfba61a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-11aa36e42c` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1348518cda` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-14b857aa47` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-15998e93e7` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1810f0e8f0` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-184be98eb3` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1ba833771f` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1deb1f5f0b` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1f017cfbeb` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-1f846e202a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-22963bcee1` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-22b29911e7` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-25ab653841` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-2709d13230` — lake / uncontracted / Mureș / Balta La Doctoru
+- `uncl-29d6f74985` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-2a87ab273c` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-2a98d57e1a` — lake / uncontracted / Mureș / Lacul Negru
+- `uncl-2ef1619026` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-2f35fd51f1` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-300122b842` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-326b36f249` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-32c1aa9366` — lake / uncontracted / Mureș / Lacul Șercheș
+- `uncl-3334ba88ff` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-34081f6eeb` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-3409d87d80` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-3684a53e4a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-3ca3a0c6b3` — lake / uncontracted / Mureș / Lacul Paraschiva
+- `uncl-3f94d42fa4` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-41d414cafc` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-426464a271` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-432ee94208` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-434f9b7353` — lake / uncontracted / Mureș / Cele Doua Lacuri
+- `uncl-468b1c64f6` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-4ab11cde40` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-4c20fee56d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-4d0a71aa53` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-50bc5cca1d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-517f10bb72` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-51df5fde80` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-51e080702d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-5408110c43` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-549e27956e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-567c95e66d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-574f07d6b9` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-581fc4c2f3` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-5ba435afae` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-5ed8a6f934` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-60de4d4fc8` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-611d311d33` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-61f91a3b8a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-627117656d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-6405591e08` — lake / uncontracted / Mureș / Zau
+- `uncl-66e56100a6` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-6960d395c0` — lake / uncontracted / Mureș / Lacul Mierlei
+- `uncl-6b5d0ec0e1` — lake / uncontracted / Mureș / Lacul Roșu
+- `uncl-6d21ca5716` — lake / uncontracted / Mureș / Rio de Vio
+- `uncl-7068f8f15c` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-724cb8c57b` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-73eb516a9d` — lake / uncontracted / Mureș / Mureșul Mort
+- `uncl-742e015cb0` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-74e3059572` — lake / uncontracted / Mureș / Lacul Ursu
+- `uncl-75645bbef2` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-76e73e128b` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-791696be2a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-7a5b3e36f3` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-7c3028b87d` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-7c65c5ceeb` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-7cd70992ef` — lake / uncontracted / Mureș / Balta Valeni
+- `uncl-7f62e50bc9` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-7ff561c7ac` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-81acf818b2` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-82c0e160d5` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-83c3c3ab59` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-83ef1f3896` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-86f6040629` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-875ee496ff` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-8ae0ac233e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-8b40c34603` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-8df12094bb` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9148622a03` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-94c679719e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-960f622c09` — lake / uncontracted / Mureș / Tofalău
+- `uncl-9621e1f4b3` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-97dc6a30e5` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9859630e29` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9907b743c5` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9acb886ad1` — lake / uncontracted / Mureș / Carpodrom Transilvania
+- `uncl-9d0aa60ebf` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9dfc858e7f` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-9f5ccd5678` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-a5024a5285` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-aa7fa1c838` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-b42a96f859` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-b7a24a33c1` — lake / uncontracted / Mureș / Ferma Piscicolă Glodeni
+- `uncl-b83aee34ff` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-b87dec8c38` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-ba73f98006` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-bc73150d0f` — lake / uncontracted / Mureș / Hanul Pescarilor Garofița
+- `uncl-bdd189cf05` — lake / uncontracted / Mureș / Lacul Aluniș
+- `uncl-bffccef05b` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c04599dbea` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c1de45060a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c25619f32e` — lake / uncontracted / Mureș / Iernut
+- `uncl-c33ae1d2e6` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c5a58c750c` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c7890e5f33` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c7f7f26322` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-c8b2c3a1df` — lake / uncontracted / Mureș / Lacul Tineretului
+- `uncl-ca3727de4a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-cd7a014063` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-ce3e93eecb` — lake / uncontracted / Mureș / Lac Faragau
+- `uncl-ceacb933ed` — lake / uncontracted / Mureș / Lac
+- `uncl-d4b3e4b75e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-d750d6bebc` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-d7ebb4e7aa` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-da098f95f8` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-da3c6c743e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-dc5cb83854` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-df2da2a2ed` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-df5e171af8` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-e076e6671a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-e1f97da474` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-e244f02a33` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-e40496371a` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-ea8d947f0e` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-ede0ca3967` — lake / uncontracted / Mureș / Rio de Vio
+- `uncl-f24b72e2f7` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-f3629054d4` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-f458a1ecb9` — lake / uncontracted / Mureș / Delta din Glodeni
+- `uncl-f4dcaf2ce7` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-f7c2b712d8` — lake / uncontracted / Mureș / Hollós-tó
+- `uncl-f80da40976` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-fe10a7a2b7` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-fff89eaf41` — lake / uncontracted / Mureș / Iaz neidentificat
+- `uncl-0198570e7a` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-01a5a295be` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-159310ce11` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-19e7e57f61` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-279c501f21` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-288ee35073` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-2c8c229bbe` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-2cdd184034` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-356ba46123` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-3e8354dca4` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-3f61bd3382` — lake / uncontracted / Neamț / Lacul Porcului
+- `uncl-430a48ea4f` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-4348d26b52` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-47ff1812eb` — lake / uncontracted / Neamț / Păstrăvăria Steghioara
+- `uncl-4cdcdd7265` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-528bdb2698` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-540c26b5f7` — lake / uncontracted / Neamț / Lac Trifești
+- `uncl-55fbe26524` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-563105ddf8` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-5a98ff4ac8` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-631665b877` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-63c9e742e6` — lake / uncontracted / Neamț / Lacul Veselaru
+- `uncl-6597683e77` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-65f588a9e6` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-6a9b02c4c9` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-6c884d1964` — lake / uncontracted / Neamț / Iazul Frăsinel (Potocina)
+- `uncl-6fb7fff69f` — lake / uncontracted / Neamț / Iazul Iapa (Făgețel)
+- `uncl-707b3efce9` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-70b32bbc43` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-73d6ed1116` — lake / uncontracted / Neamț / Iaz
+- `uncl-7ede10600b` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-87e80a5811` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-8b8110a291` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-921e3496a7` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-a0793ffdc7` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-aab956ddc5` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-ac0a39e88f` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-b3993eb0ee` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-b5708800cd` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-b98d421a78` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-bad892c753` — lake / uncontracted / Neamț / Iaz Ruginoasa
+- `uncl-cab56bf67f` — lake / uncontracted / Neamț / Bazin de acumulare
+- `uncl-d076ca324d` — lake / uncontracted / Neamț / Iaz Negritești
+- `uncl-d5b51ef351` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-db9d29dc88` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-dd39c79e28` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-df88d96a7b` — lake / uncontracted / Neamț / Lacul Bodești
+- `uncl-e254d3854b` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-e6aef4a1d6` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-f30a6a1d8e` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-f506d8e27e` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-fb675c555b` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-ff1cdc477e` — lake / uncontracted / Neamț / Iaz neidentificat
+- `uncl-017297e6dc` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-01bc33c46e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-025122ad19` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-02e98ab5ce` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-03c16eb53d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-04ee85af82` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0509990287` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-050d58ddeb` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-05410b6f83` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-05d6c2ac29` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0719972ade` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0806c8a410` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-091cd87802` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-09fdb2cccf` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0a21f8ead0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0a34a6a016` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0bbe840ae9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0c33996bc0` — lake / uncontracted / Olt / Heleșteu
+- `uncl-0ee3da33f1` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0f374a6b6f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0f39d6712a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-0f73d2a57d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1036aac449` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1063b95970` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-10d0649248` — lake / uncontracted / Olt / Lacul Movileni
+- `uncl-119d34d863` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1221e0de71` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-130a2bb52f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-132d173b69` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-163eda11d3` — lake / uncontracted / Olt / Lacul Fâtânele
+- `uncl-16d71a9454` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1775c8c46e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1b50bda826` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1eaa335f5b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1f694bab25` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-1fdf85df37` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-23e92e3b7e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-241ab7462a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-24fea071f0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-255cbb4809` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-25c9dc9180` — lake / uncontracted / Olt / Lacul Rusciori
+- `uncl-25d7c5cb9d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2739907076` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-27f8761845` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-28ba8ae0de` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-29014ccaa6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2927326327` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2969b2dab6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2978d06108` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2b54ce266c` — lake / uncontracted / Olt / Balta Obârșia
+- `uncl-2ba89674a4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2c0e7016a0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2d39f132e1` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2d3b095eeb` — lake / uncontracted / Olt / Balta Colonești
+- `uncl-2dd97a2810` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-2f57a81342` — lake / uncontracted / Olt / Heleșteul Alba
+- `uncl-305aecb090` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-307b76a031` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-315e565fe3` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-33c48effde` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3414e95183` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-34c75c9f0d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-34ce3b4c83` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-36b15d9d00` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3703f0fac6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3bbb09c16a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3cf8d625dc` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3deee7c8e4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-3f2aa2e0f4` — lake / uncontracted / Olt / Lacul Vlaici
+- `uncl-3f613f90ab` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-40084b2fd6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-40212a6a37` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-43456b5a64` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-43ac498b60` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4a4f07faef` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4ae485b0bf` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4bfd2c0431` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4c295fae78` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4d8fb6324f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4db207a56c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-4efc269fb7` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-51e6687b9c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-51fb3d8f20` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-5502e0758a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-55538e465e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-5641a16a50` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-56a6264f14` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-57bfc57af0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-59b91eb18f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-59dd348c4a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-5b9b9612bb` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-5ec73c347f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-5eeb8c2d93` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6102f6e245` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6278c39259` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-67e898a3a3` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6808c1d0f0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-691c508cc4` — lake / uncontracted / Olt / Balta Slăveni
+- `uncl-6a333f99d4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6a70115955` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6abb2af3d0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6b7d45a3b7` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6b90985ae0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-6be3568e7f` — lake / uncontracted / Olt / Balta Garcov
+- `uncl-71c7d2ca89` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7251f96976` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-749bc073b0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-74e795332a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-75458eabd3` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-771148f721` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-78f0ce0466` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7a9e034495` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7b8ae1ca90` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7c0289af1c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7c0fcc360a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7c42876a46` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7cc54e02df` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7d950668a3` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7dc7cdcc74` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-7f77e27b74` — lake / uncontracted / Olt / Lacul Tabaci
+- `uncl-7fb5592a6a` — lake / uncontracted / Olt / Acumularea Potcoava
+- `uncl-8222c26d29` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-855a420c59` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8591fd43e9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8907f13620` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-897fd0b3c4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8a6e5dd8d0` — lake / uncontracted / Olt / Gârla Bohazului
+- `uncl-8c11b65a5d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8da2981d92` — lake / uncontracted / Olt / Coșcan
+- `uncl-8dae3995e9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8f1e43b496` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-8fd4fc7fd0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-9220d17fea` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-92a85ab90e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-93e753c625` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-9444cc976f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-96cb11e2e0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-974d91a93a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-9cda14c95a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-9f858abb7e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a0e1eabc0a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a32ead8856` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a37f3661ec` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a4374de176` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a5ba949cfb` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a613559f18` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-a638e2fe4c` — lake / uncontracted / Olt / Lacul Pișcani
+- `uncl-a93007099a` — lake / uncontracted / Olt / Balta Potelu
+- `uncl-abfe375620` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ad4814a10b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-adcf684622` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-af4e8d99c0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b2504051c7` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b334227ff4` — lake / uncontracted / Olt / Lacul Gologan
+- `uncl-b4342d11c8` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b510492729` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b76232a9f9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b788c31f3d` — lake / uncontracted / Olt / Balta Olari
+- `uncl-b8665576a3` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b8fab9cde4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b901f63d8d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b942936ec4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b98982870b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-b9ab1ed725` — lake / uncontracted / Olt / Lacul Pișcani
+- `uncl-bb47379632` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-bb88141f48` — lake / uncontracted / Olt / Balta Suica
+- `uncl-bc5fd2e651` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-bcb68f4976` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-bd29cd0b0e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-bdee00073b` — lake / uncontracted / Olt / Balta Crusovul
+- `uncl-bdf07dced9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-bfa362d0a6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c04ad7ec20` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c0ffd37954` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c210ee4a7c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c39e9e0e77` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c4f6b682aa` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c5f6f43bd7` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c6bb835809` — lake / uncontracted / Olt / Balta din Nisipuri
+- `uncl-c6d2f79323` — lake / uncontracted / Olt / La Fântâna cu Cumpănă
+- `uncl-c780999044` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-c89bee25f7` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ca11402687` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ca7c12d5c2` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-cb8a18c155` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d068c9b6c2` — lake / uncontracted / Olt / Lacul Godeanu
+- `uncl-d0f43ac94e` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d0fa53be15` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d168cfd6c0` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d3548870bb` — lake / uncontracted / Olt / Balta Frasinet
+- `uncl-d3d6f6262c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d457e49c1f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d470393f68` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d64fb7f54c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d7255f0e50` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d82698b989` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d87759d404` — lake / uncontracted / Olt / Balta Slăveni
+- `uncl-d8e17fd108` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d922f02ddf` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d9251affb9` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-d9831e3e54` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-db3f98cbf6` — lake / uncontracted / Olt / Balta Milcov
+- `uncl-dd6750338d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e0e9904bd6` — lake / uncontracted / Olt / Lac Ghioroc
+- `uncl-e14a3d817d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e216228c56` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e3337d51af` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e46740527b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e487ecc67c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e5f13bcc33` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e6448c89ed` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e68b30f864` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e9457a919d` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-e9c2ab3d84` — lake / uncontracted / Olt / Acumularea Teiuș
+- `uncl-eb5b744f5a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ebff27055a` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ec21eddb14` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-ec8962f496` — lake / uncontracted / Olt / Acumularea Redea
+- `uncl-ee9dcd6c0a` — lake / uncontracted / Olt / Lacul Albești
+- `uncl-efda3042a8` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-eff09ebba0` — lake / uncontracted / Olt / Acumularea Bobu
+- `uncl-f0225696a5` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f07e98e955` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f141091ddc` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f14fb29e35` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f16c092ba4` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f5be58036c` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-f6f112b237` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fabb1d1f9b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fc645bfa9f` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fcf113a082` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fd045d408b` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fd13548242` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fd5216dd94` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-fe17adbcb6` — lake / uncontracted / Olt / Iaz neidentificat
+- `uncl-033ec1ffa6` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-051ebb95b8` — lake / uncontracted / Prahova / Lacul Cocor
+- `uncl-0adb984bd5` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-0e0f1d87f4` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-0ee5181d74` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-11e0b2aea3` — lake / uncontracted / Prahova / Balta de pescuit - gratis
+- `uncl-153ec0e7dd` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-171349790f` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-19373a3aee` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-1a78046885` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-1b1c6bdf56` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-1d82226794` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-1e2d7af66b` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-23010f9a05` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-243b49beb9` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-24a3db5fe5` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-27d955f27b` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-2a3cc24b14` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-2cc74536ff` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-2ce4a47b02` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-302aa5886c` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-304c81e896` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-31696fa41d` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-337f525204` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-36a396d7ff` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-3a12d2f302` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-3ee75b6176` — lake / uncontracted / Prahova / Telega
+- `uncl-4256f33d2d` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-4393f10739` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-43b57d4744` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-44447c6e76` — lake / uncontracted / Prahova / Balta Boldești Grădiștea
+- `uncl-47d0164026` — lake / uncontracted / Prahova / Lacul Curcubeu
+- `uncl-48a98c0ec8` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-49af69466e` — lake / uncontracted / Prahova / Lacul Livedea Mică
+- `uncl-4b46eb87ec` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-4beb52db1e` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-4d2dedb823` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-4e5752a412` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-50aa8c4c81` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-5ba45dd51c` — lake / uncontracted / Prahova / Lacul Doftana
+- `uncl-60227accf5` — lake / uncontracted / Prahova / Lacul Sărat Baia Baciului
+- `uncl-65b27dc629` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-6926ddf252` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-6b369c5b27` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-6c19fb8247` — lake / uncontracted / Prahova / Lacul Bisericii
+- `uncl-6dc5ab1cbd` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-705afc35dc` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-71e1af5eef` — lake / uncontracted / Prahova / Balta Parepa
+- `uncl-78b1724514` — lake / uncontracted / Prahova / Grota Miresei
+- `uncl-7f7402662d` — lake / uncontracted / Prahova / Batale - Deșeuri Petroliere
+- `uncl-7fbdf5e08a` — lake / uncontracted / Prahova / Lacul Sărăcineanca
+- `uncl-82fa6b363b` — lake / uncontracted / Prahova / Lacul Balta Doamnei
+- `uncl-8705c34c0f` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-8d17c3f954` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-8e93d23e08` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-8fb8ed42f4` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-90893b9ffb` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-938a39e223` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-93d387674e` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-93f0910502` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-94ca1cae23` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-9540fbfa2c` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-99bbd666c0` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-99e6076c9e` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-a6e6794411` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-aa012a0147` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-aa55021595` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-ac3283a2f3` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-ad2424d276` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-af185e6f7f` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-b036a6ac59` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-b2270c1b72` — lake / uncontracted / Prahova / Lacul Peștelui - Deșeuri Petroliere
+- `uncl-b285cc6ac4` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-b3677b5ab1` — lake / uncontracted / Prahova / Orjogoaia
+- `uncl-b3ce0a7748` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-b61e0dce14` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-b66e38e9de` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-bc700304eb` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-bf3c8399db` — lake / uncontracted / Prahova / Lacul Curiacul
+- `uncl-c43cbb56a0` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-cb563cd7d3` — lake / uncontracted / Prahova / Balta Green Paradise 1
+- `uncl-cc30652460` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-ce49f212ed` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-ce74c9368c` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-cf72c2bfa2` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d162f0b6ee` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d344811d4d` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d36e21c3d2` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d3adac21ed` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d41fe9ed04` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d4351a94da` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d482d321e1` — lake / uncontracted / Prahova / Lacul Brebu
+- `uncl-d4f30635c2` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d7009843f4` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d729656b9b` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-d963553a7f` — lake / uncontracted / Prahova / Balta Fânari
+- `uncl-dd3a8451f0` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-e39bca42b8` — lake / uncontracted / Prahova / Lacul Livedea
+- `uncl-e5cd10923e` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-ec529fd0af` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f08abbc208` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f1d162cbcf` — lake / uncontracted / Prahova / Balta Parepa 1
+- `uncl-f2355d5868` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f3906155e1` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f3fc9975d8` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f646e54c92` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f84069587a` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-f90f320605` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-fb38715e20` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-fd1def7dc6` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-fd65518830` — lake / uncontracted / Prahova / Balta Green Paradise 2
+- `uncl-fee6d1f41f` — lake / uncontracted / Prahova / Iaz neidentificat
+- `uncl-006c0e7c8b` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-02abbbb7c5` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-03d04f4876` — lake / uncontracted / Satu Mare / Barajul Oțeloaia
+- `uncl-0484a5feb0` — lake / uncontracted / Satu Mare / Lacul Călinești
+- `uncl-06a29a2cdd` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-0aba2d3a30` — lake / uncontracted / Satu Mare / Lac agrement
+- `uncl-0b583e9335` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-0b96fc3b01` — lake / uncontracted / Satu Mare / Laguna Verde Noroieni
+- `uncl-0e33cafdf1` — lake / uncontracted / Satu Mare / Lac Pescuit
+- `uncl-0f91b8ee3c` — lake / uncontracted / Satu Mare / Lacul Tiream - Balta 2
+- `uncl-0ff4ee928d` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-132dcc0359` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-1776db2136` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-1bf3d0c1d9` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-1fb4bcac84` — lake / uncontracted / Satu Mare / Balta Blondă
+- `uncl-2083747a99` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-20f12b0996` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-24bde126f7` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-37c2d80ab7` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-470ffa58a3` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-4b0feccf62` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-4eab702c2e` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-513b8d7514` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-552d6e0660` — lake / uncontracted / Satu Mare / Pescaria Eteni
+- `uncl-56ce68d20c` — lake / uncontracted / Satu Mare / Pescaria Boghis La Stuf
+- `uncl-57d487d739` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-5907e6cc4b` — lake / uncontracted / Satu Mare / Pescaria Bercu Nou
+- `uncl-59e683c7db` — lake / uncontracted / Satu Mare / Moby-Dick
+- `uncl-5aced83865` — lake / uncontracted / Satu Mare / Lacul Apa
+- `uncl-5f452a5aff` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-5fbbbcd448` — lake / uncontracted / Satu Mare / LinLake
+- `uncl-612ad4f65d` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-671d63298c` — lake / uncontracted / Satu Mare / Balta Agris
+- `uncl-674936a1cf` — lake / uncontracted / Satu Mare / Balta Pir
+- `uncl-69de42dea6` — lake / uncontracted / Satu Mare / Balta Adrian
+- `uncl-6b71ac665f` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-72a867f8d6` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-82c4557f97` — lake / uncontracted / Satu Mare / Lacul Mujdeni
+- `uncl-83a3d44496` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-88a80e621b` — lake / uncontracted / Satu Mare / Lacul Tiream - Balta 1
+- `uncl-8ff329cdb6` — lake / uncontracted / Satu Mare / Lacul Furcile Izvoarelor
+- `uncl-96e2f5cbf0` — lake / uncontracted / Satu Mare / Balta Porumbeşti
+- `uncl-96f8ef4e86` — lake / uncontracted / Satu Mare / Lacul Moftinu
+- `uncl-9fe8f85778` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-a24943e7d9` — lake / uncontracted / Satu Mare / Lacul Turulung
+- `uncl-a317d9920e` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-ac14a4f552` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-ad4665e922` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-aeb5ffe7eb` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-b02b8c0968` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-b2604ae6ba` — lake / uncontracted / Satu Mare / Lacul de Smarald
+- `uncl-ba333ee76a` — lake / uncontracted / Satu Mare / Lacul de Cristal
+- `uncl-bad3c62041` — lake / uncontracted / Satu Mare / Balta Havasi
+- `uncl-bb1b5d2ceb` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-bd095ee463` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-c1c303c62e` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-cc17ed5040` — lake / uncontracted / Satu Mare / Balta Pir
+- `uncl-d4f0c6a9dc` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-d6b696f9f3` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-d89acf3f46` — lake / uncontracted / Satu Mare / Lacul Hodișa
+- `uncl-d8c81cc2df` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-d9ceb1c9f8` — lake / uncontracted / Satu Mare / Balta Ghenci
+- `uncl-e3590d2d68` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-e4f1175b92` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-e8363f7dfd` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-e912c37d1c` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-eb64e1620c` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-ece5ff898f` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-efc90a6096` — lake / uncontracted / Satu Mare / Iazul cu Pești Raschpi (Gropi)
+- `uncl-f03e6764d8` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-f04842b89b` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-f332bd8cf9` — lake / uncontracted / Satu Mare / Iaz neidentificat
+- `uncl-01f55e8c62` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-05894d87d4` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-05c6ae2028` — lake / uncontracted / Sibiu / Lacul 3
+- `uncl-0667a951e5` — lake / uncontracted / Sibiu / Lacul 6
+- `uncl-07efde97c0` — lake / uncontracted / Sibiu / Lacul Brădeni
+- `uncl-0a0423e10f` — lake / uncontracted / Sibiu / Lacul Rândunica
+- `uncl-0d5da855f2` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-0f311256e5` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-12b0571319` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-141125b2cb` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-148486eb3c` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-170688441d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-1805dcdbb3` — lake / uncontracted / Sibiu / Balta Scorei 1
+- `uncl-19ae9bea62` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-1facdfcebf` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-2063589275` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-254567160d` — lake / uncontracted / Sibiu / Lacul 2
+- `uncl-25b27a4625` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-262c27ed25` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-294c0d9160` — lake / uncontracted / Sibiu / Lac
+- `uncl-2995762a0a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-29ee7b516f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-2ba4b73f06` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-2bf5ca6940` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-2c5e451ed2` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-2e0b6289a7` — lake / uncontracted / Sibiu / Lacul Mândra
+- `uncl-2ed97cf710` — lake / uncontracted / Sibiu / Colun
+- `uncl-3059c2fd60` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-34df926f25` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-350c8b4fed` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-350d55eb92` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-36c68cfeb2` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-37c18215f9` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-3d1a66bd72` — lake / uncontracted / Sibiu / Lacul Negru
+- `uncl-3f024e7894` — lake / uncontracted / Sibiu / Baraj Frumoasă
+- `uncl-43625fe1ee` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4469008c1d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4656fb0c81` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4a7dd6d541` — lake / uncontracted / Sibiu / Lacul Cloșca
+- `uncl-4a7f03977b` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4b3a778e66` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4c30c5ad86` — lake / uncontracted / Sibiu / Lacul Orlat
+- `uncl-4e47b79bb8` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4f58caef5f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-4fad95b85b` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-514d4e013f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-51ceef844a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-52122da799` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-522ff1b2fa` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-52aa645065` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-560c8b06f3` — lake / uncontracted / Sibiu / Lacul Horea
+- `uncl-560efaf50a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-56972dea32` — lake / uncontracted / Sibiu / Lacul fără fund
+- `uncl-579386c99d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-581c5a0055` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-58d0e7ba56` — lake / uncontracted / Sibiu / Lacul Avram Iancu
+- `uncl-590135301b` — lake / uncontracted / Sibiu / Lacul Verde
+- `uncl-594a3415ba` — lake / uncontracted / Sibiu / Baltă artificială pește
+- `uncl-598b2edf3e` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-59c70b6bd6` — lake / uncontracted / Sibiu / Lacul Ocnița
+- `uncl-59e7a6b4f9` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-5a49a25a46` — lake / uncontracted / Sibiu / Rezerva apa  Arena Platos
+- `uncl-5be2599900` — lake / uncontracted / Sibiu / Lacul Ighiș
+- `uncl-5d42316860` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-63b79610a8` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-651a886916` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-65949e1d46` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-6728aae65a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-68ce470cec` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-6ab7fcda20` — lake / uncontracted / Sibiu / Lacul Brădeni
+- `uncl-6ac3c6d127` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-6b855e17c4` — lake / uncontracted / Sibiu / Balta lui Nea Virgil
+- `uncl-6d668fc2bb` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-6e1e6c0684` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-6faac82439` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-73d8cb6a8c` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-75b7e3ea64` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-77061482f7` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-7754be8762` — lake / uncontracted / Sibiu / Șopa
+- `uncl-78ec773a57` — lake / uncontracted / Sibiu / Lacul Negovan
+- `uncl-790f96cfee` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-79b24fcbcf` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-7aef9ea45c` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-7bc708c6bc` — lake / uncontracted / Sibiu / Lacul Binder
+- `uncl-7cf596491d` — lake / uncontracted / Sibiu / Evelin Lake
+- `uncl-7e2e7dcfb2` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-813f2655fd` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-817956695f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-822936ecf0` — lake / uncontracted / Sibiu / Lacul Gura Minei
+- `uncl-8325814239` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-83df0d2034` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-851678b10e` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-85d2ca78fd` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-86601b9b56` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-86a41dacc5` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-8a9fa32e42` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-8aa2f9c36b` — lake / uncontracted / Sibiu / Lacul Dumbrava Zoo
+- `uncl-8b14e57532` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-8bb0da847b` — lake / uncontracted / Sibiu / Lacul Brâncoveanu
+- `uncl-8be7351884` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-8ddac4066e` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-8e2d1d7b4d` — lake / uncontracted / Sibiu / Lac La Mihuț
+- `uncl-9045b2967a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9313ae9c18` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-93416a47b5` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-95ff982d81` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9711fe74ed` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9780647d37` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-994d209dc5` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-99e75a324a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9b1894be6c` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9bc620a59e` — lake / uncontracted / Sibiu / Lacul Grădina Zoologică
+- `uncl-9d811ee222` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9d92118c3f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-9e85e1415d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a098cdaa50` — lake / uncontracted / Sibiu / Lac Insulă Cisnădie
+- `uncl-a35fb815e5` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a423f87f13` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a59ccbf2dd` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a65bd58004` — lake / uncontracted / Sibiu / Lac
+- `uncl-a6bea2397c` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a79420a70a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a79f072730` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-a95521886e` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ad051662b6` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ad0aae7c61` — lake / uncontracted / Sibiu / Mlaca Tătarilor
+- `uncl-adc1efcdf0` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-b2609f50ec` — lake / uncontracted / Sibiu / Lacul 4
+- `uncl-b2db6cd4ba` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-b3fb8f537f` — lake / uncontracted / Sibiu / Lacul Brădeni
+- `uncl-b887db0c0f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-babfe40436` — lake / uncontracted / Sibiu / Lacul Crișan
+- `uncl-bae9fdd10f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-bb6efc7190` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-bb7ae80a36` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-bec2110970` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-bff75f1edc` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-c373e440de` — lake / uncontracted / Sibiu / Heleşteu
+- `uncl-c374ea74e4` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-c68c861a15` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-c7d1e7f3de` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ccd7977683` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-d30619a81b` — lake / uncontracted / Sibiu / Livada Tocile
+- `uncl-d5e6c8f283` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-d671e1f9f9` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-d9d768a75b` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-da2d880733` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ddf0d2a24d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ddf2b711f1` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-df7045ad3f` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-e19d20d557` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-e7a810f6d6` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-e867f8782b` — lake / uncontracted / Sibiu / Lacul Auster
+- `uncl-e87f388629` — lake / uncontracted / Sibiu / Lacul 1
+- `uncl-eacef1e358` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-eaec1dff7d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ece23b7a7b` — lake / uncontracted / Sibiu / Lacul 7
+- `uncl-f07b9bd8b8` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-f1c6b20cfe` — lake / uncontracted / Sibiu / Lacul 5
+- `uncl-f25be6780c` — lake / uncontracted / Sibiu / Lacul 8
+- `uncl-f3346e8282` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-f894b39d7a` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-f94647c586` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-fb1a323efe` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-fcbf55fb59` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-fd3f6a5c75` — lake / uncontracted / Sibiu / Lacul Dumbrava
+- `uncl-fdfcb6e01d` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-fea2bbaea9` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-ffb19b1544` — lake / uncontracted / Sibiu / Iaz neidentificat
+- `uncl-0147c4d1b6` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-02650e8f1a` — lake / uncontracted / Suceava / Iaz Lipoveni
+- `uncl-04109b4aed` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-06d2c3c6da` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-06de02d276` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-08d86affae` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-0b7ab120e3` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-14189a5829` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-14d828339b` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-17251b8f81` — lake / uncontracted / Suceava / Lacul Balțig
+- `uncl-19600630f7` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-1b4dab0e08` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-1b5bd70853` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-1badd823a2` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-2279450ef3` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-2956102ff8` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-2d6d3665ea` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-31af5d20e9` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-38b87870b0` — lake / uncontracted / Suceava / iaz Burac
+- `uncl-3b8ba93a2c` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-41c1159d61` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-517075ecd7` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-578b72c09d` — lake / uncontracted / Suceava / Mociulo
+- `uncl-5b2106fd98` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-5ca847fe30` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-610db8a2be` — lake / uncontracted / Suceava / Balta Iuzic
+- `uncl-71edccfc6f` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-7a63f436c8` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-7d5fc99520` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-87843d3d3f` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-87a663a12d` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-88747d6ce5` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-89790e6c43` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-89d99d0880` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-8fc801d53f` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-97598925b4` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-9839232744` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-9b013aba65` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-9e01870d99` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-9fb1c09a78` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-a310bb6d5f` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-ad7c06982a` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-b05e217a58` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-b41fb91384` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-bdad2bc7cc` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-bf05f7baf0` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-c1726d5d5b` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-c3a034924d` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-c86571140c` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-cbdaa3d351` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-cd3d671fa4` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-ce04236185` — lake / uncontracted / Suceava / Bosanci
+- `uncl-d19d2f6341` — lake / uncontracted / Suceava / Iezer
+- `uncl-d2ed1251b4` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-d7dc88f140` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-d800a1e08f` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-dd7ea3b102` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-df0354b182` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-e9dcc44783` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-efd3feb881` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-fb552a4a76` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-fffba269f5` — lake / uncontracted / Suceava / Iaz neidentificat
+- `uncl-067c07ccdc` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-11ca9d4a23` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-127b8807dc` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-14c45b5ef2` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-17e38f34d6` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-2413ae2f17` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-2afae748b1` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-37d85a4a69` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-387eb771d7` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-3bba49c9a0` — lake / uncontracted / Sălaj / Laguna Verde
+- `uncl-3d43e7b640` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-3f11a43602` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-44f68e23b6` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-5857179ce6` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-5a6e56174d` — lake / uncontracted / Sălaj / Ferma Piscicolă Cehu Silvaniei
+- `uncl-5b391b2807` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-61299161ab` — lake / uncontracted / Sălaj / Pescaria Tizoar
+- `uncl-742d528e66` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-769f418e58` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-7eaaa2f05e` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-80e27d06be` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-89c93509a6` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-8acdecd35e` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-91411f4d63` — lake / uncontracted / Sălaj / Pescaria Tizoar
+- `uncl-9519abcc31` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-957f4b4223` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-9d2c45e658` — lake / uncontracted / Sălaj / Pescărie la Gabi
+- `uncl-9f418e0da9` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-bf8639ea65` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-c19d97e6eb` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-d4d514b2a7` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-db220bfc88` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-db4a17a45e` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-de1d5535b1` — lake / uncontracted / Sălaj / Lacul Benesat
+- `uncl-e24f1872e5` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-e6b6978d29` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-e8af5723e0` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-ee26a3c2ec` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-f1588b464b` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-f7140a19d2` — lake / uncontracted / Sălaj / Iaz neidentificat
+- `uncl-03ef591c98` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-046a795138` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-04f5a3cd1d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-0691c69b17` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-077fb32cc3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-0795479e0f` — lake / uncontracted / Teleorman / Lacul Suhaia
+- `uncl-088cb0da10` — lake / uncontracted / Teleorman / Lacul Plopi
+- `uncl-089485e756` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-0b7b1fffc8` — lake / uncontracted / Teleorman / Lacul Sfințești
+- `uncl-0d352051fc` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-0f1326d38c` — lake / uncontracted / Teleorman / Brațul Pavel
+- `uncl-0f9e379457` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-100fe23e5a` — lake / uncontracted / Teleorman / Lacul Spătărei II
+- `uncl-10433f368b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-1451a55d01` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-1466a6871b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-18af13336c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-196e6c3279` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-19b7456d35` — lake / uncontracted / Teleorman / Balta Cenusaru
+- `uncl-1c284cf0eb` — lake / uncontracted / Teleorman / Lacul Spătărei I
+- `uncl-22722a559d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-29f72aeba5` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-2b4ee5178c` — lake / uncontracted / Teleorman / Lacul Pietriş
+- `uncl-2bddb8af59` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-2cb565fa5c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-2d3097e74e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-2d404a45b1` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-2f30b092e0` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-313ebd59f8` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-31e8fa608a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-342c33dd8d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-3521f2b926` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-3537157973` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-359e6d372e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-35a3a242c3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-3727c9b03c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-388336d5b2` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-3887b868b2` — lake / uncontracted / Teleorman / Brațul Pavel
+- `uncl-3a148949b6` — lake / uncontracted / Teleorman / Balta Codreanu
+- `uncl-3cd89d5751` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-42c4de5436` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-446aa453be` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4545ef421f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4616e7c013` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-464155c112` — lake / uncontracted / Teleorman / Balta La Daniel
+- `uncl-466ed106f3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-476be18a2f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-47c427debb` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-47fbb7294d` — lake / uncontracted / Teleorman / Balta Valea Ciresului
+- `uncl-481b3a158b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-48a98f2af5` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4b12138967` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4b588e95d9` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4b6265774f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4c84c96a02` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4ebb1141aa` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-4ee5339a9f` — lake / uncontracted / Teleorman / Preajba
+- `uncl-549eeb7f61` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-565bf3127c` — lake / uncontracted / Teleorman / Brațul Belina
+- `uncl-56bd3ca82f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5888810477` — lake / uncontracted / Teleorman / Balta Băbăița
+- `uncl-5a348a099a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5b34b55cdc` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5c3b7282ae` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5cc53e90c3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5cf30b13af` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5db9ce4d9a` — lake / uncontracted / Teleorman / Balta Valea Liliecilor
+- `uncl-5e09f99ff4` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-5e1b88aed1` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-60810b628b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-61a804c06d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-61c4e9a4c5` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-639ddea037` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-6f984e910b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-70092fbef4` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-7191d6404b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-7345874d58` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-74b030b608` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-75777b32ac` — lake / uncontracted / Teleorman / Lacul Beuca
+- `uncl-75cf55d329` — lake / uncontracted / Teleorman / Lacul Belciug
+- `uncl-75d57f0347` — lake / uncontracted / Teleorman / Brațul Belina
+- `uncl-7849bc1dbb` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-784bfbd0c0` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-792da78d92` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-79cc8be967` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-7bf6ace74b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-7c8ddd4169` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-7e14e015c1` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-856cecccc5` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-86d56f6c7a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-86fca9c686` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-8855bacf5a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-895982a7cd` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-89f0e6844e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-8c86fd9723` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-8d6a984f15` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-92a71e83d5` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-94ff00e8f1` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-95221d3fe0` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-97f409bd36` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-98f608fd7b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-994eb32d03` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-9c8e02a0ed` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-9d6d8470ca` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-9ebabc8f62` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-a23cd91992` — lake / uncontracted / Teleorman / Brațul Belina
+- `uncl-a2a85f6d08` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-aa2f678464` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-abee2df4f3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ad87cbda8b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ae03286fd6` — lake / uncontracted / Teleorman / Balta Cosmesti
+- `uncl-ae2bf6345e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-aed32aa609` — lake / uncontracted / Teleorman / Balta Sultan
+- `uncl-afce429f5b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-b5d062f4c4` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-b6aebe719f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-b6e2fed1d1` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-b6f1724f0c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-b720db30ff` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ba8408223a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-bbee9dd71d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-bc9fc78fcb` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-c43b790293` — lake / uncontracted / Teleorman / Acumulare apa
+- `uncl-c6f2228b2b` — lake / uncontracted / Teleorman / Lacul Furculești
+- `uncl-c75ceaf639` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-cce1d94b12` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ccf11191d8` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d0e199290e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d138f194ea` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d2adcd1e3c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d6361b1518` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d647f28f49` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d66470800d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d6a9b7db06` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-d860993d9b` — lake / uncontracted / Teleorman / Balta Balc Teleorman
+- `uncl-d8af9c2e42` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-db0f1782f7` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-db3f3ab6e2` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-db52909c29` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-dce0014094` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-de3c2d8f9e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e18c21d18a` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e2919c67e8` — lake / uncontracted / Teleorman / Blejesti-Sericu
+- `uncl-e46baba2f3` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e4ed70ab99` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e5c73900c3` — lake / uncontracted / Teleorman / Balta Sărată
+- `uncl-e78cff7fd6` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e7c416ee1c` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-e8a704689f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ebf1b72153` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ec8d1a4d9d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-eefe647f7b` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-f04f25277e` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-f2232d5d67` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-f7f337a480` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-f861b6f59d` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-fab16bb4cd` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-fd006801a2` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-fd0217d16f` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-ff97ac6718` — lake / uncontracted / Teleorman / Iaz neidentificat
+- `uncl-00db806d7f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0212f79edd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0213f27acc` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-02885d6613` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-030f8aefbe` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-05846484c3` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-05c80f20f9` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-071e2dec2f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-07c3835b10` — lake / uncontracted / Timiș / Balta Albastră Mică
+- `uncl-07e87acfef` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0a548fa8f8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0acff784b6` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0b58ccf42b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0c4e62e321` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0f0af3ccf0` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-106154f15d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-10e9789110` — lake / uncontracted / Timiș / Balta cu nuferi
+- `uncl-10f44e7a31` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-110bb7d8da` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-11c1f13be7` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-12590c1c95` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-127c4367d9` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-131e21b7e1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-13f5fa47da` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-16c4ea9fa8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-17909319b5` — lake / uncontracted / Timiș / Valcroft fishing pond
+- `uncl-19ea776067` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-1c3e7dabb7` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-1f02f62924` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-203bb8f14c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-22ddcaf741` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-235d77ea61` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-23f97a6058` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-25be6645cf` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-2855ad0d7f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-2ae9eb9481` — lake / uncontracted / Timiș / Balta Chișoda
+- `uncl-2c8aa87e62` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-2dc8c8d528` — lake / uncontracted / Timiș / Balta Trifu
+- `uncl-2f2a0657db` — lake / uncontracted / Timiș / Balta Sacoșu Turcesc - Balta 1
+- `uncl-302b30813b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-30b0de5a89` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3190276010` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-32e9193c08` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3313272c47` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-347072af64` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-348001cd06` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-354f9814f9` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-35b0eff46f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-362096102d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-39901c50af` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3b3acedb84` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3c89d8fe65` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3e8019a01b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3ec5279d6b` — lake / uncontracted / Timiș / Balta Lămâiței
+- `uncl-3f087c268c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3f2484936a` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-3f63cfca0d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-400a305a5d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4133bf796e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4144a540ac` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-418f502efd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-41aca5a75c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-448739a07a` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-451af28c61` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-46b70d3821` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4702749075` — lake / uncontracted / Timiș / Pescarie
+- `uncl-472cdbb554` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-473d0f469b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-47507a6ae4` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-48111585b3` — lake / uncontracted / Timiș / Barajul Silagiu
+- `uncl-4add11f0bb` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4ae96ee045` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4b33e37868` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4d1650f98c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4e532318d1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4ea7228ca4` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-4f04f61ff8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5035e05f6b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-51198ec2c0` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-53b43fabc8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-55e9f246b6` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5720846f3d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-57c46151a2` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5875e973b5` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-58e4d38f6c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-590ac2e807` — lake / uncontracted / Timiș / Balta Carol
+- `uncl-5a7d0a7c83` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5b1f96c2db` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5ba3c61d62` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5dd13571ff` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-5e9e470c3f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-608de49661` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-624c3eb53e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-629010dbe8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-630df92d92` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6366c281aa` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-657fdb6f41` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-669278885f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-669b39210e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-669e56eb2c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-67703abf48` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-677aad533d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-691f02e73c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6a044d8123` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6c3a5002a5` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6d249f619e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6de17f1ad3` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6e320b7040` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-6fd2b98b81` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7133e2fa9f` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-71c172f955` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-72fee9bcaa` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-74bdf62d74` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-750085554b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-750c4b2353` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7a3b5ff00d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7a4eeb21d8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7a84dca190` — lake / uncontracted / Timiș / Fântâna Punctelor Cardinale
+- `uncl-7a8d41f608` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7b7ca3a069` — lake / uncontracted / Timiș / Balta Peciu Nou
+- `uncl-7b8044036e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7d3aee02f8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7d43884ea2` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7edefe9ead` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-7f0f921d31` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-8073bdc5b2` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-814800ae9c` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-881ee836ab` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-8833172f0d` — lake / uncontracted / Timiș / Balta verde
+- `uncl-8a0f2e4db7` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-8a84e4688b` — lake / uncontracted / Timiș / Lacul Ianova
+- `uncl-8c9fd6b9e6` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-8faa557ab1` — lake / uncontracted / Timiș / Kaula
+- `uncl-90721b95af` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9155bd0e04` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-929b3ea6fc` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-93cd3f686c` — lake / uncontracted / Timiș / Lacul Plaiului
+- `uncl-941d41ceb6` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-949f936f85` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-94fc703e62` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-953eea227c` — lake / uncontracted / Timiș / Acumularea Vermes-Izgar
+- `uncl-9738e3d0ef` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-98b0a610a2` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-992af333a4` — lake / uncontracted / Timiș / Balta Giroc
+- `uncl-9a70636602` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9adccca933` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9bef15ab21` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9d10cace02` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9dff5af904` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-9fcb0b65b3` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-a2fecacc23` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-a3c36639f6` — lake / uncontracted / Timiș / Balta Roșie
+- `uncl-a408fcad41` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-a62a7cea34` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-a6ac93020e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-a8f8434c69` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ac93ed4bed` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ae555f7368` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ae86a4a1f7` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ae96727269` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-af37ec505e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b068982432` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b103d544a1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b3a0396b29` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b5343c1956` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b7073424c1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-b88a5c3a29` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ba6eda61de` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-bc1e02a3dd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c06382450b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c0d73ddf3e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c2b45acf10` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c2f8503f2d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c3ccfe0aaa` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c4310ee548` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c499b4ced8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c4ce895ceb` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c873699fdb` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c8d867a151` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c96b7e0da9` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-c9ca9fdd06` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-cb08a76716` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-cb80b5ca9d` — lake / uncontracted / Timiș / Domeniul ValDan
+- `uncl-cd7e7d5038` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ce9b92b953` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-cea0ad6095` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-cee0ed90f0` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-cfc1766975` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d017911763` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d0d4a83ac4` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d371cd9f52` — lake / uncontracted / Timiș / canalul Timișaț
+- `uncl-d379a7146e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d443dfc43b` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d59ee7a571` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d69a53d1eb` — lake / uncontracted / Timiș / Lacul Balaurului
+- `uncl-d8e7731e66` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d912b74dd9` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d9556fd6ab` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-d97b00d0a9` — lake / uncontracted / Timiș / Balta Sacoșu Turcesc - Balta 2
+- `uncl-dc06ebdc04` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-dc9a6bc45a` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-dcf81e4ab1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ddf5a10e67` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e0cb1932cf` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e10209d276` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e14e6cfb22` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e405f8b80b` — lake / uncontracted / Timiș / Acumularea Liebling
+- `uncl-e416bf1120` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e4440fe03d` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e455bf9dab` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e8ceb4a87a` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e9d1cb9bcd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-e9e20ce3ba` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ea42bf21d5` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ead02424dc` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-eb1f4b0911` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-eb310c56c7` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-ed348357d1` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-eeaa800ce8` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-eef54d1b5e` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f2618fcf94` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f28bf9f1fd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f400cb8caa` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f497e4e1d3` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f68a5c6a88` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f7be9f2639` — lake / uncontracted / Timiș / Centrul Herneacova
+- `uncl-f87cfe33ad` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-f8d6a3f97c` — lake / uncontracted / Timiș / Lacul lui Costin
+- `uncl-f922a6ebbc` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-fa40e55c6c` — lake / uncontracted / Timiș / Acumulare Giarmata
+- `uncl-fa7149f5ba` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-fabad51383` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-fb51732038` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-fbbd809b08` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-fd0a3525d3` — lake / uncontracted / Timiș / Balta Albastră Mare
+- `uncl-fe02de30dd` — lake / uncontracted / Timiș / Iaz neidentificat
+- `uncl-0006958dfb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0049cb6acd` — lake / uncontracted / Tulcea / Lacul Rădăcinosul Mare (Babineț)
+- `uncl-00a32f5ff0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-00b273a789` — lake / uncontracted / Tulcea / Lacul Potelciuc
+- `uncl-014ad43f36` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0153358757` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-01df2bebaa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-01e061aa90` — lake / uncontracted / Tulcea / Vararia
+- `uncl-025a455ad8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-027f206dc7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0440466812` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-045a895a5f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-045ac23491` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-047ed55646` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-04f2faa787` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-05005d68d0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-052f79ce35` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-05fe553d25` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-064501355f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-069690ecd7` — lake / uncontracted / Tulcea / Lacul Pintilie (Pantelei)
+- `uncl-06f92fff97` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-07750fa9bb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-07b720080a` — lake / uncontracted / Tulcea / Lacul Zebil
+- `uncl-07d44c5fbe` — lake / uncontracted / Tulcea / Lacul Obretinu Mare
+- `uncl-07fb59baec` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-07fd6e4f80` — lake / uncontracted / Tulcea / Lacul Puiu
+- `uncl-084e375146` — lake / uncontracted / Tulcea / Lacul Porculeț
+- `uncl-08907aae23` — lake / uncontracted / Tulcea / Pulitai
+- `uncl-08d535ff33` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-08d54fdad4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-08d9e943b2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0946489edd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-098744f4a8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-09bfe0f335` — lake / uncontracted / Tulcea / Lacul Lunga (Doha)
+- `uncl-0a34ca1cc6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0b8790aadc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0bc3281857` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0bdfc2f8f9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0c64c9b153` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0c9d6391de` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0cad55a1dc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0d8b3165a0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0dca6fb7db` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0f35e4a361` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0f604abd70` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0f940e7e9e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-0fe7db470b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1037c31b62` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-103cdb4a76` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-10b771c588` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1145364c1f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-12449ff274` — lake / uncontracted / Tulcea / Lacul Meșter
+- `uncl-126305fd48` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1314333744` — lake / uncontracted / Tulcea / Lacul Murighiol
+- `uncl-13232b0a3e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-134708b7df` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1377f1a84c` — lake / uncontracted / Tulcea / Lacul Hunca
+- `uncl-138a006ad6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-138dc08dbd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1396445178` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-13fec32d15` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-14008ad2c4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-141ad059af` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-143a2b8b79` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-149c212365` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-15a3803fc7` — lake / uncontracted / Tulcea / Lacul Zanachin
+- `uncl-15c3b7cc71` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-15fcdf2901` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-165ea8ce79` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1693280413` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-16978af734` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-16f5b96bcf` — lake / uncontracted / Tulcea / Lacul Capcicova
+- `uncl-17100e49c3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-171f19ebca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-17e49ded8f` — lake / uncontracted / Tulcea / Lacul Vasile Alecsandri
+- `uncl-1807a485d6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-18137b07fe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-183c84049b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1840d4e466` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1a008d424e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1a127a7477` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1a2f53438d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1a64de94ab` — lake / uncontracted / Tulcea / Lacul Eidan
+- `uncl-1a98e32c7e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1aaa15952b` — lake / uncontracted / Tulcea / Lacul Cuzmințu Adânc
+- `uncl-1bc10c5e14` — lake / uncontracted / Tulcea / Lacul Poliacova
+- `uncl-1bd0726f14` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1bdad3d6da` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1c1e1bac07` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1c3e52a77d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1c6aca1234` — lake / uncontracted / Tulcea / Gorgova
+- `uncl-1c880efe04` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1c910288ea` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1cda2ce8da` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1d06021c27` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1d18be30e8` — lake / uncontracted / Tulcea / Lacul Rotund (Cruhlic)
+- `uncl-1def653ece` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e3b505df0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e3c980f9a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e5834accb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e5e4ee77e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e65c3af3a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1e78ace06a` — lake / uncontracted / Tulcea / Lacul Grigorașova
+- `uncl-1f6b547ecb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-1f81ff63e5` — lake / uncontracted / Tulcea / Lacul Martin (Martinca)
+- `uncl-1fa5607f26` — lake / uncontracted / Tulcea / Lacul Văratica
+- `uncl-1fde4b6699` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-20226d3716` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-203d1e8bd7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-209537935a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-20ca1d3d0d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-214c929b29` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-214cee645f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-21793261df` — lake / uncontracted / Tulcea / Lacul Rădăcinosul Mic (Colinghi)
+- `uncl-2191919780` — lake / uncontracted / Tulcea / Lacul Răduculeț
+- `uncl-21cad2ed94` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-21ec095e7e` — lake / uncontracted / Tulcea / Lacul Saon
+- `uncl-21f08ae4b0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-21f5b196e9` — lake / uncontracted / Tulcea / Lacul Roșuleț
+- `uncl-223472e14b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-238ad9564d` — lake / uncontracted / Tulcea / Lacul La Amiază (Puhaciova)
+- `uncl-23dadb155d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-24652793ae` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-24973e9db8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-249fbcb526` — lake / uncontracted / Tulcea / Lacul Lunguleț
+- `uncl-24b1a5eb35` — lake / uncontracted / Tulcea / Lacul Matița
+- `uncl-24bc515e5f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-24ed05ca34` — lake / uncontracted / Tulcea / Lacul Babinții Mari
+- `uncl-2544e561a1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2564bfcb13` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-259cd6043b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-25d27ed88b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-263ded0af0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-266344c7e5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2697838cfa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-26d94b9011` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-26db4997b8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-275897e812` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2769a339db` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-27ce18000d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-28aa31d08c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-28c40c1f60` — lake / uncontracted / Tulcea / Lacul Potcoava
+- `uncl-29bc1cda5e` — lake / uncontracted / Tulcea / Lacul Tătaru
+- `uncl-2aa96c8fb0` — lake / uncontracted / Tulcea / Lacul Potcoava
+- `uncl-2ab203269a` — lake / uncontracted / Tulcea / Lacul Bogdaproste
+- `uncl-2b00ecf3fa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2b14de96c1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2bc8345299` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2bf6f72dac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2c3779def6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2ca6e347e8` — lake / uncontracted / Tulcea / Lacul Lighenetul
+- `uncl-2cb2aed041` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2d40ff1ced` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2d5fb9e781` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2d62344663` — lake / uncontracted / Tulcea / Lacul Lung (Dovnica)
+- `uncl-2d623cf0a0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2de09e9bf4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2e8c8bbe13` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2e900d6dc3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2ebcf88653` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2f7d13843d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2fa73ffc38` — lake / uncontracted / Tulcea / Lacul Miazăzi (Polideanca) (Băclăneștiul Mic)
+- `uncl-2fe15bc869` — lake / uncontracted / Tulcea / Lacul Cărămidari
+- `uncl-2fef573327` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-2ffae1e760` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3043e7a091` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-305d47d371` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3066a28e67` — lake / uncontracted / Tulcea / Bazinul Mic
+- `uncl-30dedeef27` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-30e69e6c2b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3100e811c5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-31b5cd695b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3264dce1ad` — lake / uncontracted / Tulcea / Lacul Merhei
+- `uncl-326de19369` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-32beebd5c0` — lake / uncontracted / Tulcea / Lacul Lungu (Dolha)
+- `uncl-333675ea98` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-342477f074` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3484b3e449` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3486e1611e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3489f517d7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-34bb6ee538` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-34d4044919` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-34e7445ac0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-35330b7b79` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-354f7625bf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-35ead3b582` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-36253bd243` — lake / uncontracted / Tulcea / Lacul Anica
+- `uncl-36da448753` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-36e3fc67a5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-372009081a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-372a69f94a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-37567a306d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-375b129161` — lake / uncontracted / Tulcea / Lacul Dăeni
+- `uncl-3763648a06` — lake / uncontracted / Tulcea / Lacul Lumina
+- `uncl-379703824d` — lake / uncontracted / Tulcea / Lacul Vâncova
+- `uncl-37be54d72c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-37c3283b6b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-38470a3375` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-387d44f656` — lake / uncontracted / Tulcea / Lacul Piatra Fetei
+- `uncl-38910cc4c0` — lake / uncontracted / Tulcea / Lacul Zătonul Mic
+- `uncl-389dafbdfc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-39973d5f4c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-39fc169351` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3a30384655` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3a4f7dfc35` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3a5916f1a4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3a7c06c5be` — lake / uncontracted / Tulcea / Lacul Babina
+- `uncl-3a7d66d802` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3ac0663582` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3ad81961ea` — lake / uncontracted / Tulcea / Lacul Câșla
+- `uncl-3ae0b83a48` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3b23b32642` — lake / uncontracted / Tulcea / Lacul Leahova
+- `uncl-3b901aeab3` — lake / uncontracted / Tulcea / Lacul Cotului
+- `uncl-3cd14006e3` — lake / uncontracted / Tulcea / Lacul Bleziuc
+- `uncl-3cda7968ee` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3cfb0e951e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3d64218afb` — lake / uncontracted / Tulcea / Lacul Iacob
+- `uncl-3d66e2560a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3d99437f4a` — lake / uncontracted / Tulcea / Lacul Răducu
+- `uncl-3dabf8c93f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3db3788b4e` — lake / uncontracted / Tulcea / Lacul Vlasova Mica
+- `uncl-3db4e26e3a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3debf62fad` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3e1973fd67` — lake / uncontracted / Tulcea / Lacul Vlasova (Plin)
+- `uncl-3ea73b654f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3efc6dd84b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3f24e43132` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3f62648c78` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3f863ed7cc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-3ff1f3e482` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4028eaab30` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4070fb4d67` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4138b3f358` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-429cd98f16` — lake / uncontracted / Tulcea / Lacul Iacobdeal
+- `uncl-42c35089ce` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-42d2541fa4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-430f8c76b0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4314fe1bf0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-435e4fbbd7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-43a65f3734` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-446d342364` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-44a14486e4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-44c6af154d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4568165c8b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-458aeac844` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-458bc2c62a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-45b781c85e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-45e25a1729` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-460532faef` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-46239fc988` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-46b2a00b29` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-46bf657470` — lake / uncontracted / Tulcea / Lacul Roșu
+- `uncl-46f3b98838` — lake / uncontracted / Tulcea / Lacul Oaia Mică
+- `uncl-47fc1b8791` — lake / uncontracted / Tulcea / Lacul Ligheanca
+- `uncl-486c09d398` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-487ce8c987` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-48cb522829` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-48cc4071bd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-48e88954e1` — lake / uncontracted / Tulcea / Lacul Rădăcinos (Gârciuvaț)
+- `uncl-48f31850fd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-49447c2f30` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4971e53540` — lake / uncontracted / Tulcea / Lacul Taranova
+- `uncl-4b021522dc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4b85ba0c9e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4bda26db13` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4beeaffbc0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4ca051cda6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4ca38ea9d6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4caffd8d4d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4cb1fe19a6` — lake / uncontracted / Tulcea / Lacul Isaccea
+- `uncl-4cddec8e5a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4cf806f3b3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4d31a956df` — lake / uncontracted / Tulcea / Lacul Policrat
+- `uncl-4dc8f99d09` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4dd495e43f` — lake / uncontracted / Tulcea / Lacul Erenciuc
+- `uncl-4dda9233de` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4e0a773111` — lake / uncontracted / Tulcea / Lacul Argintiu
+- `uncl-4e6d2652f3` — lake / uncontracted / Tulcea / Lacul Puiuleț
+- `uncl-4f110a6fc4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-4f73ab0b16` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-500addfa33` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5077941fb5` — lake / uncontracted / Tulcea / Lacul Smeica
+- `uncl-507b8b8540` — lake / uncontracted / Tulcea / Lacul lui Matei
+- `uncl-508df6d1b2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5113db5793` — lake / uncontracted / Tulcea / Lacul Calcia
+- `uncl-513ef2aedd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-514df563ea` — lake / uncontracted / Tulcea / Lacul Mândra (Gabardin)
+- `uncl-51da08976e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-521715ce2e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5273839edf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-527922f6d7` — lake / uncontracted / Tulcea / Lacul Cosnei
+- `uncl-52b95ea86e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-53b1bdc75c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-54c370d537` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-559b5917b5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-55fce0b1bf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-568705fc45` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-56e86229b1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-570773da50` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-570a083831` — lake / uncontracted / Tulcea / Lacul Zătonul Mare
+- `uncl-571b8a87fe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-57649dbb99` — lake / uncontracted / Tulcea / Lacul Lunga
+- `uncl-579ae9e25f` — lake / uncontracted / Tulcea / Lac Radacinos
+- `uncl-58345708b4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5845373514` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-58a42a8013` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-58b9d969ec` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-59464db79a` — lake / uncontracted / Tulcea / Lacul Ianca
+- `uncl-594cab721f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5955c58225` — lake / uncontracted / Tulcea / Lacul Gherasim (Harasimova)
+- `uncl-597513cc26` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-59911489aa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5993e4de25` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-59e88a688d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5a2a2045d1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5a5c1abe7e` — lake / uncontracted / Tulcea / Lacul Văcaru
+- `uncl-5a999bad81` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5acf95dd4c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5afeec493c` — lake / uncontracted / Tulcea / Lacul Bazila
+- `uncl-5b49f773fd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5b9fa2a483` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5bbb9b829e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5bffbdf51b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5c4f7a3822` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5c76f94cd9` — lake / uncontracted / Tulcea / Lacul Carasu
+- `uncl-5c9a976b39` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5e1da500be` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5e54cccb34` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5e7dd6ad99` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5ec7b41863` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-5f3033ad48` — lake / uncontracted / Tulcea / Lacul Piscani
+- `uncl-5f826fad0c` — lake / uncontracted / Tulcea / Lacul Militarova
+- `uncl-5f9771a90d` — lake / uncontracted / Tulcea / Lacul Matei
+- `uncl-5fbd038eba` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-601ebc666b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-60533d1876` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-60693bb288` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-60dfa18c9c` — lake / uncontracted / Tulcea / Lacul Cudic
+- `uncl-6128ce1c55` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-61481a9d9d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-615642d62b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-61e310e554` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6207cbc575` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6216371f9b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-624b3b38bd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-627c0410a4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-62cf13db73` — lake / uncontracted / Tulcea / Lacul Serbata
+- `uncl-636bbbf200` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-63930d1131` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-64016fb91b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-64b5077cd7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-64d71eb086` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-65c1fdf95b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-660a426d37` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-66462840d7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-66a7412d77` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-671003bc06` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-671680e95e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6744777046` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-67789df230` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-67cc779fef` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-67ea595dba` — lake / uncontracted / Tulcea / Lacul Octavian
+- `uncl-684c360946` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-68685fedce` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6874e1d2af` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-68f2fdf9db` — lake / uncontracted / Tulcea / Lacul Tistimelu
+- `uncl-69213e0b57` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-692b59ae98` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-69d48eb3c0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-69e351df0a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6aa791bb75` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6bbaa2b38d` — lake / uncontracted / Tulcea / Lac Buival
+- `uncl-6c2912ff15` — lake / uncontracted / Tulcea / Lacul Nujnic
+- `uncl-6c87a16bd2` — lake / uncontracted / Tulcea / Lacul Vârșina
+- `uncl-6cc15a264a` — lake / uncontracted / Tulcea / Lacul Văcărel
+- `uncl-6d10c32d3e` — lake / uncontracted / Tulcea / Coada Calului
+- `uncl-6d1cf5b58d` — lake / uncontracted / Tulcea / Balta Zebil
+- `uncl-6d494046c9` — lake / uncontracted / Tulcea / Lacul Cetățuia
+- `uncl-6d7f109d58` — lake / uncontracted / Tulcea / Lacul Rădăcinos (Covaliova)
+- `uncl-6d984e9ba8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6e17886a34` — lake / uncontracted / Tulcea / Lacul Sărături
+- `uncl-6e207ccd3a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6e516ca799` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6e5ad8a2fb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6e9423e03a` — lake / uncontracted / Tulcea / Balta Sarinasuf
+- `uncl-6ef03cd219` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6f48ba6f60` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6f4c640452` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6f67fbef2c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-6fb0bea872` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-700392e9aa` — lake / uncontracted / Tulcea / Băltenii de sus
+- `uncl-710c96760b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-719963d3ca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-72121cf06d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7222f11f43` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7245cb5c34` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7261998c9e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-72e04153a8` — lake / uncontracted / Tulcea / Lacul Oaia Mare
+- `uncl-72e930a263` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-731834b4c0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7336193421` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7394bbe683` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-73c4ca0ba7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-73e3a70f82` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-740218534d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-74f18bd3c3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-75051607e8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-751a616544` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-75320c59dd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-756c47f319` — lake / uncontracted / Tulcea / Lacul Cuzmințu Lat
+- `uncl-75aa2f86f9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7610d2568d` — lake / uncontracted / Tulcea / Lacul Tătaru
+- `uncl-7639e84a52` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-76670044bf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-767b78855b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7687bc4cb7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-769ea4c4ae` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-76e0c3c1e2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-771b7d2337` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-77240dd138` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-786831cb13` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-78a01ed28d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7910d060d8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-79497e85ef` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7952e0aea3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-798d3cfdc9` — lake / uncontracted / Tulcea / Lacul Bulbera
+- `uncl-79a0b025d6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-79a837c5de` — lake / uncontracted / Tulcea / Lacul Fortuna
+- `uncl-79d155e95d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7a02f1bcae` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7a2f4fba53` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7a37d1f387` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7ac0eb9833` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7ada283f5f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7ae9f6eb26` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7b19bd310f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7b372809ca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7b3e877218` — lake / uncontracted / Tulcea / Lac Fundeanu
+- `uncl-7b8455de28` — lake / uncontracted / Tulcea / Lacul Zapadna
+- `uncl-7c1b4b3fd7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7c277ca37c` — lake / uncontracted / Tulcea / Lacul Merheiu Mic
+- `uncl-7d4b123d63` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7db312fddd` — lake / uncontracted / Tulcea / Rodenena
+- `uncl-7decd8c993` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7e7c67336e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7e81a359e1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7e8605a2e9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7e89aa0c6a` — lake / uncontracted / Tulcea / Lacul Rădăcinos
+- `uncl-7e8c31bb8b` — lake / uncontracted / Tulcea / Balta Buceag
+- `uncl-7ebc398bac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7f00e0bca3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-7fab6fe5b0` — lake / uncontracted / Tulcea / Lacul Pahane Ranec
+- `uncl-7fea804d43` — lake / uncontracted / Tulcea / Lacul Sărături
+- `uncl-7ffb9a6bf7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-80619fc916` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-80dfcb2ae6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-80e6f080ef` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8103656cfc` — lake / uncontracted / Tulcea / Lacul Pora
+- `uncl-818131cfc0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-81eb2d2c29` — lake / uncontracted / Tulcea / Lacul Obretinu Mic
+- `uncl-82039bf6f5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8289fc73b6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-828dd5c06b` — lake / uncontracted / Tulcea / japșa Latacova
+- `uncl-83a71f110d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-83b973bb1e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-83dc77a648` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8479b14acd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-84aee18a35` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-84c0893898` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-851ca25b7e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-85438721af` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8577e25c03` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-869ce80b15` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-86d425b1e5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-87107cb181` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-87516bab68` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-886f58c771` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-88b7073066` — lake / uncontracted / Tulcea / Garla Lunga
+- `uncl-88d0c7aadf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-88e0a6b784` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-89630de606` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-896408f5c3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-899d64e535` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-89abe7d7bf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8a5cf820c5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8ab646bf61` — lake / uncontracted / Tulcea / Lacul Lebedea (Onofrei)
+- `uncl-8b1e619297` — lake / uncontracted / Tulcea / Lacul Trei Iezere
+- `uncl-8b3059f1c7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8b900bb96f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8c2653b84f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8c79a94d44` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8cc48f6e46` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8dccaddc0e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8df2aa0f6f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8e9802168c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8f0f27728f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-8f4bcf1a03` — lake / uncontracted / Tulcea / Lacul Porculeț
+- `uncl-90e0d7911e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-90e614c55c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-91425977e2` — lake / uncontracted / Tulcea / Lacul Cruhlich (Cernet)
+- `uncl-91469b706a` — lake / uncontracted / Tulcea / Lacul Mahtova
+- `uncl-9213046f92` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-924600c62e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-926adfbebc` — lake / uncontracted / Tulcea / Lacul Parcheș
+- `uncl-9289540612` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-92f3ca47c5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9316c61273` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-937652746a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-937a0f3d27` — lake / uncontracted / Tulcea / Cuciuhurni
+- `uncl-93ccb03103` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-941e903e18` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-945a2aa4d8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-948ad88348` — lake / uncontracted / Tulcea / Ghiolul Vâncova
+- `uncl-94a7ad0b30` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9521d28121` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-95430ca5c8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-956d252d72` — lake / uncontracted / Tulcea / L. Balanova
+- `uncl-958afa3436` — lake / uncontracted / Tulcea / Lacul Smioniva
+- `uncl-95a57409c7` — lake / uncontracted / Tulcea / Lacul Roșca
+- `uncl-95f37aa19a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-95f6753a3e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9640311863` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-96e3f9792e` — lake / uncontracted / Tulcea / Lacul Taraschina
+- `uncl-9740058b78` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9759e0ac6f` — lake / uncontracted / Tulcea / Lacul cu Ciulini
+- `uncl-977e57dddb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-97b13cd27a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-97f51a4215` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-97f52078ad` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-984dfd2349` — lake / uncontracted / Tulcea / Lacul Hrecișca
+- `uncl-988481c6bf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-98bd789107` — lake / uncontracted / Tulcea / Lacul Nisipos
+- `uncl-98ed4f2505` — lake / uncontracted / Tulcea / Lacul Vatafu (Bijan)
+- `uncl-9986e08ecb` — lake / uncontracted / Tulcea / Balta Turcoaia
+- `uncl-99d867a189` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9a58b46269` — lake / uncontracted / Tulcea / Lacul Lișteghea
+- `uncl-9ae4999d5c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9b081fc7e4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9b903bc885` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9c1b8b606b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9cda56a4d5` — lake / uncontracted / Tulcea / Caciatina
+- `uncl-9d2bccbcce` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9d63c4dad2` — lake / uncontracted / Tulcea / Lacul Fastic
+- `uncl-9d71cffd01` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9dc54b67d9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9e5dc96ec1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9efd595eb5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-9f9bb05170` — lake / uncontracted / Tulcea / Lacul Manole
+- `uncl-a01b98350f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a05c535fa3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a07ff04bb6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a0bc93b5d1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a10a35b5c0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a1cefaf01e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a1f645126c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a30dd6c1fe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a32c5f3fca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a3455e417b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a347175492` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a48e178ec7` — lake / uncontracted / Tulcea / Lacul Pojarnia
+- `uncl-a58a60e8eb` — lake / uncontracted / Tulcea / Lacul Somova
+- `uncl-a593b776e6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a8263b08db` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a8409d54c7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a8a7dc83d4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a91d72b63b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-a9b8dadc58` — lake / uncontracted / Tulcea / Lacul Gorgovaț
+- `uncl-aa00507aac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aa0471db4e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aa059a14f8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aa13161c80` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aa88183bfa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aab7b60ed8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-aad86649ae` — lake / uncontracted / Tulcea / Lacul Florica
+- `uncl-ab45bfc299` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ab635f095e` — lake / uncontracted / Tulcea / Lacul de acumulare Turcoaia
+- `uncl-ac457ea7da` — lake / uncontracted / Tulcea / Lacul Telinca
+- `uncl-ac7582ff88` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-acfe9ba0c5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ad5676e120` — lake / uncontracted / Tulcea / Lacul cu Cotețe
+- `uncl-addd5083e9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ade1f20c20` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ae509a8e47` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-af40e90e1b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-afd4f3a883` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b0025faf6c` — lake / uncontracted / Tulcea / Lacul Soschi
+- `uncl-b04e28dcbf` — lake / uncontracted / Tulcea / Lacul Durnoleatca
+- `uncl-b071901da8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b0a20c79f5` — lake / uncontracted / Tulcea / Lacul Orlova
+- `uncl-b0c1b5bbd8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b1a84974c4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b1ab42576c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b2683d20c1` — lake / uncontracted / Tulcea / Lacul Intrianchie
+- `uncl-b2c4709de9` — lake / uncontracted / Tulcea / L. Calvaciu de Sus
+- `uncl-b31a7d2d5d` — lake / uncontracted / Tulcea / Oaia Mica
+- `uncl-b33ac3b111` — lake / uncontracted / Tulcea / Lacul Cuzmințu Mare
+- `uncl-b34f068ec7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b4611565dd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b4833a88e8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b4be39ab89` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b4e8deda25` — lake / uncontracted / Tulcea / Lacul Isacel
+- `uncl-b51e2feb32` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b52ca2f417` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b58c915dee` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b596b57b8f` — lake / uncontracted / Tulcea / Lacul Lejai
+- `uncl-b599ea4d4f` — lake / uncontracted / Tulcea / Lacul Nebunu (Durnoi)
+- `uncl-b5cba32526` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b5de9acd5a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b649409175` — lake / uncontracted / Tulcea / Lacul Soloneț
+- `uncl-b67f4fc4ac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b6b7a6bcaf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b6c4123605` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b6c9c29b25` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b781c8843b` — lake / uncontracted / Tulcea / Lacul Tatarciuc
+- `uncl-b7836124f1` — lake / uncontracted / Tulcea / Lacul Marcu
+- `uncl-b78c2e4d90` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b7da1bddc2` — lake / uncontracted / Tulcea / Lacul Rotund
+- `uncl-b8b1f4933e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-b8bb54e2c5` — lake / uncontracted / Tulcea / Lacul Macovei (Macuhova)
+- `uncl-b8e1b9c4ac` — lake / uncontracted / Tulcea / Acumularea Valea Hogei
+- `uncl-b8e2f0f278` — lake / uncontracted / Tulcea / Ghiolul Morun
+- `uncl-b95c8cf1a3` — lake / uncontracted / Tulcea / Lacul Gablovata
+- `uncl-b98b066849` — lake / uncontracted / Tulcea / Lacul Cuibul cu Lebede (Cuibida)
+- `uncl-b99b1e8e55` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bb225a477a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bb41a3ef64` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bb7c215d7e` — lake / uncontracted / Tulcea / Lacul Rădăcinos (Corciovata)
+- `uncl-bb7ea06a88` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bb9e80c997` — lake / uncontracted / Tulcea / Lacul Rădăcinos
+- `uncl-bba254d5aa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bc57c178cd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bc7db6ad1e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bc96d1fe57` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bcb38fbd02` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bcb919caac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bcc0070a7d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bd30c1fbe4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bd5bc3c23b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bd750a64cd` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bdb863185f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bdfc825ce1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bebd55c56e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-bf3841abfe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c0235a9b2c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c02cb3c237` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c066e77726` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c08cd39e31` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c09e5fdb6e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c11dbeb43f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c14149f7f3` — lake / uncontracted / Tulcea / Lacul Purcelu
+- `uncl-c1724a1365` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c174a3527a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c1ce513bd1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c1ff79e7d3` — lake / uncontracted / Tulcea / Lacul Căzănel
+- `uncl-c2492074c4` — lake / uncontracted / Tulcea / Lacul Pesciani
+- `uncl-c24c47c73b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c360135878` — lake / uncontracted / Tulcea / Lacul Marcu
+- `uncl-c378a440a8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c387ea059e` — lake / uncontracted / Tulcea / Lacul Gorgoștel
+- `uncl-c3b3814c03` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c3ccd6b417` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c3f1026956` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c43d677dce` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c4f0a7f01c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c4fcdc2849` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c53eaa5d07` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c553de5daf` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c568f6ea29` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c58fbf59f1` — lake / uncontracted / Tulcea / Lacul Solomon
+- `uncl-c59444e5ec` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c5d43177ec` — lake / uncontracted / Tulcea / Acumularea Peceneaga
+- `uncl-c6034724c0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c6ff98c186` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c70efda4e7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c741ea3e2d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c8eadb7657` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-c988a1317f` — lake / uncontracted / Tulcea / Lac Tibi
+- `uncl-c9a1dc1abe` — lake / uncontracted / Tulcea / Lacul Golovița
+- `uncl-ca22311f24` — lake / uncontracted / Tulcea / Lacul Travina
+- `uncl-ca68d53f81` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-cafac5d4c7` — lake / uncontracted / Tulcea / Lacul sezonier Beibugeac
+- `uncl-cb4296282a` — lake / uncontracted / Tulcea / Lacul Ciuperca
+- `uncl-cb80396a98` — lake / uncontracted / Tulcea / Lac Ciobanica
+- `uncl-cb9f5b6b2c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-cc733d9eff` — lake / uncontracted / Tulcea / Lacul Clisciova
+- `uncl-ccc9c709b0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ccdaba40b9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ccf0c9722c` — lake / uncontracted / Tulcea / Lacul Dubcova
+- `uncl-cd619d0552` — lake / uncontracted / Tulcea / Valea Taberei
+- `uncl-cdbae51dc7` — lake / uncontracted / Tulcea / Oaia Mare
+- `uncl-ce20fef506` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ce255e2573` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ce826735d8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ceb78b6582` — lake / uncontracted / Tulcea / Holbina Trei Bibani
+- `uncl-cf0a6c2762` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-cf5fd86cca` — lake / uncontracted / Tulcea / Văratica
+- `uncl-cfcff60357` — lake / uncontracted / Tulcea / lac
+- `uncl-cffd7559a9` — lake / uncontracted / Tulcea / Lacul Luncavița
+- `uncl-d03fa67d8d` — lake / uncontracted / Tulcea / Lacul Uzlina
+- `uncl-d0b448f026` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d0d3cc1cce` — lake / uncontracted / Tulcea / Lacul Cabluatova
+- `uncl-d13e49eb71` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d193c6b8ef` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d1b6d168cb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d1c96ac0d0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d1f3dbd602` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d223084cee` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d2547f1a97` — lake / uncontracted / Tulcea / Ghiolul Pietrei
+- `uncl-d2f9241dd5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d354b912f5` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d41b4732c2` — lake / uncontracted / Tulcea / Lacul Babele
+- `uncl-d4ae422eaa` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d4ba624139` — lake / uncontracted / Tulcea / Acumularea Valea Bădilă
+- `uncl-d50882b206` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d537d4e852` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d55bc4cb57` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d5882a7eab` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d5c256bd3c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d5c4518674` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d5dc246c02` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d6345d9a9b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d6718228fb` — lake / uncontracted / Tulcea / Lacul Spurcatu
+- `uncl-d695cf083c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d87c37bbb4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d8a48aab89` — lake / uncontracted / Tulcea / L. Răzvertina Mare
+- `uncl-d8bac85876` — lake / uncontracted / Tulcea / Balta Lățimea
+- `uncl-d8de8bf308` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d8dfd33157` — lake / uncontracted / Tulcea / Lacul Babadag
+- `uncl-d93166f5da` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d951c50dac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d952370fb6` — lake / uncontracted / Tulcea / Lacul Dracului (Ciorticuț)
+- `uncl-d98ac3626a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d9c5970103` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d9e63981e2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-d9f4e38ae9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-da36982ba7` — lake / uncontracted / Tulcea / Lacul Isac
+- `uncl-da75071c21` — lake / uncontracted / Tulcea / Lacul Potcoava
+- `uncl-daf5f32d33` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dafa296e53` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dbf63b4a94` — lake / uncontracted / Tulcea / Lacul Barcaz
+- `uncl-dc0e35b053` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dc58ad64b0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dc657e274a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dc8225ec50` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dc95b2f48e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dcfeeb80ee` — lake / uncontracted / Tulcea / Lacul Topolga
+- `uncl-dd11ac4d0f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dd4e0c6417` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dd4fd3b1f3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dd5d342057` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ddaa111fcc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ddcbe2a18f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ddef2d47f4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-de2bdb26dc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-de32d59b76` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-de573b939c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dfaf0c77e2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-dfccc42676` — lake / uncontracted / Tulcea / Lacul Puturoase
+- `uncl-e07e404a8c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e088d71b2c` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e0e92b974d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e0f8237ebe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e1046ff444` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e18dbad28a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e1a2ebb9b3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e2d987dc6b` — lake / uncontracted / Tulcea / Lacul Napolnea
+- `uncl-e32ad4fa77` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e37ebfe3ac` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e3aea883f0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e40ff10da0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e4628e991a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e483b678e3` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e54084a651` — lake / uncontracted / Tulcea / Lacul Potcoava Mare
+- `uncl-e597a61136` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e5a1b1b0f9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e5a23492ec` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e5b6c96a0b` — lake / uncontracted / Tulcea / Lacul Porcului
+- `uncl-e610beb8ca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e6128e733f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e6e622a82a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e730b26980` — lake / uncontracted / Tulcea / Acumularea Valea Ciocarlanului
+- `uncl-e7551dff7a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e767d6f0ae` — lake / uncontracted / Tulcea / Lacul Polughianca
+- `uncl-e77f8857ed` — lake / uncontracted / Tulcea / Lacul Băclăneștii Mari
+- `uncl-e80690383a` — lake / uncontracted / Tulcea / Lacul Alb
+- `uncl-e8093f17b8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e8850f8d72` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e88651b5e6` — lake / uncontracted / Tulcea / Lacul Rotund
+- `uncl-e89c7f6600` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e8b1dfab83` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-e99441aafe` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ea53be5d7a` — lake / uncontracted / Tulcea / Lacul Altân Tepe
+- `uncl-ea9a694c4d` — lake / uncontracted / Tulcea / Lacul Traian
+- `uncl-eae4a1ca28` — lake / uncontracted / Tulcea / Lacul Periteasca
+- `uncl-eb3289acb6` — lake / uncontracted / Tulcea / Lacul Chiril
+- `uncl-eb5ae914cb` — lake / uncontracted / Tulcea / Lacul Vastojnaia
+- `uncl-eb8986e23b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ebda686fa6` — lake / uncontracted / Tulcea / Lacul Buhaiova
+- `uncl-ebf25a3943` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ec16d5c756` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ec5e1b2bee` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ecc5abbb81` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ed45d8e15a` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-edad26a594` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-edf8d7f083` — lake / uncontracted / Tulcea / Lacul Obretinciuc
+- `uncl-efe9b6e38d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-eff78830eb` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f0a27b4155` — lake / uncontracted / Tulcea / Lacul Sfistovca
+- `uncl-f2a8853d4d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f2b3b79866` — lake / uncontracted / Tulcea / Lacul Horia
+- `uncl-f2f70bd6b0` — lake / uncontracted / Tulcea / Lacul Culetchi
+- `uncl-f30a4c5c24` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f3915c24ca` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f3bed08e90` — lake / uncontracted / Tulcea / Lacul Hontu
+- `uncl-f3e59c816b` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f40583c794` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f49c719bb4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f5692fb9b9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f5be2c4ba8` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f60c87b167` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f6d27e22d7` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f6e03aa042` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f744c752a9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f77716bc5e` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f77c511fdc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f78caf3d87` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f7c2def957` — lake / uncontracted / Tulcea / Lac Bilencu
+- `uncl-f7c9144a42` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f812b4fe11` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f8a6e233a9` — lake / uncontracted / Tulcea / ghiolul Caraorman
+- `uncl-f8ac06fae6` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f8e87310c1` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f9c6146169` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-f9cd952d85` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fa416be058` — lake / uncontracted / Tulcea / Lacul Bondar
+- `uncl-fa49da9bf0` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fb4bc10817` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fb60ddb393` — lake / uncontracted / Tulcea / Lacul Razim
+- `uncl-fb99f96fcc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fb9fe34f8f` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fbcc4d9572` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fbf0e07812` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fc17c86acc` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fc34a48f0d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fc447360c4` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fd15df826e` — lake / uncontracted / Tulcea / Lacul Babinți
+- `uncl-fd3698c0ed` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fd71fefd5d` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-fd98fea2d9` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-feca076cc2` — lake / uncontracted / Tulcea / Iaz neidentificat
+- `uncl-ff6e98cb0e` — lake / uncontracted / Tulcea / Canalul Cordon Centură Litoral
+- `uncl-06cdb766a8` — lake / uncontracted / Vaslui / Rediu
+- `uncl-0c5ede7e65` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-1196edf84f` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-13cd6e7f0e` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-173555a5ce` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-177fd4f68c` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-18e59d8a79` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-1ae6465f6a` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-1c88763af8` — lake / uncontracted / Vaslui / Prodana
+- `uncl-1edefe4cd1` — lake / uncontracted / Vaslui / Lacul Solești
+- `uncl-24f0937675` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-253627c9d1` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-3b84ef5c6c` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-43b4debc4f` — lake / uncontracted / Vaslui / Cârja Conac
+- `uncl-490d7e79d7` — lake / uncontracted / Vaslui / Baraj Pușcași
+- `uncl-5033ea4103` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-5696f74fec` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-587cee22ac` — lake / uncontracted / Vaslui / Rediu-Galiani
+- `uncl-5e41c722de` — lake / uncontracted / Vaslui / Balta Mare
+- `uncl-60c11675d3` — lake / uncontracted / Vaslui / Iazul Gușiței
+- `uncl-71ac11247b` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-7c623e7d52` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-7c989d8971` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-8129470ea8` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-85c2b05322` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-88591c6d8b` — lake / uncontracted / Vaslui / Balta Prodana
+- `uncl-8a6aaea1ac` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-8db3fe3bc3` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-9010d68035` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-90d3319b0c` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-91600fcbf7` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-93173ddd83` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-946002dde2` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-94687f57c2` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-97cd6ea6fc` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-9a1e8a4f9e` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-9a7aecefce` — lake / uncontracted / Vaslui / Lacul Draxeni
+- `uncl-a411e9431c` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-a4440fe16d` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-af5f6d2f95` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-c11d7e02e8` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-c20e8030d0` — lake / uncontracted / Vaslui / Negrești
+- `uncl-c8fd2c6eae` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-cc62ded4d5` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-cfce5c1d42` — lake / uncontracted / Vaslui / Acumularea Pungești
+- `uncl-d7e5621d46` — lake / uncontracted / Vaslui / Acumularea Miriești
+- `uncl-ed26e2e685` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-ed85261173` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-f199a294c5` — lake / uncontracted / Vaslui / Lacul de Acumulare Râpa Albastră
+- `uncl-f58893b8d0` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-f7289cbeb0` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-f8ee11fe62` — lake / uncontracted / Vaslui / Iaz neidentificat
+- `uncl-fab96e1db0` — lake / uncontracted / Vaslui / Lacul Cuibul Vulturilor
+- `uncl-fc56febcee` — lake / uncontracted / Vaslui / Lacul de acumulare Tăcuta
+- `uncl-07829875ef` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-1451b69d2d` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-1986dba4e7` — lake / uncontracted / Vrancea / Baltalată
+- `uncl-1adf988c78` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-26127f0323` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-26f54eadc1` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-283e93da32` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-31f7432905` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-4f39459258` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-5cd8ad62b5` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-658092a26e` — lake / uncontracted / Vrancea / Balta Pădureni
+- `uncl-6e3c5ff569` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-6f090a93fc` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-75d6231ef9` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-7aaefda39a` — lake / uncontracted / Vrancea / Carp Arena Cărpănoaia 2
+- `uncl-7e3421401c` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-808bb5da48` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-8228e492bb` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-8f9609ec54` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-8fcc3afbbc` — lake / uncontracted / Vrancea / Lacul fără Fund
+- `uncl-9463aea135` — lake / uncontracted / Vrancea / Balta Adjudu Vechi
+- `uncl-9aa23c0fc4` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-a0cdba4107` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-a23c0a5586` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-abd801d2a4` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-b1dc8b6ea5` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-bd68016b80` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-c7dfcfee6d` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-cb413a5bd9` — lake / uncontracted / Vrancea / Balta Piscicola Jiliste
+- `uncl-cf1b8b64c0` — lake / uncontracted / Vrancea / Lacul Negru
+- `uncl-e3c9dbbbc3` — lake / uncontracted / Vrancea / Lacul Tutoveanu
+- `uncl-fae63a8f85` — lake / uncontracted / Vrancea / Iazul Văleni
+- `uncl-ffb0a3f380` — lake / uncontracted / Vrancea / Iaz neidentificat
+- `uncl-01f8b4fa50` — lake / uncontracted / Vâlcea / Vidal
+- `uncl-05c91af1f9` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-064f83fede` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-07c9e4326c` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-08f702ed78` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-0a67b871ff` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-0b935c1264` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-14b5f35c10` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-1a0c4f5673` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-1ddf4828c9` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-1e35ef23ec` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-2767bde78a` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-2bd8499c42` — lake / uncontracted / Vâlcea / Lacul Ţeica
+- `uncl-2c06be0f76` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-2eb5630c72` — lake / uncontracted / Vâlcea / Zănoaga Mare
+- `uncl-33fff2ee83` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-3423e53e30` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-35045101b4` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-37402e7ccd` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3a6d0a8564` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3ab77d0f53` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3b05ea97df` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3d42a368ed` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3e2da07d5e` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3e60921ffe` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-3f5d70fe7c` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-427c38a64c` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-4867fe384e` — lake / uncontracted / Vâlcea / Balta Suseni
+- `uncl-48ac6c6ce6` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-4a2f34e000` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-4ed517a456` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-50427646ff` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-51d216da90` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-53cfd5edcf` — lake / uncontracted / Vâlcea / Lacul Budislavu
+- `uncl-5b083bb69f` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-5d8780b91d` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-5eed73c626` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-5fe4c344cb` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-638b670694` — lake / uncontracted / Vâlcea / Gâlcescu
+- `uncl-66b358498d` — lake / uncontracted / Vâlcea / Pencu
+- `uncl-67de108256` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-6eaa70e3e3` — lake / uncontracted / Vâlcea / Lacul din Brazi
+- `uncl-72a9d60514` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-75a0eca710` — lake / uncontracted / Vâlcea / Lacul de acumulare Prislop
+- `uncl-7cd4130c35` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-7e11ac01c9` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-7f3de1638b` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-7f4257a16c` — lake / uncontracted / Vâlcea / Lacul Mădulari
+- `uncl-80fea79658` — lake / uncontracted / Vâlcea / Găuri
+- `uncl-85f994235e` — lake / uncontracted / Vâlcea / Lacul Cristești
+- `uncl-8d348dad83` — lake / uncontracted / Vâlcea / Balta 3 Nord
+- `uncl-8dbaa56999` — lake / uncontracted / Vâlcea / Iezer
+- `uncl-8e1149a45f` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-8f9e79b321` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-9280f9f733` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-9728361f38` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-99190b74b7` — lake / uncontracted / Vâlcea / Acumularea Steaja
+- `uncl-9d4d9d6df5` — lake / uncontracted / Vâlcea / Lac
+- `uncl-9f7cba21b9` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-a3d9692a62` — lake / uncontracted / Vâlcea / Acumularea Jidoaia
+- `uncl-a7d7711a87` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-a84c8cc3aa` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-adfbe71188` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-b6697bf27b` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-bd6be796ef` — lake / uncontracted / Vâlcea / Lacul Ostroveni
+- `uncl-c3f3be6569` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-c7c1d15154` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-ca2c8cd503` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-cc379d87ba` — lake / uncontracted / Vâlcea / Rezervor apa Domeniul Skiabil Transalpina
+- `uncl-cd64f26e02` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-ce1c4b516d` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-d2f763da8e` — lake / uncontracted / Vâlcea / Balta 2 Nord
+- `uncl-d32618b24d` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-d32d2e44ef` — lake / uncontracted / Vâlcea / Balta 1 Nord
+- `uncl-d3c86855cf` — lake / uncontracted / Vâlcea / Lacul Ocniţa
+- `uncl-d6a1dc6ba9` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-d74c467962` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-d8276988d2` — lake / uncontracted / Vâlcea / Salina veche
+- `uncl-db6e5901fd` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-dc531367ad` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-de9e753473` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e0d347fef0` — lake / uncontracted / Vâlcea / Lacul Iezerul Latoritei
+- `uncl-e19c23dc50` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e22db00803` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e232e58ffd` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e23de0b5ae` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e36fe14f80` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-e3f9fd3310` — lake / uncontracted / Vâlcea / Păsări
+- `uncl-ed10074699` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-f08eff63fd` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-f2a3ace581` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-f4f034b7fe` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-f5e673868d` — lake / uncontracted / Vâlcea / Bazin sturioni
+- `uncl-fa8ae5dcff` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-fb0c167b60` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `uncl-fbf02d47b2` — lake / uncontracted / Vâlcea / Acumularea Tomșani
+- `uncl-fc4d7a5f11` — lake / uncontracted / Vâlcea / Iaz neidentificat
+- `unc-02b947857f` — river / uncontracted / Alba / Aiud
+- `unc-04a52501f4` — river / uncontracted / Alba / Veza
+- `unc-0a76cf9154` — river / uncontracted / Alba / Storhașu
+- `unc-0cbf4a25a5` — river / uncontracted / Alba / Băcăinți
+- `unc-0dd6b60b91` — river / uncontracted / Alba / Galda
+- `unc-0e46e4dcc7` — river / uncontracted / Alba / Vârciorog
+- `unc-0f0847fbf7` — river / uncontracted / Alba / Abrud
+- `unc-11db5798f5` — river / uncontracted / Alba / Valea Goblii
+- `unc-1473424a23` — river / uncontracted / Alba / Valea Geoagiului
+- `unc-15108dfbfc` — river / uncontracted / Alba / Valea Seacă
+- `unc-18119bd4f4` — river / uncontracted / Alba / Pârâul Brazi
+- `unc-18b8b13d8a` — river / uncontracted / Alba / Valea Zlatinei
+- `unc-1960c3c25e` — river / uncontracted / Alba / György-patak
+- `unc-1b9a52ccd2` — river / uncontracted / Alba / Pârâul Miștea
+- `unc-1dadca6507` — river / uncontracted / Alba / Tocan
+- `unc-1e89e128c7` — river / uncontracted / Alba / Cernița
+- `unc-220631b662` — river / uncontracted / Alba / Polița
+- `unc-278eeec59b` — river / uncontracted / Alba / Slatina
+- `unc-295b5eadcf` — river / uncontracted / Alba / Lunca Meteșului
+- `unc-29aca1c72e` — river / uncontracted / Alba / Valea Babei
+- `unc-2c9db90788` — river / uncontracted / Alba / Silivaș
+- `unc-2f15501f00` — river / uncontracted / Alba / Smidelor
+- `unc-304c6a3726` — river / uncontracted / Alba / Râul Mare - Cugir
+- `unc-317c6f5ca0` — river / uncontracted / Alba / Jidvei
+- `unc-33788ce00f` — river / uncontracted / Alba / pârâu
+- `unc-33884f3e81` — river / uncontracted / Alba / Diudiul
+- `unc-3842769c33` — river / uncontracted / Alba / Valea Brădeștilor
+- `unc-3a668657c4` — river / uncontracted / Alba / Alszegi patak
+- `unc-3a9e4fd84b` — river / uncontracted / Alba / Valea Mânării
+- `unc-3d893c4b3c` — river / uncontracted / Alba / Pârâul Valea Gârbovii
+- `unc-3e6680452e` — river / uncontracted / Alba / Gârda Seacă
+- `unc-3f235d7d1e` — river / uncontracted / Alba / Târnava Seacă
+- `unc-43ae835638` — river / uncontracted / Alba / Valea Pănăzii
+- `unc-43d6348343` — river / uncontracted / Alba / Valea Agrișului
+- `unc-43f006a79c` — river / uncontracted / Alba / Râul Mușcanilor
+- `unc-45debc1421` — river / uncontracted / Alba / Pârâul Rimetea
+- `unc-477842b02a` — river / uncontracted / Alba / Mlaca
+- `unc-47bdacbffd` — river / uncontracted / Alba / Săliștea
+- `unc-47f6aad79e` — river / uncontracted / Alba / Valea Prihodistei
+- `unc-498753d5fc` — river / uncontracted / Alba / Țelna
+- `unc-506bc83168` — river / uncontracted / Alba / Vinț
+- `unc-53960adf45` — river / uncontracted / Alba / Vulturu
+- `unc-542b6e117f` — river / uncontracted / Alba / Măhăceni
+- `unc-5565f78c79` — river / uncontracted / Alba / Valea Cătinii
+- `unc-57ae36c5a4` — river / uncontracted / Alba / Ciugud
+- `unc-585b7c942d` — river / uncontracted / Alba / Hăpria
+- `unc-59b895477d` — river / uncontracted / Alba / Valea Ivășcanilor
+- `unc-5cad340680` — river / uncontracted / Alba / Râul Obrezanului
+- `unc-5f69ec4557` — river / uncontracted / Alba / Ordâncușa
+- `unc-62971b0926` — river / uncontracted / Alba / Ardeu
+- `unc-636ced03c6` — river / uncontracted / Alba / Abruzel
+- `unc-6485dd59f6` — river / uncontracted / Alba / Gârbova
+- `unc-651180108c` — river / uncontracted / Alba / Tărtărău
+- `unc-658e74e17e` — river / uncontracted / Alba / Găldița
+- `unc-65d084cb10` — river / uncontracted / Alba / Gropșoara
+- `unc-6967ac9d9b` — river / uncontracted / Alba / Mirăslău
+- `unc-6a1b23d362` — river / uncontracted / Alba / Spătac
+- `unc-6a22251927` — river / uncontracted / Alba / Valea Căprioara
+- `unc-6a9556d47c` — river / uncontracted / Alba / paraul Șeușa
+- `unc-6ab8c655ed` — river / uncontracted / Alba / Valea Dragostei
+- `unc-6c623cb3e6` — river / uncontracted / Alba / Grindu
+- `unc-6f53327c4c` — river / uncontracted / Alba / Ormeniș
+- `unc-713e6bc86e` — river / uncontracted / Alba / Pârâul cel Mare
+- `unc-71ea442350` — river / uncontracted / Alba / Pociovaliștea
+- `unc-7334a36d0a` — river / uncontracted / Alba / Gergelyfájai-patak
+- `unc-75ef1a3dc4` — river / uncontracted / Alba / Irugă
+- `unc-762ee894fa` — river / uncontracted / Alba / Boz
+- `unc-785c88bedb` — river / uncontracted / Alba / Pârâul Cerbului
+- `unc-7a630bf473` — river / uncontracted / Alba / Várpatak
+- `unc-7a789a5502` — river / uncontracted / Alba / Kőrengetegi patak
+- `unc-7c756fe3f5` — river / uncontracted / Alba / Culdești
+- `unc-7f396f1af4` — river / uncontracted / Alba / Gesztenyés patak
+- `unc-805e718dce` — river / uncontracted / Alba / Groapa Feldioara
+- `unc-8288f6224b` — river / uncontracted / Alba / Scroafa
+- `unc-8537335820` — river / uncontracted / Alba / Cheii
+- `unc-85b82ebbae` — river / uncontracted / Alba / Călineasa
+- `unc-8aee7f8207` — river / uncontracted / Alba / Enyed patakja
+- `unc-91898b7470` — river / uncontracted / Alba / Secașul Mic
+- `unc-924732d712` — river / uncontracted / Alba / Ponorașu
+- `unc-941bc169a0` — river / uncontracted / Alba / Prigoana
+- `unc-9613a6d881` — river / uncontracted / Alba / Hermăneasa
+- `unc-96be385c8d` — river / uncontracted / Alba / Pârâul Câlnic
+- `unc-9c11e70d30` — river / uncontracted / Alba / Cioara
+- `unc-9ce228bf7e` — river / uncontracted / Alba / Pârâul Turzii
+- `unc-a0028146ee` — river / uncontracted / Alba / Stremț
+- `unc-a02b5e1ad5` — river / uncontracted / Alba / Valea Untului
+- `unc-a030a9a729` — river / uncontracted / Alba / Blandiana
+- `unc-a46bed00b8` — river / uncontracted / Alba / Cricău
+- `unc-a5391dc660` — river / uncontracted / Alba / Valea Șipcii
+- `unc-a5d6b510a4` — river / uncontracted / Alba / Cetea
+- `unc-a94b7aad97` — river / uncontracted / Alba / Valea Largă
+- `unc-ad8c278a21` — river / uncontracted / Alba / Valea lui Bibarț
+- `unc-ae5f3de7c1` — river / uncontracted / Alba / Șpring
+- `unc-af77efe281` — river / uncontracted / Alba / Valea Gojii
+- `unc-b1b71056e5` — river / uncontracted / Alba / Lopadea
+- `unc-b4b508d40c` — river / uncontracted / Alba / Pârvei
+- `unc-b5f92792e9` — river / uncontracted / Alba / Abrudel
+- `unc-b6a882b6df` — river / uncontracted / Alba / Inze
+- `unc-b7ad007004` — river / uncontracted / Alba / Pârâul Iovului
+- `unc-b9b6b0227e` — river / uncontracted / Alba / Valea Aiudului
+- `unc-b9e074cc19` — river / uncontracted / Alba / Stăuini
+- `unc-bf74da4dab` — river / uncontracted / Alba / Gârbova
+- `unc-c0cddb6421` — river / uncontracted / Alba / Pârâul Vârtopu
+- `unc-c1b412081b` — river / uncontracted / Alba / Arany patak
+- `unc-ce225e02a9` — river / uncontracted / Alba / Carpen
+- `unc-ce9ee07222` — river / uncontracted / Alba / Galbena
+- `unc-cf92da7c33` — river / uncontracted / Alba / Râmeț (Geoagiu)
+- `unc-d148058ab0` — river / uncontracted / Alba / Pârâul Foiesu
+- `unc-d2f9077e5d` — river / uncontracted / Alba / Graben
+- `unc-d3bab7b977` — river / uncontracted / Alba / Ciunga
+- `unc-d5685907af` — river / uncontracted / Alba / Dizdit
+- `unc-d691db59b1` — river / uncontracted / Alba / Iezeru Mic
+- `unc-d8e06203b8` — river / uncontracted / Alba / Cioara
+- `unc-da2c46cbc2` — river / uncontracted / Alba / Herepe
+- `unc-dce067eb71` — river / uncontracted / Alba / Valea Bârnii
+- `unc-dda79e2a39` — river / uncontracted / Alba / Valea Castelului
+- `unc-e0df410220` — river / uncontracted / Alba / Ighiu
+- `unc-e12deb5b78` — river / uncontracted / Alba / Cobleș
+- `unc-e24968f4fe` — river / uncontracted / Alba / kővár patak
+- `unc-e4573ffa1a` — river / uncontracted / Alba / Valea Râtului
+- `unc-e832562341` — river / uncontracted / Alba / Valea Stearpă
+- `unc-e8feeea38f` — river / uncontracted / Alba / Acmariu
+- `unc-eb8553598f` — river / uncontracted / Alba / Vingard
+- `unc-ee4d7a0a0c` — river / uncontracted / Alba / Valea Seacă
+- `unc-ef74209483` — river / uncontracted / Alba / Craiva
+- `unc-f198ffa58c` — river / uncontracted / Alba / Gârdișoara
+- `unc-f1cb4f2ddd` — river / uncontracted / Alba / Călineasa
+- `unc-f4437c6b33` — river / uncontracted / Alba / Tibru
+- `unc-f56e4bcc41` — river / uncontracted / Alba / Paraul Cetea
+- `unc-f5ce04b9fc` — river / uncontracted / Alba / Fărău
+- `unc-f72658fcd0` — river / uncontracted / Alba / Silaș
+- `unc-f768dba0e7` — river / uncontracted / Alba / Neau
+- `unc-01756a3188` — river / uncontracted / Arad / Battonyai-Nagy-csatorna
+- `unc-05d432292a` — river / uncontracted / Arad / Teuz
+- `unc-09e0be3bee` — river / uncontracted / Arad / Pârâul Cladova
+- `unc-0b3819159c` — river / uncontracted / Arad / Sebiș
+- `unc-103421426a` — river / uncontracted / Arad / Căprioara
+- `unc-15f7564e86` — river / uncontracted / Arad / Valea Groșilor
+- `unc-1711bf0079` — river / uncontracted / Arad / Pârâul Milova
+- `unc-1739f9cff5` — river / uncontracted / Arad / Valea Dulcelui
+- `unc-200a180c60` — river / uncontracted / Arad / Cigher
+- `unc-2431d15023` — river / uncontracted / Arad / Plișca
+- `unc-2fff6eb4f6` — river / uncontracted / Arad / Valea Dibarțului
+- `unc-316775d7ea` — river / uncontracted / Arad / Valea Cruceni
+- `unc-3dc038d892` — river / uncontracted / Arad / Fehér-Körös
+- `unc-45dd31b8af` — river / uncontracted / Arad / Grosul
+- `unc-46e5526bd1` — river / uncontracted / Arad / Vinești
+- `unc-484484d9e4` — river / uncontracted / Arad / Mureșel
+- `unc-52578caf3f` — river / uncontracted / Arad / Valea Satului
+- `unc-5b01ab725a` — river / uncontracted / Arad / Milovița
+- `unc-5cc94fe245` — river / uncontracted / Arad / Ardeleni
+- `unc-65f378fa7e` — river / uncontracted / Arad / Fehér-Körös
+- `unc-69ed3fec73` — river / uncontracted / Arad / Valea Vacii
+- `unc-7aa0ac7f90` — river / uncontracted / Arad / Mureșul Mort
+- `unc-8b841fbfcb` — river / uncontracted / Arad / Burdijeni
+- `unc-903b392666` — river / uncontracted / Arad / Sfinsca
+- `unc-a458391826` — river / uncontracted / Arad / Slatina
+- `unc-a4f16f2f03` — river / uncontracted / Arad / Valea Lupului
+- `unc-a7962fd16b` — river / uncontracted / Arad / Valea Chilodia
+- `unc-aa1a59c8eb` — river / uncontracted / Arad / Râul Hălmăgel
+- `unc-b502e809b8` — river / uncontracted / Arad / Valea Tăcășelelor
+- `unc-bc49de7d00` — river / uncontracted / Arad / Pârâul Radna
+- `unc-bef3dafef2` — river / uncontracted / Arad / Valea Zorilor
+- `unc-c2f32c2421` — river / uncontracted / Arad / Milova
+- `unc-c91db6348c` — river / uncontracted / Arad / Monoroștia
+- `unc-ca576d40b5` — river / uncontracted / Arad / Pârâul Cladovita
+- `unc-d19582a507` — river / uncontracted / Arad / Somonița
+- `unc-d56f891619` — river / uncontracted / Arad / Valea Fărnicioarei
+- `unc-d685857a9f` — river / uncontracted / Arad / Teuz
+- `unc-e4063d6f6b` — river / uncontracted / Arad / Conop
+- `unc-e5f4cfcc78` — river / uncontracted / Arad / Suliniș
+- `unc-f475946b4a` — river / uncontracted / Arad / Blejoaia
+- `unc-fbbc960c2f` — river / uncontracted / Arad / Pârâul Șoimoș
+- `unc-024cd334e1` — river / uncontracted / Argeș / Valea Boteanu
+- `unc-02597733e9` — river / uncontracted / Argeș / Valea Calului
+- `unc-02c7ffd7e8` — river / uncontracted / Argeș / Slănic
+- `unc-06d72423c3` — river / uncontracted / Argeș / Brâtioara
+- `unc-0801cdae34` — river / uncontracted / Argeș / Râul Cotmeana
+- `unc-09fec78b16` — river / uncontracted / Argeș / Valea Crovului
+- `unc-0b485aa856` — river / uncontracted / Argeș / Zârna
+- `unc-0bc5ea47c9` — river / uncontracted / Argeș / Cacova
+- `unc-0bfc53275a` — river / uncontracted / Argeș / Valea Cheii
+- `unc-1043d35e58` — river / uncontracted / Argeș / Leaota
+- `unc-106f36d961` — river / uncontracted / Argeș / Cuca
+- `unc-1395584407` — river / uncontracted / Argeș / Pârâul Orzăneaua Mică
+- `unc-13eae88a0f` — river / uncontracted / Argeș / Turburea
+- `unc-14bda7bcf1` — river / uncontracted / Argeș / Pârâul Vârtejurilor
+- `unc-17d9e798b7` — river / uncontracted / Argeș / Cernatu
+- `unc-1e1ca11b50` — river / uncontracted / Argeș / Secăruia Mică
+- `unc-1f99b62b0e` — river / uncontracted / Argeș / Izorul Groapele
+- `unc-214d5a9a9e` — river / uncontracted / Argeș / Râul Mareș
+- `unc-22bda8a871` — river / uncontracted / Argeș / Pârâul Bădenilor
+- `unc-2383941692` — river / uncontracted / Argeș / Izvorul Râușorului
+- `unc-263c542282` — river / uncontracted / Argeș / Valea Rudăriței
+- `unc-2643672968` — river / uncontracted / Argeș / Mircea
+- `unc-2694414d74` — river / uncontracted / Argeș / Izvorul Lespezi
+- `unc-26a41c6c35` — river / uncontracted / Argeș / Pârâul Lespezi
+- `unc-272794ea21` — river / uncontracted / Argeș / Valea Iașului
+- `unc-2d9db220c6` — river / uncontracted / Argeș / Cârcinov
+- `unc-303ce62ebd` — river / uncontracted / Argeș / Tutana
+- `unc-32ddb50c30` — river / uncontracted / Argeș / Valea Satului
+- `unc-33274ed89b` — river / uncontracted / Argeș / Valea Leaota
+- `unc-34df7defdc` — river / uncontracted / Argeș / Dâmbovnic
+- `unc-35fe8564dc` — river / uncontracted / Argeș / Râul Grecilor
+- `unc-379a5b33d9` — river / uncontracted / Argeș / Colții lui Andrei Mici
+- `unc-3dee6f2dda` — river / uncontracted / Argeș / Valea Ancului
+- `unc-3dfe4353c9` — river / uncontracted / Argeș / Nâvrap
+- `unc-447dede4bb` — river / uncontracted / Argeș / Valea lui Ivan
+- `unc-44940f197e` — river / uncontracted / Argeș / Valea Găinii
+- `unc-451000d443` — river / uncontracted / Argeș / Izvorul Moldoveanu
+- `unc-47a5fd4408` — river / uncontracted / Argeș / Frăcea
+- `unc-4a3dd27ca6` — river / uncontracted / Argeș / Priba
+- `unc-4b487832fe` — river / uncontracted / Argeș / Valea Popii
+- `unc-4d03d04386` — river / uncontracted / Argeș / Vârtej
+- `unc-4d5f090316` — river / uncontracted / Argeș / Limpedea
+- `unc-4fa3497485` — river / uncontracted / Argeș / Gălășescu Mare
+- `unc-502fbed175` — river / uncontracted / Argeș / Tulburea
+- `unc-5155623fa1` — river / uncontracted / Argeș / Pârâul Chiliilor
+- `unc-53055d2d85` — river / uncontracted / Argeș / Valea Chipuriei
+- `unc-53bc7bfc5b` — river / uncontracted / Argeș / Rudărița Mică
+- `unc-5505199920` — river / uncontracted / Argeș / Valea lui Coman
+- `unc-58160ed13b` — river / uncontracted / Argeș / Râul Mârghia
+- `unc-585ac830c4` — river / uncontracted / Argeș / Izvorani
+- `unc-5a20b04cfc` — river / uncontracted / Argeș / Zănoguța
+- `unc-5a7e8bc5f1` — river / uncontracted / Argeș / Poienari
+- `unc-5ab6d2099b` — river / uncontracted / Argeș / Valea Prepeleacului
+- `unc-5e3150f1ec` — river / uncontracted / Argeș / Valea Fiașului
+- `unc-5f3943f9b3` — river / uncontracted / Argeș / Valea Iederii
+- `unc-61f8ff6ea9` — river / uncontracted / Argeș / Valea Seacă a Pietrelor
+- `unc-65043b7e3e` — river / uncontracted / Argeș / Valea Vițeilor
+- `unc-692c96fc7a` — river / uncontracted / Argeș / Arefu
+- `unc-6998bc03a2` — river / uncontracted / Argeș / Valea Comisului
+- `unc-6a86e28695` — river / uncontracted / Argeș / Valea cu Apă
+- `unc-6c14433e37` — river / uncontracted / Argeș / Robaia
+- `unc-6e0fb16cd9` — river / uncontracted / Argeș / Berci
+- `unc-6e213f7222` — river / uncontracted / Argeș / Valea Ciocanu
+- `unc-6e47c09f50` — river / uncontracted / Argeș / Izvorul Ludișorului
+- `unc-724d2d1198` — river / uncontracted / Argeș / Valea Zeama Rece
+- `unc-75e5bf3ff4` — river / uncontracted / Argeș / Padina Lăncii
+- `unc-79770a0ed4` — river / uncontracted / Argeș / Drăghina
+- `unc-7bb2a01b80` — river / uncontracted / Argeș / Valea Rea
+- `unc-7c3f555aac` — river / uncontracted / Argeș / Văcarea
+- `unc-7c94769b15` — river / uncontracted / Argeș / Cumpărata Mare
+- `unc-7cc233da98` — river / uncontracted / Argeș / Cacova
+- `unc-7e3cbff41b` — river / uncontracted / Argeș / Mușuroaiele
+- `unc-7e73ee4d32` — river / uncontracted / Argeș / Râul Dâmbovnic
+- `unc-7fa26f0927` — river / uncontracted / Argeș / Izvorul Pârșului
+- `unc-8012f23043` — river / uncontracted / Argeș / Valea lui Geantă
+- `unc-8021fd5a3c` — river / uncontracted / Argeș / Drăghiciul
+- `unc-80f3fac541` — river / uncontracted / Argeș / Rudăriță Mare
+- `unc-83505211ed` — river / uncontracted / Argeș / Valea Brustuletului
+- `unc-838b1624ab` — river / uncontracted / Argeș / Măgherița
+- `unc-84d10ff03d` — river / uncontracted / Argeș / Matau
+- `unc-85a7035a36` — river / uncontracted / Argeș / Valea Andolia
+- `unc-86dec0e90e` — river / uncontracted / Argeș / Izvorul Caprei
+- `unc-879c6f20b2` — river / uncontracted / Argeș / Pârâul Vladului
+- `unc-8a428bfed5` — river / uncontracted / Argeș / Cotmeana
+- `unc-8a756ea589` — river / uncontracted / Argeș / Pârâul Orzăneaua Mare
+- `unc-8a77ffdf48` — river / uncontracted / Argeș / Valea Mușeteica
+- `unc-8ad4f789c8` — river / uncontracted / Argeș / Valea Iuda
+- `unc-8d7240a23b` — river / uncontracted / Argeș / Valea Runcului
+- `unc-8edda1e84b` — river / uncontracted / Argeș / Râușorul
+- `unc-92e7bce6bd` — river / uncontracted / Argeș / Valea Popii
+- `unc-93b6f32b19` — river / uncontracted / Argeș / Izvorul Podu Giurgiului
+- `unc-94364f0e68` — river / uncontracted / Argeș / Brătila
+- `unc-97c9b9cc73` — river / uncontracted / Argeș / Zbuciumatul
+- `unc-99201736ad` — river / uncontracted / Argeș / Valea Obădarului
+- `unc-99943da81b` — river / uncontracted / Argeș / Ploscaru
+- `unc-9baa6c66d6` — river / uncontracted / Argeș / Valea Vâlcea
+- `unc-9ef20ce428` — river / uncontracted / Argeș / Piscul Curii
+- `unc-9f4478691a` — river / uncontracted / Argeș / Valea lui Stan
+- `unc-a13c39124d` — river / uncontracted / Argeș / Valea Urdei
+- `unc-a17e73a023` — river / uncontracted / Argeș / Bascov
+- `unc-a53ee941a1` — river / uncontracted / Argeș / Bătrâna
+- `unc-a6b2da85d8` — river / uncontracted / Argeș / Secăruia Mare
+- `unc-a9150fd8ef` — river / uncontracted / Argeș / Văleni
+- `unc-aaba12da5d` — river / uncontracted / Argeș / Radia
+- `unc-aba5fcb7fb` — river / uncontracted / Argeș / Valea lui Stinghie
+- `unc-b174cad305` — river / uncontracted / Argeș / Pârâul Râiosu
+- `unc-b2919b6b9d` — river / uncontracted / Argeș / Priseaca
+- `unc-b566c9f2c1` — river / uncontracted / Argeș / Bădislava
+- `unc-b5a3950d8d` — river / uncontracted / Argeș / Dobroneagu
+- `unc-b5c39755bf` — river / uncontracted / Argeș / Izvorul Cremenei
+- `unc-b6a9eeb5c7` — river / uncontracted / Argeș / Valea Stâncoasă
+- `unc-b922e8d775` — river / uncontracted / Argeș / Valea Urzici
+- `unc-ba3e0735b3` — river / uncontracted / Argeș / Șoptana
+- `unc-c1b1780550` — river / uncontracted / Argeș / Gălășescu Mic
+- `unc-c1e9aeb146` — river / uncontracted / Argeș / Valea Gangului
+- `unc-c52d56304d` — river / uncontracted / Argeș / Valea Podeni
+- `unc-c685ea1575` — river / uncontracted / Argeș / Scroafele
+- `unc-c70a0e046d` — river / uncontracted / Argeș / Valea Luțele
+- `unc-cb9561ba52` — river / uncontracted / Argeș / Valea Zârna
+- `unc-cc543cdb53` — river / uncontracted / Argeș / Valea Tâncavei
+- `unc-ce428f1685` — river / uncontracted / Argeș / Valea Măgurii
+- `unc-cf4cf8af51` — river / uncontracted / Argeș / Văsălatu
+- `unc-cff469ff4d` — river / uncontracted / Argeș / Baratu
+- `unc-d49e8ede66` — river / uncontracted / Argeș / Cornea
+- `unc-d5c0ad2474` — river / uncontracted / Argeș / Cârligele
+- `unc-d6b6ed139a` — river / uncontracted / Argeș / Izvorul Podeanului
+- `unc-d8e1d301c1` — river / uncontracted / Argeș / Valea Barbului
+- `unc-d9221f7490` — river / uncontracted / Argeș / Râul Mozacu
+- `unc-d9acc717b6` — river / uncontracted / Argeș / Tambura
+- `unc-dcc49f33cf` — river / uncontracted / Argeș / Valea Izvorul Sec
+- `unc-dd5d60d05f` — river / uncontracted / Argeș / Valea cu Pești
+- `unc-ddc00f03e1` — river / uncontracted / Argeș / Colții lui Andrei Mari
+- `unc-de6db624d7` — river / uncontracted / Argeș / Valea Brătoaia
+- `unc-df0b947c37` — river / uncontracted / Argeș / Piscanu
+- `unc-e0056afb51` — river / uncontracted / Argeș / Bândea
+- `unc-e0496ec6ff` — river / uncontracted / Argeș / Râul Dâmbovnic
+- `unc-e3f1484fa5` — river / uncontracted / Argeș / Părăul Călțun
+- `unc-e652aa7ff0` — river / uncontracted / Argeș / Cumpărata Mică
+- `unc-ef9ffc778d` — river / uncontracted / Argeș / Valea Pisica
+- `unc-efccfd7415` — river / uncontracted / Argeș / Pârâul Hotarului
+- `unc-f025a75337` — river / uncontracted / Argeș / Izvorul Hotarului
+- `unc-f2ff8b77a0` — river / uncontracted / Argeș / Valea Râiosul
+- `unc-f4be48996b` — river / uncontracted / Argeș / Valea Ghimbav
+- `unc-f5179c2a95` — river / uncontracted / Argeș / Valea Muierii
+- `unc-f6fbf221f2` — river / uncontracted / Argeș / Valea Rea
+- `unc-f858a8b0d8` — river / uncontracted / Argeș / Rața
+- `unc-f88ebca8c9` — river / uncontracted / Argeș / Izvorul Huluba
+- `unc-f8f2d7c108` — river / uncontracted / Argeș / Valea Izvorul Sec
+- `unc-fa86cd720a` — river / uncontracted / Argeș / Valea Ciocanului
+- `unc-fccf965c28` — river / uncontracted / Argeș / Manastirii Lake
+- `unc-fded266b89` — river / uncontracted / Argeș / Valea Bugheanului
+- `unc-fe29a3a0ec` — river / uncontracted / Argeș / Pârâul Mircea
+- `unc-feb05b370c` — river / uncontracted / Argeș / Păuleasca
+- `unc-ffe7fc32ef` — river / uncontracted / Argeș / Valea Largă
+- `unc-02201971f4` — river / uncontracted / Bacău / Pârâul Apahavas
+- `unc-07e482a3ad` — river / uncontracted / Bacău / Râul Zeletin
+- `unc-090ec98ed0` — river / uncontracted / Bacău / Râul Cotumba
+- `unc-091782661e` — river / uncontracted / Bacău / Răchitiș
+- `unc-0d2d4dbf21` — river / uncontracted / Bacău / Pârâul cu Ulmi
+- `unc-131dace6f7` — river / uncontracted / Bacău / Pârâul Albu
+- `unc-1df57feee0` — river / uncontracted / Bacău / Șanțul
+- `unc-1e69501c54` — river / uncontracted / Bacău / Borta Ursului
+- `unc-260660dc4a` — river / uncontracted / Bacău / Limpedea
+- `unc-28e574e829` — river / uncontracted / Bacău / Pârâul Croitorilor
+- `unc-2d486baaf1` — river / uncontracted / Bacău / Pârâul Drăcoiu
+- `unc-34f97c5666` — river / uncontracted / Bacău / Pârâul Ursului
+- `unc-368b1430e8` — river / uncontracted / Bacău / Pârâul lui Molnar
+- `unc-3ae4807771` — river / uncontracted / Bacău / Pârâul Petruț
+- `unc-3b0a039dc9` — river / uncontracted / Bacău / Pârâul Coacăza
+- `unc-3bbb2aeb7b` — river / uncontracted / Bacău / Pârâul Nilenc
+- `unc-3eae6bcc1f` — river / uncontracted / Bacău / Pârâul Mueruș
+- `unc-405b7763af` — river / uncontracted / Bacău / Pârâul Prelucaci
+- `unc-41eb02d40f` — river / uncontracted / Bacău / Pârâul Bursuni
+- `unc-42594f8a2b` — river / uncontracted / Bacău / Țîganca
+- `unc-47fdde314a` — river / uncontracted / Bacău / Pârâul Craca Popoiului
+- `unc-4a220ba2f7` — river / uncontracted / Bacău / Pârâul Bisericii
+- `unc-4b3a2b1fcd` — river / uncontracted / Bacău / Râul Agăș
+- `unc-4ccc2a1fe3` — river / uncontracted / Bacău / Cucuieți
+- `unc-4d8545ff1c` — river / uncontracted / Bacău / Pârâul Lupului
+- `unc-4e20eb6ef6` — river / uncontracted / Bacău / Râul Soveto
+- `unc-4f49097759` — river / uncontracted / Bacău / Pârâul Ursului
+- `unc-525dcd2b7c` — river / uncontracted / Bacău / Pârâul Nyikák
+- `unc-546ee48cdc` — river / uncontracted / Bacău / Pârâul Codiului
+- `unc-581d0cfa39` — river / uncontracted / Bacău / Râul Chilișca
+- `unc-5ecfcc8a78` — river / uncontracted / Bacău / Pârâul Tinioasa
+- `unc-61dc93ba73` — river / uncontracted / Bacău / Pârâul Popoiu
+- `unc-627c68ae21` — river / uncontracted / Bacău / Apa Neagră
+- `unc-65f7193edd` — river / uncontracted / Bacău / Pârâul Gâzului
+- `unc-69604c4e8c` — river / uncontracted / Bacău / Pârâul Troci
+- `unc-72169a4aa0` — river / uncontracted / Bacău / Căbești
+- `unc-81c05288a2` — river / uncontracted / Bacău / Boul
+- `unc-822b3fb52b` — river / uncontracted / Bacău / Groza
+- `unc-8232e3174b` — river / uncontracted / Bacău / Bolboroșitoarea
+- `unc-870f1a42ce` — river / uncontracted / Bacău / Pârâul Valea Seacă
+- `unc-8975d3ddb2` — river / uncontracted / Bacău / Râul Urmeniș
+- `unc-898f7f1d29` — river / uncontracted / Bacău / Zeletin
+- `unc-89c4c8bfb1` — river / uncontracted / Bacău / Aprieș
+- `unc-94217de2d7` — river / uncontracted / Bacău / Pârâul Smida Roșie
+- `unc-98078772f2` — river / uncontracted / Bacău / Pârâul Bortoșeni
+- `unc-9b3afeb304` — river / uncontracted / Bacău / Dobru
+- `unc-9f87a3141f` — river / uncontracted / Bacău / Pârâul Lapoșului
+- `unc-a40eaebee4` — river / uncontracted / Bacău / Negel
+- `unc-a49716cc3c` — river / uncontracted / Bacău / Tărhăuși
+- `unc-a66e745865` — river / uncontracted / Bacău / Părâul Lețcana
+- `unc-a6c456887b` — river / uncontracted / Bacău / Undrei
+- `unc-a8aa48ad88` — river / uncontracted / Bacău / Pârâul Ciubotei
+- `unc-b1a243b5b4` — river / uncontracted / Bacău / Pârâul Șimo
+- `unc-b287470feb` — river / uncontracted / Bacău / Pârâul Ciurgheș
+- `unc-b4ea9980e8` — river / uncontracted / Bacău / Pârâul Aluniș
+- `unc-b68a464313` — river / uncontracted / Bacău / Hotarul
+- `unc-b74c84d02d` — river / uncontracted / Bacău / Pârâul lui Tăciune
+- `unc-b84825ae4d` — river / uncontracted / Bacău / Pârâul Lespezi
+- `unc-b9dd0b6730` — river / uncontracted / Bacău / Pârârul Drăcoiu
+- `unc-ba9eebae0f` — river / uncontracted / Bacău / Pârâul Larg
+- `unc-bcfce9b8be` — river / uncontracted / Bacău / Camenca
+- `unc-bd8055bbcb` — river / uncontracted / Bacău / Pârâul Rupturei
+- `unc-c09defa206` — river / uncontracted / Bacău / Coman
+- `unc-c122a27f24` — river / uncontracted / Bacău / Bârnat
+- `unc-c4a3cc1c09` — river / uncontracted / Bacău / Pârâul Cuchiniș
+- `unc-c8f21877c1` — river / uncontracted / Bacău / Pârâul Berbecilor
+- `unc-cc6d502416` — river / uncontracted / Bacău / Pârâul Bradului
+- `unc-cd43523360` — river / uncontracted / Bacău / Râul Seaca
+- `unc-d4a16531fe` — river / uncontracted / Bacău / Pârâul Buha
+- `unc-e16afecd22` — river / uncontracted / Bacău / Pârâul Aldămaș
+- `unc-e6f32a43ce` — river / uncontracted / Bacău / Pârâul La Jgheab
+- `unc-e79eeab315` — river / uncontracted / Bacău / Pereschivul Mic
+- `unc-e814b22f68` — river / uncontracted / Bacău / Doftenița
+- `unc-ec222e1e1e` — river / uncontracted / Bacău / Pârâul Sugura
+- `unc-ecedf5393e` — river / uncontracted / Bacău / Pârâul Arșița
+- `unc-efdc58c751` — river / uncontracted / Bacău / Precista
+- `unc-f577fd6e31` — river / uncontracted / Bacău / Trebeș
+- `unc-fbc6ba6064` — river / uncontracted / Bacău / Pârâul Tekenyős
+- `unc-ff08a6bb01` — river / uncontracted / Bacău / Pârâul Bolovăniș
+- `unc-0122da8350` — river / uncontracted / Bihor / Valea Hăigașului
+- `unc-0592a5613c` — river / uncontracted / Bihor / Berettyó
+- `unc-05987560f7` — river / uncontracted / Bihor / Pârâul Strâmtura
+- `unc-06fc014148` — river / uncontracted / Bihor / Ieduțul
+- `unc-070e4738e7` — river / uncontracted / Bihor / Valea Jighil
+- `unc-082e8cb45e` — river / uncontracted / Bihor / Valea Crisanului
+- `unc-0874f08bc5` — river / uncontracted / Bihor / Sarcau vale
+- `unc-09b8e2b550` — river / uncontracted / Bihor / Guga
+- `unc-0f99202c78` — river / uncontracted / Bihor / Șoimuș
+- `unc-16ee386fff` — river / uncontracted / Bihor / Crișul Băiței
+- `unc-17eebee600` — river / uncontracted / Bihor / Valea Boții
+- `unc-18381d9375` — river / uncontracted / Bihor / Valea cu Cale
+- `unc-1919d13a59` — river / uncontracted / Bihor / Valea Şutanu
+- `unc-1c466b5616` — river / uncontracted / Bihor / Pârâu Criștioru
+- `unc-1d96527cd6` — river / uncontracted / Bihor / Paraul Strugoriu
+- `unc-2166cb2f79` — river / uncontracted / Bihor / Valea Seacă
+- `unc-25f2b6e179` — river / uncontracted / Bihor / Hodrângușa
+- `unc-277fefbeeb` — river / uncontracted / Bihor / Valea lui Andraş
+- `unc-27f097b321` — river / uncontracted / Bihor / Godinoasa
+- `unc-285cb53f88` — river / uncontracted / Bihor / Sânmartin de Beiuș
+- `unc-28ece732d5` — river / uncontracted / Bihor / Goila
+- `unc-296d40771c` — river / uncontracted / Bihor / Valea Pietrele Roșii
+- `unc-2d510efa79` — river / uncontracted / Bihor / Valea Plaiului
+- `unc-2fb76df272` — river / uncontracted / Bihor / Valea Ciripa
+- `unc-31852fc2c9` — river / uncontracted / Bihor / Valea Văiosu
+- `unc-34eb606a50` — river / uncontracted / Bihor / Valea Cetății
+- `unc-35306e7457` — river / uncontracted / Bihor / Bohodei
+- `unc-35f6f569df` — river / uncontracted / Bihor / Pârâul de Margine
+- `unc-384c9b72ae` — river / uncontracted / Bihor / Pârâul Mniera
+- `unc-397e6563eb` — river / uncontracted / Bihor / Lazuri
+- `unc-39e131d6ef` — river / uncontracted / Bihor / Alunu Mare
+- `unc-3dbfdd8495` — river / uncontracted / Bihor / Sărăcelu
+- `unc-42eb33a8ce` — river / uncontracted / Bihor / Ganoș
+- `unc-48b9d1f231` — river / uncontracted / Bihor / Mierăganul
+- `unc-4b1e608273` — river / uncontracted / Bihor / Garjoaba
+- `unc-4ea019b28d` — river / uncontracted / Bihor / Mihăești
+- `unc-552a2634b8` — river / uncontracted / Bihor / Măgura Roșianului
+- `unc-555303948c` — river / uncontracted / Bihor / Valea Tiganului
+- `unc-56ae02320d` — river / uncontracted / Bihor / Cozmău
+- `unc-57a3dc649c` — river / uncontracted / Bihor / Valea Fagului
+- `unc-5807d2374e` — river / uncontracted / Bihor / Valea Flescuta
+- `unc-5cdd16b54b` — river / uncontracted / Bihor / Valea Izvorului
+- `unc-5e78b8c040` — river / uncontracted / Bihor / Pârâul Boiu
+- `unc-5fe6a2810f` — river / uncontracted / Bihor / Mizieș
+- `unc-618c1ae2ae` — river / uncontracted / Bihor / Aleu
+- `unc-630ff64320` — river / uncontracted / Bihor / Bulz
+- `unc-63b2b18c62` — river / uncontracted / Bihor / Crăiasa
+- `unc-66f2c64356` — river / uncontracted / Bihor / Pârâul Negruța
+- `unc-692575a641` — river / uncontracted / Bihor / Valea Luncilor
+- `unc-69ca8505f5` — river / uncontracted / Bihor / Cicer
+- `unc-6e41b20859` — river / uncontracted / Bihor / Pârâul Brătcuța
+- `unc-6f373f0b25` — river / uncontracted / Bihor / Paraul Glavoaie
+- `unc-711732b5f7` — river / uncontracted / Bihor / Barát-ér
+- `unc-779f55ed5f` — river / uncontracted / Bihor / Păuleasa
+- `unc-7828b9b61f` — river / uncontracted / Bihor / Fantana Rece
+- `unc-79833fd5b6` — river / uncontracted / Bihor / Valea Drăcoița
+- `unc-79f649109e` — river / uncontracted / Bihor / Pârâul Barc
+- `unc-7aed6cd8b9` — river / uncontracted / Bihor / Valea Briței
+- `unc-7c0653b4b3` — river / uncontracted / Bihor / Pârâul Osoiului
+- `unc-7dcd65ad7b` — river / uncontracted / Bihor / Finiș
+- `unc-80e3ee0b85` — river / uncontracted / Bihor / Valea Seacă
+- `unc-8316a0cf96` — river / uncontracted / Bihor / Izbucul Mic
+- `unc-8396092ea1` — river / uncontracted / Bihor / Inot
+- `unc-8437265885` — river / uncontracted / Bihor / Valea Corlatului
+- `unc-84aa01eaf3` — river / uncontracted / Bihor / Valea Sibișoara
+- `unc-85d58f2449` — river / uncontracted / Bihor / Corbu
+- `unc-87842c7a73` — river / uncontracted / Bihor / Valea Măguricii
+- `unc-87cfa18f05` — river / uncontracted / Bihor / Valea Pacăului
+- `unc-87eb392c55` — river / uncontracted / Bihor / Valea Lungșorului
+- `unc-8881e91861` — river / uncontracted / Bihor / Muncelaș
+- `unc-8b98f326f5` — river / uncontracted / Bihor / Valea lui Ilie
+- `unc-8f6e1d9ead` — river / uncontracted / Bihor / Valea Peștireului
+- `unc-8ffb7b6ae3` — river / uncontracted / Bihor / Daria
+- `unc-9127c7363f` — river / uncontracted / Bihor / Captalan
+- `unc-918e1fa388` — river / uncontracted / Bihor / Valea Grupoiu
+- `unc-93395ed282` — river / uncontracted / Bihor / Sebeșel
+- `unc-96d3147b7c` — river / uncontracted / Bihor / Valea Șinteului
+- `unc-978b08a484` — river / uncontracted / Bihor / Paraul Bortigului
+- `unc-9885fc6919` — river / uncontracted / Bihor / Valea Ciunganu
+- `unc-988c56c4b6` — river / uncontracted / Bihor / Valea Hoanca Motului
+- `unc-9ed299e119` — river / uncontracted / Bihor / Valea Moara Dracului
+- `unc-a0a0948d76` — river / uncontracted / Bihor / Valea Brusturi
+- `unc-a1547a51e8` — river / uncontracted / Bihor / Valea Custurii
+- `unc-a1c7999ab5` — river / uncontracted / Bihor / Pârâul Feredeului
+- `unc-a209aced24` — river / uncontracted / Bihor / Apa Râpii
+- `unc-a38e287290` — river / uncontracted / Bihor / Valea Titișorului
+- `unc-a53cdddd65` — river / uncontracted / Bihor / Crișul Mic
+- `unc-a70f043e82` — river / uncontracted / Bihor / Valea Meziad
+- `unc-a74a090e80` — river / uncontracted / Bihor / Valea Boiului
+- `unc-a756969f84` — river / uncontracted / Bihor / Valea Poienii
+- `unc-a814649ba4` — river / uncontracted / Bihor / Pârâul Iacoboaia
+- `unc-a865b17077` — river / uncontracted / Bihor / Valea Boii
+- `unc-a9cb77bc5c` — river / uncontracted / Bihor / Valea Păstrăvăriei
+- `unc-ac099e82a3` — river / uncontracted / Bihor / Valea Boceasa
+- `unc-adf1ad0e99` — river / uncontracted / Bihor / Valea Lupului
+- `unc-ae84a0005c` — river / uncontracted / Bihor / Sebișel
+- `unc-b33e1ace0c` — river / uncontracted / Bihor / Nieșu
+- `unc-b345b9452a` — river / uncontracted / Bihor / Boga
+- `unc-b408fc6ad7` — river / uncontracted / Bihor / Valea Ghegheșului
+- `unc-b70f4c31a7` — river / uncontracted / Bihor / Iadolina
+- `unc-b836bd801a` — river / uncontracted / Bihor / Valea Făgetului
+- `unc-b92b3f7e9d` — river / uncontracted / Bihor / Adona
+- `unc-ba064f60b0` — river / uncontracted / Bihor / Luncșoara
+- `unc-ba436c6022` — river / uncontracted / Bihor / Miteagul
+- `unc-bda1f92dc8` — river / uncontracted / Bihor / Hodrancusa-Mica
+- `unc-bdbd8c014c` — river / uncontracted / Bihor / Pârâul Rădeasa
+- `unc-bee8084d1c` — river / uncontracted / Bihor / Servinoasa
+- `unc-bf4d00e002` — river / uncontracted / Bihor / Muncelu
+- `unc-bfb3b86ca8` — river / uncontracted / Bihor / Valea Bisericii
+- `unc-c16aa08fd1` — river / uncontracted / Bihor / Aria Vulturilor
+- `unc-c2112207ab` — river / uncontracted / Bihor / Valea Lupului
+- `unc-c2c6536f13` — river / uncontracted / Bihor / Valea Crăciunului
+- `unc-c41f74844a` — river / uncontracted / Bihor / Pârâul Viduța
+- `unc-c552593801` — river / uncontracted / Bihor / Sălătruc
+- `unc-c720b1d079` — river / uncontracted / Bihor / Ghepes
+- `unc-c8d438ce15` — river / uncontracted / Bihor / Bătrâna
+- `unc-ce3cfa5cbb` — river / uncontracted / Bihor / Cârligate
+- `unc-d0b44cad61` — river / uncontracted / Bihor / Copăcel
+- `unc-d0ea970e22` — river / uncontracted / Bihor / Nimăiești
+- `unc-d24facd4cf` — river / uncontracted / Bihor / Crișul Mic/Kis-Körös
+- `unc-d29ec59742` — river / uncontracted / Bihor / Valea Rea
+- `unc-d3a2e452e5` — river / uncontracted / Bihor / Galbena
+- `unc-d4b2382b54` — river / uncontracted / Bihor / Valea Serpilor
+- `unc-d720f925cc` — river / uncontracted / Bihor / Drăgăteanu
+- `unc-d80cb59c47` — river / uncontracted / Bihor / Valea La Stână
+- `unc-d9246b8256` — river / uncontracted / Bihor / Valea Gălbenele
+- `unc-d96ca468e5` — river / uncontracted / Bihor / Valea Păltinişului
+- `unc-dbc0e28cb0` — river / uncontracted / Bihor / Csicsér
+- `unc-dcd2a2d68c` — river / uncontracted / Bihor / Valea Ursului
+- `unc-df0fe0a6b1` — river / uncontracted / Bihor / Răul Budeasa
+- `unc-dfcc64a5a5` — river / uncontracted / Bihor / Pârâul Seniului
+- `unc-ec03497033` — river / uncontracted / Bihor / Barcău/Berettyó
+- `unc-ee6b81c3e6` — river / uncontracted / Bihor / Alunu Mic
+- `unc-f090bceae0` — river / uncontracted / Bihor / Valea Hutii
+- `unc-f8c533db2b` — river / uncontracted / Bihor / Valea Ponorului
+- `unc-fbda84a70a` — river / uncontracted / Bihor / Valea Nimăieștilor
+- `unc-fe1ee8a1cb` — river / uncontracted / Bihor / Bulbuci
+- `unc-fe7c33e72c` — river / uncontracted / Bihor / Valea Tâlharului
+- `unc-08a64999cf` — river / uncontracted / Bistrița-Năsăud / Surupătura
+- `unc-0984cb6390` — river / uncontracted / Bistrița-Năsăud / Bungard
+- `unc-0a82d8d72c` — river / uncontracted / Bistrița-Năsăud / Valea Aurului
+- `unc-0e91bd9a74` — river / uncontracted / Bistrița-Năsăud / Pârâul Băilor
+- `unc-10762505fd` — river / uncontracted / Bistrița-Năsăud / Valea Vinului
+- `unc-113f46cd5b` — river / uncontracted / Bistrița-Năsăud / Canci
+- `unc-120125d261` — river / uncontracted / Bistrița-Năsăud / Bratoșa
+- `unc-145c2dc10f` — river / uncontracted / Bistrița-Năsăud / Corca
+- `unc-146ac1f380` — river / uncontracted / Bistrița-Năsăud / Runc
+- `unc-14caa194d6` — river / uncontracted / Bistrița-Năsăud / Lelești
+- `unc-15954849ce` — river / uncontracted / Bistrița-Năsăud / Pârâu Stiubeiului
+- `unc-1c7331eec7` — river / uncontracted / Bistrița-Năsăud / Maieru
+- `unc-21cfa0b121` — river / uncontracted / Bistrița-Năsăud / Ursoaia
+- `unc-2a2491066a` — river / uncontracted / Bistrița-Năsăud / Măgura
+- `unc-30e75d7ebd` — river / uncontracted / Bistrița-Năsăud / Iad
+- `unc-3218a99398` — river / uncontracted / Bistrița-Năsăud / Feldrișel
+- `unc-33db804739` — river / uncontracted / Bistrița-Năsăud / Archiud
+- `unc-34aa5f6e37` — river / uncontracted / Bistrița-Năsăud / Hășmaș
+- `unc-356f2fba99` — river / uncontracted / Bistrița-Năsăud / Măgura
+- `unc-3884f2b6cb` — river / uncontracted / Bistrița-Năsăud / Valea Sigmirului
+- `unc-42e1ec7914` — river / uncontracted / Bistrița-Năsăud / Bretea
+- `unc-43ea59fc34` — river / uncontracted / Bistrița-Năsăud / Brăteni
+- `unc-45daa87149` — river / uncontracted / Bistrița-Năsăud / Slătinița
+- `unc-48ab5da9e4` — river / uncontracted / Bistrița-Năsăud / Dobricel
+- `unc-49d08e3587` — river / uncontracted / Bistrița-Năsăud / Cobășel
+- `unc-5184f1d892` — river / uncontracted / Bistrița-Năsăud / Valea Lungă
+- `unc-5530c595d6` — river / uncontracted / Bistrița-Năsăud / Bolovan
+- `unc-56e47936ac` — river / uncontracted / Bistrița-Năsăud / Bârgău
+- `unc-5750534044` — river / uncontracted / Bistrița-Năsăud / Tănase
+- `unc-5871964e2a` — river / uncontracted / Bistrița-Năsăud / Valea Borcutului
+- `unc-58d3013858` — river / uncontracted / Bistrița-Năsăud / Silhoasa
+- `unc-5952cc790f` — river / uncontracted / Bistrița-Năsăud / Valea Stânelor
+- `unc-5b46324d08` — river / uncontracted / Bistrița-Năsăud / Ghinda
+- `unc-5df03cf52b` — river / uncontracted / Bistrița-Năsăud / Pârâu Carligaturilor
+- `unc-604c9a235b` — river / uncontracted / Bistrița-Năsăud / Telcișor
+- `unc-67f455cdf2` — river / uncontracted / Bistrița-Năsăud / Pârâul Jiului
+- `unc-6af513c1ac` — river / uncontracted / Bistrița-Năsăud / Pârâul Repede
+- `unc-6db12dafe9` — river / uncontracted / Bistrița-Năsăud / Erboasa
+- `unc-6f86fb1776` — river / uncontracted / Bistrița-Năsăud / Valea Poienii
+- `unc-70721ce4b7` — river / uncontracted / Bistrița-Năsăud / Ardan
+- `unc-71f5e7badd` — river / uncontracted / Bistrița-Năsăud / Fânațele
+- `unc-7214c53600` — river / uncontracted / Bistrița-Năsăud / Dragovata
+- `unc-747816b4f7` — river / uncontracted / Bistrița-Năsăud / Fiad
+- `unc-7602cc7d8d` — river / uncontracted / Bistrița-Năsăud / Rituria
+- `unc-76a861bf58` — river / uncontracted / Bistrița-Năsăud / Bolovan
+- `unc-78fd5b0057` — river / uncontracted / Bistrița-Năsăud / Pănuleț
+- `unc-79013f0c43` — river / uncontracted / Bistrița-Năsăud / Valea Lungă
+- `unc-79319be62f` — river / uncontracted / Bistrița-Năsăud / Anieșul Mic
+- `unc-7b29bebc68` — river / uncontracted / Bistrița-Năsăud / Valea Budacului
+- `unc-7ee28bc57f` — river / uncontracted / Bistrița-Năsăud / Borcut
+- `unc-7f09f86fa7` — river / uncontracted / Bistrița-Năsăud / Valea Pietrelor
+- `unc-811bcba2e6` — river / uncontracted / Bistrița-Năsăud / Beudiu
+- `unc-81247ea5b8` — river / uncontracted / Bistrița-Năsăud / Măria Mică
+- `unc-82dc254413` — river / uncontracted / Bistrița-Năsăud / Valea Rusului
+- `unc-836624e569` — river / uncontracted / Bistrița-Năsăud / Valea Ghinzii
+- `unc-8488cffc4c` — river / uncontracted / Bistrița-Năsăud / Măgura
+- `unc-8a444dbd2e` — river / uncontracted / Bistrița-Năsăud / Valea Carelor
+- `unc-8afecee63f` — river / uncontracted / Bistrița-Năsăud / Tureac
+- `unc-8c5e169c3f` — river / uncontracted / Bistrița-Năsăud / Fața Comorii
+- `unc-8fc643c3a5` — river / uncontracted / Bistrița-Năsăud / Bârloaia
+- `unc-91ea693a09` — river / uncontracted / Bistrița-Năsăud / Ivăneasa
+- `unc-93fa29259c` — river / uncontracted / Bistrița-Năsăud / Mălin
+- `unc-9543a713b5` — river / uncontracted / Bistrița-Năsăud / Valea Mică
+- `unc-9c5178b1b7` — river / uncontracted / Bistrița-Năsăud / Buduș
+- `unc-9fb4cca806` — river / uncontracted / Bistrița-Năsăud / Gagi
+- `unc-a1052fda88` — river / uncontracted / Bistrița-Năsăud / Ghinda
+- `unc-a177dac6b3` — river / uncontracted / Bistrița-Năsăud / Valea lui Dan
+- `unc-a1ff5c056d` — river / uncontracted / Bistrița-Năsăud / Arșița
+- `unc-ab308f15e6` — river / uncontracted / Bistrița-Năsăud / Fiadțel
+- `unc-bf193e0302` — river / uncontracted / Bistrița-Năsăud / Târgul
+- `unc-c2cfdcf140` — river / uncontracted / Bistrița-Năsăud / Cârțibavul Mare
+- `unc-c4a972c491` — river / uncontracted / Bistrița-Năsăud / Dipșa
+- `unc-c6ebc0c8fa` — river / uncontracted / Bistrița-Năsăud / Găureni
+- `unc-c760fd2e20` — river / uncontracted / Bistrița-Năsăud / Apatiu
+- `unc-c96fc4dea3` — river / uncontracted / Bistrița-Năsăud / Lala
+- `unc-cb0f8abfbd` — river / uncontracted / Bistrița-Năsăud / Blajul
+- `unc-cf9633fef9` — river / uncontracted / Bistrița-Năsăud / Obârșie
+- `unc-d2ddd92e5a` — river / uncontracted / Bistrița-Năsăud / Valea Viilor
+- `unc-d3036a6143` — river / uncontracted / Bistrița-Năsăud / Ghemeș
+- `unc-d3f7b333e1` — river / uncontracted / Bistrița-Năsăud / Leșul
+- `unc-d674400882` — river / uncontracted / Bistrița-Năsăud / Chiraleș
+- `unc-d6a578032a` — river / uncontracted / Bistrița-Năsăud / Izvorul Laptelui
+- `unc-d81725aaae` — river / uncontracted / Bistrița-Năsăud / Măria
+- `unc-d943dd3aa7` — river / uncontracted / Bistrița-Năsăud / Cucureasa
+- `unc-d96f436af0` — river / uncontracted / Bistrița-Năsăud / Lunca
+- `unc-db6daea87d` — river / uncontracted / Bistrița-Năsăud / Pârâul Plotonului
+- `unc-df05ff429e` — river / uncontracted / Bistrița-Năsăud / Seradia
+- `unc-df34fca700` — river / uncontracted / Bistrița-Năsăud / Bila
+- `unc-df403639e9` — river / uncontracted / Bistrița-Năsăud / Frumușica
+- `unc-e0f3c329f1` — river / uncontracted / Bistrița-Năsăud / Târlișua
+- `unc-e5e69c4ed6` — river / uncontracted / Bistrița-Năsăud / Bichigiu
+- `unc-e9a64a5fbb` — river / uncontracted / Bistrița-Năsăud / Gușatul Mare
+- `unc-e9aebc9cbf` — river / uncontracted / Bistrița-Năsăud / Secul
+- `unc-ea6708030e` — river / uncontracted / Bistrița-Năsăud / Budușel
+- `unc-eb8186e1b1` — river / uncontracted / Bistrița-Năsăud / Agriș
+- `unc-ecc0822bdc` — river / uncontracted / Bistrița-Năsăud / Între Hotare
+- `unc-ee596831a6` — river / uncontracted / Bistrița-Năsăud / Valea Blăjenilor
+- `unc-ee70d890bd` — river / uncontracted / Bistrița-Năsăud / Tărpiu
+- `unc-ef5f4433fd` — river / uncontracted / Bistrița-Năsăud / Muncel
+- `unc-efb1f47c25` — river / uncontracted / Bistrița-Năsăud / Valea Satului
+- `unc-f07fde4a66` — river / uncontracted / Bistrița-Năsăud / Hălmaș
+- `unc-f0e0df0878` — river / uncontracted / Bistrița-Năsăud / Pintic
+- `unc-f254c7a46a` — river / uncontracted / Bistrița-Năsăud / Pietroasa
+- `unc-f8c8f9096f` — river / uncontracted / Bistrița-Năsăud / Valea Săbii
+- `unc-fa228ac4ef` — river / uncontracted / Bistrița-Năsăud / Valea Tărpiu
+- `unc-fc2991839a` — river / uncontracted / Bistrița-Năsăud / Strada Rusului
+- `unc-fe58ba4b63` — river / uncontracted / Bistrița-Năsăud / Cușma
+- `unc-fef8e2d8bb` — river / uncontracted / Bistrița-Năsăud / Pârâul Ardanului
+- `unc-0ecec66fa9` — river / uncontracted / Botoșani / Morișca
+- `unc-117a0a3be6` — river / uncontracted / Botoșani / Râul Vilia
+- `unc-14768f6272` — river / uncontracted / Botoșani / Burla
+- `unc-1ec1d938c4` — river / uncontracted / Botoșani / Teasc
+- `unc-2d82161b0c` — river / uncontracted / Botoșani / Drâslea
+- `unc-33cce7d902` — river / uncontracted / Botoșani / Тирнаука
+- `unc-4779aa6756` — river / uncontracted / Botoșani / Lopatnic
+- `unc-67edc6074d` — river / uncontracted / Botoșani / Bahluiul Mic
+- `unc-7e7c5b24db` — river / uncontracted / Botoșani / Pârâul Întors
+- `unc-8dc19664d7` — river / uncontracted / Botoșani / Buhai
+- `unc-8f5d4134fc` — river / uncontracted / Botoșani / Larga
+- `unc-926e680987` — river / uncontracted / Botoșani / Băiceni
+- `unc-a3afbef98f` — river / uncontracted / Botoșani / Тырла-Цыганилор
+- `unc-b4145a19f0` — river / uncontracted / Botoșani / Guranda
+- `unc-c042839e9e` — river / uncontracted / Botoșani / Morișca
+- `unc-c06ae79b1d` — river / uncontracted / Botoșani / Luizoaia
+- `unc-c0fcaef505` — river / uncontracted / Botoșani / Dresleuca
+- `unc-c3cb2cc583` — river / uncontracted / Botoșani / Vilia
+- `unc-c6fea8b717` — river / uncontracted / Botoșani / Нирєу-Герца
+- `unc-c95ffae95a` — river / uncontracted / Botoșani / Prut
+- `unc-cb9040dd4c` — river / uncontracted / Botoșani / Varnița
+- `unc-e193a9efc1` — river / uncontracted / Botoșani / Iazul Lipoveanului
+- `unc-e4e2079f7c` — river / uncontracted / Botoșani / Ionașcu
+- `unc-e6b0364582` — river / uncontracted / Botoșani / Cotârgaci
+- `unc-f0040d7166` — river / uncontracted / Botoșani / Valea Ciolpanilor
+- `unc-00edc82c19` — river / uncontracted / Brașov / Ciocracu
+- `unc-0258ea9a3e` — river / uncontracted / Brașov / Valea Seacă
+- `unc-03066b3c84` — river / uncontracted / Brașov / Timișul Sec Mic
+- `unc-0322d1029d` — river / uncontracted / Brașov / Pârâul Laptelui
+- `unc-040082ddac` — river / uncontracted / Brașov / Turcu
+- `unc-04bce7201f` — river / uncontracted / Brașov / Dracul
+- `unc-0640f768e6` — river / uncontracted / Brașov / Valea Stânei Mari
+- `unc-073c50178c` — river / uncontracted / Brașov / Valea Morii
+- `unc-08247b0d24` — river / uncontracted / Brașov / Valea Spirla
+- `unc-08428a3901` — river / uncontracted / Brașov / Teliu
+- `unc-095b616b37` — river / uncontracted / Brașov / Valea Cetăți
+- `unc-0b7d5d3655` — river / uncontracted / Brașov / Strâmbu
+- `unc-0cd7861065` — river / uncontracted / Brașov / Valea cu Apă
+- `unc-0d9a8c1a7b` — river / uncontracted / Brașov / Valea lui Anton
+- `unc-0f4ef749d2` — river / uncontracted / Brașov / Valea Ursului
+- `unc-0f8d9de294` — river / uncontracted / Brașov / Valea Cetății
+- `unc-0ff3e3b066` — river / uncontracted / Brașov / Mălăiești
+- `unc-10b064902e` — river / uncontracted / Brașov / Bozom
+- `unc-10f0e50102` — river / uncontracted / Brașov / Larga Mare
+- `unc-11fa0d6b62` — river / uncontracted / Brașov / Urlatul Mic
+- `unc-14c4317711` — river / uncontracted / Brașov / Valcelul Indracit
+- `unc-16b72524be` — river / uncontracted / Brașov / Valea Săriturii
+- `unc-1731775060` — river / uncontracted / Brașov / Valea Holbav
+- `unc-194ad4ef25` — river / uncontracted / Brașov / Vlădușca
+- `unc-1ce91bda65` — river / uncontracted / Brașov / Valea Tudorești
+- `unc-1d281fd2fb` — river / uncontracted / Brașov / Valea Turnul
+- `unc-1e6b8c7d0a` — river / uncontracted / Brașov / Remetea
+- `unc-1fab646c12` — river / uncontracted / Brașov / Valea Poienii
+- `unc-205088ec73` — river / uncontracted / Brașov / Racovița
+- `unc-2094808406` — river / uncontracted / Brașov / Purcaru
+- `unc-20db9e377d` — river / uncontracted / Brașov / Oabăn
+- `unc-20e4d82c06` — river / uncontracted / Brașov / Valea lui Dumitru
+- `unc-21a5fa43be` — river / uncontracted / Brașov / Vanga Mică
+- `unc-260cdf9fd0` — river / uncontracted / Brașov / Șinca
+- `unc-271c37701f` — river / uncontracted / Brașov / Valea Tipiei
+- `unc-2816c9e1b2` — river / uncontracted / Brașov / Valea Stâneui
+- `unc-28c2084b97` — river / uncontracted / Brașov / Pârâul Ștevioara
+- `unc-2979bbd494` — river / uncontracted / Brașov / Piscul
+- `unc-29994e432e` — river / uncontracted / Brașov / Valea Râșnoavei
+- `unc-29d6cb4477` — river / uncontracted / Brașov / Bidul
+- `unc-29ef5b10eb` — river / uncontracted / Brașov / Pârâul lui Bălan
+- `unc-2a10baa91c` — river / uncontracted / Brașov / Pârâul Căldărilor
+- `unc-2a53d8517f` — river / uncontracted / Brașov / Valea Seacă
+- `unc-2c2bde6291` — river / uncontracted / Brașov / Grid
+- `unc-2c894e9a16` — river / uncontracted / Brașov / Valea Calului
+- `unc-2caa64c1e7` — river / uncontracted / Brașov / Valea Putredă
+- `unc-2d35dfa5e6` — river / uncontracted / Brașov / Lovnic
+- `unc-2e2ddce8b7` — river / uncontracted / Brașov / Valea Prundului
+- `unc-2eb91db25b` — river / uncontracted / Brașov / Valea Rece
+- `unc-2f9dfb3db2` — river / uncontracted / Brașov / Valea Fâneții
+- `unc-2fd99a6c4c` — river / uncontracted / Brașov / Pârâul Fetei
+- `unc-3008e5d44c` — river / uncontracted / Brașov / Valea Stânei Mici
+- `unc-308fe4cb87` — river / uncontracted / Brașov / Valea Rece
+- `unc-32813ff065` — river / uncontracted / Brașov / Bozii
+- `unc-34e83aab83` — river / uncontracted / Brașov / Valea Iezilor
+- `unc-357a956acc` — river / uncontracted / Brașov / Valea Țigănești
+- `unc-368052d7eb` — river / uncontracted / Brașov / Merezu
+- `unc-36efedd1b0` — river / uncontracted / Brașov / Cernatul
+- `unc-38951d4625` — river / uncontracted / Brașov / Valea Dracului
+- `unc-3aeaedbfff` — river / uncontracted / Brașov / Ucișoara
+- `unc-3b755884f2` — river / uncontracted / Brașov / Valea Bărbulețu
+- `unc-3c0952d6b1` — river / uncontracted / Brașov / Valea Tei
+- `unc-3c64e34679` — river / uncontracted / Brașov / Valea lui Dobre
+- `unc-3cdf68561d` — river / uncontracted / Brașov / Valea Mălăiești
+- `unc-3df7c6fe0e` — river / uncontracted / Brașov / Pârâul Mătăoana
+- `unc-3e9dc3f844` — river / uncontracted / Brașov / Lamba Mare
+- `unc-3fecf09523` — river / uncontracted / Brașov / Gârcinul Mare
+- `unc-3ff4b30b6b` — river / uncontracted / Brașov / Valea Lungă
+- `unc-41995e853e` — river / uncontracted / Brașov / Mândra
+- `unc-432e4b27e3` — river / uncontracted / Brașov / Netot
+- `unc-4458be3089` — river / uncontracted / Brașov / Pănicelul
+- `unc-45732d18eb` — river / uncontracted / Brașov / Valea Ursului
+- `unc-459ea7231d` — river / uncontracted / Brașov / Valea Prăvalelor
+- `unc-474d65fbdb` — river / uncontracted / Brașov / Pârâul Politei
+- `unc-47bfeac673` — river / uncontracted / Brașov / Pârâul Jneapănului
+- `unc-48a615c333` — river / uncontracted / Brașov / Șapte Scări
+- `unc-49e50e56f0` — river / uncontracted / Brașov / Pârâul Piatra Caprei
+- `unc-4a75027d4b` — river / uncontracted / Brașov / Valea Teslei
+- `unc-4ac3dd754f` — river / uncontracted / Brașov / Chirușca Seacă
+- `unc-4ac768b3e8` — river / uncontracted / Brașov / Cârligățea
+- `unc-4be3ee9aed` — river / uncontracted / Brașov / Pârâul Calul Bălan
+- `unc-4d5dc56010` — river / uncontracted / Brașov / Seciu
+- `unc-4e3e1ab169` — river / uncontracted / Brașov / Valea Rea
+- `unc-4ef22e02e6` — river / uncontracted / Brașov / Valea Lungă
+- `unc-4f8ec5adca` — river / uncontracted / Brașov / Bârsa Fierului
+- `unc-4fb761e924` — river / uncontracted / Brașov / Vlădeț
+- `unc-520bab0d4d` — river / uncontracted / Brașov / Valea Podurilor
+- `unc-53450da739` — river / uncontracted / Brașov / Valea Tigăi
+- `unc-5361a4c1bb` — river / uncontracted / Brașov / Moieciul Rece
+- `unc-54a85c1a1e` — river / uncontracted / Brașov / pârâu
+- `unc-555a8e616a` — river / uncontracted / Brașov / Cracul Stâng
+- `unc-57b125ebba` — river / uncontracted / Brașov / Valea Seacă
+- `unc-57c492be5b` — river / uncontracted / Brașov / Valea Bârnei
+- `unc-57db5a28ff` — river / uncontracted / Brașov / Urlătoarea Clincei
+- `unc-57dbcf3eee` — river / uncontracted / Brașov / Pârâul Vulturul
+- `unc-589113baf2` — river / uncontracted / Brașov / Urlătoarea Mare
+- `unc-5917d21c94` — river / uncontracted / Brașov / Valea Sticlăriei
+- `unc-599dba7951` — river / uncontracted / Brașov / Urlătoarea Mică
+- `unc-5a2263e5e1` — river / uncontracted / Brașov / Vama Mare
+- `unc-5a2387edaa` — river / uncontracted / Brașov / Valea Groapa Lungă
+- `unc-5a73d0aa24` — river / uncontracted / Brașov / Valea Curmăturii
+- `unc-5aba3a0bd6` — river / uncontracted / Brașov / Valea Pietrei Mici
+- `unc-5b02bcc026` — river / uncontracted / Brașov / Valea Satului
+- `unc-5b6be5aae7` — river / uncontracted / Brașov / Valea Guțanu
+- `unc-5bb75ebf60` — river / uncontracted / Brașov / Timișul Sec de Sus
+- `unc-5d075ecbb3` — river / uncontracted / Brașov / Urlătoarea
+- `unc-5fd9d55ae2` — river / uncontracted / Brașov / Poarta
+- `unc-6117a2bbec` — river / uncontracted / Brașov / Scurta
+- `unc-61a196a5e4` — river / uncontracted / Brașov / Valea Măgurii
+- `unc-643f626f46` — river / uncontracted / Brașov / Pârâul Tisei
+- `unc-66b9985d6a` — river / uncontracted / Brașov / Valea Pietrelor
+- `unc-673425474d` — river / uncontracted / Brașov / Valea Sasului
+- `unc-67440bf3d5` — river / uncontracted / Brașov / Pănicel
+- `unc-684429b3cd` — river / uncontracted / Brașov / Valea Șindilei
+- `unc-6848a368f1` — river / uncontracted / Brașov / Valea Cetății
+- `unc-6885deef4c` — river / uncontracted / Brașov / Valea Giuvala
+- `unc-694551f176` — river / uncontracted / Brașov / Urșilor
+- `unc-6adbcb84e3` — river / uncontracted / Brașov / Săvăstreni
+- `unc-6af57f23d3` — river / uncontracted / Brașov / Ghebanului
+- `unc-6bed838c54` — river / uncontracted / Brașov / Felmer
+- `unc-6d6f3ac903` — river / uncontracted / Brașov / Bârsa Tămașului
+- `unc-6d761f2868` — river / uncontracted / Brașov / Groapa de Aur
+- `unc-6dc2b11114` — river / uncontracted / Brașov / Valea Cătunului
+- `unc-6de247a625` — river / uncontracted / Brașov / Buzăiel
+- `unc-6e6ece7f4c` — river / uncontracted / Brașov / Biserica
+- `unc-6f1412283a` — river / uncontracted / Brașov / Limbășelul Mare
+- `unc-6fe9593e76` — river / uncontracted / Brașov / Ursoaia Mare
+- `unc-72d4321b57` — river / uncontracted / Brașov / Padina lui Calinet
+- `unc-7390f5f7c6` — river / uncontracted / Brașov / Pârâul Larg
+- `unc-7411244218` — river / uncontracted / Brașov / Valea Postăvaru
+- `unc-74c19615e0` — river / uncontracted / Brașov / Pârâul Fișer
+- `unc-75fc389e56` — river / uncontracted / Brașov / Scroafa
+- `unc-78c20a47c0` — river / uncontracted / Brașov / Babarunca
+- `unc-79af2e6c89` — river / uncontracted / Brașov / Corbul Ucii
+- `unc-7a92ba91e1` — river / uncontracted / Brașov / Varna Mare
+- `unc-7bac972fde` — river / uncontracted / Brașov / Pârâul Noghia
+- `unc-7bca637043` — river / uncontracted / Brașov / Groapa lui Simion
+- `unc-7cd7806b4b` — river / uncontracted / Brașov / Valea Curugii
+- `unc-7d0e0b4927` — river / uncontracted / Brașov / Țigănești
+- `unc-7dcb252091` — river / uncontracted / Brașov / Valea Prepeleacului
+- `unc-7e82184a1c` — river / uncontracted / Brașov / Valea Feriga
+- `unc-7fb699e0d0` — river / uncontracted / Brașov / Ramura Mică
+- `unc-7fc1eb4c70` — river / uncontracted / Brașov / Vâlcelul Guțanului
+- `unc-811e983197` — river / uncontracted / Brașov / Valea Gradiștei
+- `unc-82d3ae9c76` — river / uncontracted / Brașov / Valea Catepu
+- `unc-8333939683` — river / uncontracted / Brașov / canal drenaj
+- `unc-83b12d7432` — river / uncontracted / Brașov / Lupul
+- `unc-85ad884936` — river / uncontracted / Brașov / Valea Dragă
+- `unc-86194db8ed` — river / uncontracted / Brașov / Râul Copăceoasa
+- `unc-8630f5e5bc` — river / uncontracted / Brașov / Valea Nisipului
+- `unc-86b5508ef0` — river / uncontracted / Brașov / Valea Nisipu
+- `unc-88c4644e92` — river / uncontracted / Brașov / Ciclău
+- `unc-88cc21cbab` — river / uncontracted / Brașov / Fișer
+- `unc-8ce0c50d41` — river / uncontracted / Brașov / Larga Mică
+- `unc-8e94c812cd` — river / uncontracted / Brașov / Valea Brustuletului
+- `unc-8f379dcc78` — river / uncontracted / Brașov / Valea Rogoazei
+- `unc-907d763bfe` — river / uncontracted / Brașov / Valea Cheii
+- `unc-90824e8f0c` — river / uncontracted / Brașov / Pârâul lui Isac
+- `unc-9115d6f6d4` — river / uncontracted / Brașov / Valea Comorilor
+- `unc-949ffbc7b8` — river / uncontracted / Brașov / Valea Găunăoasă
+- `unc-96330a607c` — river / uncontracted / Brașov / Varna Mică
+- `unc-9726517698` — river / uncontracted / Brașov / Bârsa lui Bucur
+- `unc-974badebed` — river / uncontracted / Brașov / Limbășelul Mic
+- `unc-9773670957` — river / uncontracted / Brașov / Raul Plopilor
+- `unc-97b60d76b2` — river / uncontracted / Brașov / Valea Leucii
+- `unc-97e65025a5` — river / uncontracted / Brașov / Valea Cailor
+- `unc-98c7c100be` — river / uncontracted / Brașov / Vanga Mare
+- `unc-9bafa91532` — river / uncontracted / Brașov / Brescioara
+- `unc-9bd2d24ee1` — river / uncontracted / Brașov / Valea Brădetului
+- `unc-9e42551bab` — river / uncontracted / Brașov / Valea Vladusca
+- `unc-9faf037b52` — river / uncontracted / Brașov / Pârâul Porcului
+- `unc-9fe845bc58` — river / uncontracted / Brașov / Valea Grohotișului
+- `unc-a04ef67c2a` — river / uncontracted / Brașov / Groapa cu var
+- `unc-a0c0ff632e` — river / uncontracted / Brașov / Valea Vulcăniță
+- `unc-a1a4f2ad2f` — river / uncontracted / Brașov / Valea Tocilița
+- `unc-a1fd02574a` — river / uncontracted / Brașov / Valea Voievodeni
+- `unc-a258b57ce7` — river / uncontracted / Brașov / Piscul cu Apă
+- `unc-a28eb3ee5e` — river / uncontracted / Brașov / Bângăleasa
+- `unc-a4936bb932` — river / uncontracted / Brașov / Durbav
+- `unc-a59f58e326` — river / uncontracted / Brașov / Susai
+- `unc-a5e3a9c444` — river / uncontracted / Brașov / Valea Mărtoiu
+- `unc-a6d55b2211` — river / uncontracted / Brașov / Hotarul
+- `unc-a748dbb8a1` — river / uncontracted / Brașov / Șipoaia
+- `unc-a8756b8cac` — river / uncontracted / Brașov / Vulcănița
+- `unc-a990a0da0d` — river / uncontracted / Brașov / Calul
+- `unc-acc197eb50` — river / uncontracted / Brașov / Pârâul Stăncioiu
+- `unc-afbcaf42ce` — river / uncontracted / Brașov / Valea Stânii
+- `unc-b010da359a` — river / uncontracted / Brașov / Valea Bucșoiului
+- `unc-b1312a451a` — river / uncontracted / Brașov / Pârâul Poliștoaca
+- `unc-b398199317` — river / uncontracted / Brașov / Sughina
+- `unc-b42b1fdcf0` — river / uncontracted / Brașov / Valea Lungă
+- `unc-b44cce05ab` — river / uncontracted / Brașov / Pietrele Albe
+- `unc-b4aef6614e` — river / uncontracted / Brașov / Valea Canelor
+- `unc-b5ebb6f13a` — river / uncontracted / Brașov / Valea cu Cale
+- `unc-b723aac701` — river / uncontracted / Brașov / Valea Stâmboru
+- `unc-b7cb5da47b` — river / uncontracted / Brașov / Pârâul Valea Joiței
+- `unc-b9433760de` — river / uncontracted / Brașov / Cincu
+- `unc-ba2633e0b4` — river / uncontracted / Brașov / Valea Cetății
+- `unc-bd2fc75d35` — river / uncontracted / Brașov / Gârcin
+- `unc-bdd3388eca` — river / uncontracted / Brașov / Strâmșoara
+- `unc-c004cf79d9` — river / uncontracted / Brașov / Valea Rea
+- `unc-c1d8970be6` — river / uncontracted / Brașov / Pârâul Noaghiei
+- `unc-c2388f053d` — river / uncontracted / Brașov / Zizin
+- `unc-c26e4bd82f` — river / uncontracted / Brașov / pârâu
+- `unc-c270d96431` — river / uncontracted / Brașov / Pârâul Răcorelelor
+- `unc-c297a4c758` — river / uncontracted / Brașov / Râul Zărneștilor
+- `unc-c4857dabea` — river / uncontracted / Brașov / Drăguș
+- `unc-c8fab4375d` — river / uncontracted / Brașov / Pârâul Ferăstrăul
+- `unc-cb9def01d7` — river / uncontracted / Brașov / Valea Hoților
+- `unc-cbbd9c9b26` — river / uncontracted / Brașov / Valea lui Lambă
+- `unc-cbda7d0b59` — river / uncontracted / Brașov / Padina Priporului
+- `unc-cbe8164f67` — river / uncontracted / Brașov / Lupsa
+- `unc-cc29ec0ddd` — river / uncontracted / Brașov / Valea Coacăzei
+- `unc-cf0055e1aa` — river / uncontracted / Brașov / Pârâul Vârtejelor
+- `unc-cf2cb8d3fb` — river / uncontracted / Brașov / Valea Sasului Mic
+- `unc-d0d4c94936` — river / uncontracted / Brașov / Retevoiu
+- `unc-d198f6d72c` — river / uncontracted / Brașov / pârâu
+- `unc-d3668e8d82` — river / uncontracted / Brașov / Valea Cărbunelui
+- `unc-d49080c156` — river / uncontracted / Brașov / Valea Crăpăturii
+- `unc-d4c52c379b` — river / uncontracted / Brașov / Valea Pietrelor
+- `unc-d51d498728` — river / uncontracted / Brașov / Aninoasa
+- `unc-d5336a0f77` — river / uncontracted / Brașov / Graft
+- `unc-d54111478e` — river / uncontracted / Brașov / Valea Țigăilor
+- `unc-d6b04c5d25` — river / uncontracted / Brașov / Pârâul Crintei
+- `unc-d78af5520a` — river / uncontracted / Brașov / Ograda Frasinului
+- `unc-d7988a560e` — river / uncontracted / Brașov / Pârâul Hoților
+- `unc-d9468735ec` — river / uncontracted / Brașov / Valea Rogozului
+- `unc-da2848662d` — river / uncontracted / Brașov / Șimon
+- `unc-da30f6477e` — river / uncontracted / Brașov / Valea Fundățica
+- `unc-dab392f6ed` — river / uncontracted / Brașov / Olăreasa
+- `unc-db7c2aa818` — river / uncontracted / Brașov / Vâlcelul Grohotișului
+- `unc-dc46997308` — river / uncontracted / Brașov / Canionul Cioringa Mare
+- `unc-dc948ded28` — river / uncontracted / Brașov / Șipotul
+- `unc-de16ab6a7b` — river / uncontracted / Brașov / Valea Gorița
+- `unc-de57b48b42` — river / uncontracted / Brașov / Brădățelul
+- `unc-dfa3bc3a20` — river / uncontracted / Brașov / Plopoasa
+- `unc-e1ddb549b2` — river / uncontracted / Brașov / Urlatul Mare
+- `unc-e269cea3c6` — river / uncontracted / Brașov / Valea cu Apă
+- `unc-e29f93fb33` — river / uncontracted / Brașov / Șercăiței
+- `unc-e2a0152014` — river / uncontracted / Brașov / Corbul Viștei
+- `unc-e34d382237` — river / uncontracted / Brașov / Nanu
+- `unc-e44a7b3ae2` — river / uncontracted / Brașov / Tohăniță
+- `unc-e4b52cee54` — river / uncontracted / Brașov / Valea Prăpăstiilor
+- `unc-e552d584ac` — river / uncontracted / Brașov / Valea Lungă
+- `unc-e5db8a6256` — river / uncontracted / Brașov / Valea lui Șmit
+- `unc-e67319ffbb` — river / uncontracted / Brașov / Valea Chilera
+- `unc-e735e90694` — river / uncontracted / Brașov / Pârâul Sărat
+- `unc-e7d36d05d1` — river / uncontracted / Brașov / Bârsa Groșetului
+- `unc-e851e184f6` — river / uncontracted / Brașov / Vama Mică
+- `unc-e95399a69c` — river / uncontracted / Brașov / Dridif
+- `unc-ea03f92c8a` — river / uncontracted / Brașov / Gârcinul Mic
+- `unc-ea49815bde` — river / uncontracted / Brașov / Vâlcelul lui Schmauz
+- `unc-eb7a425746` — river / uncontracted / Brașov / Vadul Roșu
+- `unc-ec4aea52f6` — river / uncontracted / Brașov / Viștișoara
+- `unc-ed447c5a57` — river / uncontracted / Brașov / Valea Vaidnei
+- `unc-ee4667514a` — river / uncontracted / Brașov / Valea Boului
+- `unc-ef3db73aaf` — river / uncontracted / Brașov / Valea Velicanu
+- `unc-ef6c2f1a9a` — river / uncontracted / Brașov / Sipot
+- `unc-f000f2becb` — river / uncontracted / Brașov / Valea Tiganului
+- `unc-f25397d4d3` — river / uncontracted / Brașov / Valea lui Nan
+- `unc-f3673ebc4a` — river / uncontracted / Brașov / Crizbav
+- `unc-f52d2647b2` — river / uncontracted / Brașov / Pârâul Calului
+- `unc-f86dcec587` — river / uncontracted / Brașov / Valea Ograda
+- `unc-f89f8edfad` — river / uncontracted / Brașov / Valea Ganii
+- `unc-fa3b590499` — river / uncontracted / Brașov / Crețu
+- `unc-fb3d49c2d2` — river / uncontracted / Brașov / Valea Răcădău
+- `unc-fded79f946` — river / uncontracted / Brașov / Valea Lespezi
+- `unc-fec867f72e` — river / uncontracted / Brașov / Ghimbășel
+- `unc-fedeacc7e5` — river / uncontracted / Brașov / Valea Gaura
+- `unc-ffc3f8554a` — river / uncontracted / Brașov / Dălghiu
+- `unc-004e4b10b7` — river / uncontracted / Brăila / Dunărea - Brațul Mănușoia
+- `unc-06cb204b8d` — river / uncontracted / Brăila / Poioasa
+- `unc-0baca7643b` — river / uncontracted / Brăila / Dunărea - Brațul Arupul
+- `unc-0c4e499eab` — river / uncontracted / Brăila / Brațul Pașca
+- `unc-17909617d5` — river / uncontracted / Brăila / Dunărea - Brațul Cravia
+- `unc-2f7ac8cd39` — river / uncontracted / Brăila / Dunărea (Brațul Sulina)
+- `unc-3dfd336c73` — river / uncontracted / Brăila / Dunărea - Brațul Crăcănel
+- `unc-53cba4a358` — river / uncontracted / Brăila / Pârâul Moldovencei
+- `unc-56051bcddf` — river / uncontracted / Brăila / Dunărea - Brațul Dranovița
+- `unc-5def93ae17` — river / uncontracted / Brăila / Brațul Vâlciu
+- `unc-859cedc3ba` — river / uncontracted / Brăila / Brațul Calia
+- `unc-01b2b7b20c` — river / uncontracted / Buzău / Bâsca Chiojd
+- `unc-02012e0069` — river / uncontracted / Buzău / Paraul lui Nastase
+- `unc-0248c6e9b3` — river / uncontracted / Buzău / Urlătoarea
+- `unc-08dfba8891` — river / uncontracted / Buzău / Gârla Hodorogului
+- `unc-09712f3d29` — river / uncontracted / Buzău / Pârâul Puturosu
+- `unc-0bf7928a1d` — river / uncontracted / Buzău / Pastareata
+- `unc-117a8bdd98` — river / uncontracted / Buzău / Paraul Smoleanului
+- `unc-156167e5b7` — river / uncontracted / Buzău / Valea Sării
+- `unc-19cdcf4d99` — river / uncontracted / Buzău / Paraul Plostina
+- `unc-226829c438` — river / uncontracted / Buzău / Izvorul Pietrelor
+- `unc-246165d2ab` — river / uncontracted / Buzău / Rușavăț
+- `unc-25417d47f0` — river / uncontracted / Buzău / Paraul Lunii
+- `unc-3132576b91` — river / uncontracted / Buzău / Pârâul Proșca
+- `unc-45553ee3b4` — river / uncontracted / Buzău / Paraul Fantanitei
+- `unc-45af0342a6` — river / uncontracted / Buzău / Paraul Jaristei
+- `unc-4798de0a22` — river / uncontracted / Buzău / Murătoarea
+- `unc-48cdb27553` — river / uncontracted / Buzău / Preseaca
+- `unc-48e94d8517` — river / uncontracted / Buzău / Izvorul Furului
+- `unc-4b0d819a7c` — river / uncontracted / Buzău / Pârâul Mreaja
+- `unc-4cec8d3456` — river / uncontracted / Buzău / Paraul Runcuri
+- `unc-4e686cffff` — river / uncontracted / Buzău / Paraul Varteju
+- `unc-5371d20d4b` — river / uncontracted / Buzău / Sărățel
+- `unc-5420bbe25f` — river / uncontracted / Buzău / Izvorul Oprii
+- `unc-571cb95853` — river / uncontracted / Buzău / Nișcov
+- `unc-646cc7a34c` — river / uncontracted / Buzău / Paraul Cociu Zaganului
+- `unc-674b425cde` — river / uncontracted / Buzău / Nehoiu Sec
+- `unc-6cd088bb22` — river / uncontracted / Buzău / Paraul Rabojului
+- `unc-6d0b028256` — river / uncontracted / Buzău / Paraul Secu Lacatusi
+- `unc-777abb6249` — river / uncontracted / Buzău / Paraul Tescanari
+- `unc-78d854118f` — river / uncontracted / Buzău / Izvorul Sarat
+- `unc-7bda59d730` — river / uncontracted / Buzău / Câlnău
+- `unc-7e8718aea9` — river / uncontracted / Buzău / Izvorul Rau
+- `unc-83727a6a9e` — river / uncontracted / Buzău / Jghiab
+- `unc-8535349264` — river / uncontracted / Buzău / Valea Milea
+- `unc-86830d626b` — river / uncontracted / Buzău / Pârâul Sărat
+- `unc-8702307f03` — river / uncontracted / Buzău / Pârâul Năieanca
+- `unc-88ca1d73d2` — river / uncontracted / Buzău / Paraul lui Baraboi
+- `unc-97d26c6b86` — river / uncontracted / Buzău / Frăsinet
+- `unc-98349519f2` — river / uncontracted / Buzău / Paraul Clajna
+- `unc-a65c2bf9c3` — river / uncontracted / Buzău / Paraul Lespezii
+- `unc-a72aa84e6e` — river / uncontracted / Buzău / Paraul Seciului
+- `unc-ae3dae6fa2` — river / uncontracted / Buzău / Paraul Puscariei
+- `unc-af2b8b2c42` — river / uncontracted / Buzău / Râul Pănătău
+- `unc-b61d606d21` — river / uncontracted / Buzău / Pârâul lui Ilie
+- `unc-baea47c1c0` — river / uncontracted / Buzău / Paraul Poienii Greului
+- `unc-bdb88da6b8` — river / uncontracted / Buzău / Cernatul
+- `unc-bf875f800e` — river / uncontracted / Buzău / Pârâul Brebu
+- `unc-c3508c041c` — river / uncontracted / Buzău / Paraul Zaganului
+- `unc-c695dc669c` — river / uncontracted / Buzău / Paraul Stepilor
+- `unc-c6b77ede7d` — river / uncontracted / Buzău / Pârâul Gradina
+- `unc-c89f35dad0` — river / uncontracted / Buzău / Paraul Bahna Tisei
+- `unc-ce6d423cb1` — river / uncontracted / Buzău / Paraul Macesu
+- `unc-cf879b87b9` — river / uncontracted / Buzău / Paraul Saratel
+- `unc-d6ff639529` — river / uncontracted / Buzău / Valea Schitului
+- `unc-dfe3ceebd3` — river / uncontracted / Buzău / Meledic
+- `unc-e376620504` — river / uncontracted / Buzău / Paraul Niculesii
+- `unc-ee9b38434d` — river / uncontracted / Buzău / Paraul Vizuinii
+- `unc-eefb1f1635` — river / uncontracted / Buzău / Cireș
+- `unc-ef4ff14bd2` — river / uncontracted / Buzău / Tocileasa
+- `unc-f0508a765b` — river / uncontracted / Buzău / Răstoaca
+- `unc-f05d327a69` — river / uncontracted / Buzău / Paraul Sarcea
+- `unc-f7915ceef3` — river / uncontracted / Buzău / Valea Rece
+- `unc-f9a223d327` — river / uncontracted / Buzău / Sărățel
+- `unc-fdd7b4f56f` — river / uncontracted / Buzău / Bălăneasa
+- `unc-ff063acfb8` — river / uncontracted / Buzău / Valea Crângului
+- `unc-00e2e3f115` — river / uncontracted / Caraș-Severin / Pârâul Racoviță
+- `unc-053a3530d9` — river / uncontracted / Caraș-Severin / Ogașul Babei
+- `unc-058dba6a44` — river / uncontracted / Caraș-Severin / Valea Prisacina
+- `unc-07479fbaee` — river / uncontracted / Caraș-Severin / Oravița
+- `unc-0bfcaf709f` — river / uncontracted / Caraș-Severin / Valea Aron
+- `unc-0ccf722a7b` — river / uncontracted / Caraș-Severin / Stredneg
+- `unc-0e0584533a` — river / uncontracted / Caraș-Severin / OUlmu Mic
+- `unc-0ecbf181a0` — river / uncontracted / Caraș-Severin / Belareca
+- `unc-0fc998adb0` — river / uncontracted / Caraș-Severin / Zlagna
+- `unc-1223bda021` — river / uncontracted / Caraș-Severin / Ulmu Mare
+- `unc-14bcb22d9e` — river / uncontracted / Caraș-Severin / Olteana
+- `unc-1c0e7632e9` — river / uncontracted / Caraș-Severin / Pârâul Bresnic
+- `unc-1f5825978c` — river / uncontracted / Caraș-Severin / Țerova
+- `unc-20421cdd6a` — river / uncontracted / Caraș-Severin / Șușca
+- `unc-20d76f5cb0` — river / uncontracted / Caraș-Severin / Loznișoara
+- `unc-20dc86bf3f` — river / uncontracted / Caraș-Severin / Ștîrcovăț
+- `unc-2453921922` — river / uncontracted / Caraș-Severin / Radimna
+- `unc-285b86cc44` — river / uncontracted / Caraș-Severin / Pârâul Băilor Mari
+- `unc-2972609810` — river / uncontracted / Caraș-Severin / Valea Simon și Iuda
+- `unc-29ee5fb0ff` — river / uncontracted / Caraș-Severin / Pârâul Morii
+- `unc-2cf0239bc2` — river / uncontracted / Caraș-Severin / Pârâul Brebu
+- `unc-3115039648` — river / uncontracted / Caraș-Severin / Padina Seacă
+- `unc-329c8f6ed7` — river / uncontracted / Caraș-Severin / Bârzăvița
+- `unc-33358fbbb6` — river / uncontracted / Caraș-Severin / Ranica
+- `unc-36e4c810c3` — river / uncontracted / Caraș-Severin / Lișava
+- `unc-3bc771d30a` — river / uncontracted / Caraș-Severin / Bedina
+- `unc-3c55af3dc4` — river / uncontracted / Caraș-Severin / Ogașu Mare
+- `unc-41f5c8c854` — river / uncontracted / Caraș-Severin / Valea Comarnic
+- `unc-443efbef40` — river / uncontracted / Caraș-Severin / Pârâul Ciclova
+- `unc-456f242114` — river / uncontracted / Caraș-Severin / Pârâul Merila
+- `unc-4b0b140b29` — river / uncontracted / Caraș-Severin / Clocotici
+- `unc-4ff0c61262` — river / uncontracted / Caraș-Severin / Tucila
+- `unc-53e925d4ec` — river / uncontracted / Caraș-Severin / Valea Rea
+- `unc-53f746aef2` — river / uncontracted / Caraș-Severin / Pârâul Grădiștei
+- `unc-55b2109a8f` — river / uncontracted / Caraș-Severin / Izvorul Morarului
+- `unc-5881b95847` — river / uncontracted / Caraș-Severin / Timișul Mort
+- `unc-5acf48d17f` — river / uncontracted / Caraș-Severin / Valea Craiului
+- `unc-5db13d811c` — river / uncontracted / Caraș-Severin / Ogașul Porcariului
+- `unc-5fcbb22af0` — river / uncontracted / Caraș-Severin / Doman
+- `unc-608ba5e041` — river / uncontracted / Caraș-Severin / Rafnic
+- `unc-608edc9d87` — river / uncontracted / Caraș-Severin / Haimeliug
+- `unc-60fd53caae` — river / uncontracted / Caraș-Severin / Șușara
+- `unc-61f517d1c9` — river / uncontracted / Caraș-Severin / Şareniac
+- `unc-6338e03c5c` — river / uncontracted / Caraș-Severin / Pârâu Ciornovăt
+- `unc-663cb2119b` — river / uncontracted / Caraș-Severin / Gelug
+- `unc-66f9b78da0` — river / uncontracted / Caraș-Severin / Alibeg
+- `unc-677f66007c` — river / uncontracted / Caraș-Severin / Valea Potocului
+- `unc-69827e8248` — river / uncontracted / Caraș-Severin / Pârvareca
+- `unc-6b3ce302af` — river / uncontracted / Caraș-Severin / Valisor
+- `unc-6bce8bd904` — river / uncontracted / Caraș-Severin / Кожица
+- `unc-6ccd4d7076` — river / uncontracted / Caraș-Severin / Ogașul Rogozului
+- `unc-707b550f2d` — river / uncontracted / Caraș-Severin / Sebeșel
+- `unc-7158412750` — river / uncontracted / Caraș-Severin / Мали Караш
+- `unc-71c6b7e5e6` — river / uncontracted / Caraș-Severin / Pârâul Blojului
+- `unc-7352e6985d` — river / uncontracted / Caraș-Severin / Pârâul Crivaia
+- `unc-741ddc6021` — river / uncontracted / Caraș-Severin / Scorila
+- `unc-74cfd90515` — river / uncontracted / Caraș-Severin / Prigor
+- `unc-76554425bb` — river / uncontracted / Caraș-Severin / Șcheiul
+- `unc-77aae28a23` — river / uncontracted / Caraș-Severin / Valea Rea
+- `unc-78eee0bd59` — river / uncontracted / Caraș-Severin / Crainic
+- `unc-7a171ae61a` — river / uncontracted / Caraș-Severin / Pârâul Cârnea
+- `unc-8094b513b4` — river / uncontracted / Caraș-Severin / Ponicova
+- `unc-83d6dabb69` — river / uncontracted / Caraș-Severin / Șuculețu
+- `unc-84101789a4` — river / uncontracted / Caraș-Severin / Francul
+- `unc-866af6c370` — river / uncontracted / Caraș-Severin / Valea Sturu
+- `unc-8abfec74aa` — river / uncontracted / Caraș-Severin / Berzovița
+- `unc-8c347dc3f7` — river / uncontracted / Caraș-Severin / Pârâul Rece
+- `unc-8cdac49f3f` — river / uncontracted / Caraș-Severin / Gârliște
+- `unc-9518963ec9` — river / uncontracted / Caraș-Severin / Pârâul Negrana
+- `unc-95dc40253b` — river / uncontracted / Caraș-Severin / Ogașul cu Raci
+- `unc-9c16b403e3` — river / uncontracted / Caraș-Severin / Vâna Rovină
+- `unc-9c1b05d43d` — river / uncontracted / Caraș-Severin / Boboroaia Mare
+- `unc-9f2e8ef0a2` — river / uncontracted / Caraș-Severin / Valea Pojejena
+- `unc-a086e61eb9` — river / uncontracted / Caraș-Severin / Vodnic
+- `unc-a2464cbe9a` — river / uncontracted / Caraș-Severin / Pârâul Rainea
+- `unc-a79375f732` — river / uncontracted / Caraș-Severin / Valea Mărcuș
+- `unc-a79b262ab5` — river / uncontracted / Caraș-Severin / Lindina
+- `unc-ab76bbd42e` — river / uncontracted / Caraș-Severin / Pârâul Gropița
+- `unc-ad936b612a` — river / uncontracted / Caraș-Severin / Sumbrac
+- `unc-adc06b6751` — river / uncontracted / Caraș-Severin / Ogașul Porcului
+- `unc-ae84ae280e` — river / uncontracted / Caraș-Severin / Buceava
+- `unc-afea8d2013` — river / uncontracted / Caraș-Severin / Radovanu
+- `unc-b091646e5f` — river / uncontracted / Caraș-Severin / Pojejena
+- `unc-b172635a93` — river / uncontracted / Caraș-Severin / Cuntu
+- `unc-b3a5b4a429` — river / uncontracted / Caraș-Severin / Liborajdina
+- `unc-b5d21aedd5` — river / uncontracted / Caraș-Severin / Pârâu Gârliște
+- `unc-b7acfe3048` — river / uncontracted / Caraș-Severin / Izvorul Gugu
+- `unc-b84d1b5749` — river / uncontracted / Caraș-Severin / Valea Satului
+- `unc-b8d16ae189` — river / uncontracted / Caraș-Severin / Mehadica
+- `unc-ba8341fcde` — river / uncontracted / Caraș-Severin / Pârâul Bonțica
+- `unc-c146d005a9` — river / uncontracted / Caraș-Severin / Лесковачки поток
+- `unc-c44f35685f` — river / uncontracted / Caraș-Severin / Belobreșca
+- `unc-c48f0abc34` — river / uncontracted / Caraș-Severin / Pârâul Semenic
+- `unc-c52b8ee048` — river / uncontracted / Caraș-Severin / Șipu
+- `unc-c763f89de1` — river / uncontracted / Caraș-Severin / Peceneaga
+- `unc-c83a8251a1` — river / uncontracted / Caraș-Severin / Goznuța
+- `unc-cafcc0ee95` — river / uncontracted / Caraș-Severin / Најдашки поток
+- `unc-cfd7c1aa9b` — river / uncontracted / Caraș-Severin / Crivaia Mare
+- `unc-d17118f443` — river / uncontracted / Caraș-Severin / Valea de Rugi
+- `unc-d279696386` — river / uncontracted / Caraș-Severin / Jdimir
+- `unc-d297cae267` — river / uncontracted / Caraș-Severin / Râul Beghei
+- `unc-d37926daad` — river / uncontracted / Caraș-Severin / Pârâul Izvorul Molidului
+- `unc-d3afcf897c` — river / uncontracted / Caraș-Severin / Ungureanu
+- `unc-d79e916436` — river / uncontracted / Caraș-Severin / Pârâul Craiova
+- `unc-dc979534d6` — river / uncontracted / Caraș-Severin / Karaš
+- `unc-dcda594d16` — river / uncontracted / Caraș-Severin / Ogașul Negrilovăț
+- `unc-dce5909e55` — river / uncontracted / Caraș-Severin / Ferendia
+- `unc-dd23dec9a6` — river / uncontracted / Caraș-Severin / Crivaia Mică
+- `unc-de66a76483` — river / uncontracted / Caraș-Severin / Pârâul Dalei
+- `unc-def2fa0135` — river / uncontracted / Caraș-Severin / Caraș
+- `unc-e15018d25b` — river / uncontracted / Caraș-Severin / Răchitova
+- `unc-e167981cc8` — river / uncontracted / Caraș-Severin / Sfrâgin
+- `unc-e18c0cc482` — river / uncontracted / Caraș-Severin / Dunărea
+- `unc-e1c4ae4070` — river / uncontracted / Caraș-Severin / Рушњачки поток
+- `unc-e35ea9560d` — river / uncontracted / Caraș-Severin / Bârza
+- `unc-e417133a71` — river / uncontracted / Caraș-Severin / Potoc
+- `unc-e47e33e508` — river / uncontracted / Caraș-Severin / Pârâul Slatina
+- `unc-e715755ca9` — river / uncontracted / Caraș-Severin / Vicinic
+- `unc-ea3ca34686` — river / uncontracted / Caraș-Severin / Gornea
+- `unc-ecee8a50a8` — river / uncontracted / Caraș-Severin / Nermed
+- `unc-ee18b763c9` — river / uncontracted / Caraș-Severin / Pârâul Dignacea
+- `unc-f1a99aaf6e` — river / uncontracted / Caraș-Severin / Dunărea
+- `unc-f26d246780` — river / uncontracted / Caraș-Severin / Oravița
+- `unc-f3522e4c28` — river / uncontracted / Caraș-Severin / Divici
+- `unc-f4bafdb4e9` — river / uncontracted / Caraș-Severin / Bucurusul Mare
+- `unc-f808357d1e` — river / uncontracted / Caraș-Severin / Moceriș
+- `unc-f8e50c694e` — river / uncontracted / Caraș-Severin / Чезава
+- `unc-fe659c8fe3` — river / uncontracted / Caraș-Severin / Țăsna
+- `unc-007e235063` — river / uncontracted / Cluj / Mintiu
+- `unc-0294029534` — river / uncontracted / Cluj / Ponor
+- `unc-02e62b92e1` — river / uncontracted / Cluj / Agârbiciu
+- `unc-02f0918d94` — river / uncontracted / Cluj / Firza
+- `unc-03652d6478` — river / uncontracted / Cluj / Feiurdeni
+- `unc-0506469ae3` — river / uncontracted / Cluj / Dobruș
+- `unc-063bab4406` — river / uncontracted / Cluj / Ciepega
+- `unc-06432ad28a` — river / uncontracted / Cluj / Pârâul Boșor
+- `unc-064fbabd7b` — river / uncontracted / Cluj / Vaida Cămăraș
+- `unc-07bf0c630e` — river / uncontracted / Cluj / Pietroasa
+- `unc-090546ab4a` — river / uncontracted / Cluj / Chidea
+- `unc-09deae2fdf` — river / uncontracted / Cluj / Guga
+- `unc-0b5ad4337e` — river / uncontracted / Cluj / Valea Morii
+- `unc-0b633df5a2` — river / uncontracted / Cluj / Mera
+- `unc-0bf45bab90` — river / uncontracted / Cluj / Pârâul Satului
+- `unc-0dfcaf48d0` — river / uncontracted / Cluj / Șardu
+- `unc-1036a4a3eb` — river / uncontracted / Cluj / Pârâul Ocnei
+- `unc-11f97bc58f` — river / uncontracted / Cluj / Valea Seacă
+- `unc-121ca6a63d` — river / uncontracted / Cluj / Pârâul Văraticelor
+- `unc-124b073de1` — river / uncontracted / Cluj / Pârâul Butgheorghești
+- `unc-17664caafe` — river / uncontracted / Cluj / Valea Peteroaii
+- `unc-186473df61` — river / uncontracted / Cluj / Bunești
+- `unc-1a28e51849` — river / uncontracted / Cluj / Valea Noghieiului
+- `unc-1ba14cc25a` — river / uncontracted / Cluj / Pe Vale
+- `unc-21eb447726` — river / uncontracted / Cluj / Suceag
+- `unc-2494994265` — river / uncontracted / Cluj / Puini
+- `unc-2567c6355e` — river / uncontracted / Cluj / Ciurila
+- `unc-285a3dbf0f` — river / uncontracted / Cluj / Suciuaș
+- `unc-28c971694c` — river / uncontracted / Cluj / Sântejude
+- `unc-2d6ab8e0c7` — river / uncontracted / Cluj / Pârâul Scridosului
+- `unc-2dbba75e76` — river / uncontracted / Cluj / Giula
+- `unc-2e3f75479a` — river / uncontracted / Cluj / Cubleș
+- `unc-307c6d0b0f` — river / uncontracted / Cluj / Pârâul Plaiului
+- `unc-320b630448` — river / uncontracted / Cluj / Ciortuș
+- `unc-32b6f963c6` — river / uncontracted / Cluj / Cristorel
+- `unc-336a3bb559` — river / uncontracted / Cluj / Dumitreasa
+- `unc-359a8df755` — river / uncontracted / Cluj / Unirea
+- `unc-3604e7e84e` — river / uncontracted / Cluj / Râtul Morii
+- `unc-37946b1626` — river / uncontracted / Cluj / Gârbău
+- `unc-3b5ce9313e` — river / uncontracted / Cluj / Pruni
+- `unc-3c3686a786` — river / uncontracted / Cluj / Calvaria
+- `unc-3dafcd3847` — river / uncontracted / Cluj / Valea Nedeii
+- `unc-3fdbdad0da` — river / uncontracted / Cluj / Pruniș
+- `unc-40fbb6c051` — river / uncontracted / Cluj / Hosuveghi
+- `unc-41e68e9305` — river / uncontracted / Cluj / Fâneața Vacilor
+- `unc-42bef4e920` — river / uncontracted / Cluj / Valea Zăpodii
+- `unc-440ae4b924` — river / uncontracted / Cluj / Sâmboleni
+- `unc-452049efcb` — river / uncontracted / Cluj / Valea Merilor
+- `unc-45f84ea718` — river / uncontracted / Cluj / Valea Chiejdului
+- `unc-46852ff7e4` — river / uncontracted / Cluj / Groapa Gomboșoaiei
+- `unc-48d54597a8` — river / uncontracted / Cluj / Valea Caldă Mare
+- `unc-491b5c10b0` — river / uncontracted / Cluj / Hășdate
+- `unc-4930304fd8` — river / uncontracted / Cluj / Fântânița
+- `unc-4990683b15` — river / uncontracted / Cluj / Negoteasa
+- `unc-49fabbb75f` — river / uncontracted / Cluj / Valea Sărății
+- `unc-4ba9ddb4a1` — river / uncontracted / Cluj / Sănășele
+- `unc-4bf438aa67` — river / uncontracted / Cluj / Cioroeș
+- `unc-4e3e9c1cf6` — river / uncontracted / Cluj / Budulău
+- `unc-4efad58d6e` — river / uncontracted / Cluj / Valea Fâneții
+- `unc-4ff21ffdd8` — river / uncontracted / Cluj / Husuer
+- `unc-513e04237e` — river / uncontracted / Cluj / Valea Caldă
+- `unc-51c99b4045` — river / uncontracted / Cluj / Orman
+- `unc-52a45509f8` — river / uncontracted / Cluj / Valea Ciorgăului
+- `unc-5357e82838` — river / uncontracted / Cluj / Noroios
+- `unc-55c01b3d8a` — river / uncontracted / Cluj / Macău
+- `unc-5713acbb82` — river / uncontracted / Cluj / Paraul Pastravului
+- `unc-57e3163b11` — river / uncontracted / Cluj / Valea Arsă
+- `unc-5952c0fa45` — river / uncontracted / Cluj / Pârâul Hosnoș
+- `unc-5cba06aca4` — river / uncontracted / Cluj / Tritul
+- `unc-5d44f12f33` — river / uncontracted / Cluj / Valea Costeșii
+- `unc-5dd5e86de7` — river / uncontracted / Cluj / Pârâul Cesâlor
+- `unc-5e4b47ac24` — river / uncontracted / Cluj / Valea Feții
+- `unc-5fc83c14bd` — river / uncontracted / Cluj / Râul Călata
+- `unc-62266b1a09` — river / uncontracted / Cluj / Diviciorii Mari
+- `unc-638acad46e` — river / uncontracted / Cluj / Valea Morii
+- `unc-645ff6a157` — river / uncontracted / Cluj / Stolna
+- `unc-65e1ec6239` — river / uncontracted / Cluj / Bobâlna
+- `unc-67025b187b` — river / uncontracted / Cluj / Pârâul Secătura
+- `unc-67c0611e8e` — river / uncontracted / Cluj / Pârâul Popii
+- `unc-67f7ea830f` — river / uncontracted / Cluj / Lonea
+- `unc-682095373f` — river / uncontracted / Cluj / Stejeriș
+- `unc-68a8fe6f66` — river / uncontracted / Cluj / Zârna
+- `unc-6948d2bdde` — river / uncontracted / Cluj / Valea Seușei
+- `unc-6a198d6f73` — river / uncontracted / Cluj / Gingineasa
+- `unc-6a52b3eed6` — river / uncontracted / Cluj / Sălicea
+- `unc-6bb54de287` — river / uncontracted / Cluj / Gârbăul Dejului
+- `unc-6c87c8e56e` — river / uncontracted / Cluj / Valea Podului
+- `unc-6ec2ffbdd9` — river / uncontracted / Cluj / Vad
+- `unc-706d9a4e73` — river / uncontracted / Cluj / Râșca
+- `unc-70d86007aa` — river / uncontracted / Cluj / Făureni
+- `unc-73f874c13f` — river / uncontracted / Cluj / Valea Firei
+- `unc-7400da91e3` — river / uncontracted / Cluj / Berteleag
+- `unc-742bcb7b83` — river / uncontracted / Cluj / Popești
+- `unc-761423ad02` — river / uncontracted / Cluj / Pârâul Beliș
+- `unc-76b30382f9` — river / uncontracted / Cluj / Valea Țopului
+- `unc-783ce694b7` — river / uncontracted / Cluj / Murători
+- `unc-78c0723772` — river / uncontracted / Cluj / Zăpodie
+- `unc-7ca90c5e71` — river / uncontracted / Cluj / Canalul Morii
+- `unc-7cf692b968` — river / uncontracted / Cluj / Highieșee
+- `unc-7d277284ee` — river / uncontracted / Cluj / Valea Brădeana
+- `unc-7e67ec106a` — river / uncontracted / Cluj / Boju
+- `unc-80d0909f0f` — river / uncontracted / Cluj / Pârâul Chinteni
+- `unc-80f30ba424` — river / uncontracted / Cluj / Pârâul Bongar
+- `unc-8379c43a97` — river / uncontracted / Cluj / Paraul Mastii
+- `unc-838a99dc25` — river / uncontracted / Cluj / Valea Largă
+- `unc-8518a74119` — river / uncontracted / Cluj / Prodae
+- `unc-86b000bcc4` — river / uncontracted / Cluj / Pârâul Mutuleanca
+- `unc-86f529ff05` — river / uncontracted / Cluj / Leghia
+- `unc-883a7b5bb5` — river / uncontracted / Cluj / Pârâul Văleni
+- `unc-8c271db242` — river / uncontracted / Cluj / Mociu
+- `unc-8cebbdbbcd` — river / uncontracted / Cluj / Aluni
+- `unc-904be16d76` — river / uncontracted / Cluj / Țiclău
+- `unc-90faa72455` — river / uncontracted / Cluj / Micuș
+- `unc-920e3e0490` — river / uncontracted / Cluj / Pîrîu Filea
+- `unc-93d7feab89` — river / uncontracted / Cluj / Pârâul Domoș
+- `unc-94246c94b6` — river / uncontracted / Cluj / Odăii Beteag
+- `unc-9596307504` — river / uncontracted / Cluj / Cătina
+- `unc-95cfffb0d6` — river / uncontracted / Cluj / Racoș
+- `unc-9680f19f14` — river / uncontracted / Cluj / Pârâul Gârbău
+- `unc-972d4e220a` — river / uncontracted / Cluj / Pârâul Tare
+- `unc-9b5f57cf31` — river / uncontracted / Cluj / Chiriș
+- `unc-9bc7802a11` — river / uncontracted / Cluj / Someșul Mort
+- `unc-9c009109ab` — river / uncontracted / Cluj / Valea Cetății
+- `unc-9cb5b9d94b` — river / uncontracted / Cluj / Bence-patak
+- `unc-9e68fe0039` — river / uncontracted / Cluj / Valea Pordei
+- `unc-9e985ac6a3` — river / uncontracted / Cluj / Valea Stanciului
+- `unc-a17ed76e56` — river / uncontracted / Cluj / Mărăloiu
+- `unc-a5dbbef34d` — river / uncontracted / Cluj / Pârâul Podului
+- `unc-a6622dfed0` — river / uncontracted / Cluj / Chiștelec
+- `unc-a6d2405a09` — river / uncontracted / Cluj / Valea Pleșcuței
+- `unc-a72c30b753` — river / uncontracted / Cluj / Valea Comorii
+- `unc-a75ec3923d` — river / uncontracted / Cluj / Valea Negrileștilor
+- `unc-a88339f6ab` — river / uncontracted / Cluj / Bărăi
+- `unc-a8a8bc787e` — river / uncontracted / Cluj / Onceasa
+- `unc-a8b562d1d1` — river / uncontracted / Cluj / Dumbrava
+- `unc-a8d4bae772` — river / uncontracted / Cluj / Rănteștiolor
+- `unc-a8e88395f7` — river / uncontracted / Cluj / Valea Cerbului
+- `unc-a928fa237e` — river / uncontracted / Cluj / Strâmbu
+- `unc-a96b1143be` — river / uncontracted / Cluj / Hosu
+- `unc-a98009dad9` — river / uncontracted / Cluj / Pârâul Zăpodie
+- `unc-a9ac12572f` — river / uncontracted / Cluj / Borșa
+- `unc-abeb7d433b` — river / uncontracted / Cluj / Lujerdiu
+- `unc-acaaa573c8` — river / uncontracted / Cluj / Demberke
+- `unc-acb31e4d92` — river / uncontracted / Cluj / Batin
+- `unc-adb8dddcc1` — river / uncontracted / Cluj / Cojocna
+- `unc-afb9e832e9` — river / uncontracted / Cluj / Cotior
+- `unc-b212014a0f` — river / uncontracted / Cluj / Gădălin
+- `unc-b3c44f2f69` — river / uncontracted / Cluj / Șoimeni
+- `unc-b3faa341ca` — river / uncontracted / Cluj / Vișag
+- `unc-b49bcd72f6` — river / uncontracted / Cluj / Alunișu
+- `unc-b4c13a4665` — river / uncontracted / Cluj / Valea Căprioarei
+- `unc-b5c39b3a7c` — river / uncontracted / Cluj / Pârâul Țiganilor
+- `unc-b62a634b70` — river / uncontracted / Cluj / Văleni
+- `unc-b78dc232eb` — river / uncontracted / Cluj / Irișoara
+- `unc-b86c1a67b2` — river / uncontracted / Cluj / Sânmărtin
+- `unc-b872dbebf2` — river / uncontracted / Cluj / Bădești
+- `unc-b87db73d9b` — river / uncontracted / Cluj / Valea Făgeților
+- `unc-ba87edc4f6` — river / uncontracted / Cluj / Valea Teleacului
+- `unc-baac9ac2b3` — river / uncontracted / Cluj / Jichiș
+- `unc-bbb78a5153` — river / uncontracted / Cluj / Borzâc
+- `unc-bc8bec9812` — river / uncontracted / Cluj / Pârâul Becaș
+- `unc-bd75c5c9c5` — river / uncontracted / Cluj / Lonea
+- `unc-bda78aeacc` — river / uncontracted / Cluj / Aluniș
+- `unc-bf937940b9` — river / uncontracted / Cluj / Pârâul Carâmbului
+- `unc-bf9a0129d4` — river / uncontracted / Cluj / Giurcuța
+- `unc-c2edd045d8` — river / uncontracted / Cluj / Pârâul Pietroasa
+- `unc-c3881b0c5f` — river / uncontracted / Cluj / Valea Hagăului
+- `unc-c5a5285ae9` — river / uncontracted / Cluj / Pârâul Firei
+- `unc-c5d25bff15` — river / uncontracted / Cluj / Peșteș
+- `unc-c6d12e1cd7` — river / uncontracted / Cluj / Șomtelec
+- `unc-c75c8f7e66` — river / uncontracted / Cluj / Valea Rece
+- `unc-c949d7eab3` — river / uncontracted / Cluj / Suat
+- `unc-cafcbfd2c1` — river / uncontracted / Cluj / Huza
+- `unc-cddb39f067` — river / uncontracted / Cluj / Valea Furcilor
+- `unc-d23d599282` — river / uncontracted / Cluj / Inuc
+- `unc-d325e04f4e` — river / uncontracted / Cluj / Bandău
+- `unc-d3284fc7b8` — river / uncontracted / Cluj / Valea Perii
+- `unc-d3a8441938` — river / uncontracted / Cluj / Ghirolt
+- `unc-d4906d101c` — river / uncontracted / Cluj / Valea Mărului
+- `unc-d4be8b5afd` — river / uncontracted / Cluj / Fundături
+- `unc-d55fffefae` — river / uncontracted / Cluj / Sălătruc
+- `unc-d607c67f69` — river / uncontracted / Cluj / Valea Racilor
+- `unc-d653b67219` — river / uncontracted / Cluj / Salca
+- `unc-d9394a2941` — river / uncontracted / Cluj / Canal
+- `unc-db2790b8e3` — river / uncontracted / Cluj / Becaș
+- `unc-dc1529b172` — river / uncontracted / Cluj / Părău Iclejii
+- `unc-dc7e431bb2` — river / uncontracted / Cluj / Topa Mică
+- `unc-dde5e60f7b` — river / uncontracted / Cluj / Zanda
+- `unc-df6bd628e6` — river / uncontracted / Cluj / Valea Valcăului
+- `unc-df7e211649` — river / uncontracted / Cluj / Pârâul Pleșca
+- `unc-e0c6042b6c` — river / uncontracted / Cluj / Muncel
+- `unc-e3318547a4` — river / uncontracted / Cluj / Vișea
+- `unc-e394fce492` — river / uncontracted / Cluj / Valea Seacă
+- `unc-e3aac102ab` — river / uncontracted / Cluj / Pârâul Murători
+- `unc-e435063892` — river / uncontracted / Cluj / Pârâul Prislopului
+- `unc-e7ddc3a167` — river / uncontracted / Cluj / Sicu
+- `unc-e7ef377ba8` — river / uncontracted / Cluj / Imbuz
+- `unc-e92535fbc1` — river / uncontracted / Cluj / Răcad
+- `unc-e97f949107` — river / uncontracted / Cluj / Nimăiasa
+- `unc-ead1bb8e0c` — river / uncontracted / Cluj / Olpret
+- `unc-eb1efb049e` — river / uncontracted / Cluj / Tioltiur
+- `unc-eb57f6a2e3` — river / uncontracted / Cluj / Nima
+- `unc-eb5d2df191` — river / uncontracted / Cluj / Tocbești
+- `unc-ec864a6910` — river / uncontracted / Cluj / Valea Sândulești
+- `unc-ec8b38d074` — river / uncontracted / Cluj / Valea Morii
+- `unc-ed7f1ff7f2` — river / uncontracted / Cluj / Valea Fânații
+- `unc-f05a25773d` — river / uncontracted / Cluj / Valea Vișagului
+- `unc-f3ec7f6373` — river / uncontracted / Cluj / Valea Popești
+- `unc-f4c4815819` — river / uncontracted / Cluj / Șimișna
+- `unc-f56bc081dd` — river / uncontracted / Cluj / Elciu
+- `unc-f78aef9755` — river / uncontracted / Cluj / Valea Lupului
+- `unc-f8496e80bb` — river / uncontracted / Cluj / Agriș
+- `unc-f946bbb386` — river / uncontracted / Cluj / Pârâul Notelec
+- `unc-fa9a9711c7` — river / uncontracted / Cluj / Ierța
+- `unc-fe58a4c246` — river / uncontracted / Cluj / Râșca Mare
+- `unc-ff141a10d2` — river / uncontracted / Cluj / Mărgăuța
+- `unc-ff8783c238` — river / uncontracted / Cluj / Valea Agăstău
+- `unc-ffcd6b73f5` — river / uncontracted / Cluj / Valea Vârfurașu
+- `unc-2887226c61` — river / uncontracted / Constanța / Dunărea - Brațul Florica
+- `unc-30b3480b19` — river / uncontracted / Constanța / Urluia
+- `unc-31eba216b1` — river / uncontracted / Constanța / Bentu
+- `unc-3bc60fedb5` — river / uncontracted / Constanța / Agi Cabul
+- `unc-42a3ae4dbe` — river / uncontracted / Constanța / Valea Peștera
+- `unc-466576d3ea` — river / uncontracted / Constanța / Cocoș
+- `unc-51b1f41622` — river / uncontracted / Constanța / Urluia
+- `unc-52c15a44a6` — river / uncontracted / Constanța / Канагьол
+- `unc-5ddbe84cde` — river / uncontracted / Constanța / Brațul Iepurașului
+- `unc-5fdeaa1d59` — river / uncontracted / Constanța / Canaraua Fetei
+- `unc-6dab67ea27` — river / uncontracted / Constanța / Casimcea
+- `unc-7b28e61b24` — river / uncontracted / Constanța / Valea Siminocului
+- `unc-85562ee60e` — river / uncontracted / Constanța / Суха река
+- `unc-8f63eaf573` — river / uncontracted / Constanța / Cartal
+- `unc-a143107185` — river / uncontracted / Constanța / Visterna
+- `unc-a2f89146ac` — river / uncontracted / Constanța / Valea Cișmelelor
+- `unc-a87b60f5b3` — river / uncontracted / Constanța / Dunărea - Brațul Jianu
+- `unc-b56b74d319` — river / uncontracted / Constanța / Dunărea - Brațul Pacuiululi
+- `unc-bb08fea3ac` — river / uncontracted / Constanța / Pârâul Ghelengic
+- `unc-cbefcf2dfa` — river / uncontracted / Constanța / Almălău
+- `unc-df2cb634d0` — river / uncontracted / Constanța / Tașaul
+- `unc-e093b96de5` — river / uncontracted / Constanța / Valea Siliștii
+- `unc-e5db47688c` — river / uncontracted / Constanța / Valea Agigea
+- `unc-01d5b32554` — river / uncontracted / Covasna / Malnaș
+- `unc-02fc709ff2` — river / uncontracted / Covasna / Dumbrava
+- `unc-0966560d17` — river / uncontracted / Covasna / Ciuclion
+- `unc-0a3069f2cb` — river / uncontracted / Covasna / Fotoș
+- `unc-0af8e877ce` — river / uncontracted / Covasna / Valea Surdic
+- `unc-0d534066bc` — river / uncontracted / Covasna / Pârâul Secuiului
+- `unc-13d9356968` — river / uncontracted / Covasna / Dobârlău
+- `unc-142e7869ad` — river / uncontracted / Covasna / Sotetpatak
+- `unc-160be4b112` — river / uncontracted / Covasna / Pârâul Piatra Șoimilor
+- `unc-207e3ea708` — river / uncontracted / Covasna / Brețcu
+- `unc-2a3bd011cb` — river / uncontracted / Covasna / Calnic
+- `unc-2b9465790e` — river / uncontracted / Covasna / Arcuș
+- `unc-30dcafa16c` — river / uncontracted / Covasna / Turia
+- `unc-31f5cd363f` — river / uncontracted / Covasna / Ciudion
+- `unc-3367f3ff75` — river / uncontracted / Covasna / Mészpatak
+- `unc-33c44193fb` — river / uncontracted / Covasna / Zalán-patak
+- `unc-3421f541e8` — river / uncontracted / Covasna / Zagon
+- `unc-34fcd34381` — river / uncontracted / Covasna / Pârâul Puturosu
+- `unc-38f45b662e` — river / uncontracted / Covasna / Pârâul Minei Roșii
+- `unc-39e7b031d8` — river / uncontracted / Covasna / Pârâul Saldoboș
+- `unc-3bd5d2b0bc` — river / uncontracted / Covasna / Pârâul Tók
+- `unc-3dd88cb171` — river / uncontracted / Covasna / Pârâul Zălan
+- `unc-5080b1f08e` — river / uncontracted / Covasna / Floroita
+- `unc-58708f08f7` — river / uncontracted / Covasna / Pârâul lui Chelemec
+- `unc-58f49dcfad` — river / uncontracted / Covasna / Pava
+- `unc-5af86eb11b` — river / uncontracted / Covasna / Estelnic
+- `unc-5b9e3d253b` — river / uncontracted / Covasna / Pârâul Jombor
+- `unc-5c9785c630` — river / uncontracted / Covasna / Rakottyás patak
+- `unc-5d665b4dcc` — river / uncontracted / Covasna / Lisnău
+- `unc-6069fbba5f` — river / uncontracted / Covasna / Borvíz-patak
+- `unc-6513134a58` — river / uncontracted / Covasna / Pârâul Cărpinișulului
+- `unc-6769d36636` — river / uncontracted / Covasna / Pârâul Țiganului
+- `unc-6ad0a6e6e4` — river / uncontracted / Covasna / Valea de Aur
+- `unc-6c58a689bf` — river / uncontracted / Covasna / Valea Pârâul Miklós
+- `unc-701ed167b2` — river / uncontracted / Covasna / Pârâul Cioma
+- `unc-70d57672fc` — river / uncontracted / Covasna / Pârâul Gherend
+- `unc-71a1faa82d` — river / uncontracted / Covasna / Debren
+- `unc-79670cab22` — river / uncontracted / Covasna / Nádas patak;Sós-kút
+- `unc-7978747772` — river / uncontracted / Covasna / Șugaș
+- `unc-7a98c17528` — river / uncontracted / Covasna / Pârâul Șurpat
+- `unc-8c9337c777` — river / uncontracted / Covasna / Nádas patak;Sóskút
+- `unc-9052ef197e` — river / uncontracted / Covasna / Satului
+- `unc-91ff5c778d` — river / uncontracted / Covasna / Telciu
+- `unc-954bf12d89` — river / uncontracted / Covasna / Bățanii
+- `unc-a06658c8af` — river / uncontracted / Covasna / Zagonul Mare
+- `unc-a1b5879729` — river / uncontracted / Covasna / Pârâul Craca Mică
+- `unc-a57f224730` — river / uncontracted / Covasna / Valea Zălanului
+- `unc-a7dff5fff0` — river / uncontracted / Covasna / Pârâul Fierarului
+- `unc-abc20039dd` — river / uncontracted / Covasna / Telec
+- `unc-afc3e19f8a` — river / uncontracted / Covasna / Hăghig
+- `unc-b37adbf9a0` — river / uncontracted / Covasna / Pârâul Disznó-sarok
+- `unc-bf4326dbf2` — river / uncontracted / Covasna / Râul Cernat
+- `unc-c1ca92f498` — river / uncontracted / Covasna / Porumbele
+- `unc-c819e81c4f` — river / uncontracted / Covasna / Fundul Pârâului
+- `unc-cbe755bc40` — river / uncontracted / Covasna / Lemnia
+- `unc-cc796ca0b7` — river / uncontracted / Covasna / Semeria
+- `unc-ce646c9574` — river / uncontracted / Covasna / Pârâul lui Ionea
+- `unc-d23c84ea37` — river / uncontracted / Covasna / Râul Turia
+- `unc-d704734f0a` — river / uncontracted / Covasna / Belinul Mare
+- `unc-d76b67688b` — river / uncontracted / Covasna / Pârâul Bálványos
+- `unc-d7f5cb4075` — river / uncontracted / Covasna / Horgász
+- `unc-d7f6885e55` — river / uncontracted / Covasna / Zagonul Mic
+- `unc-da30e065b7` — river / uncontracted / Covasna / Păpăuți
+- `unc-e1c959a34e` — river / uncontracted / Covasna / Pârâul Apa Lină
+- `unc-e32ab977b0` — river / uncontracted / Covasna / Turia
+- `unc-e332dc6cd8` — river / uncontracted / Covasna / Cușuruș
+- `unc-e7bc2bef73` — river / uncontracted / Covasna / Simeria
+- `unc-ef96a61ab8` — river / uncontracted / Covasna / Valea Crișului
+- `unc-1ac004e5b4` — river / uncontracted / Călărași / Brațul Rău (Dunărea)
+- `unc-1bc24ad184` — river / uncontracted / Călărași / Râul Valea lui Ilie
+- `unc-299198bd79` — river / uncontracted / Călărași / Ghiula
+- `unc-374558f1bb` — river / uncontracted / Călărași / Mostiștea
+- `unc-4246387581` — river / uncontracted / Călărași / Pasărea
+- `unc-4909e54d33` — river / uncontracted / Călărași / Argova
+- `unc-4ca716925c` — river / uncontracted / Călărași / Profira
+- `unc-5fd8a2de8d` — river / uncontracted / Călărași / Brațul Borcea (Dunărea)
+- `unc-680709e562` — river / uncontracted / Călărași / Brațul Bala (Dunărea)
+- `unc-90873c06c9` — river / uncontracted / Călărași / Brațul Chilia
+- `unc-94bc10c022` — river / uncontracted / Călărași / Belciugatele
+- `unc-a6309fba8c` — river / uncontracted / Călărași / Râul Banciu
+- `unc-ae43f32f85` — river / uncontracted / Călărași / Sulimanu
+- `unc-b34f801ea1` — river / uncontracted / Călărași / Belciugatele
+- `unc-b50afd9e81` — river / uncontracted / Călărași / Dunărea (Brațul Sulina)
+- `unc-b90f8bbe28` — river / uncontracted / Călărași / Râul Vânăta
+- `unc-cb9ae95c55` — river / uncontracted / Călărași / Cucuveanu
+- `unc-df20748c6d` — river / uncontracted / Călărași / Canal Lebada
+- `unc-e79bb403d4` — river / uncontracted / Călărași / Corâta
+- `unc-00d427259b` — river / uncontracted / Dolj / Valea Bisericii
+- `unc-01f2e1edbc` — river / uncontracted / Dolj / Brâncoveanca
+- `unc-109e094121` — river / uncontracted / Dolj / Râul Argetoaia
+- `unc-236028b02f` — river / uncontracted / Dolj / Cetățuia
+- `unc-28dd49a370` — river / uncontracted / Dolj / Ulm
+- `unc-29e174c4fc` — river / uncontracted / Dolj / Lânga
+- `unc-2f93c94f97` — river / uncontracted / Dolj / Gârcotin
+- `unc-3194b8a001` — river / uncontracted / Dolj / Tejac
+- `unc-3bac712447` — river / uncontracted / Dolj / Dunărea
+- `unc-439824a209` — river / uncontracted / Dolj / Leul
+- `unc-4a660dac6c` — river / uncontracted / Dolj / Ciliboaica
+- `unc-502cfad1dd` — river / uncontracted / Dolj / Dunărea
+- `unc-5039b8c396` — river / uncontracted / Dolj / Lazu
+- `unc-53c5d7f33c` — river / uncontracted / Dolj / Portărești
+- `unc-54d45ede1c` — river / uncontracted / Dolj / Valea Mănăstirii
+- `unc-577d558cbb` — river / uncontracted / Dolj / Лом
+- `unc-58c3005811` — river / uncontracted / Dolj / Băldal
+- `unc-5cc69d0723` — river / uncontracted / Dolj / Bâlta
+- `unc-61efd5b9d6` — river / uncontracted / Dolj / Valea Rea
+- `unc-679c61ab64` — river / uncontracted / Dolj / Buzat
+- `unc-71835b64c2` — river / uncontracted / Dolj / Urdinița
+- `unc-72d9ba9f37` — river / uncontracted / Dolj / Gioroc (Valea Morilor)
+- `unc-7b37801c4c` — river / uncontracted / Dolj / Râul Brabova
+- `unc-87b9be829c` — river / uncontracted / Dolj / Merețel
+- `unc-8ea042562f` — river / uncontracted / Dolj / Ungureni (Vârtop)
+- `unc-8eb8ed913f` — river / uncontracted / Dolj / Bălăcășanca
+- `unc-a37b687a27` — river / uncontracted / Dolj / Pârâul Clielieni / Bălăsan
+- `unc-b108071993` — river / uncontracted / Dolj / Raznic
+- `unc-c1139621c1` — river / uncontracted / Dolj / Brestuica
+- `unc-c9a900284f` — river / uncontracted / Dolj / Valea Predeștilor
+- `unc-c9d602f41f` — river / uncontracted / Dolj / Valea Satului
+- `unc-cef9bd67f1` — river / uncontracted / Dolj / Țânțar (Coscodia)
+- `unc-e4dbb7a73a` — river / uncontracted / Dolj / Balta Sârbilor
+- `unc-e811683c71` — river / uncontracted / Dolj / Gabru
+- `unc-ea358aafe1` — river / uncontracted / Dolj / Valea Șarpelui
+- `unc-ec38e87f81` — river / uncontracted / Dolj / Vlașca
+- `unc-ec93c15c2e` — river / uncontracted / Dolj / Argetoaia (Salcia)
+- `unc-ee7cc9f54d` — river / uncontracted / Dolj / Valea Albă
+- `unc-f46818ce73` — river / uncontracted / Dolj / Raznic
+- `unc-f6fc6272eb` — river / uncontracted / Dolj / Огоста
+- `unc-01a0d277e1` — river / uncontracted / Dâmbovița / Mușchiului
+- `unc-039a8999e9` — river / uncontracted / Dâmbovița / Mitarca
+- `unc-07091db145` — river / uncontracted / Dâmbovița / Slănic
+- `unc-110031d9d5` — river / uncontracted / Dâmbovița / Crevedia
+- `unc-18231c31d5` — river / uncontracted / Dâmbovița / Dichiu
+- `unc-1873fb8083` — river / uncontracted / Dâmbovița / Pietricica
+- `unc-193369fabc` — river / uncontracted / Dâmbovița / Pârâul Raciu
+- `unc-1ef23b10f1` — river / uncontracted / Dâmbovița / Râul Sticlăriei
+- `unc-29768aedd7` — river / uncontracted / Dâmbovița / Pârâul Cabanei
+- `unc-2f06d3aee1` — river / uncontracted / Dâmbovița / Valea Bătrână
+- `unc-36141e04a6` — river / uncontracted / Dâmbovița / La Poduri
+- `unc-3625ad07a5` — river / uncontracted / Dâmbovița / Valea Lucăcilă
+- `unc-3c52a4fb22` — river / uncontracted / Dâmbovița / Valea Spinării
+- `unc-3d0e9bbfcd` — river / uncontracted / Dâmbovița / Râul Slănic
+- `unc-4e62a54b4c` — river / uncontracted / Dâmbovița / Valea Brădetului
+- `unc-56a83817a6` — river / uncontracted / Dâmbovița / Pârâul Rece
+- `unc-56b8176596` — river / uncontracted / Dâmbovița / Valea Nucetului
+- `unc-5f4c0dbdb3` — river / uncontracted / Dâmbovița / Jugureanu
+- `unc-6879a828ac` — river / uncontracted / Dâmbovița / Claia cu Brazi
+- `unc-68c5891d95` — river / uncontracted / Dâmbovița / Ratei
+- `unc-6a0545f246` — river / uncontracted / Dâmbovița / Râul Ocnița
+- `unc-6b77a1c9af` — river / uncontracted / Dâmbovița / Valea Tătarului
+- `unc-6d6a5afea6` — river / uncontracted / Dâmbovița / Valea Doamnele
+- `unc-6ec8978d50` — river / uncontracted / Dâmbovița / Ialomicioara
+- `unc-70f22bab21` — river / uncontracted / Dâmbovița / Râul Vulcana
+- `unc-7d1eecde5c` — river / uncontracted / Dâmbovița / Șiștoaca Obârșiei
+- `unc-7d4b131348` — river / uncontracted / Dâmbovița / Vâlcelul Lucăcilă
+- `unc-8c1345d87d` — river / uncontracted / Dâmbovița / Bărbulețu
+- `unc-8d9f06dff1` — river / uncontracted / Dâmbovița / Râul Racovița
+- `unc-8e0da138f4` — river / uncontracted / Dâmbovița / Muschiu
+- `unc-96e4722166` — river / uncontracted / Dâmbovița / Pârâul Glod
+- `unc-9e5aa57176` — river / uncontracted / Dâmbovița / Valea Dulce
+- `unc-a19b8fa97e` — river / uncontracted / Dâmbovița / Valea Fundul Văii
+- `unc-a23f34aa9f` — river / uncontracted / Dâmbovița / Valea Mitarca
+- `unc-b0cdb90559` — river / uncontracted / Dâmbovița / Valea Leaota
+- `unc-b5fbad24b6` — river / uncontracted / Dâmbovița / Valea lui Moise
+- `unc-b6726e4449` — river / uncontracted / Dâmbovița / Râul Bizdidel
+- `unc-bdd71dc745` — river / uncontracted / Dâmbovița / Valea Horoabei
+- `unc-c26f6f4722` — river / uncontracted / Dâmbovița / Valea Ilfovului
+- `unc-c2d26ab9fc` — river / uncontracted / Dâmbovița / Valea Mircii
+- `unc-c52b18ce99` — river / uncontracted / Dâmbovița / Ialomicioara
+- `unc-c7a7a06ed8` — river / uncontracted / Dâmbovița / Vâlcelul Clinului
+- `unc-c8b121b406` — river / uncontracted / Dâmbovița / Valea Lupului
+- `unc-cb91ec66cb` — river / uncontracted / Dâmbovița / Valea Frumușelului
+- `unc-d5987608b3` — river / uncontracted / Dâmbovița / Cărpeniș
+- `unc-da6bdc13b1` — river / uncontracted / Dâmbovița / Valea lui Bădescu
+- `unc-dad9b39b5a` — river / uncontracted / Dâmbovița / Glădăria
+- `unc-df2853efb6` — river / uncontracted / Dâmbovița / Valea Tămâiei
+- `unc-e01d493a57` — river / uncontracted / Dâmbovița / Baranga
+- `unc-fb8bab0dda` — river / uncontracted / Dâmbovița / Valea Vaca
+- `unc-ffe87a1e7e` — river / uncontracted / Dâmbovița / Valea Blana
+- `unc-2ae052ebe9` — river / uncontracted / Galați / Valea lui Odobescu
+- `unc-311ad2cabb` — river / uncontracted / Galați / Caina
+- `unc-326ea4b451` — river / uncontracted / Galați / Pereschiv
+- `unc-37df9d9fc4` — river / uncontracted / Galați / Suhurlui
+- `unc-4710dc8789` — river / uncontracted / Galați / Chineja
+- `unc-50382a3be0` — river / uncontracted / Galați / Lozova
+- `unc-520a0e3c00` — river / uncontracted / Galați / Suhu
+- `unc-6171ae6121` — river / uncontracted / Galați / Blăneasa
+- `unc-7e6913912a` — river / uncontracted / Galați / Hobana
+- `unc-8dc9015374` — river / uncontracted / Galați / Țiglina
+- `unc-926e34fd13` — river / uncontracted / Galați / Oancea
+- `unc-947583cbac` — river / uncontracted / Galați / Tecucel
+- `unc-9a0584abbf` — river / uncontracted / Galați / Horincea
+- `unc-b64c0458d8` — river / uncontracted / Galați / Geru
+- `unc-feb17999a2` — river / uncontracted / Galați / Bujoru
+- `unc-2314b8bbc2` — river / uncontracted / Giurgiu / Dunărea (Brațul Sulina)
+- `unc-26ffab0ec2` — river / uncontracted / Giurgiu / Dunărea
+- `unc-3cc53a0d53` — river / uncontracted / Giurgiu / Danube
+- `unc-6ea277716b` — river / uncontracted / Giurgiu / Brațul Smârda
+- `unc-a73f46eb74` — river / uncontracted / Giurgiu / Dunărea (Brațul Sulina)
+- `unc-a9bde33927` — river / uncontracted / Giurgiu / Dâmbovnic
+- `unc-b6dd6a0ad9` — river / uncontracted / Giurgiu / Râul Gurbanu
+- `unc-ba5f7bc0da` — river / uncontracted / Giurgiu / Danube
+- `unc-cbd2795d81` — river / uncontracted / Giurgiu / Râul Glavacioc
+- `unc-d48e283e55` — river / uncontracted / Giurgiu / Râul Milcovăț
+- `unc-d70c8f2146` — river / uncontracted / Giurgiu / Brațul Ara
+- `unc-dc2019c0ca` — river / uncontracted / Giurgiu / Dunărea
+- `unc-e5f92a710c` — river / uncontracted / Giurgiu / Ilfovăț
+- `unc-f51bf7f300` — river / uncontracted / Giurgiu / Ismar
+- `unc-028cd53624` — river / uncontracted / Gorj / Iovanu
+- `unc-05a534483f` — river / uncontracted / Gorj / Mohorul cu Apă
+- `unc-07d91ca224` — river / uncontracted / Gorj / Ungurelașul
+- `unc-0c0da3e664` — river / uncontracted / Gorj / Pleșcoaia
+- `unc-0dc0ac8647` — river / uncontracted / Gorj / Pârâul Gârdomanu
+- `unc-10ea01a327` — river / uncontracted / Gorj / Pocruia
+- `unc-15cdf3294d` — river / uncontracted / Gorj / Radoteasa
+- `unc-2e69dd7a48` — river / uncontracted / Gorj / Scărița
+- `unc-3160f7bced` — river / uncontracted / Gorj / V. Dracului
+- `unc-375650ad59` — river / uncontracted / Gorj / Urlieșu
+- `unc-3c6f0bbf97` — river / uncontracted / Gorj / Pârâul Curmezișa
+- `unc-48f93e3ea3` — river / uncontracted / Gorj / Mocirliul
+- `unc-4c489a4b2b` — river / uncontracted / Gorj / Pârâul Naiba
+- `unc-4f447b6e77` — river / uncontracted / Gorj / Dâlbanul
+- `unc-50c7a98a6a` — river / uncontracted / Gorj / Vlăsia Mare
+- `unc-5483bbb28f` — river / uncontracted / Gorj / Pârâul Ciocadia
+- `unc-5efd6199d4` — river / uncontracted / Gorj / Cănele
+- `unc-619511b576` — river / uncontracted / Gorj / Pârâul Crucii1
+- `unc-68ed955ac3` — river / uncontracted / Gorj / Pârâul Olanu
+- `unc-6b1ed0f6d7` — river / uncontracted / Gorj / Plosca
+- `unc-6f0106364b` — river / uncontracted / Gorj / Pârâul Scurtu
+- `unc-74df9a7ee9` — river / uncontracted / Gorj / Carbunele
+- `unc-778c270140` — river / uncontracted / Gorj / Pârâul Măneasa
+- `unc-7833664657` — river / uncontracted / Gorj / Râul Romanul
+- `unc-7fc339d232` — river / uncontracted / Gorj / Pârâul Scurta
+- `unc-895f9ae96a` — river / uncontracted / Gorj / Mușetoaia
+- `unc-8b98220005` — river / uncontracted / Gorj / Zlast
+- `unc-8e1353f603` — river / uncontracted / Gorj / Stâna Mare
+- `unc-8e718993d8` — river / uncontracted / Gorj / Suseni
+- `unc-8f841dfb76` — river / uncontracted / Gorj / Valea Fântânii
+- `unc-93115373c8` — river / uncontracted / Gorj / Râul Mohoru
+- `unc-93fd3a1848` — river / uncontracted / Gorj / Cartiu
+- `unc-95aedb9fe0` — river / uncontracted / Gorj / Mioarele
+- `unc-9769164363` — river / uncontracted / Gorj / Gornac
+- `unc-b0019f3418` — river / uncontracted / Gorj / Aluniș
+- `unc-b2bbd67fa7` — river / uncontracted / Gorj / Pârâul Mușet
+- `unc-b585b059c6` — river / uncontracted / Gorj / Valea lui Miron
+- `unc-b79a307a91` — river / uncontracted / Gorj / Motru Sec
+- `unc-b96d6d5503` — river / uncontracted / Gorj / Mihocul
+- `unc-bf28e80870` — river / uncontracted / Gorj / Olănelul
+- `unc-ca33a6ecaa` — river / uncontracted / Gorj / Galbenul
+- `unc-cad05595d0` — river / uncontracted / Gorj / Sadu lui Sân
+- `unc-d4a113a30f` — river / uncontracted / Gorj / Ungurelul
+- `unc-e62cf3432f` — river / uncontracted / Gorj / Godeanu
+- `unc-e71644b218` — river / uncontracted / Gorj / Vlăsia Mică
+- `unc-ecd4949f1c` — river / uncontracted / Gorj / Zlaști
+- `unc-eed953c355` — river / uncontracted / Gorj / Pârâul Prislopului
+- `unc-f398d766d6` — river / uncontracted / Gorj / Vlăsia
+- `unc-fd754e1662` — river / uncontracted / Gorj / Râul Cernăzoara
+- `unc-005681e868` — river / uncontracted / Harghita / Pârâul Kurta
+- `unc-008164df3f` — river / uncontracted / Harghita / Jáhor-patak
+- `unc-00dda251a4` — river / uncontracted / Harghita / Șipoș
+- `unc-017c071de4` — river / uncontracted / Harghita / Mădăraș
+- `unc-01f9898f87` — river / uncontracted / Harghita / Bosnyák-patak
+- `unc-02624ed041` — river / uncontracted / Harghita / Boloka
+- `unc-032deb09bb` — river / uncontracted / Harghita / Valea Adâncă
+- `unc-052becb20e` — river / uncontracted / Harghita / Pârâul Delnița
+- `unc-0541a776db` — river / uncontracted / Harghita / Pârâul Trestiilor
+- `unc-0569adf753` — river / uncontracted / Harghita / Pârâul Hévíz
+- `unc-0579682d3d` — river / uncontracted / Harghita / Sermasau
+- `unc-05ef7c7a70` — river / uncontracted / Harghita / Pârâu Borvizului
+- `unc-064afd25fc` — river / uncontracted / Harghita / Fagul Înalt
+- `unc-0756409a2b` — river / uncontracted / Harghita / Ghipeș
+- `unc-0781258a92` — river / uncontracted / Harghita / Pârâul Jártók
+- `unc-0826a403ba` — river / uncontracted / Harghita / Pârâul Albastru
+- `unc-084a5b0160` — river / uncontracted / Harghita / Holló-patak
+- `unc-093eecb453` — river / uncontracted / Harghita / Pârâul Groapa Apei
+- `unc-0abf3d425b` — river / uncontracted / Harghita / Pârâul Filio
+- `unc-0b01b96153` — river / uncontracted / Harghita / Pârâul Tompád
+- `unc-0bcfd2355e` — river / uncontracted / Harghita / Vágási patak
+- `unc-0bd8f45354` — river / uncontracted / Harghita / Oaia (Valea Oii)
+- `unc-0c47b56772` — river / uncontracted / Harghita / Repatu Mare
+- `unc-0c73e81d56` — river / uncontracted / Harghita / Pârâul Chirui
+- `unc-0ce60cc89f` — river / uncontracted / Harghita / Pârâul Caloda
+- `unc-0d790e0efe` — river / uncontracted / Harghita / Pârâul Mădărașul Mic
+- `unc-0d8c21292c` — river / uncontracted / Harghita / Putna Întunecoasă
+- `unc-0eef326393` — river / uncontracted / Harghita / Paraul Lui Grigore
+- `unc-0f03570195` — river / uncontracted / Harghita / Valea Rece
+- `unc-0f108f7600` — river / uncontracted / Harghita / János pataka
+- `unc-0f4698db5c` — river / uncontracted / Harghita / Pârâul Ursu
+- `unc-0f8eddc06b` — river / uncontracted / Harghita / Pârâul Lofirez
+- `unc-0fa83995b6` — river / uncontracted / Harghita / Magyarós pataka
+- `unc-1049237e69` — river / uncontracted / Harghita / Pârâul Curuț
+- `unc-106ff56f28` — river / uncontracted / Harghita / Harapétke pataka
+- `unc-108997a92b` — river / uncontracted / Harghita / Pârâul Cristin
+- `unc-109a791611` — river / uncontracted / Harghita / Pâstrâvului
+- `unc-1266f9c9c8` — river / uncontracted / Harghita / Pârâul Rața
+- `unc-139b096b28` — river / uncontracted / Harghita / Ülő-patak
+- `unc-14473489a9` — river / uncontracted / Harghita / Pârâul Nemereș
+- `unc-15837e253b` — river / uncontracted / Harghita / Racoșul Mic
+- `unc-15a428449a` — river / uncontracted / Harghita / Corund
+- `unc-16884179da` — river / uncontracted / Harghita / Pârâul Pericolul
+- `unc-16925561e8` — river / uncontracted / Harghita / Ekere pataka
+- `unc-1765d8d14d` — river / uncontracted / Harghita / Varga-patak
+- `unc-178df60b0f` — river / uncontracted / Harghita / Pârâul Mic Alb
+- `unc-178e7c5f54` — river / uncontracted / Harghita / Pârâul Monyasd
+- `unc-17a41f369d` — river / uncontracted / Harghita / Șoimușul Mic
+- `unc-17ced0f058` — river / uncontracted / Harghita / Pârâul cu Pește
+- `unc-18195584d3` — river / uncontracted / Harghita / Pârâul Fagul Îngust
+- `unc-183f944e12` — river / uncontracted / Harghita / Pârâul Sedloca
+- `unc-1887c65e46` — river / uncontracted / Harghita / Carpenul Mare
+- `unc-18c791169e` — river / uncontracted / Harghita / Paraul Szent Miklós
+- `unc-18ed71de69` — river / uncontracted / Harghita / Belchin
+- `unc-190eac4b8e` — river / uncontracted / Harghita / Pârâul Bükkészka
+- `unc-1a076f45cb` — river / uncontracted / Harghita / Madicea
+- `unc-1bdee57c2f` — river / uncontracted / Harghita / Pârâul Merilor
+- `unc-1c9bbda788` — river / uncontracted / Harghita / P lui Let
+- `unc-1ce4dcb862` — river / uncontracted / Harghita / Șina
+- `unc-1d2542702e` — river / uncontracted / Harghita / Pârâul Pietros
+- `unc-1d3eb6e8d8` — river / uncontracted / Harghita / Pârâul Rața
+- `unc-1d9a101ba2` — river / uncontracted / Harghita / Paraul Fenioved
+- `unc-1dac428206` — river / uncontracted / Harghita / Rezul Mare
+- `unc-1dcfc0e7c4` — river / uncontracted / Harghita / Pârâul Nagyos
+- `unc-1f3b80174d` — river / uncontracted / Harghita / Pârâul Ghepiu
+- `unc-1f8e8dc17b` — river / uncontracted / Harghita / Gacinoiul
+- `unc-1fc2dcf0b8` — river / uncontracted / Harghita / Garán-patak
+- `unc-20d3762ad9` — river / uncontracted / Harghita / Hollók patak
+- `unc-21757df02f` — river / uncontracted / Harghita / Kicsi vész sarok patak
+- `unc-22c1c2ac49` — river / uncontracted / Harghita / P. Cetății
+- `unc-22c694633a` — river / uncontracted / Harghita / Niergheș
+- `unc-254f6bb127` — river / uncontracted / Harghita / Pârâul Asăul Alb
+- `unc-26908057d9` — river / uncontracted / Harghita / Țibre
+- `unc-271d0caa1f` — river / uncontracted / Harghita / Pârâul Sep
+- `unc-2729bb2da2` — river / uncontracted / Harghita / Pârâul Band
+- `unc-2816d7fe50` — river / uncontracted / Harghita / Ugra
+- `unc-2883445938` — river / uncontracted / Harghita / Pârâul Lugoș
+- `unc-292f9dd08c` — river / uncontracted / Harghita / Ciucani
+- `unc-29887663e8` — river / uncontracted / Harghita / Szent György-patak
+- `unc-29d3e2f0cb` — river / uncontracted / Harghita / Homorodul Cârbunos
+- `unc-2ac749f8f8` — river / uncontracted / Harghita / Fehéres-patak
+- `unc-2b03d22a40` — river / uncontracted / Harghita / Pârâul Loc
+- `unc-2b6961e26d` — river / uncontracted / Harghita / Bethlenfalvi-patak
+- `unc-2d23985903` — river / uncontracted / Harghita / Pârâul Hivac
+- `unc-2da079691f` — river / uncontracted / Harghita / Poiana Fagului
+- `unc-2e4db7f808` — river / uncontracted / Harghita / Pârâul Pietros
+- `unc-2f07effbd1` — river / uncontracted / Harghita / Pârâul Mădăraș
+- `unc-2f19b7ea37` — river / uncontracted / Harghita / Lókod-patak
+- `unc-3080d5158d` — river / uncontracted / Harghita / Pârâul Ploii
+- `unc-30f3df313a` — river / uncontracted / Harghita / Pârâul Locul Scurt
+- `unc-321dc7f340` — river / uncontracted / Harghita / Pârâul Valoș
+- `unc-3330ec863e` — river / uncontracted / Harghita / Izvoare
+- `unc-3387778b1c` — river / uncontracted / Harghita / Csobányos-patak
+- `unc-33d19426ce` — river / uncontracted / Harghita / Jancsik
+- `unc-3400436dc7` — river / uncontracted / Harghita / Pârâul Cad Mare
+- `unc-347a3ca05c` — river / uncontracted / Harghita / Pârâul Comiat
+- `unc-34b66efe20` — river / uncontracted / Harghita / Pârâul Ferestrău
+- `unc-3572da28f4` — river / uncontracted / Harghita / Lomășul
+- `unc-35e0737026` — river / uncontracted / Harghita / Eghersec
+- `unc-3646054359` — river / uncontracted / Harghita / Pârâul Eghersec
+- `unc-36508d54e1` — river / uncontracted / Harghita / Pârâu Chiurchianului
+- `unc-369a0a675a` — river / uncontracted / Harghita / Fânâna Lată
+- `unc-37610e5ba8` — river / uncontracted / Harghita / Gada
+- `unc-37e411dcf1` — river / uncontracted / Harghita / Nagy vész sarok
+- `unc-37f5187bf5` — river / uncontracted / Harghita / Pârâul Tușnad
+- `unc-388f8b1a0f` — river / uncontracted / Harghita / Cseke-hágó-patak
+- `unc-3957e52b6e` — river / uncontracted / Harghita / Paraul Lui Pascu
+- `unc-396f4c3353` — river / uncontracted / Harghita / Tătărul
+- `unc-39800094e6` — river / uncontracted / Harghita / Barabás
+- `unc-3a115eacad` — river / uncontracted / Harghita / Lomășița
+- `unc-3a533ad46a` — river / uncontracted / Harghita / Pârâul Utușoi
+- `unc-3b08c09670` — river / uncontracted / Harghita / Pârâul Pietros
+- `unc-3b6ac8cff1` — river / uncontracted / Harghita / Pârâul Bațca
+- `unc-3b7c8153d8` — river / uncontracted / Harghita / Făgetul Oltului
+- `unc-3bf0818b1e` — river / uncontracted / Harghita / Piciorul Scurt
+- `unc-3c4104afb3` — river / uncontracted / Harghita / Pârâul Mândra
+- `unc-3c4a62a56a` — river / uncontracted / Harghita / Rața
+- `unc-3cb21044ae` — river / uncontracted / Harghita / Padina
+- `unc-3d139d24bf` — river / uncontracted / Harghita / Valea Babașa
+- `unc-3d81d649e7` — river / uncontracted / Harghita / P. Roșu
+- `unc-3d92fbe723` — river / uncontracted / Harghita / Boroș
+- `unc-3ea9848f0d` — river / uncontracted / Harghita / Pârâul Dealul Mare
+- `unc-40412511e0` — river / uncontracted / Harghita / Balaj
+- `unc-40a3430003` — river / uncontracted / Harghita / Pârâul Senteș
+- `unc-41161352ba` — river / uncontracted / Harghita / Pârâul Drept
+- `unc-43566dbecd` — river / uncontracted / Harghita / Kecskés patak
+- `unc-4368c12f1f` — river / uncontracted / Harghita / Chiubaniul
+- `unc-43bd248e01` — river / uncontracted / Harghita / Pârâul Senetea
+- `unc-448e477b86` — river / uncontracted / Harghita / Kis Kürüsz patak
+- `unc-457d0731fa` — river / uncontracted / Harghita / Pârâul Torda
+- `unc-4588336037` — river / uncontracted / Harghita / Pârâul Fata
+- `unc-460101c4a9` — river / uncontracted / Harghita / Pârâul Lăzarea
+- `unc-46c4cc7364` — river / uncontracted / Harghita / Sás pataka
+- `unc-46eac75ca3` — river / uncontracted / Harghita / Pârâul Pietros
+- `unc-47c797a714` — river / uncontracted / Harghita / Kurt erdő patak
+- `unc-47e015045f` — river / uncontracted / Harghita / Pârâul Colina Mică
+- `unc-480503d4df` — river / uncontracted / Harghita / Pârâul Solonca
+- `unc-4978d67388` — river / uncontracted / Harghita / Întunecoasă
+- `unc-49c09c7068` — river / uncontracted / Harghita / Praid
+- `unc-4a05b81055` — river / uncontracted / Harghita / Pârâul Muhoș
+- `unc-4af129bea5` — river / uncontracted / Harghita / Kecskepatak
+- `unc-4cc1de1f6b` — river / uncontracted / Harghita / Figheșul
+- `unc-4d53ad2adf` — river / uncontracted / Harghita / Pârâul Cinod
+- `unc-4da74bfe49` — river / uncontracted / Harghita / Pârâul Uscat
+- `unc-4dbf880a5e` — river / uncontracted / Harghita / Paraul Gârbea
+- `unc-4e09f3faee` — river / uncontracted / Harghita / Pârâul Șaș
+- `unc-4e3a4b61a0` — river / uncontracted / Harghita / Belcina
+- `unc-4e7f75cbc7` — river / uncontracted / Harghita / Fitod
+- `unc-4f84f32776` — river / uncontracted / Harghita / Cianod
+- `unc-4fe22a7e9f` — river / uncontracted / Harghita / Putna Noroioasă
+- `unc-4fe652dabb` — river / uncontracted / Harghita / Borzontul Mic
+- `unc-501ba86633` — river / uncontracted / Harghita / Racul
+- `unc-5028b7742f` — river / uncontracted / Harghita / Pârâul Cheontid
+- `unc-502f424fb7` — river / uncontracted / Harghita / Pârâul Udvar
+- `unc-509cc2f659` — river / uncontracted / Harghita / Asăul Rece
+- `unc-5158dd3802` — river / uncontracted / Harghita / Fânâna Rece
+- `unc-5191b5480c` — river / uncontracted / Harghita / Szelhás
+- `unc-51e7149f95` — river / uncontracted / Harghita / Martonca
+- `unc-52dcf201f0` — river / uncontracted / Harghita / Repatu
+- `unc-5315c3d99a` — river / uncontracted / Harghita / Pârâul Curt (Scurt)
+- `unc-53aae1110d` — river / uncontracted / Harghita / Budvár
+- `unc-550ab465e2` — river / uncontracted / Harghita / Rác pataka
+- `unc-550cc63200` — river / uncontracted / Harghita / Covasan
+- `unc-585e332594` — river / uncontracted / Harghita / Filipea
+- `unc-59f40c067b` — river / uncontracted / Harghita / Pârâul Păuleni
+- `unc-5a15cde19a` — river / uncontracted / Harghita / Lukóbükk-patak
+- `unc-5a7341d614` — river / uncontracted / Harghita / Göce-patak
+- `unc-5a95ce916b` — river / uncontracted / Harghita / Malnaș
+- `unc-5aced952b6` — river / uncontracted / Harghita / Arșița
+- `unc-5b3d3356db` — river / uncontracted / Harghita / Tifánpataka
+- `unc-5b49001b06` — river / uncontracted / Harghita / Pârâul Șumuleu
+- `unc-5bac07d344` — river / uncontracted / Harghita / Simina
+- `unc-5c5a353527` — river / uncontracted / Harghita / Carpenul
+- `unc-5ca3961311` — river / uncontracted / Harghita / Imper
+- `unc-5cd123b59a` — river / uncontracted / Harghita / Veszespatak
+- `unc-5cfe63cf32` — river / uncontracted / Harghita / Ched
+- `unc-5d2f3de73c` — river / uncontracted / Harghita / Pârâul Mes
+- `unc-5d6262935a` — river / uncontracted / Harghita / Pârâul Jegy
+- `unc-5e1c81cc55` — river / uncontracted / Harghita / Szentegyház pataka
+- `unc-5e3b2e1782` — river / uncontracted / Harghita / Pârâul Lunecos
+- `unc-5f231d15b7` — river / uncontracted / Harghita / Pârâul Rece
+- `unc-602e8bb411` — river / uncontracted / Harghita / Pârâul Piatra Albă
+- `unc-614a1e5942` — river / uncontracted / Harghita / Pârâul Vasond
+- `unc-619f368f45` — river / uncontracted / Harghita / Pârâu Caracău
+- `unc-632d475411` — river / uncontracted / Harghita / Șoimușul Mare
+- `unc-63567e379e` — river / uncontracted / Harghita / Csorgó patak
+- `unc-6438a04cfb` — river / uncontracted / Harghita / Pârâul Drumul lui Gavrilă
+- `unc-64430bdfd8` — river / uncontracted / Harghita / Șugău
+- `unc-6445fa3a9a` — river / uncontracted / Harghita / Eliseni
+- `unc-649db2dc34` — river / uncontracted / Harghita / Suhard
+- `unc-64da71c03a` — river / uncontracted / Harghita / Pârâul Galusa
+- `unc-64fe6972f3` — river / uncontracted / Harghita / Pârâul Vinului
+- `unc-659e73927d` — river / uncontracted / Harghita / Pârâul Borviz
+- `unc-6674c0d386` — river / uncontracted / Harghita / Voaideș
+- `unc-66876a4d3b` — river / uncontracted / Harghita / Pietrosu
+- `unc-6693072646` — river / uncontracted / Harghita / Pârâul Creanga
+- `unc-66f9eb8b22` — river / uncontracted / Harghita / Pârâul Vinișorul
+- `unc-66ff9046d7` — river / uncontracted / Harghita / Pârâul Palos
+- `unc-6743db4477` — river / uncontracted / Harghita / Hadoș
+- `unc-681f1d4459` — river / uncontracted / Harghita / Femeșul
+- `unc-682aafa21c` — river / uncontracted / Harghita / Eszenyő pataka
+- `unc-683abb66b1` — river / uncontracted / Harghita / Pârâul Fierarilor
+- `unc-69281a3af6` — river / uncontracted / Harghita / Pârâul Uscat
+- `unc-6a1a606a13` — river / uncontracted / Harghita / Paraul Nicolești
+- `unc-6b06c54097` — river / uncontracted / Harghita / Fierul
+- `unc-6b71ca8346` — river / uncontracted / Harghita / Feernic
+- `unc-6c3090166b` — river / uncontracted / Harghita / Gherpătocul Mic
+- `unc-6c6a2ec382` — river / uncontracted / Harghita / Pârâul Siloș
+- `unc-6dc3064868` — river / uncontracted / Harghita / Pr. Sedloca
+- `unc-6e39d838f4` — river / uncontracted / Harghita / Pârâul Trestiei
+- `unc-6ee4bf5ab3` — river / uncontracted / Harghita / Pârâul Ciherek
+- `unc-6eeab58993` — river / uncontracted / Harghita / André
+- `unc-6f1a8ad280` — river / uncontracted / Harghita / Valea Cremenii
+- `unc-6f32268d38` — river / uncontracted / Harghita / Pârâul Répád
+- `unc-6f5e2ab594` — river / uncontracted / Harghita / Pârâul lui Gheorghiță
+- `unc-6fc0cf4efa` — river / uncontracted / Harghita / Pârâul Mitaciul Mic
+- `unc-70b29d3eb5` — river / uncontracted / Harghita / Pârâul Cianod
+- `unc-72ba114cf7` — river / uncontracted / Harghita / Pr. Ilonț
+- `unc-735006d630` — river / uncontracted / Harghita / Pârâul Cad
+- `unc-73556d0d60` — river / uncontracted / Harghita / Pârâul Brateșului
+- `unc-74466ec631` — river / uncontracted / Harghita / Pârâul Singai
+- `unc-74592b2212` — river / uncontracted / Harghita / Pârâul Seche
+- `unc-74b3730eab` — river / uncontracted / Harghita / Pârâul Hancker
+- `unc-74ed0f4099` — river / uncontracted / Harghita / Pârâul Siloș
+- `unc-765d02dc5e` — river / uncontracted / Harghita / Boina
+- `unc-76de0c41c0` — river / uncontracted / Harghita / Sadocut
+- `unc-7819c884b3` — river / uncontracted / Harghita / Pârâul Sărăturii
+- `unc-783b2381fb` — river / uncontracted / Harghita / Sükő-pataka
+- `unc-7876c3db7c` — river / uncontracted / Harghita / Bezna
+- `unc-78994e0a27` — river / uncontracted / Harghita / Pârâul Sandru
+- `unc-79a82a78ab` — river / uncontracted / Harghita / Bartos
+- `unc-79db40383f` — river / uncontracted / Harghita / Licaș
+- `unc-7a54cee674` — river / uncontracted / Harghita / Șoarecul
+- `unc-7acf82bb38` — river / uncontracted / Harghita / Pârâul Ravasz
+- `unc-7ad22af90b` — river / uncontracted / Harghita / Lunca Mică
+- `unc-7b50c4c788` — river / uncontracted / Harghita / Pârâul Beta
+- `unc-7b7b5d0f4d` — river / uncontracted / Harghita / Tóbükke-patak
+- `unc-7bc7e859de` — river / uncontracted / Harghita / Cărbunele Negru
+- `unc-7c0764eccf` — river / uncontracted / Harghita / Szász-patak
+- `unc-7c0e3d7c90` — river / uncontracted / Harghita / Pintic
+- `unc-7d74959585` — river / uncontracted / Harghita / Cupaș
+- `unc-7ddea00578` — river / uncontracted / Harghita / Tiva
+- `unc-7e353019ab` — river / uncontracted / Harghita / Pârâul Puturos
+- `unc-7ee34e13dc` — river / uncontracted / Harghita / Lucaci
+- `unc-7f218b5d22` — river / uncontracted / Harghita / Pârâul Balogsás
+- `unc-7fd7e63b1b` — river / uncontracted / Harghita / Pârâul Întortochiat
+- `unc-81fc9200c8` — river / uncontracted / Harghita / Megheș
+- `unc-831bde589a` — river / uncontracted / Harghita / Pârâul Feiso
+- `unc-8363d9cb01` — river / uncontracted / Harghita / Seche
+- `unc-84335f007d` — river / uncontracted / Harghita / Pârâul Kolos
+- `unc-8531c96349` — river / uncontracted / Harghita / Pârâul Csíkik
+- `unc-8567a16bc3` — river / uncontracted / Harghita / Pârâul Bothavaș
+- `unc-85a7290ac3` — river / uncontracted / Harghita / Bogas patak
+- `unc-85bc2e72c0` — river / uncontracted / Harghita / Pârâul Tasa
+- `unc-863c7518e7` — river / uncontracted / Harghita / Oroci
+- `unc-866d810738` — river / uncontracted / Harghita / Pârâul Holoșag
+- `unc-8746cc8a74` — river / uncontracted / Harghita / Rompătel
+- `unc-874c541938` — river / uncontracted / Harghita / Bánkó vőgye
+- `unc-88d6212501` — river / uncontracted / Harghita / Pr. Cepega
+- `unc-89241a52f8` — river / uncontracted / Harghita / Bacta
+- `unc-8948be0b9b` — river / uncontracted / Harghita / Cetatea Mică
+- `unc-894fe27f79` — river / uncontracted / Harghita / Pârâul Oltovani
+- `unc-8aa9f05203` — river / uncontracted / Harghita / Sumuleu
+- `unc-8b45f24d12` — river / uncontracted / Harghita / Telecșag
+- `unc-8b8c8345ad` — river / uncontracted / Harghita / Pârâul Imre
+- `unc-8ba89420d1` — river / uncontracted / Harghita / Gheorghe Matei
+- `unc-8d91754c63` — river / uncontracted / Harghita / Pârâul Vinului
+- `unc-8e770c2236` — river / uncontracted / Harghita / Komlós-árok
+- `unc-8ef9c3d3ce` — river / uncontracted / Harghita / Malnoves
+- `unc-8f2553cd5d` — river / uncontracted / Harghita / Mesteacănul Mare
+- `unc-8fc9d9e11b` — river / uncontracted / Harghita / Chebeș
+- `unc-90dee5f143` — river / uncontracted / Harghita / Pârâul Stairul Mare
+- `unc-927842c4a4` — river / uncontracted / Harghita / Pârâul Cadul Mic
+- `unc-937512c837` — river / uncontracted / Harghita / Pârâul Poteca Nouă
+- `unc-944f507c15` — river / uncontracted / Harghita / Belcina
+- `unc-9487161617` — river / uncontracted / Harghita / Barakasza
+- `unc-94e17bf032` — river / uncontracted / Harghita / Pârâul Dobák
+- `unc-965019bba6` — river / uncontracted / Harghita / Pârâul Păliștineni
+- `unc-977830b9cd` — river / uncontracted / Harghita / Valea Arpad
+- `unc-979c1d7bb3` — river / uncontracted / Harghita / Felső Visszafolyó-patak
+- `unc-9999cbd2dc` — river / uncontracted / Harghita / Sugasău
+- `unc-99c5385e74` — river / uncontracted / Harghita / Tibec
+- `unc-9ab411dd2e` — river / uncontracted / Harghita / Racoșul Mare
+- `unc-9bd75f81d2` — river / uncontracted / Harghita / Rege
+- `unc-9c6d279c86` — river / uncontracted / Harghita / Vinul
+- `unc-9c71776248` — river / uncontracted / Harghita / Pârâul Drum Nou
+- `unc-9cbbe78507` — river / uncontracted / Harghita / Cibeni
+- `unc-9d0bc9fc1c` — river / uncontracted / Harghita / Pustnicul
+- `unc-9dcd138f70` — river / uncontracted / Harghita / Paraul Capelei
+- `unc-9e2f5bd04f` — river / uncontracted / Harghita / Fagul Cetății
+- `unc-9f1c09cc73` — river / uncontracted / Harghita / Gubaș
+- `unc-9f7e216e96` — river / uncontracted / Harghita / Oboiul
+- `unc-a176abc894` — river / uncontracted / Harghita / Pârâul Altarului
+- `unc-a189748980` — river / uncontracted / Harghita / Pârâul Banatuș
+- `unc-a2dac45aa4` — river / uncontracted / Harghita / Lunca
+- `unc-a3ea04dfb7` — river / uncontracted / Harghita / Lupul
+- `unc-a51508f1d1` — river / uncontracted / Harghita / Pârâul Lunca
+- `unc-a54c671b72` — river / uncontracted / Harghita / V. Antaloc
+- `unc-a586aab093` — river / uncontracted / Harghita / Pârâul Rece
+- `unc-a688316356` — river / uncontracted / Harghita / Pârâul Bogat
+- `unc-a6d4923f7b` — river / uncontracted / Harghita / Varga-patak
+- `unc-a6ff6cf335` — river / uncontracted / Harghita / Pârâul Mortonea
+- `unc-a96f5be8ec` — river / uncontracted / Harghita / Csere-patak
+- `unc-aa22a2d9de` — river / uncontracted / Harghita / Carpenul Mic
+- `unc-aa8f7b47c8` — river / uncontracted / Harghita / Știuca
+- `unc-ab546f3c67` — river / uncontracted / Harghita / Veresvész pataka
+- `unc-abbe183ef9` — river / uncontracted / Harghita / Pârâul Ditrău
+- `unc-abd245668d` — river / uncontracted / Harghita / Cica Mare
+- `unc-ad18fd4492` — river / uncontracted / Harghita / Pârâul Malnaș
+- `unc-ad5c3dcef4` — river / uncontracted / Harghita / Patul cel Mare
+- `unc-adc2025f4a` — river / uncontracted / Harghita / Brădești
+- `unc-ae2ad042e5` — river / uncontracted / Harghita / Kebeled
+- `unc-ae9a04a1dd` — river / uncontracted / Harghita / Pârâul Cartofului
+- `unc-af7ee48f86` — river / uncontracted / Harghita / Sineu
+- `unc-b08ab61a9f` — river / uncontracted / Harghita / Pârâul Ursului
+- `unc-b0af14fa86` — river / uncontracted / Harghita / Pârâul Tompád
+- `unc-b0f3f3b11d` — river / uncontracted / Harghita / Pârâul Szénégető
+- `unc-b27b228f10` — river / uncontracted / Harghita / Kurta-patak
+- `unc-b29182911f` — river / uncontracted / Harghita / Pârâul Sălămaș
+- `unc-b2df119d00` — river / uncontracted / Harghita / Borzont
+- `unc-b303a9aee1` — river / uncontracted / Harghita / Pârâul Urașag
+- `unc-b398f82439` — river / uncontracted / Harghita / Segheș
+- `unc-b3a3b3f3eb` — river / uncontracted / Harghita / Pârâul Szőcsők
+- `unc-b4447a003e` — river / uncontracted / Harghita / Pârâul Ascuns
+- `unc-b58a47dff2` — river / uncontracted / Harghita / Pârâul Martonca
+- `unc-b5b6f86a0d` — river / uncontracted / Harghita / Paraué Mare
+- `unc-b5da811cf3` — river / uncontracted / Harghita / Szentegyháza-patak
+- `unc-b653815990` — river / uncontracted / Harghita / Pârâul Tâlharului
+- `unc-b6b8a16182` — river / uncontracted / Harghita / Iavardi
+- `unc-b918dd5af9` — river / uncontracted / Harghita / Capolnaș
+- `unc-b9c7ce6f34` — river / uncontracted / Harghita / Pârâul Bisericii
+- `unc-bc3cd0e407` — river / uncontracted / Harghita / Porcul
+- `unc-bd92ddd321` — river / uncontracted / Harghita / Pârâul Ángyos
+- `unc-bf4b49c805` — river / uncontracted / Harghita / Bajoz pataka
+- `unc-c019f36bb7` — river / uncontracted / Harghita / Lunca Mare (Varșaraia)
+- `unc-c13b28ec8e` — river / uncontracted / Harghita / Pârâul Sânmartin
+- `unc-c1f8755210` — river / uncontracted / Harghita / Pietrosu
+- `unc-c278a73382` — river / uncontracted / Harghita / Fagul Înalt
+- `unc-c2a7503847` — river / uncontracted / Harghita / Pârâul Lunca Bobasa
+- `unc-c30ca70ce4` — river / uncontracted / Harghita / Cica Mică
+- `unc-c4041bd1ec` — river / uncontracted / Harghita / Pârâul Nilveș
+- `unc-c41b48726b` — river / uncontracted / Harghita / Pârâul Ulieș
+- `unc-c464e7469c` — river / uncontracted / Harghita / Silaș
+- `unc-c477c292d2` — river / uncontracted / Harghita / Paraul Capelei
+- `unc-c726e9223c` — river / uncontracted / Harghita / Pârâul Ikres
+- `unc-c7a72a2332` — river / uncontracted / Harghita / Sărmaș
+- `unc-c836caf13a` — river / uncontracted / Harghita / Pârâul Băilor
+- `unc-c8521126e5` — river / uncontracted / Harghita / Kis-Bükk-patak
+- `unc-c8992dd940` — river / uncontracted / Harghita / Pârâul Puturos
+- `unc-ca4e05467d` — river / uncontracted / Harghita / Pârâul Morăreni
+- `unc-cb6e82471c` — river / uncontracted / Harghita / Becheni
+- `unc-cbff521232` — river / uncontracted / Harghita / Bothavas
+- `unc-cd77b4fac9` — river / uncontracted / Harghita / Nyerges
+- `unc-ce7acbddec` — river / uncontracted / Harghita / Repatu Mic
+- `unc-ceb95952b8` — river / uncontracted / Harghita / Pârâul Halaság
+- `unc-cf16e407d2` — river / uncontracted / Harghita / Pârâul Sarmani
+- `unc-cf8665b305` — river / uncontracted / Harghita / Nádaska pataka
+- `unc-cfcb5fa96f` — river / uncontracted / Harghita / Pârâul Groapa Usrului
+- `unc-d00617b6f8` — river / uncontracted / Harghita / Pârâul Fagului Rotund
+- `unc-d007210235` — river / uncontracted / Harghita / Pârâul Mare Alb
+- `unc-d031a9b718` — river / uncontracted / Harghita / Pârâul Borjúvész
+- `unc-d22466ad87` — river / uncontracted / Harghita / Pârâul Lupi
+- `unc-d278e2cd5a` — river / uncontracted / Harghita / Sükó patak
+- `unc-d2ae1f3408` — river / uncontracted / Harghita / Valea Noșcolat
+- `unc-d3578cead8` — river / uncontracted / Harghita / Nádas-patak
+- `unc-d3f1af9ae8` — river / uncontracted / Harghita / Telekasza pataka
+- `unc-d40daeafd4` — river / uncontracted / Harghita / Pârâul Dékány
+- `unc-d47909ee17` — river / uncontracted / Harghita / Pârâul Seceni
+- `unc-d4ab8c3a66` — river / uncontracted / Harghita / Margarata
+- `unc-d68845c009` — river / uncontracted / Harghita / Paraul Diac
+- `unc-d6c3825725` — river / uncontracted / Harghita / Pârâul Bătătura Cailor
+- `unc-d78d7d75dc` — river / uncontracted / Harghita / Pr. Cad
+- `unc-d7d9eadfda` — river / uncontracted / Harghita / Pârâul Fagului îngust
+- `unc-d80008fe33` — river / uncontracted / Harghita / Pr. Lunca Bobasa
+- `unc-d86afa1715` — river / uncontracted / Harghita / Mediașul
+- `unc-d989e9b2f9` — river / uncontracted / Harghita / Uilac
+- `unc-d99a25c0e5` — river / uncontracted / Harghita / Fülöp András patak
+- `unc-da716bde8c` — river / uncontracted / Harghita / Pârâu Omlaș
+- `unc-dccc347402` — river / uncontracted / Harghita / Pârâul Întunecos
+- `unc-dcf9c077a3` — river / uncontracted / Harghita / Fagul Mureș
+- `unc-de3a20c56e` — river / uncontracted / Harghita / Malomárok
+- `unc-de4e371a0a` — river / uncontracted / Harghita / Paraul Saracilor
+- `unc-de5d3c53c5` — river / uncontracted / Harghita / Pârâul Arșița Aramei
+- `unc-df1274f272` — river / uncontracted / Harghita / Pârâul Pietrei
+- `unc-dfe8c02832` — river / uncontracted / Harghita / Pârâul Egret
+- `unc-e03e028144` — river / uncontracted / Harghita / Pârâul Bodoc
+- `unc-e1aa8bbf7b` — river / uncontracted / Harghita / Pârâul Țaca
+- `unc-e22844b625` — river / uncontracted / Harghita / Pârâul Fagului
+- `unc-e2a5aa6d57` — river / uncontracted / Harghita / Techera
+- `unc-e2b82d390e` — river / uncontracted / Harghita / Pârâul Fagul Ciobanului
+- `unc-e4bed9a8c8` — river / uncontracted / Harghita / Pârâul Mielul
+- `unc-e4f0837caa` — river / uncontracted / Harghita / Hosszú-patak
+- `unc-e4f1517d4e` — river / uncontracted / Harghita / Hidegkút árka
+- `unc-e5429d3885` — river / uncontracted / Harghita / Sadocuțu
+- `unc-e559f61eb6` — river / uncontracted / Harghita / Fitak pataka
+- `unc-e5a273ab97` — river / uncontracted / Harghita / Râul Senced
+- `unc-e5e3d35de4` — river / uncontracted / Harghita / Sós-patak
+- `unc-e6659a87d9` — river / uncontracted / Harghita / Pârâul Colina Mare
+- `unc-e83114f2c0` — river / uncontracted / Harghita / Pârâul Gheorghe Matei
+- `unc-e8d2470fb5` — river / uncontracted / Harghita / Pârâul Rața
+- `unc-e90bfd2366` — river / uncontracted / Harghita / Pârâul Cihanios
+- `unc-e9c7375a94` — river / uncontracted / Harghita / Pârâul Ghiduț
+- `unc-e9f2bcdbd4` — river / uncontracted / Harghita / Pârâul Sărmașului
+- `unc-ea473e5c99` — river / uncontracted / Harghita / Orsováj pataka
+- `unc-ed08b81065` — river / uncontracted / Harghita / Pârâul Prișca
+- `unc-ed51ca4879` — river / uncontracted / Harghita / Küpüs pataka
+- `unc-edd2bb5bf3` — river / uncontracted / Harghita / Pârâul Cet
+- `unc-eef0178639` — river / uncontracted / Harghita / Pârâul Cetății
+- `unc-ef325a01b5` — river / uncontracted / Harghita / Tő-patak
+- `unc-f0cedce78f` — river / uncontracted / Harghita / Apele Nordului
+- `unc-f1c1025c56` — river / uncontracted / Harghita / Janík
+- `unc-f22ea7a05c` — river / uncontracted / Harghita / Halál pataka
+- `unc-f276fc3d81` — river / uncontracted / Harghita / Senced
+- `unc-f370a3f5a4` — river / uncontracted / Harghita / Pârâul Hotaru
+- `unc-f4391b229b` — river / uncontracted / Harghita / Valea Oii
+- `unc-f4e2afb7c7` — river / uncontracted / Harghita / Tolvajos
+- `unc-f5b63d79c3` — river / uncontracted / Harghita / Berecz
+- `unc-f7011fa49f` — river / uncontracted / Harghita / Valea Ursilor
+- `unc-f73c72692c` — river / uncontracted / Harghita / Meggyes pataka
+- `unc-f9e376d479` — river / uncontracted / Harghita / Asăul Lung
+- `unc-fb7662b57e` — river / uncontracted / Harghita / Pârâul Murelor
+- `unc-fc1c3ebd03` — river / uncontracted / Harghita / Antal
+- `unc-fc860dcf27` — river / uncontracted / Harghita / Pârâul Alachec
+- `unc-fd1865e43d` — river / uncontracted / Harghita / Calul
+- `unc-fd497c5368` — river / uncontracted / Harghita / Pârâul Bănos
+- `unc-fdd602f41e` — river / uncontracted / Harghita / Dián pataka
+- `unc-fe7da41bf1` — river / uncontracted / Harghita / Fântâna lui Gal
+- `unc-ff2c5dda3f` — river / uncontracted / Harghita / Tisașu
+- `unc-ffca84ccc1` — river / uncontracted / Harghita / Salon
+- `unc-0330b48e2a` — river / uncontracted / Hunedoara / Valea Streicicea
+- `unc-03a57f95df` — river / uncontracted / Hunedoara / Sălciva
+- `unc-055c022d1c` — river / uncontracted / Hunedoara / Boholt
+- `unc-078f86e6a9` — river / uncontracted / Hunedoara / Dăncilă
+- `unc-0833ea1720` — river / uncontracted / Hunedoara / Gârbava
+- `unc-0841da10eb` — river / uncontracted / Hunedoara / Iuba
+- `unc-08c4ced408` — river / uncontracted / Hunedoara / Pârâul Galbena
+- `unc-0913641c15` — river / uncontracted / Hunedoara / Scocul Urzicarilor
+- `unc-0973aabd83` — river / uncontracted / Hunedoara / Bărușoru
+- `unc-106c7ed0d5` — river / uncontracted / Hunedoara / Căpriorul
+- `unc-11116ad664` — river / uncontracted / Hunedoara / Romoș
+- `unc-124760bb9a` — river / uncontracted / Hunedoara / Pârâul Sălătruc
+- `unc-13d95bf3ed` — river / uncontracted / Hunedoara / Pârâul Lăpugiu
+- `unc-1bea067a94` — river / uncontracted / Hunedoara / Judele
+- `unc-1cc016b139` — river / uncontracted / Hunedoara / Ohaba
+- `unc-1d03be0fa2` — river / uncontracted / Hunedoara / Cârligu
+- `unc-1d987b0636` — river / uncontracted / Hunedoara / Jupâneasa
+- `unc-1e47dcf285` — river / uncontracted / Hunedoara / Răcăștie
+- `unc-1e9f051a6e` — river / uncontracted / Hunedoara / Turdaș
+- `unc-1ef6ecdf30` — river / uncontracted / Hunedoara / Bârgău
+- `unc-21d90947f0` — river / uncontracted / Hunedoara / Morii
+- `unc-247b564a89` — river / uncontracted / Hunedoara / Boiu
+- `unc-2696ce48ed` — river / uncontracted / Hunedoara / Pârâul Mițului
+- `unc-2707eecfcc` — river / uncontracted / Hunedoara / Pârâul Argelii
+- `unc-27a705c765` — river / uncontracted / Hunedoara / Peleguța
+- `unc-2e008dbebe` — river / uncontracted / Hunedoara / Zănoguța
+- `unc-30443f88a1` — river / uncontracted / Hunedoara / Ribița
+- `unc-31d9c26939` — river / uncontracted / Hunedoara / Scoaba Retezatului
+- `unc-332955e8dc` — river / uncontracted / Hunedoara / Dobrun
+- `unc-38bb5aff10` — river / uncontracted / Hunedoara / Pârâul Luncoi
+- `unc-3a89302fbf` — river / uncontracted / Hunedoara / Valereasca
+- `unc-3a9f8104b7` — river / uncontracted / Hunedoara / Valea Ursului
+- `unc-3aaf1eebb0` — river / uncontracted / Hunedoara / Rușor
+- `unc-3b1406632a` — river / uncontracted / Hunedoara / Canal Moară
+- `unc-3c49e7d188` — river / uncontracted / Hunedoara / Bobaia
+- `unc-400c267e80` — river / uncontracted / Hunedoara / Retișoara
+- `unc-4047d12a6b` — river / uncontracted / Hunedoara / Dumești
+- `unc-4090d2aa87` — river / uncontracted / Hunedoara / Văratec
+- `unc-4381c0f000` — river / uncontracted / Hunedoara / Certej
+- `unc-45d62b021a` — river / uncontracted / Hunedoara / Cioaca Radeșului
+- `unc-45dd4dd744` — river / uncontracted / Hunedoara / Stoienița
+- `unc-4c7a01baa3` — river / uncontracted / Hunedoara / Zlaști
+- `unc-4cf41f3233` — river / uncontracted / Hunedoara / Nojag
+- `unc-4e4827ba66` — river / uncontracted / Hunedoara / Ohaba
+- `unc-504f5aef48` — river / uncontracted / Hunedoara / Scărișoara
+- `unc-52858e73ef` — river / uncontracted / Hunedoara / Techereu
+- `unc-546505e4b9` — river / uncontracted / Hunedoara / Muncelu
+- `unc-54e8bc83cc` — river / uncontracted / Hunedoara / Slivețul
+- `unc-5744bf9d52` — river / uncontracted / Hunedoara / Valea Lungă
+- `unc-5988bd4134` — river / uncontracted / Hunedoara / Sârbi
+- `unc-5a2ea46222` — river / uncontracted / Hunedoara / Valea Cascadelor
+- `unc-5bb06b19ff` — river / uncontracted / Hunedoara / Strâmtosu
+- `unc-5d206c0f98` — river / uncontracted / Hunedoara / Almășel
+- `unc-5f13095c1f` — river / uncontracted / Hunedoara / Lazu
+- `unc-605ee54b82` — river / uncontracted / Hunedoara / Lăpușnic
+- `unc-60dbdea8fd` — river / uncontracted / Hunedoara / Glivii
+- `unc-6152e3d496` — river / uncontracted / Hunedoara / Pârâul Vânătorului
+- `unc-6280cea898` — river / uncontracted / Hunedoara / Săcămaș
+- `unc-62bc7bd748` — river / uncontracted / Hunedoara / Canal de Aducțune Râul Strei
+- `unc-651474bff7` — river / uncontracted / Hunedoara / Orăștie
+- `unc-6551b05e68` — river / uncontracted / Hunedoara / Baleia
+- `unc-67f997e7ef` — river / uncontracted / Hunedoara / Galbena
+- `unc-68b39738c9` — river / uncontracted / Hunedoara / Hășdățel
+- `unc-69b65f8db7` — river / uncontracted / Hunedoara / Oand
+- `unc-6a8a8cba58` — river / uncontracted / Hunedoara / Bărăști
+- `unc-6b20078bc5` — river / uncontracted / Hunedoara / Groapa Seacă
+- `unc-6bc8bff26e` — river / uncontracted / Hunedoara / Valea Mărășească
+- `unc-6e3d0590c9` — river / uncontracted / Hunedoara / Pârâul Glodghilești
+- `unc-717e472f3e` — river / uncontracted / Hunedoara / Radeșu mare
+- `unc-71c853b083` — river / uncontracted / Hunedoara / Vaidei
+- `unc-74027776b8` — river / uncontracted / Hunedoara / Stoinicioara
+- `unc-74c3ebb8c5` — river / uncontracted / Hunedoara / Dreptul
+- `unc-767ea22583` — river / uncontracted / Hunedoara / Pilug
+- `unc-76ebd0d864` — river / uncontracted / Hunedoara / Valea Cascadelor
+- `unc-7c1c20be78` — river / uncontracted / Hunedoara / Valea Luntrii
+- `unc-7ff0b0509e` — river / uncontracted / Hunedoara / Porcăreț
+- `unc-802c558f2f` — river / uncontracted / Hunedoara / Gânțaga
+- `unc-81b7fb5160` — river / uncontracted / Hunedoara / Balșa
+- `unc-81fa1e2917` — river / uncontracted / Hunedoara / Galbena de Sud
+- `unc-82c94e60f2` — river / uncontracted / Hunedoara / Valea Rea
+- `unc-84c3a2c44a` — river / uncontracted / Hunedoara / Feredău
+- `unc-84db545b90` — river / uncontracted / Hunedoara / Pârâul Țapului
+- `unc-87c114694e` — river / uncontracted / Hunedoara / Valea Ursului
+- `unc-8949aa5086` — river / uncontracted / Hunedoara / Zlaști
+- `unc-89c8ee7af1` — river / uncontracted / Hunedoara / Rovine
+- `unc-8cda759236` — river / uncontracted / Hunedoara / Lăpușelul
+- `unc-8d26f1aebb` — river / uncontracted / Hunedoara / Stolojoaia
+- `unc-9166fc89b4` — river / uncontracted / Hunedoara / Prundu Lancitei
+- `unc-91cbd1fdef` — river / uncontracted / Hunedoara / Sterminos
+- `unc-9853cae81d` — river / uncontracted / Hunedoara / Cucuiș
+- `unc-988fd1849d` — river / uncontracted / Hunedoara / Uibărești
+- `unc-99ee9773a9` — river / uncontracted / Hunedoara / Judele Mic
+- `unc-9c1e1cc880` — river / uncontracted / Hunedoara / Valea Frasănului
+- `unc-9e248b6fcc` — river / uncontracted / Hunedoara / Anineș
+- `unc-a0a0191e1b` — river / uncontracted / Hunedoara / Valea Popii
+- `unc-a2efae7a2d` — river / uncontracted / Hunedoara / Țiganul
+- `unc-a566784a0d` — river / uncontracted / Hunedoara / Bîlea
+- `unc-a78335e762` — river / uncontracted / Hunedoara / Râul Romosului
+- `unc-ae3620b033` — river / uncontracted / Hunedoara / Cib
+- `unc-ae578ca308` — river / uncontracted / Hunedoara / Sălaș
+- `unc-b1d0f70972` — river / uncontracted / Hunedoara / Pârâul Maleia
+- `unc-b29ea15679` — river / uncontracted / Hunedoara / Valea de brazi
+- `unc-b350836a91` — river / uncontracted / Hunedoara / Canalul Moara
+- `unc-b399ec6f44` — river / uncontracted / Hunedoara / Pârâul Scurtele
+- `unc-b44abef4ae` — river / uncontracted / Hunedoara / Valea Rea
+- `unc-b52e3cbac6` — river / uncontracted / Hunedoara / Ohaba
+- `unc-b5a54c08d4` — river / uncontracted / Hunedoara / Alun
+- `unc-b5ae89b780` — river / uncontracted / Hunedoara / Vălerița
+- `unc-b6c21025f1` — river / uncontracted / Hunedoara / Baleia
+- `unc-b6fd8c32a0` — river / uncontracted / Hunedoara / Valea Porcului
+- `unc-bb62bf0b8b` — river / uncontracted / Hunedoara / Abucea
+- `unc-bcd02c7c12` — river / uncontracted / Hunedoara / Jărosul
+- `unc-be5bd5a214` — river / uncontracted / Hunedoara / Aușel
+- `unc-c184729606` — river / uncontracted / Hunedoara / Izvoru
+- `unc-c29ce3d991` — river / uncontracted / Hunedoara / Pietrele
+- `unc-c6bd1b09c3` — river / uncontracted / Hunedoara / Gurasada
+- `unc-c74258ba90` — river / uncontracted / Hunedoara / Pustiosu
+- `unc-c85494eaf7` — river / uncontracted / Hunedoara / Vărmaga
+- `unc-c8d690fb0b` — river / uncontracted / Hunedoara / Grid
+- `unc-c95bc60652` — river / uncontracted / Hunedoara / Valea Rea
+- `unc-d642cd52ab` — river / uncontracted / Hunedoara / Valea Mică
+- `unc-da98f8f844` — river / uncontracted / Hunedoara / Valea Largă
+- `unc-deb8aab78a` — river / uncontracted / Hunedoara / Gura Voii
+- `unc-deecbdef41` — river / uncontracted / Hunedoara / Almaș
+- `unc-dfd6ab3977` — river / uncontracted / Hunedoara / Furcșoara
+- `unc-e0327ea309` — river / uncontracted / Hunedoara / Sărătura
+- `unc-e0be354ba1` — river / uncontracted / Hunedoara / Valea Răchițelii
+- `unc-e4f723dec2` — river / uncontracted / Hunedoara / Paroş (Valea Mateşcilor)
+- `unc-e5598edff4` — river / uncontracted / Hunedoara / Râul Văidei
+- `unc-e7721d13cd` — river / uncontracted / Hunedoara / Stânișoara
+- `unc-e9f445b155` — river / uncontracted / Hunedoara / Pârâul lui Șarpe
+- `unc-ec64fdaa62` — river / uncontracted / Hunedoara / Valea Gemenele
+- `unc-f02d27abc8` — river / uncontracted / Hunedoara / Zlata
+- `unc-f6a39142a2` — river / uncontracted / Hunedoara / Galbena de Nord
+- `unc-f76727c2c4` — river / uncontracted / Hunedoara / Galeșu
+- `unc-f773b2de21` — river / uncontracted / Hunedoara / Boz
+- `unc-f9e1a6001f` — river / uncontracted / Hunedoara / Nădrab
+- `unc-fba9b9f183` — river / uncontracted / Hunedoara / Tecanul
+- `unc-ffef1119c4` — river / uncontracted / Hunedoara / Băcișoara
+- `unc-292073bbe6` — river / uncontracted / Ialomița / Colceag
+- `unc-54f31fa3d9` — river / uncontracted / Ialomița / Privalul Vărsăturii
+- `unc-9650f5a7ea` — river / uncontracted / Ialomița / Dunărea - Brațul Alionte
+- `unc-d7f270254d` — river / uncontracted / Ialomița / Dunărea - Brațul Baban
+- `unc-00f645afc2` — river / uncontracted / Iași / Rediu
+- `unc-02fc90afaf` — river / uncontracted / Iași / Valea Satului
+- `unc-033a2f9b83` — river / uncontracted / Iași / Totoești
+- `unc-0ae6da44f6` — river / uncontracted / Iași / Paraul Nicolina
+- `unc-117fa7d65c` — river / uncontracted / Iași / Pietrărie
+- `unc-12424ec708` — river / uncontracted / Iași / Poiana Lungă
+- `unc-150b4e4694` — river / uncontracted / Iași / Râul Moșna
+- `unc-1966a6d81c` — river / uncontracted / Iași / Ciurdea
+- `unc-225ea94381` — river / uncontracted / Iași / Putina
+- `unc-249a45560b` — river / uncontracted / Iași / Valea Olarilor
+- `unc-2813ec4a0f` — river / uncontracted / Iași / Cărbunăria
+- `unc-2b12c745f4` — river / uncontracted / Iași / Pârâul Ciortești
+- `unc-2bf91143be` — river / uncontracted / Iași / Dacita
+- `unc-325cd312d4` — river / uncontracted / Iași / Pârâul Recea
+- `unc-365fbe5a40` — river / uncontracted / Iași / Prisecii
+- `unc-37f076a66f` — river / uncontracted / Iași / Stăvnicel
+- `unc-3934c0bd0e` — river / uncontracted / Iași / Valea Prisăcii
+- `unc-3e80455997` — river / uncontracted / Iași / Tamarca
+- `unc-404592cfd4` — river / uncontracted / Iași / Cornet
+- `unc-522facfb52` — river / uncontracted / Iași / Doroșcu
+- `unc-53ed384e7d` — river / uncontracted / Iași / Nicolina
+- `unc-580e5edcd1` — river / uncontracted / Iași / Stavnic
+- `unc-5a2b45c341` — river / uncontracted / Iași / Coropceni
+- `unc-5bbae2c44e` — river / uncontracted / Iași / Pârâul Vărăriei
+- `unc-5cf258e4fc` — river / uncontracted / Iași / Măgura
+- `unc-5e3684b63a` — river / uncontracted / Iași / Vulpoiu
+- `unc-61a5b06e06` — river / uncontracted / Iași / Chirița
+- `unc-61af97a807` — river / uncontracted / Iași / Pîrîu Mare
+- `unc-651eb1c5ed` — river / uncontracted / Iași / Bucium
+- `unc-73c14b51d3` — river / uncontracted / Iași / Răul Ciric
+- `unc-796f04eb19` — river / uncontracted / Iași / Bohotin
+- `unc-7b892a35ce` — river / uncontracted / Iași / Durăceasa
+- `unc-7c2f772f4b` — river / uncontracted / Iași / Raul Iermolea
+- `unc-8b4ea2ea80` — river / uncontracted / Iași / Șbonț
+- `unc-8ba7264d9f` — river / uncontracted / Iași / Săuzeni
+- `unc-8eb4c378c0` — river / uncontracted / Iași / Durăceasca
+- `unc-911e8a99e4` — river / uncontracted / Iași / Râul Bădilița
+- `unc-922a90824b` — river / uncontracted / Iași / Dobrovăț
+- `unc-9309ec7b61` — river / uncontracted / Iași / Baros
+- `unc-99bf23abfd` — river / uncontracted / Iași / Probota
+- `unc-9a9fa2c7c2` — river / uncontracted / Iași / Râul Moșnișoara
+- `unc-9c5f82bdba` — river / uncontracted / Iași / Horlești
+- `unc-9daaa764c3` — river / uncontracted / Iași / Bogonos
+- `unc-a0e210db3e` — river / uncontracted / Iași / P Voinești
+- `unc-a2d0d74b3c` — river / uncontracted / Iași / Gurguiata
+- `unc-a5408e8b23` — river / uncontracted / Iași / Vaslui
+- `unc-a7314d0673` — river / uncontracted / Iași / Paiș
+- `unc-a9b4060038` — river / uncontracted / Iași / Zmeul
+- `unc-ab0cfe89c3` — river / uncontracted / Iași / Roșior
+- `unc-add6a1a3cb` — river / uncontracted / Iași / Velna
+- `unc-b6c9b27df0` — river / uncontracted / Iași / Ciric
+- `unc-b928546443` — river / uncontracted / Iași / Găureni
+- `unc-bb197c3c2a` — river / uncontracted / Iași / Râul Stavnic
+- `unc-bf7c100d71` — river / uncontracted / Iași / Voinești
+- `unc-c34841a6dc` — river / uncontracted / Iași / Boca
+- `unc-c4e1264f92` — river / uncontracted / Iași / Vămășoaia
+- `unc-c579f72269` — river / uncontracted / Iași / Ezăreni
+- `unc-c67f5137a8` — river / uncontracted / Iași / Ileana
+- `unc-cadbfc10cf` — river / uncontracted / Iași / Pârâul Moșna
+- `unc-cd1e5d4a0b` — river / uncontracted / Iași / Pietrosu
+- `unc-cef3530637` — river / uncontracted / Iași / Valea Locei
+- `unc-d45cd17fef` — river / uncontracted / Iași / Cacaina
+- `unc-d4a3dbf322` — river / uncontracted / Iași / Urșița
+- `unc-d4b8280147` — river / uncontracted / Iași / Călina
+- `unc-d538cb6a00` — river / uncontracted / Iași / Pietrosu
+- `unc-d5675f12cc` — river / uncontracted / Iași / Bahlui
+- `unc-db6f2aac30` — river / uncontracted / Iași / Orzeni
+- `unc-decf12daa1` — river / uncontracted / Iași / Gârboveta
+- `unc-e287829c73` — river / uncontracted / Iași / Osoi
+- `unc-eb77b3eb63` — river / uncontracted / Iași / Bahluieț
+- `unc-ec9231a36d` — river / uncontracted / Iași / Lupu
+- `unc-efab8f55ed` — river / uncontracted / Iași / Gîrla Mică
+- `unc-f976d3aaf8` — river / uncontracted / Iași / Grind
+- `unc-fab4b67ef3` — river / uncontracted / Iași / Râul Zmeul
+- `unc-fbbd673890` — river / uncontracted / Iași / Cocoara
+- `unc-fbcb49d570` — river / uncontracted / Iași / Valea Șapte Oameni
+- `unc-1fa74d9838` — river / uncontracted / Ilfov / Pasărea
+- `unc-2401c02718` — river / uncontracted / Ilfov / Gruiu
+- `unc-4e0d31b106` — river / uncontracted / Ilfov / Tânganu
+- `unc-503dae90ec` — river / uncontracted / Ilfov / Câlnău
+- `unc-5cfe01587d` — river / uncontracted / Ilfov / Ciorogârla
+- `unc-626fbfdee7` — river / uncontracted / Ilfov / Vlăsia
+- `unc-740323f71e` — river / uncontracted / Ilfov / Cocioc
+- `unc-92fbefe136` — river / uncontracted / Ilfov / Ciorogârla
+- `unc-b9a4f9db00` — river / uncontracted / Ilfov / Mostiștea
+- `unc-d79be4846d` — river / uncontracted / Ilfov / Cociovaliștea
+- `unc-dd4ccef52e` — river / uncontracted / Ilfov / Mostiștea
+- `unc-00b6e64fb5` — river / uncontracted / Maramureș / Valea Popii
+- `unc-055c3f9261` — river / uncontracted / Maramureș / Miclusa
+- `unc-05f6e38480` — river / uncontracted / Maramureș / Ialinc
+- `unc-0829e5fc57` — river / uncontracted / Maramureș / Izvorul Fântânii
+- `unc-0aac462877` — river / uncontracted / Maramureș / Valea Părușului
+- `unc-0bea494e31` — river / uncontracted / Maramureș / Drahmirov
+- `unc-0c74d531f8` — river / uncontracted / Maramureș / Ronișoara
+- `unc-105586aee9` — river / uncontracted / Maramureș / Тиса - Tisa
+- `unc-12c32e5770` — river / uncontracted / Maramureș / Reviaca Mică
+- `unc-1374520622` — river / uncontracted / Maramureș / Corneșița
+- `unc-13b1781390` — river / uncontracted / Maramureș / Tulburea
+- `unc-15c6fad006` — river / uncontracted / Maramureș / Valea Roșie
+- `unc-160ab96367` — river / uncontracted / Maramureș / Ivancic
+- `unc-178eff6886` — river / uncontracted / Maramureș / Arinieși
+- `unc-1793694694` — river / uncontracted / Maramureș / Șugău
+- `unc-17ae11d052` — river / uncontracted / Maramureș / Pârâul Sfântul Ioan
+- `unc-18700b0162` — river / uncontracted / Maramureș / Reviaca Mare
+- `unc-1ad8780cfd` — river / uncontracted / Maramureș / Valea Gruieților
+- `unc-1b1d15af5b` — river / uncontracted / Maramureș / Roșușul
+- `unc-1bba15b5c1` — river / uncontracted / Maramureș / Valea Podului
+- `unc-1d9b7cb469` — river / uncontracted / Maramureș / Valea Păstăilor
+- `unc-1f40c20de2` — river / uncontracted / Maramureș / Valea Roșie
+- `unc-214014e8b2` — river / uncontracted / Maramureș / Misica
+- `unc-214ed6690d` — river / uncontracted / Maramureș / Valea Tâlharului
+- `unc-21f60ef90c` — river / uncontracted / Maramureș / Valea Dreaptă
+- `unc-25b9208846` — river / uncontracted / Maramureș / Valea Blondă
+- `unc-28e3685775` — river / uncontracted / Maramureș / Valea Prindelului
+- `unc-291f000bb7` — river / uncontracted / Maramureș / Valea Izvorului
+- `unc-29e0b58216` — river / uncontracted / Maramureș / Valea Glodului
+- `unc-29e12b6b8d` — river / uncontracted / Maramureș / Valea Seacă
+- `unc-2ce44a565a` — river / uncontracted / Maramureș / Gostila
+- `unc-2d7c391ad3` — river / uncontracted / Maramureș / Lutoasa
+- `unc-2ffe9dbe26` — river / uncontracted / Maramureș / Cvașnița
+- `unc-30da244ee4` — river / uncontracted / Maramureș / Valea Gâștei
+- `unc-383866b782` — river / uncontracted / Maramureș / Bardiu
+- `unc-3fcf9bb8ff` — river / uncontracted / Maramureș / Pietrosu
+- `unc-42756285d2` — river / uncontracted / Maramureș / Paulic
+- `unc-428e7594b0` — river / uncontracted / Maramureș / Săpânța
+- `unc-42cae495fe` — river / uncontracted / Maramureș / Budescu
+- `unc-439369cee0` — river / uncontracted / Maramureș / Апшиця
+- `unc-4568183cb7` — river / uncontracted / Maramureș / Saca
+- `unc-456a0ca5bf` — river / uncontracted / Maramureș / Oanța
+- `unc-45dddde932` — river / uncontracted / Maramureș / Pârâul Pietroșul
+- `unc-47b50e35a5` — river / uncontracted / Maramureș / Тиса - Tisa
+- `unc-4e6876adc9` — river / uncontracted / Maramureș / Vicleanu Mare
+- `unc-4f0f1b1616` — river / uncontracted / Maramureș / Шопурка
+- `unc-51d7fc05c1` — river / uncontracted / Maramureș / Sec
+- `unc-5210d0b1d7` — river / uncontracted / Maramureș / Valea Lazului
+- `unc-5363ab194a` — river / uncontracted / Maramureș / Roșușul Mare
+- `unc-576121b970` — river / uncontracted / Maramureș / Novicior
+- `unc-59c244b6af` — river / uncontracted / Maramureș / Vlășinescu
+- `unc-5e4fb9903c` — river / uncontracted / Maramureș / Tisoveț
+- `unc-60031685e7` — river / uncontracted / Maramureș / Valea Sunătoarelor
+- `unc-614ca3859f` — river / uncontracted / Maramureș / Pasini
+- `unc-615a190355` — river / uncontracted / Maramureș / Mârza
+- `unc-64d3a2b132` — river / uncontracted / Maramureș / Valea Buneascu
+- `unc-68272d8c4b` — river / uncontracted / Maramureș / Vinișorul
+- `unc-6827d47d1b` — river / uncontracted / Maramureș / Pentaia
+- `unc-6b4f23e9db` — river / uncontracted / Maramureș / Valea Râpelor
+- `unc-701b965397` — river / uncontracted / Maramureș / Тиса - Tisa
+- `unc-733783c24d` — river / uncontracted / Maramureș / Spânu
+- `unc-73ddf1db6f` — river / uncontracted / Maramureș / Socolău
+- `unc-73f6caafb6` — river / uncontracted / Maramureș / Sarasău
+- `unc-74197473f2` — river / uncontracted / Maramureș / Hopșia
+- `unc-75bdf49815` — river / uncontracted / Maramureș / Slătioara
+- `unc-7a24d08e3b` — river / uncontracted / Maramureș / Bălășina
+- `unc-7ac37587e0` — river / uncontracted / Maramureș / Valea Peștilor
+- `unc-7ac8a88892` — river / uncontracted / Maramureș / Pârâul Stanciu
+- `unc-7da069d100` — river / uncontracted / Maramureș / Valea Muntelui
+- `unc-7ddb56d49a` — river / uncontracted / Maramureș / Ștedia
+- `unc-878e94fedb` — river / uncontracted / Maramureș / Hodea
+- `unc-87cd655823` — river / uncontracted / Maramureș / Lespedea
+- `unc-8962f06eb0` — river / uncontracted / Maramureș / Valea Rea
+- `unc-8a169fa495` — river / uncontracted / Maramureș / Valea Stejarului
+- `unc-8af58ad471` — river / uncontracted / Maramureș / Valea Rea
+- `unc-8fcaa78520` — river / uncontracted / Maramureș / Тиса - Tisa
+- `unc-901aadba74` — river / uncontracted / Maramureș / Rica
+- `unc-9198f709ec` — river / uncontracted / Maramureș / Izvorul cu Scări
+- `unc-91f7215738` — river / uncontracted / Maramureș / Valea cu Arini
+- `unc-95ccba82be` — river / uncontracted / Maramureș / Birțu
+- `unc-96d4ebac03` — river / uncontracted / Maramureș / Tâșla
+- `unc-98c26d0862` — river / uncontracted / Maramureș / Plăiuț
+- `unc-9915ae8fa9` — river / uncontracted / Maramureș / Косівська
+- `unc-99c76c0d2b` — river / uncontracted / Maramureș / Valea Vinului
+- `unc-9a15f101d5` — river / uncontracted / Maramureș / Furul
+- `unc-9b976a9fd4` — river / uncontracted / Maramureș / Frumușaua
+- `unc-9bec38836c` — river / uncontracted / Maramureș / Podvesochi
+- `unc-9dbf1c134a` — river / uncontracted / Maramureș / Valea Gropii
+- `unc-9dd89d22b1` — river / uncontracted / Maramureș / Pârâul Soinici
+- `unc-a15eed6dd0` — river / uncontracted / Maramureș / Valea Gurguieți
+- `unc-a195c04921` — river / uncontracted / Maramureș / Valea Cheii
+- `unc-a54e17d426` — river / uncontracted / Maramureș / Tisza
+- `unc-a57f78b546` — river / uncontracted / Maramureș / Coșnea
+- `unc-a744b801ae` — river / uncontracted / Maramureș / Bocicoel
+- `unc-a9af3b7db1` — river / uncontracted / Maramureș / Cercănelul
+- `unc-ab863a42ca` — river / uncontracted / Maramureș / Râul Porcului
+- `unc-acee7055e1` — river / uncontracted / Maramureș / Valea Morii
+- `unc-ae610f47ac` — river / uncontracted / Maramureș / Drăguiasa
+- `unc-af7d60344b` — river / uncontracted / Maramureș / Șigău
+- `unc-affb991656` — river / uncontracted / Maramureș / Negoescu Mare
+- `unc-b5f016daf4` — river / uncontracted / Maramureș / Valea Merchiului
+- `unc-bec469531c` — river / uncontracted / Maramureș / Valea Morii
+- `unc-bfad2f9de1` — river / uncontracted / Maramureș / Dărasca
+- `unc-c8d3b7a361` — river / uncontracted / Maramureș / Râul Satului
+- `unc-caa032b4dc` — river / uncontracted / Maramureș / Roșușul Mic
+- `unc-caecb4505b` — river / uncontracted / Maramureș / Stepan
+- `unc-d11256500e` — river / uncontracted / Maramureș / Valea Vidrișca
+- `unc-d1d00734f0` — river / uncontracted / Maramureș / Valea Scradei
+- `unc-d4e214aa24` — river / uncontracted / Maramureș / Valea Plaiului
+- `unc-d6ea47aa04` — river / uncontracted / Maramureș / Zăvoaie
+- `unc-d78eaabcca` — river / uncontracted / Maramureș / Pârcălabul
+- `unc-d8980aae28` — river / uncontracted / Maramureș / Sâva
+- `unc-d92a65e330` — river / uncontracted / Maramureș / Repede
+- `unc-daf524cde7` — river / uncontracted / Maramureș / Valea Ursoiaia
+- `unc-df48f56691` — river / uncontracted / Maramureș / Valea Hotarului
+- `unc-e262d4d9e7` — river / uncontracted / Maramureș / Seinel
+- `unc-e2a5d08551` — river / uncontracted / Maramureș / Valea Brazilor
+- `unc-e55b85ac20` — river / uncontracted / Maramureș / Valea Pietrelor
+- `unc-e964c94605` — river / uncontracted / Maramureș / Râul Vălenilor
+- `unc-edb756a48d` — river / uncontracted / Maramureș / Usturoiu
+- `unc-edd9df8bbf` — river / uncontracted / Maramureș / Vinișorul
+- `unc-eeb0a4416e` — river / uncontracted / Maramureș / Leurda
+- `unc-f02ad07a74` — river / uncontracted / Maramureș / Valea Drăgușei
+- `unc-f08706841f` — river / uncontracted / Maramureș / Valea Răchitei
+- `unc-f0e4c0e34f` — river / uncontracted / Maramureș / Dragoș
+- `unc-f37a5debee` — river / uncontracted / Maramureș / Viemeșu
+- `unc-f5c932f9c4` — river / uncontracted / Maramureș / Vaserul
+- `unc-f73cc14823` — river / uncontracted / Maramureș / Breboaia
+- `unc-fa1a959e90` — river / uncontracted / Maramureș / Valea Măgurii
+- `unc-0398a576dc` — river / uncontracted / Mehedinți / Valea lui Stan
+- `unc-03ca6970ea` — river / uncontracted / Mehedinți / Ponicova
+- `unc-046a3f1e36` — river / uncontracted / Mehedinți / Pleșuva
+- `unc-06082c24e7` — river / uncontracted / Mehedinți / Borovăț
+- `unc-0b1cf4f2f5` — river / uncontracted / Mehedinți / Râul Cotoroaia
+- `unc-0ba09cca2d` — river / uncontracted / Mehedinți / Liubotina
+- `unc-0e4868d2ce` — river / uncontracted / Mehedinți / Virulului
+- `unc-1371f930e0` — river / uncontracted / Mehedinți / Ogradena
+- `unc-1908c3ac04` — river / uncontracted / Mehedinți / Dunav/Dunărea
+- `unc-1bd11dd003` — river / uncontracted / Mehedinți / Папреница
+- `unc-20bfa54cdf` — river / uncontracted / Mehedinți / Pârâul Valea Largă
+- `unc-244ea661a6` — river / uncontracted / Mehedinți / Valea Gărânei
+- `unc-2730f48795` — river / uncontracted / Mehedinți / Mraconia
+- `unc-29a5fbec14` — river / uncontracted / Mehedinți / Cărbunari
+- `unc-2d69ee46fb` — river / uncontracted / Mehedinți / Racovăț
+- `unc-317544ec77` — river / uncontracted / Mehedinți / Padina Scarpiei
+- `unc-382cc0d329` — river / uncontracted / Mehedinți / Crihala
+- `unc-386994b8a6` — river / uncontracted / Mehedinți / Pârâul Orevița
+- `unc-39b92db978` — river / uncontracted / Mehedinți / Варошки поток
+- `unc-401a6dbff2` — river / uncontracted / Mehedinți / Grădeșnița
+- `unc-41821afb55` — river / uncontracted / Mehedinți / Valea Nevățului
+- `unc-4948266677` — river / uncontracted / Mehedinți / Stariște
+- `unc-4bb11d99c3` — river / uncontracted / Mehedinți / Recița Mare
+- `unc-4e64ebb83b` — river / uncontracted / Mehedinți / Padina Băii
+- `unc-4eb90b8ac6` — river / uncontracted / Mehedinți / Topolnița
+- `unc-50bbf83e40` — river / uncontracted / Mehedinți / Neagonea
+- `unc-51b00680d7` — river / uncontracted / Mehedinți / Labalon
+- `unc-53d5406e1a` — river / uncontracted / Mehedinți / Pârâul Lumașului
+- `unc-53df1e47b7` — river / uncontracted / Mehedinți / Plavișevița
+- `unc-57307f2549` — river / uncontracted / Mehedinți / Padina Gardului
+- `unc-5b3add8c72` — river / uncontracted / Mehedinți / Râul Ursoanei
+- `unc-5b4991afda` — river / uncontracted / Mehedinți / Valea Prihodului
+- `unc-5f709b49fc` — river / uncontracted / Mehedinți / Crainici
+- `unc-621564f488` — river / uncontracted / Mehedinți / Mala
+- `unc-6382cd88b9` — river / uncontracted / Mehedinți / Gârbovăț
+- `unc-63c0cfe607` — river / uncontracted / Mehedinți / Jidoștița
+- `unc-6583c7fc5a` — river / uncontracted / Mehedinți / Казански поток
+- `unc-6847cc6ea1` — river / uncontracted / Mehedinți / Pârâul Baran
+- `unc-69a05447ff` — river / uncontracted / Mehedinți / Râul Eroilor
+- `unc-6c39f06b81` — river / uncontracted / Mehedinți / Pârâul Poroinița
+- `unc-6d4ed226bc` — river / uncontracted / Mehedinți / Motrușor
+- `unc-7162144db1` — river / uncontracted / Mehedinți / Coșuștea
+- `unc-7329b92a5a` — river / uncontracted / Mehedinți / Grăniceri
+- `unc-808313ce76` — river / uncontracted / Mehedinți / Oreva
+- `unc-842c733ea2` — river / uncontracted / Mehedinți / Valea Cărmăzanului
+- `unc-85568060c7` — river / uncontracted / Mehedinți / Eșelinița
+- `unc-8a69615677` — river / uncontracted / Mehedinți / Tișovița
+- `unc-948472e52b` — river / uncontracted / Mehedinți / Grasca
+- `unc-9873f45507` — river / uncontracted / Mehedinți / Tufari
+- `unc-98b3f79f70` — river / uncontracted / Mehedinți / Padina Cârligului
+- `unc-99246bd432` — river / uncontracted / Mehedinți / Virulului Mare
+- `unc-99443fee39` — river / uncontracted / Mehedinți / Dunărea (Brațul Sulina)
+- `unc-9aaec34d87` — river / uncontracted / Mehedinți / Coșuștița
+- `unc-9e4b2ab345` — river / uncontracted / Mehedinți / Cărăbășița
+- `unc-9f41011e3f` — river / uncontracted / Mehedinți / Linișca
+- `unc-9fc7f55a46` — river / uncontracted / Mehedinți / Radu
+- `unc-a3c3f7a85c` — river / uncontracted / Mehedinți / Râul Târziului
+- `unc-ad44cb5334` — river / uncontracted / Mehedinți / Clișevăț
+- `unc-b5be2f8502` — river / uncontracted / Mehedinți / Ogașu Sec
+- `unc-b5cabaeacf` — river / uncontracted / Mehedinți / Padina Cireșului
+- `unc-b6ed93f5a2` — river / uncontracted / Mehedinți / Slătinicul Mare
+- `unc-b76e2b20a0` — river / uncontracted / Mehedinți / Râul Palangei
+- `unc-bbe0bb19d7` — river / uncontracted / Mehedinți / Știubei
+- `unc-bffe009d85` — river / uncontracted / Mehedinți / Râul Boșneagului
+- `unc-c1e3cd369a` — river / uncontracted / Mehedinți / Știrbița
+- `unc-c55a75e442` — river / uncontracted / Mehedinți / Valea Ghergheleului
+- `unc-c5b7746a08` — river / uncontracted / Mehedinți / Матка
+- `unc-c600a0f1a6` — river / uncontracted / Mehedinți / Vârciorova
+- `unc-c635356658` — river / uncontracted / Mehedinți / Râul Hușnița
+- `unc-c727c57aa3` — river / uncontracted / Mehedinți / Vodița
+- `unc-c85b3523af` — river / uncontracted / Mehedinți / Crivița
+- `unc-cae42ac5d8` — river / uncontracted / Mehedinți / Pârâul Tălăpan
+- `unc-d05700b64c` — river / uncontracted / Mehedinți / Obârșia
+- `unc-d28d6a8796` — river / uncontracted / Mehedinți / Argetoaia (Salcia)
+- `unc-d868a659b1` — river / uncontracted / Mehedinți / Luchița Mare
+- `unc-dac415a3bb` — river / uncontracted / Mehedinți / Jupalnic
+- `unc-ddee9a7359` — river / uncontracted / Mehedinți / Drincea 1
+- `unc-de98a911cb` — river / uncontracted / Mehedinți / Ungureanu
+- `unc-e5ba18446c` — river / uncontracted / Mehedinți / Tarovăt
+- `unc-e63dc7107d` — river / uncontracted / Mehedinți / Slătinicul Mic
+- `unc-e6b371a157` — river / uncontracted / Mehedinți / Luchița Mică
+- `unc-ea50e22585` — river / uncontracted / Mehedinți / Alion
+- `unc-ec0b2ddf58` — river / uncontracted / Mehedinți / Virulului Mic
+- `unc-ed4f5fde8e` — river / uncontracted / Mehedinți / Râul Dunărea Veche
+- `unc-edb09d670c` — river / uncontracted / Mehedinți / Valea Popii
+- `unc-ee316a7da3` — river / uncontracted / Mehedinți / Valea Rea
+- `unc-ee48641dc0` — river / uncontracted / Mehedinți / Ada-Kaleh
+- `unc-f325f659ec` — river / uncontracted / Mehedinți / Padina Mică
+- `unc-f5bc55f8bb` — river / uncontracted / Mehedinți / Бољетинска река
+- `unc-f77a233e57` — river / uncontracted / Mehedinți / Topolova
+- `unc-fa165dc593` — river / uncontracted / Mehedinți / Pârâul Valea Erghevița
+- `unc-fe667a23ef` — river / uncontracted / Mehedinți / Șovarna
+- `unc-01974d12f4` — river / uncontracted / Mureș / Pr. Padina
+- `unc-02448bd3fb` — river / uncontracted / Mureș / Pr. Măgura din mijloc
+- `unc-0369da066e` — river / uncontracted / Mureș / Zăpodea cu Pod
+- `unc-0554ba64fe` — river / uncontracted / Mureș / pârâu
+- `unc-05902c1dba` — river / uncontracted / Mureș / Pârâul Arsa
+- `unc-0596c446cb` — river / uncontracted / Mureș / Pârâul Vațman
+- `unc-06963a30be` — river / uncontracted / Mureș / Pârâul Cujbei
+- `unc-08f25a9f14` — river / uncontracted / Mureș / Pârâul Peștelui
+- `unc-0b0da178db` — river / uncontracted / Mureș / Pr. Gudea mică
+- `unc-0bd4e69ad6` — river / uncontracted / Mureș / Vaja pataka
+- `unc-0c0fc38413` — river / uncontracted / Mureș / Pârâul Hidegagul Mare
+- `unc-0f0babdcf2` — river / uncontracted / Mureș / Secul
+- `unc-100f12aa33` — river / uncontracted / Mureș / Jișa
+- `unc-12154993c2` — river / uncontracted / Mureș / Pârâul Oberet
+- `unc-1225c71261` — river / uncontracted / Mureș / Niaroș
+- `unc-13fe545709` — river / uncontracted / Mureș / Valea Pustie
+- `unc-15d798b20d` — river / uncontracted / Mureș / Fleț
+- `unc-1776cf8bfd` — river / uncontracted / Mureș / Pârâul Șaroș
+- `unc-192b8531a9` — river / uncontracted / Mureș / Pârâul Popii
+- `unc-1c8f6e8735` — river / uncontracted / Mureș / Pârâul Valea Cărbunarilor
+- `unc-1d18567d28` — river / uncontracted / Mureș / Pârâul Cerbului
+- `unc-1da3e2c6aa` — river / uncontracted / Mureș / Tihuleț
+- `unc-1e2f70502d` — river / uncontracted / Mureș / Bradul
+- `unc-1e539ca9d3` — river / uncontracted / Mureș / Pârâul Întunericului
+- `unc-1fb2474c2e` — river / uncontracted / Mureș / Pârâul Repede
+- `unc-21b2caba1a` — river / uncontracted / Mureș / Pr. Cracul Stâng
+- `unc-260077e2cd` — river / uncontracted / Mureș / Ulmul
+- `unc-26d3e362fc` — river / uncontracted / Mureș / Creanga
+- `unc-279582d2e2` — river / uncontracted / Mureș / Petrilaca
+- `unc-29bced104b` — river / uncontracted / Mureș / Sihla
+- `unc-2aa4b2d5c3` — river / uncontracted / Mureș / Pârâul Vârful Mic
+- `unc-2aa5fb2bb2` — river / uncontracted / Mureș / Pârâul Grindeni
+- `unc-2c55345774` — river / uncontracted / Mureș / Pârâul Corbu
+- `unc-2d8bc73cf3` — river / uncontracted / Mureș / Pârâul Hâclean
+- `unc-303a84fe23` — river / uncontracted / Mureș / Pr. Piatra de Jos
+- `unc-31286229f2` — river / uncontracted / Mureș / Drăguș
+- `unc-31469ec7ed` — river / uncontracted / Mureș / Agriș
+- `unc-35f9ac5868` — river / uncontracted / Mureș / Ferigelor
+- `unc-36361ad4be` — river / uncontracted / Mureș / Matca
+- `unc-381d3c81a9` — river / uncontracted / Mureș / Muller
+- `unc-39ac7df91c` — river / uncontracted / Mureș / Valea Dracului
+- `unc-3a532eba7b` — river / uncontracted / Mureș / Pârâul Todoran
+- `unc-3a7174793a` — river / uncontracted / Mureș / Domald
+- `unc-3a8a630011` — river / uncontracted / Mureș / Moldișul
+- `unc-3b2ff189b4` — river / uncontracted / Mureș / Pr. Măgura de sus
+- `unc-3c92558903` — river / uncontracted / Mureș / Pârâul Cucuța din Față
+- `unc-3ec9e4042f` — river / uncontracted / Mureș / Schaaser Bach
+- `unc-406140e959` — river / uncontracted / Mureș / Frăsinelul (Potocina)
+- `unc-407d4bcff8` — river / uncontracted / Mureș / Săcal
+- `unc-40f46fd42a` — river / uncontracted / Mureș / Șincai
+- `unc-4252942645` — river / uncontracted / Mureș / Rachotiaș
+- `unc-44f24cea7b` — river / uncontracted / Mureș / Valea Morii
+- `unc-46596d3989` — river / uncontracted / Mureș / Șaeș
+- `unc-4693919fdd` — river / uncontracted / Mureș / Pârâul Șolea
+- `unc-46bb8c16e8` — river / uncontracted / Mureș / Pârâul lui Pavel
+- `unc-46d30820fb` — river / uncontracted / Mureș / Iara
+- `unc-47633fcccb` — river / uncontracted / Mureș / Șapartoc
+- `unc-477f058bb6` — river / uncontracted / Mureș / Ilișoara Mare
+- `unc-484cc278c1` — river / uncontracted / Mureș / Pârâul Scroafei
+- `unc-48908db84a` — river / uncontracted / Mureș / Pr. Paltinul
+- `unc-4ac66d3d97` — river / uncontracted / Mureș / Pârâul Dreapta Șeștinii
+- `unc-4b57d6915d` — river / uncontracted / Mureș / Râul Robului
+- `unc-4f5c4f4465` — river / uncontracted / Mureș / Cotuș
+- `unc-50904a3a65` — river / uncontracted / Mureș / Ursul Mica
+- `unc-537d119f01` — river / uncontracted / Mureș / Pârâul Iancu
+- `unc-541733c5bf` — river / uncontracted / Mureș / Secuieu
+- `unc-54c1ade808` — river / uncontracted / Mureș / Pârâul Saivari
+- `unc-551a0b4ed6` — river / uncontracted / Mureș / Pârâul Halianu
+- `unc-55a10c7b14` — river / uncontracted / Mureș / Calul
+- `unc-570f6ad5d3` — river / uncontracted / Mureș / Zăpodea cu Cale
+- `unc-57755c0fd4` — river / uncontracted / Mureș / Tireu
+- `unc-597df0c4ed` — river / uncontracted / Mureș / Pârâul Câinelui
+- `unc-59bf75cd50` — river / uncontracted / Mureș / Pârâul Țiba Mică
+- `unc-5abd1d134f` — river / uncontracted / Mureș / Păuloaia
+- `unc-5b2efb8d6f` — river / uncontracted / Mureș / Cuieșd
+- `unc-5dceb6974f` — river / uncontracted / Mureș / Pârâul Cocoș
+- `unc-5e5880cb3e` — river / uncontracted / Mureș / Stega
+- `unc-5ea9cfb548` — river / uncontracted / Mureș / Pârâul Șeștina
+- `unc-5ef895005c` — river / uncontracted / Mureș / Pârâul Meșterhazul
+- `unc-5f12d2d6e9` — river / uncontracted / Mureș / Pârâul Zespezel
+- `unc-60444ac844` — river / uncontracted / Mureș / Pârâul Trandafirilor
+- `unc-60eee05076` — river / uncontracted / Mureș / Pr. Măgura de jos
+- `unc-6262dc7e46` — river / uncontracted / Mureș / Săcădat
+- `unc-63725febde` — river / uncontracted / Mureș / Voiniceni
+- `unc-63d4d95271` — river / uncontracted / Mureș / Pâraul Ilișeni
+- `unc-6481719747` — river / uncontracted / Mureș / Răstoaca
+- `unc-65cdbcbf1e` — river / uncontracted / Mureș / Pârâul Neamțului
+- `unc-69b411050f` — river / uncontracted / Mureș / Tihul
+- `unc-6a0d60c8bc` — river / uncontracted / Mureș / Pietrosul
+- `unc-6a2193e506` — river / uncontracted / Mureș / Pr. Schwartz (Schwartz-patak)
+- `unc-6bc0d9eedb` — river / uncontracted / Mureș / Ghiloșa
+- `unc-6f4921d34d` — river / uncontracted / Mureș / Pocloș
+- `unc-70b15cae99` — river / uncontracted / Mureș / Pârâul Andreneasa
+- `unc-710f0a4c95` — river / uncontracted / Mureș / Dușa
+- `unc-726db85d6c` — river / uncontracted / Mureș / Ilișoara
+- `unc-73f7ac6c24` — river / uncontracted / Mureș / Pârâul Belciu
+- `unc-74a2c2e6b6` — river / uncontracted / Mureș / Pârâul Archita
+- `unc-7a9cdf891a` — river / uncontracted / Mureș / Pârâul lui Nicolae
+- `unc-7ad44b842f` — river / uncontracted / Mureș / Canalul Morii
+- `unc-7bf8ac3431` — river / uncontracted / Mureș / Văleni
+- `unc-7d98d4b603` — river / uncontracted / Mureș / Pr. Cracul din Mijloc
+- `unc-7dedab0afb` — river / uncontracted / Mureș / Pârâul Vârful Mare
+- `unc-7ed457fde9` — river / uncontracted / Mureș / Pârâul Fodoreni
+- `unc-81dcbb8106` — river / uncontracted / Mureș / Baia
+- `unc-8628308009` — river / uncontracted / Mureș / Pârâul Ciobotani
+- `unc-89570b13e4` — river / uncontracted / Mureș / Cocoșul
+- `unc-8983ddc9a1` — river / uncontracted / Mureș / Sarchii
+- `unc-89fb9642dd` — river / uncontracted / Mureș / Pârâul Între Pietre
+- `unc-8b0760657c` — river / uncontracted / Mureș / Ungurașul Mare
+- `unc-8b383e71ac` — river / uncontracted / Mureș / Ilișoara Mică
+- `unc-8be0123b39` — river / uncontracted / Mureș / Pârâul Hidegag
+- `unc-8c29112175` — river / uncontracted / Mureș / Cucuberțul Mare
+- `unc-8cedd33c54` — river / uncontracted / Mureș / Pârâul Strungii
+- `unc-91ded2fa86` — river / uncontracted / Mureș / Ungurașul
+- `unc-9205146440` — river / uncontracted / Mureș / Ungurașul Mic
+- `unc-921c2f9920` — river / uncontracted / Mureș / Pr. Hreneasa
+- `unc-92b0f52159` — river / uncontracted / Mureș / Pârâul Neagra Călin
+- `unc-933407b75f` — river / uncontracted / Mureș / Doamna
+- `unc-9348ef0587` — river / uncontracted / Mureș / Bedeu
+- `unc-93b9c24c85` — river / uncontracted / Mureș / Pr. Popa
+- `unc-958928d9d1` — river / uncontracted / Mureș / Cucuberțul Mic
+- `unc-95ad85a6e5` — river / uncontracted / Mureș / Pr. lui Lucian
+- `unc-95b3a645c9` — river / uncontracted / Mureș / Pârâul Daniel
+- `unc-964c7a61c6` — river / uncontracted / Mureș / Pâraul Deluț
+- `unc-987deb56ab` — river / uncontracted / Mureș / Pârâul Stânga Șeștinii
+- `unc-98ee2452a8` — river / uncontracted / Mureș / Pr. Căsoaielor
+- `unc-9b4f2ae97c` — river / uncontracted / Mureș / Băița
+- `unc-9ccd78d068` — river / uncontracted / Mureș / Isuica
+- `unc-9d443b1811` — river / uncontracted / Mureș / Pr. lui Toader
+- `unc-a190957e09` — river / uncontracted / Mureș / Terebici
+- `unc-a38603ad93` — river / uncontracted / Mureș / Pârâul lui Marcel
+- `unc-a3c610c759` — river / uncontracted / Mureș / Ulieș
+- `unc-a5585c483d` — river / uncontracted / Mureș / Valcălița
+- `unc-a5a15f07e9` — river / uncontracted / Mureș / Canalul Gurghiu
+- `unc-a5d827644d` — river / uncontracted / Mureș / Valea Câinelui
+- `unc-a8e4d12a15` — river / uncontracted / Mureș / Ursul Mare
+- `unc-ab5755fde3` — river / uncontracted / Mureș / Valea Cucerdea
+- `unc-abce312f53` — river / uncontracted / Mureș / Pârâul Roateș
+- `unc-aceee3ab8e` — river / uncontracted / Mureș / Valea Fântânel
+- `unc-ad0eed109d` — river / uncontracted / Mureș / Pârâul lui Buruș
+- `unc-af46910c10` — river / uncontracted / Mureș / Tomoroga
+- `unc-af658b4f1e` — river / uncontracted / Mureș / Patul Cald
+- `unc-afb1e394f4` — river / uncontracted / Mureș / Mermezeu
+- `unc-b1ceda0053` — river / uncontracted / Mureș / Donca
+- `unc-b2358e04ca` — river / uncontracted / Mureș / Râpa
+- `unc-b267fa7b80` — river / uncontracted / Mureș / Tisieu
+- `unc-b590125a6c` — river / uncontracted / Mureș / Pârâul Țiba Mare
+- `unc-b69b03f9f1` — river / uncontracted / Mureș / Jnepenișul
+- `unc-b864b60397` — river / uncontracted / Mureș / Cașva
+- `unc-bde5a80600` — river / uncontracted / Mureș / Pârâul Jirca
+- `unc-bf95a721dc` — river / uncontracted / Mureș / Pârâul Hidegagul Mic
+- `unc-bfa032738b` — river / uncontracted / Mureș / Negoiul
+- `unc-c039045ff3` — river / uncontracted / Mureș / Pr lui Mihai
+- `unc-c13255116c` — river / uncontracted / Mureș / Pârâul Roua
+- `unc-c2168eac2b` — river / uncontracted / Mureș / Pârâul Bahancea
+- `unc-c2617206e2` — river / uncontracted / Mureș / Pietriș
+- `unc-c4ff132698` — river / uncontracted / Mureș / Pârâul Wagner
+- `unc-c589306b6e` — river / uncontracted / Mureș / Cabana
+- `unc-c77b3a41cf` — river / uncontracted / Mureș / Sărăcinul Mare
+- `unc-c8d35a6e85` — river / uncontracted / Mureș / Cascada
+- `unc-ca26dcffff` — river / uncontracted / Mureș / Pârâul Drept
+- `unc-ca542a8aa9` — river / uncontracted / Mureș / Pârâul Tomii
+- `unc-cb0aa804d5` — river / uncontracted / Mureș / Tihul Ilvei
+- `unc-ce106c2da6` — river / uncontracted / Mureș / Pârâul Măgurii (Magura patak)
+- `unc-d040c0c04d` — river / uncontracted / Mureș / Borzia
+- `unc-d0d18a8b7c` — river / uncontracted / Mureș / Pârâul Ghiorfaș
+- `unc-d2d87b9720` — river / uncontracted / Mureș / Pârâul Corbu
+- `unc-d2e5022ac6` — river / uncontracted / Mureș / Valea Botei Mari
+- `unc-d3b012c58b` — river / uncontracted / Mureș / Pr. Piatra de Sus
+- `unc-d416096b90` — river / uncontracted / Mureș / Pârâul Arșița
+- `unc-d53581df82` — river / uncontracted / Mureș / Pârâul Budiu
+- `unc-d66cb1eef7` — river / uncontracted / Mureș / Pârâul Beșa
+- `unc-d7b7876d33` — river / uncontracted / Mureș / Valea Șaeșului
+- `unc-d8473ff61f` — river / uncontracted / Mureș / Pârâul Peșcoasa Mare
+- `unc-d8498bc01e` — river / uncontracted / Mureș / Uila
+- `unc-d89673cb1f` — river / uncontracted / Mureș / Jingul Cădărenilor
+- `unc-dd22411515` — river / uncontracted / Mureș / Pârâul Jungul Niculești
+- `unc-dd62fd1eee` — river / uncontracted / Mureș / Pârâul Măgura Întunecoasă
+- `unc-dd857111d0` — river / uncontracted / Mureș / Pârâul Roka
+- `unc-ddf25830a9` — river / uncontracted / Mureș / Sărat
+- `unc-e5e88861db` — river / uncontracted / Mureș / Ercea
+- `unc-e6e7f204b5` — river / uncontracted / Mureș / Pârâul Benedek
+- `unc-e9150766fe` — river / uncontracted / Mureș / Pr. Bufantău
+- `unc-eb0aad22d4` — river / uncontracted / Mureș / Pârâul Rău
+- `unc-ebbd1f1fb3` — river / uncontracted / Mureș / Pârâul Izărel
+- `unc-ed2aa2c6e4` — river / uncontracted / Mureș / Pârâul Strunga
+- `unc-ee579c1175` — river / uncontracted / Mureș / Deleni
+- `unc-ef7a8d0871` — river / uncontracted / Mureș / Stâna
+- `unc-f18fa25e38` — river / uncontracted / Mureș / Nadășa
+- `unc-f898186d80` — river / uncontracted / Mureș / Pr. Buneasa
+- `unc-f9289a1478` — river / uncontracted / Mureș / Pârâul Pavel
+- `unc-fa82fb1827` — river / uncontracted / Mureș / Iuhodul Cald
+- `unc-fb1e94db00` — river / uncontracted / Mureș / Pârâul Pocloș
+- `unc-fbf6bbf1ee` — river / uncontracted / Mureș / Lăpușna
+- `unc-fc796149c7` — river / uncontracted / Mureș / Pârâul Gropșoara
+- `unc-fd5af18afc` — river / uncontracted / Mureș / Bradul
+- `unc-fe7d083a54` — river / uncontracted / Mureș / Pr. Iadul (Jád patak)
+- `unc-fee45c7072` — river / uncontracted / Mureș / Blidareasa
+- `unc-002522f679` — river / uncontracted / Neamț / Pârâul Crăsnița
+- `unc-0042be65ed` — river / uncontracted / Neamț / Râul Bardoș
+- `unc-006a7949b0` — river / uncontracted / Neamț / Pârâul cu Smeurișu
+- `unc-011336810e` — river / uncontracted / Neamț / Ponor
+- `unc-02e306ff72` — river / uncontracted / Neamț / Afinisul
+- `unc-04a17586b6` — river / uncontracted / Neamț / Cășăria
+- `unc-04bf893d68` — river / uncontracted / Neamț / Săbășița
+- `unc-076ab1e22a` — river / uncontracted / Neamț / Pârâul Galben
+- `unc-07c95bd2c0` — river / uncontracted / Neamț / Pârâul Târșoasei
+- `unc-086f82d78c` — river / uncontracted / Neamț / Pârâul Horaița
+- `unc-08e67f6b7e` — river / uncontracted / Neamț / Pârâul lui Ana
+- `unc-08f26f49df` — river / uncontracted / Neamț / Schitu
+- `unc-0b159625bf` — river / uncontracted / Neamț / Făgetul
+- `unc-0b70a83da8` — river / uncontracted / Neamț / Fârțâgi
+- `unc-0cb6997884` — river / uncontracted / Neamț / Valea Rea
+- `unc-0cb9f97d8c` — river / uncontracted / Neamț / Pârâul Adânc
+- `unc-0d0c4ae572` — river / uncontracted / Neamț / Pârâul Tracilor
+- `unc-0e42a0c1be` — river / uncontracted / Neamț / Pârâul Fântânii
+- `unc-0ef6842892` — river / uncontracted / Neamț / Pârâul Argintăria
+- `unc-0f2735f9ce` — river / uncontracted / Neamț / Cireșul
+- `unc-107ebfb2d7` — river / uncontracted / Neamț / Pârâul Stânii
+- `unc-10c9387ac7` — river / uncontracted / Neamț / Lapoș
+- `unc-1110f5f940` — river / uncontracted / Neamț / Pârâul Răchitelor
+- `unc-11e894d460` — river / uncontracted / Neamț / Mălina
+- `unc-127a524b34` — river / uncontracted / Neamț / Pârâul lui Zgârie Brânză
+- `unc-127b315f75` — river / uncontracted / Neamț / Arșița Lungă
+- `unc-1362ab7ea5` — river / uncontracted / Neamț / Icoana
+- `unc-13b31e82c3` — river / uncontracted / Neamț / Valea Mormântului
+- `unc-1412a35d8e` — river / uncontracted / Neamț / Jgeabul Ceagăilor
+- `unc-1456afc21b` — river / uncontracted / Neamț / Pașcău
+- `unc-14bc2a5ca8` — river / uncontracted / Neamț / Țepeșeni
+- `unc-14d7646027` — river / uncontracted / Neamț / Ulmul
+- `unc-15383ca644` — river / uncontracted / Neamț / Coroiu
+- `unc-17ff0887b4` — river / uncontracted / Neamț / Pârâul Balaurului
+- `unc-1a0178b8a0` — river / uncontracted / Neamț / Pârâul Potoci
+- `unc-1a11d653a9` — river / uncontracted / Neamț / Șugău
+- `unc-1a515dbd07` — river / uncontracted / Neamț / Dolița
+- `unc-1bdcfbbb2c` — river / uncontracted / Neamț / Pârâul Ardelea
+- `unc-1d2c70b052` — river / uncontracted / Neamț / Păltinișul
+- `unc-1d4fef5531` — river / uncontracted / Neamț / Tarcăul
+- `unc-1d563cb7f4` — river / uncontracted / Neamț / Călugărița
+- `unc-1ddd04ca4e` — river / uncontracted / Neamț / Pârâul Rădăcinești
+- `unc-1f72633ec5` — river / uncontracted / Neamț / Ulmului
+- `unc-1fccb6d6a3` — river / uncontracted / Neamț / Călugărul
+- `unc-20257c5350` — river / uncontracted / Neamț / Almășelul
+- `unc-20d7405413` — river / uncontracted / Neamț / Pârâul Văcăriei
+- `unc-215167f53a` — river / uncontracted / Neamț / Prisăci
+- `unc-2153d01dee` — river / uncontracted / Neamț / Grasul Mare
+- `unc-216ed2e0d7` — river / uncontracted / Neamț / Telec
+- `unc-2204e87799` — river / uncontracted / Neamț / Pârâul Negrului
+- `unc-2338796965` — river / uncontracted / Neamț / Imașului
+- `unc-24c15f2e2e` — river / uncontracted / Neamț / Pârâul Căpriorul
+- `unc-265b8d3108` — river / uncontracted / Neamț / Cioronișul
+- `unc-26bc4cc4f1` — river / uncontracted / Neamț / Pârâul Tulbure
+- `unc-27a7a2b87f` — river / uncontracted / Neamț / Pângărăcior
+- `unc-282931cc5d` — river / uncontracted / Neamț / Lazăr Baroi
+- `unc-289a558a73` — river / uncontracted / Neamț / Prislopul
+- `unc-293bd27019` — river / uncontracted / Neamț / Molidul
+- `unc-298f595361` — river / uncontracted / Neamț / Pârâul Fundoaiei
+- `unc-2a33d03665` — river / uncontracted / Neamț / Sasul
+- `unc-2bc30add03` — river / uncontracted / Neamț / Pârâul Cărămidăriei
+- `unc-2c32e67d61` — river / uncontracted / Neamț / Cotnărel
+- `unc-2cf6042c54` — river / uncontracted / Neamț / Vitioara
+- `unc-2d99445a54` — river / uncontracted / Neamț / Jgheabul Urzicăriei
+- `unc-2da092731c` — river / uncontracted / Neamț / Pârâul Piatra Lupilor
+- `unc-2daa88780c` — river / uncontracted / Neamț / Vetea Mare
+- `unc-2e1e240350` — river / uncontracted / Neamț / Tulva
+- `unc-2e3c0ea37e` — river / uncontracted / Neamț / Pârâul Leurda
+- `unc-2e7fd04e47` — river / uncontracted / Neamț / Vremelnița
+- `unc-2eb3a4864c` — river / uncontracted / Neamț / Sasca
+- `unc-2f89656723` — river / uncontracted / Neamț / Frăsinelul (Potocina)
+- `unc-307aeb1d8e` — river / uncontracted / Neamț / Ghermanu Mic
+- `unc-3116ce1afc` — river / uncontracted / Neamț / Pârâul de la Cruce
+- `unc-3164c28c3a` — river / uncontracted / Neamț / Carbunele
+- `unc-321af2c629` — river / uncontracted / Neamț / Stânei
+- `unc-322652de13` — river / uncontracted / Neamț / Căpriorul
+- `unc-33666c8aa1` — river / uncontracted / Neamț / Pârâul Șoimul
+- `unc-3439664e98` — river / uncontracted / Neamț / Danești
+- `unc-350610631e` — river / uncontracted / Neamț / Drajinelor
+- `unc-350c0e2f69` — river / uncontracted / Neamț / Nicanu
+- `unc-366d10214d` — river / uncontracted / Neamț / Pârâul Gonțu
+- `unc-36a62145f3` — river / uncontracted / Neamț / Bălătău
+- `unc-36b5c9f1d7` — river / uncontracted / Neamț / Saloc
+- `unc-38adf99c85` — river / uncontracted / Neamț / Roșeni
+- `unc-3907cff232` — river / uncontracted / Neamț / Grohotișul
+- `unc-3a369a1b3f` — river / uncontracted / Neamț / Potoci
+- `unc-3a6af1d166` — river / uncontracted / Neamț / Săgăriei
+- `unc-3ede4881db` — river / uncontracted / Neamț / Fabrica
+- `unc-4279a259c4` — river / uncontracted / Neamț / Pârâul Cilneș
+- `unc-42a5c61af7` — river / uncontracted / Neamț / Pârâul Cineilor
+- `unc-434eba9bd8` — river / uncontracted / Neamț / Popa
+- `unc-446bda5a89` — river / uncontracted / Neamț / Draniței
+- `unc-454d1e412a` — river / uncontracted / Neamț / Pârâul lui Gheorghiță
+- `unc-45d1955968` — river / uncontracted / Neamț / Pârâul Crușitu
+- `unc-46541b37be` — river / uncontracted / Neamț / Pârâul Sec
+- `unc-46fb6be1ce` — river / uncontracted / Neamț / Pârâul lui Niță
+- `unc-4991cf89ec` — river / uncontracted / Neamț / Pârâul Verde
+- `unc-4993bb37ed` — river / uncontracted / Neamț / Busciuhan
+- `unc-4aa9e0964a` — river / uncontracted / Neamț / Cracăul Alb
+- `unc-4ae1eaf243` — river / uncontracted / Neamț / Cheița
+- `unc-4afa1099b2` — river / uncontracted / Neamț / Izvorul Muntelui
+- `unc-4b78cd2a70` — river / uncontracted / Neamț / Pârâul Larg
+- `unc-4bea32aaba` — river / uncontracted / Neamț / Pârâul lui Martin
+- `unc-4c9fe1e310` — river / uncontracted / Neamț / Padina Stânei
+- `unc-4d034b1fcb` — river / uncontracted / Neamț / Pârâul Alăutului
+- `unc-4d155e94b7` — river / uncontracted / Neamț / Pârâul Călugărului
+- `unc-4e366f7392` — river / uncontracted / Neamț / Pârâul la Groapa cu Fragi
+- `unc-500274a0a5` — river / uncontracted / Neamț / Stuhul
+- `unc-508ad837cd` — river / uncontracted / Neamț / Cacova
+- `unc-516c4ca8a1` — river / uncontracted / Neamț / Pârâul  Cărbunoasa
+- `unc-52a134d9fc` — river / uncontracted / Neamț / Pârâul Șoldanului
+- `unc-530b1bb094` — river / uncontracted / Neamț / Pârâul Văleni
+- `unc-54a1d2b129` — river / uncontracted / Neamț / Humăria
+- `unc-54a5c412ca` — river / uncontracted / Neamț / Hotarul
+- `unc-55617d407b` — river / uncontracted / Neamț / Pârâul Porcului
+- `unc-55e33ebcde` — river / uncontracted / Neamț / Pârâul Răscoalelor
+- `unc-5729c43353` — river / uncontracted / Neamț / Bârnișul
+- `unc-57f42145b9` — river / uncontracted / Neamț / Pârâul Râpelor
+- `unc-58e3163884` — river / uncontracted / Neamț / Pârâul Pietroasa
+- `unc-59d7be8286` — river / uncontracted / Neamț / Crucea
+- `unc-5bd276a8d1` — river / uncontracted / Neamț / Pârâul Chighenilor
+- `unc-5d0d073583` — river / uncontracted / Neamț / Smârdan
+- `unc-5d35059c9f` — river / uncontracted / Neamț / Pârâul Cătărgelului
+- `unc-5d5b4e8699` — river / uncontracted / Neamț / Căzătura
+- `unc-5ed67d3557` — river / uncontracted / Neamț / Cerbușorul
+- `unc-5f15e3f1dd` — river / uncontracted / Neamț / Pârâul Adânc
+- `unc-6017525543` — river / uncontracted / Neamț / Jgheabu Mare
+- `unc-60496a2a49` — river / uncontracted / Neamț / Boulețul Mic
+- `unc-605ea258f4` — river / uncontracted / Neamț / Poițele
+- `unc-608acda9b2` — river / uncontracted / Neamț / Pârâul Stegei
+- `unc-613b4d524c` — river / uncontracted / Neamț / Pârâul Țiganului
+- `unc-61465cdd51` — river / uncontracted / Neamț / Ciuculoaia
+- `unc-61f26c95f3` — river / uncontracted / Neamț / Galu
+- `unc-622b7260ca` — river / uncontracted / Neamț / Pârâul lui Gabură
+- `unc-627f58952f` — river / uncontracted / Neamț / Roșeni
+- `unc-64a1814cee` — river / uncontracted / Neamț / Pietrăria
+- `unc-64cca6b60d` — river / uncontracted / Neamț / Dobrenașu
+- `unc-650c63c4fe` — river / uncontracted / Neamț / Veverița
+- `unc-65edff4caa` — river / uncontracted / Neamț / Sălăntrucul
+- `unc-65fad91979` — river / uncontracted / Neamț / Herman
+- `unc-662ab17c01` — river / uncontracted / Neamț / Alunișul
+- `unc-670edc2d9f` — river / uncontracted / Neamț / Pârâul Cailor
+- `unc-67a4e28c43` — river / uncontracted / Neamț / Pârâul Brânza
+- `unc-67d52cb247` — river / uncontracted / Neamț / Bătca
+- `unc-694163f395` — river / uncontracted / Neamț / Saca
+- `unc-6a5b32fee0` — river / uncontracted / Neamț / Pârâul Fundurilor
+- `unc-6a8951974a` — river / uncontracted / Neamț / Lăptăria
+- `unc-6b76ed0c1a` — river / uncontracted / Neamț / Afinisul
+- `unc-6bde7c6efa` — river / uncontracted / Neamț / Chiruța
+- `unc-6c4a84e9af` — river / uncontracted / Neamț / Pârâul dintre Bulbuci
+- `unc-6de4405f73` — river / uncontracted / Neamț / Stâna Mănăstirii
+- `unc-6e7d791234` — river / uncontracted / Neamț / Iftimia
+- `unc-6fffdac4b3` — river / uncontracted / Neamț / Oniga
+- `unc-70817e7f8d` — river / uncontracted / Neamț / Neamț (Ozana)
+- `unc-7092d3aa6a` — river / uncontracted / Neamț / Calu
+- `unc-71a4ed703b` — river / uncontracted / Neamț / Hașca
+- `unc-71ed220f4a` — river / uncontracted / Neamț / Ardeluța
+- `unc-7384a54659` — river / uncontracted / Neamț / Pârâul Fârșituri
+- `unc-7411f4267f` — river / uncontracted / Neamț / Slatina
+- `unc-747ba7efa1` — river / uncontracted / Neamț / Dămuc
+- `unc-74bfcc891d` — river / uncontracted / Neamț / Pochivnica
+- `unc-74f12d9660` — river / uncontracted / Neamț / Audia
+- `unc-752d5bdc27` — river / uncontracted / Neamț / Lipoveni
+- `unc-7571921657` — river / uncontracted / Neamț / Râul Bolătău
+- `unc-75c91f75de` — river / uncontracted / Neamț / Cuejdiu
+- `unc-765e775a38` — river / uncontracted / Neamț / Hociungi
+- `unc-77e4f3af5e` — river / uncontracted / Neamț / Pârâul Cujbelor
+- `unc-7829bec91c` — river / uncontracted / Neamț / Frasinul
+- `unc-78a6b93cd9` — river / uncontracted / Neamț / Dobreanu
+- `unc-78b1fdc914` — river / uncontracted / Neamț / Pârâul Recea
+- `unc-793c6c689e` — river / uncontracted / Neamț / Pascu
+- `unc-79c1967eb8` — river / uncontracted / Neamț / Scursura
+- `unc-7a2ba3c10b` — river / uncontracted / Neamț / Chița Mare
+- `unc-7a36939314` — river / uncontracted / Neamț / Ticoș
+- `unc-7b33d94987` — river / uncontracted / Neamț / Părvu
+- `unc-7b4e0b3570` — river / uncontracted / Neamț / Hotarul
+- `unc-7b7b234576` — river / uncontracted / Neamț / Călugăriței
+- `unc-7babca71aa` — river / uncontracted / Neamț / Țîganca
+- `unc-7bb92acb02` — river / uncontracted / Neamț / Radu
+- `unc-7d60d51572` — river / uncontracted / Neamț / Bardos
+- `unc-7d623f19c0` — river / uncontracted / Neamț / Pârâul Izvorului
+- `unc-8108a0492f` — river / uncontracted / Neamț / Bolovanul
+- `unc-815c961646` — river / uncontracted / Neamț / Furcituri
+- `unc-829c6ef13a` — river / uncontracted / Neamț / Armenilor
+- `unc-82e3d6b67d` — river / uncontracted / Neamț / Dartu Stream
+- `unc-82e8ba2e21` — river / uncontracted / Neamț / Pârâul Vaca Babei
+- `unc-8305eca9f0` — river / uncontracted / Neamț / Părăul Bățului
+- `unc-831a9d5583` — river / uncontracted / Neamț / Boțolia
+- `unc-8335515f81` — river / uncontracted / Neamț / Țîganca
+- `unc-83aab70450` — river / uncontracted / Neamț / Eufrosin
+- `unc-844b32c17e` — river / uncontracted / Neamț / Bouarii
+- `unc-845ec122ea` — river / uncontracted / Neamț / Mitropolitul
+- `unc-8513bb7851` — river / uncontracted / Neamț / Români
+- `unc-85c3236361` — river / uncontracted / Neamț / Pârâul Chițele
+- `unc-861a33aabd` — river / uncontracted / Neamț / Pârâul Dolița
+- `unc-868976d3c4` — river / uncontracted / Neamț / Vărari
+- `unc-87d6498919` — river / uncontracted / Neamț / Pârâul Talnic (Reitec)
+- `unc-881b87480e` — river / uncontracted / Neamț / Tisei
+- `unc-8a071839a1` — river / uncontracted / Neamț / Stâna
+- `unc-8a5fa84632` — river / uncontracted / Neamț / Măstacănul
+- `unc-8b099cbb19` — river / uncontracted / Neamț / Girda
+- `unc-8b273a127a` — river / uncontracted / Neamț / Lutu Roșu
+- `unc-8c6ba6ecad` — river / uncontracted / Neamț / Pârâul Pârloagelor
+- `unc-8c81fb43ac` — river / uncontracted / Neamț / Părul
+- `unc-8e5938fbe7` — river / uncontracted / Neamț / Pârâul Argelea
+- `unc-8ff5286313` — river / uncontracted / Neamț / Meleiuș
+- `unc-90152a11c7` — river / uncontracted / Neamț / Pârâul Bofului
+- `unc-9130d458a4` — river / uncontracted / Neamț / Neamtul cel Mic
+- `unc-927b6d8bda` — river / uncontracted / Neamț / Blaga
+- `unc-9281a51296` — river / uncontracted / Neamț / Pârâul Bolatău
+- `unc-9290a5e277` — river / uncontracted / Neamț / Pârâul Doliei
+- `unc-92f5ac134a` — river / uncontracted / Neamț / Porcărici
+- `unc-9353443951` — river / uncontracted / Neamț / Glodul
+- `unc-945992fa03` — river / uncontracted / Neamț / Iepurele
+- `unc-94e562622e` — river / uncontracted / Neamț / Slătiorul
+- `unc-954b70ab0f` — river / uncontracted / Neamț / Pârâul Chitelelor
+- `unc-960ce23c4d` — river / uncontracted / Neamț / Frasinul
+- `unc-965e2260b7` — river / uncontracted / Neamț / Cucurezul
+- `unc-97dde3775f` — river / uncontracted / Neamț / Pârâul lui Melot
+- `unc-980bd4ad20` — river / uncontracted / Neamț / Drăhuța
+- `unc-98a6eaf328` — river / uncontracted / Neamț / Părăul Comorii
+- `unc-98f2915f88` — river / uncontracted / Neamț / Hanu
+- `unc-994b656ae0` — river / uncontracted / Neamț / Stuhulețul
+- `unc-99b5e7728d` — river / uncontracted / Neamț / Căldărea
+- `unc-9a25bd8f88` — river / uncontracted / Neamț / Măceșul
+- `unc-9a60bb349d` — river / uncontracted / Neamț / Rupturi
+- `unc-9acc57be34` — river / uncontracted / Neamț / Pârâul Fulgerișului
+- `unc-9b93cbde1a` — river / uncontracted / Neamț / Küpü vize
+- `unc-9bee4c580c` — river / uncontracted / Neamț / Jgheabu cu Hotar
+- `unc-9c3936f1a5` — river / uncontracted / Neamț / Nican
+- `unc-9cc3d2b975` — river / uncontracted / Neamț / Jgheabul Cherecului
+- `unc-9dd18384e9` — river / uncontracted / Neamț / P. Bursucăriei
+- `unc-9de233740c` — river / uncontracted / Neamț / Cerbul
+- `unc-9deb45965a` — river / uncontracted / Neamț / Gârbea
+- `unc-9df78a1066` — river / uncontracted / Neamț / Pârâul Arinului
+- `unc-9dfd968dc6` — river / uncontracted / Neamț / Jgheabul Mare
+- `unc-9f5b88fb34` — river / uncontracted / Neamț / Pârâul Scăioasa
+- `unc-9f8fe75e2c` — river / uncontracted / Neamț / Pârâul Șarpelui
+- `unc-a0784cf40b` — river / uncontracted / Neamț / Șimon
+- `unc-a25b36121b` — river / uncontracted / Neamț / Izvoru Muntelui
+- `unc-a32d585854` — river / uncontracted / Neamț / Găina
+- `unc-a35e71ae90` — river / uncontracted / Neamț / Pârâul Cojocarului
+- `unc-a443132e6c` — river / uncontracted / Neamț / Zăplazul
+- `unc-a49f4b434a` — river / uncontracted / Neamț / Cojocul
+- `unc-a592526277` — river / uncontracted / Neamț / Ursoaia
+- `unc-a71bbb1234` — river / uncontracted / Neamț / Nechit
+- `unc-a839db1f47` — river / uncontracted / Neamț / Cerebuc
+- `unc-a8996aa9bd` — river / uncontracted / Neamț / Oanțu
+- `unc-a8cc7437a9` — river / uncontracted / Neamț / Pârâul Celarului
+- `unc-a928e227ff` — river / uncontracted / Neamț / Sihastrul
+- `unc-a9c3b64f08` — river / uncontracted / Neamț / Doșețel
+- `unc-a9cb77e6b9` — river / uncontracted / Neamț / Chișița
+- `unc-aa33495d08` — river / uncontracted / Neamț / Cracăul Negru
+- `unc-aa6c1a9e3d` — river / uncontracted / Neamț / Zimbrul
+- `unc-aa8007969b` — river / uncontracted / Neamț / Pârâul lui Stamate
+- `unc-ac878e6ee0` — river / uncontracted / Neamț / Borzogheanu
+- `unc-acbec70bec` — river / uncontracted / Neamț / Mihăiețul Sec
+- `unc-aceb74034a` — river / uncontracted / Neamț / Odăilor
+- `unc-af9320b9da` — river / uncontracted / Neamț / Pârâul Scurt
+- `unc-afd41bcaa6` — river / uncontracted / Neamț / Bărbunți
+- `unc-b06752a5cf` — river / uncontracted / Neamț / Hangu
+- `unc-b1b7657ea5` — river / uncontracted / Neamț / Borvizul
+- `unc-b22b069d7a` — river / uncontracted / Neamț / Pârâul Scurt
+- `unc-b28a90c07a` — river / uncontracted / Neamț / Gârboaia
+- `unc-b2d1ee14d0` — river / uncontracted / Neamț / Secu Mâhlit
+- `unc-b389442bc1` — river / uncontracted / Neamț / Valea Bătrână
+- `unc-b41027f41f` — river / uncontracted / Neamț / Huciașu
+- `unc-b41d703ff6` — river / uncontracted / Neamț / Secătura Mare
+- `unc-b59d98988e` — river / uncontracted / Neamț / P lui Martin
+- `unc-b696456771` — river / uncontracted / Neamț / Cuejdel
+- `unc-b696eca8df` — river / uncontracted / Neamț / Pârâul lui Herman
+- `unc-b6ac2d830e` — river / uncontracted / Neamț / Pârâul Sec
+- `unc-b71b3a2753` — river / uncontracted / Neamț / Groapa
+- `unc-b76dfadd9a` — river / uncontracted / Neamț / Bolătău
+- `unc-b793e7724d` — river / uncontracted / Neamț / Breaza
+- `unc-b8485d92ef` — river / uncontracted / Neamț / Jgheabul lui Vodă
+- `unc-b958c8d0b3` — river / uncontracted / Neamț / Pârâul Arșiței
+- `unc-b96f199cf2` — river / uncontracted / Neamț / Budacu
+- `unc-ba6340e3b0` — river / uncontracted / Neamț / Drânguleasa
+- `unc-bab71334f4` — river / uncontracted / Neamț / Tărnicioarei
+- `unc-bc488dc56b` — river / uncontracted / Neamț / Cârja
+- `unc-bd2561150a` — river / uncontracted / Neamț / Coacăzul
+- `unc-bdc1034c69` — river / uncontracted / Neamț / Brăteasca
+- `unc-be4c8a96ce` — river / uncontracted / Neamț / Cornul
+- `unc-c09455339d` — river / uncontracted / Neamț / Pârâul Curmăturii Adânci
+- `unc-c11cf6a7b7` — river / uncontracted / Neamț / Almașul
+- `unc-c121eb5060` — river / uncontracted / Neamț / Jghiabu Larg
+- `unc-c1b42b872a` — river / uncontracted / Neamț / Ploștina
+- `unc-c1f56b261d` — river / uncontracted / Neamț / Țiflic
+- `unc-c2e05444da` — river / uncontracted / Neamț / Floarea
+- `unc-c2e3979a2e` — river / uncontracted / Neamț / Grădina
+- `unc-c42387019e` — river / uncontracted / Neamț / Pârâul Verde
+- `unc-c4377376fa` — river / uncontracted / Neamț / Straja
+- `unc-c6324d25c5` — river / uncontracted / Neamț / Tărcuța
+- `unc-c7591bbaa1` — river / uncontracted / Neamț / Pârâul În Imaș
+- `unc-c8875fcbbe` — river / uncontracted / Neamț / Pârâul Păltinișului
+- `unc-c8e201b39a` — river / uncontracted / Neamț / Pârâul Druganului
+- `unc-cae16ada58` — river / uncontracted / Neamț / Goșmanu
+- `unc-caed7bde15` — river / uncontracted / Neamț / Pârâul Pașculețul
+- `unc-cb71df668c` — river / uncontracted / Neamț / Alunișul
+- `unc-cb9935b2f8` — river / uncontracted / Neamț / Secătura
+- `unc-cbd23e8a9f` — river / uncontracted / Neamț / Hâciogosul
+- `unc-ccef4e1733` — river / uncontracted / Neamț / Tarhaoș
+- `unc-cd42d663f7` — river / uncontracted / Neamț / Țapu
+- `unc-ce1abd5894` — river / uncontracted / Neamț / Oprești
+- `unc-ced8d2b989` — river / uncontracted / Neamț / Runcul
+- `unc-cf071aeb98` — river / uncontracted / Neamț / Carpenul
+- `unc-cf1150c8cf` — river / uncontracted / Neamț / Prislopașul
+- `unc-d13d90c166` — river / uncontracted / Neamț / Pârâul Radului
+- `unc-d19e658828` — river / uncontracted / Neamț / Pârâul Paltinului
+- `unc-d1be4b49e6` — river / uncontracted / Neamț / Pârâul Focșenilor
+- `unc-d2bf88062e` — river / uncontracted / Neamț / Arinișul
+- `unc-d30c266ccf` — river / uncontracted / Neamț / Pârâul lui Petrișor
+- `unc-d35d7fc151` — river / uncontracted / Neamț / Bran
+- `unc-d397351743` — river / uncontracted / Neamț / Pârâul Hăscuții
+- `unc-d3e94cd4f0` — river / uncontracted / Neamț / Balmeș
+- `unc-d3fd817be4` — river / uncontracted / Neamț / Pârâul Borzogheanu
+- `unc-d546ab5983` — river / uncontracted / Neamț / Pârâul Tociloasa
+- `unc-d58965a62d` — river / uncontracted / Neamț / Pârâul Maicilor
+- `unc-d5a92b06e1` — river / uncontracted / Neamț / Pârâul Genunilor
+- `unc-d7ba44535c` — river / uncontracted / Neamț / Brateș
+- `unc-d7d624419c` — river / uncontracted / Neamț / Pârâul Plotănașul
+- `unc-d7e3cc0cd2` — river / uncontracted / Neamț / Chifanului
+- `unc-d9097b6d0c` — river / uncontracted / Neamț / Hanul
+- `unc-d90e39005d` — river / uncontracted / Neamț / Boulețul Mare
+- `unc-d947dbcef6` — river / uncontracted / Neamț / Inginerul
+- `unc-da0bedb2ee` — river / uncontracted / Neamț / Cealca
+- `unc-db3b2db32f` — river / uncontracted / Neamț / Mânzatul Mare
+- `unc-dbcce4fd52` — river / uncontracted / Neamț / Pârâul Scorușul
+- `unc-dd6d313c54` — river / uncontracted / Neamț / Gloduri
+- `unc-deb6a04896` — river / uncontracted / Neamț / Pârâul Smeului
+- `unc-dfdc9934c2` — river / uncontracted / Neamț / Cantonul
+- `unc-e173303909` — river / uncontracted / Neamț / Păltinișul
+- `unc-e22bba2b72` — river / uncontracted / Neamț / La Hotar
+- `unc-e2874a1610` — river / uncontracted / Neamț / Snida
+- `unc-e30e07146f` — river / uncontracted / Neamț / Pârâul Puturos
+- `unc-e401cfcd9e` — river / uncontracted / Neamț / Strugăria
+- `unc-e44a39c880` — river / uncontracted / Neamț / Sărăriei
+- `unc-e47fb50d13` — river / uncontracted / Neamț / Hălgeanu
+- `unc-e547bd32cf` — river / uncontracted / Neamț / Valea Mică
+- `unc-e594335822` — river / uncontracted / Neamț / Pârâul Curmăturii
+- `unc-e600370e5c` — river / uncontracted / Neamț / Frasinul
+- `unc-e62b49311c` — river / uncontracted / Neamț / Fagul
+- `unc-e6d9441adf` — river / uncontracted / Neamț / Pârâul Viișorei
+- `unc-e6ea5efffc` — river / uncontracted / Neamț / Măguricea
+- `unc-e74711fb36` — river / uncontracted / Neamț / Pârâul Hotar
+- `unc-e82d1a49c3` — river / uncontracted / Neamț / Tarvezul
+- `unc-e99c6f5b22` — river / uncontracted / Neamț / Piciorul
+- `unc-eba08dce0f` — river / uncontracted / Neamț / Runcului
+- `unc-ed21c83c19` — river / uncontracted / Neamț / Pârâul Curmăturii
+- `unc-ed86574a21` — river / uncontracted / Neamț / Săscuța
+- `unc-ed8cdbfbcc` — river / uncontracted / Neamț / Procov
+- `unc-eeaf11677f` — river / uncontracted / Neamț / Ardele
+- `unc-eed266c30c` — river / uncontracted / Neamț / Neamtul cel Mare
+- `unc-f187001ae6` — river / uncontracted / Neamț / Pârâul Grasul
+- `unc-f25310a35a` — river / uncontracted / Neamț / Pârâul Ecem
+- `unc-f28161a08d` — river / uncontracted / Neamț / Secătura Mică
+- `unc-f31be39418` — river / uncontracted / Neamț / Pârâul Pietros
+- `unc-f41b076537` — river / uncontracted / Neamț / Runcul
+- `unc-f44d665557` — river / uncontracted / Neamț / Huma
+- `unc-f45abeef8b` — river / uncontracted / Neamț / Secăturel
+- `unc-f49b0a45c5` — river / uncontracted / Neamț / Turbata
+- `unc-f4b37b1d76` — river / uncontracted / Neamț / Pârâul Popii
+- `unc-f4ca41ea2d` — river / uncontracted / Neamț / Pârâul Sorbului
+- `unc-f57c561bc3` — river / uncontracted / Neamț / Pârâul Văduții
+- `unc-f68204b41f` — river / uncontracted / Neamț / Silvestru
+- `unc-f6a4247d49` — river / uncontracted / Neamț / Ruseni
+- `unc-f6e092cf43` — river / uncontracted / Neamț / Grințieșul Mare
+- `unc-f6f19b41d3` — river / uncontracted / Neamț / Izvoru Alb
+- `unc-f7f04f61d1` — river / uncontracted / Neamț / Ruptura
+- `unc-f930c3edc2` — river / uncontracted / Neamț / Albert
+- `unc-f964e2533b` — river / uncontracted / Neamț / Sbrancea
+- `unc-f9955e5aaa` — river / uncontracted / Neamț / Pârâul Lăptoacelor
+- `unc-fb5738e33d` — river / uncontracted / Neamț / Huisurez
+- `unc-fb86586d65` — river / uncontracted / Neamț / Pârâul Putred
+- `unc-fb8eb345af` — river / uncontracted / Neamț / Răchita
+- `unc-fb9eb3ae1c` — river / uncontracted / Neamț / Trapezia
+- `unc-fbb4106703` — river / uncontracted / Neamț / Pârâul Pascu
+- `unc-fcd5ae6e8b` — river / uncontracted / Neamț / Paltinul
+- `unc-fd7b573be9` — river / uncontracted / Neamț / Strigoeșul
+- `unc-fe1c7598b2` — river / uncontracted / Neamț / Cichiva
+- `unc-ffb683bee2` — river / uncontracted / Neamț / Pârâul Platonești
+- `unc-05734ef15a` — river / uncontracted / Olt / Râul Crușov
+- `unc-0676948406` — river / uncontracted / Olt / Pârâul Plapcea Mică
+- `unc-0c14e75e43` — river / uncontracted / Olt / Sneagul
+- `unc-0c18528cda` — river / uncontracted / Olt / Pârâul Gologanul
+- `unc-1385b3de6e` — river / uncontracted / Olt / Râul Redea
+- `unc-1537f314db` — river / uncontracted / Olt / Iminog
+- `unc-1be71a149a` — river / uncontracted / Olt / Pârâul Plapcea Mare
+- `unc-1c86ff7e87` — river / uncontracted / Olt / Râul Miloveanu
+- `unc-1ec542ab07` — river / uncontracted / Olt / Coșcan
+- `unc-235d38fa76` — river / uncontracted / Olt / Pârâul Horezu
+- `unc-2849d992ce` — river / uncontracted / Olt / Negrișoara
+- `unc-2992087a39` — river / uncontracted / Olt / Plapcea Mică
+- `unc-29c178f7aa` — river / uncontracted / Olt / Balta Dascălului
+- `unc-2cf257f6ca` — river / uncontracted / Olt / Pârâul Crusovul
+- `unc-2e8c3125c6` — river / uncontracted / Olt / Râul Surdui
+- `unc-2f49917826` — river / uncontracted / Olt / Pârâul Turia
+- `unc-3070468500` — river / uncontracted / Olt / Pârâul Chiara
+- `unc-31fafc76f4` — river / uncontracted / Olt / Râul Dorofei
+- `unc-35ee254f7a` — river / uncontracted / Olt / Râul Ciorâca
+- `unc-3c79bf0015` — river / uncontracted / Olt / Râul Iminog
+- `unc-428883c18c` — river / uncontracted / Olt / Cungrea Mică
+- `unc-486b5f0206` — river / uncontracted / Olt / Râul Ciocârlia
+- `unc-4a2e6823fe` — river / uncontracted / Olt / Redișoara
+- `unc-50140aed8d` — river / uncontracted / Olt / Râul Bârlui
+- `unc-50817508f5` — river / uncontracted / Olt / Crusovul
+- `unc-51782fa96a` — river / uncontracted / Olt / Crusovul
+- `unc-531c077df0` — river / uncontracted / Olt / Râul Suhatul
+- `unc-5c94daf003` — river / uncontracted / Olt / Gologan
+- `unc-5d5f421c35` — river / uncontracted / Olt / Vaslui
+- `unc-5fe9489336` — river / uncontracted / Olt / Obârșia
+- `unc-621d73f3d9` — river / uncontracted / Olt / Pârâul Gologanul
+- `unc-64dd0190f3` — river / uncontracted / Olt / Plapcea Mare
+- `unc-6737830cb0` — river / uncontracted / Olt / Râul Cârgrea
+- `unc-67488ac1d3` — river / uncontracted / Olt / Bobu
+- `unc-6794b85c25` — river / uncontracted / Olt / Ulmul Mare
+- `unc-68ec1c3908` — river / uncontracted / Olt / Râul Vlădila
+- `unc-734d4961f9` — river / uncontracted / Olt / Oltișor
+- `unc-73ad79d7ae` — river / uncontracted / Olt / Sodol
+- `unc-75f809fbe3` — river / uncontracted / Olt / Râul Deveselu
+- `unc-76ee44da86` — river / uncontracted / Olt / Redișoara
+- `unc-7fa5a6c704` — river / uncontracted / Olt / Pârârul Roșu
+- `unc-8146a875bd` — river / uncontracted / Olt / Pârâul Mogoșești
+- `unc-839b6bb526` — river / uncontracted / Olt / Călmățuiul Sec
+- `unc-8574b1ec3a` — river / uncontracted / Olt / Pârâul Obârșia
+- `unc-871d2d1c18` — river / uncontracted / Olt / Gengea
+- `unc-8da6ab14d9` — river / uncontracted / Olt / Voineasa Mică
+- `unc-8e1c819385` — river / uncontracted / Olt / Pârâul Cinculeasa
+- `unc-a27a471440` — river / uncontracted / Olt / Pârâul Teiuș
+- `unc-a44cf2deb7` — river / uncontracted / Olt / Plapcea
+- `unc-a8092f9b4f` — river / uncontracted / Olt / Pârâul Oboga
+- `unc-a932bbb978` — river / uncontracted / Olt / Râul Ștreangul
+- `unc-af2032c606` — river / uncontracted / Olt / Râul Cungrea
+- `unc-b895f448aa` — river / uncontracted / Olt / Pârâul Stufu
+- `unc-b9a5f27bad` — river / uncontracted / Olt / Valea Ursii
+- `unc-bc1068ffca` — river / uncontracted / Olt / Râul Oltișor
+- `unc-bd86d594e6` — river / uncontracted / Olt / Pârâul Milcov
+- `unc-d1da24d380` — river / uncontracted / Olt / Râul Bârlui
+- `unc-d857867582` — river / uncontracted / Olt / Dâlga
+- `unc-d86fc657d5` — river / uncontracted / Olt / Râul Strehareți
+- `unc-db7ba2ed61` — river / uncontracted / Olt / Râul Gologanul
+- `unc-dc10f795f5` — river / uncontracted / Olt / Șopot
+- `unc-deaa925ed3` — river / uncontracted / Olt / Râul Vedița
+- `unc-e0a0be40f8` — river / uncontracted / Olt / Râul Plapcea
+- `unc-e16dcc2ae1` — river / uncontracted / Olt / Râul Cleja
+- `unc-e2d77386d3` — river / uncontracted / Olt / Obârșia
+- `unc-e72fae2aed` — river / uncontracted / Olt / Voineasa Mare
+- `unc-ed68072675` — river / uncontracted / Olt / Valea Bungetului
+- `unc-ee90592f11` — river / uncontracted / Olt / Sâi
+- `unc-f36acd5731` — river / uncontracted / Olt / Râul Lungoț
+- `unc-002bebf6d0` — river / uncontracted / Prahova / Vâlcelul Vârful cu Dor
+- `unc-01818df1a9` — river / uncontracted / Prahova / Valea lui Zangur
+- `unc-02167bfbd6` — river / uncontracted / Prahova / Valea Priponului
+- `unc-023bc37924` — river / uncontracted / Prahova / Valea Cășeriei
+- `unc-03642c1dc2` — river / uncontracted / Prahova / Valea Mărului
+- `unc-058cfcde38` — river / uncontracted / Prahova / Valea Urechii
+- `unc-07324e43ff` — river / uncontracted / Prahova / Văleanca
+- `unc-0736b3cece` — river / uncontracted / Prahova / Valea Seacă
+- `unc-089f45c03d` — river / uncontracted / Prahova / Valea Peleșului
+- `unc-0cc6b20b81` — river / uncontracted / Prahova / Albișoara Turnurilor
+- `unc-0e9ca4821d` — river / uncontracted / Prahova / Mogoș
+- `unc-0ee1c9b413` — river / uncontracted / Prahova / Dracilor
+- `unc-10c9cd43d6` — river / uncontracted / Prahova / Grohotiș
+- `unc-125a971c05` — river / uncontracted / Prahova / Valea Secuianca
+- `unc-130ee3b49d` — river / uncontracted / Prahova / Valea Mărului
+- `unc-14af1e0616` — river / uncontracted / Prahova / Valea Coștilei
+- `unc-1507c24023` — river / uncontracted / Prahova / Urlătoarea Mare
+- `unc-15ba6f70e6` — river / uncontracted / Prahova / Pârâul Istau
+- `unc-16162444fa` — river / uncontracted / Prahova / Mușița
+- `unc-1850cc49ec` — river / uncontracted / Prahova / Albișoara Crucii
+- `unc-189dbabcf2` — river / uncontracted / Prahova / Pârâul Berii
+- `unc-1a93bbca76` — river / uncontracted / Prahova / Valea Caprelor
+- `unc-1cb5994a55` — river / uncontracted / Prahova / Pârâul Sterp
+- `unc-1f09cccefd` — river / uncontracted / Prahova / Urlătoarea
+- `unc-2041107ec5` — river / uncontracted / Prahova / Vâlceaua lui Marcan
+- `unc-24b8c2d357` — river / uncontracted / Prahova / Valea Gălbenele
+- `unc-24bc99a945` — river / uncontracted / Prahova / Comorile de Mijloc
+- `unc-2846778df3` — river / uncontracted / Prahova / Valea Colților
+- `unc-29e2587c2d` — river / uncontracted / Prahova / Zăganu
+- `unc-2a1ef0a00c` — river / uncontracted / Prahova / Valea cu Brazi
+- `unc-2a9cd39e4b` — river / uncontracted / Prahova / Valea Scorușilor
+- `unc-2bba0382f6` — river / uncontracted / Prahova / Glodul
+- `unc-2e67dcebc1` — river / uncontracted / Prahova / Valea Soarelui
+- `unc-2f243d9f8e` — river / uncontracted / Prahova / Baiu Mic
+- `unc-32cb4ec532` — river / uncontracted / Prahova / Valea Războiului
+- `unc-33e284d1e4` — river / uncontracted / Prahova / Aluniș
+- `unc-37667648c8` — river / uncontracted / Prahova / Dâmbul
+- `unc-395b3e557c` — river / uncontracted / Prahova / Valea Grecului
+- `unc-3a346e2547` — river / uncontracted / Prahova / Valea Zgarburei
+- `unc-3bed30ae7c` — river / uncontracted / Prahova / Tohăneanca
+- `unc-3cfb70081c` — river / uncontracted / Prahova / Sistoaca Rosie
+- `unc-3d7b73d0ab` — river / uncontracted / Prahova / Drajna
+- `unc-3e53ce172a` — river / uncontracted / Prahova / Valea Albă
+- `unc-3faac4ca47` — river / uncontracted / Prahova / Bălțești
+- `unc-40e56f3ab0` — river / uncontracted / Prahova / valc. Policandrului?
+- `unc-40ecd5bc4c` — river / uncontracted / Prahova / Pârâul Jepilor
+- `unc-40efff0841` — river / uncontracted / Prahova / Crâng
+- `unc-424e237670` — river / uncontracted / Prahova / Provița
+- `unc-43eba8cbc4` — river / uncontracted / Prahova / Boncuța
+- `unc-45b9be70ec` — river / uncontracted / Prahova / Glodeasa
+- `unc-462d839944` — river / uncontracted / Prahova / Urzica
+- `unc-468f996570` — river / uncontracted / Prahova / Valea Fabricii
+- `unc-46a0df1285` — river / uncontracted / Prahova / Valea Șipa
+- `unc-48ca94b848` — river / uncontracted / Prahova / Valea cu Genune
+- `unc-4938239142` — river / uncontracted / Prahova / Stâmnic
+- `unc-4f049d1cc2` — river / uncontracted / Prahova / Hoagele Urzicii
+- `unc-4fa920b022` — river / uncontracted / Prahova / Dutca
+- `unc-53be055699` — river / uncontracted / Prahova / Pâraie
+- `unc-546ee62df3` — river / uncontracted / Prahova / Valea Coțofenei
+- `unc-54cc29b7ce` — river / uncontracted / Prahova / Nișcov
+- `unc-56369d9865` — river / uncontracted / Prahova / Valea Stânei
+- `unc-56a2b6113e` — river / uncontracted / Prahova / Secăria
+- `unc-57e119285b` — river / uncontracted / Prahova / Cosmina
+- `unc-5870694031` — river / uncontracted / Prahova / Vâlcelul Picăturii
+- `unc-588523a656` — river / uncontracted / Prahova / Valea Câinelui
+- `unc-589675b604` — river / uncontracted / Prahova / Săcuianca
+- `unc-5991590382` — river / uncontracted / Prahova / Valea Seacă a Coștilei
+- `unc-5aa95707d2` — river / uncontracted / Prahova / Vărbila
+- `unc-5b580e34bf` — river / uncontracted / Prahova / Bratocea
+- `unc-5bba5f105f` — river / uncontracted / Prahova / Urlățelul
+- `unc-5bd0bdbff7` — river / uncontracted / Prahova / Runc
+- `unc-5da2ff8fe8` — river / uncontracted / Prahova / Izvorul Mioarelor
+- `unc-5e03375bee` — river / uncontracted / Prahova / Valea Măturarului
+- `unc-668a4c5337` — river / uncontracted / Prahova / Doftănița
+- `unc-67102c1746` — river / uncontracted / Prahova / Valea lui Bogdan
+- `unc-6894cf1cb7` — river / uncontracted / Prahova / Valea Șteviei
+- `unc-69bef5af8c` — river / uncontracted / Prahova / Pârâul Chiojdeanca
+- `unc-6aac021b9d` — river / uncontracted / Prahova / Valea Jilip
+- `unc-6b7c1b195e` — river / uncontracted / Prahova / Urlătoarea Mică
+- `unc-6cf4f40a12` — river / uncontracted / Prahova / Valea Turcului
+- `unc-6d0fde473a` — river / uncontracted / Prahova / Pârâul Beliei
+- `unc-6d6f845dc4` — river / uncontracted / Prahova / Orjogoaia
+- `unc-6e038a621c` — river / uncontracted / Prahova / Unghia Mică
+- `unc-6f23d988a4` — river / uncontracted / Prahova / Valea Stânei
+- `unc-6f3a4a327f` — river / uncontracted / Prahova / Valea Dracului
+- `unc-6f4b989e31` — river / uncontracted / Prahova / Valea Caldă
+- `unc-715d55d1b2` — river / uncontracted / Prahova / Doftăneț
+- `unc-71970ceedc` — river / uncontracted / Prahova / Apa Canalizare
+- `unc-726f049b45` — river / uncontracted / Prahova / Bucovel
+- `unc-7405582881` — river / uncontracted / Prahova / Vâlcelul Bujorului
+- `unc-7aeee818a4` — river / uncontracted / Prahova / Valea Adâncă
+- `unc-7cd3122fd4` — river / uncontracted / Prahova / Căcâcea
+- `unc-7d32e78c01` — river / uncontracted / Prahova / Valea Verde
+- `unc-7de3d727b0` — river / uncontracted / Prahova / Valea Pelișor
+- `unc-7e0c6c32ea` — river / uncontracted / Prahova / Valea Fetei
+- `unc-81a548af9a` — river / uncontracted / Prahova / Slănic
+- `unc-83a5c69ceb` — river / uncontracted / Prahova / Valea Găgăuților
+- `unc-85deddcf15` — river / uncontracted / Prahova / Pârâul Stânii
+- `unc-86a0ea6826` — river / uncontracted / Prahova / Cenușeroaia
+- `unc-86b3f30b6a` — river / uncontracted / Prahova / Zavoarele
+- `unc-86b85cd8d0` — river / uncontracted / Prahova / Florei
+- `unc-8716c347cb` — river / uncontracted / Prahova / Valea Tufa
+- `unc-8947b039ed` — river / uncontracted / Prahova / Valea Gâlmei
+- `unc-89eb6b2ca5` — river / uncontracted / Prahova / Valea Izvorului
+- `unc-8e1844f70e` — river / uncontracted / Prahova / Negraș
+- `unc-8f0adfd2ed` — river / uncontracted / Prahova / Valea Brădetului
+- `unc-919f7a15de` — river / uncontracted / Prahova / Valea Largă
+- `unc-91dc21be8f` — river / uncontracted / Prahova / Iadul Văii Albe
+- `unc-953e8e5eab` — river / uncontracted / Prahova / Ursoaia Mică
+- `unc-97c3195b02` — river / uncontracted / Prahova / Tâmpa
+- `unc-98076bd574` — river / uncontracted / Prahova / Valea Unghia Mare
+- `unc-981c05f52a` — river / uncontracted / Prahova / Luparia
+- `unc-98c6469ab2` — river / uncontracted / Prahova / Valea Sfânta Ana
+- `unc-98e6bb1899` — river / uncontracted / Prahova / Valea Secăriei
+- `unc-9a08eaee35` — river / uncontracted / Prahova / Păltinoasa
+- `unc-9b405641b3` — river / uncontracted / Prahova / Ghighiul
+- `unc-9bdc78cddc` — river / uncontracted / Prahova / Limbășelul
+- `unc-9d358756d0` — river / uncontracted / Prahova / Valea Spumoasă
+- `unc-9ea15e317a` — river / uncontracted / Prahova / Blidul Uriasilor
+- `unc-9f0b5e96b8` — river / uncontracted / Prahova / Valea Pietrii
+- `unc-9fa0a2c98c` — river / uncontracted / Prahova / Cazacul
+- `unc-a0bf5c3a86` — river / uncontracted / Prahova / Valea Jepilor
+- `unc-a0d3611340` — river / uncontracted / Prahova / Valea Bătrâioara (Pătrioara)
+- `unc-a52ee22696` — river / uncontracted / Prahova / Prislop
+- `unc-a587b16146` — river / uncontracted / Prahova / Coțofana
+- `unc-a71224b55d` — river / uncontracted / Prahova / Chiojdu
+- `unc-a811c4b7ab` — river / uncontracted / Prahova / Pârâul Vărsăturile
+- `unc-aa701b4663` — river / uncontracted / Prahova / Valea Zamora
+- `unc-aaccdaa58f` — river / uncontracted / Prahova / Clăbucet
+- `unc-aafb823b44` — river / uncontracted / Prahova / Valea Orății
+- `unc-abcbec928b` — river / uncontracted / Prahova / Valea Belia Mare
+- `unc-ad4fb060fd` — river / uncontracted / Prahova / Ogretineanca
+- `unc-ad8dd08520` — river / uncontracted / Prahova / Pârâul Talea
+- `unc-afd9770a00` — river / uncontracted / Prahova / Vîlcelul Poienitei
+- `unc-b1b85f1ac6` — river / uncontracted / Prahova / Baiu Mare
+- `unc-b4a0424d0f` — river / uncontracted / Prahova / Valea Popii
+- `unc-b4f88e0f64` — river / uncontracted / Prahova / Râul Ghighiu
+- `unc-b539bcdc59` — river / uncontracted / Prahova / Pârâul Balana
+- `unc-b6a8d6f097` — river / uncontracted / Prahova / Valea lui Manole
+- `unc-b6ec82afc8` — river / uncontracted / Prahova / Valea Obielei
+- `unc-b72db8d222` — river / uncontracted / Prahova / Stâlpul
+- `unc-b817c373c7` — river / uncontracted / Prahova / Valea Seacă a Caraimanului
+- `unc-b8d4ba2d2c` — river / uncontracted / Prahova / Valea Neamțului
+- `unc-baae958951` — river / uncontracted / Prahova / Valea Comorilor
+- `unc-baf8f83119` — river / uncontracted / Prahova / Valea Rea
+- `unc-bb3dfb8b8c` — river / uncontracted / Prahova / Provița
+- `unc-bb7bc14a81` — river / uncontracted / Prahova / Valea Belia Mică
+- `unc-bbd2dd2743` — river / uncontracted / Prahova / Carpen
+- `unc-bcb7ac0775` — river / uncontracted / Prahova / Valea Lacul Roșu
+- `unc-bde7b99393` — river / uncontracted / Prahova / Pârâul Cetății
+- `unc-bebcae8c0c` — river / uncontracted / Prahova / Valea Seciului
+- `unc-c4e09150f3` — river / uncontracted / Prahova / Valea Măgarului
+- `unc-c62764d3d1` — river / uncontracted / Prahova / Cășăria
+- `unc-c6300a74cd` — river / uncontracted / Prahova / Izvorul lui Cârstocea
+- `unc-c6abb1e823` — river / uncontracted / Prahova / Ciuciuneasa
+- `unc-c8474f8fda` — river / uncontracted / Prahova / Doftana
+- `unc-c9ccee11c8` — river / uncontracted / Prahova / Valea Dogăriei
+- `unc-caff8728b1` — river / uncontracted / Prahova / Valea Țapului
+- `unc-cd91a9a2c4` — river / uncontracted / Prahova / Izvorul Dorului
+- `unc-ce137a55eb` — river / uncontracted / Prahova / Valea Urzicii
+- `unc-ce88a76925` — river / uncontracted / Prahova / Valea Babei
+- `unc-cffe6a4686` — river / uncontracted / Prahova / Valea Cerbului
+- `unc-d2c339bf20` — river / uncontracted / Prahova / Dâmbul
+- `unc-d3efbf7676` — river / uncontracted / Prahova / Floreiu
+- `unc-d583b4aaab` — river / uncontracted / Prahova / Pârâul Urșilor
+- `unc-d5ef787f3a` — river / uncontracted / Prahova / Valea Seacă dintre Clăi
+- `unc-d6c8032329` — river / uncontracted / Prahova / Rusu
+- `unc-d8201c6cf4` — river / uncontracted / Prahova / Zeletin
+- `unc-d8ed515fa8` — river / uncontracted / Prahova / Mislei
+- `unc-d9fcb313d4` — river / uncontracted / Prahova / Richieiul
+- `unc-daeda46b66` — river / uncontracted / Prahova / Sărățica
+- `unc-dbcf5bfd59` — river / uncontracted / Prahova / Izvorul Mierlele
+- `unc-dc51f91036` — river / uncontracted / Prahova / Câmpinița
+- `unc-de70ff9a64` — river / uncontracted / Prahova / Bob
+- `unc-df0caaee0c` — river / uncontracted / Prahova / Poienari
+- `unc-df5995f16a` — river / uncontracted / Prahova / Vornicu
+- `unc-e7a442b74d` — river / uncontracted / Prahova / Frânca
+- `unc-e85127ab9b` — river / uncontracted / Prahova / Babeș
+- `unc-ebb1ac0378` — river / uncontracted / Prahova / Valea Roșie
+- `unc-f04e90eb0d` — river / uncontracted / Prahova / Pârâul Iordăcheanu
+- `unc-f0d48a0713` — river / uncontracted / Prahova / Mislea
+- `unc-f10f348a2c` — river / uncontracted / Prahova / Comorile Branei
+- `unc-f3efd4cb9d` — river / uncontracted / Prahova / Poenari
+- `unc-f63fd000da` — river / uncontracted / Prahova / Cheița
+- `unc-f7795610ec` — river / uncontracted / Prahova / Valea Albă
+- `unc-f78e537cab` — river / uncontracted / Prahova / Valea Conciului
+- `unc-f8936e714e` — river / uncontracted / Prahova / Valea Morarului
+- `unc-f8e636d27e` — river / uncontracted / Prahova / Valea Mălinului
+- `unc-fb176defed` — river / uncontracted / Prahova / Valea Sitei
+- `unc-fb4857c473` — river / uncontracted / Prahova / Valea Ceaușoaiei
+- `unc-fddf745d01` — river / uncontracted / Prahova / Albișoara Branei
+- `unc-ff132c92ee` — river / uncontracted / Prahova / Valea Poienii
+- `unc-10f30e81ac` — river / uncontracted / Satu Mare / Rakta-ér
+- `unc-1712f2b385` — river / uncontracted / Satu Mare / Szinér patak
+- `unc-30eef5070c` — river / uncontracted / Satu Mare / Sárvíz
+- `unc-3432df13b1` — river / uncontracted / Satu Mare / Sár-Éger-csatorna
+- `unc-364c2f0af2` — river / uncontracted / Satu Mare / Tarna Mare
+- `unc-5ffd3612ea` — river / uncontracted / Satu Mare / Valea Rea
+- `unc-6443a58f8b` — river / uncontracted / Satu Mare / Szamos
+- `unc-6a2cf0df0a` — river / uncontracted / Satu Mare / Homorodul Vechi
+- `unc-85b0955f18` — river / uncontracted / Satu Mare / Bătarci
+- `unc-99c0e987a0` — river / uncontracted / Satu Mare / Hodișa
+- `unc-9cf979b2cd` — river / uncontracted / Satu Mare / Ulics-patak
+- `unc-9dae949938` — river / uncontracted / Satu Mare / Cser patak
+- `unc-ac84aa9e47` — river / uncontracted / Satu Mare / Tarna Mică
+- `unc-c33006660f` — river / uncontracted / Satu Mare / Csanálosi-folyás
+- `unc-e1ee83191b` — river / uncontracted / Satu Mare / Szénási-vízfolyás
+- `unc-e2c0819967` — river / uncontracted / Satu Mare / Csiga-patak
+- `unc-e3c4a7f6f4` — river / uncontracted / Satu Mare / Kraszna
+- `unc-e92d9f610b` — river / uncontracted / Satu Mare / Keleti-övcsatorna
+- `unc-f4822f0c4a` — river / uncontracted / Satu Mare / Valea Maria
+- `unc-f95947c0a0` — river / uncontracted / Satu Mare / Батарч
+- `unc-04b25dd543` — river / uncontracted / Sibiu / Tilișcuța
+- `unc-05e7b2d21d` — river / uncontracted / Sibiu / Nedeiu
+- `unc-072c2bdc08` — river / uncontracted / Sibiu / Pârâul Bumbii
+- `unc-0b6d098eba` — river / uncontracted / Sibiu / Valea Plaiului
+- `unc-0b804e9428` — river / uncontracted / Sibiu / Biertan
+- `unc-0bb47856c5` — river / uncontracted / Sibiu / Râul Scorei
+- `unc-0bdd34520d` — river / uncontracted / Sibiu / Râul Înfundăturii
+- `unc-0d3a9d1a89` — river / uncontracted / Sibiu / Apold
+- `unc-14c658927e` — river / uncontracted / Sibiu / Râul Valea Săpunului
+- `unc-158119e5dc` — river / uncontracted / Sibiu / Pârâul Ruscăi
+- `unc-19096e60f9` — river / uncontracted / Sibiu / Seviș
+- `unc-19e0752237` — river / uncontracted / Sibiu / Ighis
+- `unc-1bc4ebb596` — river / uncontracted / Sibiu / Gostaia
+- `unc-1f7d0a27f9` — river / uncontracted / Sibiu / Alma
+- `unc-21b5d60b7c` — river / uncontracted / Sibiu / Șteaza
+- `unc-2393138be0` — river / uncontracted / Sibiu / Valea lui Ionelu
+- `unc-2603acf7c3` — river / uncontracted / Sibiu / Râul Racovița
+- `unc-260cf75a08` — river / uncontracted / Sibiu / Dăneasa
+- `unc-272bebe03c` — river / uncontracted / Sibiu / Mag
+- `unc-2760d0d1ec` — river / uncontracted / Sibiu / Trestia
+- `unc-2d0660bee6` — river / uncontracted / Sibiu / Valea Paltinului
+- `unc-2e8ad9b677` — river / uncontracted / Sibiu / Valea Drojdiei
+- `unc-2f36b8e020` — river / uncontracted / Sibiu / Sibiel
+- `unc-331ec24345` — river / uncontracted / Sibiu / Valea Conțului
+- `unc-3451520fdb` — river / uncontracted / Sibiu / Valea Muierii
+- `unc-363deeae90` — river / uncontracted / Sibiu / Rosbav
+- `unc-3852ba9b3b` — river / uncontracted / Sibiu / Valea Graniței
+- `unc-4179c4d350` — river / uncontracted / Sibiu / Pârâul Moșna
+- `unc-46ebb48ba6` — river / uncontracted / Sibiu / Tătărul
+- `unc-482c7a6dd2` — river / uncontracted / Sibiu / Arpășel
+- `unc-493ed065c8` — river / uncontracted / Sibiu / Arpașu Mare
+- `unc-4fee2a1636` — river / uncontracted / Sibiu / Mălâncrav
+- `unc-52b8f9b3fc` — river / uncontracted / Sibiu / Valea Utea
+- `unc-5439ef62ae` — river / uncontracted / Sibiu / Valea Urlieșu
+- `unc-54e93841d4` — river / uncontracted / Sibiu / Pârâul Foltea
+- `unc-59b92d80f3` — river / uncontracted / Sibiu / Păucea
+- `unc-5fc8500eb3` — river / uncontracted / Sibiu / Tocile
+- `unc-63072d8dff` — river / uncontracted / Sibiu / Izvorul Conțului
+- `unc-6980ea7a0d` — river / uncontracted / Sibiu / Pârâul Valea Vlașinului
+- `unc-6f44c3b1e1` — river / uncontracted / Sibiu / Cârțișoara
+- `unc-7887ac84ca` — river / uncontracted / Sibiu / Șmig
+- `unc-7ad646a972` — river / uncontracted / Sibiu / Laslea
+- `unc-7e98114087` — river / uncontracted / Sibiu / Rusciori
+- `unc-7fd23642fa` — river / uncontracted / Sibiu / Părăul Comorii
+- `unc-8100ddb8c6` — river / uncontracted / Sibiu / Zăvoaia
+- `unc-865137dd63` — river / uncontracted / Sibiu / Șugag
+- `unc-8743f973d5` — river / uncontracted / Sibiu / Mârșa
+- `unc-87a4f67cdd` — river / uncontracted / Sibiu / Meghis
+- `unc-8900e68baa` — river / uncontracted / Sibiu / Pârâul Sibielaș
+- `unc-8b121e19b1` — river / uncontracted / Sibiu / Valea Bozului
+- `unc-921c1619e5` — river / uncontracted / Sibiu / Pârâul Valea Popii
+- `unc-9561cda6b4` — river / uncontracted / Sibiu / Arpășelul
+- `unc-98e6c1f67c` — river / uncontracted / Sibiu / Pârâul Valea Mică
+- `unc-9940b4972b` — river / uncontracted / Sibiu / Valea Ursului
+- `unc-9b8089c95b` — river / uncontracted / Sibiu / Izvorul Muntelui
+- `unc-9df309d6c8` — river / uncontracted / Sibiu / Flotea
+- `unc-a03b8ba5cf` — river / uncontracted / Sibiu / Reussbach
+- `unc-a46610a629` — river / uncontracted / Sibiu / Pârâul Sibiel
+- `unc-a54ec05e9b` — river / uncontracted / Sibiu / Tilișca
+- `unc-a5ac422e54` — river / uncontracted / Sibiu / Pârâul Cocărâciu
+- `unc-a670d46ceb` — river / uncontracted / Sibiu / Seaca
+- `unc-a75cb14738` — river / uncontracted / Sibiu / Movile
+- `unc-ab1dd8d21e` — river / uncontracted / Sibiu / Ruja
+- `unc-b3d2bf03c2` — river / uncontracted / Sibiu / Amnaș
+- `unc-baa7cbc4da` — river / uncontracted / Sibiu / Resch Bach
+- `unc-be0dada9f5` — river / uncontracted / Sibiu / Valea Lupului
+- `unc-c58eb71438` — river / uncontracted / Sibiu / Poieni
+- `unc-c603d5d119` — river / uncontracted / Sibiu / pârâu
+- `unc-c7c8f1c7c4` — river / uncontracted / Sibiu / Porumbăcel
+- `unc-c85ef2bac8` — river / uncontracted / Sibiu / Moșna
+- `unc-c97e780b49` — river / uncontracted / Sibiu / Sângătin
+- `unc-ca8569b5a5` — river / uncontracted / Sibiu / Valea Bobeșului
+- `unc-ca9b99ad02` — river / uncontracted / Sibiu / Pârâul Cetății
+- `unc-cab72f980e` — river / uncontracted / Sibiu / Buzd
+- `unc-cae900772a` — river / uncontracted / Sibiu / Turnișoara
+- `unc-ccaca847c4` — river / uncontracted / Sibiu / Pârâul Trinkbach
+- `unc-d5dabbdb16` — river / uncontracted / Sibiu / Lungșoara
+- `unc-d79091295f` — river / uncontracted / Sibiu / Almen
+- `unc-dae0556e46` — river / uncontracted / Sibiu / Pârâul lui Burlăcoaie
+- `unc-db4b254522` — river / uncontracted / Sibiu / Vișa
+- `unc-e0e125dcba` — river / uncontracted / Sibiu / Curciu
+- `unc-e3c7dcea4d` — river / uncontracted / Sibiu / Pârâul Ursului
+- `unc-e5b4d31b29` — river / uncontracted / Sibiu / Pârâul Barbeșului
+- `unc-e71d825372` — river / uncontracted / Sibiu / Valea lui Fătul
+- `unc-f80d85725a` — river / uncontracted / Sibiu / Pârâul Neniului
+- `unc-fa569593c8` — river / uncontracted / Sibiu / Pârâul Jogărenii
+- `unc-fb3e238330` — river / uncontracted / Sibiu / Pârâul Peștilor
+- `unc-fb404d90cd` — river / uncontracted / Sibiu / Opatu
+- `unc-fbf7499b8d` — river / uncontracted / Sibiu / Vișa
+- `unc-00a8de8631` — river / uncontracted / Suceava / Izvorul Malului
+- `unc-032ffa31dc` — river / uncontracted / Suceava / Haita
+- `unc-095f7b35d3` — river / uncontracted / Suceava / Pârâul Moișa
+- `unc-0c1c05d9a8` — river / uncontracted / Suceava / Blândeț
+- `unc-0f44407b8e` — river / uncontracted / Suceava / Mesteacănul
+- `unc-1048027106` — river / uncontracted / Suceava / Sucevița
+- `unc-17bc33c3f4` — river / uncontracted / Suceava / Paraul Tarsos
+- `unc-18b278328e` — river / uncontracted / Suceava / Valea Seacă
+- `unc-1c9a03ac67` — river / uncontracted / Suceava / Лаура
+- `unc-2024aaed19` — river / uncontracted / Suceava / Сучава
+- `unc-20866fd426` — river / uncontracted / Suceava / Suceava River
+- `unc-25e9b9e5dc` — river / uncontracted / Suceava / Dragomirna
+- `unc-2a21f5a9d1` — river / uncontracted / Suceava / Izvor
+- `unc-2b7d463b66` — river / uncontracted / Suceava / Voitinel
+- `unc-2d5d77f46d` — river / uncontracted / Suceava / Dragoșa
+- `unc-2e425b6ce7` — river / uncontracted / Suceava / Dubul
+- `unc-2e5caf2fa7` — river / uncontracted / Suceava / Pârâul Mălișorului
+- `unc-2f84c7a276` — river / uncontracted / Suceava / Pârâul Bradului
+- `unc-3363b02bd9` — river / uncontracted / Suceava / Dismireasa
+- `unc-33dc33eeaf` — river / uncontracted / Suceava / Cibeu
+- `unc-36ab70e359` — river / uncontracted / Suceava / Moara Dracului
+- `unc-3bf739f966` — river / uncontracted / Suceava / Lela
+- `unc-40c4e4ad27` — river / uncontracted / Suceava / Negrișoara
+- `unc-4468d8ede0` — river / uncontracted / Suceava / Teșna
+- `unc-458a293f70` — river / uncontracted / Suceava / Putnișoara
+- `unc-480b0e8c8e` — river / uncontracted / Suceava / Soloneț
+- `unc-48f2fc324e` — river / uncontracted / Suceava / Gemenea
+- `unc-4a2af1b9f1` — river / uncontracted / Suceava / Nemtisorul
+- `unc-4c772e2c8b` — river / uncontracted / Suceava / Lucina
+- `unc-508979b3e7` — river / uncontracted / Suceava / Rașcova
+- `unc-53329ddfbe` — river / uncontracted / Suceava / Valea Colbului
+- `unc-534693233a` — river / uncontracted / Suceava / Ortoița
+- `unc-55c9116dcf` — river / uncontracted / Suceava / Saca
+- `unc-58b58c09e8` — river / uncontracted / Suceava / Vicov River
+- `unc-59e65c9ee9` — river / uncontracted / Suceava / Argestru
+- `unc-5a65234858` — river / uncontracted / Suceava / Iezeru
+- `unc-5bf259a3a8` — river / uncontracted / Suceava / Morii
+- `unc-5e8d9469e1` — river / uncontracted / Suceava / Pârâul Străjii
+- `unc-5ebf823210` — river / uncontracted / Suceava / Voroneț
+- `unc-64139e941d` — river / uncontracted / Suceava / Boul Mic
+- `unc-688d543f00` — river / uncontracted / Suceava / Suha
+- `unc-68b90adcfb` — river / uncontracted / Suceava / Pârâul Malului
+- `unc-6bdf4379d7` — river / uncontracted / Suceava / Фальків
+- `unc-7046b94964` — river / uncontracted / Suceava / Boul Mare
+- `unc-73e5604b35` — river / uncontracted / Suceava / Pădurețul
+- `unc-77d67c1a95` — river / uncontracted / Suceava / Săcrieș
+- `unc-7a08c74c6e` — river / uncontracted / Suceava / Paraul Casei
+- `unc-7b63475a71` — river / uncontracted / Suceava / Teșnița
+- `unc-7c6cbec0cc` — river / uncontracted / Suceava / Solca
+- `unc-7d2994bc4d` — river / uncontracted / Suceava / P. Pădurețul
+- `unc-7ef46457c0` — river / uncontracted / Suceava / Râșca
+- `unc-80d1883f01` — river / uncontracted / Suceava / Râul Sucevița
+- `unc-83dc0e61ca` — river / uncontracted / Suceava / Râșca
+- `unc-869fe24a97` — river / uncontracted / Suceava / Crucea
+- `unc-895ac5de66` — river / uncontracted / Suceava / Pârâul Cerbului
+- `unc-95e1b719c6` — river / uncontracted / Suceava / Râul Vulcanu
+- `unc-9854ce9314` — river / uncontracted / Suceava / Pârâul Căboaiei
+- `unc-99ef10f084` — river / uncontracted / Suceava / Deia
+- `unc-9a7bfe3a96` — river / uncontracted / Suceava / Teșna
+- `unc-9c5aaf111d` — river / uncontracted / Suceava / Cristișor
+- `unc-9d085e3bb5` — river / uncontracted / Suceava / Садеу
+- `unc-9d7fcaef9f` — river / uncontracted / Suceava / Suha Mare
+- `unc-a0f6a6f347` — river / uncontracted / Suceava / Calul
+- `unc-a28d67f0b5` — river / uncontracted / Suceava / Sadău
+- `unc-a6d04f2180` — river / uncontracted / Suceava / Negrileasa
+- `unc-ae3a61d197` — river / uncontracted / Suceava / Pârâul Căpriței
+- `unc-af07869c39` — river / uncontracted / Suceava / Solcuța
+- `unc-b000973c29` — river / uncontracted / Suceava / Slătioara
+- `unc-b374f9a2cd` — river / uncontracted / Suceava / Valea Seacă
+- `unc-b7155d31a2` — river / uncontracted / Suceava / Ciumârna
+- `unc-b9242c6d5f` — river / uncontracted / Suceava / Valea Seacă
+- `unc-c0845b0ec9` — river / uncontracted / Suceava / Pârâul Ciurgăului
+- `unc-c2c940ba66` — river / uncontracted / Suceava / Petac
+- `unc-c46adde8f3` — river / uncontracted / Suceava / Băișescu
+- `unc-c9e5b3581c` — river / uncontracted / Suceava / Seaca
+- `unc-cb7540f2ed` — river / uncontracted / Suceava / Ursul
+- `unc-cd79227481` — river / uncontracted / Suceava / Сарата
+- `unc-cdb5e1ec93` — river / uncontracted / Suceava / Pârâul Cotârgași
+- `unc-cdc3feab08` — river / uncontracted / Suceava / Hinata
+- `unc-cfa0a0bdaa` — river / uncontracted / Suceava / Сучава - Suceava
+- `unc-cfb684633f` — river / uncontracted / Suceava / Pârâul Fierului
+- `unc-d278e12bd3` — river / uncontracted / Suceava / Pârâul Negrei
+- `unc-d45cd36d1c` — river / uncontracted / Suceava / P Boului
+- `unc-d85e2686fd` — river / uncontracted / Suceava / Pârâul Râșcuța
+- `unc-da40f10326` — river / uncontracted / Suceava / Râul Demăcușa
+- `unc-db70b77b87` — river / uncontracted / Suceava / Remezeu
+- `unc-dbf4a7057b` — river / uncontracted / Suceava / Sadova
+- `unc-dc1a1a885c` — river / uncontracted / Suceava / Suha Mică
+- `unc-dc413a033d` — river / uncontracted / Suceava / Râul Ciumârna
+- `unc-e21bb283a1` — river / uncontracted / Suceava / Argel
+- `unc-e4674f60db` — river / uncontracted / Suceava / Paraul Ungurenilor
+- `unc-e7020e5168` — river / uncontracted / Suceava / Falcău
+- `unc-e869dc9d84` — river / uncontracted / Suceava / Bucinis
+- `unc-ec4061f54f` — river / uncontracted / Suceava / Mihăileț
+- `unc-ede34de518` — river / uncontracted / Suceava / Haiducul
+- `unc-eecf485053` — river / uncontracted / Suceava / Hurghis
+- `unc-ef3c062e9e` — river / uncontracted / Suceava / Bercheza
+- `unc-f22a26948e` — river / uncontracted / Suceava / Frumosu
+- `unc-f420c3d60c` — river / uncontracted / Suceava / Pârâul Toancelor
+- `unc-f7023565fe` — river / uncontracted / Suceava / Brăteasa
+- `unc-f798a54cc0` — river / uncontracted / Suceava / Ciobanu
+- `unc-fab67a13a2` — river / uncontracted / Suceava / Neagra Șarului
+- `unc-fd5c07b08a` — river / uncontracted / Suceava / Corlățeni
+- `unc-0a8c22212c` — river / uncontracted / Sălaj / Pârâul Răchitelor
+- `unc-12987b25b0` — river / uncontracted / Sălaj / Cliț
+- `unc-132b28ea87` — river / uncontracted / Sălaj / Adalin
+- `unc-1620dd2dbd` — river / uncontracted / Sălaj / Cormeniș
+- `unc-259753523e` — river / uncontracted / Sălaj / Râul Răstolț
+- `unc-4730f9d0d9` — river / uncontracted / Sălaj / Ceaca
+- `unc-5147432505` — river / uncontracted / Sălaj / Valea cu Mori
+- `unc-569bd08eaa` — river / uncontracted / Sălaj / Valea Ortelecului
+- `unc-5c69c8e5fd` — river / uncontracted / Sălaj / Hollós-patak
+- `unc-61fc2113f4` — river / uncontracted / Sălaj / Solona
+- `unc-633d00b733` — river / uncontracted / Sălaj / Purcăreț
+- `unc-64655da4b8` — river / uncontracted / Sălaj / Bezded
+- `unc-6c89a96a14` — river / uncontracted / Sălaj / Jebuc
+- `unc-7390851af1` — river / uncontracted / Sălaj / Băbiu
+- `unc-7bc5d498ea` — river / uncontracted / Sălaj / Printre Văi
+- `unc-7d172d144f` — river / uncontracted / Sălaj / Valea Banului
+- `unc-7ebbb1a49b` — river / uncontracted / Sălaj / Ugruțiu
+- `unc-87a0caa12f` — river / uncontracted / Sălaj / Dragu
+- `unc-88ca46b54f` — river / uncontracted / Sălaj / Marton
+- `unc-8caf3a2af2` — river / uncontracted / Sălaj / Răul Gârbou
+- `unc-94c084de17` — river / uncontracted / Sălaj / Valea Dreaptă
+- `unc-9956c21ab1` — river / uncontracted / Sălaj / Trestia
+- `unc-a22f8259e2` — river / uncontracted / Sălaj / Valea Dragului
+- `unc-a48576f32b` — river / uncontracted / Sălaj / Valea Voivodeniului
+- `unc-b6d1a8dd72` — river / uncontracted / Sălaj / Valea Hrăii
+- `unc-b78c14bf40` — river / uncontracted / Sălaj / Dolu
+- `unc-be23e32547` — river / uncontracted / Sălaj / Cernuc
+- `unc-bef96e315a` — river / uncontracted / Sălaj / Valea Miții
+- `unc-c5da2d7263` — river / uncontracted / Sălaj / Treznea
+- `unc-ce1bd1f583` — river / uncontracted / Sălaj / Valea Morii
+- `unc-cf92d91e7a` — river / uncontracted / Sălaj / Briglez
+- `unc-d43c35f234` — river / uncontracted / Sălaj / Valea Băbiu
+- `unc-e07b4ec20b` — river / uncontracted / Sălaj / Lozna
+- `unc-ee091238a1` — river / uncontracted / Sălaj / Vitroape
+- `unc-fc57be5641` — river / uncontracted / Sălaj / Sáros-patak
+- `unc-fd449b82fd` — river / uncontracted / Sălaj / Cristolțel
+- `unc-fdee59f843` — river / uncontracted / Sălaj / valea Huta
+- `unc-0151416b22` — river / uncontracted / Teleorman / Râul Pasărea
+- `unc-02cf4bd428` — river / uncontracted / Teleorman / Pârâul Câinelui
+- `unc-0d0538f898` — river / uncontracted / Teleorman / Pârâul Câinelui
+- `unc-14ecb43bb1` — river / uncontracted / Teleorman / Danube
+- `unc-1d713d41cb` — river / uncontracted / Teleorman / Sâi
+- `unc-3fb0fad63c` — river / uncontracted / Teleorman / Burnaia
+- `unc-447dcc6537` — river / uncontracted / Teleorman / Calinstea
+- `unc-48f6faf3a6` — river / uncontracted / Teleorman / Dunărea
+- `unc-495985e27d` — river / uncontracted / Teleorman / Осъм
+- `unc-4f1ea569a4` — river / uncontracted / Teleorman / Dunărea
+- `unc-5045a9fc7c` — river / uncontracted / Teleorman / Valea Drăcsenulului
+- `unc-507eabf22e` — river / uncontracted / Teleorman / Bratcov
+- `unc-56c8459e17` — river / uncontracted / Teleorman / Valea Leșilor
+- `unc-58532f7562` — river / uncontracted / Teleorman / Dunărea
+- `unc-5ad07c96ed` — river / uncontracted / Teleorman / Pârâul Tecuci
+- `unc-65b0a309d9` — river / uncontracted / Teleorman / Dunărea
+- `unc-66e1d19928` — river / uncontracted / Teleorman / Ducna
+- `unc-6d0669d9e1` — river / uncontracted / Teleorman / Dunărea
+- `unc-725732b87c` — river / uncontracted / Teleorman / Râul Pasărea
+- `unc-7b69bac86e` — river / uncontracted / Teleorman / Vidrosu
+- `unc-996a220590` — river / uncontracted / Teleorman / Dunărea (Brațul Sulina)
+- `unc-a846c878f3` — river / uncontracted / Teleorman / Valea Albă
+- `unc-aacdc28814` — river / uncontracted / Teleorman / Sultan
+- `unc-b424730499` — river / uncontracted / Teleorman / Pârâul Burdea
+- `unc-bf26398a9f` — river / uncontracted / Teleorman / Râul Clănița
+- `unc-c7905c467a` — river / uncontracted / Teleorman / Pârâul Tecuci
+- `unc-cb1da115b6` — river / uncontracted / Teleorman / Tinoasa
+- `unc-ccd9a116fe` — river / uncontracted / Teleorman / Pârâul Zâmbreasca
+- `unc-e4cb46f341` — river / uncontracted / Teleorman / Râul Clănița
+- `unc-f0ae8e9f57` — river / uncontracted / Teleorman / Danube
+- `unc-f3a7990049` — river / uncontracted / Teleorman / Dâmbovnic
+- `unc-fc12e35133` — river / uncontracted / Teleorman / Puțul Ogarului
+- `unc-fdf8ac9647` — river / uncontracted / Teleorman / Râul Câinelui
+- `unc-feefe3d163` — river / uncontracted / Teleorman / Râul Dâmbovnic
+- `unc-003098a887` — river / uncontracted / Timiș / Munișel
+- `unc-064029cd68` — river / uncontracted / Timiș / Sintar
+- `unc-09e537d639` — river / uncontracted / Timiș / Săraz
+- `unc-0a8fbb7fd7` — river / uncontracted / Timiș / Vâna
+- `unc-0bca2be213` — river / uncontracted / Timiș / Peștiș
+- `unc-126aff19b8` — river / uncontracted / Timiș / Valea lui Liman
+- `unc-14422c439f` — river / uncontracted / Timiș / Aranca
+- `unc-2264492608` — river / uncontracted / Timiș / Valea Padeșului
+- `unc-3232df3e08` — river / uncontracted / Timiș / Gladna
+- `unc-36dde2a608` — river / uncontracted / Timiș / Nădrăgel
+- `unc-40a7065fe3` — river / uncontracted / Timiș / Hăuzești
+- `unc-41be38b258` — river / uncontracted / Timiș / Izvodia
+- `unc-44360256f5` — river / uncontracted / Timiș / Silagiu
+- `unc-444f1554f9` — river / uncontracted / Timiș / Buzad
+- `unc-4eee299f1e` — river / uncontracted / Timiș / Zoldiana
+- `unc-50aa67578d` — river / uncontracted / Timiș / Potoc
+- `unc-5117890281` — river / uncontracted / Timiș / Luda Bara
+- `unc-53760d4629` — river / uncontracted / Timiș / Unu
+- `unc-6efbe12a9e` — river / uncontracted / Timiș / Fibiș
+- `unc-7715e1f0c0` — river / uncontracted / Timiș / Bulza
+- `unc-7b5f286d53` — river / uncontracted / Timiș / Pârâul Vădana
+- `unc-7ca2f372e8` — river / uncontracted / Timiș / Valea Dosului
+- `unc-8147cdb6f8` — river / uncontracted / Timiș / Ланка
+- `unc-821b503faa` — river / uncontracted / Timiș / Sudriaș
+- `unc-86b3eb5850` — river / uncontracted / Timiș / Млака
+- `unc-8c78c750f4` — river / uncontracted / Timiș / Rozalia
+- `unc-91801d68a8` — river / uncontracted / Timiș / Aranca
+- `unc-95cd4eea6e` — river / uncontracted / Timiș / Beregsău
+- `unc-97f408a19a` — river / uncontracted / Timiș / Pârâul Știuca
+- `unc-9f64c430d6` — river / uncontracted / Timiș / Valea Stâlpului
+- `unc-a630362355` — river / uncontracted / Timiș / Băcin
+- `unc-a6a8c14c13` — river / uncontracted / Timiș / Biniș
+- `unc-ab2bc1a581` — river / uncontracted / Timiș / Vana Mare
+- `unc-aef8698d34` — river / uncontracted / Timiș / Glavița-Bega
+- `unc-af077df7e7` — river / uncontracted / Timiș / Beregsău
+- `unc-b106597ef3` — river / uncontracted / Timiș / Lanca
+- `unc-b5aac05bef` — river / uncontracted / Timiș / Birda
+- `unc-b9ea258dc8` — river / uncontracted / Timiș / Canalul Găvojdia
+- `unc-bd1c062917` — river / uncontracted / Timiș / Valea Cornetului
+- `unc-c4ebdd28a3` — river / uncontracted / Timiș / Pețe
+- `unc-c6e8a90f47` — river / uncontracted / Timiș / Lanka
+- `unc-cf50b4effa` — river / uncontracted / Timiș / Sumanda
+- `unc-d77ec802e9` — river / uncontracted / Timiș / Știuca
+- `unc-db3268c943` — river / uncontracted / Timiș / Honoș
+- `unc-df40cb72ab` — river / uncontracted / Timiș / Cinca
+- `unc-e50102615f` — river / uncontracted / Timiș / Salcia
+- `unc-eb796309fc` — river / uncontracted / Timiș / Brătoane
+- `unc-fadd31ccec` — river / uncontracted / Timiș / Hamoș
+- `unc-0095e10995` — river / uncontracted / Tulcea / Valea Ulmului
+- `unc-0162c56273` — river / uncontracted / Tulcea / Valea Mina
+- `unc-0226fe0eca` — river / uncontracted / Tulcea / Sulucu
+- `unc-065e0fafeb` — river / uncontracted / Tulcea / Pârâul Carabalu
+- `unc-08ab3e3263` — river / uncontracted / Tulcea / Gârla Cazacului
+- `unc-0d2f679f8d` — river / uncontracted / Tulcea / Valea lui Iancu
+- `unc-116b21827c` — river / uncontracted / Tulcea / Râpa lui Măcărie
+- `unc-12e3d7932d` — river / uncontracted / Tulcea / Valea Curături
+- `unc-14319144ba` — river / uncontracted / Tulcea / Pandelea
+- `unc-1494f6e238` — river / uncontracted / Tulcea / Danube
+- `unc-17496b428d` — river / uncontracted / Tulcea / Valea Patru Drumuri
+- `unc-186aba499c` — river / uncontracted / Tulcea / Brațul Sfântu Gheorghe
+- `unc-19f4414243` — river / uncontracted / Tulcea / Pârâul Jijila
+- `unc-1f53e0efbb` — river / uncontracted / Tulcea / Valea Ac-Cadân
+- `unc-2c75cfd56b` — river / uncontracted / Tulcea / Соломонів рукав
+- `unc-2ed0786b9d` — river / uncontracted / Tulcea / Dunărea (Brațul Sulina)
+- `unc-2ee61d2159` — river / uncontracted / Tulcea / протока Скунда
+- `unc-338b9067fe` — river / uncontracted / Tulcea / Giurmeș
+- `unc-377a6a3dbb` — river / uncontracted / Tulcea / рукав Іванешть — Brațul Ivănești
+- `unc-38d6356bda` — river / uncontracted / Tulcea / Brațul Măcin
+- `unc-3b5870c92c` — river / uncontracted / Tulcea / Pârlita
+- `unc-425097a335` — river / uncontracted / Tulcea / Carabalâc
+- `unc-4510e0340c` — river / uncontracted / Tulcea / Valea Luncavița
+- `unc-470206f838` — river / uncontracted / Tulcea / Valea Alibeichioi
+- `unc-4a7382cbe8` — river / uncontracted / Tulcea / Hamangia
+- `unc-4a77cd4c2f` — river / uncontracted / Tulcea / Кілійське гирло - Brațul Chilia
+- `unc-4ddbd9e4de` — river / uncontracted / Tulcea / Hidrichu
+- `unc-5230e2866d` — river / uncontracted / Tulcea / Valea Meșterului
+- `unc-5230febb2d` — river / uncontracted / Tulcea / Brațul Babina
+- `unc-5399b0bce6` — river / uncontracted / Tulcea / Stymbelar
+- `unc-543af637fb` — river / uncontracted / Tulcea / Pârâul Ditcova
+- `unc-5568788e16` — river / uncontracted / Tulcea / Valea Carada
+- `unc-59b1cddb50` — river / uncontracted / Tulcea / Прямий рукав
+- `unc-657ba4bd11` — river / uncontracted / Tulcea / Старостамбульське гирло - Brațul Stambulul Vechi
+- `unc-6ae2385142` — river / uncontracted / Tulcea / La Plop
+- `unc-6f13b2dd88` — river / uncontracted / Tulcea / Ретка гирло
+- `unc-702257353a` — river / uncontracted / Tulcea / Tabana
+- `unc-70f49a27b2` — river / uncontracted / Tulcea / Кілійське гирло - Brațul Chilia
+- `unc-70fdd767c4` — river / uncontracted / Tulcea / Pârâul Capaclia
+- `unc-721585bcf8` — river / uncontracted / Tulcea / Islam
+- `unc-76e3e90903` — river / uncontracted / Tulcea / Valea Glonțului
+- `unc-782bc968f7` — river / uncontracted / Tulcea / Valea Chiosdarlâc
+- `unc-7b9448a92e` — river / uncontracted / Tulcea / Dunărea (Brațul Sulina)
+- `unc-7fd7606a95` — river / uncontracted / Tulcea / Avram
+- `unc-8149f0949a` — river / uncontracted / Tulcea / Brațul Cernovca
+- `unc-8397f98627` — river / uncontracted / Tulcea / Valea Ialia
+- `unc-880aa2fd2e` — river / uncontracted / Tulcea / Pârâul Recea
+- `unc-8989807aac` — river / uncontracted / Tulcea / гирло Мусура – Brațul Musura
+- `unc-8ab1a60e18` — river / uncontracted / Tulcea / протока Даллер
+- `unc-8d20bb6c96` — river / uncontracted / Tulcea / Dunărea (Brațul Sulina)
+- `unc-8e929b5d7f` — river / uncontracted / Tulcea / Hamangia
+- `unc-93cd78192d` — river / uncontracted / Tulcea / Brațul Sulina
+- `unc-93dee722b9` — river / uncontracted / Tulcea / Dunărea - Brațul Tulcea
+- `unc-9b5c01549f` — river / uncontracted / Tulcea / Valea Mangina
+- `unc-9bca909ccc` — river / uncontracted / Tulcea / Valea Pricopan
+- `unc-9c40e3eb59` — river / uncontracted / Tulcea / Кілійське гирло
+- `unc-9d934fe74d` — river / uncontracted / Tulcea / Canal Piscani
+- `unc-a14b44eeea` — river / uncontracted / Tulcea / Valea Turiacului
+- `unc-a2234c212b` — river / uncontracted / Tulcea / Pârâul Calistra
+- `unc-a4c768aa0e` — river / uncontracted / Tulcea / Pârâul Telița
+- `unc-a8b1aa304a` — river / uncontracted / Tulcea / Valea Adâncă
+- `unc-aa5cd88ec1` — river / uncontracted / Tulcea / Кілійське гирло
+- `unc-ad2077b682` — river / uncontracted / Tulcea / Ceamurlia
+- `unc-ade8b7ceca` — river / uncontracted / Tulcea / Ciucurova
+- `unc-b0024ab50d` — river / uncontracted / Tulcea / рукав Катенька
+- `unc-b1a78f1a28` — river / uncontracted / Tulcea / Кілійське гирло - Brațul Chilia
+- `unc-b45dcf5434` — river / uncontracted / Tulcea / Очаківське гирло
+- `unc-b5af6c51fd` — river / uncontracted / Tulcea / Кілійське гирло - Brațul Chilia
+- `unc-b6cbddb554` — river / uncontracted / Tulcea / Кислицький рукав
+- `unc-c9196d17f4` — river / uncontracted / Tulcea / Pârâul Airoman
+- `unc-cb1e3cb248` — river / uncontracted / Tulcea / Dunărea
+- `unc-d132eaa92e` — river / uncontracted / Tulcea / Pârâul Fântâna Oilor
+- `unc-d222cde4cf` — river / uncontracted / Tulcea / Taița
+- `unc-d30145ee0b` — river / uncontracted / Tulcea / Pârâul Telița
+- `unc-d333d39d6e` — river / uncontracted / Tulcea / Hagiu
+- `unc-d92d392eaf` — river / uncontracted / Tulcea / Pârâul Sorniac
+- `unc-de203d9788` — river / uncontracted / Tulcea / Hagilar
+- `unc-de3ee4f9cf` — river / uncontracted / Tulcea / Valea Dautcea
+- `unc-df87deb604` — river / uncontracted / Tulcea / Solojanu
+- `unc-e288a05189` — river / uncontracted / Tulcea / Ripcenca
+- `unc-ea6cb7409e` — river / uncontracted / Tulcea / Valea Lozova
+- `unc-eccbe7c12a` — river / uncontracted / Tulcea / Canalul Sărăceni
+- `unc-ed9a4a8e42` — river / uncontracted / Tulcea / Valea Lupului
+- `unc-eea077facf` — river / uncontracted / Tulcea / Canal Păpădia Veche
+- `unc-ef357b577a` — river / uncontracted / Tulcea / Telița
+- `unc-f26acc4c1a` — river / uncontracted / Tulcea / Mahomencea
+- `unc-f401e89952` — river / uncontracted / Tulcea / Valea Drumu de Piatră
+- `unc-f4e219fc3a` — river / uncontracted / Tulcea / Crapina
+- `unc-f5362441a8` — river / uncontracted / Tulcea / Valea Hotaru
+- `unc-f6193b526c` — river / uncontracted / Tulcea / Pârâul lui Jug
+- `unc-f7cfec58f9` — river / uncontracted / Tulcea / Taița
+- `unc-fb9df877ce` — river / uncontracted / Tulcea / Brațul Tătaru
+- `unc-fd1d2b18af` — river / uncontracted / Tulcea / Valea Recea
+- `unc-ff1d3925e4` — river / uncontracted / Tulcea / Telița
+- `unc-2572c40e7c` — river / uncontracted / Vaslui / Bârzota
+- `unc-291f6712dc` — river / uncontracted / Vaslui / Sacovăț
+- `unc-6403318ef8` — river / uncontracted / Vaslui / Tigheci
+- `unc-7bdc7dc0bb` — river / uncontracted / Vaslui / Huși
+- `unc-8fdaa1d4a2` — river / uncontracted / Vaslui / Rediu
+- `unc-a4e9b52a8d` — river / uncontracted / Vaslui / Canal dejectii SC RULMENT
+- `unc-abb9f8937b` — river / uncontracted / Vaslui / Pârâul Valea Seacă
+- `unc-bf8a070895` — river / uncontracted / Vaslui / Recea
+- `unc-c02a889645` — river / uncontracted / Vaslui / Bârzoțel
+- `unc-d290a908db` — river / uncontracted / Vaslui / Pârâul lui Ivan
+- `unc-d5c29f03ca` — river / uncontracted / Vaslui / Gura Văii
+- `unc-fae4281415` — river / uncontracted / Vaslui / Râul Rebricea
+- `unc-0409369037` — river / uncontracted / Vrancea / Motnău
+- `unc-043436581e` — river / uncontracted / Vrancea / Coțatcul
+- `unc-0c72e283c5` — river / uncontracted / Vrancea / Tichiriș
+- `unc-136c99688a` — river / uncontracted / Vrancea / Zăbrăutul Mic
+- `unc-2967e02845` — river / uncontracted / Vrancea / Domoșița
+- `unc-2de880dbc4` — river / uncontracted / Vrancea / Bălan
+- `unc-4b0e9537f5` — river / uncontracted / Vrancea / Lărguța
+- `unc-4e36978b1d` — river / uncontracted / Vrancea / Leica
+- `unc-4eb6bdc814` — river / uncontracted / Vrancea / Carecna
+- `unc-4f76ff2a4c` — river / uncontracted / Vrancea / Tișița Aurie
+- `unc-589fa63a4f` — river / uncontracted / Vrancea / Pietroasa
+- `unc-8249c16d73` — river / uncontracted / Vrancea / Râmna
+- `unc-99fc40cf1d` — river / uncontracted / Vrancea / Bozu
+- `unc-9c114af58b` — river / uncontracted / Vrancea / Gorul
+- `unc-ab243b109d` — river / uncontracted / Vrancea / Chilug
+- `unc-ab9ca39106` — river / uncontracted / Vrancea / Stogu
+- `unc-afe75a0cbb` — river / uncontracted / Vrancea / Vizăuți
+- `unc-b8ab248fae` — river / uncontracted / Vrancea / Slimnic
+- `unc-c2f3937da9` — river / uncontracted / Vrancea / Motocina
+- `unc-c7791f6ab6` — river / uncontracted / Vrancea / Alba
+- `unc-c84875fce7` — river / uncontracted / Vrancea / Cristianu Mic
+- `unc-cebaa7fcd6` — river / uncontracted / Vrancea / Chiua
+- `unc-d9c31c918e` — river / uncontracted / Vrancea / Greșul
+- `unc-de4563287e` — river / uncontracted / Vrancea / Milcov
+- `unc-e0cca23e8c` — river / uncontracted / Vrancea / Cremeneț
+- `unc-e3f5249c32` — river / uncontracted / Vrancea / Mârdanu
+- `unc-ef02a8ac82` — river / uncontracted / Vrancea / Zăbrăuți
+- `unc-fbae51457e` — river / uncontracted / Vrancea / Beciu
+- `unc-005c50cb1a` — river / uncontracted / Vâlcea / Valea Negoeasca
+- `unc-00b8616140` — river / uncontracted / Vâlcea / Valea Pietroasa
+- `unc-01bc1b9668` — river / uncontracted / Vâlcea / Pârâul Mușețel
+- `unc-01ee615cda` — river / uncontracted / Vâlcea / Vătafu
+- `unc-02222240f0` — river / uncontracted / Vâlcea / Valea Frumușiței
+- `unc-0246845c19` — river / uncontracted / Vâlcea / Valea Ionașcu
+- `unc-029cf48daf` — river / uncontracted / Vâlcea / Valea Bobocea
+- `unc-03060f2ca2` — river / uncontracted / Vâlcea / Râușorul
+- `unc-04db09b714` — river / uncontracted / Vâlcea / Pârâul Stânii
+- `unc-0898ac39af` — river / uncontracted / Vâlcea / Valea Sterminoasă
+- `unc-08ba32ee6f` — river / uncontracted / Vâlcea / Pietrosul
+- `unc-091375a697` — river / uncontracted / Vâlcea / Șerbăneasa
+- `unc-0978907c6e` — river / uncontracted / Vâlcea / Căciulata
+- `unc-0a8d553343` — river / uncontracted / Vâlcea / Valea Lemnelor
+- `unc-0b1cc2f4c7` — river / uncontracted / Vâlcea / Pârâul Țapului
+- `unc-0b7bd42d55` — river / uncontracted / Vâlcea / Izvorul Purului
+- `unc-0c117da065` — river / uncontracted / Vâlcea / Călimanul
+- `unc-0c9ed64f4f` — river / uncontracted / Vâlcea / Hința
+- `unc-0cc1dedd8e` — river / uncontracted / Vâlcea / Găujani
+- `unc-0e10b81453` — river / uncontracted / Vâlcea / Valea Șasei
+- `unc-0e28fb5c5d` — river / uncontracted / Vâlcea / Valea Socilor
+- `unc-0e2b7072b5` — river / uncontracted / Vâlcea / Oboadele Mari
+- `unc-0e7c842275` — river / uncontracted / Vâlcea / Porcărelu
+- `unc-0e7e269b84` — river / uncontracted / Vâlcea / Pârâul Rău
+- `unc-0f3a5122f0` — river / uncontracted / Vâlcea / Pârcălabul
+- `unc-10834922cd` — river / uncontracted / Vâlcea / Carbunele
+- `unc-109e55b49e` — river / uncontracted / Vâlcea / Pârâul Socilor
+- `unc-114bc43a36` — river / uncontracted / Vâlcea / Valea Boului
+- `unc-11bba5889b` — river / uncontracted / Vâlcea / Izvorul Budislavului
+- `unc-1226aac245` — river / uncontracted / Vâlcea / Valea Bradului
+- `unc-132bf7c582` — river / uncontracted / Vâlcea / Urșanca
+- `unc-13646db351` — river / uncontracted / Vâlcea / Valea Frăsânei
+- `unc-1411d11bcf` — river / uncontracted / Vâlcea / Valea Rădăcina
+- `unc-146e452bfb` — river / uncontracted / Vâlcea / Valea Bulzului
+- `unc-1486b331be` — river / uncontracted / Vâlcea / Iezerul
+- `unc-1640762082` — river / uncontracted / Vâlcea / Gușatu
+- `unc-16a50ab1f4` — river / uncontracted / Vâlcea / Valea Cornetului
+- `unc-16a645dec7` — river / uncontracted / Vâlcea / Valea Scorțarului
+- `unc-171b3c2c85` — river / uncontracted / Vâlcea / Valea Robului
+- `unc-173a117b6c` — river / uncontracted / Vâlcea / Cungra
+- `unc-174b13592f` — river / uncontracted / Vâlcea / Valea Galbena
+- `unc-18b1e65dc5` — river / uncontracted / Vâlcea / Valea Tâlvâci
+- `unc-19036ce152` — river / uncontracted / Vâlcea / Mândra
+- `unc-1a8a3f60ee` — river / uncontracted / Vâlcea / Vidruța
+- `unc-1b5ca60372` — river / uncontracted / Vâlcea / Pârâul Sec
+- `unc-1bb6a8cf25` — river / uncontracted / Vâlcea / Oboadele Mici
+- `unc-1bbc1a9275` — river / uncontracted / Vâlcea / Valea Strâmbanului
+- `unc-1bfb6c5682` — river / uncontracted / Vâlcea / Pravățul
+- `unc-1cf5a31d3b` — river / uncontracted / Vâlcea / Valea de sub Robu
+- `unc-1dece46ba0` — river / uncontracted / Vâlcea / Valea Coconciu
+- `unc-1e661b61e8` — river / uncontracted / Vâlcea / Făgețel
+- `unc-1f4184cb83` — river / uncontracted / Vâlcea / Valea Fratelui
+- `unc-1fb0b195b4` — river / uncontracted / Vâlcea / Valea Ciortea
+- `unc-2139af4d0e` — river / uncontracted / Vâlcea / Valea Lungă
+- `unc-21ebd806c4` — river / uncontracted / Vâlcea / Pârâul Pietrele Lacului
+- `unc-222609e7c8` — river / uncontracted / Vâlcea / Valea Hotarului
+- `unc-227e337d9b` — river / uncontracted / Vâlcea / Valea Adâncioara
+- `unc-229fecc250` — river / uncontracted / Vâlcea / Urloaia
+- `unc-249ccc3260` — river / uncontracted / Vâlcea / Matca
+- `unc-25ad5493d6` — river / uncontracted / Vâlcea / Valea Fagului
+- `unc-261c5e5733` — river / uncontracted / Vâlcea / Valea Smida Mică
+- `unc-262e59156e` — river / uncontracted / Vâlcea / Izvourl Bulzului
+- `unc-27f9589584` — river / uncontracted / Vâlcea / Pârâul Cioambelor
+- `unc-2820444c42` — river / uncontracted / Vâlcea / Sâmnic
+- `unc-28bc203f86` — river / uncontracted / Vâlcea / Râul Sec
+- `unc-2a27ffe2cf` — river / uncontracted / Vâlcea / Valea Cârligul Mic
+- `unc-2aa030155f` — river / uncontracted / Vâlcea / Sărăcinul Mare
+- `unc-2be2adb093` — river / uncontracted / Vâlcea / Valea Izvorul Lotrișor
+- `unc-2c884333d8` — river / uncontracted / Vâlcea / Sâmnicel
+- `unc-2d1478ee50` — river / uncontracted / Vâlcea / Valea Mâzgavul
+- `unc-2eaae36588` — river / uncontracted / Vâlcea / Valea Căldărilor
+- `unc-2f605e953b` — river / uncontracted / Vâlcea / Valea Reaua Mică
+- `unc-30afd9d49d` — river / uncontracted / Vâlcea / Izvorul Surului
+- `unc-3134f002e1` — river / uncontracted / Vâlcea / Valea Hotarului
+- `unc-318130ae2f` — river / uncontracted / Vâlcea / Valea lui Vlad
+- `unc-3198055933` — river / uncontracted / Vâlcea / Păscoaia
+- `unc-31e9c7d88c` — river / uncontracted / Vâlcea / Pârâul Purcăriilor
+- `unc-321c0f5e0d` — river / uncontracted / Vâlcea / Armăsarul
+- `unc-326b133c39` — river / uncontracted / Vâlcea / Pârâul lui Ilie
+- `unc-33eac9600b` — river / uncontracted / Vâlcea / Grohotișul
+- `unc-34147b777d` — river / uncontracted / Vâlcea / Pârâul Pleșului
+- `unc-3464ed0a8f` — river / uncontracted / Vâlcea / Turcinul Mare
+- `unc-346f618e22` — river / uncontracted / Vâlcea / Valea Fețele cu Brazi
+- `unc-35f4ab67f5` — river / uncontracted / Vâlcea / Stefanu
+- `unc-366278705c` — river / uncontracted / Vâlcea / Valea Găurilor
+- `unc-36cb29188b` — river / uncontracted / Vâlcea / Valea Crăciunelul
+- `unc-38ca2b5cde` — river / uncontracted / Vâlcea / Valea Tâmpei
+- `unc-392c7d303c` — river / uncontracted / Vâlcea / Valea Ferigile
+- `unc-3bafcd511b` — river / uncontracted / Vâlcea / Muereasca
+- `unc-3cdcdf3868` — river / uncontracted / Vâlcea / Izvorul Gruiul Lung
+- `unc-3e8fa92a23` — river / uncontracted / Vâlcea / Valea Teleleu
+- `unc-4067cc289d` — river / uncontracted / Vâlcea / Dăescu
+- `unc-42b83777f8` — river / uncontracted / Vâlcea / Ivănuș
+- `unc-43cb9c37a1` — river / uncontracted / Vâlcea / Valea lui Stan
+- `unc-45040c073d` — river / uncontracted / Vâlcea / Marița
+- `unc-451c304629` — river / uncontracted / Vâlcea / Valea Repezoi
+- `unc-46fbb5ba3e` — river / uncontracted / Vâlcea / Valea Ciurtea
+- `unc-4895fe4d93` — river / uncontracted / Vâlcea / Valea Izvoarelor
+- `unc-49091d0f9f` — river / uncontracted / Vâlcea / Valea Caprei
+- `unc-49716ecf65` — river / uncontracted / Vâlcea / Mălaiul
+- `unc-4a010536cf` — river / uncontracted / Vâlcea / Pociovaliștea
+- `unc-4a1141efec` — river / uncontracted / Vâlcea / Stănicioiu
+- `unc-4a58b06fa2` — river / uncontracted / Vâlcea / Pârâul Lazul
+- `unc-4bac88ae56` — river / uncontracted / Vâlcea / Valea Iezerul
+- `unc-4d56588301` — river / uncontracted / Vâlcea / Valea Satului
+- `unc-4db10ab2ef` — river / uncontracted / Vâlcea / Valea lui Marin
+- `unc-4deabdbe39` — river / uncontracted / Vâlcea / Valea lui Anghel
+- `unc-4f518cb71e` — river / uncontracted / Vâlcea / Valea Campului
+- `unc-50e0101f07` — river / uncontracted / Vâlcea / Valea Pietricelei
+- `unc-51148bd360` — river / uncontracted / Vâlcea / Valea Jangului
+- `unc-5115ab9f89` — river / uncontracted / Vâlcea / Valea Lupului
+- `unc-51c11ba8e6` — river / uncontracted / Vâlcea / Valea Frumușică
+- `unc-51c40d3c38` — river / uncontracted / Vâlcea / Arsura
+- `unc-532ea24241` — river / uncontracted / Vâlcea / Valea Albinei
+- `unc-5487ee9150` — river / uncontracted / Vâlcea / Valea Buleții
+- `unc-55097781d8` — river / uncontracted / Vâlcea / Barbu
+- `unc-562519a2e9` — river / uncontracted / Vâlcea / Valea Fața Curpenului
+- `unc-56c6d4e647` — river / uncontracted / Vâlcea / Valea Pârâul Alb
+- `unc-58aeed7530` — river / uncontracted / Vâlcea / Valea Piatra Tăiată
+- `unc-59b537a6c5` — river / uncontracted / Vâlcea / Pârâul Lupul
+- `unc-59eb116626` — river / uncontracted / Vâlcea / Pârâul Calului
+- `unc-5a433d98f5` — river / uncontracted / Vâlcea / Neteda
+- `unc-5abd18c630` — river / uncontracted / Vâlcea / Valea Peșterii
+- `unc-5ae2273405` — river / uncontracted / Vâlcea / Petreasa
+- `unc-5c192889ac` — river / uncontracted / Vâlcea / Pârâul Câinelui
+- `unc-5cefa48562` — river / uncontracted / Vâlcea / Ștreaurile
+- `unc-5e93661872` — river / uncontracted / Vâlcea / Puturoasa
+- `unc-5f540ec29d` — river / uncontracted / Vâlcea / Jidoaia
+- `unc-5fd5977791` — river / uncontracted / Vâlcea / Valea Galbina
+- `unc-60cb0c1d13` — river / uncontracted / Vâlcea / Topologel
+- `unc-618936fb24` — river / uncontracted / Vâlcea / Slivei
+- `unc-627bead2fe` — river / uncontracted / Vâlcea / Gurgui
+- `unc-62c0b03031` — river / uncontracted / Vâlcea / Valea Spartă
+- `unc-62c3fb5168` — river / uncontracted / Vâlcea / Valea Dracului
+- `unc-63ea153ba5` — river / uncontracted / Vâlcea / Ciutești (Sasca)
+- `unc-64230fe500` — river / uncontracted / Vâlcea / Valea Săcuienilor
+- `unc-6431c8ff09` — river / uncontracted / Vâlcea / Valea cu Râpi
+- `unc-67413b9172` — river / uncontracted / Vâlcea / Valea Seciului
+- `unc-69e4ca271d` — river / uncontracted / Vâlcea / Luncavicioara
+- `unc-6a875eb8f7` — river / uncontracted / Vâlcea / Valea Izvorului
+- `unc-6ac757b316` — river / uncontracted / Vâlcea / Valea Viezuini
+- `unc-6b1c0e8901` — river / uncontracted / Vâlcea / Slamna
+- `unc-6cda4fb180` — river / uncontracted / Vâlcea / Valea Albeștenilor
+- `unc-6d22fc8e1b` — river / uncontracted / Vâlcea / Valea Priborului
+- `unc-6d2e6a6791` — river / uncontracted / Vâlcea / Balu
+- `unc-6d34f72e27` — river / uncontracted / Vâlcea / Lungeț
+- `unc-6d3b1e8be9` — river / uncontracted / Vâlcea / Valea Lupului
+- `unc-6db2af833c` — river / uncontracted / Vâlcea / Robia
+- `unc-6e1d62a943` — river / uncontracted / Vâlcea / Purul
+- `unc-6faaafabd6` — river / uncontracted / Vâlcea / Țigana
+- `unc-7039399302` — river / uncontracted / Vâlcea / Valea Cocinilor
+- `unc-706c845da2` — river / uncontracted / Vâlcea / Izvorul Goațelor
+- `unc-71c27e21df` — river / uncontracted / Vâlcea / Boișoara
+- `unc-728e0dceed` — river / uncontracted / Vâlcea / Izvorul Frumos
+- `unc-72acb3b0f5` — river / uncontracted / Vâlcea / Valea Scursurii
+- `unc-72c4f8bd1f` — river / uncontracted / Vâlcea / Izvorul Trandafirilor
+- `unc-74938cfb6d` — river / uncontracted / Vâlcea / Izvorul Gropii
+- `unc-74ff8cd001` — river / uncontracted / Vâlcea / Cheile Sterpei
+- `unc-758283d7cb` — river / uncontracted / Vâlcea / Fratelui
+- `unc-77889dd449` — river / uncontracted / Vâlcea / Valea de Brădet
+- `unc-7807541943` — river / uncontracted / Vâlcea / Valea Steaja
+- `unc-781cb4c7cf` — river / uncontracted / Vâlcea / Valea Fântânele
+- `unc-7977806c56` — river / uncontracted / Vâlcea / Stoia
+- `unc-79781d449c` — river / uncontracted / Vâlcea / Valea Pietrănești
+- `unc-79d032fc57` — river / uncontracted / Vâlcea / Valea Miclăuș
+- `unc-7ac8497058` — river / uncontracted / Vâlcea / Valea Lespezilor
+- `unc-7adaff33a0` — river / uncontracted / Vâlcea / Pârâul Plopilor
+- `unc-7b55f09d31` — river / uncontracted / Vâlcea / Valea Largă
+- `unc-7d041229de` — river / uncontracted / Vâlcea / Pârâul Zmeurat
+- `unc-7e0ea811d2` — river / uncontracted / Vâlcea / Valea Cerbești
+- `unc-7ef09a368a` — river / uncontracted / Vâlcea / Priporul
+- `unc-80679fcaac` — river / uncontracted / Vâlcea / Valea Puturoasa
+- `unc-80d310a6f7` — river / uncontracted / Vâlcea / Valea Pleșeneștilor
+- `unc-81ece9fd37` — river / uncontracted / Vâlcea / Valea Teiului
+- `unc-838ac99681` — river / uncontracted / Vâlcea / Pârâul Bivolari
+- `unc-83c4434411` — river / uncontracted / Vâlcea / Adâncioara
+- `unc-83d5b96101` — river / uncontracted / Vâlcea / Vasilatu
+- `unc-840b2461f7` — river / uncontracted / Vâlcea / Valea Mesteacănului
+- `unc-865d82c3b1` — river / uncontracted / Vâlcea / Valea Cracul Tisei
+- `unc-873d3ebdb4` — river / uncontracted / Vâlcea / Valea lui Fănică
+- `unc-8794ef29ae` — river / uncontracted / Vâlcea / Valea Glăvoci
+- `unc-88d8c2a1df` — river / uncontracted / Vâlcea / Valea Smida Mare
+- `unc-890a684fc5` — river / uncontracted / Vâlcea / Iezeru
+- `unc-89c93f5741` — river / uncontracted / Vâlcea / Rânjeu
+- `unc-8cc342a06f` — river / uncontracted / Vâlcea / Valea Priboioasei
+- `unc-8e37b20bef` — river / uncontracted / Vâlcea / Nisipoasa
+- `unc-8e532b3d89` — river / uncontracted / Vâlcea / Valea Reaua Mare
+- `unc-8e6b4feeb9` — river / uncontracted / Vâlcea / Rânjeul Mare
+- `unc-8f68ce0d24` — river / uncontracted / Vâlcea / Valea Lupului
+- `unc-8f82207b48` — river / uncontracted / Vâlcea / Voineșița
+- `unc-9025232c6f` — river / uncontracted / Vâlcea / Valea Sturii Mari
+- `unc-91e4163942` — river / uncontracted / Vâlcea / Pârâul Bacea
+- `unc-9296397f21` — river / uncontracted / Vâlcea / Pârâul Izvorul Ursului
+- `unc-93175746ca` — river / uncontracted / Vâlcea / Pârâul Păcătoasa
+- `unc-936c032db8` — river / uncontracted / Vâlcea / Valea Bradului
+- `unc-985a95d7b1` — river / uncontracted / Vâlcea / Rudarul
+- `unc-9bbb72b925` — river / uncontracted / Vâlcea / Mieru
+- `unc-9bfbc4d96c` — river / uncontracted / Vâlcea / Valea lui Iacob
+- `unc-9db8b43c52` — river / uncontracted / Vâlcea / Pătești
+- `unc-9eb1c7effd` — river / uncontracted / Vâlcea / Pârâul Mănăstirii
+- `unc-9f1e437bbe` — river / uncontracted / Vâlcea / Melița
+- `unc-9f7c2f2184` — river / uncontracted / Vâlcea / Izvorul Rudarilor
+- `unc-a0537e1b9b` — river / uncontracted / Vâlcea / Valea Campului
+- `unc-a1372834c6` — river / uncontracted / Vâlcea / Valea Găurei
+- `unc-a3886de4df` — river / uncontracted / Vâlcea / Păisul Mare
+- `unc-a40ad1975d` — river / uncontracted / Vâlcea / Dăneasa
+- `unc-a5a8f191a5` — river / uncontracted / Vâlcea / Pesceana
+- `unc-a6d7c1629e` — river / uncontracted / Vâlcea / Furnica
+- `unc-a7827383b5` — river / uncontracted / Vâlcea / Trepteanca
+- `unc-ab10dfffa6` — river / uncontracted / Vâlcea / Păltinoasa
+- `unc-ab1af67632` — river / uncontracted / Vâlcea / Pârâul Șarpele
+- `unc-ab58f1588f` — river / uncontracted / Vâlcea / Valea Scăunelelor
+- `unc-abf6cbe5c4` — river / uncontracted / Vâlcea / Băiaș
+- `unc-ac4bda4b0a` — river / uncontracted / Vâlcea / Valea Jariștea Mare
+- `unc-acfa672957` — river / uncontracted / Vâlcea / Betel
+- `unc-adeee7b862` — river / uncontracted / Vâlcea / Latorița de Mijloc
+- `unc-ae72bb69d1` — river / uncontracted / Vâlcea / Valea Negrului
+- `unc-ae9ac8a588` — river / uncontracted / Vâlcea / Pârâul cu Rugi
+- `unc-ae9ed5e6ec` — river / uncontracted / Vâlcea / pârâu
+- `unc-aec9b5991d` — river / uncontracted / Vâlcea / Pârâul Jariștea Mare
+- `unc-b0bc185d86` — river / uncontracted / Vâlcea / Valea Calului
+- `unc-b0cac14830` — river / uncontracted / Vâlcea / Izvorul Scării
+- `unc-b1b9a2e764` — river / uncontracted / Vâlcea / Priboaia
+- `unc-b3f073b923` — river / uncontracted / Vâlcea / Iazul Morilor
+- `unc-b41b572c4b` — river / uncontracted / Vâlcea / Valea Perișani
+- `unc-b5147b924d` — river / uncontracted / Vâlcea / Valea Boului
+- `unc-b5f3e3a1f2` — river / uncontracted / Vâlcea / Valea Vultureasa
+- `unc-b79137569a` — river / uncontracted / Vâlcea / Valea Muntișoru
+- `unc-b869fb1e47` — river / uncontracted / Vâlcea / Piua
+- `unc-bab302264d` — river / uncontracted / Vâlcea / Valea Secărelei
+- `unc-bae13612a3` — river / uncontracted / Vâlcea / Priboiasa
+- `unc-bb97d774b3` — river / uncontracted / Vâlcea / Valea Dâlmelor
+- `unc-bc08f59685` — river / uncontracted / Vâlcea / Valea Bodii
+- `unc-bcabfcc556` — river / uncontracted / Vâlcea / Valea Căprăreasa
+- `unc-bebfa5b44d` — river / uncontracted / Vâlcea / Valea Tisei
+- `unc-bf3bc4bb8e` — river / uncontracted / Vâlcea / Valea Dosului
+- `unc-c1ad57bd8a` — river / uncontracted / Vâlcea / Pârâul cu Lespezi
+- `unc-c5da1e0360` — river / uncontracted / Vâlcea / Dosul Mlăcii
+- `unc-c6b881b86b` — river / uncontracted / Vâlcea / Clăbuceasa
+- `unc-c737405520` — river / uncontracted / Vâlcea / Valea Băgău
+- `unc-c9e8776fd0` — river / uncontracted / Vâlcea / Peșteana
+- `unc-ca76960b46` — river / uncontracted / Vâlcea / Valea Fătului
+- `unc-cad817ca48` — river / uncontracted / Vâlcea / Lotrișorul de Cozia
+- `unc-cb510d9ea2` — river / uncontracted / Vâlcea / Văratica
+- `unc-cbbecd0905` — river / uncontracted / Vâlcea / Hălângioasa
+- `unc-cd26307c3a` — river / uncontracted / Vâlcea / Turcinul Mic
+- `unc-cd793ab82a` — river / uncontracted / Vâlcea / Pârâul Vătuiu
+- `unc-cede7c5bba` — river / uncontracted / Vâlcea / Pârâul Nisipu
+- `unc-cef62bcc36` — river / uncontracted / Vâlcea / Valea Largă
+- `unc-cfab480dc9` — river / uncontracted / Vâlcea / Pârâul Oii
+- `unc-cfc2a82b2a` — river / uncontracted / Vâlcea / Valea Pietricelelor
+- `unc-d066f85768` — river / uncontracted / Vâlcea / Stânișoara
+- `unc-d0f435d8d0` — river / uncontracted / Vâlcea / Valea Surlelor
+- `unc-d22bbc01c4` — river / uncontracted / Vâlcea / Valea Mesteacănului
+- `unc-d22f092b00` — river / uncontracted / Vâlcea / Valea Vladimirului
+- `unc-d332eebeb2` — river / uncontracted / Vâlcea / Valea Purcarul
+- `unc-d34524e699` — river / uncontracted / Vâlcea / Valea cu Raci
+- `unc-d3b0f4f1dd` — river / uncontracted / Vâlcea / Valea Stupina
+- `unc-d3f108d3ef` — river / uncontracted / Vâlcea / Firijba
+- `unc-d4c59fb29d` — river / uncontracted / Vâlcea / Valea Largă
+- `unc-d57a230b71` — river / uncontracted / Vâlcea / Șipotul
+- `unc-d62cea164b` — river / uncontracted / Vâlcea / Valea Heleșteului
+- `unc-d6f031bf96` — river / uncontracted / Vâlcea / Hoteag
+- `unc-d7b3f00ab2` — river / uncontracted / Vâlcea / Cărpănoasa
+- `unc-d7ff191d6e` — river / uncontracted / Vâlcea / Murgașul Mare
+- `unc-d808742f1e` — river / uncontracted / Vâlcea / Păisul Mic
+- `unc-d8e3b57da5` — river / uncontracted / Vâlcea / Sălătrucel
+- `unc-da5b6e7918` — river / uncontracted / Vâlcea / Pietroasa
+- `unc-da60f99d31` — river / uncontracted / Vâlcea / Valea Florii
+- `unc-da8c09136f` — river / uncontracted / Vâlcea / Valea Glodului
+- `unc-dace26a2d0` — river / uncontracted / Vâlcea / Sașa Mândrei
+- `unc-db51c58a91` — river / uncontracted / Vâlcea / Valea Comarnice
+- `unc-dbb0ae5be4` — river / uncontracted / Vâlcea / Valea Ruzii
+- `unc-dc23ba8508` — river / uncontracted / Vâlcea / Costești
+- `unc-dd6e59714c` — river / uncontracted / Vâlcea / Mânăileasa
+- `unc-de03286c1c` — river / uncontracted / Vâlcea / Sărăcinul
+- `unc-e33e949c7f` — river / uncontracted / Vâlcea / Valea Satului
+- `unc-e41bf39f98` — river / uncontracted / Vâlcea / Valea Frasinului
+- `unc-e5b07a3111` — river / uncontracted / Vâlcea / Valea Ulmețel
+- `unc-e624efae38` — river / uncontracted / Vâlcea / Valea Scheiului
+- `unc-e677782d9b` — river / uncontracted / Vâlcea / Valea lui Bucur
+- `unc-e90a0eac33` — river / uncontracted / Vâlcea / Cășăria
+- `unc-eb0b3e4385` — river / uncontracted / Vâlcea / Valea Leului
+- `unc-edc9edeae3` — river / uncontracted / Vâlcea / Valea Comanca
+- `unc-ee23e3fbde` — river / uncontracted / Vâlcea / Bunești
+- `unc-eef05f593d` — river / uncontracted / Vâlcea / Valea Sprânea
+- `unc-ef3326c1b2` — river / uncontracted / Vâlcea / Valea Satului
+- `unc-ef3e46d03a` — river / uncontracted / Vâlcea / Luntrișoara
+- `unc-ef807c5921` — river / uncontracted / Vâlcea / Jiliștea
+- `unc-f0210ee465` — river / uncontracted / Vâlcea / Otasău
+- `unc-f13f3678b8` — river / uncontracted / Vâlcea / Valea lui Negru
+- `unc-f1de0efe03` — river / uncontracted / Vâlcea / Pleșoaia
+- `unc-f31d047561` — river / uncontracted / Vâlcea / Izvorul Curpănului
+- `unc-f4340f0c68` — river / uncontracted / Vâlcea / Haneș
+- `unc-f5a0f757aa` — river / uncontracted / Vâlcea / Cacova
+- `unc-f774721d40` — river / uncontracted / Vâlcea / Valea Ariciului
+- `unc-f89f42674d` — river / uncontracted / Vâlcea / Valea Satului
+- `unc-f8d0576184` — river / uncontracted / Vâlcea / Pârâul Sărat
+- `unc-f9702438b2` — river / uncontracted / Vâlcea / Cuca
+- `unc-fa5d6477f3` — river / uncontracted / Vâlcea / Siliștea
+- `unc-fbb1697c58` — river / uncontracted / Vâlcea / Valea Gresiilor
+- `unc-fc1be4e48b` — river / uncontracted / Vâlcea / Pârâul Aninoasa
+- `unc-fd90c28a7f` — river / uncontracted / Vâlcea / Mârzanu
+- `unc-fedbb820db` — river / uncontracted / Vâlcea / Izvorul Otăsăului
+- `unc-ffbed3589f` — river / uncontracted / Vâlcea / Valea Coților
+- `unc-ffbed856c6` — river / uncontracted / Vâlcea / Valea Poștei

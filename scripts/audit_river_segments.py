@@ -2,7 +2,7 @@
 """Offline contractual river segment audit; read-only by default."""
 from __future__ import annotations
 import argparse, copy, gzip, hashlib, json, sys, unicodedata
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
 from river_segment_audit_lib import coverage_fraction, uncovered_runs, terminal_findings, stable_report, duplicate_way_ids, sector_findings, line_length
@@ -53,13 +53,13 @@ def alias_match(name, aliases):
  n=norm(name)
  return any(n == alias or n == canonical for canonical, values in aliases.items() for alias in values)
 
-def exception_for(finding, river_group, entries):
+def exception_for(finding, river_group, entries, as_of=date(2099, 1, 1)):
  """Exceptions can control only the gate; original findings remain visible."""
  for entry in entries:
   codes=entry.get('codes', entry.get('code', [])); codes=[codes] if isinstance(codes, str) else codes
   groups=entry.get('river_groups', entry.get('river_group', [])); groups=[groups] if isinstance(groups, str) else groups
   if entry.get('gate') in ('allow','suppress_gate') and finding.get('code') in codes and (not groups or river_group in groups):
-   if date.fromisoformat(str(entry['expires_on'])) >= date.today(): return entry
+   if date.fromisoformat(str(entry['expires_on'])) >= as_of: return entry
  return None
 def sources(root):
  rows=[]
@@ -68,6 +68,53 @@ def sources(root):
   if q.exists():
    rows += [json.loads(x) for x in q.read_text(encoding='utf8').splitlines() if x.strip()]
  return rows
+def _county(water):
+ return ' '.join(str(water.get('judet') or water.get('county') or 'Necunoscut').split()) or 'Necunoscut'
+
+def _overlay_entries(root):
+ entries=[]
+ for kind, filename in (('river', 'public/data/uncontracted_rivers.json'), ('lake', 'public/data/uncontracted_lakes.json')):
+  path=root/filename
+  if path.exists():
+   values=json.loads(path.read_text(encoding='utf8'))
+   if isinstance(values, list): entries.extend({'kind':kind, 'entry':v} for v in values)
+ return entries
+
+def coverage_grid(waters, rivers, overlays=()):
+ """Return a stable county coverage grid without collapsing findings."""
+ by_group={r.get('river_group'): r for r in rivers}
+ grid=defaultdict(lambda: {'contracted': 0, 'with_geometry': 0, 'missing_geometry': 0,
+                           'finding_count': 0, 'finding_codes': Counter(),
+                           'overlay_rivers': 0, 'overlay_lakes': 0})
+ for water in waters:
+  county=_county(water); row=grid[county]; row['contracted'] += 1
+  if water.get('geometry'): row['with_geometry'] += 1
+  else: row['missing_geometry'] += 1
+  report=by_group.get(water.get('riverGroup'))
+  for finding in (report or {}).get('findings', []):
+   row['finding_count'] += 1; row['finding_codes'][finding.get('code','unknown')] += 1
+ for item in overlays:
+  county=_county(item['entry']); row=grid[county]
+  row['overlay_rivers' if item['kind']=='river' else 'overlay_lakes'] += 1
+ result=[]
+ for county in sorted(grid):
+  row=grid[county]
+  result.append({'county': county, 'contracted': row['contracted'],
+   'with_geometry': row['with_geometry'], 'missing_geometry': row['missing_geometry'],
+   'finding_count': row['finding_count'], 'finding_codes': dict(sorted(row['finding_codes'].items())),
+   'overlay': {'rivers': row['overlay_rivers'], 'lakes': row['overlay_lakes']},
+   'coverage_status': 'blocked' if row['finding_count'] else ('covered' if row['missing_geometry']==0 else 'partial')})
+ return result
+
+def overlay_classification(overlays):
+ """Expose every overlay entry, rather than aggregating away problematic rows."""
+ result=[]
+ for item in overlays:
+  entry=item['entry']; result.append({'kind':item['kind'], 'slug':entry.get('slug'),
+   'name':entry.get('name'), 'county':_county(entry),
+   'classification': 'uncontracted' if entry.get('uncontracted', True) else 'contracted'})
+ return sorted(result, key=lambda x:(x['kind'], str(x['county']), str(x['slug'] or ''), str(x['name'] or '')))
+
 def audit(index, root, alias_path=None, exception_path=None):
  entries=load_jsonl(index); ways={e['osm_id']:e for e in entries if e.get('kind')=='way'}
  waters=published_waters(root); src=sources(root)
@@ -105,7 +152,23 @@ def audit(index, root, alias_path=None, exception_path=None):
  for river in out:
   for finding in river['findings']:
    counts[finding.get('code','unknown')] += 1
- return stable_report({'schema_version':1,'snapshot_sha256':hashlib.sha256(Path(index).read_bytes()).hexdigest(),'thresholds':{'coverage_tol_m':125,'min_report_segment_m':250},'summary':dict(sorted(counts.items())),'rivers':out,'cells':[]}),hard
+ overlays=_overlay_entries(root)
+ report=stable_report({'schema_version':1,'snapshot_sha256':hashlib.sha256(Path(index).read_bytes()).hexdigest(),
+  'thresholds':{'coverage_tol_m':125,'min_report_segment_m':250}, 'summary':dict(sorted(counts.items())),
+  'rivers':out, 'cells':coverage_grid(waters, out, overlays), 'overlays':overlay_classification(overlays)})
+ return report,hard
+
+def apply_baseline(report, baseline_path):
+ if not baseline_path or not Path(baseline_path).exists(): return []
+ baseline=json.loads(Path(baseline_path).read_text(encoding='utf8'))
+ keys=('MISSING_CONTRACTED','missing_segment','truncated_head','truncated_mouth','sector_mismatch','duplicate')
+ deltas={k: report['summary'].get(k,0)-baseline.get('summary',{}).get(k,0) for k in keys}
+ report['baseline']={'snapshot_sha256':baseline.get('snapshot_sha256'), 'summary_deltas':deltas}
+ return ['baseline_regression:'+k for k,v in deltas.items() if v > 0]
+
+def set_gate(report, hard):
+ blockers=sorted(set(hard))
+ report['gate']={'status':'BLOCKED' if blockers else 'PASS', 'blocking_findings':blockers}
 
 def _repairable_geometry(index, river, scope):
  """Return deterministic OSM geometry or None; ambiguity is never guessed."""
@@ -172,11 +235,27 @@ def repair_geometries(index, root, report, scope, diff_path, provenance_path):
  return artifact
 
 def markdown(report):
- lines=['# River segment audit','',f"Schema: `{report['schema_version']}`",'', '## Summary','']
+ lines=['# River segment audit','',f"Schema: `{report['schema_version']}`",f"Snapshot: `{report.get('snapshot_sha256','')}`",'',
+        f"## Gate: **{report.get('gate',{}).get('status','UNKNOWN')}**",'']
+ blockers=report.get('gate',{}).get('blocking_findings',[])
+ lines.append('- Blocking codes: '+(', '.join(f'`{x}`' for x in blockers) if blockers else 'none'))
+ lines += ['', '## Summary','']
  for k,v in report['summary'].items(): lines.append(f'- **{k}**: {v}')
+ if report.get('baseline'):
+  lines += ['', '## Baseline deltas','']
+  for k,v in report['baseline']['summary_deltas'].items(): lines.append(f'- **{k}**: {v:+d}')
+ lines += ['', '## Coverage grid','', '| County | Contracted | Geometry | Missing | Findings | Overlay rivers | Overlay lakes | Status |', '|---|---:|---:|---:|---:|---:|---:|---|']
+ for c in report.get('cells',[]):
+  lines.append(f"| {c['county']} | {c['contracted']} | {c['with_geometry']} | {c['missing_geometry']} | {c['finding_count']} | {c['overlay']['rivers']} | {c['overlay']['lakes']} | {c['coverage_status']} |")
  lines += ['', '## Findings','']
  for r in report['rivers']:
-  if r['findings']: lines.append(f"- `{r['river_group']}`: "+', '.join(f['code'] for f in r['findings']))
+  for finding in r.get('findings',[]):
+   details={k:v for k,v in finding.items() if k != 'code'}
+   suffix=' — '+json.dumps(details, ensure_ascii=False, sort_keys=True) if details else ''
+   lines.append(f"- `{r['river_group']}`: **{finding.get('code','unknown')}**{suffix}")
+ lines += ['', '## Overlay classification','']
+ for item in report.get('overlays',[]):
+  lines.append(f"- `{item['slug']}` — {item['kind']} / {item['classification']} / {item['county']} / {item['name']}")
  return '\n'.join(lines)+'\n'
 def main():
  p=argparse.ArgumentParser(); p.add_argument('--osm-index',required=True); p.add_argument('--out-json',required=True); p.add_argument('--out-md',required=True); p.add_argument('--root',type=Path,default=ROOT, help='fixture/project root containing public/data and data/processed'); p.add_argument('--baseline'); p.add_argument('--aliases'); p.add_argument('--exceptions'); p.add_argument('--gate',action='store_true'); p.add_argument('--repair',action='store_true', help='apply only deterministic OSM-backed geometry repairs'); p.add_argument('--repair-diff', default='data/processed/river_segment_repairs.json'); p.add_argument('--repair-provenance', default='data/processed/river_segment_repair_provenance.json'); p.add_argument('--repair-scope', default='cerna,cerna valcea,ialomita,sieu,timis', help='comma-separated normalized river groups eligible for repair'); a=p.parse_args()
@@ -187,14 +266,10 @@ def main():
   if not diff.is_absolute(): diff=a.root/diff
   if not provenance.is_absolute(): provenance=a.root/provenance
   repair_geometries(Path(a.osm_index),a.root,report,scope,diff,provenance)
-  # Re-audit after mutation. The original report remains recoverable in the
-  # diff artifact, while the emitted report is the post-repair gate result.
   report,hard=audit(Path(a.osm_index),a.root,a.aliases,a.exceptions)
+ hard += apply_baseline(report, a.baseline)
+ set_gate(report, hard)
  Path(a.out_json).write_text(json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+'\n',encoding='utf8'); Path(a.out_md).write_text(markdown(report),encoding='utf8')
- if a.baseline and Path(a.baseline).exists():
-  base=json.loads(Path(a.baseline).read_text()); b=base.get('summary',{})
-  for k in ('MISSING_CONTRACTED','missing_segment','truncated_head','truncated_mouth','sector_mismatch'):
-   if report['summary'].get(k,0)>b.get(k,0): hard.append('baseline_regression:'+k)
  if a.gate and hard:
   print('river segment gate: BLOCKED — '+', '.join(sorted(set(hard))),file=sys.stderr); return 1
  print('river segment gate: PASS' if a.gate else f"audited {len(report['rivers'])} river relations"); return 0
