@@ -76,6 +76,17 @@ describe('POST /api/report', () => {
     expect(await res.json()).toMatchObject({ error: 'github_error' });
   });
 
+  it('502 github_unreachable when the upstream request fails without retrying the mutation', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn().mockRejectedValue(new TypeError('network down'));
+    vi.stubGlobal('fetch', fetchMock);
+    const res = await POST(request({ waterSlug: 'x', waterName: 'y', reason: 'other' }));
+    expect(res.status).toBe(502);
+    expect(await res.json()).toMatchObject({ error: 'github_unreachable' });
+    expect(fetchMock).toHaveBeenCalledOnce();
+    expect((fetchMock.mock.calls[0][1] as RequestInit).signal).toBeInstanceOf(AbortSignal);
+  });
+
   it('200 with issueUrl on success, sending a Bearer token + report payload', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/neagastefan99/undepescuim/issues/1' }));

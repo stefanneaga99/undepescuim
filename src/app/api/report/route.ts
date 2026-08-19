@@ -6,6 +6,7 @@ import { reportDeduper } from '@/lib/report-dedupe';
 import { parseReportContext } from '@/lib/report-context';
 
 const REPO = 'neagastefan99/undepescuim';
+const GITHUB_TIMEOUT_MS = 20_000;
 
 const REASON_LABELS: Record<string, string> = {
   data_correct: 'Datele sunt corecte (am pescuit aici)',
@@ -78,16 +79,29 @@ export async function POST(request: Request) {
       reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName,
       waterSlug, details, contactEmail, reportContext,
     });
-    const res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Accept: 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ title, body: bodyText, labels: ['report'] }),
-    });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), GITHUB_TIMEOUT_MS);
+    let res: Response;
+    try {
+      res = await fetch(`https://api.github.com/repos/${REPO}/issues`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github+json',
+          'X-GitHub-Api-Version': '2022-11-28',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, body: bodyText, labels: ['report'] }),
+        signal: controller.signal,
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        throw new ReportHttpError('upstream_timeout', 504);
+      }
+      throw new ReportHttpError('github_unreachable', 502);
+    } finally {
+      clearTimeout(timeout);
+    }
     if (!res.ok) {
       console.error('[report] create issue failed', res.status);
       throw new ReportHttpError('github_error', 502);

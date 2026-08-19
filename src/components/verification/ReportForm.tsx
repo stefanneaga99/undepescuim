@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useSyncExternalStore } from 'react';
 import { Flag } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
@@ -32,6 +32,19 @@ interface ReportFormProps {
 }
 
 type Phase = 'idle' | 'submitting' | 'success' | 'error';
+type ErrorKind = 'offline' | 'timeout' | 'network' | 'server';
+
+const REPORT_TIMEOUT_MS = 20_000;
+const subscribeOnline = (callback: () => void) => {
+  window.addEventListener('online', callback);
+  window.addEventListener('offline', callback);
+  return () => {
+    window.removeEventListener('online', callback);
+    window.removeEventListener('offline', callback);
+  };
+};
+const onlineSnapshot = () => navigator.onLine;
+const onlineServerSnapshot = () => true;
 
 export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason, buildReportContext }: ReportFormProps) {
   const { t } = useI18n();
@@ -40,10 +53,13 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   const [contactEmail, setContactEmail] = useState('');
   const [website, setWebsite] = useState(''); // honeypot
   const [phase, setPhase] = useState<Phase>('idle');
+  const [errorKind, setErrorKind] = useState<ErrorKind>('network');
   const [issueUrl, setIssueUrl] = useState<string | null>(null);
   const [includeContext, setIncludeContext] = useState(false);
   const [prevOpen, setPrevOpen] = useState(open);
   const isSubmittingRef = useRef(false);
+  const abortRef = useRef<AbortController | null>(null);
+  const online = useSyncExternalStore(subscribeOnline, onlineSnapshot, onlineServerSnapshot);
 
   // Render-phase adjustment (React docs: "adjusting state when a prop changes"):
   // apply the quick-tap reason each time the dialog opens, without an effect.
@@ -53,15 +69,25 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   }
 
   const reset = () => {
+    abortRef.current?.abort();
+    abortRef.current = null;
     setReason(null); setDetails(''); setContactEmail(''); setWebsite(''); setIncludeContext(false);
-    setPhase('idle'); setIssueUrl(null);
+    setPhase('idle'); setIssueUrl(null); setErrorKind('network');
     isSubmittingRef.current = false;
   };
 
   const submit = async () => {
     if (!reason || isSubmittingRef.current) return;
+    if (!online) {
+      setErrorKind('offline');
+      setPhase('error');
+      return;
+    }
     isSubmittingRef.current = true;
     setPhase('submitting');
+    const controller = new AbortController();
+    abortRef.current = controller;
+    const timeout = window.setTimeout(() => controller.abort(), REPORT_TIMEOUT_MS);
     try {
       const res = await fetch('/api/report', {
         method: 'POST',
@@ -75,13 +101,18 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
           website,
           ...(includeContext && buildReportContext ? { reportContext: buildReportContext() } : {}),
         }),
+        signal: controller.signal,
       });
       const data = (await res.json()) as { ok: boolean; issueUrl?: string | null };
       if (data.ok) { setIssueUrl(data.issueUrl ?? null); setPhase('success'); }
-      else { isSubmittingRef.current = false; setPhase('error'); }
-    } catch {
+      else { setErrorKind('server'); setPhase('error'); }
+    } catch (error) {
       isSubmittingRef.current = false;
+      setErrorKind(error instanceof DOMException && error.name === 'AbortError' ? 'timeout' : 'network');
       setPhase('error');
+    } finally {
+      window.clearTimeout(timeout);
+      if (abortRef.current === controller) abortRef.current = null;
     }
   };
 
@@ -186,7 +217,9 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
             />
 
             {phase === 'error' && (
-              <p className="text-sm text-destructive">{t('report.error')}</p>
+              <p className="text-sm text-destructive" role="alert">
+                {t(errorKind === 'offline' ? 'report.offlineError' : errorKind === 'timeout' ? 'report.timeoutError' : errorKind === 'server' ? 'report.serverError' : 'report.networkError')}
+              </p>
             )}
 
             <DialogFooter>
