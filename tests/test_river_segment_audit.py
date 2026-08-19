@@ -4,6 +4,7 @@ from pathlib import Path
 
 from build_osm_river_segment_index import build
 from river_segment_audit_lib import connected_components, coverage, line_length_m, main_stem, topology
+from audit_river_segments import exception_for, load_registry, registry_aliases, alias_match
 
 FIXTURE = json.loads((Path(__file__).parent / "fixtures/river_segment_parity.json").read_text(encoding="utf-8"))
 
@@ -61,3 +62,17 @@ def test_tarnava_injected_gap_and_truncation_are_reported():
     truncated = FIXTURE["tarnava"]["truncated"]
     assert coverage(published, gap, tolerance_m=1)["published_to_osm"] < 1
     assert coverage(published, truncated, tolerance_m=1)["published_to_osm"] < 1
+
+
+def test_registry_entries_are_auditable_and_alias_does_not_hide_finding(tmp_path):
+    path = tmp_path / "aliases.json"
+    path.write_text(json.dumps({"aliases": [{"canonical": "Tarnava", "aliases": ["Tarnava Mare"], "justification": "OSM alternate name", "source": "osm:1", "expires_on": "2099-01-01"}]}))
+    entries = load_registry(path, "aliases")
+    assert alias_match("Târnava Mare", registry_aliases(entries))
+
+
+def test_exception_is_explicit_gate_only_and_expiry_is_checked():
+    finding = {"code": "duplicate", "way_ids": [7]}
+    allowed = [{"id": "review-1", "code": "duplicate", "river_group": "tarnava", "gate": "allow", "justification": "known OSM duplicate", "source": "osm:7", "expires_on": "2099-01-01"}]
+    assert exception_for(finding, "tarnava", allowed)["id"] == "review-1"
+    assert exception_for(finding, "other", allowed) is None
