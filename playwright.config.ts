@@ -11,6 +11,22 @@ const PORT = process.env.E2E_PORT ?? (process.env.CI ? '3000' : '3100');
 const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? `http://localhost:${PORT}`;
 const RUN_ID = process.env.PLAYWRIGHT_RUN_ID ?? process.env.GITHUB_RUN_ID ?? String(process.pid);
 const OUTPUT_DIR = process.env.PLAYWRIGHT_OUTPUT_DIR ?? `test-results/${RUN_ID}`;
+const MATRIX = process.env.E2E_MOBILE_MATRIX === '1';
+
+// Device profiles are Chromium emulations for reproducible CI coverage. Native
+// Safari/Chrome runs remain a release-gate follow-up on physical devices.
+const mobileMatrixProjects = ([
+  ['iphone-current', 'iPhone 15'],
+  ['iphone-previous', 'iPhone 14'],
+  ['pixel-current', 'Pixel 7'],
+  ['pixel-previous', 'Pixel 5'],
+  ['samsung-current', 'Galaxy S24'],
+  ['samsung-previous', 'Galaxy S21'],
+] as const).map(([name, device]) => ({
+  name,
+  grepInvert: /@data/,
+  use: { ...devices[device], browserName: 'chromium' as const },
+}));
 
 export default defineConfig({
   testDir: './tests/e2e/specs',
@@ -77,6 +93,7 @@ export default defineConfig({
       grep: /@data/,
       use: { ...devices['Desktop Chrome'], browserName: 'chromium' },
     },
+    ...(MATRIX ? mobileMatrixProjects : []),
   ],
   webServer: process.env.E2E_SERVER_READY
     ? undefined
