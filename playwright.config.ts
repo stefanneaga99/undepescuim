@@ -24,7 +24,15 @@ export default defineConfig({
   workers: process.env.CI ? 2 : 1,
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI
-    ? [['list'], ['./tests/e2e/reporters/lifecycle.ts'], ['html', { open: 'never' }], ['github']]
+    ? [
+        ['list'],
+        ['./tests/e2e/reporters/lifecycle.ts'],
+        ['html', {
+          open: 'never',
+          outputFolder: process.env.PLAYWRIGHT_REPORT_DIR ?? 'playwright-report',
+        }],
+        ['github'],
+      ]
     : [['list']],
   use: {
     baseURL: BASE_URL,
@@ -70,12 +78,14 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'], browserName: 'chromium' },
     },
   ],
-  webServer: {
-    // Build once, serve once — closer to prod than `next dev`, and stable
-    // (dev-mode HMR + on-demand compile is the #1 timing-flake source).
-    command: `npm run build && PORT=${PORT} npm run start`,
-    url: BASE_URL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 240_000,
-  },
+  webServer: process.env.E2E_SERVER_READY
+    ? undefined
+    : {
+        // Build once, serve once — closer to prod than `next dev`, and stable
+        // (dev-mode HMR + on-demand compile is the #1 timing-flake source).
+        command: `npm run build && PORT=${PORT} npm run start`,
+        url: BASE_URL,
+        reuseExistingServer: !process.env.CI,
+        timeout: 240_000,
+      },
 });
