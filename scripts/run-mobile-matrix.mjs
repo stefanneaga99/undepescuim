@@ -29,7 +29,9 @@ try {
       throw new Error(`server exited before becoming ready (code=${serverExit.code}, signal=${serverExit.signal})\n${serverLog}`);
     }
     const probe = await fetch(`${base}/`).catch(() => null);
-    ready = Boolean(probe?.ok);
+    // A successful probe alone can hit an unrelated process already bound to
+    // the port. Require the child we spawned to announce Next readiness too.
+    ready = Boolean(probe?.ok && /Ready in/.test(serverLog));
     if (!ready) await delay(1000);
   }
   if (!ready) throw new Error(`server did not become ready\n${serverLog}`);
