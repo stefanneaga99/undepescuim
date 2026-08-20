@@ -6,6 +6,25 @@ const port = process.env.E2E_PORT || '3100';
 const base = process.env.PLAYWRIGHT_BASE_URL || `http://127.0.0.1:${port}`;
 const outDir = process.env.MOBILE_MATRIX_OUTPUT || `test-results/mobile-matrix-${Date.now()}`;
 const projects = ['iphone-current', 'iphone-previous', 'pixel-current', 'pixel-previous', 'samsung-current', 'samsung-previous'];
+
+function summarizeE2e(output) {
+  const counts = {
+    passed: Number(output.match(/(?:^|\n)\s*(\d+) passed(?:\s|$)/m)?.[1] || 0),
+    failed: Number(output.match(/(?:^|\n)\s*(\d+) failed(?:\s|$)/m)?.[1] || 0),
+    skipped: Number(output.match(/(?:^|\n)\s*(\d+) skipped(?:\s|$)/m)?.[1] || 0),
+    flaky: Number(output.match(/(?:^|\n)\s*(\d+) flaky(?:\s|$)/m)?.[1] || 0),
+    total: 0,
+  };
+  counts.total = counts.passed + counts.failed + counts.skipped;
+  const actionableFailures = output
+    .split('\n')
+    .filter((line) => /^\s*[✘✗×]\s+\d+/.test(line) || /Error:|failed/i.test(line))
+    .map((line) => line.trim())
+    .filter((line, index, lines) => lines.indexOf(line) === index)
+    .slice(0, 20);
+  return { counts, actionableFailures };
+}
+
 await mkdir(outDir, { recursive: true });
 const run = (command, args, env = {}) => new Promise((resolve) => {
   const child = spawn(command, args, { env: { ...process.env, ...env }, stdio: ['ignore', 'pipe', 'pipe'] });
@@ -48,9 +67,10 @@ try {
   const perf = await run('node', ['scripts/_perf_map.mjs', base], { PERF_THROTTLE: process.env.PERF_THROTTLE || '1' });
   await writeFile(`${outDir}/e2e.log`, e2e.stdout + e2e.stderr);
   await writeFile(`${outDir}/performance.log`, perf.stdout + perf.stderr);
+  const e2eSummary = summarizeE2e(e2e.stdout + e2e.stderr);
   const gitSha = (() => { try { return execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(); } catch { return null; } })();
   const summary = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     runAt: new Date().toISOString(),
     gitSha,
     base,
@@ -58,6 +78,7 @@ try {
     browserMode: 'chromium-emulation',
     networkProfile: 'fast-3g (scripts/_perf_map.mjs)',
     e2eExitCode: e2e.code,
+    e2e: e2eSummary,
     performanceExitCode: perf.code,
     output: outDir,
     artifacts: { e2eLog: `${outDir}/e2e.log`, performanceLog: `${outDir}/performance.log`, report: `${outDir}/report` },
