@@ -24,6 +24,7 @@
     "test:e2e:smoke": "playwright test --grep @smoke",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:headed": "playwright test --headed",
+    "test:e2e:live": "LIVE_PROD=1 playwright test --project=live-prod-desktop --project=live-prod-mobile tests/e2e/specs/live-prod.spec.ts",
     "mobile:matrix": "E2E_MOBILE_MATRIX=1 node scripts/run-mobile-matrix.mjs"
   },
   "dependencies": {

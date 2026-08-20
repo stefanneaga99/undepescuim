@@ -12,6 +12,8 @@ const BASE_URL = process.env.PLAYWRIGHT_BASE_URL ?? `http://localhost:${PORT}`;
 const RUN_ID = process.env.PLAYWRIGHT_RUN_ID ?? process.env.GITHUB_RUN_ID ?? String(process.pid);
 const OUTPUT_DIR = process.env.PLAYWRIGHT_OUTPUT_DIR ?? `test-results/${RUN_ID}`;
 const MATRIX = process.env.E2E_MOBILE_MATRIX === '1';
+const LIVE_PROD = process.env.LIVE_PROD === '1';
+const LIVE_URL = process.env.LIVE_URL ?? 'https://undepescuim.vercel.app';
 
 // Device profiles are Chromium emulations for reproducible CI coverage. Native
 // Safari/Chrome runs remain a release-gate follow-up on physical devices.
@@ -64,7 +66,29 @@ export default defineConfig({
     locale: 'ro-RO',
     timezoneId: 'Europe/Bucharest',
   },
-  projects: [
+  projects: LIVE_PROD ? [
+    {
+      name: 'live-prod-desktop',
+      testMatch: /live-prod\.spec\.ts/,
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: LIVE_URL,
+        browserName: 'chromium',
+        serviceWorkers: 'allow',
+        viewport: { width: 1280, height: 800 },
+      },
+    },
+    {
+      name: 'live-prod-mobile',
+      testMatch: /live-prod\.spec\.ts/,
+      use: {
+        ...devices['iPhone 14'],
+        baseURL: LIVE_URL,
+        browserName: 'chromium',
+        serviceWorkers: 'allow',
+      },
+    },
+  ] : [
     {
       // 390×844 — the mobile branch (hamburger nav, vaul bottom sheets).
       // iPhone 14 device presets + forced chromium (only chromium is installed).
@@ -95,7 +119,7 @@ export default defineConfig({
     },
     ...(MATRIX ? mobileMatrixProjects : []),
   ],
-  webServer: process.env.E2E_SERVER_READY
+  webServer: LIVE_PROD || process.env.E2E_SERVER_READY
     ? undefined
     : {
         // Build once, serve once — closer to prod than `next dev`, and stable
