@@ -22,6 +22,7 @@ type RegressionEntry = {
   test: string;
   dataPath?: string;
   slugs?: string[];
+  names?: Record<string, string>;
   county?: string;
   counties?: Record<string, string>;
   geometryTypes?: string[];
@@ -58,6 +59,7 @@ test.describe('data contract — real served /public/data @data', () => {
       for (const slug of entry.slugs ?? []) {
         const water = bySlug.get(slug);
         expect(water, `${entry.id}: ${slug} present in waters.json`).toBeTruthy();
+        expect(water?.name, `${entry.id}: ${slug} exact name mapping`).toBe(entry.names?.[slug]);
         expect(water?.judet).toBe(entry.counties?.[slug] ?? entry.county);
         const geometry = water?.geometry as
           | { type?: string; coordinates?: unknown }
@@ -69,6 +71,7 @@ test.describe('data contract — real served /public/data @data', () => {
         // present and non-empty for every explicitly mapped water.
         expect(Array.isArray(geometry?.coordinates)).toBe(true);
         expect((geometry?.coordinates as unknown[]).length).toBeGreaterThan(0);
+        expect(water?._bboxFallback, `${entry.id}: ${slug} must not use bbox fallback`).not.toBe(true);
       }
     }
   });

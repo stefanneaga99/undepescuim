@@ -18,6 +18,7 @@
     "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
     "dataPath": "waters.json",
     "slugs": ["2yxhr1b0"],
+    "names": {"2yxhr1b0": "Râul Sohodol I "},
     "county": "Gorj",
     "geometryTypes": ["LineString"]
   },
@@ -28,6 +29,7 @@
     "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
     "dataPath": "waters.json",
     "slugs": ["anpa-anpa-0208"],
+    "names": {"anpa-anpa-0208": "Râul Siriul"},
     "county": "Buzău",
     "geometryTypes": ["MultiLineString"]
   },
@@ -38,6 +40,7 @@
     "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
     "dataPath": "waters.json",
     "slugs": ["anpa-anpa-0180"],
+    "names": {"anpa-anpa-0180": "Râul Doftana Gârcin"},
     "county": "Brașov",
     "geometryTypes": ["LineString"]
   },
@@ -48,6 +51,7 @@
     "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
     "dataPath": "waters.json",
     "slugs": ["anpa-anpa-0188"],
+    "names": {"anpa-anpa-0188": "Valea Pojorâtei"},
     "county": "Brașov",
     "geometryTypes": ["LineString"]
   },
@@ -58,6 +62,7 @@
     "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
     "dataPath": "waters.json",
     "slugs": ["uyzo7o3j", "qsvhz93s", "f02xtxw1"],
+    "names": {"uyzo7o3j": "Râul Sebeș", "qsvhz93s": "Râul Sebeșul de Sus", "f02xtxw1": "Râul Sebeșul de Jos"},
     "counties": {"uyzo7o3j": "Alba", "qsvhz93s": "Sibiu", "f02xtxw1": "Sibiu"},
     "geometryTypes": ["LineString"]
   },

@@ -1,0 +1,9 @@
+[
+  {"id": "cerbul-carpatin-sohodol", "slug": "2yxhr1b0", "name": "Râul Sohodol I ", "county": "Gorj", "geometry_types": ["LineString"]},
+  {"id": "siriu", "slug": "anpa-anpa-0208", "name": "Râul Siriul", "county": "Buzău", "geometry_types": ["MultiLineString"]},
+  {"id": "doftana", "slug": "anpa-anpa-0180", "name": "Râul Doftana Gârcin", "county": "Brașov", "geometry_types": ["LineString"]},
+  {"id": "valea-pojorâtei", "slug": "anpa-anpa-0188", "name": "Valea Pojorâtei", "county": "Brașov", "geometry_types": ["LineString"]},
+  {"id": "sebeș-alba", "slug": "uyzo7o3j", "name": "Râul Sebeș", "county": "Alba", "geometry_types": ["LineString"]},
+  {"id": "sebeș-sus", "slug": "qsvhz93s", "name": "Râul Sebeșul de Sus", "county": "Sibiu", "geometry_types": ["LineString"]},
+  {"id": "sebeș-jos", "slug": "f02xtxw1", "name": "Râul Sebeșul de Jos", "county": "Sibiu", "geometry_types": ["LineString"]}
+]
