@@ -36,10 +36,6 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        env:
-          # The default cdn.playwright.dev endpoint can return regional 403s on
-          # GitHub-hosted runners; use the supported Azure Edge mirror.
-          PLAYWRIGHT_DOWNLOAD_HOST: https://playwright.azureedge.net
         run: npx playwright install --with-deps chromium
 
       - name: Build, start one server, and run projects in parallel
