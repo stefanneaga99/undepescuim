@@ -1,0 +1,335 @@
+{
+  "fixtureVersion": 1,
+  "derivedFrom": {
+    "report": "data/processed/link_validation_report.json",
+    "repairs": "data/processed/link_validation_repairs.jsonl",
+    "generatedAt": "2026-08-19T14:46:18Z"
+  },
+  "records": [
+    {
+      "associationSlug": "ajvps-buzau",
+      "field": "associationLocation.sourceUrl",
+      "sourcePath": "data/processed/association_locations.json.locations[0].sources[0].url",
+      "sourceKind": "curated-location",
+      "originalUrl": "https://www.ajvpsbuzau.ro/ro/contact/",
+      "checkedAt": "2026-08-19T14:46:18Z",
+      "status": "ok",
+      "httpStatus": 200,
+      "finalUrl": "https://www.ajvpsbuzau.ro/ro/contact/",
+      "failureReason": null,
+      "confidence": "high",
+      "redirect": {
+        "count": 0,
+        "chain": [],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 1,
+        "attemptedAt": [
+          "2026-08-19T14:46:18Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": false
+      },
+      "scenario": "already_correct"
+    },
+    {
+      "associationSlug": "directia-silvica-bihor",
+      "field": "provenance.permit_url",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[46].permit_url",
+      "sourceKind": "provenance",
+      "originalUrl": "https://magazin-online.dsoradea.ro/categorie-produs/pescuit-recreativ/",
+      "checkedAt": "2026-08-19T14:50:26Z",
+      "status": "client_error",
+      "httpStatus": 404,
+      "finalUrl": null,
+      "failureReason": "http_404",
+      "confidence": "low",
+      "redirect": {
+        "count": 0,
+        "chain": [],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 1,
+        "attemptedAt": [
+          "2026-08-19T14:50:26Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": false
+      },
+      "scenario": "client_error"
+    },
+    {
+      "associationSlug": "ajvps-arges",
+      "field": "provenance.website",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[76].website",
+      "sourceKind": "provenance",
+      "originalUrl": "https://ajvps-arges.ro/",
+      "checkedAt": "2026-08-19T14:47:28Z",
+      "status": "redirected",
+      "httpStatus": 200,
+      "finalUrl": "https://ajvpsarges.ro/",
+      "failureReason": null,
+      "confidence": "medium",
+      "redirect": {
+        "count": 1,
+        "chain": [
+          {
+            "url": "https://ajvps-arges.ro/",
+            "status": 301
+          }
+        ],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 2,
+        "attemptedAt": [
+          "2026-08-19T14:47:28Z",
+          "2026-08-19T14:47:28Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": false
+      },
+      "scenario": "redirect"
+    },
+    {
+      "associationSlug": null,
+      "field": "guideUrl",
+      "sourcePath": "src/content/permis-2026.ts:498",
+      "sourceKind": "permit-guide",
+      "originalUrl": "https://permise.anpa.ro:12443/portal-public/permis",
+      "checkedAt": "2026-08-19T14:46:34Z",
+      "status": "transient_error",
+      "httpStatus": null,
+      "finalUrl": null,
+      "failureReason": "network_error",
+      "confidence": "low",
+      "redirect": {
+        "count": 0,
+        "chain": [],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 3,
+        "attemptedAt": [
+          "2026-08-19T14:46:34Z",
+          "2026-08-19T14:46:35Z",
+          "2026-08-19T14:46:36Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": true
+      },
+      "scenario": "transient"
+    },
+    {
+      "associationSlug": "ajps-cluj",
+      "field": "provenance.website",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[81].website",
+      "sourceKind": "provenance",
+      "originalUrl": "http://ajpscluj.ro/",
+      "checkedAt": "2026-08-19T14:47:26Z",
+      "status": "blocked",
+      "httpStatus": null,
+      "finalUrl": null,
+      "failureReason": "http_not_approved",
+      "confidence": "low",
+      "redirect": {
+        "count": 0,
+        "chain": [],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 1,
+        "attemptedAt": [
+          "2026-08-19T14:47:26Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": false
+      },
+      "scenario": "policy_blocked"
+    },
+    {
+      "associationSlug": null,
+      "field": "guideUrl",
+      "sourcePath": "src/content/permis-2026.en.ts:557",
+      "sourceKind": "permit-guide-en",
+      "originalUrl": "https://permise.anpa.ro:12443/portal-public/permis",
+      "checkedAt": "2026-08-19T14:46:39Z",
+      "status": "transient_error",
+      "httpStatus": null,
+      "finalUrl": null,
+      "failureReason": "network_error",
+      "confidence": "low",
+      "redirect": {
+        "count": 0,
+        "chain": [],
+        "crossHost": false,
+        "downgradedToHttp": false
+      },
+      "retry": {
+        "attempts": 3,
+        "attemptedAt": [
+          "2026-08-19T14:46:39Z",
+          "2026-08-19T14:46:43Z",
+          "2026-08-19T14:46:47Z"
+        ],
+        "retryAfterSeconds": null,
+        "exhausted": true
+      },
+      "scenario": "duplicate_transient"
+    }
+  ],
+  "repairs": [
+    {
+      "schemaVersion": 1,
+      "repairKey": "8a92dbcc8317cdf3e2703aa2162e86f27d976070e71443c9c18b7f6a927e9129",
+      "associationSlug": "directia-silvica-bihor",
+      "field": "provenance.permit_url",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[46].permit_url",
+      "originalUrl": "https://magazin-online.dsoradea.ro/categorie-produs/pescuit-recreativ/",
+      "observedStatus": "client_error",
+      "evidence": {
+        "checkedAt": "2026-08-19T14:50:26Z",
+        "failureReason": "http_404",
+        "finalUrl": null,
+        "redirect": {
+          "count": 0,
+          "chain": [],
+          "crossHost": false,
+          "downgradedToHttp": false
+        }
+      },
+      "action": "review_and_manually_repair",
+      "state": "open",
+      "candidateUrl": "https://www.ajvpsbuzau.ro/ro/contact/",
+      "firstPartyEvidence": {
+        "reviewed": false,
+        "urls": [],
+        "source": "candidate intentionally withheld"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "repairKey": "49cea5694095eeda0f737dce85fea779050f8cc5be1db2eefc5c39e265feab60",
+      "associationSlug": "ajvps-arges",
+      "field": "provenance.website",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[76].website",
+      "originalUrl": "https://ajvps-arges.ro/",
+      "observedStatus": "redirected",
+      "evidence": {
+        "checkedAt": "2026-08-19T14:47:28Z",
+        "failureReason": null,
+        "finalUrl": "https://ajvpsarges.ro/",
+        "redirect": {
+          "count": 1,
+          "chain": [
+            {
+              "url": "https://ajvps-arges.ro/",
+              "status": 301
+            }
+          ],
+          "crossHost": false,
+          "downgradedToHttp": false
+        }
+      },
+      "action": "review_and_manually_repair",
+      "state": "open",
+      "candidateUrl": "https://ajvpsarges.ro/",
+      "firstPartyEvidence": {
+        "reviewed": true,
+        "urls": [
+          "https://ajvpsarges.ro/"
+        ],
+        "source": "observed redirect destination; reviewer confirmed first-party"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "repairKey": "e8068a22c601ea288eff6628e2b88599816cea5141b5febd46df23dae773a900",
+      "associationSlug": null,
+      "field": "guideUrl",
+      "sourcePath": "src/content/permis-2026.ts:498",
+      "originalUrl": "https://permise.anpa.ro:12443/portal-public/permis",
+      "observedStatus": "transient_error",
+      "evidence": {
+        "checkedAt": "2026-08-19T14:46:34Z",
+        "failureReason": "network_error",
+        "finalUrl": null,
+        "redirect": {
+          "count": 0,
+          "chain": [],
+          "crossHost": false,
+          "downgradedToHttp": false
+        }
+      },
+      "action": "review_and_manually_repair",
+      "state": "open"
+    },
+    {
+      "schemaVersion": 1,
+      "repairKey": "18c83fc076af328c287ee210f58af4eeb03596c9471c78e3c019666d6a368935",
+      "associationSlug": "ajps-cluj",
+      "field": "provenance.website",
+      "sourcePath": "data/processed/arebaltapeste_associations.jsonl[81].website",
+      "originalUrl": "http://ajpscluj.ro/",
+      "observedStatus": "blocked",
+      "evidence": {
+        "checkedAt": "2026-08-19T14:47:26Z",
+        "failureReason": "http_not_approved",
+        "finalUrl": null,
+        "redirect": {
+          "count": 0,
+          "chain": [],
+          "crossHost": false,
+          "downgradedToHttp": false
+        }
+      },
+      "action": "review_and_manually_repair",
+      "state": "open"
+    },
+    {
+      "schemaVersion": 1,
+      "repairKey": "d779c46ef77fe205a29805622ab678f804b221b0d31b6fb355d74b24b5d2b8a6",
+      "associationSlug": null,
+      "field": "guideUrl",
+      "sourcePath": "src/content/permis-2026.en.ts:557",
+      "originalUrl": "https://permise.anpa.ro:12443/portal-public/permis",
+      "observedStatus": "transient_error",
+      "evidence": {
+        "checkedAt": "2026-08-19T14:46:39Z",
+        "failureReason": "network_error",
+        "finalUrl": null,
+        "redirect": {
+          "count": 0,
+          "chain": [],
+          "crossHost": false,
+          "downgradedToHttp": false
+        }
+      },
+      "action": "review_and_manually_repair",
+      "state": "open"
+    }
+  ],
+  "expected": {
+    "recordTotal": 6,
+    "repairRecordTotal": 5,
+    "byScenario": {
+      "already_correct": 1,
+      "client_error": 1,
+      "redirect": 1,
+      "transient": 1,
+      "policy_blocked": 1,
+      "duplicate_transient": 1
+    },
+    "duplicateOriginalUrlGroups": 1,
+    "actionableReviewedCandidates": 1,
+    "nonActionableUnconfirmedCandidates": 1,
+    "destinationPolicy": "candidateUrl is actionable only with reviewed=true and candidateUrl in firstPartyEvidence.urls; all other proposals are rejected"
+  }
+}
