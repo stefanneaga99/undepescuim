@@ -27,6 +27,7 @@ const mobileMatrixProjects = ([
 ] as const).map(([name, device]) => ({
   name,
   grepInvert: /@data/,
+  testIgnore: /live-prod\.spec\.ts/,
   use: { ...devices[device], browserName: 'chromium' as const },
 }));
 
@@ -94,6 +95,7 @@ export default defineConfig({
       // iPhone 14 device presets + forced chromium (only chromium is installed).
       name: 'mobile',
       grepInvert: /@data/,
+      testIgnore: /live-prod\.spec\.ts/,
       use: { ...devices['iPhone 14'], browserName: 'chromium' },
     },
     {
@@ -101,11 +103,13 @@ export default defineConfig({
       // still the compact (<1024px) vaul drawer for detail sheets.
       name: 'tablet',
       grepInvert: /@data/,
+      testIgnore: /live-prod\.spec\.ts/,
       use: { ...devices['iPad (gen 7)'], browserName: 'chromium' },
     },
     {
       // 1280×800 — desktop: inline nav, side panel, floating nearby panel.
       name: 'desktop',
+      testIgnore: /live-prod\.spec\.ts/,
       grepInvert: /@data/,
       use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } },
     },
@@ -114,6 +118,7 @@ export default defineConfig({
       // server/build lifecycle is not repeated. Its browser context remains
       // independent from the seeded projects.
       name: 'data',
+      testIgnore: /live-prod\.spec\.ts/,
       grep: /@data/,
       use: { ...devices['Desktop Chrome'], browserName: 'chromium' },
     },

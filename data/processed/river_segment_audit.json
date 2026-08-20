@@ -1,4 +1,15 @@
 {
+  "baseline": {
+    "snapshot_sha256": null,
+    "summary_deltas": {
+      "MISSING_CONTRACTED": 0,
+      "duplicate": 0,
+      "missing_segment": 0,
+      "sector_mismatch": 0,
+      "truncated_head": 0,
+      "truncated_mouth": 0
+    }
+  },
   "cells": [
     {
       "contracted": 49,

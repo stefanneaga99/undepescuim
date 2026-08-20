@@ -16,6 +16,15 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - **truncated_head**: 6
 - **truncated_mouth**: 6
 
+## Baseline deltas
+
+- **MISSING_CONTRACTED**: +0
+- **missing_segment**: +0
+- **truncated_head**: +0
+- **truncated_mouth**: +0
+- **sector_mismatch**: +0
+- **duplicate**: +0
+
 ## Coverage grid
 
 | County | Contracted | Geometry | Missing | Findings | Overlay rivers | Overlay lakes | Status |
