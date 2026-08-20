@@ -547,6 +547,40 @@ Execute in dependency order; each step ends with a green command.
 
 ---
 
+## 11. Repository verification record
+
+The repository test and build gates were executed on 2026-08-20 (WSL, Node.js
+22.23.2) after the unit, integration, and geometry-regression changes landed.
+The commands below are the exact canonical commands used for the final run:
+
+```bash
+npm test
+PYTHONPATH=. pytest -q
+npx tsc --noEmit
+npm run lint
+npm run build
+```
+
+Results:
+
+| Command | Result |
+|---------|--------|
+| `npm test` | **PASS** — 26 test files, 237 tests passed |
+| `PYTHONPATH=. pytest -q` | **PASS** — 172 tests passed |
+| `npx tsc --noEmit` | **PASS** |
+| `npm run lint` | **PASS** — 0 errors, 1 pre-existing warning in `src/hooks/use-geolocation.test.ts` (`PositionError` unused) |
+| `npm run build` | **PASS** — Next.js production build completed; routes `/`, `/specii`, `/permis`, `/_not-found`, `/manifest.webmanifest`, and `/api/report` generated |
+
+The Python command intentionally sets `PYTHONPATH=.` because the tests import
+modules from the repository's `scripts/` namespace; plain `pytest -q` otherwise
+fails during collection with `ModuleNotFoundError: No module named 'scripts'`.
+An initial `npm test -- --runInBand` was also rejected because Vitest does not
+support Jest's `--runInBand` option; the canonical `npm test` run above is the
+authoritative result. Vitest emits expected test-time stderr for mocked network
+failures and React `act(...)` warnings, but all assertions pass. No Playwright
+browser-flow run is recorded here; this verification covers the repository's
+unit/integration/data tests, typecheck, lint, and production build.
+
 ## Appendix A — command cheatsheet
 
 ```bash
