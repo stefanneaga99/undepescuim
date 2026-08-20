@@ -16,7 +16,13 @@ const run = (command, args, env = {}) => new Promise((resolve) => {
 });
 const build = await run('npm', ['run', 'build']);
 if (build.code !== 0) process.exit(build.code);
-const server = spawn('npm', ['run', 'start'], { env: { ...process.env, PORT: port }, stdio: ['ignore', 'pipe', 'pipe'] });
+const server = spawn('npm', ['run', 'start'], {
+  env: { ...process.env, PORT: port },
+  stdio: ['ignore', 'pipe', 'pipe'],
+  // npm launches a shell and Next launches another child. Use a process group
+  // so cleanup cannot leave a server (and its inherited pipes) behind.
+  detached: process.platform !== 'win32',
+});
 let serverLog = '';
 let serverExit = null;
 server.stdout.on('data', (chunk) => { serverLog += chunk; });
@@ -58,4 +64,12 @@ try {
   };
   await writeFile(`${outDir}/summary.json`, JSON.stringify(summary, null, 2) + '\n');
   process.exitCode = e2e.code || perf.code;
-} finally { server.kill('SIGTERM'); }
+} finally {
+  // Kill the whole detached group; killing npm alone can orphan Next and keep
+  // stdout/stderr pipes open, leaving this runner stuck after artifacts exist.
+  if (server.pid && process.platform !== 'win32') {
+    try { process.kill(-server.pid, 'SIGTERM'); } catch {}
+  } else {
+    server.kill('SIGTERM');
+  }
+}
