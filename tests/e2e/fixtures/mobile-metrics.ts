@@ -63,11 +63,14 @@ export async function resetBrowserState(context: BrowserContext): Promise<void> 
 
 /** Match network state in both CDP and the UI-facing navigator.onLine property. */
 export async function setDeviceOnline(page: Page, online: boolean): Promise<void> {
-  await page.context().setOffline(!online);
+  // Update the page before toggling CDP connectivity. Chromium may dispatch a
+  // navigation/reload while going offline (especially with a service worker);
+  // doing the evaluate first avoids racing a destroyed execution context.
   await page.evaluate((value) => {
     Object.defineProperty(navigator, 'onLine', { configurable: true, get: () => value });
     window.dispatchEvent(new Event(value ? 'online' : 'offline'));
   }, online);
+  await page.context().setOffline(!online);
 }
 
 export async function waitForOnlineState(page: Page, online: boolean): Promise<void> {
