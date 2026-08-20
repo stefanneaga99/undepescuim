@@ -1,23 +1,36 @@
 import { test, expect } from '../../fixtures/app';
-import { installRequestRecorder, setDeviceOnline, waitForOnlineState, storageMetrics } from '../../fixtures/mobile-metrics';
-import { MOBILE_FIXTURE_29_DAYS, MOBILE_FIXTURE_30_DAYS, offlineDataset } from '../../fixtures/mobile-data';
+import {
+  attachMobileMetrics,
+  installRequestRecorder,
+  setDeviceOnline,
+  storageMetrics,
+  transitionLatency,
+  waitForOnlineState,
+} from '../../fixtures/mobile-metrics';
+import {
+  CACHE_REGIONS,
+  MOBILE_FIXTURE_29_DAYS,
+  MOBILE_FIXTURE_30_DAYS,
+  offlineDataset,
+  seedVisitedTileCache,
+  tileCacheSnapshot,
+} from '../../fixtures/mobile-data';
 
-/**
- * Deterministic network contracts shared by the mobile matrix. These tests use
- * only local fixtures and never contact the report provider.
- */
+/** Deterministic network contracts shared by the mobile matrix. */
 test.describe('mobile offline/network contracts', () => {
-  test('offline transition is observable and data requests are recorded', async ({ page, mapReady }) => {
+  test('offline/reconnect transitions meet provisional latency budgets', async ({ page, mapReady }, testInfo) => {
     const recorder = await installRequestRecorder(page);
     await mapReady();
-    const before = recorder.dataRequests().length;
-    await setDeviceOnline(page, false);
-    await waitForOnlineState(page, false);
-    expect(recorder.dataRequests().length).toBe(before);
-    await setDeviceOnline(page, true);
-    await waitForOnlineState(page, true);
+    const dataBeforeOffline = recorder.dataRequests().length;
+    const offlineMs = await transitionLatency(page, false);
+    expect(recorder.dataRequests().length).toBe(dataBeforeOffline);
+    expect(offlineMs).toBeLessThanOrEqual(1000);
+
+    const reconnectMs = await transitionLatency(page, true);
+    expect(reconnectMs).toBeLessThanOrEqual(3000);
     await page.getByTestId('offline-banner').waitFor({ state: 'hidden' }).catch(() => undefined);
     expect((await storageMetrics(page)).cacheNames).toEqual(expect.any(Array));
+    await attachMobileMetrics(page, testInfo, recorder);
   });
 
   test('staleness fixtures have an exact 29/30-day boundary', async ({ page }) => {
@@ -32,19 +45,38 @@ test.describe('mobile offline/network contracts', () => {
     expect(offlineDataset(MOBILE_FIXTURE_30_DAYS).dataUpdatedAt).toBe(MOBILE_FIXTURE_30_DAYS);
   });
 
-  test('offline report cannot produce a false success and reconnect permits one POST', async ({ page, mapReady }) => {
+  test('cache fixture contains only visited regions and reports growth', async ({ page, mapReady }) => {
+    await mapReady();
+    await seedVisitedTileCache(page, ['region-01', 'region-12']);
+    const snapshot = await tileCacheSnapshot(page);
+    expect(snapshot.urls).toHaveLength(16);
+    expect(snapshot.bytes).toBe(16 * 12);
+    expect(snapshot.urls.every((url) => url.includes('/1/') || url.includes('/12/'))).toBe(true);
+    expect(CACHE_REGIONS).toHaveLength(12);
+  });
+
+  test('offline report cannot produce false success; reconnect permits one POST', async ({ page, mapReady }) => {
     let reportPosts = 0;
     await page.route('**/api/report', async (route) => {
+      if (!await page.evaluate(() => navigator.onLine)) {
+        await route.abort('failed');
+        return;
+      }
       reportPosts += 1;
-      if (!page.url().includes('127.0.0.1')) await route.abort();
-      else await route.fulfill({ json: { ok: true, issueUrl: 'https://example.invalid/test' } });
+      await route.fulfill({ json: { ok: true, issueUrl: 'https://example.invalid/test' } });
     });
     await mapReady();
     await setDeviceOnline(page, false);
     await waitForOnlineState(page, false);
+    const offlineResult = await page.evaluate(() => fetch('/api/report', { method: 'POST', body: '{}' })
+      .then(() => 'success' as const).catch(() => 'network-error' as const));
+    expect(offlineResult).toBe('network-error');
     expect(reportPosts).toBe(0);
+
     await setDeviceOnline(page, true);
     await waitForOnlineState(page, true);
-    expect(reportPosts).toBe(0);
+    const response = await page.evaluate(() => fetch('/api/report', { method: 'POST', body: '{}' }).then((r) => r.json()));
+    expect(response.ok).toBe(true);
+    expect(reportPosts).toBe(1);
   });
 });

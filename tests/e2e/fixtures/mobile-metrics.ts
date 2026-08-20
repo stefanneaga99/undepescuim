@@ -6,6 +6,7 @@ export type RequestRecorder = {
   dataRequests: () => RequestRecord[];
   reportPosts: () => RequestRecord[];
   byPath: (path: string) => RequestRecord[];
+  unexpected: (allowed: ReadonlySet<string>) => RequestRecord[];
 };
 
 /** Capture only request metadata; never persist headers, bodies, or credentials. */
@@ -21,6 +22,7 @@ export async function installRequestRecorder(page: Page): Promise<RequestRecorde
     dataRequests: () => requests.filter((r) => r.url.startsWith('/data/')),
     reportPosts: () => requests.filter((r) => r.url === '/api/report' && r.method === 'POST'),
     byPath: (path) => requests.filter((r) => r.url === path),
+    unexpected: (allowed) => requests.filter((r) => !allowed.has(`${r.method} ${r.url}`)),
   };
 }
 
@@ -79,7 +81,19 @@ export async function waitForOnlineState(page: Page, online: boolean): Promise<v
   else await page.getByTestId('offline-banner').waitFor({ state: 'visible' });
 }
 
+export async function transitionLatency(page: Page, online: boolean): Promise<number> {
+  const started = Date.now();
+  await setDeviceOnline(page, online);
+  await waitForOnlineState(page, online);
+  return Date.now() - started;
+}
+
 export async function attachMobileMetrics(page: Page, testInfo: TestInfo, recorder?: RequestRecorder): Promise<void> {
-  const metrics = { requests: recorder?.requests ?? [], ...(await storageMetrics(page)).storage };
+  const metrics = {
+    capturedAt: new Date().toISOString(),
+    requests: recorder?.requests ?? [],
+    requestCount: recorder?.requests.length ?? 0,
+    ...(await storageMetrics(page)),
+  };
   await testInfo.attach('mobile-metrics.json', { body: JSON.stringify(metrics, null, 2), contentType: 'application/json' });
 }

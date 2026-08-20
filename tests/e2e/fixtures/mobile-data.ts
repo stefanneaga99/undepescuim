@@ -48,3 +48,30 @@ export const CACHE_REGIONS = Array.from({ length: 12 }, (_, index) => ({
   id: `region-${String(index + 1).padStart(2, '0')}`,
   tileUrls: Array.from({ length: 8 }, (_, tile) => `/__mobile-fixture__/tiles/${index + 1}/${tile + 1}.png`),
 }));
+
+/** Populate only the URLs a flow visited; this deliberately does not prefetch. */
+export async function seedVisitedTileCache(page: Page, regionIds: string[]): Promise<void> {
+  const urls = CACHE_REGIONS.filter((region) => regionIds.includes(region.id)).flatMap((region) => region.tileUrls);
+  await page.evaluate(async (tileUrls) => {
+    const cache = await caches.open('mobile-fixture-tiles-v1');
+    for (const url of tileUrls) await cache.put(url, new Response('fixture-tile', {
+      headers: { 'content-type': 'image/png', 'content-length': '12' },
+    }));
+  }, urls);
+}
+
+export async function tileCacheSnapshot(page: Page): Promise<{ urls: string[]; bytes: number }> {
+  return page.evaluate(async () => {
+    const urls: string[] = [];
+    let bytes = 0;
+    for (const name of await caches.keys()) {
+      const cache = await caches.open(name);
+      for (const request of await cache.keys()) {
+        if (!request.url.includes('/__mobile-fixture__/tiles/')) continue;
+        urls.push(new URL(request.url).pathname);
+        bytes += Number((await cache.match(request))?.headers.get('content-length') ?? 0);
+      }
+    }
+    return { urls, bytes };
+  });
+}
