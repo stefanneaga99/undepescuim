@@ -1,6 +1,7 @@
 'use client';
 
 import { Drawer } from 'vaul';
+import type { ComponentProps } from 'react';
 
 /**
  * Bottom-sheet drag handle (t_f21260ee).
@@ -19,9 +20,9 @@ import { Drawer } from 'vaul';
  * context (used by WaterDetailSheet / NearbyWatersSheet /
  * AssociationDetailSheet).
  */
-export function SheetGrabber() {
+export function SheetGrabber(props: ComponentProps<typeof Drawer.Handle>) {
   return (
-    <Drawer.Handle className="shrink-0 select-none">
+    <Drawer.Handle {...props} className={`shrink-0 select-none ${props.className ?? ''}`}>
       <span className="h-1 w-9 rounded-full bg-zinc-300 dark:bg-zinc-600" />
     </Drawer.Handle>
   );

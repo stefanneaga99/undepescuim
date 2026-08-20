@@ -21,6 +21,35 @@ export class WaterDetailCard {
     return this.page.getByTestId(Selectors.waterCard);
   }
 
+  get sheet() {
+    return this.page.getByTestId(Selectors.waterDetailSheet);
+  }
+
+  get grabber() {
+    return this.page.getByTestId(Selectors.waterDetailGrabber);
+  }
+
+  async sheetSnapshot() {
+    return this.page.evaluate(() => {
+      const sheet = document.querySelector<HTMLElement>('[data-testid="water-detail-sheet"]');
+      const handle = document.querySelector<HTMLElement>('[data-testid="water-detail-grabber"]');
+      const cardScroller = document.querySelector<HTMLElement>('[data-testid="water-card"]')?.parentElement;
+      if (!sheet || !handle || !cardScroller) throw new Error('water detail sheet anatomy missing');
+      const sheetRect = sheet.getBoundingClientRect();
+      const handleRect = handle.getBoundingClientRect();
+      const cx = handleRect.left + handleRect.width / 2;
+      const cy = handleRect.top + handleRect.height / 2;
+      const top = document.elementFromPoint(cx, cy);
+      return {
+        sheetRect: { top: sheetRect.top, bottom: sheetRect.bottom, height: sheetRect.height },
+        handleRect: { top: handleRect.top, bottom: handleRect.bottom, height: handleRect.height, width: handleRect.width },
+        scrollTop: cardScroller.scrollTop,
+        selectedSlug: document.querySelector<HTMLElement>('.water-focus-pane')?.dataset.focusSlug ?? '',
+        handleHit: top === handle || Boolean(top?.closest('[data-testid="water-detail-grabber"]')),
+      };
+    });
+  }
+
   get name() {
     return this.card.locator('h2').first();
   }

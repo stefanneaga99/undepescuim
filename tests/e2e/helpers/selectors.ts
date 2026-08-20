@@ -23,6 +23,8 @@ export const Selectors = {
   assocDetailSheet: 'assoc-detail-sheet',
   assocDetailName: 'assoc-detail-name',
   waterCard: 'water-card',
+  waterDetailSheet: 'water-detail-sheet',
+  waterDetailGrabber: 'water-detail-grabber',
   permitRow: 'permit-row',
   reportPositive: 'report-positive',
   reportFlag: 'report-flag',

@@ -112,19 +112,24 @@ export function WaterDetailSheet() {
   }, [water, closeWaterSheet]);
 
   // Expose the current snap height to ColorLegend (mobile-layout-spec §8.3).
-  const handleSnap = (s: number | string | null) => {
+  const handleSnap = useCallback((s: number | string | null) => {
     setSnap(s);
     const vh = typeof s === 'number' ? Math.round(s * 100) : 0;
     document.documentElement.style.setProperty('--sheet-snap-h', `${vh}vh`);
-  };
+  }, []);
 
-  // Fresh open → Peek (35vh); keep current height when switching waters.
-  const prevWaterSlug = useRef<string | null>(null);
+  // Open A, reopen a closed selected water, or select B while open → Peek;
+  // a drag within the same selected water preserves the user's snap.
+  const previousSheet = useRef({ open: false, slug: null as string | null });
   useEffect(() => {
     const slug = water?.slug ?? null;
-    if (slug && prevWaterSlug.current === null) handleSnap(0.35);
-    prevWaterSlug.current = slug;
-  }, [water?.slug]);
+    const shouldResetToPeek = Boolean(
+      waterSheetOpen && slug && (!previousSheet.current.open || previousSheet.current.slug !== slug),
+    );
+
+    if (shouldResetToPeek) handleSnap(0.35);
+    previousSheet.current = { open: waterSheetOpen, slug };
+  }, [handleSnap, water?.slug, waterSheetOpen]);
 
   // Sync the CSS var on open / snap change / close. t_21d2f68d: the sheet can
   // now close while `water` stays selected (orange focus persists), so the var
@@ -166,11 +171,12 @@ export function WaterDetailSheet() {
               />
             )}
             <Drawer.Content
+              data-testid="water-detail-sheet"
               aria-label={water ? t('detailSheet.detailsAria', { name: water.name }) : t('detailSheet.detailsWater')}
               className="fixed inset-x-0 bottom-0 z-[1200] flex h-[100dvh] flex-col rounded-t-2xl border-t bg-background shadow-xl outline-none"
             >
               {/* drag handle */}
-              <SheetGrabber />
+              <SheetGrabber data-testid="water-detail-grabber" />
 
               {water && (
                 <div className="absolute right-3 top-12">
