@@ -26,6 +26,7 @@
     "test:e2e:headed": "playwright test --headed",
     "test:e2e:live": "LIVE_PROD=1 playwright test --project=live-prod-desktop --project=live-prod-mobile tests/e2e/specs/live-prod.spec.ts",
     "mobile:matrix": "E2E_MOBILE_MATRIX=1 node scripts/run-mobile-matrix.mjs",
+    "mobile:perf": "node scripts/_perf_map.mjs",
     "mobile:offline": "E2E_MOBILE_MATRIX=1 E2E_PORT=3100 npx playwright test tests/e2e/specs/regression/mobile-offline-network.spec.ts --project=iphone-current --project=pixel-current --workers=1",
     "mobile:reset": "node scripts/reset-mobile-state.mjs"
   },

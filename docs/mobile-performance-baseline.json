@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "description": "Comparable Chromium mobile performance baseline from the retained 2026-08-20 WSL production run. These values are comparison references; approved gates remain in mobile-regression-performance-matrix.md.",
+  "capturedAt": "2026-08-20T17:18:00Z",
+  "source": "docs/mobile-integrated-test-report.md",
+  "conditions": {
+    "profile": "fast3g",
+    "viewport": "390x844",
+    "cpuThrottle": 4,
+    "browserMode": "chromium-emulation"
+  },
+  "metrics": {
+    "M5": 0,
+    "M6": 11950,
+    "M10": 220569.6,
+    "M11": 9660,
+    "M12": 319,
+    "M13": 68157440,
+    "M14": 828,
+    "requestCount": 0,
+    "dataRequestCount": 4,
+    "dataTransferBytes": 1782784,
+    "offline": {
+      "latencyMs": 1000,
+      "newResourceRequests": 0
+    }
+  },
+  "provisionalLimits": {
+    "offlineLatencyMs": 1000,
+    "storageUsageRatio": 0.8,
+    "offlineNewResourceRequests": 0
+  }
+}

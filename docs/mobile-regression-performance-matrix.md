@@ -79,7 +79,7 @@ PERF_THROTTLE=1 node scripts/_perf_map.mjs http://localhost:3100
 
 The runner builds once, starts one production server, runs the six device projects, then runs the performance suite. Set `PERF_THROTTLE=0` for a quick local smoke; the recorded lab condition is Fast 3G plus 4x CPU. The runner writes `summary.json` with the six project names, exit codes, parsed pass/fail/skip/flaky counts, and up to 20 deduplicated actionable failure lines. This keeps a failed matrix diagnosable without opening the full log; the full e2e/performance logs and Playwright artifacts remain available for triage.
 
-The performance suite also reports request/resource transfer rows, which are the request-count baseline for comparing runs.
+The performance suite also reports request/resource transfer rows, storage/cache metrics, offline transition latency/request isolation, and a baseline delta artifact. See [mobile performance measurement instructions](mobile-performance-measurements.md) and the machine-readable [baseline](mobile-performance-baseline.json).
 
 ## Network and offline interpretation
 

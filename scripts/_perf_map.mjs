@@ -23,10 +23,14 @@
  * Exit code 0 = all budgets PASS, 1 = any FAIL.
  */
 import { chromium } from 'playwright';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 
 const BASE = process.argv[2] || process.env.BASE_URL || 'http://localhost:3000';
 const CDP = process.env.PLAYWRIGHT_CDP;
 const THROTTLE = process.env.PERF_THROTTLE !== '0'; // throttled by default
+const NETWORK_PROFILE = process.env.PERF_NETWORK_PROFILE || 'fast3g';
+const OUTPUT = process.env.PERF_OUTPUT || 'test-results/mobile-performance.json';
+const BASELINE = process.env.PERF_BASELINE || 'docs/mobile-performance-baseline.json';
 
 // Budget limits (plan §4; byte units where applicable)
 const BUDGETS = {
@@ -55,6 +59,11 @@ const check = (key, ok, value) => {
   if (!ok) failures.push(key);
 };
 const report = (label, value) => console.log(`  INFO  ${label.padEnd(34)} ${value}`);
+const checkProvisional = (label, ok, value, key) => {
+  console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${label.padEnd(34)} provisional   got ${value}`);
+  results[key] = { ok, value, provisional: true };
+  if (!ok) failures.push(key);
+};
 
 const browser = CDP ? await chromium.connectOverCDP(CDP) : await chromium.launch();
 let page = await browser.newPage({ viewport: { width: 390, height: 844 } });
@@ -71,22 +80,20 @@ if (CDP) {
 
 console.log(`Perf suite → ${BASE}  (viewport 390×844, throttle=${THROTTLE ? 'Fast 3G + CPU 4×' : 'off'})\n`);
 
-// ---- Fast 3G + CPU 4× throttle (plan §5.5) ----
+// ---- Network + CPU throttle (plan §5.5; Fast 3G or constrained Slow 2G) ----
 if (THROTTLE) {
   try {
     const cdp = await page.context().newCDPSession(page);
     await cdp.send('Network.enable');
-    await cdp.send('Network.emulateNetworkConditions', {
-      offline: false,
-      latency: 150,
-      downloadThroughput: 204800, // 1.6 Mbps / 8 = 200 KB/s
-      uploadThroughput: 96000, // 750 Kbps / 8 ≈ 94 KB/s
-      connectionType: 'cellular3g',
-    });
+    const profile = NETWORK_PROFILE === 'slow2g'
+      ? { label: 'Slow 2G', latency: 300, downloadThroughput: 6400, uploadThroughput: 6400, connectionType: 'cellular2g' }
+      : { label: 'Fast 3G', latency: 150, downloadThroughput: 204800, uploadThroughput: 96000, connectionType: 'cellular3g' };
+    const { label, ...conditions } = profile;
+    await cdp.send('Network.emulateNetworkConditions', { offline: false, ...conditions });
     await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
-    report('throttle', 'Fast 3G (1.6 Mbps, 150 ms RTT) + CPU 4×');
+    report('throttle', `${label} (${profile.downloadThroughput * 8 / 1000} Kbps, ${profile.latency} ms RTT) + CPU 4×`);
   } catch (err) {
-    console.log(`  warn: CDP throttle unavailable (${err.message.split('\n')[0]}) — running unthrottled`);
+    console.log(`  warn: CDP throttle unavailable (${err.message.split('\\n')[0]}) — running unthrottled`);
   }
 }
 
@@ -115,9 +122,27 @@ const perf = await page.evaluate(() => {
     dataStart,
     dataTransfer: data.reduce((a, r) => a + (r.transferSize || 0), 0),
     dataRows: data.map((r) => ({ name: r.name.split('/data/')[1], transfer: r.transferSize || 0, dur: Math.round(r.duration) })),
+    dataRequestCount: data.length,
+    requestCount: resources.length,
     jsTransfer: js.reduce((a, r) => a + (r.transferSize || 0), 0),
   };
 });
+
+perf.storage = await page.evaluate(async () => {
+  const cacheEntries = {};
+  let cacheBytes = 0;
+  for (const name of await caches.keys()) {
+    const cache = await caches.open(name);
+    const entries = await cache.keys();
+    cacheEntries[name] = entries.length;
+    for (const request of entries) {
+      const response = await cache.match(request);
+      cacheBytes += Number(response?.headers.get('content-length') || 0);
+    }
+  }
+  const estimate = await navigator.storage?.estimate?.();
+  return { usage: estimate?.usage ?? null, quota: estimate?.quota ?? null, cacheEntries, cacheBytes };
+}).catch(() => ({ usage: null, quota: null, cacheEntries: {}, cacheBytes: 0 }));
 
 const m6 = perf.loadedAt - perf.navStart;
 check('M6', m6 < BUDGETS.M6.limit, `${(m6 / 1000).toFixed(2)} s`);
@@ -264,6 +289,79 @@ check('M5', cls.unexpected < BUDGETS.M5.limit, `unexpected=${cls.unexpected.toFi
 for (const s of cls.shifts.filter((x) => !x.recentInput)) {
   report(`  unexpected shift ${s.v.toFixed(4)} @ ${s.t} ms (${s.sources.join(', ') || 'no source'})`, '');
 }
+
+// ---- Offline transition/request isolation (F3/F7 correctness contract) ----
+const offlineBefore = await page.evaluate(() => performance.getEntriesByType('resource').length);
+const offlineStarted = Date.now();
+await page.evaluate(() => {
+  Object.defineProperty(navigator, 'onLine', { configurable: true, get: () => false });
+  window.dispatchEvent(new Event('offline'));
+});
+await page.context().setOffline(true);
+await page.getByTestId('offline-banner').waitFor({ state: 'visible', timeout: 3000 }).catch(() => {});
+const offlineLatency = Date.now() - offlineStarted;
+await page.waitForTimeout(500);
+const offlineAfter = await page.evaluate(() => performance.getEntriesByType('resource').length);
+const offline = { latencyMs: offlineLatency, newResourceRequests: Math.max(0, offlineAfter - offlineBefore) };
+report('offline transition', `${offline.latencyMs} ms; ${offline.newResourceRequests} new requests`);
+await page.evaluate(() => {
+  Object.defineProperty(navigator, 'onLine', { configurable: true, get: () => true });
+  window.dispatchEvent(new Event('online'));
+});
+await page.context().setOffline(false).catch(() => {});
+
+const storageRatio = perf.storage.usage != null && perf.storage.quota ? perf.storage.usage / perf.storage.quota : null;
+const storageOk = storageRatio == null || storageRatio <= 0.8;
+const offlineRequestsOk = offline.newResourceRequests === 0;
+const offlineLatencyOk = offline.latencyMs <= 1000;
+report('storage occupancy', storageRatio == null ? 'unavailable' : `${(storageRatio * 100).toFixed(2)}%`);
+checkProvisional('offline transition', offlineLatencyOk, `${offline.latencyMs} ms`, 'offlineLatency');
+checkProvisional('offline requests', offlineRequestsOk, `${offline.newResourceRequests}`, 'offlineRequests');
+checkProvisional('storage occupancy', storageOk, storageRatio == null ? 'unavailable' : `${(storageRatio * 100).toFixed(2)}%`, 'storage');
+
+const metrics = {
+  schemaVersion: 1,
+  capturedAt: new Date().toISOString(),
+  base: BASE,
+  viewport: { width: 390, height: 844 },
+  networkProfile: NETWORK_PROFILE,
+  cpuThrottle: THROTTLE ? 4 : 1,
+  budgets: Object.fromEntries(Object.entries(BUDGETS).map(([key, value]) => [key, { target: value.target, limit: value.limit }])) ,
+  measurements: {
+    M5: cls.unexpected,
+    M6: m6,
+    M10: m10,
+    M11: m11,
+    M12: maxLong,
+    M13: heap,
+    M14: pathCount,
+    requestCount: perf.requestCount,
+    dataRequestCount: perf.dataRequestCount,
+    dataTransferBytes: perf.dataTransfer,
+    storage: {
+      ...perf.storage,
+      usageRatio: storageRatio,
+    },
+    offline,
+  },
+  results,
+  failures,
+};
+try {
+  const baseline = JSON.parse(await readFile(BASELINE, 'utf8'));
+  metrics.baseline = { source: BASELINE, metrics: baseline.metrics || {}, deltas: {} };
+  for (const [key, value] of Object.entries(metrics.measurements)) {
+    const previous = baseline.metrics?.[key];
+    if (typeof value === 'number' && typeof previous === 'number' && previous !== 0) {
+      metrics.baseline.deltas[key] = Number(((value - previous) / previous * 100).toFixed(2));
+    }
+  }
+} catch (error) {
+  metrics.baseline = { source: BASELINE, unavailable: error.code === 'ENOENT' ? 'not-found' : 'invalid-json' };
+}
+await mkdir(OUTPUT.substring(0, OUTPUT.lastIndexOf('/')) || '.', { recursive: true });
+await writeFile(OUTPUT, JSON.stringify(metrics, null, 2) + '\n');
+report('raw metrics artifact', OUTPUT);
 
 await browser.close();
 

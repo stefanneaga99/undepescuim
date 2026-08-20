@@ -64,7 +64,12 @@ try {
     E2E_MOBILE_MATRIX: '1', E2E_SERVER_READY: 'true', PLAYWRIGHT_BASE_URL: base,
     PLAYWRIGHT_OUTPUT_DIR: `${outDir}/playwright`, PLAYWRIGHT_REPORT_DIR: `${outDir}/report`,
   });
-  const perf = await run('node', ['scripts/_perf_map.mjs', base], { PERF_THROTTLE: process.env.PERF_THROTTLE || '1' });
+  const perf = await run('node', ['scripts/_perf_map.mjs', base], {
+    PERF_THROTTLE: process.env.PERF_THROTTLE || '1',
+    PERF_NETWORK_PROFILE: process.env.PERF_NETWORK_PROFILE || 'fast3g',
+    PERF_OUTPUT: `${outDir}/mobile-performance.json`,
+    PERF_BASELINE: process.env.PERF_BASELINE || 'docs/mobile-performance-baseline.json',
+  });
   await writeFile(`${outDir}/e2e.log`, e2e.stdout + e2e.stderr);
   await writeFile(`${outDir}/performance.log`, perf.stdout + perf.stderr);
   const e2eSummary = summarizeE2e(e2e.stdout + e2e.stderr);
@@ -76,12 +81,17 @@ try {
     base,
     projects,
     browserMode: 'chromium-emulation',
-    networkProfile: 'fast-3g (scripts/_perf_map.mjs)',
+    networkProfile: process.env.PERF_NETWORK_PROFILE || 'fast3g (scripts/_perf_map.mjs)',
     e2eExitCode: e2e.code,
     e2e: e2eSummary,
     performanceExitCode: perf.code,
     output: outDir,
-    artifacts: { e2eLog: `${outDir}/e2e.log`, performanceLog: `${outDir}/performance.log`, report: `${outDir}/report` },
+    artifacts: {
+      e2eLog: `${outDir}/e2e.log`,
+      performanceLog: `${outDir}/performance.log`,
+      performanceMetrics: `${outDir}/mobile-performance.json`,
+      report: `${outDir}/report`,
+    },
   };
   await writeFile(`${outDir}/summary.json`, JSON.stringify(summary, null, 2) + '\n');
   process.exitCode = e2e.code || perf.code;
