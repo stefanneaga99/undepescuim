@@ -2,7 +2,7 @@
 
 This is the release-gate matrix for the PWA shell, offline data, map cache, and online-only reporting. The existing Playwright specs are the executable coverage; this document records the target profiles, budgets, commands, and known lab limitations.
 
-For the consolidated result of the latest integrated run, see [Integrated mobile test report](mobile-integrated-test-report.md).
+For the consolidated result of the latest integrated run, see [Integrated mobile test report](mobile-integrated-test-report.md) and the [run record](mobile-regression-matrix-run-2026-08-20.md), with raw logs under `test-results/mobile-matrix-20260820T171800Z/`.
 
 ## Target matrix
 
