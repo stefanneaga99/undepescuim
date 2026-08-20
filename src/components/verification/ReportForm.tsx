@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useSyncExternalStore } from 'react';
+import Link from 'next/link';
 import { Flag } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
@@ -130,6 +131,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
           <DialogTitle>{t('report.title')}</DialogTitle>
           <DialogDescription>
             {waterName ? t('report.descriptionWater', { name: waterName }) : t('report.descriptionGeneric')}
+            <span className="mt-1 block">{t('report.dataOnlyBoundary')} <Link className="text-primary underline" href="/sesizeaza">{t('report.incidentRoutingLink')}</Link></span>
           </DialogDescription>
         </DialogHeader>
 

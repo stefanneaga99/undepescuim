@@ -28,8 +28,10 @@ const ro = {
     navigation: 'Navigare',
     navPermis: 'Permis 2026',
     navSpecii: 'Specii',
+    navIncidentRouting: 'Sesizare',
     sheetSpeciiDesc: 'Dimensiuni de reținere',
     sheetPermisDesc: 'Acte și taxe de pescuit',
+    sheetIncidentRoutingDesc: 'Braconaj și poluare',
     switchLanguage: 'Schimbă limba',
     chooseLanguage: 'Alege limba',
     langRomana: 'Română',
@@ -112,6 +114,8 @@ const ro = {
     reference: 'Referință',
     dataCorrect: 'Datele sunt corecte',
     reportProblem: 'Raportează o problemă',
+    dataProblemLabel: 'Problemă cu datele hărții',
+    incidentRoutingLink: 'Am văzut braconaj sau poluare',
     permisLink: 'Permis & Reguli 2026',
     retentionLink: 'Dimensiuni de reținere',
   },
@@ -152,6 +156,8 @@ const ro = {
   report: {
     title: 'Raportează o problemă',
     descriptionWater: 'Raportezi date pentru {name}.',
+    dataOnlyBoundary: 'Acest formular este doar pentru corectarea datelor hărții.',
+    incidentRoutingLink: 'Ghid de sesizare incidente',
     descriptionGeneric: 'Ajută-ne să ținem harta corectă.',
     successTitle: 'Mulțumim! Raportul a fost trimis.',
     successBody: 'Îl verificăm în cel mult 7 zile și actualizăm datele.',
@@ -255,6 +261,18 @@ const ro = {
     footer:
       'Ultima verificare a faptelor: {date}. Conținutul se re-verifică trimestrial (portalul de permise, madr.ro, Monitorul Oficial).',
   },
+  incidentRouting: {
+    backToMap: 'Înapoi la hartă', title: 'Ai văzut braconaj, poluare sau unelte ilegale?',
+    intro: 'Alege ruta potrivită pentru o sesizare. UndePescuim nu preia sesizarea și nu poate garanta intervenția unei autorități.',
+    safetyTitle: 'Siguranța ta este prioritară', safetyBody: 'Nu confrunta persoanele implicate, nu muta uneltele și nu te apropia de o deversare. Sună la 112 numai când fapta este în desfășurare sau există pericol imediat.',
+    activeTitle: 'Este în desfășurare / există pericol imediat?', activeChoice: 'Da, arată opțiunea 112', activeBody: 'Sună la 112 pentru braconaj activ, violență, plase/electropescuit în desfășurare sau deversare care pune persoane în pericol.',
+    poachingTitle: 'Braconaj sau vânzare ilegală de pește', poachingBody: 'Pentru o sesizare neurgentă privind încălcarea regulilor de pescuit sau comercializare, contactează ANPA și descrie faptele observate.',
+    pollutionTitle: 'Poluare a apei', pollutionBody: 'Pentru poluare neurgentă, alege comisariatul județean din directorul oficial GNM. Dacă deversarea este activă sau periculoasă, sună întâi la 112.',
+    gearTitle: 'Unelte ilegale sau abandonate', gearBody: 'Nu muta uneltele și nu confrunta pe nimeni. Pentru o sesizare neurgentă, contactează ANPA; dacă există și poluare, folosește ruta GNM.',
+    openOfficialSource: 'Sursa oficială', whatToSay: 'Ce să spui: unde și când ai observat, ce fapte ai văzut, dacă încă se întâmplă și dacă există risc. Nu prezenta o presupunere drept fapt.',
+    checklistTitle: 'Pregătește informații simple', checklist: { location: 'locul: apa, județul și un reper apropiat', facts: 'ce ai observat concret, fără acuzații', time: 'data și ora aproximativă', risk: 'dacă situația continuă sau există pericol', safeDetails: 'detalii observate în siguranță; nu urmări și nu te expune' },
+    sourcesFooter: 'Contactele au fost verificate la {date}; reverifică-le trimestrial. Directorul GNM este sursa pentru contactul județean.',
+  },
 };
 
 export type Messages = typeof ro;
@@ -271,8 +289,10 @@ const en: Messages = {
     navigation: 'Navigation',
     navPermis: 'Permit 2026',
     navSpecii: 'Species',
+    navIncidentRouting: 'Report incident',
     sheetSpeciiDesc: 'Retention sizes',
     sheetPermisDesc: 'Permits and fishing fees',
+    sheetIncidentRoutingDesc: 'Poaching and pollution',
     switchLanguage: 'Change language',
     chooseLanguage: 'Choose language',
     langRomana: 'Română',
@@ -355,6 +375,8 @@ const en: Messages = {
     reference: 'Reference',
     dataCorrect: 'Data is correct',
     reportProblem: 'Report a problem',
+    dataProblemLabel: 'Map data problem',
+    incidentRoutingLink: 'I saw poaching or pollution',
     permisLink: 'Permit & Rules 2026',
     retentionLink: 'Retention sizes',
   },
@@ -395,6 +417,8 @@ const en: Messages = {
   report: {
     title: 'Report a problem',
     descriptionWater: 'You are reporting data for {name}.',
+    dataOnlyBoundary: 'This form is only for correcting map data.',
+    incidentRoutingLink: 'Incident reporting guide',
     descriptionGeneric: 'Help us keep the map accurate.',
     successTitle: 'Thank you! The report was sent.',
     successBody: "We'll review it within 7 days and update the data.",
@@ -498,6 +522,18 @@ const en: Messages = {
       'Every claim on this page is based on the sources below (checked on {date}). Re-verify them quarterly — content is time-sensitive.',
     footer:
       'Last fact-checked: {date}. Content is re-verified quarterly (permit portal, madr.ro, Official Gazette).',
+  },
+  incidentRouting: {
+    backToMap: 'Back to map', title: 'Have you seen poaching, pollution, or illegal gear?',
+    intro: 'Choose the right reporting route. UndePescuim does not take the report and cannot guarantee an authority response.',
+    safetyTitle: 'Your safety comes first', safetyBody: 'Do not confront anyone, move gear, or approach a spill. Call 112 only when the act is ongoing or there is immediate danger.',
+    activeTitle: 'Is it ongoing / immediately dangerous?', activeChoice: 'Yes, show the 112 option', activeBody: 'Call 112 for active poaching, violence, nets/electrofishing in progress, or a spill endangering people.',
+    poachingTitle: 'Poaching or illegal fish sales', poachingBody: 'For a non-urgent report about fishing or sales rules, contact ANPA and describe the facts you observed.',
+    pollutionTitle: 'Water pollution', pollutionBody: 'For non-urgent pollution, choose the county commissariat in GNM’s official directory. If the spill is active or dangerous, call 112 first.',
+    gearTitle: 'Illegal or abandoned gear', gearBody: 'Do not move gear or confront anyone. For a non-urgent report, contact ANPA; if it also causes pollution, use the GNM route.',
+    openOfficialSource: 'Official source', whatToSay: 'What to say: where and when you observed it, what facts you saw, whether it is ongoing, and whether there is risk. Do not present a suspicion as fact.',
+    checklistTitle: 'Prepare simple information', checklist: { location: 'location: water, county, and a nearby landmark', facts: 'what you concretely observed, without accusations', time: 'approximate date and time', risk: 'whether it continues or there is danger', safeDetails: 'details observed safely; do not follow or expose yourself' },
+    sourcesFooter: 'Contacts were verified on {date}; re-check them quarterly. The GNM directory is the source for county contacts.',
   },
 };
 

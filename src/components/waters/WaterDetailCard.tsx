@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { CheckCircle2, ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Ticket } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Flag, MapPin, Phone, Ruler, ScrollText, ShieldCheck, Siren, Ticket } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
@@ -276,6 +276,14 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
         >
           <Ruler className="h-3.5 w-3.5" />
           {t('card.retentionLink')}
+        </Link>
+        <Link
+          href="/sesizeaza"
+          data-testid="incident-routing-link"
+          className="inline-flex w-fit items-center gap-2 rounded-md border border-amber-300 px-3 py-1.5 text-xs font-medium text-amber-800 hover:bg-amber-50 dark:border-amber-800 dark:text-amber-200"
+        >
+          <Siren className="h-3.5 w-3.5" />
+          {t('card.incidentRoutingLink')}
         </Link>
       </div>
     </div>

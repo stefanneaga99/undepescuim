@@ -12,6 +12,7 @@ export function safeExternalUrl(value: unknown): string | null {
 export function safeTelephone(value: unknown): string | null {
   if (typeof value !== 'string') return null;
   const digits = value.replace(/\s+/g, '');
+  if (digits === '112') return 'tel:112';
   return /^\+?[0-9().-]{7,20}$/.test(digits) ? `tel:${digits}` : null;
 }
 

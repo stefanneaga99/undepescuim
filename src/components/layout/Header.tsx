@@ -26,6 +26,7 @@ import {
 const MOBILE_NAV_LINKS = [
   { href: '/specii', labelKey: 'header.navSpecii', descriptionKey: 'header.sheetSpeciiDesc', testid: 'nav-sheet-specii' },
   { href: '/permis', labelKey: 'header.navPermis', descriptionKey: 'header.sheetPermisDesc', testid: 'nav-sheet-permis' },
+  { href: '/sesizeaza', labelKey: 'header.navIncidentRouting', descriptionKey: 'header.sheetIncidentRoutingDesc', testid: 'nav-sheet-sesizeaza' },
 ] as const;
 
 /**
@@ -69,6 +70,13 @@ export function Header() {
           className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
         >
           {t('header.navSpecii')}
+        </Link>
+        <Link
+          href="/sesizeaza"
+          data-testid="nav-sesizeaza"
+          className="hidden items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold text-muted-foreground hover:bg-accent hover:text-foreground sm:inline-flex"
+        >
+          {t('header.navIncidentRouting')}
         </Link>
       </nav>
 
