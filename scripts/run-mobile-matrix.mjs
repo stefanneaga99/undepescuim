@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { setTimeout as delay } from 'node:timers/promises';
 const port = process.env.E2E_PORT || '3100';
@@ -42,7 +42,20 @@ try {
   const perf = await run('node', ['scripts/_perf_map.mjs', base], { PERF_THROTTLE: process.env.PERF_THROTTLE || '1' });
   await writeFile(`${outDir}/e2e.log`, e2e.stdout + e2e.stderr);
   await writeFile(`${outDir}/performance.log`, perf.stdout + perf.stderr);
-  const summary = { base, projects, e2eExitCode: e2e.code, performanceExitCode: perf.code, output: outDir };
+  const gitSha = (() => { try { return execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(); } catch { return null; } })();
+  const summary = {
+    schemaVersion: 1,
+    runAt: new Date().toISOString(),
+    gitSha,
+    base,
+    projects,
+    browserMode: 'chromium-emulation',
+    networkProfile: 'fast-3g (scripts/_perf_map.mjs)',
+    e2eExitCode: e2e.code,
+    performanceExitCode: perf.code,
+    output: outDir,
+    artifacts: { e2eLog: `${outDir}/e2e.log`, performanceLog: `${outDir}/performance.log`, report: `${outDir}/report` },
+  };
   await writeFile(`${outDir}/summary.json`, JSON.stringify(summary, null, 2) + '\n');
   process.exitCode = e2e.code || perf.code;
 } finally { server.kill('SIGTERM'); }

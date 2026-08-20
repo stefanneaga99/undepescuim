@@ -4,15 +4,22 @@ This is the release-gate matrix for the PWA shell, offline data, map cache, and 
 
 ## Target matrix
 
-| Tier | Profile | Browser coverage | Scope |
+| ID | Device/configuration | Automated evidence | Native release evidence |
 |---|---|---|---|
-| Current iOS | iPhone 15 (390x844) | Chromium emulation in CI; native iOS Safari release check | install/startup, first load, offline reload, browse/search, stale marker, map cache/eviction, report/reconnect, a11y |
-| Previous iOS | iPhone 14 (390x844) | Chromium emulation in CI; previous stable iOS Safari release check | same |
-| Current Android | Pixel 7 (412x915), Galaxy S24 (360x780) | Chromium emulation in CI; native Android Chrome release check | same |
-| Previous Android | Pixel 5 (393x851), Galaxy S21 (360x800) | Chromium emulation in CI; previous stable Android Chrome release check | same |
-| Breakpoints | iPad gen 7 (768x1024), desktop Chrome (1280x800) | Chromium | responsive/layout regression and desktop comparison |
+| I1/I2 | iPhone 15 / 14, iOS Safari, 390x844 | `iphone-current` / `iphone-previous` Chromium emulation | physical Safari |
+| A1/A2 | Pixel 7 / 5, Android Chrome | `pixel-current` / `pixel-previous` Chromium emulation | physical Chrome |
+| A3/A4 | Galaxy S24 / S21, Android Chrome | `samsung-current` / `samsung-previous` Chromium emulation | physical Chrome |
+| N3 | Pixel 7 + Pixel 5 Fast 3G | `_perf_map.mjs` | optional physical confirmation |
+| N2/S2 | Android / iOS Slow 2G | no false automated claim | required physical evidence |
 
-`E2E_MOBILE_MATRIX=1` enables the six named device projects without changing the default four-project CI suite. The profiles intentionally use Playwright's checked-in device descriptors so CI is deterministic; they do not claim to replace native Safari or physical Android testing.
+Chromium device projects are explicitly emulation and never substitute for native Safari, hardware cache pressure, or physical Slow-2G evidence. Record literal OS/browser versions at release time in the JSON schema.
+
+
+## Deterministic fixtures and artifacts
+
+`tests/e2e/fixtures/mobile-metrics.ts` records pathname/method/timing only, storage estimate, Cache Storage entry/byte counts, and provides `setDeviceOnline`/`waitForOnlineState` without sleeps. `mobile-data.ts` supplies exact 29-day and 30-day snapshots plus twelve cache regions (96 distinct tile URLs) for growth/eviction tests. `mobile-offline-network.spec.ts` covers transition/request and report network contracts. Failed runs should attach `mobile-metrics.json`; the runner preserves logs, HTML report, traces, screenshots, and `summary.json`.
+
+Use `npm run mobile:reset` before a clean local run. It removes prior matrix artifacts; each Playwright context additionally clears cookies, IndexedDB, Cache Storage, and service-worker registrations via `resetBrowserState`.
 
 ## Coverage map
 

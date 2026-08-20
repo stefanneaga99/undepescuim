@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UndePescuim native mobile release result",
+  "type": "object",
+  "required": ["device", "browser", "network", "commit", "runAt", "flows"],
+  "properties": {
+    "device": { "type": "object", "required": ["model", "osVersion"], "properties": { "model": { "type": "string" }, "osVersion": { "type": "string" } } },
+    "browser": { "type": "object", "required": ["name", "version"], "properties": { "name": { "enum": ["Safari", "Chrome"] }, "version": { "type": "string" } } },
+    "network": { "enum": ["online", "fast-3g", "slow-2g", "offline", "reconnect"] },
+    "commit": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" },
+    "runAt": { "type": "string", "format": "date-time" },
+    "flows": { "type": "array", "items": { "$ref": "#/$defs/flow" } }
+  },
+  "$defs": {
+    "flow": {
+      "type": "object",
+      "required": ["id", "status"],
+      "properties": {
+        "id": { "type": "string" },
+        "status": { "enum": ["pass", "fail", "not-run"] },
+        "reason": { "type": "string" },
+        "durationMs": { "type": ["number", "null"], "minimum": 0 },
+        "requestCount": { "type": ["number", "null"], "minimum": 0 },
+        "storage": { "type": ["object", "null"] },
+        "cache": { "type": ["object", "null"] },
+        "artifacts": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
