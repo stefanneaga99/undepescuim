@@ -1,0 +1,72 @@
+[
+  {
+    "associationSlug": "reviewed-source",
+    "field": "association.permitUrl",
+    "sourcePath": "data/processed/arebaltapeste_associations.jsonl[1].permit_url",
+    "sourceKind": "provenance",
+    "originalUrl": "https://old.example/permit",
+    "status": "client_error",
+    "checkedAt": "2026-08-19T15:00:00Z",
+    "httpStatus": 404,
+    "failureReason": "http_404",
+    "finalUrl": null,
+    "redirect": {"count": 0, "chain": [], "crossHost": false, "downgradedToHttp": false},
+    "retry": {"attempts": 1, "attemptedAt": ["2026-08-19T15:00:00Z"], "retryAfterSeconds": null, "exhausted": false}
+  },
+  {
+    "associationSlug": "unreviewed-candidate",
+    "field": "association.siteUrl",
+    "sourcePath": "data/processed/locuri_associations.jsonl[2].website",
+    "sourceKind": "provenance",
+    "originalUrl": "https://stale.example/",
+    "status": "redirected",
+    "checkedAt": "2026-08-19T15:01:00Z",
+    "httpStatus": 301,
+    "failureReason": null,
+    "finalUrl": "https://redirect.example/",
+    "redirect": {"count": 1, "chain": [{"url": "https://stale.example/", "status": 301}], "crossHost": false, "downgradedToHttp": false},
+    "retry": {"attempts": 1, "attemptedAt": ["2026-08-19T15:01:00Z"], "retryAfterSeconds": null, "exhausted": false}
+  },
+  {
+    "associationSlug": "already-correct",
+    "field": "association.siteUrl",
+    "sourcePath": "public/data/associations.json[2].siteUrl",
+    "sourceKind": "runtime-association",
+    "originalUrl": "https://correct.example/",
+    "status": "ok",
+    "checkedAt": "2026-08-19T15:02:00Z",
+    "httpStatus": 200,
+    "failureReason": null,
+    "finalUrl": "https://correct.example/",
+    "redirect": {"count": 0, "chain": [], "crossHost": false, "downgradedToHttp": false},
+    "retry": {"attempts": 1, "attemptedAt": ["2026-08-19T15:02:00Z"], "retryAfterSeconds": null, "exhausted": false}
+  },
+  {
+    "associationSlug": "transient",
+    "field": "guideUrl",
+    "sourcePath": "src/content/permis-2026.ts:498",
+    "sourceKind": "permit-guide",
+    "originalUrl": "https://permise.anpa.ro:12443/portal-public/permis",
+    "status": "transient_error",
+    "checkedAt": "2026-08-19T15:03:00Z",
+    "httpStatus": 503,
+    "failureReason": "http_503",
+    "finalUrl": null,
+    "redirect": {"count": 0, "chain": [], "crossHost": false, "downgradedToHttp": false},
+    "retry": {"attempts": 3, "attemptedAt": ["2026-08-19T15:03:00Z"], "retryAfterSeconds": null, "exhausted": true}
+  },
+  {
+    "associationSlug": "policy-blocked",
+    "field": "provenance.website",
+    "sourcePath": "data/processed/locuri_associations.jsonl[3].website",
+    "sourceKind": "provenance",
+    "originalUrl": "http://blocked.example/",
+    "status": "blocked",
+    "checkedAt": "2026-08-19T15:04:00Z",
+    "httpStatus": null,
+    "failureReason": "http_not_approved",
+    "finalUrl": null,
+    "redirect": {"count": 0, "chain": [], "crossHost": false, "downgradedToHttp": false},
+    "retry": {"attempts": 1, "attemptedAt": ["2026-08-19T15:04:00Z"], "retryAfterSeconds": null, "exhausted": false}
+  }
+]
