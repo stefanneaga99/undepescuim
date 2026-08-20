@@ -18,11 +18,16 @@ const build = await run('npm', ['run', 'build']);
 if (build.code !== 0) process.exit(build.code);
 const server = spawn('npm', ['run', 'start'], { env: { ...process.env, PORT: port }, stdio: ['ignore', 'pipe', 'pipe'] });
 let serverLog = '';
+let serverExit = null;
 server.stdout.on('data', (chunk) => { serverLog += chunk; });
 server.stderr.on('data', (chunk) => { serverLog += chunk; });
+server.on('exit', (code, signal) => { serverExit = { code, signal }; });
 try {
   let ready = false;
   for (let attempt = 0; attempt < 60 && !ready; attempt += 1) {
+    if (serverExit) {
+      throw new Error(`server exited before becoming ready (code=${serverExit.code}, signal=${serverExit.signal})\n${serverLog}`);
+    }
     const probe = await fetch(`${base}/`).catch(() => null);
     ready = Boolean(probe?.ok);
     if (!ready) await delay(1000);
