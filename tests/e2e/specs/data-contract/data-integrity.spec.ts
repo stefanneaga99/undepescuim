@@ -11,8 +11,21 @@
  * here; UI assertions live in specs/flows + specs/regression).
  */
 import { test, expect } from '@playwright/test';
+import sameDayLedger from '../../../fixtures/same_day_regression_ledger.json';
 
 const WATERS_URL = '/data/waters.json';
+
+type RegressionEntry = {
+  id: string;
+  description: string;
+  category: string;
+  test: string;
+  dataPath?: string;
+  slugs?: string[];
+  county?: string;
+  counties?: Record<string, string>;
+  geometryTypes?: string[];
+};
 
 async function fetchJson(page: import('@playwright/test').Page, url: string): Promise<unknown> {
   const resp = await page.request.get(url);
@@ -29,6 +42,37 @@ function countyKey(county: string): string {
 }
 
 test.describe('data contract — real served /public/data @data', () => {
+  test('same-day regression ledger is complete and geometry probes are explicit', async ({ page }) => {
+    const ledger = sameDayLedger as RegressionEntry[];
+    expect(ledger).toHaveLength(17);
+    expect(new Set(ledger.map((entry) => entry.id)).size).toBe(17);
+    expect(ledger.every((entry) => entry.test.length > 0)).toBe(true);
+
+    const geometryEntries = ledger.filter((entry) => entry.category === 'geometry');
+    expect(geometryEntries).toHaveLength(5);
+    const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
+    const bySlug = new Map(waters.map((water) => [String(water.slug), water]));
+
+    for (const entry of geometryEntries) {
+      expect(entry.dataPath).toBe('waters.json');
+      for (const slug of entry.slugs ?? []) {
+        const water = bySlug.get(slug);
+        expect(water, `${entry.id}: ${slug} present in waters.json`).toBeTruthy();
+        expect(water?.judet).toBe(entry.counties?.[slug] ?? entry.county);
+        const geometry = water?.geometry as
+          | { type?: string; coordinates?: unknown }
+          | null
+          | undefined;
+        expect(geometry, `${entry.id}: ${slug} has real geometry`).toBeTruthy();
+        expect(entry.geometryTypes).toContain(geometry?.type);
+        // A bbox alone is not a geometry regression fix: coordinates must be
+        // present and non-empty for every explicitly mapped water.
+        expect(Array.isArray(geometry?.coordinates)).toBe(true);
+        expect((geometry?.coordinates as unknown[]).length).toBeGreaterThan(0);
+      }
+    }
+  });
+
   test('waters.json parses and matches the Water shape', async ({ page }) => {
     const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
     expect(Array.isArray(waters)).toBe(true);

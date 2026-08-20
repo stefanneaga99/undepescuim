@@ -1,0 +1,124 @@
+[
+  {
+    "id": "same-day-01",
+    "description": "Association dropdown selection remains usable above the filter overlay",
+    "category": "association",
+    "test": "tests/e2e/specs/flows/association.spec.ts"
+  },
+  {
+    "id": "same-day-02",
+    "description": "Association selection zooms to its mapped waters",
+    "category": "association",
+    "test": "tests/e2e/specs/flows/association.spec.ts"
+  },
+  {
+    "id": "same-day-03",
+    "description": "Cerbul Carpatin waters resolve to real geometry",
+    "category": "geometry",
+    "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
+    "dataPath": "waters.json",
+    "slugs": ["2yxhr1b0"],
+    "county": "Gorj",
+    "geometryTypes": ["LineString"]
+  },
+  {
+    "id": "same-day-04",
+    "description": "Siriu geometry is served instead of a bbox-only fallback",
+    "category": "geometry",
+    "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
+    "dataPath": "waters.json",
+    "slugs": ["anpa-anpa-0208"],
+    "county": "Buzău",
+    "geometryTypes": ["MultiLineString"]
+  },
+  {
+    "id": "same-day-05",
+    "description": "Doftana geometry is served instead of a bbox-only fallback",
+    "category": "geometry",
+    "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
+    "dataPath": "waters.json",
+    "slugs": ["anpa-anpa-0180"],
+    "county": "Brașov",
+    "geometryTypes": ["LineString"]
+  },
+  {
+    "id": "same-day-06",
+    "description": "Valea Pojorâtei geometry is served instead of a bbox-only fallback",
+    "category": "geometry",
+    "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
+    "dataPath": "waters.json",
+    "slugs": ["anpa-anpa-0188"],
+    "county": "Brașov",
+    "geometryTypes": ["LineString"]
+  },
+  {
+    "id": "same-day-07",
+    "description": "Sebeș family geometry is served for each explicit mapped segment",
+    "category": "geometry",
+    "test": "tests/e2e/specs/data-contract/data-integrity.spec.ts",
+    "dataPath": "waters.json",
+    "slugs": ["uyzo7o3j", "qsvhz93s", "f02xtxw1"],
+    "counties": {"uyzo7o3j": "Alba", "qsvhz93s": "Sibiu", "f02xtxw1": "Sibiu"},
+    "geometryTypes": ["LineString"]
+  },
+  {
+    "id": "same-day-08",
+    "description": "Mobile water-card drag handle expands and dismisses predictably",
+    "category": "sheets",
+    "test": "tests/e2e/specs/regression/sheet-handle.spec.ts"
+  },
+  {
+    "id": "same-day-09",
+    "description": "Nearby-water results use correct centroids and distances",
+    "category": "nearby",
+    "test": "tests/e2e/specs/flows/nearby-waters.spec.ts"
+  },
+  {
+    "id": "same-day-10",
+    "description": "Locality options are deduplicated",
+    "category": "locality",
+    "test": "tests/e2e/specs/flows/county-locality.spec.ts"
+  },
+  {
+    "id": "same-day-11",
+    "description": "Locality selection highlights the matching waters",
+    "category": "locality",
+    "test": "tests/e2e/specs/flows/county-locality.spec.ts"
+  },
+  {
+    "id": "same-day-12",
+    "description": "Locality selection preserves the selected-water focus",
+    "category": "locality",
+    "test": "tests/e2e/specs/flows/county-locality.spec.ts"
+  },
+  {
+    "id": "same-day-13",
+    "description": "Locality selection renders the blue emphasis state",
+    "category": "locality",
+    "test": "tests/e2e/specs/flows/county-locality.spec.ts"
+  },
+  {
+    "id": "same-day-14",
+    "description": "Language switching keeps the translated UI contract",
+    "category": "i18n",
+    "test": "tests/e2e/specs/flows/i18n.spec.ts"
+  },
+  {
+    "id": "same-day-15",
+    "description": "Dark mode persists without a flash across pages",
+    "category": "theme",
+    "test": "tests/e2e/specs/regression/dark-mode.spec.ts"
+  },
+  {
+    "id": "same-day-16",
+    "description": "PWA manifest and service-worker behavior remain available",
+    "category": "pwa",
+    "test": "tests/e2e/specs/regression/pwa.spec.ts"
+  },
+  {
+    "id": "same-day-17",
+    "description": "Report submission does not expose a client token",
+    "category": "report",
+    "test": "tests/e2e/specs/flows/report.spec.ts"
+  }
+]
