@@ -9,10 +9,12 @@ import {
 } from '../../fixtures/mobile-metrics';
 import {
   CACHE_REGIONS,
+  MOBILE_TILE_CACHE_LIMIT,
   MOBILE_FIXTURE_29_DAYS,
   MOBILE_FIXTURE_30_DAYS,
   offlineDataset,
   seedVisitedTileCache,
+  clearVisitedTileCache,
   tileCacheSnapshot,
 } from '../../fixtures/mobile-data';
 
@@ -47,12 +49,26 @@ test.describe('mobile offline/network contracts', () => {
 
   test('cache fixture contains only visited regions and reports growth', async ({ page, mapReady }) => {
     await mapReady();
+    await clearVisitedTileCache(page);
     await seedVisitedTileCache(page, ['region-01', 'region-12']);
     const snapshot = await tileCacheSnapshot(page);
     expect(snapshot.urls).toHaveLength(16);
     expect(snapshot.bytes).toBe(16 * 12);
     expect(snapshot.urls.every((url) => url.includes('/1/') || url.includes('/12/'))).toBe(true);
     expect(CACHE_REGIONS).toHaveLength(12);
+  });
+
+  test('cache fixture grows progressively and evicts oldest entries at the bound', async ({ page, mapReady }) => {
+    await mapReady();
+    await clearVisitedTileCache(page);
+    for (const region of CACHE_REGIONS) {
+      await seedVisitedTileCache(page, [region.id], { maxEntries: MOBILE_TILE_CACHE_LIMIT });
+    }
+    const snapshot = await tileCacheSnapshot(page);
+    expect(snapshot.urls).toHaveLength(MOBILE_TILE_CACHE_LIMIT);
+    expect(snapshot.urls.some((url) => url.includes('/1/'))).toBe(false);
+    expect(snapshot.urls.filter((url) => url.includes('/12/'))).toHaveLength(8);
+    expect(snapshot.bytes).toBe(MOBILE_TILE_CACHE_LIMIT * 12);
   });
 
   test('offline report cannot produce false success; reconnect permits one POST', async ({ page, mapReady }) => {

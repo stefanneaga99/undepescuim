@@ -49,15 +49,34 @@ export const CACHE_REGIONS = Array.from({ length: 12 }, (_, index) => ({
   tileUrls: Array.from({ length: 8 }, (_, tile) => `/__mobile-fixture__/tiles/${index + 1}/${tile + 1}.png`),
 }));
 
+/** The fixture's bounded-cache policy. Keeping this explicit makes eviction
+ * assertions independent of the browser's implementation-defined quota. */
+export const MOBILE_TILE_CACHE_LIMIT = 32;
+
+export async function clearVisitedTileCache(page: Page): Promise<void> {
+  await page.evaluate(async () => {
+    await caches.delete('mobile-fixture-tiles-v1');
+  });
+}
+
 /** Populate only the URLs a flow visited; this deliberately does not prefetch. */
-export async function seedVisitedTileCache(page: Page, regionIds: string[]): Promise<void> {
+export async function seedVisitedTileCache(
+  page: Page,
+  regionIds: string[],
+  options: { maxEntries?: number } = {},
+): Promise<void> {
   const urls = CACHE_REGIONS.filter((region) => regionIds.includes(region.id)).flatMap((region) => region.tileUrls);
-  await page.evaluate(async (tileUrls) => {
+  await page.evaluate(async ({ tileUrls, maxEntries }) => {
     const cache = await caches.open('mobile-fixture-tiles-v1');
     for (const url of tileUrls) await cache.put(url, new Response('fixture-tile', {
       headers: { 'content-type': 'image/png', 'content-length': '12' },
     }));
-  }, urls);
+    if (maxEntries == null) return;
+    const entries = await cache.keys();
+    for (const request of entries.slice(0, Math.max(0, entries.length - maxEntries))) {
+      await cache.delete(request);
+    }
+  }, { tileUrls: urls, maxEntries: options.maxEntries });
 }
 
 export async function tileCacheSnapshot(page: Page): Promise<{ urls: string[]; bytes: number }> {

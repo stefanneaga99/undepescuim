@@ -22,6 +22,13 @@ npm run mobile:offline
 
 The offline spec covers online→offline→online latency, zero offline `/data/*` requests, exact 29/30-day stale boundaries, visited-only tile cache growth, and the online-only report contract (offline network error, then exactly one successful POST after reconnect).
 
+The cache fixture has a deterministic 32-entry bound (`MOBILE_TILE_CACHE_LIMIT`).
+The progressive-cache case visits all twelve regions (eight unique URLs each),
+then asserts that the oldest region is evicted while the newest remains. The
+network profile constants in `tests/e2e/fixtures/mobile-network.ts` are the
+source of truth for controlled Fast 3G (1,600/750 Kbps, 150 ms RTT, 4x CPU)
+and Slow 2G (50/50 Kbps, 300 ms RTT, 4x CPU) device-lab setup.
+
 ## Reset and subsets
 
 `npm run mobile:reset` removes prior matrix output and Playwright reports. Each Playwright context additionally clears cookies, local/session storage, IndexedDB, Cache Storage, permissions, and service-worker registrations. Run an individual target or flow with:
