@@ -1,70 +1,41 @@
 # Integrated mobile regression and performance run
 
-Run: 2026-08-20 14:20 UTC
-Commit: `1dca26fc199cc4499a2f312a110420acce5ab6fa`
-Environment: WSL2 (`Linux DESKTOP-J7FOLV9 6.18.33.2-microsoft-standard-WSL2`, x86_64), Node 22.23.2, npm 10.9.8, Playwright 1.62.1, production Next build, Chromium emulation.
-Application URL: `http://127.0.0.1:3110`
-Network profile: Fast 3G (1.6 Mbps down, 750 Kbps up, 150 ms RTT) with 4x CPU for the performance probe.
+Run: 2026-08-20 15:12 UTC
+Commit: `64c5d38f1d33f589d92a53d22b583f9409e9b41c`
+Environment: WSL2, Node 22.23.2, npm 10.9.8, Playwright 1.62.1, production build, Chromium emulation.
+Application URL: `http://127.0.0.1:3112`
 
 ## Commands
 
 ```text
-npm run mobile:reset
-E2E_PORT=3110 MOBILE_MATRIX_OUTPUT=test-results/mobile-matrix-20260820T171800Z npm run mobile:matrix
+E2E_PORT=3112 MOBILE_MATRIX_OUTPUT=test-results/mobile-matrix-task-t_352fa39b PERF_THROTTLE=1 npm run mobile:matrix
+E2E_MOBILE_MATRIX=1 E2E_SERVER_READY=true PLAYWRIGHT_BASE_URL=http://127.0.0.1:3112 npx playwright test --project=iphone-current --project=iphone-previous --project=pixel-current --project=pixel-previous --project=samsung-current --project=samsung-previous tests/e2e/specs/regression/mobile-offline-network.spec.ts --workers=1 --reporter=line
 ```
 
-The first attempt on port 3100 was stopped before tests because an unrelated listener occupied that port. The rerun on 3110 completed the matrix and retained all artifacts. The production build completed successfully before the matrix.
+The production build completed and the six profiles ran serially with one worker. Result: **446 passed, 2 failed, 32 intentional skips, 0 flaky** out of 480. The focused offline/network contract assertions passed **18/18**: offline request isolation (0 new requests), reconnect POST behavior, false-success prevention, exact staleness boundary, and bounded cache fixtures.
 
-## Matrix result
+## Performance result
 
-The six emulated profiles ran serially with one worker:
-
-- `iphone-current` — iPhone 15 profile, Chromium
-- `iphone-previous` — iPhone 14 profile, Chromium
-- `pixel-current` — Pixel 7 profile, Chromium
-- `pixel-previous` — Pixel 5 profile, Chromium
-- `samsung-current` — Galaxy S24 profile, Chromium
-- `samsung-previous` — Galaxy S21 profile, Chromium
-
-Result: **440 passed, 2 known environment-invalid failures, 32 intentional skips**. The two failures are `live-prod.spec.ts` checks that target the deployed production URL while this run used the isolated local matrix server; they are not treated as product regressions. The offline/cache/reconnect and accessibility contracts completed in the matrix. Raw output: `test-results/mobile-matrix-20260820T171800Z/e2e.log`; Playwright artifacts and screenshots are under `test-results/mobile-matrix-20260820T171800Z/playwright/`.
-
-## Performance gates
+Fast 3G (1.638 Mbps down / 0.768 Mbps up, 150 ms RTT), 390x844, CPU 4x:
 
 | Metric | Threshold | Observed | Result |
 |---|---:|---:|---|
-| M5 unexpected interaction CLS | < 0.001 | 0.0000 | PASS |
-| M6 first map paint | < 5.0 s | 11.95 s | FAIL |
-| M10 initial JS gzip | < 300 KiB | 215.4 KiB | PASS |
-| M11 data fetch + parse | < 2.5 s | 9.66 s | FAIL |
-| M12 largest pan/zoom long task | <= 100 ms | 319 ms | FAIL |
-| M13 peak Chromium JS heap | < 200 MiB | 65 MiB | PASS |
-| M14 overlay paths at zoom 7 | <= 1,000 | 828 | PASS |
+| M5 CLS | < 0.001 | 0.0000 | PASS |
+| M6 first map paint | < 5.0 s | 11.93 s | FAIL |
+| M10 JS transfer | < 300 KiB | 215.4 KiB | PASS |
+| M11 fetch+parse | < 2.5 s | 9.68 s | FAIL |
+| M12 long task | <= 100 ms | 265 ms | FAIL |
+| M13 JS heap | < 200 MiB | 54 MB | PASS |
+| M14 paths at z7 | <= 1,000 | 828 | PASS |
 
-The performance resource total was 1,741 KiB on wire: `waters.json` 1,485 KiB, `uncontracted_majors.json` 168 KiB, `counties.geojson` 77 KiB, `associations.json` 10 KiB, `association_locations.json` 2 KiB, and `meta.json` below 1 KiB. The worst recorded long tasks included 319 ms, 259 ms, 199 ms, 157 ms, and 151 ms. Raw output: `test-results/mobile-matrix-20260820T171800Z/performance.log`.
+Storage occupancy was 0.50% (16,026,451 / 3,237,251,923 bytes), with 57 precache, 2 app-data, and 6 OSM-tile cache entries. M6/M11 are tied to the 1,485 KiB `waters.json` critical path; M12 has additional 198/166/164/131 ms tasks. These are actionable performance defects, not accepted failures.
 
-## Unsupported release targets
+## Failure disposition and limitations
 
-The following required evidence was **not run**, not waived, and must not be interpreted as passing:
+The two `pixel-current` failures are `live-prod.spec.ts` checks against deployed production while this run used an isolated local server; they are environment-invalid and retained with screenshots/traces under the run's Playwright artifact directory. They must be rerun against the live URL.
 
-- native current/previous iOS Safari on iPhone 15/14;
-- physical current/previous Android Chrome on Pixel 7/5 and Galaxy S24/S21;
-- physical Slow 2G (50 Kbps, 300 ms RTT) on iOS and Android;
-- physical OS cache-pressure/eviction and hardware memory measurements.
+A Slow 2G Chromium diagnostic (50 Kbps, 300 ms RTT, CPU 4x) was attempted but timed out after 180 seconds waiting for the data-ready signal; Playwright then reported the page closed. It is inconclusive/not-run, not a pass. Native iOS Safari, physical Android Chrome, physical Slow 2G, physical OS cache eviction, and hardware-memory tests are unavailable in WSL2 and remain release-blocking evidence gaps.
 
-Reason: this execution environment is WSL2 with Chromium emulation only and has no attached iOS or Android devices. Impact: this run certifies only the automated Chromium-emulation contracts; native browser, physical network, and OS storage behavior remain release-blocking evidence gaps.
+## Artifacts
 
-## Acceptance decision and follow-up
-
-The functional emulation suite is acceptable with the two documented local-environment-invalid checks. Overall mobile release acceptance is **not met**: M6, M11, and M12 fail their approved budgets, and native/Slow-2G/cache-pressure evidence is unavailable.
-
-1. Profile startup/data loading and reduce or defer the 1,485 KiB `waters.json` critical path to address M6/M11.
-2. Profile synchronous map-layer/style work during zoom 7→11 to address M12.
-3. Repeat F1–F10 on the six native device/browser combinations and record schema-valid `pass`, `fail`, or `not-run` rows.
-4. Run physical Slow 2G and cache-pressure/eviction checks before release sign-off.
-
-## Artifact manifest
-
-- `test-results/mobile-matrix-20260820T171800Z/summary.json`
-- `test-results/mobile-matrix-20260820T171800Z/e2e.log`
-- `test-results/mobile-matrix-20260820T171800Z/performance.log`
-- `test-results/mobile-matrix-20260820T171800Z/playwright/`
+All raw artifacts are under `test-results/mobile-matrix-task-t_352fa39b/`: `summary.json`, `e2e.log`, `performance.log`, `mobile-performance.json`, and `playwright/` report/traces/screenshots/videos.

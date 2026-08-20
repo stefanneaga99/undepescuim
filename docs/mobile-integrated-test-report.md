@@ -1,94 +1,67 @@
-# Mobile coverage, results, and follow-up report
+# Integrated mobile regression and performance report
 
 Run date: 2026-08-20 (UTC)
-Tested commit: `1dca26fc199cc4499a2f312a110420acce5ab6fa`
-Environment: WSL2 (`Linux DESKTOP-J7FOLV9 6.18.33.2-microsoft-standard-WSL2`, x86_64), Node 22.23.2, npm 10.9.8, Playwright 1.62.1, production Next build, Chromium emulation.
-Application: isolated production server at `http://127.0.0.1:3110`
+Tested commit: `64c5d38f1d33f589d92a53d22b583f9409e9b41c`
+Environment: WSL2 (`Linux DESKTOP-J7FOLV9`), x86_64, Node 22.23.2, npm 10.9.8, Playwright 1.62.1, production Next build, Chromium emulation.
+Application: isolated production server at `http://127.0.0.1:3112`
 
-This is the authoritative report for the latest integrated run. The run-specific matrix record is [mobile-regression-matrix-run-2026-08-20.md](mobile-regression-matrix-run-2026-08-20.md); the release-gate definitions and target mapping are in [mobile-regression-performance-matrix.md](mobile-regression-performance-matrix.md).
+## Decision
 
-## Executive decision
+Functional Chromium-emulation coverage is acceptable with two explicitly environment-invalid live-production checks. Release acceptance is **not met**: M6, M11, and M12 exceed their approved budgets, and native-device, physical Slow 2G, physical cache-pressure/eviction, and hardware-memory evidence is unavailable. No unavailable target is reported as passing.
 
-The six supported Chromium-emulation profiles pass the functional, offline/PWA, accessibility, data-contract, and report-flow coverage. Overall mobile release acceptance is **not met**: M6, M11, and M12 exceed their approved budgets, and native-device, physical Slow 2G, physical cache-pressure/eviction, and hardware-memory evidence is unavailable. No unsupported target is presented as passing.
+## Coverage and commands
 
-## Target and scenario coverage
+Six serial Chromium profiles (one worker) represent current/previous iPhone 15/14, Pixel 7/5, and Galaxy S24/S21 configurations:
 
-| Target | Automated configuration | Result |
-|---|---|---|
-| iPhone 15 (`iphone-current`) | Chromium emulation | Pass; intentional data-excluded skips only |
-| iPhone 14 (`iphone-previous`) | Chromium emulation | Pass; intentional data-excluded skips only |
-| Pixel 7 (`pixel-current`) | Chromium emulation | Pass for supported local matrix; two local-invalid live-production checks recorded below |
-| Pixel 5 (`pixel-previous`) | Chromium emulation | Pass; intentional data-excluded skips only |
-| Galaxy S24 (`samsung-current`) | Chromium emulation | Pass; intentional data-excluded skips only |
-| Galaxy S21 (`samsung-previous`) | Chromium emulation | Pass; intentional data-excluded skips only |
-
-The matrix ran 474 tests serially with one worker: **440 passed, 2 known environment-invalid failures, and 32 intentional skips**. The skips are data-excluded cases, not passes or product failures. Each profile exercised the configured functional suite; the failures were isolated to `pixel-current` and did not affect the supported local assertions.
-
-Covered scenarios include:
-
-- startup/map rendering, no-console-error smoke, filters, county/locality, map-segment hit coverage, and water detail;
-- association search, highlight, detail, clear/no-zoom semantics, nearby/geolocation, and navigation;
-- report success, validation, rejection, offline denial, reconnect, and focus preservation;
-- `/specii`, `/permis`, 404/edge cases, Romanian/English switching, dark mode, and PWA installability;
-- service-worker offline reload, freshness/staleness boundaries, visited-only tile caching, TTL/eviction policy, and no tile prefetch;
-- data contracts, mobile landmarks/keyboard focus, and 44px touch targets.
-
-The focused offline/network contract completed **18/18 checks across all six profiles**, including the exact 29/30-day stale boundary, offline request isolation, cache-growth reporting, prevention of false success for offline report submissions, and the online-only report contract.
-
-## Commands and environment
-
-```bash
-npm run mobile:reset
-E2E_PORT=3110 MOBILE_MATRIX_OUTPUT=test-results/mobile-matrix-20260820T171800Z npm run mobile:matrix
-```
-
-The runner built the production app, started one isolated server, ran the six projects, and executed the performance probe. The first port-3100 attempt was stopped before tests because an unrelated listener occupied that port; the port-3110 rerun is the retained result. The performance condition was 390x844, Fast 3G (1.6 Mbps down, 750 Kbps up, 150 ms RTT), and 4x CPU.
-
-Focused contract reproduction:
-
-```bash
-E2E_MOBILE_MATRIX=1 E2E_SERVER_READY=true PLAYWRIGHT_BASE_URL=http://127.0.0.1:3110 \
+```text
+E2E_PORT=3112 MOBILE_MATRIX_OUTPUT=test-results/mobile-matrix-task-t_352fa39b PERF_THROTTLE=1 npm run mobile:matrix
+E2E_MOBILE_MATRIX=1 E2E_SERVER_READY=true PLAYWRIGHT_BASE_URL=http://127.0.0.1:3112 \
   npx playwright test --project=iphone-current --project=iphone-previous \
   --project=pixel-current --project=pixel-previous \
   --project=samsung-current --project=samsung-previous \
   tests/e2e/specs/regression/mobile-offline-network.spec.ts --workers=1 --reporter=line
 ```
 
-## Performance and storage compliance
+The integrated run executed 480 tests: **446 passed, 2 failed, 32 intentional skips, 0 flaky**. The 32 skips are data-excluded cases, not passes. The focused offline/network assertions are included for all six profiles: offline/reconnect, exact 29/30-day staleness, bounded visited-region cache growth/eviction, offline request isolation, offline report false-success prevention, and one reconnect POST; all 18/18 checks passed.
 
-| Metric | Approved gate | Observed | Status |
+Coverage includes startup/map rendering, filters and map selection, county/locality, association and nearby flows, report validation/success/rejection/offline/reconnect, navigation, i18n, dark mode, PWA, data contracts, landmarks/focus/44px targets, service-worker freshness/cache policy, and no tile prefetch.
+
+## Performance gates
+
+Condition: 390x844, Fast 3G (1.638 Mbps down / 0.768 Mbps up, 150 ms RTT), CPU 4x.
+
+| Metric | Threshold | Observed | Result |
 |---|---:|---:|---|
-| M5 unexpected interaction CLS | < 0.001 | 0.0000 (0 shifts) | **PASS** |
-| M6 first map paint | < 5.0 s | 11.95 s | **FAIL** |
-| M10 initial JS gzip | < 300 KiB | 215.4 KiB | **PASS** |
-| M11 data fetch + parse | < 2.5 s | 9.66 s | **FAIL** |
-| M12 largest pan/zoom long task | <= 100 ms | 319 ms | **FAIL** |
-| M13 peak Chromium JS heap | < 200 MiB | 65 MiB | **PASS** |
-| M14 overlay paths at zoom 7 | <= 1,000 | 828 | **PASS** |
+| M5 unexpected interaction CLS | < 0.001 | 0.0000 (0 shifts) | PASS |
+| M6 first map paint | < 5.0 s | 11.93 s | FAIL — High |
+| M10 initial JS transfer | < 300 KiB | 215.4 KiB | PASS |
+| M11 data fetch + parse | < 2.5 s | 9.68 s | FAIL — High |
+| M12 largest pan/zoom long task | <= 100 ms | 265 ms | FAIL — Medium |
+| M13 peak Chromium JS heap | < 200 MiB | 54 MB | PASS |
+| M14 overlay paths at zoom 7 | <= 1,000 | 828 | PASS |
 
-The on-wire resource total was 1,741 KiB: `waters.json` 1,485 KiB, `uncontracted_majors.json` 168 KiB, `counties.geojson` 77 KiB, and smaller association/meta resources. Recorded long tasks included 319, 259, 199, 157, and 151 ms. These are reproducible in `performance.log` and are regressions against the approved budgets, not native-device claims.
+On-wire data transfer was 1,783,175 bytes (1,741 KiB), including `waters.json` 1,485 KiB, `uncontracted_majors.json` 168 KiB, and `counties.geojson` 77 KiB. Storage was 16,026,451 / 3,237,251,923 bytes (0.50%); cache counts were precache 57, app-data 2, and OSM tiles 6, with 475,433 response bytes. Offline transition took 25 ms and generated **zero new resource requests**.
 
-The supported emulation suite passed bounded visited-only cache behavior, no tile prefetch, TTL/eviction rules, and offline request isolation. The accompanying Chromium storage probe measured quota 3,231,444,554 bytes and usage 10,219,082 bytes after two online loads (IndexedDB 5,429,799 bytes; Cache Storage 4,789,283 bytes), with 55 visible precache entries and 178,015 response bytes. Offline reload made two total requests with zero `/data/` requests; reconnect made zero `/data/` requests. These are lab measurements and do not establish physical OS eviction behavior.
+## Failures and dispositions
 
-## Actionable defects and follow-up
+1. **High / actionable: M6 first-map paint.** 11.93 s vs <5.0 s. Reproduce with the matrix command and inspect `performance.log`/`mobile-performance.json`; prioritize reducing or deferring the 1,485 KiB `waters.json` critical path.
+2. **High / actionable: M11 data fetch+parse.** 9.68 s vs <2.5 s. Profile fetch, JSON parse/normalization, and layer construction using the same matrix/performance command; optimize data loading independently of M6.
+3. **Medium / actionable: M12 pan/zoom jank.** 265 ms vs <=100 ms, with additional 198/166/164/131 ms tasks. Reproduce with the performance probe and profile zoom 7→11; batch/defer synchronous layer/style work, then rerun M12 and M14.
+4. **Environment-invalid, not a product regression:** the two `pixel-current` `live-prod.spec.ts` failures (`sampled water paths` and `report-dialog ... API safely stubbed`) target the deployed production URL while the integrated run intentionally used the isolated local server. Evidence is retained under `test-results/mobile-matrix-task-t_352fa39b/playwright/`; rerun against the live URL before release.
 
-1. **High — M6 first-map-paint budget failure.** Observed 11.95 s versus `<5.0 s` under Fast 3G/4x CPU. Reproduce with the matrix command and inspect the trace/performance log. Prioritize reducing or deferring the 1,485 KiB `waters.json` critical path. Suggested owner: map/data startup performance.
-2. **High — M11 data fetch/parse budget failure.** Observed 9.66 s versus `<2.5 s`. Reproduce with `PERF_THROTTLE=1 node scripts/_perf_map.mjs http://127.0.0.1:3110`; profile fetch, JSON parse/normalization, and layer construction separately. Suggested owner: data loading/map initialization.
-3. **Medium — M12 pan/zoom jank.** Observed 319 ms versus `<=100 ms`, with additional 259/199/157/151 ms tasks. Reproduce the same performance command, profile zoom 7→10, and batch or defer synchronous layer/style work; rerun M12 and M14 together. Suggested owner: map rendering.
-4. **Release-blocking evidence gap — native targets.** Run F1–F10 on iPhone 15/14 Safari, Pixel 7/5 Chrome, and Galaxy S24/S21 Chrome. Record literal OS/browser versions, request counts, offline/reconnect behavior, storage/cache growth, and `not-run` for unavailable metrics. Suggested owner: device-lab/release QA.
-5. **Release-blocking evidence gap — physical Slow 2G and cache pressure.** Repeat network-sensitive scenarios at 300 ms RTT/50 Kbps and exercise physical cache eviction/growth. The WSL2 lab cannot establish these results. Suggested owner: device-lab/release QA.
+## 2G and unavailable targets
 
-## Known invalid, flaky, and inconclusive results
+A constrained Chromium Slow 2G diagnostic was attempted with `PERF_NETWORK_PROFILE=slow2g PERF_THROTTLE=1 node scripts/_perf_map.mjs http://127.0.0.1:3113` (50 Kbps, 300 ms RTT, CPU 4x). It did not produce a valid measurement: the probe exceeded the 180-second execution limit while waiting for `__perfDataLoaded`, and Playwright then reported the page had closed. This is recorded as **not-run/inconclusive**, not a pass.
 
-- The two failures are `pixel-current` `tests/e2e/specs/live-prod.spec.ts` checks: sampled water path/card and report-dialog setup. They target the deployed production URL while this run used the isolated local server, so they are **environment-invalid**, not product regressions. Evidence: `playwright/live-prod-*pixel-current/{error-context.md,test-failed-1.png,video.webm}`.
-- No product flake was identified in the retained run. The earlier offline CDP race was fixed before this run; the focused offline rerun passed 18/18.
-- Native Safari, physical Android Chrome, physical Slow 2G, physical cache-pressure/eviction, and hardware memory are unavailable in WSL2 and require reruns on devices. They remain inconclusive, not passed.
+The following remain not-run and release-blocking: native iOS Safari on iPhone 15/14; physical Android Chrome on Pixel 7/5 and Galaxy S24/S21; physical Slow 2G on iOS/Android; physical OS cache-pressure/eviction; and hardware memory. WSL2 has no attached devices and cannot establish native browser, physical network, OS eviction, or hardware-memory behavior. Run F1–F10 on each device, recording literal OS/browser versions and pass/fail/not-run for unavailable metrics.
 
 ## Artifacts
 
-- Matrix summary: `test-results/mobile-matrix-20260820T171800Z/summary.json`
-- Full functional output: `test-results/mobile-matrix-20260820T171800Z/e2e.log`
-- Performance output: `test-results/mobile-matrix-20260820T171800Z/performance.log`
-- Playwright HTML report, traces, screenshots, and videos: `test-results/mobile-matrix-20260820T171800Z/playwright/`
+- `test-results/mobile-matrix-task-t_352fa39b/summary.json`
+- `test-results/mobile-matrix-task-t_352fa39b/e2e.log`
+- `test-results/mobile-matrix-task-t_352fa39b/performance.log`
+- `test-results/mobile-matrix-task-t_352fa39b/mobile-performance.json`
+- `test-results/mobile-matrix-task-t_352fa39b/playwright/` (HTML/report traces, screenshots, and videos)
+- `test-results/mobile-matrix-task-t_352fa39b/perf-slow2g.json` was not produced because the diagnostic timed out.
 
-Acceptance can be reopened after M6/M11/M12 are triaged or explicitly waived and the native, Slow 2G, and physical cache evidence gaps are completed or dispositioned.
+Acceptance can be reopened after M6/M11/M12 are triaged or explicitly waived and native/physical evidence gaps are completed or dispositioned.
