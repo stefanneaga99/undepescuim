@@ -2,6 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { ColorLegend } from './ColorLegend';
+import { LocateButton } from './LocateButton';
 import { MapSkeleton } from './MapSkeleton';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { I18nProvider } from '@/i18n/provider';
@@ -74,5 +75,21 @@ describe('map control regressions', () => {
     const handle = document.querySelector('[data-vaul-handle]');
     expect(handle).toHaveAttribute('data-vaul-handle-hitarea', '');
     expect(handle).toHaveClass('shrink-0');
+  });
+
+  it('moves floating mobile controls with transforms, not layout anchors', () => {
+    const { container: legend } = renderWithI18n(<ColorLegend />);
+    const legendRoot = legend.firstElementChild;
+    expect(legendRoot).toHaveStyle({
+      bottom: '12px',
+      transform: 'translateY(calc(-1 * var(--sheet-snap-h, 0vh)))',
+    });
+
+    const { container: locate } = renderWithI18n(<LocateButton />);
+    const locateRoot = locate.firstElementChild;
+    expect(locateRoot).toHaveStyle({
+      bottom: '16px',
+      transform: 'translateY(calc(-1 * var(--sheet-snap-h, 0vh)))',
+    });
   });
 });

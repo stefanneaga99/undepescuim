@@ -62,7 +62,10 @@ export function LocateButton() {
   return (
     <div
       className="absolute left-3 z-[1000] flex flex-col items-start gap-2"
-      style={{ bottom: 'calc(var(--sheet-snap-h, 0vh) + 16px)' }}
+      // Use a stable layout anchor and move the control on the compositor.
+      // Updating `bottom` after a throttled sheet transition creates an
+      // unexpected layout-shift entry even though the movement is intentional.
+      style={{ bottom: '16px', transform: 'translateY(calc(-1 * var(--sheet-snap-h, 0vh)))' }}
     >
       {showBubble && (
         <div

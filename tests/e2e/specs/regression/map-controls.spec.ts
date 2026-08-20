@@ -1,6 +1,15 @@
 import { test, expect } from '../../fixtures/app';
 import { MapPage } from '../../pages/MapPage';
 
+type MapLayer = {
+  feature?: { properties?: { slug?: string } };
+  options?: { color?: string };
+};
+
+type TestMap = {
+  eachLayer: (callback: (layer: MapLayer) => void) => void;
+};
+
 /** P1 map/control regression coverage; all data and tiles are deterministic. */
 test.describe('P1 map controls and visual states', () => {
   test('county chips support additive multi-select without dropping the first county', async ({ mapReady, page }) => {
@@ -25,24 +34,24 @@ test.describe('P1 map controls and visual states', () => {
 
     await page.keyboard.press('Escape');
     await map.zoomTo(9);
-    const fallbackColors = await page.evaluate(() => {
-      const mapInstance = (window as any).__UNDEPESCUIM_MAP__;
+    const fallbackColors = await page.evaluate((slug) => {
+      const mapInstance = (window as unknown as { __UNDEPESCUIM_MAP__?: TestMap }).__UNDEPESCUIM_MAP__;
       const colors: string[] = [];
-      mapInstance?.eachLayer((layer: any) => {
-        if (layer.feature?.properties?.slug === 'lacul-beta-fara-permis' && layer.options?.color) colors.push(layer.options.color);
+      mapInstance?.eachLayer((layer) => {
+        if (layer.feature?.properties?.slug === slug && layer.options?.color) colors.push(layer.options.color);
       });
       return colors;
-    });
+    }, 'lacul-beta-fara-permis');
     expect(fallbackColors.map((color) => color.toLowerCase())).toContain('#8b5cf6');
     await map.clickWater('lacul-beta-fara-permis');
-    const selectedFallbackColors = await page.evaluate(() => {
-      const mapInstance = (window as any).__UNDEPESCUIM_MAP__;
+    const selectedFallbackColors = await page.evaluate((slug) => {
+      const mapInstance = (window as unknown as { __UNDEPESCUIM_MAP__?: TestMap }).__UNDEPESCUIM_MAP__;
       const colors: string[] = [];
-      mapInstance?.eachLayer((layer: any) => {
-        if (layer.feature?.properties?.slug === 'lacul-beta-fara-permis' && layer.options?.color) colors.push(layer.options.color);
+      mapInstance?.eachLayer((layer) => {
+        if (layer.feature?.properties?.slug === slug && layer.options?.color) colors.push(layer.options.color);
       });
       return colors;
-    });
+    }, 'lacul-beta-fara-permis');
     expect(selectedFallbackColors.map((color) => color.toLowerCase())).toContain('#f97316');
   });
 

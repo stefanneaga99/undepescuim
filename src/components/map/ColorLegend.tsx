@@ -51,7 +51,11 @@ export function ColorLegend() {
   return (
     <div
       className="absolute right-3 z-[1000] select-none"
-      style={{ bottom: 'calc(var(--sheet-snap-h, 0vh) + 12px)' }}
+      // Keep the layout anchor stable. Moving an absolutely positioned control
+      // by changing `bottom` is still reported as CLS when the sheet snap
+      // settles after the user's tap (especially under mobile CPU throttle).
+      // Transforms preserve the same visual offset but are compositor-only.
+      style={{ bottom: '12px', transform: 'translateY(calc(-1 * var(--sheet-snap-h, 0vh)))' }}
     >
       {/* Mobile: collapsible dots / labels */}
       <button
