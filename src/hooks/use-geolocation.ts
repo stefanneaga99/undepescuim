@@ -28,7 +28,7 @@ export function useGeolocation() {
   const [state, setState] = useState<GeoState>({ status: 'idle' });
 
   const locate = useCallback(() => {
-    if (typeof navigator === 'undefined' || !('geolocation' in navigator)) {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
       setState({ status: 'error' });
       return;
     }

@@ -131,6 +131,55 @@ describe('POST /api/report', () => {
     expect(staleSent.body).not.toContain('— A');
   });
 
+  it('returns 429 with Retry-After after five distinct reports from one IP', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/rate-limit' }));
+    vi.stubGlobal('fetch', fetchMock);
+
+    for (let i = 0; i < 5; i++) {
+      const res = await POST(new Request('http://localhost/api/report', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-forwarded-for': '198.51.100.42' },
+        body: JSON.stringify({ waterSlug: `rate-${i}`, waterName: `Test water ${i}`, reason: 'other' }),
+      }));
+      expect(res.status).toBe(200);
+    }
+
+    const blocked = await POST(new Request('http://localhost/api/report', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-forwarded-for': '198.51.100.42' },
+      body: JSON.stringify({ waterSlug: 'rate-5', waterName: 'Test water 5', reason: 'other' }),
+    }));
+    expect(blocked.status).toBe(429);
+    expect(Number(blocked.headers.get('Retry-After'))).toBeGreaterThan(0);
+    expect(await blocked.json()).toEqual({ ok: false, error: 'rate_limited' });
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+  });
+
+  it('includes rounded precise GPS only after affirmative consent', async () => {
+    process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/gps' }));
+    vi.stubGlobal('fetch', fetchMock);
+    const baseContext = {
+      schemaVersion: 1, captureVersion: 'map-report-context-v1',
+      subject: { water: { slug: 'gps-water', name: 'GPS test water' }, selection: { selectedWaterSlug: 'gps-water', segment: null, associationSlug: null, contractRef: null } },
+      map: null, filters: { counties: [], localities: [], waterType: 'all', contractStatus: 'all', selectedAssociationSlug: null },
+      page: { pathname: '/' }, client: { formFactor: 'desktop' }, provenance: { appVersion: null, dataUpdatedAt: null, gitSha: null },
+      preciseLocation: { lat: 45.1234, lon: 25.9876 },
+    };
+
+    await POST(request({ waterSlug: 'gps-water', waterName: 'GPS test water', reason: 'other', reportContext: { ...baseContext, consent: { approximateMap: true, preciseLocation: false, screenshot: false } } }));
+    const withoutConsent = JSON.parse((fetchMock.mock.calls[0][1] as RequestInit).body as string);
+    expect(withoutConsent.body).not.toContain('45.12');
+    expect(withoutConsent.body).not.toContain('25.99');
+
+    resetReportDeduper();
+    await POST(request({ waterSlug: 'gps-water', waterName: 'GPS test water', reason: 'other', reportContext: { ...baseContext, consent: { approximateMap: true, preciseLocation: true, screenshot: false } } }));
+    const withConsent = JSON.parse((fetchMock.mock.calls[1][1] as RequestInit).body as string);
+    expect(withConsent.body).toContain('45.12');
+    expect(withConsent.body).toContain('25.99');
+  });
+
   it('coalesces overlapping identical requests into one GitHub issue', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     let resolve!: (response: Response) => void;
