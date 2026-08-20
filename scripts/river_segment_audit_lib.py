@@ -21,6 +21,18 @@ def haversine_m(a: Coord, b: Coord) -> float:
 def line_length_m(line: Sequence[Coord]) -> float:
     return sum(haversine_m(a, b) for a, b in zip(line, line[1:]))
 
+def max_consecutive_edge_m(line: Sequence[Coord]) -> float:
+    """Return the longest published-geometry edge, without hiding jumps."""
+    return max((haversine_m(a, b) for a, b in zip(line, line[1:])), default=0.0)
+
+def max_geometry_edge_m(geometry: dict) -> float:
+    """Measure edges within each published part, never across part joins."""
+    if geometry.get("type") == "LineString":
+        return max_consecutive_edge_m(geometry.get("coordinates", []))
+    if geometry.get("type") == "MultiLineString":
+        return max((max_consecutive_edge_m(part) for part in geometry.get("coordinates", [])), default=0.0)
+    return 0.0
+
 def _edge_graph(ways: Iterable[dict], snap_eps_m: float = 0) -> tuple[dict, dict]:
     """Return adjacency and edge metadata, joining endpoint coordinates."""
     graph: dict[object, set] = defaultdict(set)

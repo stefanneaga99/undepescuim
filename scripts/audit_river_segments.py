@@ -5,7 +5,7 @@ import argparse, copy, gzip, hashlib, json, sys, unicodedata
 from collections import Counter, defaultdict
 from datetime import date
 from pathlib import Path
-from river_segment_audit_lib import coverage_fraction, uncovered_runs, terminal_findings, stable_report, duplicate_way_ids, sector_findings, line_length
+from river_segment_audit_lib import coverage_fraction, uncovered_runs, terminal_findings, stable_report, duplicate_way_ids, sector_findings, line_length, max_geometry_edge_m
 ROOT=Path(__file__).resolve().parent.parent
 
 def norm(s):
@@ -82,6 +82,8 @@ def sources(root):
 def _county(water):
  return ' '.join(str(water.get('judet') or water.get('county') or 'Necunoscut').split()) or 'Necunoscut'
 
+PUBLISHED_EDGE_JUMP_M = 20_000
+
 def _overlay_entries(root):
  entries=[]
  for kind, filename in (('river', 'public/data/uncontracted_rivers.json'), ('lake', 'public/data/uncontracted_lakes.json')):
@@ -143,6 +145,13 @@ def audit(index, root, alias_path=None, exception_path=None):
   owner=candidates[0] if candidates else None; pub=geometry_points(owner) if owner else []
   osm=[tuple(p) for w in member for p in w.get('coordinates',[])]
   findings=[]
+  # This is deliberately independent of the relation-level exception
+  # registry: a reviewed OSM relation must not mask a malformed payload that
+  # the mobile/desktop renderer actually publishes.
+  if owner and pub:
+   jump_m = max_geometry_edge_m(owner.get('geometry') or {})
+   if jump_m > PUBLISHED_EDGE_JUMP_M:
+    findings.append({'code':'published_geometry_jump', 'max_edge_m':round(jump_m, 3), 'threshold_m':PUBLISHED_EDGE_JUMP_M, 'owner_slug':owner.get('slug')})
   repeated=duplicate_way_ids(ids)
   if repeated: findings.append({'code':'duplicate','way_ids':repeated})
   if len(member)!=len(ids): findings.append({'code':'osm_source_incomplete','missing_way_ids':sorted(set(ids)-set(ways))})

@@ -11,6 +11,8 @@ from river_segment_audit_lib import (
     main_stem,
     sector_findings,
     topology,
+    max_consecutive_edge_m,
+    max_geometry_edge_m,
 )
 from audit_river_segments import exception_for, load_registry, registry_aliases, alias_match
 
@@ -55,6 +57,12 @@ def test_coverage_detects_gap_without_mutating_geometry():
     assert result["osm_to_published"] < 1
     assert published == [[0, 0], [0.01, 0]]
     assert line_length_m(published) > 1000
+
+
+def test_published_geometry_jump_is_independent_of_relation_exceptions():
+    assert max_consecutive_edge_m([[25.0, 45.0], [25.7, 45.0]]) > 20_000
+    assert max_consecutive_edge_m([[25.0, 45.0], [25.01, 45.0]]) < 20_000
+    assert max_geometry_edge_m({"type": "MultiLineString", "coordinates": [[[25.0, 45.0], [25.01, 45.0]], [[25.7, 45.0], [25.71, 45.0]]]}) < 20_000
 
 
 def test_multi_sector_overlay_probe_is_stable_and_local_only():
