@@ -125,5 +125,13 @@
     "description": "Report submission does not expose a client token",
     "category": "report",
     "test": "tests/e2e/specs/flows/report.spec.ts"
+  },
+  {
+    "id": "same-day-18",
+    "description": "UNKNOWN — source brief has no distinct description for this item",
+    "category": "unknown",
+    "status": "PENDING",
+    "issueKey": null,
+    "comment": "Request the original bug issue key before adding coverage."
   }
 ]

@@ -19,7 +19,10 @@ type RegressionEntry = {
   id: string;
   description: string;
   category: string;
-  test: string;
+  test?: string;
+  status?: string;
+  issueKey?: string | null;
+  comment?: string;
   dataPath?: string;
   slugs?: string[];
   names?: Record<string, string>;
@@ -45,9 +48,13 @@ function countyKey(county: string): string {
 test.describe('data contract — real served /public/data @data', () => {
   test('same-day regression ledger is complete and geometry probes are explicit', async ({ page }) => {
     const ledger = sameDayLedger as RegressionEntry[];
-    expect(ledger).toHaveLength(17);
-    expect(new Set(ledger.map((entry) => entry.id)).size).toBe(17);
-    expect(ledger.every((entry) => entry.test.length > 0)).toBe(true);
+    expect(ledger).toHaveLength(18);
+    expect(new Set(ledger.map((entry) => entry.id)).size).toBe(18);
+    expect(ledger.filter((entry) => entry.status === 'PENDING')).toHaveLength(1);
+    const pending = ledger.find((entry) => entry.status === 'PENDING');
+    expect(pending).toMatchObject({ category: 'unknown', issueKey: null });
+    expect(pending?.comment).toContain('original bug issue key');
+    expect(ledger.filter((entry) => entry.status !== 'PENDING').every((entry) => (entry.test?.length ?? 0) > 0)).toBe(true);
 
     const geometryEntries = ledger.filter((entry) => entry.category === 'geometry');
     expect(geometryEntries).toHaveLength(5);

@@ -39,6 +39,18 @@ Out of scope (documented, not implemented):
 The app is a **data directory** — data correctness *is* the product. Half the existing
 tests are data-integrity assertions on the served JSON. The plan keeps that tier.
 
+### Same-day regression ledger schema
+
+`tests/fixtures/same_day_regression_ledger.json` is a deterministic, ordered array
+of exactly 18 entries. Every covered entry has a unique `id`, human-readable
+`description`, `category`, and Playwright spec path in `test`; geometry entries
+add `dataPath`, `slugs`, expected names/counties, and allowed `geometryTypes`.
+The final entry is intentionally `status: "PENDING"` with `category: "unknown"`,
+`issueKey: null`, and a comment requesting the original bug issue key. It is a
+placeholder only: no coverage is claimed for that row and no description is
+invented. The `@data` contract test validates the row count, uniqueness, pending
+placeholder, and the five explicit geometry entries.
+
 ---
 
 ## 2. Historical inventory — superseded e2e scripts
