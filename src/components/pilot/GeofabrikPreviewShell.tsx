@@ -20,12 +20,18 @@ export function GeofabrikPreviewShell() {
       fetch('/pilot/geofabrik/pilot_ledger.json').then((r) => r.json()),
       fetch('/pilot/geofabrik/physical_course_candidates.geojson').then((r) => r.json()),
     ]).then(([geo, raw, physical]) => {
-      const rows = Object.fromEntries((raw.records ?? []).map((r: { slug: string; geometryHash?: string; osm?: { ways?: number[] } }) => [r.slug, { geometryHash: r.geometryHash, osmIds: (r.osm?.ways ?? []).map((id) => `way/${id}`) }]));
+      const records = Array.isArray(raw.records)
+        ? raw.records
+        : Object.entries(raw.rows ?? {}).map(([slug, row]) => ({ slug, ...(row as object) }));
+      const rows = Object.fromEntries(records.map((r: { slug: string; geometryHash?: string | null; osm?: { ways?: number[] }; osmIds?: string[] }) => [r.slug, { geometryHash: r.geometryHash ?? undefined, osmIds: r.osmIds ?? (r.osm?.ways ?? []).map((id) => `way/${id}`) }]));
       const safe = validatePilotArtifacts(geo, rows);
       const safePhysical = validatePhysicalCourseArtifacts(physical);
       setCollection(safe);
       setPhysicalCourses(safePhysical);
-      setLedger({ accepted: safe.features.length, unresolved: (raw.records ?? []).filter((r: { review?: { status?: string } }) => r.review?.status !== 'ACCEPTED_REVIEWED').length });
+      setLedger({
+        accepted: typeof raw.accepted === 'number' ? raw.accepted : safe.features.length,
+        unresolved: typeof raw.unresolved === 'number' ? raw.unresolved : records.filter((r: { review?: { status?: string } }) => r.review?.status !== 'ACCEPTED_REVIEWED').length,
+      });
     }).catch(() => setError(true));
   }, []);
 
