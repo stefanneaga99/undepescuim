@@ -199,9 +199,13 @@ export async function countAllPaths(page: Page): Promise<number> {
 
 /** Semantic snapshot of the dedicated focus pane (style + geometry, not store state). */
 export async function focusSnapshot(page: Page): Promise<{
+  kind: 'verified-sector-focus' | 'feature-selected-unverified-sector' | 'whole-feature-focus' | 'none';
   slug: string;
   zIndex: string;
   orangePaths: number;
+  unverifiedMarkerCount: number;
+  markerPanePaths: string[];
+  markerAriaLabels: string[];
   paths: string[];
   map: {
     center: { lat: number; lon: number };
@@ -214,6 +218,9 @@ export async function focusSnapshot(page: Page): Promise<{
     const map = (window as any).__UNDEPESCUIM_MAP__;
     const pane = document.querySelector<HTMLElement>('.water-focus-pane');
     const paths = [...(pane?.querySelectorAll('path') ?? [])];
+    const markerPane = document.querySelector<HTMLElement>('.water-unverified-focus-pane');
+    const markerPaths = [...(markerPane?.querySelectorAll('path') ?? [])];
+    const markerAriaLabels = markerPaths.map((p) => p.getAttribute('aria-label') ?? '');
     const center = map?.getCenter();
     const bounds = map?.getBounds();
     const pathOwners: Array<{ slug: string; pane: string }> = [];
@@ -225,9 +232,17 @@ export async function focusSnapshot(page: Page): Promise<{
       });
     });
     return {
+      kind: markerPaths.length > 0
+        ? 'feature-selected-unverified-sector'
+        : paths.some((p) => p.getAttribute('stroke')?.toLowerCase() === '#f97316')
+          ? 'verified-sector-focus'
+          : pane?.dataset.focusSlug ? 'whole-feature-focus' : 'none',
       slug: pane?.dataset.focusSlug ?? '',
       zIndex: pane ? getComputedStyle(pane).zIndex : '',
       orangePaths: paths.filter((p) => p.getAttribute('stroke')?.toLowerCase() === '#f97316').length,
+      unverifiedMarkerCount: markerPaths.length,
+      markerPanePaths: markerPaths.map((p) => p.getAttribute('d') ?? ''),
+      markerAriaLabels,
       paths: paths.map((p) => p.getAttribute('d') ?? ''),
       map: {
         center: { lat: center?.lat ?? 0, lon: center?.lng ?? 0 },

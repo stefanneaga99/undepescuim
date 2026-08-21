@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import L from 'leaflet';
-import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
+import { CircleMarker, GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
@@ -18,6 +18,7 @@ import {
   waterKey,
 } from '@/utils/river-course';
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
+import type { MapSelectionFocus } from '@/utils/contract-sector';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
@@ -31,8 +32,8 @@ interface WaterFeatureLayerProps {
   /** contract selected from the detail card — highlight the river in its association color */
   focusKey?: string | null;
   focusColor?: string | null;
-  /** [start, end] fraction of the river course owned by the focused contract */
-  focusRange?: [number, number] | null;
+  /** Semantic focus intent; inferred sectors are marker-only. */
+  focus: MapSelectionFocus;
 }
 
 /**
@@ -59,7 +60,7 @@ export function WaterFeatureLayer({
   coverageSlug,
   focusKey,
   focusColor,
-  focusRange,
+  focus,
 }: WaterFeatureLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
   const countyFilter = useMapStore((s) => s.countyFilter);
@@ -85,6 +86,12 @@ export function WaterFeatureLayer({
     pane.classList.add('water-association-pane');
     pane.style.zIndex = '440';
     return 'water-association';
+  }, [map]);
+  const unverifiedPane = useMemo(() => {
+    const pane = map.getPane('water-unverified-focus') ?? map.createPane('water-unverified-focus');
+    pane.classList.add('water-unverified-focus-pane');
+    pane.style.zIndex = '455';
+    return 'water-unverified-focus';
   }, [map]);
   const focusPaneElement = map.getPane(focusPane);
   if (focusPaneElement) focusPaneElement.dataset.focusSlug = selectedWaterSlug ?? '';
@@ -185,8 +192,8 @@ export function WaterFeatureLayer({
   // (UNCULLED), NOT the viewport-culled `featureCollection` — a focused
   // contract whose shared course is off-screen must keep its orange highlight.
   const focusFeatures = useMemo(() => {
-    if (!focusGroupKey || !focusRange) return null;
-    const [f0, f1] = focusRange;
+    if (!focusGroupKey || (focus.kind !== 'verified-sector-focus' && focus.kind !== 'whole-feature-focus')) return null;
+    const [f0, f1] = focus.kind === 'verified-sector-focus' ? focus.interval : [0, 1];
     const features: GeoJSON.Feature[] = [];
     for (const x of allWaters) {
       if (groupKeyOf(x) !== focusGroupKey) continue;
@@ -213,7 +220,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focusRange, allWaters]);
+  }, [focusGroupKey, focus, allWaters]);
 
   // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
   // data prop changes.  The base layer already has a lifecycle key; the focus
@@ -222,7 +229,7 @@ export function WaterFeatureLayer({
   const focusLayerKey = [
     selectedWaterSlug ?? 'none',
     focusKey ?? 'none',
-    focusRange?.join(':') ?? 'whole',
+    focus.kind === 'verified-sector-focus' ? focus.interval.join(':') : focus.kind,
     countyFilter.join(','),
     focusFeatures?.map((f) => JSON.stringify(f.geometry)).join('|') ?? 'empty',
   ].join('|');
@@ -327,7 +334,8 @@ export function WaterFeatureLayer({
       if (!focusColor || !selectedWaterSlug) return base;
       const f = feature as WaterFeature | undefined;
       if (f?.properties?.slug !== selectedWaterSlug) return base;
-      if (focusRange && focusFeatures && focusFeatures.length > 0) return base;
+      if (focus.kind === 'feature-selected-unverified-sector') return base;
+      if (focus.kind === 'verified-sector-focus' && focusFeatures && focusFeatures.length > 0) return base;
       return {
         ...base,
         color: focusColor,
@@ -335,8 +343,26 @@ export function WaterFeatureLayer({
         opacity: 1,
       };
     },
-    [coverageSlug, countyFilter, focusColor, selectedWaterSlug, focusRange, focusFeatures, allWaters],
+    [coverageSlug, countyFilter, focusColor, selectedWaterSlug, focus, focusFeatures, allWaters],
   );
+
+  const unverifiedFocus = focus.kind === 'feature-selected-unverified-sector' ? focus : null;
+  const unverifiedMarkerRef = useRef<L.CircleMarker | null>(null);
+  useEffect(() => {
+    const path = unverifiedMarkerRef.current?.getElement() as SVGElement | undefined;
+    if (!path || !unverifiedFocus || !selectedWaterSlug) return;
+    path.setAttribute('role', 'button');
+    path.setAttribute('tabindex', '0');
+    path.setAttribute('aria-label', unverifiedFocus.accessibleLabel);
+    path.setAttribute('data-focus-kind', unverifiedFocus.kind);
+    path.setAttribute('data-focus-slug', selectedWaterSlug);
+    path.onkeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        selectWater(selectedWaterSlug);
+      }
+    };
+  }, [unverifiedFocus, selectedWaterSlug, selectWater]);
 
   // Invisible wide hit layers for lines (added after the visible layer).
   // react-leaflet's GeoJSON doesn't expose each layer for extra additions, so
@@ -409,6 +435,21 @@ export function WaterFeatureLayer({
             layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
           }}
         />
+      )}
+      {focus.kind === 'feature-selected-unverified-sector' && focus.referencePoint && selectedWaterSlug && (
+        <CircleMarker
+          pane={unverifiedPane}
+          center={[focus.referencePoint[1], focus.referencePoint[0]]}
+          radius={10}
+          pathOptions={{ color: '#8b5cf6', weight: 4, opacity: 1, fillOpacity: 0 }}
+          eventHandlers={{ click: () => selectWater(selectedWaterSlug) }}
+          ref={unverifiedMarkerRef}
+        />
+      )}
+      {focus.kind === 'feature-selected-unverified-sector' && (
+        <div data-testid="water-focus-status" role="status" aria-live="polite" className="sr-only">
+          {focus.accessibleLabel}
+        </div>
       )}
       {/* Association highlight: the selected association's geometry-less sector
           slices (Pârâu Buzăul Mijlociu, Râul Buzăul superior, …) in bold

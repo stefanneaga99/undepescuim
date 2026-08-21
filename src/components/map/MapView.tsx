@@ -8,8 +8,7 @@ import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
 import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
-import { contractGroup, contractInterval } from '@/utils/river-course';
-import { boundedFocusInterval, hasExplicitSectorInterval } from '@/utils/contract-sector';
+import { resolveMapSelectionFocus, type MapSelectionFocus } from '@/utils/contract-sector';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
@@ -46,26 +45,10 @@ export function MapView() {
   // Compute the contract's [start, end] fraction of the river course
   // (t_b6a0e2fe: shared helper — exact sector intervals win, else the
   // Voronoi interval over course_frac; single-contract rivers = [0, 1]).
-  const focusRange = useMemo<[number, number] | null>(() => {
-    if (!selected) return null;
-    // Uncontracted waters have no contracts/sectors — highlight the whole
-    // feature, never slice (t_b1547e24).
-    if (selected.uncontracted) return null;
-    // A Voronoi interval is only a diagnostic location derived from
-    // course_frac, not proof of contractual endpoints.  Never turn that
-    // fallback into an orange sector highlight; the card remains selectable
-    // until a source-backed interval is added to the data contract.
-    if (
-      selected.slug === 'anpa-anpa-0333' &&
-      contractGroup(selected, allWaters).length > 1 &&
-      !hasExplicitSectorInterval(selected)
-    ) {
-      // Keep a small orange affordance on the rendered owner course. This is
-      // a local selection marker, not the declared 5 Km sector geometry.
-      return boundedFocusInterval(selected);
-    }
-    return contractInterval(selected, allWaters);
-  }, [selected, allWaters]);
+  const focus = useMemo<MapSelectionFocus>(
+    () => (selected ? resolveMapSelectionFocus(selected, allWaters) : { kind: 'none' }),
+    [selected, allWaters],
+  );
 
   return (
     <MapContainer
@@ -107,7 +90,7 @@ export function MapView() {
         coverageSlug={coverageSlug}
         focusKey={focusKey}
         focusColor={focusColor}
-        focusRange={focusRange}
+        focus={focus}
       />
       <UserPositionLayer />
       <FlyToController />

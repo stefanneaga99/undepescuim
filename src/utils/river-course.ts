@@ -206,6 +206,36 @@ export function fractionAtPoint(
   return bestFrac;
 }
 
+/** Return the point at a measured fraction of an ordered river course. */
+export function pointAtFraction(
+  parts: [number, number][][],
+  fraction: number,
+): [number, number] | null {
+  if (!Number.isFinite(fraction) || fraction < 0 || fraction > 1) return null;
+  const ordered = orderParts(parts);
+  const lengths = ordered.map(partLength);
+  const total = lengths.reduce((a, b) => a + b, 0);
+  if (total <= 0) return null;
+  const target = fraction * total;
+  let walked = 0;
+  for (let i = 0; i < ordered.length; i++) {
+    const coords = ordered[i];
+    for (let j = 1; j < coords.length; j++) {
+      const segment = haversineKm(coords[j - 1], coords[j]);
+      if (segment <= 0) continue;
+      if (walked + segment >= target || (i === ordered.length - 1 && j === coords.length - 1)) {
+        const t = Math.max(0, Math.min(1, (target - walked) / segment));
+        return [
+          coords[j - 1][0] + (coords[j][0] - coords[j - 1][0]) * t,
+          coords[j - 1][1] + (coords[j][1] - coords[j - 1][1]) * t,
+        ];
+      }
+      walked += segment;
+    }
+  }
+  return ordered[ordered.length - 1]?.[ordered[ordered.length - 1].length - 1] ?? null;
+}
+
 /**
  * True when a name starts with a tributary-looking prefix ('Valea X',
  * 'Pârâul X') — such contracts are usually separate streams, not sectors of

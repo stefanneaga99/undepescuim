@@ -117,11 +117,15 @@ test.describe('data contract — real served /public/data @data', () => {
       riverGroup: 'tarnava-mare',
       course_frac: 0.1072,
       referinta: 'Contract 46/15.01.2018 (2018-01-15)',
+      asociatie: expect.objectContaining({ slug: 'avps-tarnava-mare' }),
     });
     // course_frac is only a fallback location. It must not be promoted to a
     // contractual endpoint until first-party evidence supplies both bounds.
     expect(selected?.sectorStart).toBeUndefined();
     expect(selected?.sectorEnd).toBeUndefined();
+    expect(selected?.geometry == null).toBe(true);
+    expect(selected?.coordinates == null).toBe(true);
+    expect(selected?.bbox == null).toBe(true);
   });
 
   test('sweep-fixed fixtures carry real geometry, not bbox fallbacks', async ({ page }) => {

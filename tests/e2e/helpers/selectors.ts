@@ -6,6 +6,7 @@
 export const Selectors = {
   mapRoot: 'map-root',
   watersDrawn: 'waters-drawn',
+  waterFocusStatus: 'water-focus-status',
   locateButton: 'locate-button',
   geolocationBubble: 'geolocation-bubble',
   countyChip: 'county-chip',

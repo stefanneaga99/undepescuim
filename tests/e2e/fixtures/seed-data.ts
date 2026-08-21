@@ -173,6 +173,7 @@ const raulSomesulTest: Water = {
 /** Multi-contract course: only the owner has geometry; sectors are resolved
  * from shared course fractions and rendered by the focus slice layer. */
 export const MULTI_CONTRACT_SELECTED_SLUG = 'sector-test-downstream';
+export const UNVERIFIED_FOCUS_SELECTED_SLUG = 'tarnava-like-unverified';
 const multiContractOwner: Water = {
   ...raulSomesulTest,
   slug: 'raul-multi-contract-test',
@@ -186,6 +187,8 @@ const multiContractMiddle: Water = {
   name: 'Sector Test Mijlociu',
   riverGroup: 'multi-contract-test',
   course_frac: 0.5,
+  sectorStart: 0.25,
+  sectorEnd: 0.75,
   geometry: undefined,
 };
 const multiContractSelected: Water = {
@@ -194,6 +197,8 @@ const multiContractSelected: Water = {
   name: 'Sector Test Aval',
   riverGroup: 'multi-contract-test',
   course_frac: 0.9,
+  sectorStart: 0.75,
+  sectorEnd: 1,
   asociatie: alphaEmbedded,
   geometry: undefined,
 };
@@ -202,6 +207,29 @@ export const REPORT_MULTI_CONTRACT_WATERS: Water[] = [
   multiContractOwner,
   multiContractMiddle,
   multiContractSelected,
+];
+
+export const UNVERIFIED_FOCUS_WATERS: Water[] = [
+  {
+    ...raulSomesulTest,
+    slug: 'tarnava-like-owner',
+    name: 'Râul Târnava Mare test',
+    riverGroup: 'tarnava-like-test',
+    course_frac: 0.1,
+    geometry: { type: 'LineString', coordinates: [[23.4, 46.9], [23.7, 47.0], [24.0, 47.1]] },
+  },
+  {
+    ...raulSomesulTest,
+    slug: UNVERIFIED_FOCUS_SELECTED_SLUG,
+    name: 'Râul Târnava Mare mijlocie test',
+    riverGroup: 'tarnava-like-test',
+    course_frac: 0.5,
+    dimensiune: '5 Km',
+    limite: 'Aval baraj lac test – pod test',
+    geometry: undefined,
+    coordinates: undefined as unknown as [number, number],
+    bbox: undefined as unknown as [number, number, number, number],
+  },
 ];
 
 /** Non-overlapping A → B transition fixtures. These stay test-only so pointer
@@ -539,6 +567,7 @@ export const seed: SeedData = {
     ...bucharestLakes,
     ...iasiRivers,
     longNameWater,
+    ...UNVERIFIED_FOCUS_WATERS,
   ],
   rivers: [uncontractedRiver],
   lakes: [uncontractedLake],
