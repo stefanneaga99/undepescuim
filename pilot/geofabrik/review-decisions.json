@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "anpa-anpa-0252",
+    "candidateKey": "none",
+    "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+    "reviewedAt": "2026-08-21T00:00:00Z",
+    "reviewer": "Pilot 2 review",
+    "rationale": "No candidate with reproducible county, topology, endpoint, and official evidence cleared review.",
+    "evidence": [],
+    "legalEndpointEvidence": {"status": "unknown", "sources": []}
+  },
+  {
+    "slug": "anpa-anpa-0261",
+    "candidateKey": "none",
+    "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+    "reviewedAt": "2026-08-21T00:00:00Z",
+    "reviewer": "Pilot 2 review",
+    "rationale": "Shared-course child lacks separately reviewed physical-course and legal endpoint evidence.",
+    "evidence": [],
+    "legalEndpointEvidence": {"status": "unknown", "sources": []}
+  },
+  {
+    "slug": "anpa-anpa-0264",
+    "candidateKey": "none",
+    "status": "REJECTED_FALSE_POSITIVE",
+    "reviewedAt": "2026-08-21T00:00:00Z",
+    "reviewer": "Pilot 2 review",
+    "rationale": "Same-name collision remains ambiguous in the bounded extract.",
+    "evidence": [],
+    "legalEndpointEvidence": {"status": "unknown", "sources": []}
+  },
+  {
+    "slug": "basca-mare-covasna",
+    "candidateKey": "none",
+    "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+    "reviewedAt": "2026-08-21T00:00:00Z",
+    "reviewer": "Pilot 2 review",
+    "rationale": "OSM physical-course identity does not prove contract ownership or endpoints.",
+    "evidence": [],
+    "legalEndpointEvidence": {"status": "unknown", "sources": [] }
+  },
+  {
+    "slug": "anpa-anpa-0253",
+    "candidateKey": "none",
+    "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+    "reviewedAt": "2026-08-21T00:00:00Z",
+    "reviewer": "Pilot 2 review",
+    "rationale": "Exact negative control remains unresolved and is never emitted.",
+    "evidence": [],
+    "legalEndpointEvidence": {"status": "unknown", "sources": []}
+  }
+]

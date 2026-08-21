@@ -1,0 +1,25 @@
+{
+  "pipeline": "scripts/pilot_geofabrik_geometry.py match",
+  "rebuildRuns": 2,
+  "deterministicArtifacts": true,
+  "artifactSha256": {
+    "candidate_discovery.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pilot_ledger.json": "d365bbc8dd03a6caf1a147f9ca2d326abb7c09c291fb094d2867a14a3ccf3334",
+    "accepted_geometry.geojson": "b3049ad7a1062091e169bd352424d59721a26b8b6229942aef26d11b0c6a96e1"
+  },
+  "runtimeSeconds": 0.19,
+  "peakRssKiB": 87484,
+  "pbfBytes": 326388442,
+  "pilotArtifactBytes": 10367,
+  "candidateCount": 0,
+  "acceptedBatch": 0,
+  "unresolvedBatch": 5,
+  "falsePositives": 0,
+  "batchPrecision": null,
+  "batchCoverageBefore": 0.0,
+  "batchCoverageAfter": 0.0,
+  "goNoGo": {
+    "isolatedPreview": "NO-GO: no batch candidate cleared review; route retained as an honest empty preview",
+    "canonicalIntegration": "NO-GO: requires separate authority/legal endpoint review"
+  }
+}

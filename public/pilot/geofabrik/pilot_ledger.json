@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "accepted": 0,
+  "unresolved": 5,
+  "rows": {
+    "anpa-anpa-0252": {
+      "geometryHash": null,
+      "osmIds": []
+    },
+    "anpa-anpa-0261": {
+      "geometryHash": null,
+      "osmIds": []
+    },
+    "anpa-anpa-0264": {
+      "geometryHash": null,
+      "osmIds": []
+    },
+    "basca-mare-covasna": {
+      "geometryHash": null,
+      "osmIds": []
+    },
+    "anpa-anpa-0253": {
+      "geometryHash": null,
+      "osmIds": []
+    },
+    "romsilva-covasna-aita": {
+      "geometryHash": "f4d8dc396a207d8bd8be30ed6f97080d72881d91283771504fd127f2b73bbc46",
+      "osmIds": []
+    }
+  }
+}

@@ -1,69 +1,67 @@
-# Pilot report — Geofabrik Romania geometry coverage
+# Pilot 2 report — reviewed Covasna Geofabrik geometry preview
 
 Date: 2026-08-21
-Branch: `pilot/geofabrik-geometry-coverage`
-Environment: local build only; no Vercel preview and no Production deployment.
+Route: `/pilot/geofabrik` (isolated, noindex); root `/` remains canonical.
 
-## Scope and before inventory
+## Inventory and review gate
 
-Bounded region: Covasna county, source extract bbox `[25.43,45.75,26.20,46.35]`.
-The exact five-record batch is fixed and recorded in `artifacts/inventory.json`:
+The ordered five-record batch is unchanged: `anpa-anpa-0252` (bbox fallback),
+`anpa-anpa-0261` (geometry-less child), `anpa-anpa-0264` (same-name collision),
+`basca-mare-covasna` (real geometry gap), and `anpa-anpa-0253` (exact negative
+control). The negative control is present in the ledger as
+`UNRESOLVED_INSUFFICIENT_EVIDENCE` and is absent from accepted GeoJSON.
 
-| slug | case | before |
-|---|---|---|
-| `anpa-anpa-0252` | bbox/dot fallback | no geometry, bbox present |
-| `anpa-anpa-0261` | geometry-less shared-course child | no geometry, no bbox, riverGroup `buzau` |
-| `anpa-anpa-0264` | same-name collision | no geometry, no bbox, riverGroup `negru` |
-| `basca-mare-covasna` | real geometry gap | no geometry, no bbox, riverGroup `basca-mare` |
-| `anpa-anpa-0253` | unresolved/negative control | no geometry, bbox present |
+Discovery is candidate-only. The bounded artifact currently contains 0 candidates;
+all five records remain explicitly unresolved. No alias, distance, OSM physical
+course, or topology observation is treated as contract ownership or legal endpoint
+evidence. `review-decisions.json` is manually authored and records the decision and
+reason for each original slug.
 
-No canonical record is changed. All five remain explicit unresolved cases after
-this strict pilot; no guessed lines replace placeholders.
+## Reproducibility and measured results
 
-## Pinned source and extraction
+Pinned source: Geofabrik Romania latest PBF, 326,388,442 bytes,
+SHA-256 `707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842`.
+The PBF remains gitignored; the committed source metadata and derived artifacts
+are the reproducibility record. Two complete local `rebuild` runs produced byte-identical
+candidate discovery, ledger, and accepted GeoJSON artifacts.
 
-- URL: `https://download.geofabrik.de/europe/romania-latest.osm.pbf`
-- PBF retrieval size: 326,388,442 bytes (312 MiB on disk)
-- SHA-256: `707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842`
-- Retrieval timestamp and legal note: `artifacts/source.json`; OSM ODbL 1.0 and Geofabrik terms apply.
-- Extract: 582 named waterway ways, preserving OSM way IDs, names, tags, and node coordinates in `covasna_named_waterways.jsonl`.
-- Rebuild: deterministic byte-identical JSONL on repeat.
-- Runtime: 18.28 s wall time (22.81 s user + 1.20 s system).
-- Peak RSS: 1,094,792 kB (~1.04 GiB), measured with `/usr/bin/time -v`.
-- Pilot artifact disk: 1,209,237 bytes excluding the ignored PBF.
+| metric | measured value |
+|---|---:|
+| rebuild runs | 2 |
+| candidate count | 0 |
+| batch accepted | 0/5 |
+| batch coverage before → after | 0.0% → 0.0% |
+| unresolved batch | 5 |
+| false positives | 0 |
+| batch precision | N/A (0 accepted) |
+| match runtime | 0.19 s wall |
+| peak RSS | 87,484 KiB |
+| pinned PBF bytes | 326,388,442 |
+| pilot generated artifact bytes | 10,367 |
 
-## Matching and measurements
+Artifact hashes are recorded in `artifacts/metrics.json`.
 
-The only automatic acceptance gate is a unique normalized exact-name match. Name
-normalization removes diacritics and generic river prefixes. Candidate source IDs,
-geometry hash/type, endpoint node count, confidence, classification, and checkedAt
-are written to `artifacts/pilot_ledger.json`.
+## Preview and isolation
 
-- Pilot batch accepted: 0/5 (coverage 0% under this deliberately conservative gate).
-- Known-positive control (`romsilva-covasna-aita`, existing verified geometry): 1/1
-  accepted; measured precision 1.0, recall 1.0.
-- Same-name and no-match records remain `UNRESOLVED_NO_EXACT_NAME`; ambiguous
-  candidates are never selected. The accepted control is the only feature in
-  `accepted_geometry.geojson` and carries source IDs and its geometry hash.
-- False-positive count: 0 in the batch and known-positive control.
+`/pilot/geofabrik` loads only `/pilot/geofabrik/accepted_geometry.geojson` and
+`pilot_ledger.json`, validates provenance fail-closed, and displays an always-visible
+experimental badge. The current accepted feature collection is empty, so the badge
+says no reviewed candidates cleared the gate. The route is not linked from Header,
+PWA precache, or normal app data loading. Root route isolation is covered by the
+regression spec and no canonical `public/data/*` file is modified.
 
-This is evidence for a reviewed candidate pipeline, not evidence that automatic
-scaling can reach 90/95/99% coverage. The next experiment needs county-aware
-aliases, topology/endpoints, relation extraction, and manual review fixtures.
-
-## Rendering/test gates
+## Verification
 
 - `pytest -q pilot/geofabrik/tests/test_pilot.py`: 5 passed.
-- `npm run build`: passed (Next.js production build, TypeScript completed).
-- Existing map app smoke on mobile and desktop: 2 passed (`app-load.spec.ts`).
-- Pilot renderer contract: accepted GeoJSON is a separate artifact; unresolved
-  rows have null geometry and are required by tests to remain so. No application
-  layer loads it by default, so the current app remains the rollback behavior.
+- `npm test`: 29 files, 250 tests passed.
+- `npm test -- --run src/lib/pilot-geofabrik.test.ts`: 2 passed.
+- `npm run lint`: exit 0; one pre-existing warning in `src/hooks/use-geolocation.test.ts` (pilot files clean).
+- `npm run build`: passed twice after the route fix.
+- Preview e2e spec added for desktop/mobile projects and root request isolation; execution requires the configured Playwright browser/server environment.
 
-## Go/no-go and rollback
+## Decision
 
-GO only for a second isolated, manually reviewed candidate experiment. NO-GO for
-merging pilot geometry, changing canonical data, or scaling automatically to any
-90/95/99% target. Rollback is deleting/ignoring `pilot/geofabrik` and removing the
-pilot branch; canonical data and Production are untouched. No credentials,
-provider, DNS, payment, Firecrawl, or Vercel changes were made.
+NO-GO for canonical integration, Production, ownership, contracts, or endpoint
+claims. A separate authority/legal endpoint review is required before any canonical
+change. The isolated preview is retained only as an honest empty reviewed-gate
+experiment; no visual coverage improvement is claimed.

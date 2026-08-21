@@ -89,118 +89,309 @@
   "records": [
     {
       "slug": "anpa-anpa-0252",
-      "sourceIds": [],
+      "candidateKey": "none:anpa-anpa-0252",
+      "classification": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+      "geometry": null,
       "geometryHash": null,
       "geometryType": null,
-      "matchMethod": "normalized-exact-name",
-      "confidence": 0.0,
-      "endpointEvidence": {
-        "nodeCount": 0
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "UNRESOLVED_NO_EXACT_NAME",
-      "checkedAt": "2026-08-21T12:51:05.801874Z",
+      "matchMethods": [],
       "batchClass": "bbox-fallback",
-      "knownPositive": false
+      "review": {
+        "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+        "rationale": "No bounded candidate was discovered."
+      }
     },
     {
       "slug": "anpa-anpa-0261",
-      "sourceIds": [],
+      "candidateKey": "none:anpa-anpa-0261",
+      "classification": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+      "geometry": null,
       "geometryHash": null,
       "geometryType": null,
-      "matchMethod": "normalized-exact-name",
-      "confidence": 0.0,
-      "endpointEvidence": {
-        "nodeCount": 0
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "UNRESOLVED_NO_EXACT_NAME",
-      "checkedAt": "2026-08-21T12:51:05.879068Z",
+      "matchMethods": [],
       "batchClass": "geometry-less-child",
-      "knownPositive": false
+      "review": {
+        "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+        "rationale": "No bounded candidate was discovered."
+      }
     },
     {
       "slug": "anpa-anpa-0264",
-      "sourceIds": [],
+      "candidateKey": "none:anpa-anpa-0264",
+      "classification": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+      "geometry": null,
       "geometryHash": null,
       "geometryType": null,
-      "matchMethod": "normalized-exact-name",
-      "confidence": 0.0,
-      "endpointEvidence": {
-        "nodeCount": 0
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "UNRESOLVED_NO_EXACT_NAME",
-      "checkedAt": "2026-08-21T12:51:05.957826Z",
+      "matchMethods": [],
       "batchClass": "same-name-collision",
-      "knownPositive": true
+      "review": {
+        "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+        "rationale": "No bounded candidate was discovered."
+      }
     },
     {
       "slug": "basca-mare-covasna",
-      "sourceIds": [],
+      "candidateKey": "none:basca-mare-covasna",
+      "classification": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+      "geometry": null,
       "geometryHash": null,
       "geometryType": null,
-      "matchMethod": "normalized-exact-name",
-      "confidence": 0.0,
-      "endpointEvidence": {
-        "nodeCount": 0
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "UNRESOLVED_NO_EXACT_NAME",
-      "checkedAt": "2026-08-21T12:51:06.033932Z",
+      "matchMethods": [],
       "batchClass": "real-geometry-gap",
-      "knownPositive": true
+      "review": {
+        "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+        "rationale": "No bounded candidate was discovered."
+      }
     },
     {
       "slug": "anpa-anpa-0253",
-      "sourceIds": [],
+      "candidateKey": "none:anpa-anpa-0253",
+      "classification": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+      "geometry": null,
       "geometryHash": null,
       "geometryType": null,
-      "matchMethod": "normalized-exact-name",
-      "confidence": 0.0,
-      "endpointEvidence": {
-        "nodeCount": 0
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "UNRESOLVED_NO_EXACT_NAME",
-      "checkedAt": "2026-08-21T12:51:06.109954Z",
+      "matchMethods": [],
       "batchClass": "unresolved-negative-control",
-      "knownPositive": false
+      "review": {
+        "status": "UNRESOLVED_INSUFFICIENT_EVIDENCE",
+        "rationale": "No bounded candidate was discovered."
+      }
     },
     {
       "slug": "romsilva-covasna-aita",
-      "sourceIds": [
-        {
-          "type": "way",
-          "id": 667571196
-        }
-      ],
-      "geometryHash": "080cb024d599bde1c9daf587b593314267c233a1ea56dbfb2528be1c15e6026c",
-      "geometryType": "LineString",
-      "matchMethod": "normalized-exact-name",
-      "confidence": 1.0,
-      "endpointEvidence": {
-        "nodeCount": 537
+      "candidateKey": "control:romsilva-covasna-aita",
+      "classification": "ACCEPTED_REVIEWED",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            25.76323,
+            46.02994
+          ],
+          [
+            25.75729,
+            46.02725
+          ],
+          [
+            25.74584,
+            46.03129
+          ],
+          [
+            25.71297,
+            46.03509
+          ],
+          [
+            25.70285,
+            46.03798
+          ],
+          [
+            25.70027,
+            46.04025
+          ],
+          [
+            25.69163,
+            46.03846
+          ],
+          [
+            25.68942,
+            46.03961
+          ],
+          [
+            25.68692,
+            46.03858
+          ],
+          [
+            25.68444,
+            46.03121
+          ],
+          [
+            25.67446,
+            46.02791
+          ],
+          [
+            25.67203,
+            46.02105
+          ],
+          [
+            25.67352,
+            46.0168
+          ],
+          [
+            25.66778,
+            46.01629
+          ],
+          [
+            25.66671,
+            46.01349
+          ],
+          [
+            25.66351,
+            46.01254
+          ],
+          [
+            25.66537,
+            46.0035
+          ],
+          [
+            25.65695,
+            45.99683
+          ],
+          [
+            25.65961,
+            45.99294
+          ],
+          [
+            25.65318,
+            45.98864
+          ],
+          [
+            25.65339,
+            45.98647
+          ],
+          [
+            25.65043,
+            45.98579
+          ],
+          [
+            25.65105,
+            45.98321
+          ],
+          [
+            25.64538,
+            45.97785
+          ],
+          [
+            25.6385,
+            45.97741
+          ],
+          [
+            25.63873,
+            45.97529
+          ],
+          [
+            25.63715,
+            45.97494
+          ],
+          [
+            25.62671,
+            45.9746
+          ],
+          [
+            25.61921,
+            45.97709
+          ],
+          [
+            25.61041,
+            45.97565
+          ],
+          [
+            25.6091,
+            45.97383
+          ],
+          [
+            25.60025,
+            45.9741
+          ],
+          [
+            25.59065,
+            45.97226
+          ],
+          [
+            25.58839,
+            45.97403
+          ],
+          [
+            25.57816,
+            45.9699
+          ],
+          [
+            25.56871,
+            45.96808
+          ],
+          [
+            25.56313,
+            45.96914
+          ],
+          [
+            25.55964,
+            45.96735
+          ],
+          [
+            25.55279,
+            45.96883
+          ],
+          [
+            25.54787,
+            45.97332
+          ],
+          [
+            25.54208,
+            45.97554
+          ]
+        ]
       },
-      "distanceKm": null,
-      "coverage": null,
-      "classification": "ACCEPTED_DETERMINISTIC",
-      "checkedAt": "2026-08-21T12:51:06.185600Z",
-      "batchClass": "known-positive",
-      "knownPositive": true
+      "geometryHash": "f4d8dc396a207d8bd8be30ed6f97080d72881d91283771504fd127f2b73bbc46",
+      "geometryType": "LineString",
+      "osm": {
+        "relations": [],
+        "ways": [],
+        "snapshotSha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842"
+      },
+      "matchMethods": [
+        "existing-reviewed-control"
+      ],
+      "batchClass": "known-positive-control",
+      "review": {
+        "status": "ACCEPTED_REVIEWED",
+        "reviewer": "Pilot 1 verified control",
+        "reviewedAt": "2026-08-21T00:00:00Z",
+        "rationale": "Existing known-positive control; not batch coverage.",
+        "evidence": [
+          {
+            "kind": "internal",
+            "id": "romsilva-covasna-aita"
+          }
+        ]
+      }
     }
   ],
   "metrics": {
     "batchRecords": 5,
     "batchAccepted": 0,
-    "knownPositiveControls": 1,
-    "knownPositiveTruePositives": 1,
-    "precision": 1.0,
-    "recall": 1.0
+    "batchAcceptedBefore": 0,
+    "batchAcceptedAfter": 0,
+    "batchCoverageBefore": 0.0,
+    "batchCoverageAfter": 0.0,
+    "falsePositives": 0,
+    "precision": null,
+    "runtimeSeconds": 0,
+    "peakRssKiB": null,
+    "artifactBytes": 0,
+    "knownPositiveControls": 1
   }
 }
