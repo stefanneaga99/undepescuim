@@ -59,9 +59,22 @@ regression spec and no canonical `public/data/*` file is modified.
 - `npm run build`: passed twice after the route fix.
 - Preview e2e spec added for desktop/mobile projects and root request isolation; execution requires the configured Playwright browser/server environment.
 
+## Pilot 2B physical-course preview
+
+The isolated preview now renders physically extractable candidate geometry even when
+it does not clear the legal review gate. `public/pilot/geofabrik/physical_course_candidates.geojson`
+contains the source-traceable Târnava Mare course candidate for `anpa-anpa-0333`:
+source `data/premapped/tarnava-mare.geojson`, generated `2026-08-11T10:41:03.396575+00:00`,
+geometry SHA-256 `e2bfc3709af8b3634afb38b0b731841eaf8afc4b67409122ab84374a294d25ed`,
+and confidence `source-traceable physical-course candidate`. The preview labels it
+`experimental physical course — legal sector unverified`, preserves the 5 Km contract
+card and `Aval baraj lac Zetea – pod Desag` text, and never paints orange legal geometry.
+The candidate remains excluded from canonical data, ownership, association, contract,
+and Production paths.
+
 ## Decision
 
 NO-GO for canonical integration, Production, ownership, contracts, or endpoint
 claims. A separate authority/legal endpoint review is required before any canonical
-change. The isolated preview is retained only as an honest empty reviewed-gate
-experiment; no visual coverage improvement is claimed.
+change. The isolated preview is a usable physical-course visualization, not evidence
+that the candidate is a verified legal sector.
