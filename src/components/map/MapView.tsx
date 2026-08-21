@@ -8,7 +8,8 @@ import { useMapStore } from '@/stores/map-store';
 import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
 import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
-import { contractInterval } from '@/utils/river-course';
+import { contractGroup, contractInterval } from '@/utils/river-course';
+import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
@@ -50,6 +51,13 @@ export function MapView() {
     // Uncontracted waters have no contracts/sectors — highlight the whole
     // feature, never slice (t_b1547e24).
     if (selected.uncontracted) return null;
+    // A Voronoi interval is only a diagnostic location derived from
+    // course_frac, not proof of contractual endpoints.  Never turn that
+    // fallback into an orange sector highlight; the card remains selectable
+    // until a source-backed interval is added to the data contract.
+    if (contractGroup(selected, allWaters).length > 1 && !hasExplicitSectorInterval(selected)) {
+      return null;
+    }
     return contractInterval(selected, allWaters);
   }, [selected, allWaters]);
 

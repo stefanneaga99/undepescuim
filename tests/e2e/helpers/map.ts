@@ -203,15 +203,43 @@ export async function focusSnapshot(page: Page): Promise<{
   zIndex: string;
   orangePaths: number;
   paths: string[];
+  map: {
+    center: { lat: number; lon: number };
+    zoom: number;
+    bounds: { south: number; west: number; north: number; east: number };
+  };
+  pathOwners: Array<{ slug: string; pane: string }>;
 }> {
   return page.evaluate(() => {
+    const map = (window as any).__UNDEPESCUIM_MAP__;
     const pane = document.querySelector<HTMLElement>('.water-focus-pane');
     const paths = [...(pane?.querySelectorAll('path') ?? [])];
+    const center = map?.getCenter();
+    const bounds = map?.getBounds();
+    const pathOwners: Array<{ slug: string; pane: string }> = [];
+    map?.eachLayer((layer: any) => {
+      if (!layer._path || !layer.feature?.properties?.slug) return;
+      pathOwners.push({
+        slug: layer.feature.properties.slug,
+        pane: layer._pane?.className ?? '',
+      });
+    });
     return {
       slug: pane?.dataset.focusSlug ?? '',
       zIndex: pane ? getComputedStyle(pane).zIndex : '',
       orangePaths: paths.filter((p) => p.getAttribute('stroke')?.toLowerCase() === '#f97316').length,
       paths: paths.map((p) => p.getAttribute('d') ?? ''),
+      map: {
+        center: { lat: center?.lat ?? 0, lon: center?.lng ?? 0 },
+        zoom: map?.getZoom() ?? 0,
+        bounds: {
+          south: bounds?.getSouth() ?? 0,
+          west: bounds?.getWest() ?? 0,
+          north: bounds?.getNorth() ?? 0,
+          east: bounds?.getEast() ?? 0,
+        },
+      },
+      pathOwners,
     };
   });
 }

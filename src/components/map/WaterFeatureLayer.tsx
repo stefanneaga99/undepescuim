@@ -6,7 +6,7 @@ import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
-import { countyRenderGeometry } from '@/utils/county-clip';
+
 import { bboxInBounds, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
 import {
   contractAtFraction,
@@ -186,25 +186,6 @@ export function WaterFeatureLayer({
   // contract whose shared course is off-screen must keep its orange highlight.
   const focusFeatures = useMemo(() => {
     if (!focusGroupKey || !focusRange) return null;
-    // County filter active (t_117f0b99): the rendered geometry is already the
-    // per-county clip, so slicing it by FULL-course fractions would highlight a
-    // random sub-segment. Highlight the focused water's own county clip instead
-    // (for sector contracts the clip IS the sector, clipped to the county).
-    if (countyFilter.length > 0) {
-      const focused =
-        (selectedWaterSlug && allWaters.find((x) => x.slug === selectedWaterSlug)) ||
-        allWaters.find((x) => x.name === focusKey);
-      if (!focused) return null;
-      const clip = countyRenderGeometry(focused);
-      if (!clip) return null;
-      return [
-        {
-          type: 'Feature',
-          properties: { name: focused.name },
-          geometry: clip,
-        } as GeoJSON.Feature,
-      ];
-    }
     const [f0, f1] = focusRange;
     const features: GeoJSON.Feature[] = [];
     for (const x of allWaters) {
@@ -232,7 +213,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focusRange, countyFilter, allWaters, selectedWaterSlug, focusKey]);
+  }, [focusGroupKey, focusRange, allWaters]);
 
   // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
   // data prop changes.  The base layer already has a lifecycle key; the focus
