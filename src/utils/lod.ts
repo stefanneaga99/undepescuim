@@ -60,6 +60,50 @@ export function bboxInBounds(bbox: BBox | undefined, bounds: LatLngBounds, pad =
   return minLon <= east && maxLon >= west && minLat <= north && maxLat >= south;
 }
 
+type RenderGeometry = {
+  type?: string;
+  coordinates?: unknown;
+};
+
+/** Derive the extent of geometry that will actually be handed to Leaflet. */
+export function geometryBbox(geometry: unknown): BBox | undefined {
+  if (!geometry || typeof geometry !== 'object') return undefined;
+  const { type, coordinates } = geometry as RenderGeometry;
+  if (!['LineString', 'MultiLineString', 'Polygon', 'MultiPolygon'].includes(type ?? '')) {
+    return undefined;
+  }
+
+  const points: [number, number][] = [];
+  const collect = (value: unknown): boolean => {
+    if (!Array.isArray(value) || value.length === 0) return false;
+    if (typeof value[0] === 'number' && typeof value[1] === 'number') {
+      if (value.length < 2 || !Number.isFinite(value[0]) || !Number.isFinite(value[1])) return false;
+      points.push([value[0], value[1]]);
+      return true;
+    }
+    return value.every(collect);
+  };
+  if (!collect(coordinates)) return undefined;
+  if (points.length === 0) return undefined;
+
+  let minLon = points[0][0];
+  let minLat = points[0][1];
+  let maxLon = points[0][0];
+  let maxLat = points[0][1];
+  for (const [lon, lat] of points.slice(1)) {
+    minLon = Math.min(minLon, lon);
+    minLat = Math.min(minLat, lat);
+    maxLon = Math.max(maxLon, lon);
+    maxLat = Math.max(maxLat, lat);
+  }
+  return [minLon, minLat, maxLon, maxLat];
+}
+
+/** Resolve the bounds for culling without mutating persisted water data. */
+export function renderBbox(water: { bbox?: BBox; geometry?: unknown }): BBox | undefined {
+  return geometryBbox(water.geometry) ?? water.bbox;
+}
+
 /**
  * Compact signature of a viewport for react-leaflet layer re-keying —
  * mirrors the UncontractedWaterLayer layerKey, so pan/zoom remounts the layer.

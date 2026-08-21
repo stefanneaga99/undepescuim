@@ -7,7 +7,7 @@ import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
 import { countyRenderGeometry } from '@/utils/county-clip';
-import { bboxInBounds, lodThresholds, passesLod, viewSuffix } from '@/utils/lod';
+import { bboxInBounds, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
 import {
   contractAtFraction,
   contractGroup,
@@ -112,7 +112,7 @@ export function WaterFeatureLayer({
       }
     }
     return waters.filter(
-      (w) => pinned.has(w.slug) || (passesLod(w, lod) && bboxInBounds(w.bbox, view.bounds)),
+      (w) => pinned.has(w.slug) || (passesLod(w, lod) && bboxInBounds(renderBbox(w), view.bounds)),
     );
   }, [waters, allWaters, view, lod, coverageSlug, selectedWaterSlug]);
 
