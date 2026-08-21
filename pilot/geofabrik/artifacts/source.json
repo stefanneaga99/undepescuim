@@ -1,0 +1,8 @@
+{
+  "url": "https://download.geofabrik.de/europe/romania-latest.osm.pbf",
+  "retrievedAt": "2026-08-21T12:47:21.717283Z",
+  "sha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842",
+  "sizeBytes": 326388442,
+  "license": "OpenStreetMap data, ODbL 1.0; Geofabrik download terms apply",
+  "pbf": "romania-latest.osm.pbf"
+}
