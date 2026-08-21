@@ -70,7 +70,7 @@ export default defineConfig({
   projects: LIVE_PROD ? [
     {
       name: 'live-prod-desktop',
-      testMatch: /(?:live-prod|olt-viewport-culling)\.spec\.ts/,
+      testMatch: /(?:live-prod|olt-viewport-culling|tarnava-mare-mijlocie-sector)\.spec\.ts/,
       use: {
         ...devices['Desktop Chrome'],
         baseURL: LIVE_URL,
@@ -81,7 +81,7 @@ export default defineConfig({
     },
     {
       name: 'live-prod-mobile',
-      testMatch: /(?:live-prod|olt-viewport-culling)\.spec\.ts/,
+      testMatch: /(?:live-prod|olt-viewport-culling|tarnava-mare-mijlocie-sector)\.spec\.ts/,
       use: {
         ...devices['iPhone 14'],
         baseURL: LIVE_URL,

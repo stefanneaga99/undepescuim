@@ -105,6 +105,25 @@ test.describe('data contract — real served /public/data @data', () => {
     }
   });
 
+  test('Târnava Mare mijlocie preserves the contract while endpoints remain unproven', async ({ page }) => {
+    const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
+    const selected = waters.find((water) => water.slug === 'anpa-anpa-0333');
+    expect(selected).toMatchObject({
+      slug: 'anpa-anpa-0333',
+      name: 'Râul Târnava Mare mijlocie',
+      judet: 'Harghita',
+      dimensiune: '5 Km',
+      limite: 'Aval baraj lac Zetea – pod Desag',
+      riverGroup: 'tarnava-mare',
+      course_frac: 0.1072,
+      referinta: 'Contract 46/15.01.2018 (2018-01-15)',
+    });
+    // course_frac is only a fallback location. It must not be promoted to a
+    // contractual endpoint until first-party evidence supplies both bounds.
+    expect(selected?.sectorStart).toBeUndefined();
+    expect(selected?.sectorEnd).toBeUndefined();
+  });
+
   test('sweep-fixed fixtures carry real geometry, not bbox fallbacks', async ({ page }) => {
     const waters = (await fetchJson(page, WATERS_URL)) as Array<Record<string, unknown>>;
     const bySlug = new Map(waters.map((w) => [w.slug, w]));
