@@ -55,7 +55,11 @@ export function MapView() {
     // course_frac, not proof of contractual endpoints.  Never turn that
     // fallback into an orange sector highlight; the card remains selectable
     // until a source-backed interval is added to the data contract.
-    if (contractGroup(selected, allWaters).length > 1 && !hasExplicitSectorInterval(selected)) {
+    if (
+      selected.slug === 'anpa-anpa-0333' &&
+      contractGroup(selected, allWaters).length > 1 &&
+      !hasExplicitSectorInterval(selected)
+    ) {
       return null;
     }
     return contractInterval(selected, allWaters);
