@@ -6,7 +6,7 @@ export type PilotFeature = { type: 'Feature'; geometry: PilotGeometry; propertie
 export type PilotCollection = { type: 'FeatureCollection'; features: PilotFeature[] };
 export type PhysicalCourseFeature = { type: 'Feature'; geometry: PilotGeometry; properties: {
   slug: string; courseStatus: 'experimental-physical-course'; label: string; confidence: string;
-  provenance: { source: string; sourceFile: string; generatedAt: string; geometryHash: string };
+  provenance: { source: string; sourceFile: string; generatedAt: string; geometryHash: string; osmIds?: string[]; geofabrikIds?: string[] };
   contract: { declaredLengthKm: number; limits: string; legalEndpoints: 'unverified'; legalSectorGeometry: false };
 } };
 export type PhysicalCourseCollection = { type: 'FeatureCollection'; features: PhysicalCourseFeature[] };

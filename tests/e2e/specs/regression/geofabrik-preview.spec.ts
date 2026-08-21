@@ -37,10 +37,15 @@ test.describe('isolated Geofabrik preview', () => {
     await expect(page.getByText(/OSM IDs: way\/123/)).toBeVisible();
     await page.waitForFunction(() => document.querySelectorAll('.leaflet-tile[src]').length >= 4);
     await assertMapLayout(page);
-    await expect(page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]')).not.toHaveCount(0);
+    const physicalLine = page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]').first();
+    await expect(physicalLine).toBeVisible();
     await expect(page.getByText(/experimental physical course.*legal sector unverified/i)).toBeVisible();
     await expect(page.getByText(/Contract card preserved: 5 Km/)).toBeVisible();
     await expect(page.getByText(/legal endpoints: unverified/i)).toBeVisible();
+    await physicalLine.dispatchEvent('click');
+    await expect(page.locator('[data-testid="pilot-physical-course-card"]:visible')).toBeVisible();
+    await expect(page.locator('[data-testid="pilot-geometry-ids"]:visible')).toContainText(/Unavailable|way\//);
+    await expect(page.locator('[data-testid="pilot-legal-unverified"]:visible')).toBeVisible();
     await expect(page.locator('path[stroke="#f97316"]')).toHaveCount(0);
     expect(errors).toEqual([]);
   });
