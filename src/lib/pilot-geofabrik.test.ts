@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { emptyPilotCollection, validatePilotArtifacts } from './pilot-geofabrik';
+import { emptyPilotCollection, validatePhysicalCourseArtifacts, validatePilotArtifacts } from './pilot-geofabrik';
 
 describe('pilot geofabrik artifact gate', () => {
   it('fails closed for malformed collections', () => {
@@ -11,5 +11,15 @@ describe('pilot geofabrik artifact gate', () => {
     } };
     expect(validatePilotArtifacts({ type: 'FeatureCollection', features: [feature] }, { control: { geometryHash: 'h', osmIds: ['way/1'] } }).features).toHaveLength(1);
     expect(validatePilotArtifacts({ type: 'FeatureCollection', features: [{ ...feature, properties: { ...feature.properties, pilotStatus: 'candidate' } }] }, { control: { geometryHash: 'h', osmIds: ['way/1'] } })).toEqual(emptyPilotCollection);
+  });
+  it('keeps an unverified physical line separate from legal geometry', () => {
+    const result = validatePhysicalCourseArtifacts({ type: 'FeatureCollection', features: [{ type: 'Feature', geometry: { type: 'LineString', coordinates: [[25, 46], [25.1, 46.1]] }, properties: {
+      slug: 'anpa-anpa-0333', courseStatus: 'experimental-physical-course', label: 'experimental physical course — legal sector unverified', confidence: 'source-traceable physical-course candidate',
+      provenance: { source: 'tier1_premap', sourceFile: 'data/premapped/tarnava-mare.geojson', generatedAt: '2026-08-11', geometryHash: 'hash' },
+      contract: { declaredLengthKm: 5, limits: 'Aval baraj lac Zetea – pod Desag', legalEndpoints: 'unverified', legalSectorGeometry: false },
+    } }] });
+    expect(result.features).toHaveLength(1);
+    expect(result.features[0].properties.contract.legalSectorGeometry).toBe(false);
+    expect(validatePhysicalCourseArtifacts({ type: 'FeatureCollection', features: [{ ...result.features[0], properties: { ...result.features[0].properties, label: 'orange legal sector' } }] }).features).toHaveLength(0);
   });
 });

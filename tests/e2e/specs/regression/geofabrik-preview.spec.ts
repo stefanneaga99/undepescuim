@@ -22,7 +22,24 @@ test.describe('isolated Geofabrik preview', () => {
     await expect(page.getByTestId('pilot-experimental-badge')).toBeVisible();
     await expect(page.getByText(/not legal contract\/ownership\/endpoints/i)).toBeVisible();
     await expect(page.locator('[data-pilot-slug="pilot-control"]')).toBeVisible();
+    await expect(page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]')).not.toHaveCount(0);
+    await expect(page.getByText(/experimental physical course.*legal sector unverified/i)).toBeVisible();
+    await expect(page.getByText(/Contract card preserved: 5 Km/)).toBeVisible();
+    await expect(page.getByText(/legal endpoints: unverified/i)).toBeVisible();
+    await expect(page.locator('path[stroke="#f97316"]')).toHaveCount(0);
     expect(errors).toEqual([]);
+  });
+
+  test('mobile and desktop both expose the physical line and status', async ({ page }) => {
+    for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
+      await page.setViewportSize(viewport);
+      await fixture(page);
+      await page.goto('/pilot/geofabrik');
+      await expect(page.getByTestId('pilot-geofabrik-preview')).toBeVisible();
+      await expect(page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]')).not.toHaveCount(0);
+      await expect(page.getByText(/legal sector unverified/i)).toBeVisible();
+      await expect(page.locator('path[stroke="#f97316"]')).toHaveCount(0);
+    }
   });
 
   test('root route never loads pilot assets', async ({ page }) => {
