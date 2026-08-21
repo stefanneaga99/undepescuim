@@ -9,7 +9,7 @@ import { useFilteredWaters } from '@/hooks/use-filtered-waters';
 import { useFilteredUncontracted } from '@/hooks/use-filtered-uncontracted';
 import { WaterFeatureLayer } from '@/components/map/WaterFeatureLayer';
 import { contractGroup, contractInterval } from '@/utils/river-course';
-import { hasExplicitSectorInterval } from '@/utils/contract-sector';
+import { boundedFocusInterval, hasExplicitSectorInterval } from '@/utils/contract-sector';
 import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer';
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
@@ -60,7 +60,9 @@ export function MapView() {
       contractGroup(selected, allWaters).length > 1 &&
       !hasExplicitSectorInterval(selected)
     ) {
-      return null;
+      // Keep a small orange affordance on the rendered owner course. This is
+      // a local selection marker, not the declared 5 Km sector geometry.
+      return boundedFocusInterval(selected);
     }
     return contractInterval(selected, allWaters);
   }, [selected, allWaters]);

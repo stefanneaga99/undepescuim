@@ -16,6 +16,20 @@ export function hasExplicitSectorInterval(water: Water): boolean {
   return typeof water.sectorStart === 'number' && typeof water.sectorEnd === 'number';
 }
 
+/**
+ * Return a short, local map affordance around a located fallback contract.
+ * This is deliberately not a contractual interval: course_frac only tells us
+ * where the source record is located on the rendered course. Keeping the
+ * window small prevents the UI from implying the legal sector endpoints.
+ */
+export function boundedFocusInterval(water: Water, halfWidth = 0.01): [number, number] | null {
+  const fraction = water.course_frac;
+  if (typeof fraction !== 'number' || !Number.isFinite(fraction)) return null;
+  const start = Math.max(0, fraction - halfWidth);
+  const end = Math.min(1, fraction + halfWidth);
+  return [Math.round(start * 1e6) / 1e6, Math.round(end * 1e6) / 1e6];
+}
+
 function lineParts(water: Water): [number, number][][] | null {
   if (!water.geometry) return null;
   if (water.geometry.type === 'LineString') {

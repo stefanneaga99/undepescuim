@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { measureContractSector } from '@/utils/contract-sector';
+import { boundedFocusInterval, measureContractSector } from '@/utils/contract-sector';
 import type { Water } from '@/types/data';
 
 function water(over: Partial<Water>): Water {
@@ -34,6 +34,12 @@ describe('measureContractSector', () => {
     });
     expect(result.renderedKm).toBeGreaterThan(29);
     expect(result.renderedKm).toBeLessThan(31);
+  });
+
+  it('provides a bounded diagnostic focus around a located fallback contract', () => {
+    expect(boundedFocusInterval({ course_frac: 0.1072 } as Water)).toEqual([0.0972, 0.1172]);
+    expect(boundedFocusInterval({ course_frac: 0.004 } as Water)).toEqual([0, 0.014]);
+    expect(boundedFocusInterval({ course_frac: null } as unknown as Water)).toBeNull();
   });
 
   it('uses an explicit interval instead of the Voronoi position', () => {
