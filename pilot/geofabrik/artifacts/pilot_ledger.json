@@ -1,0 +1,206 @@
+{
+  "source": {
+    "url": "https://download.geofabrik.de/europe/romania-latest.osm.pbf",
+    "retrievedAt": "2026-08-21T12:47:21.717283Z",
+    "sha256": "707bbc4e8bf73ab39582cafa0d7e1c3f83b2281fb327f54714e803173ce02842",
+    "sizeBytes": 326388442,
+    "license": "OpenStreetMap data, ODbL 1.0; Geofabrik download terms apply",
+    "pbf": "romania-latest.osm.pbf"
+  },
+  "inventory": {
+    "county": "Covasna",
+    "batch": [
+      {
+        "slug": "anpa-anpa-0252",
+        "class": "bbox-fallback",
+        "known": false,
+        "name": "Brațele secundare ale Râului Negru",
+        "judet": "Covasna",
+        "riverGroup": null,
+        "before": {
+          "geometry": null,
+          "bbox": [
+            26.076781,
+            45.879423,
+            26.084781,
+            45.887423
+          ]
+        }
+      },
+      {
+        "slug": "anpa-anpa-0261",
+        "class": "geometry-less-child",
+        "known": false,
+        "name": "Pârâu Buzăul Mijlociu",
+        "judet": "Covasna",
+        "riverGroup": "buzau",
+        "before": {
+          "geometry": null,
+          "bbox": null
+        }
+      },
+      {
+        "slug": "anpa-anpa-0264",
+        "class": "same-name-collision",
+        "known": true,
+        "name": "Râul Negru I",
+        "judet": "Covasna",
+        "riverGroup": "negru",
+        "before": {
+          "geometry": null,
+          "bbox": null
+        }
+      },
+      {
+        "slug": "basca-mare-covasna",
+        "class": "real-geometry-gap",
+        "known": true,
+        "name": "Râul Bâsca Mare",
+        "judet": "Covasna",
+        "riverGroup": "basca-mare",
+        "before": {
+          "geometry": null,
+          "bbox": null
+        }
+      },
+      {
+        "slug": "anpa-anpa-0253",
+        "class": "unresolved-negative-control",
+        "known": false,
+        "name": "Pârâu Szaldoboș",
+        "judet": "Covasna",
+        "riverGroup": null,
+        "before": {
+          "geometry": null,
+          "bbox": [
+            25.589462,
+            46.120434,
+            25.597462,
+            46.128434
+          ]
+        }
+      }
+    ],
+    "batchCount": 5,
+    "sourceCanonicalFilesRead": [
+      "public/data/waters.json"
+    ]
+  },
+  "records": [
+    {
+      "slug": "anpa-anpa-0252",
+      "sourceIds": [],
+      "geometryHash": null,
+      "geometryType": null,
+      "matchMethod": "normalized-exact-name",
+      "confidence": 0.0,
+      "endpointEvidence": {
+        "nodeCount": 0
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "UNRESOLVED_NO_EXACT_NAME",
+      "checkedAt": "2026-08-21T12:51:05.801874Z",
+      "batchClass": "bbox-fallback",
+      "knownPositive": false
+    },
+    {
+      "slug": "anpa-anpa-0261",
+      "sourceIds": [],
+      "geometryHash": null,
+      "geometryType": null,
+      "matchMethod": "normalized-exact-name",
+      "confidence": 0.0,
+      "endpointEvidence": {
+        "nodeCount": 0
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "UNRESOLVED_NO_EXACT_NAME",
+      "checkedAt": "2026-08-21T12:51:05.879068Z",
+      "batchClass": "geometry-less-child",
+      "knownPositive": false
+    },
+    {
+      "slug": "anpa-anpa-0264",
+      "sourceIds": [],
+      "geometryHash": null,
+      "geometryType": null,
+      "matchMethod": "normalized-exact-name",
+      "confidence": 0.0,
+      "endpointEvidence": {
+        "nodeCount": 0
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "UNRESOLVED_NO_EXACT_NAME",
+      "checkedAt": "2026-08-21T12:51:05.957826Z",
+      "batchClass": "same-name-collision",
+      "knownPositive": true
+    },
+    {
+      "slug": "basca-mare-covasna",
+      "sourceIds": [],
+      "geometryHash": null,
+      "geometryType": null,
+      "matchMethod": "normalized-exact-name",
+      "confidence": 0.0,
+      "endpointEvidence": {
+        "nodeCount": 0
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "UNRESOLVED_NO_EXACT_NAME",
+      "checkedAt": "2026-08-21T12:51:06.033932Z",
+      "batchClass": "real-geometry-gap",
+      "knownPositive": true
+    },
+    {
+      "slug": "anpa-anpa-0253",
+      "sourceIds": [],
+      "geometryHash": null,
+      "geometryType": null,
+      "matchMethod": "normalized-exact-name",
+      "confidence": 0.0,
+      "endpointEvidence": {
+        "nodeCount": 0
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "UNRESOLVED_NO_EXACT_NAME",
+      "checkedAt": "2026-08-21T12:51:06.109954Z",
+      "batchClass": "unresolved-negative-control",
+      "knownPositive": false
+    },
+    {
+      "slug": "romsilva-covasna-aita",
+      "sourceIds": [
+        {
+          "type": "way",
+          "id": 667571196
+        }
+      ],
+      "geometryHash": "080cb024d599bde1c9daf587b593314267c233a1ea56dbfb2528be1c15e6026c",
+      "geometryType": "LineString",
+      "matchMethod": "normalized-exact-name",
+      "confidence": 1.0,
+      "endpointEvidence": {
+        "nodeCount": 537
+      },
+      "distanceKm": null,
+      "coverage": null,
+      "classification": "ACCEPTED_DETERMINISTIC",
+      "checkedAt": "2026-08-21T12:51:06.185600Z",
+      "batchClass": "known-positive",
+      "knownPositive": true
+    }
+  ],
+  "metrics": {
+    "batchRecords": 5,
+    "batchAccepted": 0,
+    "knownPositiveControls": 1,
+    "knownPositiveTruePositives": 1,
+    "precision": 1.0,
+    "recall": 1.0
+  }
+}
