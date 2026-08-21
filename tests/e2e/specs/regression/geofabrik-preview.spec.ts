@@ -10,7 +10,20 @@ const ledger = { records: [{ slug: 'pilot-control', geometryHash: 'fixture-hash'
 async function fixture(page: import('@playwright/test').Page) {
   await page.route('**/pilot/geofabrik/accepted_geometry.geojson', (route) => route.fulfill({ json: accepted }));
   await page.route('**/pilot/geofabrik/pilot_ledger.json', (route) => route.fulfill({ json: ledger }));
-  await page.route('**/tile.openstreetmap.org/**', (route) => route.abort());
+}
+
+async function assertMapLayout(page: import('@playwright/test').Page) {
+  const metrics = await page.locator('.leaflet-container').evaluate((map) => {
+    const container = map.getBoundingClientRect();
+    const tiles = [...map.querySelectorAll<HTMLImageElement>('.leaflet-tile')]
+      .map((tile) => { const rect = tile.getBoundingClientRect(); return { width: rect.width, height: rect.height, left: rect.left, top: rect.top }; });
+    return { width: container.width, height: container.height, tiles };
+  });
+  expect(metrics.width).toBeGreaterThan(300);
+  expect(metrics.height).toBeGreaterThan(300);
+  expect(metrics.tiles.length).toBeGreaterThanOrEqual(4);
+  expect(metrics.tiles.every((tile) => tile.width >= 200 && tile.height >= 200)).toBeTruthy();
+  expect(Math.max(...metrics.tiles.map((tile) => tile.left)) - Math.min(...metrics.tiles.map((tile) => tile.left))).toBeGreaterThan(0);
 }
 
 test.describe('isolated Geofabrik preview', () => {
@@ -21,7 +34,9 @@ test.describe('isolated Geofabrik preview', () => {
     await page.goto('/pilot/geofabrik');
     await expect(page.getByTestId('pilot-experimental-badge')).toBeVisible();
     await expect(page.getByText(/not legal contract\/ownership\/endpoints/i)).toBeVisible();
-    await expect(page.locator('[data-pilot-slug="pilot-control"]')).toBeVisible();
+    await expect(page.getByText(/OSM IDs: way\/123/)).toBeVisible();
+    await page.waitForFunction(() => document.querySelectorAll('.leaflet-tile[src]').length >= 4);
+    await assertMapLayout(page);
     await expect(page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]')).not.toHaveCount(0);
     await expect(page.getByText(/experimental physical course.*legal sector unverified/i)).toBeVisible();
     await expect(page.getByText(/Contract card preserved: 5 Km/)).toBeVisible();
@@ -36,6 +51,8 @@ test.describe('isolated Geofabrik preview', () => {
       await fixture(page);
       await page.goto('/pilot/geofabrik');
       await expect(page.getByTestId('pilot-geofabrik-preview')).toBeVisible();
+      await page.waitForFunction(() => document.querySelectorAll('.leaflet-tile[src]').length >= 4);
+      await assertMapLayout(page);
       await expect(page.locator('.leaflet-overlay-pane path[stroke="#14b8a6"]')).not.toHaveCount(0);
       await expect(page.getByText(/legal sector unverified/i)).toBeVisible();
       await expect(page.locator('path[stroke="#f97316"]')).toHaveCount(0);

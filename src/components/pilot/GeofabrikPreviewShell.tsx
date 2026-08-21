@@ -24,9 +24,9 @@ export function GeofabrikPreviewShell() {
       setLedger({ accepted: safe.features.length, unresolved: (raw.records ?? []).filter((r: { review?: { status?: string } }) => r.review?.status !== 'ACCEPTED_REVIEWED').length });
     }).catch(() => setError(true));
   }, []);
-  return <main className="relative h-dvh bg-slate-950 text-white" data-testid="pilot-geofabrik-preview">
+  return <main className="relative flex h-dvh min-h-0 flex-col bg-slate-950 text-white" data-testid="pilot-geofabrik-preview">
     <ExperimentalPilotBadge accepted={ledger.accepted} unresolved={ledger.unresolved} features={collection.features} physicalCourses={physicalCourses.features} />
     {error && <p role="alert" className="absolute left-4 top-32 z-[2000] rounded bg-red-900 p-3">Pilot artifacts unavailable; nothing rendered.</p>}
-    <div className="h-full w-full pt-24"><AcceptedGeometryLayer collection={collection} physicalCourses={physicalCourses} /></div>
+    <div className="relative min-h-0 flex-1 pt-24"><AcceptedGeometryLayer collection={collection} physicalCourses={physicalCourses} /></div>
   </main>;
 }
