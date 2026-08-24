@@ -13,7 +13,7 @@ const RUN_ID = process.env.PLAYWRIGHT_RUN_ID ?? process.env.GITHUB_RUN_ID ?? Str
 const OUTPUT_DIR = process.env.PLAYWRIGHT_OUTPUT_DIR ?? `test-results/${RUN_ID}`;
 const MATRIX = process.env.E2E_MOBILE_MATRIX === '1';
 const LIVE_PROD = process.env.LIVE_PROD === '1';
-const LIVE_URL = process.env.LIVE_URL ?? 'https://undepescuim.vercel.app';
+const LIVE_URL = process.env.LIVE_URL ?? 'https://unde-pescuim.ro';
 
 // Device profiles are Chromium emulations for reproducible CI coverage. Native
 // Safari/Chrome runs remain a release-gate follow-up on physical devices.
