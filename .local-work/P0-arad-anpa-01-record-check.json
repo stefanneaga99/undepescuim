@@ -1,0 +1,48 @@
+{
+ "batch": "P0-arad-anpa-01",
+ "slugs": [
+  "anpa-anpa-0034",
+  "anpa-anpa-0035"
+ ],
+ "source_type_lock": "anpa",
+ "record_count": 2,
+ "checks": [
+  {
+   "slug": "anpa-anpa-0034",
+   "source": "anpa",
+   "county": "Arad",
+   "name": "Lac Mortărel",
+   "geometry_type": "Polygon",
+   "geometry_sha256": "3768c6684dfb058c455776d6fcfa0513613e90448b184bcfc2d72d219661ada4",
+   "bbox": [
+    21.28589,
+    46.15884,
+    21.34205,
+    46.17739
+   ],
+   "has_coordinates": true
+  },
+  {
+   "slug": "anpa-anpa-0035",
+   "source": "anpa",
+   "county": "Arad",
+   "name": "Lac Hortop",
+   "geometry_type": "Polygon",
+   "geometry_sha256": "4d8c5f28e40fb3866852c02d932a37ced8777145ba55de9176920e19dbb772e2",
+   "bbox": [
+    21.39842,
+    46.14267,
+    21.39969,
+    46.14313
+   ],
+   "has_coordinates": true
+  }
+ ],
+ "canonical_hashes_unchanged_before_execution": true,
+ "source_type_lock_matches_inventory": true,
+ "class_2_to_6_touched": 0,
+ "completion": "completed_noop",
+ "notes": [
+  "Both inventory records already contain valid Arad lake geometry; no source-backed repair was indicated."
+ ]
+}
