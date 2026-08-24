@@ -52,6 +52,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BOUNDARY_DIR = ROOT / "data/raw/county_boundaries"
 WATERS_JSON = ROOT / "public/data/waters.json"
 UNCONTRACTED_JSON = ROOT / "public/data/uncontracted_rivers.json"
+CLIPS_JSON = ROOT / "public/data/waters_county_clips.json"
 
 # ~200 m buffer so border rivers (whose centerline IS the county ring) stay whole.
 BUFFER_DEG = 0.002
@@ -378,6 +379,21 @@ def main():
 
     waters = json.loads(WATERS_JSON.read_text(encoding="utf-8"))
     uncontracted = json.loads(UNCONTRACTED_JSON.read_text(encoding="utf-8"))
+
+    # County clips are split from the source files for lazy loading. Rehydrate
+    # them before rebuilding so a corrected "fully inside" decision can remove
+    # stale null entries left by an earlier geometry run.
+    existing_clips = (
+        json.loads(CLIPS_JSON.read_text(encoding="utf-8"))
+        if CLIPS_JSON.exists()
+        else {}
+    )
+    for pool in (waters, uncontracted):
+        for water in pool:
+            prior = existing_clips.get(water.get("slug"))
+            if prior:
+                water["geometryByCounty"] = prior
+
     waters_by_slug = {w["slug"]: w for w in waters}
 
     print("processing contracted waters...", file=sys.stderr)

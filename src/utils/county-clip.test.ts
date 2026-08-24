@@ -64,4 +64,16 @@ describe('countyRenderGeometry', () => {
     });
     expect(countyRenderGeometry(w)).toBe(clipGeom);
   });
+
+  it.each([
+    ['romsilva-bacau-barzauta', 'Bacău'],
+    ['anpa-anpa-0202', 'Brăila'],
+    ['anpa-anpa-0204', 'Brăila'],
+    ['romsilva-covasna-sugo', 'Covasna'],
+    ['romsilva-maramures-crasna-frumusaua', 'Maramureș'],
+    ['vb2p0152', 'Olt'],
+  ])('keeps source-backed foreign geometry explicitly hidden for %s', (slug, county) => {
+    const w = water({ slug, judet: county, geometry: fullGeom, geometryByCounty: { [countyClipKey(county)]: null } });
+    expect(countyRenderGeometry(w)).toBeNull();
+  });
 });
