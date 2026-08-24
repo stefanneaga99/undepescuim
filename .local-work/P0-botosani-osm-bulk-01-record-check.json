@@ -1,0 +1,44 @@
+{
+ "batch": "P0-botosani-osm-bulk-01",
+ "slugs": [
+  "anpa-anpa-0166",
+  "anpa-anpa-0167"
+ ],
+ "source_type_lock": "osm_bulk",
+ "county_lock": "Botoșani",
+ "record_count": 2,
+ "checks": [
+  {
+   "slug": "anpa-anpa-0166",
+   "source": "osm_bulk",
+   "county": "Botoșani",
+   "name": "Râul Baranca Hudești",
+   "type": "ape",
+   "subtype": "rau",
+   "geometry_type": "MultiLineString",
+   "geometry_sha256": "a6342678e5c4ebf4835e0480992ae2234008e999c9eafa07f1548cf8d4731e92",
+   "geometry_parts": 5,
+   "has_geometry": true
+  },
+  {
+   "slug": "anpa-anpa-0167",
+   "source": "osm_bulk",
+   "county": "Botoșani",
+   "name": "Râul Baranca Nouă",
+   "type": "ape",
+   "subtype": "rau",
+   "geometry_type": "MultiLineString",
+   "geometry_sha256": "a6342678e5c4ebf4835e0480992ae2234008e999c9eafa07f1548cf8d4731e92",
+   "geometry_parts": 5,
+   "has_geometry": true
+  }
+ ],
+ "canonical_hashes_unchanged_before_execution": true,
+ "source_type_lock_matches_inventory": true,
+ "class_2_to_6_touched": 0,
+ "completion": "completed_noop",
+ "notes": [
+  "Both locked Botoșani osm_bulk records already contain source-backed geometry; no deterministic repair was indicated.",
+  "The two records intentionally share the same five-part Baranca geometry, matching their contract locality and existing canonical data."
+ ]
+}
