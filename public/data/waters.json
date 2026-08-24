@@ -3651,29 +3651,7 @@
    "siteUrl": "http://baiamare.rosilva.ro/",
    "permitIssuer": "romsilva"
   },
-  "geometry": {
-   "type": "Polygon",
-   "coordinates": [
-    [
-     [
-      23.604,
-      47.69015
-     ],
-     [
-      23.60349,
-      47.68838
-     ],
-     [
-      23.60471,
-      47.68853
-     ],
-     [
-      23.604,
-      47.69015
-     ]
-    ]
-   ]
-  },
+  "geometry": null,
   "locality": "Baia Mare",
   "areaHa": 0.87
  },
