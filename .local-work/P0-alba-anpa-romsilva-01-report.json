@@ -1,0 +1,161 @@
+{
+  "batch_id": "P0-alba-anpa-romsilva-01",
+  "county": "Alba",
+  "source_type": "anpa_romsilva",
+  "target_slugs": [
+    "romsilva-alba-acumulare-tau",
+    "romsilva-alba-ampoita",
+    "romsilva-alba-ariesul-mare-superior",
+    "romsilva-alba-ariesul-mic",
+    "romsilva-alba-canciu-bosorogu",
+    "romsilva-alba-ighiel",
+    "romsilva-alba-izvoarele-ampoiului",
+    "romsilva-alba-raul-mare",
+    "romsilva-alba-raul-mic",
+    "romsilva-alba-salane",
+    "romsilva-alba-viltori-fenes"
+  ],
+  "record_count": 11,
+  "status": "completed_noop",
+  "changed_slugs": [],
+  "unchanged_slugs": [
+    "romsilva-alba-acumulare-tau",
+    "romsilva-alba-ampoita",
+    "romsilva-alba-ariesul-mare-superior",
+    "romsilva-alba-ariesul-mic",
+    "romsilva-alba-canciu-bosorogu",
+    "romsilva-alba-ighiel",
+    "romsilva-alba-izvoarele-ampoiului",
+    "romsilva-alba-raul-mare",
+    "romsilva-alba-raul-mic",
+    "romsilva-alba-salane",
+    "romsilva-alba-viltori-fenes"
+  ],
+  "source_locks": {
+    "passed": true,
+    "inventory": "data/processed/traceability_report.json",
+    "county": "Alba",
+    "source_type": "anpa_romsilva"
+  },
+  "records": [
+    {
+      "slug": "romsilva-alba-acumulare-tau",
+      "name": "Acumulare Tău",
+      "geometry_sha256": "ee4678d7015bd32dfeef2db1db420db055ad26495d1285c40ea288f99747b1cb",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 73,
+      "county": "Alba",
+      "subtype": "lac"
+    },
+    {
+      "slug": "romsilva-alba-ampoita",
+      "name": "Râul Ampoita",
+      "geometry_sha256": "532e0b378f99a59e23e6f2e96e051d00f4f87dfc8804c2afabffb75b43213a46",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 57,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-ariesul-mare-superior",
+      "name": "Râul Ariesul Mare Superior",
+      "geometry_sha256": "259ec84f4ec06496fbf206b89380e6d441acd5f1e4d7f749582ecb827a6ced07",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 49,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-ariesul-mic",
+      "name": "Râul Ariesul Mic",
+      "geometry_sha256": "df9968c4e63580dee5bf25ba5e464241105e7829cdde2a2b9e0ad033623188bb",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 51,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-canciu-bosorogu",
+      "name": "Râul Canciu- Bosorogu",
+      "geometry_sha256": "3b1aa4eface7d47e48d1ffc26e21c9bab2ea33f858899b06d78731ade60d7b38",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 64,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-ighiel",
+      "name": "Râul Ighiel",
+      "geometry_sha256": "ed054188fcf7caea874efc0c8d60f3e5721aaf84b65652673db44c82c58e645c",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 56,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-izvoarele-ampoiului",
+      "name": "Râul Izvoarele Ampoiului",
+      "geometry_sha256": "4a4469a098738eca8d7a3a76a6654217283f40c63d42875868a5f510607e2c46",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 60,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-raul-mare",
+      "name": "Raul Mare",
+      "geometry_sha256": "8f7493007e27fbcf2e2faed8d99c9fb0205187b1bec91627df7730b42b0ae377",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 65,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-raul-mic",
+      "name": "Raul Mic",
+      "geometry_sha256": "d6646387f68c263bc8c3869342ee3f677957ade2762a8756cd349381948e5ffe",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 66,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-salane",
+      "name": "Râul Salane",
+      "geometry_sha256": "6e1ee04220a1626eb43d793cf067b216f6004a6645ec22d98d13d0e24aeea710",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 61,
+      "county": "Alba",
+      "subtype": "rau"
+    },
+    {
+      "slug": "romsilva-alba-viltori-fenes",
+      "name": "Râul Vîltori - Feneș",
+      "geometry_sha256": "8e1937319e22a20dd1196dc79a683b7d813f6a43a8805347d79fb69fd4d9cad3",
+      "geometry_present": true,
+      "source": "anpa_romsilva",
+      "source_row": 59,
+      "county": "Alba",
+      "subtype": "rau"
+    }
+  ],
+  "canonical_geometry_mutation": false,
+  "verification": {
+    "target_semantic_diff": "PASS: no target records changed",
+    "canonical_serialization": "PASS",
+    "integrity": "PASS: 0 violations",
+    "push": "forbidden by task; not attempted",
+    "production_promotion": "forbidden by task; not attempted"
+  },
+  "evidence_generation": "regenerated locally from current canonical records and traceability; read-only"
+}

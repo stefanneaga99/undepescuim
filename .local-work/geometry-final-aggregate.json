@@ -3,11 +3,12 @@
     {
       "batch_id": "P0-alba-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Alba",
-      "report": null,
+      "report": "P0-alba-anpa-romsilva-01-report.json",
       "source_type": "anpa_romsilva",
-      "state": "missing",
+      "state": "no-op",
       "target_count": 11,
       "target_slugs": [
         "romsilva-alba-acumulare-tau",
@@ -26,6 +27,7 @@
     {
       "batch_id": "P0-alba-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Alba",
       "report": "P0-alba-anpa-01-report.json",
@@ -40,6 +42,7 @@
     {
       "batch_id": "P0-alba-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Alba",
       "report": "P0-alba-arebaltapeste-01-report.md",
@@ -62,6 +65,7 @@
     {
       "batch_id": "P0-alba-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Alba",
       "report": "geometry-repair-P0-alba-hotosm-01-report.md",
@@ -80,6 +84,7 @@
     {
       "batch_id": "P0-alba-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Alba",
       "report": "P0-alba-osm-bulk-01-report.json",
@@ -95,11 +100,12 @@
     {
       "batch_id": "P0-arad-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Arad",
-      "report": null,
+      "report": "P0-arad-anpa-01-report.json",
       "source_type": "anpa",
-      "state": "missing",
+      "state": "no-op",
       "target_count": 2,
       "target_slugs": [
         "anpa-anpa-0034",
@@ -109,6 +115,7 @@
     {
       "batch_id": "P0-arad-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Arad",
       "report": "P0-arad-anpa-romsilva-01-report.json",
@@ -127,6 +134,7 @@
     {
       "batch_id": "P0-arad-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Arad",
       "report": "P0-arad-arebaltapeste-01-report.json",
@@ -150,6 +158,7 @@
     {
       "batch_id": "P0-arad-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Arad",
       "report": "geometry-repair-P0-arad-hotosm-01-report.md",
@@ -165,6 +174,7 @@
     {
       "batch_id": "P0-arges-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Argeș",
       "report": "P0-arges-anpa-romsilva-01-report.json",
@@ -186,6 +196,7 @@
     {
       "batch_id": "P0-arges-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Argeș",
       "report": "P0-arges-arebaltapeste-01.json",
@@ -201,6 +212,7 @@
     {
       "batch_id": "P0-arges-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Argeș",
       "report": "geometry-repair-P0-arges-hotosm-01-report.md",
@@ -221,6 +233,7 @@
     {
       "batch_id": "P0-arges-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Argeș",
       "report": "P0-arges-osm-bulk-01-report.json",
@@ -236,6 +249,7 @@
     {
       "batch_id": "P0-arges-osm-bulk-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Argeș",
       "report": "P0-arges-osm-bulk-02-report.json",
@@ -251,6 +265,7 @@
     {
       "batch_id": "P0-bacau-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "P0-bacau-anpa-romsilva-01-report.json",
@@ -264,6 +279,7 @@
     {
       "batch_id": "P0-bacau-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "P0-bacau-arebaltapeste-01-report.json",
@@ -280,6 +296,7 @@
     {
       "batch_id": "P0-bacau-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "P0-bacau-arebaltapeste-02-report.json",
@@ -296,6 +313,7 @@
     {
       "batch_id": "P0-bacau-arebaltapeste-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "P0-bacau-arebaltapeste-03.report.json",
@@ -311,6 +329,7 @@
     {
       "batch_id": "P0-bacau-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "P0-bacau-hotosm-01-report.json",
@@ -327,6 +346,7 @@
     {
       "batch_id": "P0-bacau-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bacău",
       "report": "geometry-repair-P0-bacau-osm-bulk-01-report.md",
@@ -343,6 +363,7 @@
     {
       "batch_id": "P0-bihor-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bihor",
       "report": "P0-bihor-anpa-romsilva-01-report.json",
@@ -360,6 +381,7 @@
     {
       "batch_id": "P0-bihor-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bihor",
       "report": "geometry-repair-P0-bihor-arebaltapeste-01-report.md",
@@ -376,6 +398,7 @@
     {
       "batch_id": "P0-bihor-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bihor",
       "report": "p0-bihor-arebaltapeste-02-report.json",
@@ -392,6 +415,7 @@
     {
       "batch_id": "P0-bihor-arebaltapeste-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bihor",
       "report": "geometry-repair-P0-bihor-arebaltapeste-03-report.md",
@@ -407,6 +431,7 @@
     {
       "batch_id": "P0-bihor-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bihor",
       "report": "p0-bihor-osm-bulk-01-report.json",
@@ -424,6 +449,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "p0-bistrita-nasaud-anpa-01-report.json",
@@ -438,6 +464,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "P0-bistrita-nasaud-anpa-romsilva-01-report.json",
@@ -452,6 +479,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "P0-bistrita-nasaud-arebaltapeste-01-report.json",
@@ -469,6 +497,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "p0-bistrita-nasaud-arebaltapeste-02-report.json",
@@ -485,6 +514,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "geometry-repair-P0-bistrita-nasaud-hotosm-01-report.json",
@@ -499,6 +529,7 @@
     {
       "batch_id": "P0-bistrita-nasaud-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Bistrița-Năsăud",
       "report": "P0-bistrita-nasaud-osm-bulk-01-report.json",
@@ -516,6 +547,7 @@
     {
       "batch_id": "P0-botosani-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Botoșani",
       "report": "geometry-repair-P0-botosani-anpa-01-report.json",
@@ -532,6 +564,7 @@
     {
       "batch_id": "P0-botosani-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Botoșani",
       "report": "p0-botosani-arebaltapeste-01-report.json",
@@ -547,6 +580,7 @@
     {
       "batch_id": "P0-botosani-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Botoșani",
       "report": "p0-botosani-arebaltapeste-02-report.json",
@@ -562,6 +596,7 @@
     {
       "batch_id": "P0-botosani-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Botoșani",
       "report": "P0-botosani-hotosm-01-report.json",
@@ -576,6 +611,7 @@
     {
       "batch_id": "P0-botosani-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Botoșani",
       "report": "P0-botosani-osm-bulk-01-report.md",
@@ -590,6 +626,7 @@
     {
       "batch_id": "P0-braila-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brăila",
       "report": "geometry-repair-p0-P0-braila-arebaltapeste-01.json",
@@ -605,6 +642,7 @@
     {
       "batch_id": "P0-brasov-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "P0-brasov-anpa-01-report.json",
@@ -621,6 +659,7 @@
     {
       "batch_id": "P0-brasov-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "geometry-repair-P0-brasov-anpa-02.json",
@@ -637,6 +676,7 @@
     {
       "batch_id": "P0-brasov-anpa-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "geometry-repair-P0-brasov-anpa-03.json",
@@ -653,6 +693,7 @@
     {
       "batch_id": "P0-brasov-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "P0-brasov-anpa-romsilva-01-report.json",
@@ -668,6 +709,7 @@
     {
       "batch_id": "P0-brasov-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "P0-brasov-arebaltapeste-01-report.json",
@@ -685,6 +727,7 @@
     {
       "batch_id": "P0-brasov-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "P0-brasov-hotosm-01-report.json",
@@ -700,6 +743,7 @@
     {
       "batch_id": "P0-brasov-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Brașov",
       "report": "geometry-repair-P0-brasov-osm-bulk-01-report.md",
@@ -717,6 +761,7 @@
     {
       "batch_id": "P0-buzau-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Buzău",
       "report": "P0-buzau-anpa-01-report.json",
@@ -730,6 +775,7 @@
     {
       "batch_id": "P0-buzau-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Buzău",
       "report": "P0-buzau-anpa-romsilva-01-report.md",
@@ -744,6 +790,7 @@
     {
       "batch_id": "P0-buzau-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Buzău",
       "report": "P0-buzau-hotosm-01-report.json",
@@ -757,6 +804,7 @@
     {
       "batch_id": "P0-buzau-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Buzău",
       "report": "P0-buzau-osm-bulk-01-report.json",
@@ -772,6 +820,7 @@
     {
       "batch_id": "P0-calarasi-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Călărași",
       "report": "P0-calarasi-anpa-01-report.json",
@@ -788,6 +837,7 @@
     {
       "batch_id": "P0-caras-severin-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-anpa-01-report.json",
@@ -802,6 +852,7 @@
     {
       "batch_id": "P0-caras-severin-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-anpa-romsilva-01.report.json",
@@ -819,6 +870,7 @@
     {
       "batch_id": "P0-caras-severin-anpa-romsilva-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-anpa-romsilva-02.report.json",
@@ -835,6 +887,7 @@
     {
       "batch_id": "P0-caras-severin-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-arebaltapeste-01.report.json",
@@ -852,6 +905,7 @@
     {
       "batch_id": "P0-caras-severin-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-hotosm-01-report.json",
@@ -868,6 +922,7 @@
     {
       "batch_id": "P0-caras-severin-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-hotosm-02-report.json",
@@ -884,6 +939,7 @@
     {
       "batch_id": "P0-caras-severin-hotosm-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-hotosm-03-report.json",
@@ -899,6 +955,7 @@
     {
       "batch_id": "P0-caras-severin-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Caraș-Severin",
       "report": "P0-caras-severin-osm-bulk-01-report.json",
@@ -916,6 +973,7 @@
     {
       "batch_id": "P0-cluj-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-anpa-01-integrity-report.json",
@@ -929,6 +987,7 @@
     {
       "batch_id": "P0-cluj-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-anpa-romsilva-01-report.json",
@@ -946,6 +1005,7 @@
     {
       "batch_id": "P0-cluj-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-arebaltapeste-01-report.json",
@@ -963,6 +1023,7 @@
     {
       "batch_id": "P0-cluj-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-arebaltapeste-02-report.json",
@@ -980,6 +1041,7 @@
     {
       "batch_id": "P0-cluj-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-hotosm-01-report.json",
@@ -996,6 +1058,7 @@
     {
       "batch_id": "P0-cluj-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-hotosm-02-report.json",
@@ -1012,6 +1075,7 @@
     {
       "batch_id": "P0-cluj-hotosm-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-hotosm-03-report.json",
@@ -1027,6 +1091,7 @@
     {
       "batch_id": "P0-cluj-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-osm-bulk-01.report.json",
@@ -1042,6 +1107,7 @@
     {
       "batch_id": "P0-cluj-osm-bulk-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Cluj",
       "report": "P0-cluj-osm-bulk-02-integrity-report.json",
@@ -1057,6 +1123,7 @@
     {
       "batch_id": "P0-constanta-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Constanța",
       "report": "P0-constanta-anpa-01-report.json",
@@ -1070,6 +1137,7 @@
     {
       "batch_id": "P0-covasna-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Covasna",
       "report": "P0-covasna-anpa-01-report.json",
@@ -1086,6 +1154,7 @@
     {
       "batch_id": "P0-covasna-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Covasna",
       "report": "P0-covasna-anpa-romsilva-01-report.json",
@@ -1100,6 +1169,7 @@
     {
       "batch_id": "P0-covasna-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Covasna",
       "report": "P0-covasna-osm-bulk-01-report.json",
@@ -1115,6 +1185,7 @@
     {
       "batch_id": "P0-covasna-osm-bulk-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Covasna",
       "report": "P0-covasna-osm-bulk-02-report.json",
@@ -1130,6 +1201,7 @@
     {
       "batch_id": "P0-dambovita-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dâmbovița",
       "report": "P0-dambovita-anpa-romsilva-01-report.md",
@@ -1143,6 +1215,7 @@
     {
       "batch_id": "P0-dambovita-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dâmbovița",
       "report": "P0-dambovita-arebaltapeste-01-report.md",
@@ -1158,6 +1231,7 @@
     {
       "batch_id": "P0-dambovita-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dâmbovița",
       "report": "P0-dambovita-arebaltapeste-02-report.md",
@@ -1173,6 +1247,7 @@
     {
       "batch_id": "P0-dambovita-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dâmbovița",
       "report": "P0-dambovita-hotosm-01-report.json",
@@ -1190,6 +1265,7 @@
     {
       "batch_id": "P0-dolj-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dolj",
       "report": "P0-dolj-anpa-01-report.json",
@@ -1207,6 +1283,7 @@
     {
       "batch_id": "P0-dolj-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dolj",
       "report": "P0-dolj-anpa-02-report.json",
@@ -1224,6 +1301,7 @@
     {
       "batch_id": "P0-dolj-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dolj",
       "report": "P0-dolj-hotosm-01-report.json",
@@ -1237,6 +1315,7 @@
     {
       "batch_id": "P0-dolj-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Dolj",
       "report": "P0-dolj-osm-bulk-01-report.json",
@@ -1250,6 +1329,7 @@
     {
       "batch_id": "P0-giurgiu-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Giurgiu",
       "report": "geometry-repair-P0-giurgiu-anpa-01.json",
@@ -1265,6 +1345,7 @@
     {
       "batch_id": "P0-gorj-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "P0-gorj-anpa-01-report.json",
@@ -1280,6 +1361,7 @@
     {
       "batch_id": "P0-gorj-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "geometry-repair-P0-gorj-anpa-romsilva-01.json",
@@ -1296,6 +1378,7 @@
     {
       "batch_id": "P0-gorj-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "P0-gorj-arebaltapeste-01.report.json",
@@ -1312,6 +1395,7 @@
     {
       "batch_id": "P0-gorj-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "P0-gorj-arebaltapeste-02-geometry-report.json",
@@ -1328,6 +1412,7 @@
     {
       "batch_id": "P0-gorj-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "P0-gorj-hotosm-01-report.json",
@@ -1343,6 +1428,7 @@
     {
       "batch_id": "P0-gorj-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Gorj",
       "report": "P0-gorj-osm-bulk-01.report.json",
@@ -1356,6 +1442,7 @@
     {
       "batch_id": "P0-harghita-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-anpa-01.report.json",
@@ -1373,6 +1460,7 @@
     {
       "batch_id": "P0-harghita-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-anpa-02.report.json",
@@ -1390,6 +1478,7 @@
     {
       "batch_id": "P0-harghita-anpa-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-anpa-03.report.json",
@@ -1407,6 +1496,7 @@
     {
       "batch_id": "P0-harghita-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-anpa-romsilva-01-report.json",
@@ -1423,6 +1513,7 @@
     {
       "batch_id": "P0-harghita-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "geometry-repair-P0-harghita-arebaltapeste-01-report.md",
@@ -1438,6 +1529,7 @@
     {
       "batch_id": "P0-harghita-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-hotosm-01.report.json",
@@ -1452,6 +1544,7 @@
     {
       "batch_id": "P0-harghita-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Harghita",
       "report": "P0-harghita-osm-bulk-01-report.json",
@@ -1469,6 +1562,7 @@
     {
       "batch_id": "P0-hunedoara-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-anpa-01.report.json",
@@ -1485,6 +1579,7 @@
     {
       "batch_id": "P0-hunedoara-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-anpa-02-report.json",
@@ -1501,6 +1596,7 @@
     {
       "batch_id": "P0-hunedoara-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-anpa-romsilva-01-report.json",
@@ -1517,6 +1613,7 @@
     {
       "batch_id": "P0-hunedoara-anpa-romsilva-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-anpa-romsilva-02-integrity-report.json",
@@ -1533,6 +1630,7 @@
     {
       "batch_id": "P0-hunedoara-anpa-romsilva-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-anpa-romsilva-03-integrity-report.json",
@@ -1549,6 +1647,7 @@
     {
       "batch_id": "P0-hunedoara-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-arebaltapeste-01-report.json",
@@ -1566,6 +1665,7 @@
     {
       "batch_id": "P0-hunedoara-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-arebaltapeste-02.report.json",
@@ -1583,6 +1683,7 @@
     {
       "batch_id": "P0-hunedoara-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-hotosm-01-report.json",
@@ -1600,6 +1701,7 @@
     {
       "batch_id": "P0-hunedoara-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-hotosm-02-report.json",
@@ -1617,6 +1719,7 @@
     {
       "batch_id": "P0-hunedoara-hotosm-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-hotosm-03-report.json",
@@ -1634,6 +1737,7 @@
     {
       "batch_id": "P0-hunedoara-hotosm-04",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "p0-hunedoara-hotosm-04-report.md",
@@ -1650,6 +1754,7 @@
     {
       "batch_id": "P0-hunedoara-hotosm-05",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "P0-hunedoara-hotosm-05-report.json",
@@ -1666,6 +1771,7 @@
     {
       "batch_id": "P0-hunedoara-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "geometry-repair-P0-hunedoara-osm-bulk-01-report.md",
@@ -1682,6 +1788,7 @@
     {
       "batch_id": "P0-hunedoara-osm-bulk-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Hunedoara",
       "report": "geometry-repair-P0-hunedoara-osm-bulk-02-report.md",
@@ -1697,6 +1804,7 @@
     {
       "batch_id": "P0-ialomita-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Ialomița",
       "report": "P0-ialomita-hotosm-01-report.json",
@@ -1712,6 +1820,7 @@
     {
       "batch_id": "P0-iasi-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Iași",
       "report": "P0-iasi-anpa-01-report.json",
@@ -1726,6 +1835,7 @@
     {
       "batch_id": "P0-ilfov-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Ilfov",
       "report": "P0-ilfov-anpa-01.report.json",
@@ -1739,6 +1849,7 @@
     {
       "batch_id": "P0-ilfov-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Ilfov",
       "report": "P0-ilfov-arebaltapeste-01.report.json",
@@ -1753,6 +1864,7 @@
     {
       "batch_id": "P0-maramures-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-anpa-01-report.json",
@@ -1769,6 +1881,7 @@
     {
       "batch_id": "P0-maramures-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-anpa-02-report.json",
@@ -1785,6 +1898,7 @@
     {
       "batch_id": "P0-maramures-anpa-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-anpa-03-report.json",
@@ -1801,6 +1915,7 @@
     {
       "batch_id": "P0-maramures-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-anpa-romsilva-01-report.json",
@@ -1817,6 +1932,7 @@
     {
       "batch_id": "P0-maramures-anpa-romsilva-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-anpa-romsilva-02-report.json",
@@ -1833,6 +1949,7 @@
     {
       "batch_id": "P0-maramures-anpa-romsilva-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "geometry-repair-P0-maramures-anpa-romsilva-03-report.md",
@@ -1848,6 +1965,14 @@
     {
       "batch_id": "P0-maramures-arebaltapeste-01",
       "changed_count": 1,
+      "changed_evidence": [
+        {
+          "change": "removed_geometry",
+          "name": "Bodi",
+          "reason": "The committed polygon was centered at 23.604/47.689 and matched the separate OSM feature Lacul Bodi Ferneziu (way/259276869), while the Bodi source coordinates and bbox are at 23.7726/47.6727. No source-backed Bodi polygon was available; retaining the source bbox fallback avoids drawing a known wrong lake.",
+          "slug": "3idcxbvx"
+        }
+      ],
       "changed_slugs": [
         "3idcxbvx"
       ],
@@ -1864,6 +1989,7 @@
     {
       "batch_id": "P0-maramures-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-hotosm-01-report.json",
@@ -1881,6 +2007,7 @@
     {
       "batch_id": "P0-maramures-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Maramureș",
       "report": "P0-maramures-osm-bulk-01-report.json",
@@ -1894,6 +2021,7 @@
     {
       "batch_id": "P0-mehedinti-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mehedinți",
       "report": "geometry-repair-P0-mehedinti-anpa-romsilva-01-report.md",
@@ -1908,6 +2036,7 @@
     {
       "batch_id": "P0-mehedinti-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mehedinți",
       "report": "P0-mehedinti-hotosm-01-report.json",
@@ -1921,6 +2050,7 @@
     {
       "batch_id": "P0-mures-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "geometry-repair-P0-mures-anpa-01-report.md",
@@ -1937,6 +2067,7 @@
     {
       "batch_id": "P0-mures-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-anpa-02-report.json",
@@ -1953,6 +2084,7 @@
     {
       "batch_id": "P0-mures-anpa-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-anpa-03.report.json",
@@ -1969,6 +2101,7 @@
     {
       "batch_id": "P0-mures-anpa-04",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-anpa-04-report.json",
@@ -1985,6 +2118,7 @@
     {
       "batch_id": "P0-mures-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-anpa-romsilva-01-report.json",
@@ -2002,6 +2136,7 @@
     {
       "batch_id": "P0-mures-anpa-romsilva-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-anpa-romsilva-02.report.json",
@@ -2019,6 +2154,7 @@
     {
       "batch_id": "P0-mures-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-hotosm-01-report.json",
@@ -2032,6 +2168,7 @@
     {
       "batch_id": "P0-mures-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Mureș",
       "report": "P0-mures-osm-bulk-01-report.json",
@@ -2048,6 +2185,7 @@
     {
       "batch_id": "P0-neamt-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Neamț",
       "report": "P0-neamt-anpa-01-report.json",
@@ -2062,6 +2200,7 @@
     {
       "batch_id": "P0-neamt-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Neamț",
       "report": "P0-neamt-anpa-romsilva-01-report.json",
@@ -2079,6 +2218,7 @@
     {
       "batch_id": "P0-neamt-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Neamț",
       "report": "P0-neamt-arebaltapeste-01-report.json",
@@ -2093,6 +2233,7 @@
     {
       "batch_id": "P0-neamt-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Neamț",
       "report": "P0-neamt-hotosm-01.report.json",
@@ -2109,6 +2250,7 @@
     {
       "batch_id": "P0-olt-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Olt",
       "report": "P0-olt-anpa-01.report.json",
@@ -2123,6 +2265,7 @@
     {
       "batch_id": "P0-olt-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Olt",
       "report": "P0-olt-arebaltapeste-01-report.json",
@@ -2137,6 +2280,7 @@
     {
       "batch_id": "P0-olt-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Olt",
       "report": "P0-olt-hotosm-01-report.json",
@@ -2153,6 +2297,7 @@
     {
       "batch_id": "P0-olt-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Olt",
       "report": "P0-olt-hotosm-02-report.json",
@@ -2169,6 +2314,7 @@
     {
       "batch_id": "P0-prahova-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Prahova",
       "report": "P0-prahova-anpa-romsilva-01-report.json",
@@ -2184,6 +2330,7 @@
     {
       "batch_id": "P0-prahova-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Prahova",
       "report": "P0-prahova-arebaltapeste-01.report.json",
@@ -2200,6 +2347,7 @@
     {
       "batch_id": "P0-prahova-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Prahova",
       "report": "P0-prahova-hotosm-01-report.json",
@@ -2214,6 +2362,7 @@
     {
       "batch_id": "P0-prahova-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Prahova",
       "report": "P0-prahova-osm-bulk-01-report.json",
@@ -2228,6 +2377,7 @@
     {
       "batch_id": "P0-salaj-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sălaj",
       "report": "geometry-repair-P0-salaj-anpa-01-report.md",
@@ -2245,6 +2395,7 @@
     {
       "batch_id": "P0-salaj-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sălaj",
       "report": "P0-salaj-anpa-romsilva-01-report.json",
@@ -2258,6 +2409,7 @@
     {
       "batch_id": "P0-salaj-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sălaj",
       "report": "P0-salaj-hotosm-01.report.json",
@@ -2272,6 +2424,7 @@
     {
       "batch_id": "P0-salaj-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sălaj",
       "report": "P0-salaj-osm-bulk-01-report.json",
@@ -2285,6 +2438,7 @@
     {
       "batch_id": "P0-satu-mare-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Satu Mare",
       "report": "geometry-repair-P0-satu-mare-anpa-01-report.md",
@@ -2302,6 +2456,7 @@
     {
       "batch_id": "P0-satu-mare-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Satu Mare",
       "report": "P0-satu-mare-osm-bulk-01-report.md",
@@ -2316,6 +2471,7 @@
     {
       "batch_id": "P0-sibiu-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-anpa-01.report.json",
@@ -2332,6 +2488,7 @@
     {
       "batch_id": "P0-sibiu-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-anpa-romsilva-01.report.json",
@@ -2347,6 +2504,7 @@
     {
       "batch_id": "P0-sibiu-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-arebaltapeste-01.report.md",
@@ -2364,6 +2522,7 @@
     {
       "batch_id": "P0-sibiu-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-arebaltapeste-02-report.json",
@@ -2380,6 +2539,7 @@
     {
       "batch_id": "P0-sibiu-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-hotosm-01.report.json",
@@ -2397,6 +2557,7 @@
     {
       "batch_id": "P0-sibiu-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-hotosm-02-report.md",
@@ -2414,6 +2575,7 @@
     {
       "batch_id": "P0-sibiu-hotosm-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-hotosm-03-report.json",
@@ -2430,6 +2592,7 @@
     {
       "batch_id": "P0-sibiu-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-osm-bulk-01-report.json",
@@ -2446,6 +2609,7 @@
     {
       "batch_id": "P0-sibiu-osm-bulk-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Sibiu",
       "report": "P0-sibiu-osm-bulk-02-report.json",
@@ -2462,6 +2626,7 @@
     {
       "batch_id": "P0-suceava-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Suceava",
       "report": "P0-suceava-anpa-01-report.md",
@@ -2477,6 +2642,7 @@
     {
       "batch_id": "P0-suceava-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Suceava",
       "report": "P0-suceava-anpa-romsilva-01-report.json",
@@ -2494,6 +2660,7 @@
     {
       "batch_id": "P0-suceava-anpa-romsilva-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Suceava",
       "report": "P0-suceava-anpa-romsilva-02-report.md",
@@ -2510,6 +2677,7 @@
     {
       "batch_id": "P0-suceava-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Suceava",
       "report": "P0-suceava-arebaltapeste-01-report.json",
@@ -2523,6 +2691,7 @@
     {
       "batch_id": "P0-suceava-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Suceava",
       "report": "geometry-repair-P0-suceava-osm-bulk-01-report.md",
@@ -2540,6 +2709,7 @@
     {
       "batch_id": "P0-teleorman-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Teleorman",
       "report": "P0-teleorman-anpa-01-report.json",
@@ -2557,6 +2727,7 @@
     {
       "batch_id": "P0-timis-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "geometry-repair-P0-timis-anpa-01-report.md",
@@ -2574,6 +2745,7 @@
     {
       "batch_id": "P0-timis-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "geometry-repair-P0-timis-anpa-02-report.md",
@@ -2591,6 +2763,7 @@
     {
       "batch_id": "P0-timis-anpa-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "P0-timis-anpa-03-report.json",
@@ -2607,6 +2780,7 @@
     {
       "batch_id": "P0-timis-anpa-04",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "geometry-repair-P0-timis-anpa-04-report.md",
@@ -2623,6 +2797,7 @@
     {
       "batch_id": "P0-timis-anpa-05",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "p0-timis-anpa-05-report.json",
@@ -2639,6 +2814,7 @@
     {
       "batch_id": "P0-timis-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "P0-timis-anpa-romsilva-01-report.json",
@@ -2653,6 +2829,7 @@
     {
       "batch_id": "P0-timis-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "P0-timis-arebaltapeste-01-report.json",
@@ -2668,6 +2845,7 @@
     {
       "batch_id": "P0-timis-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "P0-timis-hotosm-01-report.json",
@@ -2682,6 +2860,7 @@
     {
       "batch_id": "P0-timis-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Timiș",
       "report": "P0-timis-osm-bulk-01-report.json",
@@ -2699,6 +2878,7 @@
     {
       "batch_id": "P0-valcea-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-anpa-01-report.json",
@@ -2716,6 +2896,7 @@
     {
       "batch_id": "P0-valcea-anpa-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-anpa-02-geometry-report.json",
@@ -2733,6 +2914,7 @@
     {
       "batch_id": "P0-valcea-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-anpa-romsilva-01.report.json",
@@ -2748,6 +2930,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "geometry-repair-P0-valcea-arebaltapeste-01-report.md",
@@ -2765,6 +2948,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-arebaltapeste-02-report.json",
@@ -2782,6 +2966,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-03",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-arebaltapeste-03.report.json",
@@ -2799,6 +2984,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-04",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "geometry-repair-P0-valcea-arebaltapeste-04-report.md",
@@ -2816,6 +3002,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-05",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-arebaltapeste-05-report.json",
@@ -2833,6 +3020,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-06",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-arebaltapeste-06.report.json",
@@ -2849,6 +3037,7 @@
     {
       "batch_id": "P0-valcea-arebaltapeste-07",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-arebaltapeste-07.report.json",
@@ -2865,6 +3054,7 @@
     {
       "batch_id": "P0-valcea-hotosm-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-hotosm-01-report.json",
@@ -2881,6 +3071,7 @@
     {
       "batch_id": "P0-valcea-hotosm-02",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-hotosm-02-report.md",
@@ -2897,6 +3088,7 @@
     {
       "batch_id": "P0-valcea-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vâlcea",
       "report": "P0-valcea-osm-bulk-01-report.json",
@@ -2914,11 +3106,12 @@
     {
       "batch_id": "P0-vaslui-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vaslui",
-      "report": null,
+      "report": "P0-vaslui-anpa-01-report.json",
       "source_type": "anpa",
-      "state": "missing",
+      "state": "no-op",
       "target_count": 3,
       "target_slugs": [
         "anpa-anpa-0621",
@@ -2929,6 +3122,7 @@
     {
       "batch_id": "P0-vaslui-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vaslui",
       "report": "P0-vaslui-osm-bulk-01-report.json",
@@ -2942,6 +3136,7 @@
     {
       "batch_id": "P0-vrancea-anpa-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vrancea",
       "report": "P0-vrancea-anpa-01-report.json",
@@ -2959,6 +3154,7 @@
     {
       "batch_id": "P0-vrancea-anpa-romsilva-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vrancea",
       "report": "P0-vrancea-anpa-romsilva-01-report.json",
@@ -2973,6 +3169,7 @@
     {
       "batch_id": "P0-vrancea-osm-bulk-01",
       "changed_count": 0,
+      "changed_evidence": [],
       "changed_slugs": [],
       "county": "Vrancea",
       "report": "P0-vrancea-osm-bulk-01-report.json",
@@ -3019,35 +3216,60 @@
       "filenames": [
         "P0-cluj-anpa-01-integrity-report.json",
         "P0-cluj-anpa-01-report.md"
-      ]
+      ],
+      "ignored_companions": [
+        "P0-cluj-anpa-01-report.md"
+      ],
+      "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report",
+      "selected_report": "P0-cluj-anpa-01-integrity-report.json"
     },
     {
       "batch_id": "P0-cluj-osm-bulk-02",
       "filenames": [
         "P0-cluj-osm-bulk-02-integrity-report.json",
         "P0-cluj-osm-bulk-02-report.json"
-      ]
+      ],
+      "ignored_companions": [
+        "P0-cluj-osm-bulk-02-report.json"
+      ],
+      "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report",
+      "selected_report": "P0-cluj-osm-bulk-02-integrity-report.json"
     },
     {
       "batch_id": "P0-gorj-arebaltapeste-02",
       "filenames": [
         "P0-gorj-arebaltapeste-02-geometry-report.json",
         "P0-gorj-arebaltapeste-02-report.json"
-      ]
+      ],
+      "ignored_companions": [
+        "P0-gorj-arebaltapeste-02-report.json"
+      ],
+      "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report",
+      "selected_report": "P0-gorj-arebaltapeste-02-geometry-report.json"
     },
     {
       "batch_id": "P0-hunedoara-anpa-romsilva-02",
       "filenames": [
         "P0-hunedoara-anpa-romsilva-02-integrity-report.json",
         "P0-hunedoara-anpa-romsilva-02-report.json"
-      ]
+      ],
+      "ignored_companions": [
+        "P0-hunedoara-anpa-romsilva-02-report.json"
+      ],
+      "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report",
+      "selected_report": "P0-hunedoara-anpa-romsilva-02-integrity-report.json"
     },
     {
       "batch_id": "P0-hunedoara-anpa-romsilva-03",
       "filenames": [
         "P0-hunedoara-anpa-romsilva-03-integrity-report.json",
         "P0-hunedoara-anpa-romsilva-03-report.json"
-      ]
+      ],
+      "ignored_companions": [
+        "P0-hunedoara-anpa-romsilva-03-report.json"
+      ],
+      "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report",
+      "selected_report": "P0-hunedoara-anpa-romsilva-03-integrity-report.json"
     }
   ],
   "external_actions": {
@@ -3066,6 +3288,8 @@
   "git": {
     "branch": "local/geometry-batches",
     "commits": [
+      "ba20b188634b5f44afe0f5fbd11a4bf77e73e7ab qa: reconcile local geometry aggregate anomalies",
+      "df1f03535c32f1882594e8acb9586903a4a192ea qa: aggregate local geometry batch release ledger",
       "9600a1fe268f96284fe3ae86b2b52f92da1bae7d feat(seo): migrate canonical URLs to unde-pescuim.ro",
       "bfbe7e9cff2f1cd2af573634778f5d0e4ccf31ad qa: record custom-domain live verification",
       "316d64a8f6e982f3a621ad89a190a5925a7518a6 chore(data): verify Botosani osm geometry batch",
@@ -3093,19 +3317,13 @@
       "04c94f18372e7c23a4d961aa3b2862d16cab5c23 docs: publish integrated mobile test report",
       "4ac4f84cf017fdfaf17062faaf688f14a164819e docs: record mobile performance matrix evidence",
       "a9c977cd0b5ac043b7ade974d65bd732aeb6e922 test: stabilize mobile offline matrix evidence",
-      "70aeee0911b6ac5c9cbfb226d767275bb7abedf0 docs: record repository verification results",
-      "ad5ae02df05291c51c321bbafc01a497a2d5df72 fix: restore Ialomita multipart geometry",
-      "df6f9006846a73b0647b5da508f08ba3ce85b2ad test: add repair record pipeline integration coverage"
+      "70aeee0911b6ac5c9cbfb226d767275bb7abedf0 docs: record repository verification results"
     ],
-    "head": "9600a1fe268f96284fe3ae86b2b52f92da1bae7d",
-    "worktree": "## local/geometry-batches\n?? .hermes/\n?? .local-work/.geometry-batch-dispatcher.lock\n?? .local-work/P0-alba-anpa-01-report.json\n?? .local-work/P0-alba-arebaltapeste-01-report.md\n?? .local-work/P0-alba-osm-bulk-01-report.json\n?? .local-work/P0-arad-anpa-romsilva-01-report.json\n?? .local-work/P0-arad-arebaltapeste-01-report.json\n?? .local-work/P0-arges-anpa-romsilva-01-report.json\n?? .local-work/P0-arges-arebaltapeste-01.json\n?? .local-work/P0-arges-osm-bulk-01-report.json\n?? .local-work/P0-arges-osm-bulk-02-report.json\n?? .local-work/P0-bacau-anpa-romsilva-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-02-report.json\n?? .local-work/P0-bacau-arebaltapeste-03.report.json\n?? .local-work/P0-bacau-hotosm-01-report.json\n?? .local-work/P0-bihor-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-arebaltapeste-01-report.json\n?? .local-work/P0-bistrita-nasaud-osm-bulk-01-report.json\n?? .local-work/P0-botosani-hotosm-01-report.json\n?? .local-work/P0-brasov-anpa-01-report.json\n?? .local-work/P0-brasov-anpa-romsilva-01-report.json\n?? .local-work/P0-brasov-arebaltapeste-01-report.json\n?? .local-work/P0-brasov-hotosm-01-report.json\n?? .local-work/P0-buzau-anpa-01-report.json\n?? .local-work/P0-buzau-anpa-romsilva-01-record-check.json\n?? .local-work/P0-buzau-anpa-romsilva-01-report.md\n?? .local-work/P0-buzau-hotosm-01-report.json\n?? .local-work/P0-buzau-osm-bulk-01-report.json\n?? .local-work/P0-calarasi-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-01.report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-02.report.json\n?? .local-work/P0-caras-severin-arebaltapeste-01.report.json\n?? .local-work/P0-caras-severin-hotosm-01-report.json\n?? .local-work/P0-caras-severin-hotosm-02-report.json\n?? .local-work/P0-caras-severin-hotosm-03-report.json\n?? .local-work/P0-caras-severin-osm-bulk-01-report.json\n?? .local-work/P0-cluj-anpa-01-integrity-report.json\n?? .local-work/P0-cluj-anpa-01-report.md\n?? .local-work/P0-cluj-anpa-romsilva-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-02-report.json\n?? .local-work/P0-cluj-hotosm-01-report.json\n?? .local-work/P0-cluj-hotosm-02-report.json\n?? .local-work/P0-cluj-hotosm-03-report.json\n?? .local-work/P0-cluj-osm-bulk-01.report.json\n?? .local-work/P0-cluj-osm-bulk-02-integrity-report.json\n?? .local-work/P0-cluj-osm-bulk-02-report.json\n?? .local-work/P0-constanta-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-romsilva-01-report.json\n?? .local-work/P0-covasna-osm-bulk-01-report.json\n?? .local-work/P0-covasna-osm-bulk-02-report.json\n?? .local-work/P0-dambovita-anpa-romsilva-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-02-report.md\n?? .local-work/P0-dambovita-hotosm-01-report.json\n?? .local-work/P0-dolj-anpa-01-report.json\n?? .local-work/P0-dolj-anpa-02-report.json\n?? .local-work/P0-dolj-hotosm-01-report.json\n?? .local-work/P0-dolj-osm-bulk-01-report.json\n?? .local-work/P0-gorj-anpa-01-report.json\n?? .local-work/P0-gorj-arebaltapeste-01.report.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-flags.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-report.json\n?? .local-work/P0-gorj-arebaltapeste-02-report.json\n?? .local-work/P0-gorj-hotosm-01-report.json\n?? .local-work/P0-gorj-osm-bulk-01.report.json\n?? .local-work/P0-harghita-anpa-01.report.json\n?? .local-work/P0-harghita-anpa-02.report.json\n?? .local-work/P0-harghita-anpa-03.report.json\n?? .local-work/P0-harghita-anpa-romsilva-01-report.json\n?? .local-work/P0-harghita-hotosm-01.report.json\n?? .local-work/P0-harghita-osm-bulk-01-report.json\n?? .local-work/P0-hunedoara-anpa-01.report.json\n?? .local-work/P0-hunedoara-anpa-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-01-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-county.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-flags.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-01-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-02.report.json\n?? .local-work/P0-hunedoara-hotosm-01-report.json\n?? .local-work/P0-hunedoara-hotosm-02-report.json\n?? .local-work/P0-hunedoara-hotosm-03-report.json\n?? .local-work/P0-hunedoara-hotosm-05-report.json\n?? .local-work/P0-ialomita-hotosm-01-report.json\n?? .local-work/P0-iasi-anpa-01-report.json\n?? .local-work/P0-ilfov-anpa-01.report.json\n?? .local-work/P0-ilfov-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-anpa-01-report.json\n?? .local-work/P0-maramures-anpa-02-report.json\n?? .local-work/P0-maramures-anpa-03-report.json\n?? .local-work/P0-maramures-anpa-romsilva-01-report.json\n?? .local-work/P0-maramures-anpa-romsilva-02-report.json\n?? .local-work/P0-maramures-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-hotosm-01-report.json\n?? .local-work/P0-maramures-osm-bulk-01-report.json\n?? .local-work/P0-mehedinti-hotosm-01-report.json\n?? .local-work/P0-mures-anpa-02-report.json\n?? .local-work/P0-mures-anpa-03.report.json\n?? .local-work/P0-mures-anpa-04-report.json\n?? .local-work/P0-mures-anpa-romsilva-01-county.json\n?? .local-work/P0-mures-anpa-romsilva-01-integrity.json\n?? .local-work/P0-mures-anpa-romsilva-01-report.json\n?? .local-work/P0-mures-anpa-romsilva-02.report.json\n?? .local-work/P0-mures-hotosm-01-report.json\n?? .local-work/P0-mures-osm-bulk-01-report.json\n?? .local-work/P0-neamt-anpa-01-report.json\n?? .local-work/P0-neamt-anpa-romsilva-01-report.json\n?? .local-work/P0-neamt-arebaltapeste-01-report.json\n?? .local-work/P0-neamt-hotosm-01.report.json\n?? .local-work/P0-olt-anpa-01.report.json\n?? .local-work/P0-olt-arebaltapeste-01-report.json\n?? .local-work/P0-olt-hotosm-01-report.json\n?? .local-work/P0-olt-hotosm-02-report.json\n?? .local-work/P0-prahova-anpa-romsilva-01-report.json\n?? .local-work/P0-prahova-arebaltapeste-01.report.json\n?? .local-work/P0-prahova-hotosm-01-report.json\n?? .local-work/P0-prahova-osm-bulk-01-report.json\n?? .local-work/P0-salaj-anpa-romsilva-01-report.json\n?? .local-work/P0-salaj-hotosm-01.report.json\n?? .local-work/P0-salaj-osm-bulk-01-report.json\n?? .local-work/P0-satu-mare-osm-bulk-01-report.md\n?? .local-work/P0-sibiu-anpa-01.report.json\n?? .local-work/P0-sibiu-anpa-romsilva-01.report.json\n?? .local-work/P0-sibiu-arebaltapeste-01.report.md\n?? .local-work/P0-sibiu-arebaltapeste-02-report.json\n?? .local-work/P0-sibiu-hotosm-01.report.json\n?? .local-work/P0-sibiu-hotosm-02-report.md\n?? .local-work/P0-sibiu-hotosm-03-report.json\n?? .local-work/P0-sibiu-osm-bulk-01-report.json\n?? .local-work/P0-sibiu-osm-bulk-02-report.json\n?? .local-work/P0-suceava-anpa-01-report.md\n?? .local-work/P0-suceava-anpa-romsilva-01-report.json\n?? .local-work/P0-suceava-anpa-romsilva-02-report.md\n?? .local-work/P0-suceava-arebaltapeste-01-report.json\n?? .local-work/P0-teleorman-anpa-01-report.json\n?? .local-work/P0-timis-anpa-03-report.json\n?? .local-work/P0-timis-anpa-romsilva-01-report.json\n?? .local-work/P0-timis-arebaltapeste-01-report.json\n?? .local-work/P0-timis-hotosm-01-report.json\n?? .local-work/P0-timis-osm-bulk-01-report.json\n?? .local-work/P0-valcea-anpa-01-report.json\n?? .local-work/P0-valcea-anpa-02-geometry-report.json\n?? .local-work/P0-valcea-anpa-romsilva-01.report.json\n?? .local-work/P0-valcea-arebaltapeste-02-report.json\n?? .local-work/P0-valcea-arebaltapeste-03.report.json\n?? .local-work/P0-valcea-arebaltapeste-05-report.json\n?? .local-work/P0-valcea-arebaltapeste-06.report.json\n?? .local-work/P0-valcea-arebaltapeste-07.report.json\n?? .local-work/P0-valcea-hotosm-01-report.json\n?? .local-work/P0-valcea-hotosm-02-report.md\n?? .local-work/P0-valcea-osm-bulk-01-report.json\n?? .local-work/P0-vaslui-osm-bulk-01-report.json\n?? .local-work/P0-vrancea-anpa-01-report.json\n?? .local-work/P0-vrancea-anpa-romsilva-01-report.json\n?? .local-work/P0-vrancea-osm-bulk-01-report.json\n?? .local-work/README.md\n?? .local-work/geometry-final-aggregate-test.py\n?? .local-work/geometry-final-aggregate.json\n?? .local-work/geometry-final-aggregate.md\n?? .local-work/geometry-final-aggregate.py\n?? .local-work/geometry-repair-P0-alba-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arad-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arges-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-bacau-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-03-report.md\n?? .local-work/geometry-repair-P0-bistrita-nasaud-hotosm-01-report.json\n?? .local-work/geometry-repair-P0-botosani-anpa-01-report.json\n?? .local-work/geometry-repair-P0-brasov-anpa-02.json\n?? .local-work/geometry-repair-P0-brasov-anpa-03.json\n?? .local-work/geometry-repair-P0-brasov-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-giurgiu-anpa-01.json\n?? .local-work/geometry-repair-P0-gorj-anpa-romsilva-01.json\n?? .local-work/geometry-repair-P0-harghita-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-02-report.md\n?? .local-work/geometry-repair-P0-maramures-anpa-romsilva-03-report.md\n?? .local-work/geometry-repair-P0-mehedinti-anpa-romsilva-01-report.md\n?? .local-work/geometry-repair-P0-mures-anpa-01-report.md\n?? .local-work/geometry-repair-P0-salaj-anpa-01-report.md\n?? .local-work/geometry-repair-P0-satu-mare-anpa-01-report.md\n?? .local-work/geometry-repair-P0-suceava-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-02-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-04-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-04-report.md\n?? .local-work/geometry-repair-p0-P0-braila-arebaltapeste-01.json\n?? .local-work/geometry-repair-p0-batches.json\n?? .local-work/geometry-repair-p0-inventory.json\n?? .local-work/geometry-repair-p0-report.md\n?? .local-work/geometry-repair-p0-vaslui-anpa-01.json\n?? .local-work/p0-bihor-arebaltapeste-02-report.json\n?? .local-work/p0-bihor-osm-bulk-01-report.json\n?? .local-work/p0-bistrita-nasaud-anpa-01-report.json\n?? .local-work/p0-bistrita-nasaud-arebaltapeste-02-report.json\n?? .local-work/p0-botosani-arebaltapeste-01-report.json\n?? .local-work/p0-botosani-arebaltapeste-02-report.json\n?? .local-work/p0-hunedoara-hotosm-04-integrity.json\n?? .local-work/p0-hunedoara-hotosm-04-report.md\n?? .local-work/p0-maramures-hotosm-county-flags.json\n?? .local-work/p0-maramures-hotosm-county.json\n?? .local-work/p0-maramures-hotosm-integrity.json\n?? .local-work/p0-timis-anpa-05-integrity.json\n?? .local-work/p0-timis-anpa-05-report.json\n?? .local-work/rebuild_geometry_repair_p0_manifest.py\n?? .local-work/rebuild_unresolved_geometry_inventory.py\n?? .local-work/test_geometry_repair_p0_manifest.py\n?? .local-work/test_unresolved_geometry_inventory.py\n?? .local-work/unresolved-geometry-batches.json\n?? .local-work/unresolved-geometry-inventory.json\n?? .local-work/unresolved-geometry-report.md\n?? batches/\n?? src/lib/vercel-seo-config.test.ts"
+    "head": "ba20b188634b5f44afe0f5fbd11a4bf77e73e7ab",
+    "worktree": "## local/geometry-batches\n M .local-work/geometry-final-aggregate.json\n M .local-work/geometry-final-aggregate.md\n?? .hermes/\n?? .local-work/.geometry-batch-dispatcher.lock\n?? .local-work/P0-alba-anpa-01-report.json\n?? .local-work/P0-alba-arebaltapeste-01-report.md\n?? .local-work/P0-alba-osm-bulk-01-report.json\n?? .local-work/P0-arad-anpa-romsilva-01-report.json\n?? .local-work/P0-arad-arebaltapeste-01-report.json\n?? .local-work/P0-arges-anpa-romsilva-01-report.json\n?? .local-work/P0-arges-arebaltapeste-01.json\n?? .local-work/P0-arges-osm-bulk-01-report.json\n?? .local-work/P0-arges-osm-bulk-02-report.json\n?? .local-work/P0-bacau-anpa-romsilva-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-02-report.json\n?? .local-work/P0-bacau-arebaltapeste-03.report.json\n?? .local-work/P0-bacau-hotosm-01-report.json\n?? .local-work/P0-bihor-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-arebaltapeste-01-report.json\n?? .local-work/P0-bistrita-nasaud-osm-bulk-01-report.json\n?? .local-work/P0-botosani-hotosm-01-report.json\n?? .local-work/P0-brasov-anpa-01-report.json\n?? .local-work/P0-brasov-anpa-romsilva-01-report.json\n?? .local-work/P0-brasov-arebaltapeste-01-report.json\n?? .local-work/P0-brasov-hotosm-01-report.json\n?? .local-work/P0-buzau-anpa-01-report.json\n?? .local-work/P0-buzau-anpa-romsilva-01-record-check.json\n?? .local-work/P0-buzau-anpa-romsilva-01-report.md\n?? .local-work/P0-buzau-hotosm-01-report.json\n?? .local-work/P0-buzau-osm-bulk-01-report.json\n?? .local-work/P0-calarasi-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-01.report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-02.report.json\n?? .local-work/P0-caras-severin-arebaltapeste-01.report.json\n?? .local-work/P0-caras-severin-hotosm-01-report.json\n?? .local-work/P0-caras-severin-hotosm-02-report.json\n?? .local-work/P0-caras-severin-hotosm-03-report.json\n?? .local-work/P0-caras-severin-osm-bulk-01-report.json\n?? .local-work/P0-cluj-anpa-01-integrity-report.json\n?? .local-work/P0-cluj-anpa-01-report.md\n?? .local-work/P0-cluj-anpa-romsilva-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-02-report.json\n?? .local-work/P0-cluj-hotosm-01-report.json\n?? .local-work/P0-cluj-hotosm-02-report.json\n?? .local-work/P0-cluj-hotosm-03-report.json\n?? .local-work/P0-cluj-osm-bulk-01.report.json\n?? .local-work/P0-cluj-osm-bulk-02-integrity-report.json\n?? .local-work/P0-cluj-osm-bulk-02-report.json\n?? .local-work/P0-constanta-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-romsilva-01-report.json\n?? .local-work/P0-covasna-osm-bulk-01-report.json\n?? .local-work/P0-covasna-osm-bulk-02-report.json\n?? .local-work/P0-dambovita-anpa-romsilva-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-02-report.md\n?? .local-work/P0-dambovita-hotosm-01-report.json\n?? .local-work/P0-dolj-anpa-01-report.json\n?? .local-work/P0-dolj-anpa-02-report.json\n?? .local-work/P0-dolj-hotosm-01-report.json\n?? .local-work/P0-dolj-osm-bulk-01-report.json\n?? .local-work/P0-gorj-anpa-01-report.json\n?? .local-work/P0-gorj-arebaltapeste-01.report.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-flags.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-report.json\n?? .local-work/P0-gorj-arebaltapeste-02-report.json\n?? .local-work/P0-gorj-hotosm-01-report.json\n?? .local-work/P0-gorj-osm-bulk-01.report.json\n?? .local-work/P0-harghita-anpa-01.report.json\n?? .local-work/P0-harghita-anpa-02.report.json\n?? .local-work/P0-harghita-anpa-03.report.json\n?? .local-work/P0-harghita-anpa-romsilva-01-report.json\n?? .local-work/P0-harghita-hotosm-01.report.json\n?? .local-work/P0-harghita-osm-bulk-01-report.json\n?? .local-work/P0-hunedoara-anpa-01.report.json\n?? .local-work/P0-hunedoara-anpa-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-01-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-county.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-flags.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-01-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-02.report.json\n?? .local-work/P0-hunedoara-hotosm-01-report.json\n?? .local-work/P0-hunedoara-hotosm-02-report.json\n?? .local-work/P0-hunedoara-hotosm-03-report.json\n?? .local-work/P0-hunedoara-hotosm-05-report.json\n?? .local-work/P0-ialomita-hotosm-01-report.json\n?? .local-work/P0-iasi-anpa-01-report.json\n?? .local-work/P0-ilfov-anpa-01.report.json\n?? .local-work/P0-ilfov-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-anpa-01-report.json\n?? .local-work/P0-maramures-anpa-02-report.json\n?? .local-work/P0-maramures-anpa-03-report.json\n?? .local-work/P0-maramures-anpa-romsilva-01-report.json\n?? .local-work/P0-maramures-anpa-romsilva-02-report.json\n?? .local-work/P0-maramures-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-hotosm-01-report.json\n?? .local-work/P0-maramures-osm-bulk-01-report.json\n?? .local-work/P0-mehedinti-hotosm-01-report.json\n?? .local-work/P0-mures-anpa-02-report.json\n?? .local-work/P0-mures-anpa-03.report.json\n?? .local-work/P0-mures-anpa-04-report.json\n?? .local-work/P0-mures-anpa-romsilva-01-county.json\n?? .local-work/P0-mures-anpa-romsilva-01-integrity.json\n?? .local-work/P0-mures-anpa-romsilva-01-report.json\n?? .local-work/P0-mures-anpa-romsilva-02.report.json\n?? .local-work/P0-mures-hotosm-01-report.json\n?? .local-work/P0-mures-osm-bulk-01-report.json\n?? .local-work/P0-neamt-anpa-01-report.json\n?? .local-work/P0-neamt-anpa-romsilva-01-report.json\n?? .local-work/P0-neamt-arebaltapeste-01-report.json\n?? .local-work/P0-neamt-hotosm-01.report.json\n?? .local-work/P0-olt-anpa-01.report.json\n?? .local-work/P0-olt-arebaltapeste-01-report.json\n?? .local-work/P0-olt-hotosm-01-report.json\n?? .local-work/P0-olt-hotosm-02-report.json\n?? .local-work/P0-prahova-anpa-romsilva-01-report.json\n?? .local-work/P0-prahova-arebaltapeste-01.report.json\n?? .local-work/P0-prahova-hotosm-01-report.json\n?? .local-work/P0-prahova-osm-bulk-01-report.json\n?? .local-work/P0-salaj-anpa-romsilva-01-report.json\n?? .local-work/P0-salaj-hotosm-01.report.json\n?? .local-work/P0-salaj-osm-bulk-01-report.json\n?? .local-work/P0-satu-mare-osm-bulk-01-report.md\n?? .local-work/P0-sibiu-anpa-01.report.json\n?? .local-work/P0-sibiu-anpa-romsilva-01.report.json\n?? .local-work/P0-sibiu-arebaltapeste-01.report.md\n?? .local-work/P0-sibiu-arebaltapeste-02-report.json\n?? .local-work/P0-sibiu-hotosm-01.report.json\n?? .local-work/P0-sibiu-hotosm-02-report.md\n?? .local-work/P0-sibiu-hotosm-03-report.json\n?? .local-work/P0-sibiu-osm-bulk-01-report.json\n?? .local-work/P0-sibiu-osm-bulk-02-report.json\n?? .local-work/P0-suceava-anpa-01-report.md\n?? .local-work/P0-suceava-anpa-romsilva-01-report.json\n?? .local-work/P0-suceava-anpa-romsilva-02-report.md\n?? .local-work/P0-suceava-arebaltapeste-01-report.json\n?? .local-work/P0-teleorman-anpa-01-report.json\n?? .local-work/P0-timis-anpa-03-report.json\n?? .local-work/P0-timis-anpa-romsilva-01-report.json\n?? .local-work/P0-timis-arebaltapeste-01-report.json\n?? .local-work/P0-timis-hotosm-01-report.json\n?? .local-work/P0-timis-osm-bulk-01-report.json\n?? .local-work/P0-valcea-anpa-01-report.json\n?? .local-work/P0-valcea-anpa-02-geometry-report.json\n?? .local-work/P0-valcea-anpa-romsilva-01.report.json\n?? .local-work/P0-valcea-arebaltapeste-02-report.json\n?? .local-work/P0-valcea-arebaltapeste-03.report.json\n?? .local-work/P0-valcea-arebaltapeste-05-report.json\n?? .local-work/P0-valcea-arebaltapeste-06.report.json\n?? .local-work/P0-valcea-arebaltapeste-07.report.json\n?? .local-work/P0-valcea-hotosm-01-report.json\n?? .local-work/P0-valcea-hotosm-02-report.md\n?? .local-work/P0-valcea-osm-bulk-01-report.json\n?? .local-work/P0-vaslui-osm-bulk-01-report.json\n?? .local-work/P0-vrancea-anpa-01-report.json\n?? .local-work/P0-vrancea-anpa-romsilva-01-report.json\n?? .local-work/P0-vrancea-osm-bulk-01-report.json\n?? .local-work/README.md\n?? .local-work/geometry-repair-P0-alba-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arad-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arges-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-bacau-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-03-report.md\n?? .local-work/geometry-repair-P0-bistrita-nasaud-hotosm-01-report.json\n?? .local-work/geometry-repair-P0-botosani-anpa-01-report.json\n?? .local-work/geometry-repair-P0-brasov-anpa-02.json\n?? .local-work/geometry-repair-P0-brasov-anpa-03.json\n?? .local-work/geometry-repair-P0-brasov-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-giurgiu-anpa-01.json\n?? .local-work/geometry-repair-P0-gorj-anpa-romsilva-01.json\n?? .local-work/geometry-repair-P0-harghita-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-02-report.md\n?? .local-work/geometry-repair-P0-maramures-anpa-romsilva-03-report.md\n?? .local-work/geometry-repair-P0-mehedinti-anpa-romsilva-01-report.md\n?? .local-work/geometry-repair-P0-mures-anpa-01-report.md\n?? .local-work/geometry-repair-P0-salaj-anpa-01-report.md\n?? .local-work/geometry-repair-P0-satu-mare-anpa-01-report.md\n?? .local-work/geometry-repair-P0-suceava-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-02-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-04-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-04-report.md\n?? .local-work/geometry-repair-p0-P0-braila-arebaltapeste-01.json\n?? .local-work/geometry-repair-p0-batches.json\n?? .local-work/geometry-repair-p0-inventory.json\n?? .local-work/geometry-repair-p0-report.md\n?? .local-work/geometry-repair-p0-vaslui-anpa-01.json\n?? .local-work/p0-bihor-arebaltapeste-02-report.json\n?? .local-work/p0-bihor-osm-bulk-01-report.json\n?? .local-work/p0-bistrita-nasaud-anpa-01-report.json\n?? .local-work/p0-bistrita-nasaud-arebaltapeste-02-report.json\n?? .local-work/p0-botosani-arebaltapeste-01-report.json\n?? .local-work/p0-botosani-arebaltapeste-02-report.json\n?? .local-work/p0-hunedoara-hotosm-04-integrity.json\n?? .local-work/p0-hunedoara-hotosm-04-report.md\n?? .local-work/p0-maramures-hotosm-county-flags.json\n?? .local-work/p0-maramures-hotosm-county.json\n?? .local-work/p0-maramures-hotosm-integrity.json\n?? .local-work/p0-timis-anpa-05-integrity.json\n?? .local-work/p0-timis-anpa-05-report.json\n?? .local-work/rebuild_geometry_repair_p0_manifest.py\n?? .local-work/rebuild_unresolved_geometry_inventory.py\n?? .local-work/test_geometry_repair_p0_manifest.py\n?? .local-work/test_unresolved_geometry_inventory.py\n?? .local-work/unresolved-geometry-batches.json\n?? .local-work/unresolved-geometry-inventory.json\n?? .local-work/unresolved-geometry-report.md\n?? batches/\n?? src/lib/vercel-seo-config.test.ts"
   },
   "malformed_reports": [],
-  "missing_reports": [
-    "P0-alba-anpa-romsilva-01",
-    "P0-arad-anpa-01",
-    "P0-vaslui-anpa-01"
-  ],
+  "missing_reports": [],
   "preview": {
     "status": "READY (Vercel CLI observed locally)",
     "url": "https://undepescuim-geofabrik-preview-gpin6wu2h-stefan-a190.vercel.app",
@@ -3114,8 +3332,7 @@
   "report_counts": {
     "changed": 1,
     "completed": 40,
-    "missing": 3,
-    "no-op": 146
+    "no-op": 149
   },
   "schema_version": 1,
   "scope": {

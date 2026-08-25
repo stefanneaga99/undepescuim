@@ -2,7 +2,7 @@
 
 ## Scope
 - Batches: **190**; Class-1 target coverage: **701**; unresolved Classes 2–6: **312**.
-- Reports: completed=40, no-op=146, changed=1, blocked=0, missing=3.
+- Reports: completed=40, no-op=149, changed=1, blocked=0, missing=0.
 - Changed records: **1**; slugs: 3idcxbvx.
 
 ## Canonical safety
@@ -24,7 +24,7 @@
 - Class 6: 118 — `/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-inventory.json`
 
 ## Local git
-- Branch: `local/geometry-batches`; HEAD: `9600a1fe268f96284fe3ae86b2b52f92da1bae7d`
+- Branch: `local/geometry-batches`; HEAD: `ba20b188634b5f44afe0f5fbd11a4bf77e73e7ab`
 - Worktree status captured in JSON; local commit list is captured there.
 
 ## External actions
@@ -32,4 +32,4 @@
 
 ## Report integrity
 - Duplicate report groups detected: 5; these are listed in JSON and were not silently counted twice.
-- Malformed reports: 0; missing reports: 3.
+- Malformed reports: 0; missing reports: 0.

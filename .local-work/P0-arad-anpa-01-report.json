@@ -1,0 +1,53 @@
+{
+  "batch_id": "P0-arad-anpa-01",
+  "county": "Arad",
+  "source_type": "anpa",
+  "target_slugs": [
+    "anpa-anpa-0034",
+    "anpa-anpa-0035"
+  ],
+  "record_count": 2,
+  "status": "completed_noop",
+  "changed_slugs": [],
+  "unchanged_slugs": [
+    "anpa-anpa-0034",
+    "anpa-anpa-0035"
+  ],
+  "source_locks": {
+    "passed": true,
+    "inventory": "data/processed/traceability_report.json",
+    "county": "Arad",
+    "source_type": "anpa"
+  },
+  "records": [
+    {
+      "slug": "anpa-anpa-0034",
+      "name": "Lac Mortărel",
+      "geometry_sha256": "3768c6684dfb058c455776d6fcfa0513613e90448b184bcfc2d72d219661ada4",
+      "geometry_present": true,
+      "source": "anpa",
+      "source_row": 99,
+      "county": "Arad",
+      "subtype": "lac"
+    },
+    {
+      "slug": "anpa-anpa-0035",
+      "name": "Lac Hortop",
+      "geometry_sha256": "4d8c5f28e40fb3866852c02d932a37ced8777145ba55de9176920e19dbb772e2",
+      "geometry_present": true,
+      "source": "anpa",
+      "source_row": 100,
+      "county": "Arad",
+      "subtype": "lac"
+    }
+  ],
+  "canonical_geometry_mutation": false,
+  "verification": {
+    "target_semantic_diff": "PASS: no target records changed",
+    "canonical_serialization": "PASS",
+    "integrity": "PASS: 0 violations",
+    "push": "forbidden by task; not attempted",
+    "production_promotion": "forbidden by task; not attempted"
+  },
+  "evidence_generation": "regenerated locally from current canonical records and traceability; read-only"
+}

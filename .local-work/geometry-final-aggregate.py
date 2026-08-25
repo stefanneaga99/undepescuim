@@ -87,6 +87,24 @@ def changed_slugs(doc: Any, expected: list[str]) -> list[str]:
     return sorted(result.intersection(expected))
 
 
+def changed_evidence(doc: Any | None, expected: list[str]) -> list[dict[str, Any]]:
+    """Retain the record-level explanation for every changed target."""
+    if not isinstance(doc, dict):
+        return []
+    evidence = []
+    for key, value in walk(doc):
+        if not key.endswith("[].slug") or not isinstance(value, str) or value not in expected:
+            continue
+        prefix = key[:-len(".slug")]
+        row = {}
+        for sibling_key, sibling_value in walk(doc):
+            if sibling_key.startswith(prefix + "."):
+                row[sibling_key[len(prefix) + 1:]] = sibling_value
+        if row.get("change") or row.get("reason"):
+            evidence.append(row)
+    return evidence
+
+
 def status_for(doc: Any | None, error: str | None, batch: dict[str, Any]) -> tuple[str, int, list[str]]:
     if error:
         return "blocked", 0, []
@@ -126,7 +144,7 @@ def build() -> dict[str, Any]:
     for batch in manifest["batches"]:
         found = candidates(batch["id"], files)
         if len(found) > 1:
-            duplicate_reports.append({"batch_id": batch["id"], "filenames": [p.name for p in found]})
+            duplicate_reports.append({"batch_id": batch["id"], "filenames": [p.name for p in found], "selected_report": found[0].name, "ignored_companions": [p.name for p in found[1:]], "resolution": "one batch row; companion integrity/geometry evidence is not counted as a second report"})
         path = found[0] if found else None
         doc, error = parse(path) if path else (None, None)
         if error and path is not None:
@@ -134,7 +152,7 @@ def build() -> dict[str, Any]:
         state, count, slugs = status_for(doc, error, batch) if path else ("missing", 0, [])
         counts[state] += 1
         changed.update(slugs)
-        batch_rows.append({"batch_id": batch["id"], "county": batch.get("county"), "source_type": batch.get("source_type"), "target_count": len(batch["slugs"]), "target_slugs": batch["slugs"], "report": path.name if path else None, "state": state, "changed_count": count, "changed_slugs": slugs})
+        batch_rows.append({"batch_id": batch["id"], "county": batch.get("county"), "source_type": batch.get("source_type"), "target_count": len(batch["slugs"]), "target_slugs": batch["slugs"], "report": path.name if path else None, "state": state, "changed_count": count, "changed_slugs": slugs, "changed_evidence": changed_evidence(doc, batch["slugs"]) if slugs else []})
     canonical_paths = {"waters": ROOT / "public/data/waters.json", "county_clips": ROOT / "public/data/waters_county_clips.json"}
     current = {key: sha(path) for key, path in canonical_paths.items()}
     pinned = unresolved.get("canonicalDataSha256BeforeAfter", {})

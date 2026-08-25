@@ -1,0 +1,65 @@
+{
+  "batch_id": "P0-vaslui-anpa-01",
+  "county": "Vaslui",
+  "source_type": "anpa",
+  "target_slugs": [
+    "anpa-anpa-0621",
+    "anpa-anpa-0626",
+    "anpa-vaslui-crasna-43"
+  ],
+  "record_count": 3,
+  "status": "completed_noop",
+  "changed_slugs": [],
+  "unchanged_slugs": [
+    "anpa-anpa-0621",
+    "anpa-anpa-0626",
+    "anpa-vaslui-crasna-43"
+  ],
+  "source_locks": {
+    "passed": true,
+    "inventory": "data/processed/traceability_report.json",
+    "county": "Vaslui",
+    "source_type": "anpa"
+  },
+  "records": [
+    {
+      "slug": "anpa-anpa-0621",
+      "name": "Râul Bârlad",
+      "geometry_sha256": "e288f9f0c19b4fb089cd4ef7c491a5c465c29650206b27832d8241408ba50f6d",
+      "geometry_present": true,
+      "source": "anpa",
+      "source_row": 1398,
+      "county": "Vaslui",
+      "subtype": "rau"
+    },
+    {
+      "slug": "anpa-anpa-0626",
+      "name": "Râul Tutova",
+      "geometry_sha256": "295e6561985f14940d852103fa1713301df5b831854109c2e46e61fd72330caa",
+      "geometry_present": true,
+      "source": "anpa",
+      "source_row": 1408,
+      "county": "Vaslui",
+      "subtype": "rau"
+    },
+    {
+      "slug": "anpa-vaslui-crasna-43",
+      "name": "Râul Crasna",
+      "geometry_sha256": "af9c8cc639b3005b1e5f7172a0b7175c123ceabe5a908e39aaab179710ddd2bb",
+      "geometry_present": true,
+      "source": "anpa",
+      "source_row": 1406,
+      "county": "Vaslui",
+      "subtype": "rau"
+    }
+  ],
+  "canonical_geometry_mutation": false,
+  "verification": {
+    "target_semantic_diff": "PASS: no target records changed",
+    "canonical_serialization": "PASS",
+    "integrity": "PASS: 0 violations",
+    "push": "forbidden by task; not attempted",
+    "production_promotion": "forbidden by task; not attempted"
+  },
+  "evidence_generation": "regenerated locally from current canonical records and traceability; read-only"
+}
