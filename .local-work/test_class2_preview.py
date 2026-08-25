@@ -10,11 +10,11 @@ from build_class2_preview import build  # noqa: E402
 
 def test_class2_preview_is_deterministic_and_complete(tmp_path):
     source = ROOT.parent.parent / ".local-work" / "unresolved-geometry-inventory.json"
-    first = build(source, "CLASS2-04")
-    second = build(source, "CLASS2-04")
+    first = build(source, "CLASS2-05")
+    second = build(source, "CLASS2-05")
     assert json.dumps(first, ensure_ascii=False, sort_keys=True) == json.dumps(second, ensure_ascii=False, sort_keys=True)
-    expected_slugs = json.loads((ROOT.parent.parent / ".local-work" / "class2-chunks.json").read_text(encoding="utf-8"))["chunks"][3]["slugs"]
-    assert first["chunkId"] == "CLASS2-04"
+    expected_slugs = json.loads((ROOT.parent.parent / ".local-work" / "class2-chunks.json").read_text(encoding="utf-8"))["chunks"][4]["slugs"]
+    assert first["chunkId"] == "CLASS2-05"
     assert first["slugs"] == expected_slugs
     assert first["recordCount"] == 15
     assert len(first["records"]) == 15
@@ -25,7 +25,7 @@ def test_class2_preview_is_deterministic_and_complete(tmp_path):
 
 
 def test_preview_contains_provenance_and_does_not_claim_legal_fields():
-    artifact = build(ROOT.parent.parent / ".local-work" / "unresolved-geometry-inventory.json", "CLASS2-04")
+    artifact = build(ROOT.parent.parent / ".local-work" / "unresolved-geometry-inventory.json", "CLASS2-05")
     for row in artifact["records"]:
         for candidate in row["physicalCandidates"]:
             assert "geometryHash" in candidate
@@ -39,5 +39,5 @@ def test_preview_contains_provenance_and_does_not_claim_legal_fields():
 def test_generation_does_not_change_canonical_input():
     waters = ROOT / "public" / "data" / "waters.json"
     before = hashlib.sha256(waters.read_bytes()).hexdigest()
-    build(ROOT.parent.parent / ".local-work" / "unresolved-geometry-inventory.json", "CLASS2-04")
+    build(ROOT.parent.parent / ".local-work" / "unresolved-geometry-inventory.json", "CLASS2-05")
     assert hashlib.sha256(waters.read_bytes()).hexdigest() == before
