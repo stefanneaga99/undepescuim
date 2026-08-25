@@ -1,0 +1,3147 @@
+{
+  "batches": [
+    {
+      "batch_id": "P0-alba-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Alba",
+      "report": null,
+      "source_type": "anpa_romsilva",
+      "state": "missing",
+      "target_count": 11,
+      "target_slugs": [
+        "romsilva-alba-acumulare-tau",
+        "romsilva-alba-ampoita",
+        "romsilva-alba-ariesul-mare-superior",
+        "romsilva-alba-ariesul-mic",
+        "romsilva-alba-canciu-bosorogu",
+        "romsilva-alba-ighiel",
+        "romsilva-alba-izvoarele-ampoiului",
+        "romsilva-alba-raul-mare",
+        "romsilva-alba-raul-mic",
+        "romsilva-alba-salane",
+        "romsilva-alba-viltori-fenes"
+      ]
+    },
+    {
+      "batch_id": "P0-alba-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Alba",
+      "report": "P0-alba-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0008",
+        "anpa-anpa-0013"
+      ]
+    },
+    {
+      "batch_id": "P0-alba-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Alba",
+      "report": "P0-alba-arebaltapeste-01-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 10,
+      "target_slugs": [
+        "0kaweera",
+        "494vi834",
+        "81tznz3i",
+        "csn7z0u6",
+        "d4ffuckm",
+        "hj594dti",
+        "ks2vsbaf",
+        "o35qm79k",
+        "qtebe8c3",
+        "uyzo7o3j"
+      ]
+    },
+    {
+      "batch_id": "P0-alba-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Alba",
+      "report": "geometry-repair-P0-alba-hotosm-01-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 6,
+      "target_slugs": [
+        "3cffswnd",
+        "dkyhyd7w",
+        "hdqe290r",
+        "hvdfyvij",
+        "igheqrti",
+        "lpfud98o"
+      ]
+    },
+    {
+      "batch_id": "P0-alba-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Alba",
+      "report": "P0-alba-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "4pouq9sd",
+        "anpa-anpa-0020",
+        "h75ngnsv"
+      ]
+    },
+    {
+      "batch_id": "P0-arad-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Arad",
+      "report": null,
+      "source_type": "anpa",
+      "state": "missing",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0034",
+        "anpa-anpa-0035"
+      ]
+    },
+    {
+      "batch_id": "P0-arad-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Arad",
+      "report": "P0-arad-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 6,
+      "target_slugs": [
+        "romsilva-arad-halmagiu",
+        "romsilva-arad-julita",
+        "romsilva-arad-leuca",
+        "romsilva-arad-moneasa-superioara",
+        "romsilva-arad-petris",
+        "romsilva-arad-troas"
+      ]
+    },
+    {
+      "batch_id": "P0-arad-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Arad",
+      "report": "P0-arad-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 11,
+      "target_slugs": [
+        "093wq4lp",
+        "1srym7dd",
+        "6btfaim0",
+        "7nc9pf1u",
+        "9mfds2yv",
+        "aoja7n5d",
+        "hmd3pa0v",
+        "u74mudgv",
+        "u9i0nipn",
+        "v568f04x",
+        "w28fp1za"
+      ]
+    },
+    {
+      "batch_id": "P0-arad-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Arad",
+      "report": "geometry-repair-P0-arad-hotosm-01-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "8pel9fyb",
+        "f2wdjbfr",
+        "h0h6821t"
+      ]
+    },
+    {
+      "batch_id": "P0-arges-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Argeș",
+      "report": "P0-arges-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 9,
+      "target_slugs": [
+        "romsilva-arges-bratia",
+        "romsilva-arges-buda",
+        "romsilva-arges-capra",
+        "romsilva-arges-cumpana-mare",
+        "romsilva-arges-dambovicioara",
+        "romsilva-arges-izvoarele-dambovitei",
+        "romsilva-arges-topologul-superior",
+        "romsilva-arges-valsan-superior",
+        "romsilva-arges-vidraru"
+      ]
+    },
+    {
+      "batch_id": "P0-arges-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Argeș",
+      "report": "P0-arges-arebaltapeste-01.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "hngl982a",
+        "p2lc5wx6",
+        "w3jwqryr"
+      ]
+    },
+    {
+      "batch_id": "P0-arges-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Argeș",
+      "report": "geometry-repair-P0-arges-hotosm-01-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 8,
+      "target_slugs": [
+        "02fq6hrp",
+        "5irit0pl",
+        "7bs2dlc0",
+        "d1pqus6a",
+        "i5wd80if",
+        "k7ysz8b8",
+        "kmxvcyrc",
+        "vstc3oof"
+      ]
+    },
+    {
+      "batch_id": "P0-arges-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Argeș",
+      "report": "P0-arges-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "0hxo4zi3",
+        "4q90yrk2",
+        "5pomav1f"
+      ]
+    },
+    {
+      "batch_id": "P0-arges-osm-bulk-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Argeș",
+      "report": "P0-arges-osm-bulk-02-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "f81mov86",
+        "rv08w2ty",
+        "tbkzoyda"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "P0-bacau-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "romsilva-bacau-dofteana"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "P0-bacau-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "19468k28",
+        "1dy2bzbz",
+        "5r9kzhq8",
+        "634a3yyb"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "P0-bacau-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "eovhns40",
+        "gh2c5vh3",
+        "gs9etwp4",
+        "hvy996q6"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-arebaltapeste-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "P0-bacau-arebaltapeste-03.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "ldcmx0lr",
+        "q9lm4uey",
+        "ttge8n5u"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "P0-bacau-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "hjyx15xo",
+        "jrlgyh2h",
+        "ltggtdmp",
+        "uqvbagnh"
+      ]
+    },
+    {
+      "batch_id": "P0-bacau-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bacău",
+      "report": "geometry-repair-P0-bacau-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "eql8hwtl",
+        "iscuniu8",
+        "okzevg19",
+        "phmbrdj5"
+      ]
+    },
+    {
+      "batch_id": "P0-bihor-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bihor",
+      "report": "P0-bihor-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-bihor-crisul-pietros",
+        "romsilva-bihor-dragan",
+        "romsilva-bihor-lesu",
+        "romsilva-bihor-valea-iadului-superior",
+        "romsilva-bihor-vl-finis-finisului"
+      ]
+    },
+    {
+      "batch_id": "P0-bihor-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bihor",
+      "report": "geometry-repair-P0-bihor-arebaltapeste-01-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "08xhs12s",
+        "0b5imfgi",
+        "3s4b1wip",
+        "gizkgxdq"
+      ]
+    },
+    {
+      "batch_id": "P0-bihor-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bihor",
+      "report": "p0-bihor-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "gvhqgri8",
+        "j41ylelt",
+        "n5g2q7tx",
+        "rhiyz8ya"
+      ]
+    },
+    {
+      "batch_id": "P0-bihor-arebaltapeste-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bihor",
+      "report": "geometry-repair-P0-bihor-arebaltapeste-03-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "uerba1xr",
+        "xzrr6do0",
+        "zulbiam0"
+      ]
+    },
+    {
+      "batch_id": "P0-bihor-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bihor",
+      "report": "p0-bihor-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "cglgploz",
+        "gm4m7sjj",
+        "kc8rset6",
+        "m2x1jtkp",
+        "yjbfm1tc"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "p0-bistrita-nasaud-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0120",
+        "anpa-anpa-0141"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "P0-bistrita-nasaud-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "romsilva-bistrita-nasaud-ilisua",
+        "romsilva-bistrita-nasaud-rebra"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "P0-bistrita-nasaud-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "2bj7imws",
+        "414x091y",
+        "5ew0xpab",
+        "8r9ebkew",
+        "8us87abu"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "p0-bistrita-nasaud-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "ewp217d3",
+        "mc9jqwje",
+        "uv7try13",
+        "xd7hnzzl"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "geometry-repair-P0-bistrita-nasaud-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "c6158075",
+        "jnful871"
+      ]
+    },
+    {
+      "batch_id": "P0-bistrita-nasaud-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Bistrița-Năsăud",
+      "report": "P0-bistrita-nasaud-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0142",
+        "ee2ppm7f",
+        "u1frrl08",
+        "xypzp6q7",
+        "zb5lg4fc"
+      ]
+    },
+    {
+      "batch_id": "P0-botosani-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Botoșani",
+      "report": "geometry-repair-P0-botosani-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0147",
+        "anpa-anpa-0163",
+        "anpa-anpa-0164",
+        "anpa-anpa-0165"
+      ]
+    },
+    {
+      "batch_id": "P0-botosani-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Botoșani",
+      "report": "p0-botosani-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "0rc761a8",
+        "evp4346r",
+        "j1a5je6v"
+      ]
+    },
+    {
+      "batch_id": "P0-botosani-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Botoșani",
+      "report": "p0-botosani-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "o4sf1fah",
+        "ygy2n7uz",
+        "zyvryyuz"
+      ]
+    },
+    {
+      "batch_id": "P0-botosani-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Botoșani",
+      "report": "P0-botosani-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "mkp5r52j",
+        "xfqyv3zg"
+      ]
+    },
+    {
+      "batch_id": "P0-botosani-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Botoșani",
+      "report": "P0-botosani-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0166",
+        "anpa-anpa-0167"
+      ]
+    },
+    {
+      "batch_id": "P0-braila-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brăila",
+      "report": "geometry-repair-p0-P0-braila-arebaltapeste-01.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "9m2irr6m",
+        "gtg7ujy9",
+        "ufdigh4c"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "P0-brasov-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0178",
+        "anpa-anpa-0179",
+        "anpa-anpa-0182",
+        "anpa-anpa-0183"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "geometry-repair-P0-brasov-anpa-02.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0186",
+        "anpa-anpa-0188",
+        "anpa-anpa-0189",
+        "anpa-anpa-0190"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-anpa-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "geometry-repair-P0-brasov-anpa-03.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0193",
+        "anpa-anpa-0194",
+        "anpa-anpa-0198",
+        "anpa-brasov-arpasu"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "P0-brasov-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "romsilva-brasov-bogata",
+        "romsilva-brasov-comana",
+        "romsilva-brasov-sbircioara"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "P0-brasov-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "1w5ajm9s",
+        "cr5lqpzw",
+        "ehwpvgwh",
+        "o0375dc2",
+        "sm0sogwd"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "P0-brasov-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "4s86ejf1",
+        "5l9byf37",
+        "ghex0mqa"
+      ]
+    },
+    {
+      "batch_id": "P0-brasov-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Brașov",
+      "report": "geometry-repair-P0-brasov-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "8y7mmtyb",
+        "anpa-anpa-0180",
+        "anpa-anpa-0181",
+        "anpa-anpa-0187",
+        "anpa-anpa-0191"
+      ]
+    },
+    {
+      "batch_id": "P0-buzau-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Buzău",
+      "report": "P0-buzau-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0216"
+      ]
+    },
+    {
+      "batch_id": "P0-buzau-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Buzău",
+      "report": "P0-buzau-anpa-romsilva-01-report.md",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 2,
+      "target_slugs": [
+        "basca-mare",
+        "basca-mica"
+      ]
+    },
+    {
+      "batch_id": "P0-buzau-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Buzău",
+      "report": "P0-buzau-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "0spoqep8"
+      ]
+    },
+    {
+      "batch_id": "P0-buzau-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Buzău",
+      "report": "P0-buzau-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0208",
+        "anpa-anpa-0209",
+        "anpa-anpa-0217"
+      ]
+    },
+    {
+      "batch_id": "P0-calarasi-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Călărași",
+      "report": "P0-calarasi-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0232",
+        "anpa-anpa-0233",
+        "anpa-anpa-0234",
+        "anpa-anpa-0235"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0223",
+        "anpa-anpa-0227"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-anpa-romsilva-01.report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-caras-severin-bistra-marului-inferior",
+        "romsilva-caras-severin-bistrita-marului-superior",
+        "romsilva-caras-severin-carasul-superior",
+        "romsilva-caras-severin-nera-superioara",
+        "romsilva-caras-severin-plesu-rusca"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-anpa-romsilva-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-anpa-romsilva-02.report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-caras-severin-ponesca",
+        "romsilva-caras-severin-sirinia",
+        "romsilva-caras-severin-sucu",
+        "romsilva-caras-severin-valea-beiului"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-arebaltapeste-01.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "hitnp6gk",
+        "nnccdfv6",
+        "tgvv500v",
+        "w82r43l5",
+        "wmx33tho"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "0li3pzev",
+        "0qrpg5nz",
+        "2vlxdbig",
+        "468bn6nc"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-hotosm-02-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "5zkwseu8",
+        "6thvzkl6",
+        "7o5ejg1w",
+        "fgy7uzex"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-hotosm-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-hotosm-03-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "io48tj8z",
+        "lbti8km9",
+        "sctzx1ju"
+      ]
+    },
+    {
+      "batch_id": "P0-caras-severin-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Caraș-Severin",
+      "report": "P0-caras-severin-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "9h0azllr",
+        "anpa-anpa-0219",
+        "anpa-anpa-0222",
+        "anpa-anpa-0224",
+        "anpa-anpa-0226"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-anpa-01-integrity-report.json",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0246"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-cluj-1-lacul-fantanele",
+        "romsilva-cluj-1-somesul-cald-superior",
+        "romsilva-cluj-8-lacul-valea-calului",
+        "romsilva-cluj-lacul-floroiu",
+        "romsilva-cluj-lacul-gilau"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "15tafiir",
+        "1i81o3wj",
+        "89j19sek",
+        "a3g6wcqj",
+        "b3r64r3x"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "cw2vs7u3",
+        "iwrd2dxy",
+        "lagsqhtl",
+        "nalohz4y",
+        "wv8ykggg"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "0nbbg0ev",
+        "0stwyozf",
+        "0yftnvx2",
+        "2mgn062e"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-hotosm-02-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "99auwn3e",
+        "eu0onj97",
+        "fjq2a70m",
+        "owq68ima"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-hotosm-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-hotosm-03-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "s6g9wjca",
+        "s8davo5g",
+        "siu433bo"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-osm-bulk-01.report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "20u2sj3u",
+        "kk57xc78",
+        "m4kw26nh"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-osm-bulk-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Cluj",
+      "report": "P0-cluj-osm-bulk-02-integrity-report.json",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "q2agyhcl",
+        "q531xrka",
+        "z6x8mxh5"
+      ]
+    },
+    {
+      "batch_id": "P0-constanta-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Constanța",
+      "report": "P0-constanta-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0247"
+      ]
+    },
+    {
+      "batch_id": "P0-covasna-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Covasna",
+      "report": "P0-covasna-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0257",
+        "anpa-anpa-0262",
+        "anpa-anpa-0263",
+        "anpa-anpa-0265"
+      ]
+    },
+    {
+      "batch_id": "P0-covasna-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Covasna",
+      "report": "P0-covasna-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "romsilva-covasna-aita",
+        "romsilva-covasna-baraolt-superior"
+      ]
+    },
+    {
+      "batch_id": "P0-covasna-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Covasna",
+      "report": "P0-covasna-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0251",
+        "anpa-anpa-0255",
+        "anpa-anpa-0256"
+      ]
+    },
+    {
+      "batch_id": "P0-covasna-osm-bulk-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Covasna",
+      "report": "P0-covasna-osm-bulk-02-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0258",
+        "anpa-anpa-0259",
+        "anpa-anpa-0260"
+      ]
+    },
+    {
+      "batch_id": "P0-dambovita-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dâmbovița",
+      "report": "P0-dambovita-anpa-romsilva-01-report.md",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 1,
+      "target_slugs": [
+        "romsilva-dambovita-bratei"
+      ]
+    },
+    {
+      "batch_id": "P0-dambovita-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dâmbovița",
+      "report": "P0-dambovita-arebaltapeste-01-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "3614s8es",
+        "3ek8e82l",
+        "3p16514b"
+      ]
+    },
+    {
+      "batch_id": "P0-dambovita-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dâmbovița",
+      "report": "P0-dambovita-arebaltapeste-02-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "4bvpixot",
+        "q0k04upr",
+        "y2wjgy7w"
+      ]
+    },
+    {
+      "batch_id": "P0-dambovita-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dâmbovița",
+      "report": "P0-dambovita-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "38dttacd",
+        "arrd8tai",
+        "g7h8e4nw",
+        "trpk17go",
+        "v9q2bw1j"
+      ]
+    },
+    {
+      "batch_id": "P0-dolj-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dolj",
+      "report": "P0-dolj-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0281",
+        "anpa-anpa-0282",
+        "anpa-anpa-0283",
+        "anpa-anpa-0284",
+        "anpa-anpa-0285"
+      ]
+    },
+    {
+      "batch_id": "P0-dolj-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dolj",
+      "report": "P0-dolj-anpa-02-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0286",
+        "anpa-anpa-0289",
+        "anpa-anpa-0290",
+        "anpa-anpa-0291",
+        "anpa-anpa-0294"
+      ]
+    },
+    {
+      "batch_id": "P0-dolj-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dolj",
+      "report": "P0-dolj-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "aersxf9e"
+      ]
+    },
+    {
+      "batch_id": "P0-dolj-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Dolj",
+      "report": "P0-dolj-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0292"
+      ]
+    },
+    {
+      "batch_id": "P0-giurgiu-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Giurgiu",
+      "report": "geometry-repair-P0-giurgiu-anpa-01.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0300",
+        "anpa-anpa-0301",
+        "anpa-giurgiu-neajlov"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "P0-gorj-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0303",
+        "anpa-anpa-0304",
+        "qrjybswm"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "geometry-repair-P0-gorj-anpa-romsilva-01.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-gorj-galbenu",
+        "romsilva-gorj-motru-mare",
+        "romsilva-gorj-tismana-i",
+        "romsilva-gorj-valea-sadului"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "P0-gorj-arebaltapeste-01.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "91bhbi8d",
+        "ey1b2yfy",
+        "icwtim2p",
+        "l7t0jgqj"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "P0-gorj-arebaltapeste-02-geometry-report.json",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "tjs59g3d",
+        "v3sgxtco",
+        "ynroput7",
+        "zunmc5yk"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "P0-gorj-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "8a8nlp4g",
+        "mgu3ahbo",
+        "n4unwsj0"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Gorj",
+      "report": "P0-gorj-osm-bulk-01.report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "2yxhr1b0"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-anpa-01.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0320",
+        "anpa-anpa-0321",
+        "anpa-anpa-0322",
+        "anpa-anpa-0325",
+        "anpa-anpa-0327"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-anpa-02.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0328",
+        "anpa-anpa-0340",
+        "anpa-anpa-0342",
+        "anpa-anpa-0346",
+        "anpa-anpa-0347"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-anpa-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-anpa-03.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0348",
+        "anpa-anpa-0349",
+        "anpa-anpa-0350",
+        "anpa-anpa-0351",
+        "anpa-anpa-0353"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-harghita-bicazul-superior",
+        "romsilva-harghita-bistricioara-tronson-i",
+        "romsilva-harghita-lac-baraj-paraul-rosu",
+        "romsilva-harghita-valea-toplitei"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "geometry-repair-P0-harghita-arebaltapeste-01-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "3klq13bv",
+        "ipbk2mfa",
+        "x2f9iamz"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-hotosm-01.report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "0a5yq94z",
+        "k3tny7t9"
+      ]
+    },
+    {
+      "batch_id": "P0-harghita-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Harghita",
+      "report": "P0-harghita-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0319",
+        "anpa-anpa-0324",
+        "anpa-anpa-0335",
+        "anpa-anpa-0338",
+        "anpa-anpa-0343"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-anpa-01.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0355",
+        "anpa-anpa-0356",
+        "anpa-anpa-0362",
+        "anpa-anpa-0363"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-anpa-02-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0365",
+        "anpa-anpa-0371",
+        "anpa-anpa-0375",
+        "anpa-anpa-0382"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-hunedoara-borascu",
+        "romsilva-hunedoara-jiet",
+        "romsilva-hunedoara-lapusnicul-mare",
+        "romsilva-hunedoara-lapusnicul-mic"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-romsilva-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-anpa-romsilva-02-integrity-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-hunedoara-nucsorul-superior",
+        "romsilva-hunedoara-papusa",
+        "romsilva-hunedoara-raul-barbat-superior",
+        "romsilva-hunedoara-raul-mare-superior"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-romsilva-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-anpa-romsilva-03-integrity-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-hunedoara-raul-ses",
+        "romsilva-hunedoara-sibisel",
+        "romsilva-hunedoara-streiul-superior",
+        "romsilva-hunedoara-valea-dobrei"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "80a6de8r",
+        "awhxtilq",
+        "dmswvndo",
+        "ecgdxky1",
+        "gj5sgt6l"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-arebaltapeste-02.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "i3qujds4",
+        "jdqq44iq",
+        "kmgebt9g",
+        "tzgar0qm",
+        "ule8h4ud"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "55qkztsi",
+        "61eil5a7",
+        "6mk6gsnk",
+        "6shjqjol",
+        "9i5v04zt"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-hotosm-02-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "a40gmg2l",
+        "axdnd0sx",
+        "b9m0ts0e",
+        "hiex82px",
+        "i1bfvtsv"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-hotosm-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-hotosm-03-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "jqd6kydl",
+        "kftfcz30",
+        "kmn403ku",
+        "ljvsg741",
+        "lnkyd19e"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-hotosm-04",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "p0-hunedoara-hotosm-04-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "ls8b840h",
+        "oa82myfs",
+        "s5eabntg",
+        "swvvpoez"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-hotosm-05",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "P0-hunedoara-hotosm-05-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "u90zfl7t",
+        "u9dkcz46",
+        "vcv45quw",
+        "zy1aay95"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "geometry-repair-P0-hunedoara-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "6vsle29k",
+        "anpa-anpa-0372",
+        "anpa-anpa-0374",
+        "anpa-anpa-0376"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-osm-bulk-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Hunedoara",
+      "report": "geometry-repair-P0-hunedoara-osm-bulk-02-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "bpo0h9m6",
+        "dam55ga5",
+        "mbt9h9rq"
+      ]
+    },
+    {
+      "batch_id": "P0-ialomita-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Ialomița",
+      "report": "P0-ialomita-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "1naqeaio",
+        "1zx8h34h",
+        "pzvjb5io"
+      ]
+    },
+    {
+      "batch_id": "P0-iasi-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Iași",
+      "report": "P0-iasi-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0391",
+        "anpa-iasi-miletin-35"
+      ]
+    },
+    {
+      "batch_id": "P0-ilfov-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Ilfov",
+      "report": "P0-ilfov-anpa-01.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0397"
+      ]
+    },
+    {
+      "batch_id": "P0-ilfov-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Ilfov",
+      "report": "P0-ilfov-arebaltapeste-01.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "djkvkzv6",
+        "fo3h8cp6"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0398",
+        "anpa-anpa-0399",
+        "anpa-anpa-0401",
+        "anpa-anpa-0404"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-anpa-02-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0406",
+        "anpa-anpa-0409",
+        "anpa-anpa-0410",
+        "anpa-anpa-0412"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-anpa-03-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0419",
+        "anpa-anpa-0420",
+        "anpa-anpa-0421",
+        "anpa-maramures-tibles-27"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-maramures-baicu",
+        "romsilva-maramures-baita-nistru",
+        "romsilva-maramures-bistrita-aurie",
+        "romsilva-maramures-borjuc"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-romsilva-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-anpa-romsilva-02-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-maramures-cavnic",
+        "romsilva-maramures-fantana",
+        "romsilva-maramures-ieud",
+        "romsilva-maramures-repedea"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-anpa-romsilva-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "geometry-repair-P0-maramures-anpa-romsilva-03-report.md",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "romsilva-maramures-ruscova-superioara",
+        "romsilva-maramures-tibaul-superior",
+        "romsilva-maramures-viseul-superior"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-arebaltapeste-01",
+      "changed_count": 1,
+      "changed_slugs": [
+        "3idcxbvx"
+      ],
+      "county": "Maramureș",
+      "report": "P0-maramures-arebaltapeste-01.report.json",
+      "source_type": "arebaltapeste",
+      "state": "changed",
+      "target_count": 2,
+      "target_slugs": [
+        "1k8gl520",
+        "3idcxbvx"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "4qty5vzq",
+        "696s3lzg",
+        "879hgsjs",
+        "9d30q5ex",
+        "rv8zowaj"
+      ]
+    },
+    {
+      "batch_id": "P0-maramures-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Maramureș",
+      "report": "P0-maramures-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0405"
+      ]
+    },
+    {
+      "batch_id": "P0-mehedinti-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mehedinți",
+      "report": "geometry-repair-P0-mehedinti-anpa-romsilva-01-report.md",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 2,
+      "target_slugs": [
+        "romsilva-mehedinti-brebena-bulba",
+        "romsilva-mehedinti-cerna-superioara"
+      ]
+    },
+    {
+      "batch_id": "P0-mehedinti-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mehedinți",
+      "report": "P0-mehedinti-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "jn6h7vl1"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "geometry-repair-P0-mures-anpa-01-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0428",
+        "anpa-anpa-0431",
+        "anpa-anpa-0432",
+        "anpa-anpa-0433"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-anpa-02-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0434",
+        "anpa-anpa-0438",
+        "anpa-anpa-0439",
+        "anpa-anpa-0441"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-anpa-03.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0444",
+        "anpa-anpa-0445",
+        "anpa-anpa-0446",
+        "anpa-anpa-0447"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-04",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-anpa-04-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0448",
+        "anpa-anpa-0450",
+        "anpa-anpa-0451",
+        "anpa-mures-sebes-21"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-mures-fancel",
+        "romsilva-mures-gudea",
+        "romsilva-mures-gurghiul-superior",
+        "romsilva-mures-ilva",
+        "romsilva-mures-iod"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-anpa-romsilva-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-anpa-romsilva-02.report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-mures-isticeu",
+        "romsilva-mures-nirajul-mare-superior",
+        "romsilva-mures-salard",
+        "romsilva-mures-valea-sovetii",
+        "romsilva-mures-zebrac"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "g2hdwmfx"
+      ]
+    },
+    {
+      "batch_id": "P0-mures-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Mureș",
+      "report": "P0-mures-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0427",
+        "anpa-anpa-0429",
+        "anpa-anpa-0430",
+        "anpa-anpa-0442"
+      ]
+    },
+    {
+      "batch_id": "P0-neamt-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Neamț",
+      "report": "P0-neamt-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0461",
+        "anpa-anpa-0462"
+      ]
+    },
+    {
+      "batch_id": "P0-neamt-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Neamț",
+      "report": "P0-neamt-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-neamt-borca",
+        "romsilva-neamt-iapa",
+        "romsilva-neamt-izvoarele-cracaului",
+        "romsilva-neamt-sabasa",
+        "romsilva-neamt-tarcau-superior"
+      ]
+    },
+    {
+      "batch_id": "P0-neamt-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Neamț",
+      "report": "P0-neamt-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "e4ohjj3a",
+        "mmakw97b"
+      ]
+    },
+    {
+      "batch_id": "P0-neamt-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Neamț",
+      "report": "P0-neamt-hotosm-01.report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "0xm8hfpq",
+        "dvuloxj7",
+        "m603pbea",
+        "qyyvoezx"
+      ]
+    },
+    {
+      "batch_id": "P0-olt-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Olt",
+      "report": "P0-olt-anpa-01.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0471",
+        "anpa-anpa-0473"
+      ]
+    },
+    {
+      "batch_id": "P0-olt-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Olt",
+      "report": "P0-olt-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "ikpdjomr",
+        "y34uodjj"
+      ]
+    },
+    {
+      "batch_id": "P0-olt-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Olt",
+      "report": "P0-olt-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "b0niobr0",
+        "dp9lbuy0",
+        "jw34gyf2",
+        "o90pkf03"
+      ]
+    },
+    {
+      "batch_id": "P0-olt-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Olt",
+      "report": "P0-olt-hotosm-02-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "pdf2udss",
+        "snphdrgr",
+        "urjxx6ca",
+        "yz3u32kx"
+      ]
+    },
+    {
+      "batch_id": "P0-prahova-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Prahova",
+      "report": "P0-prahova-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "romsilva-prahova-4-doftana-superioara",
+        "romsilva-prahova-telejenel",
+        "romsilva-prahova-valea-azugii"
+      ]
+    },
+    {
+      "batch_id": "P0-prahova-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Prahova",
+      "report": "P0-prahova-arebaltapeste-01.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "4hfgyus1",
+        "kig4khn8",
+        "llq1olij",
+        "t0jj4tlm"
+      ]
+    },
+    {
+      "batch_id": "P0-prahova-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Prahova",
+      "report": "P0-prahova-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "lzjrvci3",
+        "yqxcj68v"
+      ]
+    },
+    {
+      "batch_id": "P0-prahova-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Prahova",
+      "report": "P0-prahova-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "0wn4yfsa",
+        "53mzatrd"
+      ]
+    },
+    {
+      "batch_id": "P0-salaj-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sălaj",
+      "report": "geometry-repair-P0-salaj-anpa-01-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0509",
+        "anpa-anpa-0510",
+        "anpa-anpa-0511",
+        "anpa-anpa-0514",
+        "anpa-anpa-0515"
+      ]
+    },
+    {
+      "batch_id": "P0-salaj-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sălaj",
+      "report": "P0-salaj-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "romsilva-salaj-barcaul-superior"
+      ]
+    },
+    {
+      "batch_id": "P0-salaj-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sălaj",
+      "report": "P0-salaj-hotosm-01.report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "sk57b228",
+        "tirlg0os"
+      ]
+    },
+    {
+      "batch_id": "P0-salaj-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sălaj",
+      "report": "P0-salaj-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0516"
+      ]
+    },
+    {
+      "batch_id": "P0-satu-mare-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Satu Mare",
+      "report": "geometry-repair-P0-satu-mare-anpa-01-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0495",
+        "anpa-anpa-0497",
+        "anpa-anpa-0498",
+        "anpa-anpa-0502",
+        "anpa-anpa-0506"
+      ]
+    },
+    {
+      "batch_id": "P0-satu-mare-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Satu Mare",
+      "report": "P0-satu-mare-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 2,
+      "target_slugs": [
+        "anpa-anpa-0494",
+        "anpa-anpa-0503"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-anpa-01.report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0520",
+        "anpa-anpa-0538",
+        "anpa-anpa-0539",
+        "anpa-anpa-0548"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-anpa-romsilva-01.report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "romsilva-sibiu-arpas",
+        "romsilva-sibiu-laita",
+        "romsilva-sibiu-raul-mare-porumbacu"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-arebaltapeste-01.report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "c4o6lkrr",
+        "f02xtxw1",
+        "hinw6jpr",
+        "n0810toy",
+        "qsvhz93s"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "ryp9qjgm",
+        "tu621s6s",
+        "xivzc8yg",
+        "xxuzkw7u"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-hotosm-01.report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "0y4zhmtc",
+        "34ethptl",
+        "9cf8xl0c",
+        "acfnf1vr",
+        "awpqafbr"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-hotosm-02-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "bt9dsvfp",
+        "gff3cbfy",
+        "hll3snzk",
+        "l3pxudn1",
+        "m2771k04"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-hotosm-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-hotosm-03-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "ni9qd25a",
+        "ovhr6lkr",
+        "q08c739g",
+        "rxrtjatn"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "0zai84fg",
+        "1xe7y7xg",
+        "65cb7tk8",
+        "fme4ypnv"
+      ]
+    },
+    {
+      "batch_id": "P0-sibiu-osm-bulk-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Sibiu",
+      "report": "P0-sibiu-osm-bulk-02-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "fzusfkv6",
+        "gutqod71",
+        "mcwn5ffm",
+        "ug8h7f1s"
+      ]
+    },
+    {
+      "batch_id": "P0-suceava-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Suceava",
+      "report": "P0-suceava-anpa-01-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0556",
+        "anpa-anpa-0557",
+        "anpa-anpa-0560"
+      ]
+    },
+    {
+      "batch_id": "P0-suceava-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Suceava",
+      "report": "P0-suceava-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "romsilva-suceava-barnar",
+        "romsilva-suceava-brodina",
+        "romsilva-suceava-dornisoara",
+        "romsilva-suceava-giumalau",
+        "romsilva-suceava-humorul"
+      ]
+    },
+    {
+      "batch_id": "P0-suceava-anpa-romsilva-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Suceava",
+      "report": "P0-suceava-anpa-romsilva-02-report.md",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "romsilva-suceava-moldovita-superioara",
+        "romsilva-suceava-neagra-superioara",
+        "romsilva-suceava-putna",
+        "romsilva-suceava-valea-putnei"
+      ]
+    },
+    {
+      "batch_id": "P0-suceava-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Suceava",
+      "report": "P0-suceava-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "2uxod40o"
+      ]
+    },
+    {
+      "batch_id": "P0-suceava-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Suceava",
+      "report": "geometry-repair-P0-suceava-osm-bulk-01-report.md",
+      "source_type": "osm_bulk",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "5tzotexl",
+        "anpa-anpa-0553",
+        "anpa-anpa-0554",
+        "anpa-anpa-0561",
+        "nz1rw5qw"
+      ]
+    },
+    {
+      "batch_id": "P0-teleorman-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Teleorman",
+      "report": "P0-teleorman-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0577",
+        "anpa-anpa-0578",
+        "anpa-anpa-0580",
+        "anpa-teleorman-calmatui",
+        "anpa-teleorman-calnistea"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "geometry-repair-P0-timis-anpa-01-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0582",
+        "anpa-anpa-0583",
+        "anpa-anpa-0588",
+        "anpa-anpa-0591",
+        "anpa-anpa-0592"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "geometry-repair-P0-timis-anpa-02-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0594",
+        "anpa-anpa-0595",
+        "anpa-anpa-0596",
+        "anpa-anpa-0597",
+        "anpa-anpa-0598"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "P0-timis-anpa-03-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0599",
+        "anpa-anpa-0600",
+        "anpa-anpa-0601",
+        "anpa-anpa-0602"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-04",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "geometry-repair-P0-timis-anpa-04-report.md",
+      "source_type": "anpa",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0603",
+        "anpa-anpa-0604",
+        "anpa-anpa-0605",
+        "anpa-anpa-0607"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-05",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "p0-timis-anpa-05-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "anpa-anpa-0608",
+        "anpa-anpa-0610",
+        "anpa-anpa-0613",
+        "anpa-anpa-0616"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "P0-timis-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "romsilva-timis-bega-poieni",
+        "romsilva-timis-bega-superior-luncani"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "P0-timis-arebaltapeste-01-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 3,
+      "target_slugs": [
+        "315lt84w",
+        "rhkuld3n",
+        "soxnke0k"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "P0-timis-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "h6qpjeu1",
+        "m7tbtlwq"
+      ]
+    },
+    {
+      "batch_id": "P0-timis-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Timiș",
+      "report": "P0-timis-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0586",
+        "anpa-anpa-0593",
+        "anpa-anpa-0606",
+        "anpa-anpa-0617",
+        "anpa-anpa-0618"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0631",
+        "anpa-anpa-0638",
+        "anpa-anpa-0643",
+        "anpa-anpa-0644",
+        "anpa-anpa-0645"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-anpa-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-anpa-02-geometry-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0646",
+        "anpa-anpa-0647",
+        "anpa-anpa-0648",
+        "anpa-anpa-0649",
+        "anpa-anpa-0655"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-anpa-romsilva-01.report.json",
+      "source_type": "anpa_romsilva",
+      "state": "completed",
+      "target_count": 3,
+      "target_slugs": [
+        "romsilva-valcea-latorita-superioara",
+        "romsilva-valcea-lotrisor-draganesti",
+        "romsilva-valcea-paraul-bistrita"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "geometry-repair-P0-valcea-arebaltapeste-01-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "0700jcip",
+        "0d29kh5i",
+        "0m48r7w8",
+        "0tzvnk1y",
+        "0v17ggn6"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-arebaltapeste-02-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "17ad076y",
+        "1xqpi6rz",
+        "3fdrbnxp",
+        "4nvqiliq",
+        "59cui65n"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-03",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-arebaltapeste-03.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "5bbhtdfc",
+        "6ofvb2jf",
+        "8zv453rs",
+        "bc4yxt09",
+        "dvhkx2a2"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-04",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "geometry-repair-P0-valcea-arebaltapeste-04-report.md",
+      "source_type": "arebaltapeste",
+      "state": "completed",
+      "target_count": 5,
+      "target_slugs": [
+        "e7mppal8",
+        "ec2faven",
+        "gvxr867o",
+        "hnftqiry",
+        "hs5cqibu"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-05",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-arebaltapeste-05-report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "hvhkix3r",
+        "ii25s9zo",
+        "jia5k09f",
+        "jni4xw19",
+        "k1ryxmx0"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-06",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-arebaltapeste-06.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "mj58pdxp",
+        "of2qtm1a",
+        "qbekhag4",
+        "qjz7g9se"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-arebaltapeste-07",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-arebaltapeste-07.report.json",
+      "source_type": "arebaltapeste",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "rcd7lya2",
+        "u7ipqokl",
+        "usposk6o",
+        "zughmn94"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-hotosm-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-hotosm-01-report.json",
+      "source_type": "hotosm",
+      "state": "no-op",
+      "target_count": 4,
+      "target_slugs": [
+        "1v83tpdy",
+        "5dsa9h8a",
+        "5u62qpuc",
+        "7z7cq445"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-hotosm-02",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-hotosm-02-report.md",
+      "source_type": "hotosm",
+      "state": "completed",
+      "target_count": 4,
+      "target_slugs": [
+        "n2cn2gu7",
+        "qvwbzauf",
+        "sc2dvrmj",
+        "trcvabp1"
+      ]
+    },
+    {
+      "batch_id": "P0-valcea-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vâlcea",
+      "report": "P0-valcea-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "6btp0y2a",
+        "anpa-anpa-0650",
+        "pjcgjuq0",
+        "rw5qqi3t",
+        "yxpriayu"
+      ]
+    },
+    {
+      "batch_id": "P0-vaslui-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vaslui",
+      "report": null,
+      "source_type": "anpa",
+      "state": "missing",
+      "target_count": 3,
+      "target_slugs": [
+        "anpa-anpa-0621",
+        "anpa-anpa-0626",
+        "anpa-vaslui-crasna-43"
+      ]
+    },
+    {
+      "batch_id": "P0-vaslui-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vaslui",
+      "report": "P0-vaslui-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0624"
+      ]
+    },
+    {
+      "batch_id": "P0-vrancea-anpa-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vrancea",
+      "report": "P0-vrancea-anpa-01-report.json",
+      "source_type": "anpa",
+      "state": "no-op",
+      "target_count": 5,
+      "target_slugs": [
+        "anpa-anpa-0675",
+        "anpa-anpa-0678",
+        "anpa-anpa-0681",
+        "anpa-vrancea-ramnicu-sarat",
+        "anpa-vrancea-susita-61"
+      ]
+    },
+    {
+      "batch_id": "P0-vrancea-anpa-romsilva-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vrancea",
+      "report": "P0-vrancea-anpa-romsilva-01-report.json",
+      "source_type": "anpa_romsilva",
+      "state": "no-op",
+      "target_count": 2,
+      "target_slugs": [
+        "romsilva-vrancea-lepsa",
+        "romsilva-vrancea-tisita"
+      ]
+    },
+    {
+      "batch_id": "P0-vrancea-osm-bulk-01",
+      "changed_count": 0,
+      "changed_slugs": [],
+      "county": "Vrancea",
+      "report": "P0-vrancea-osm-bulk-01-report.json",
+      "source_type": "osm_bulk",
+      "state": "no-op",
+      "target_count": 1,
+      "target_slugs": [
+        "anpa-anpa-0676"
+      ]
+    }
+  ],
+  "canonical_hashes": {
+    "before_after": {
+      "county_clips": {
+        "after": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "before": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "observed_current": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92"
+      },
+      "waters": {
+        "after": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+        "before": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+        "observed_current": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      }
+    },
+    "input_hashes_from_unresolved_inventory": {
+      "county_clips": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+      "p0_inventory": "a862e6bb21e0d94194b4eb5c1a5c3930cb3bbaa591df1b67fd4425ec3e6772cb",
+      "render_provenance": "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5",
+      "segment_audit": "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35",
+      "snapshot_manifest": "9155f383233ecef1aecc0567a5b421207cb44bd4fbcfbbbc60b4e2ae1d0708c6",
+      "traceability": "80b1ae9c4f1cb2102dbc1dcd84a954d62cf77f17a7d148da10c2747251d32ebb",
+      "waters": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+    }
+  },
+  "changed_records": {
+    "count": 1,
+    "slugs": [
+      "3idcxbvx"
+    ]
+  },
+  "duplicate_reports": [
+    {
+      "batch_id": "P0-cluj-anpa-01",
+      "filenames": [
+        "P0-cluj-anpa-01-integrity-report.json",
+        "P0-cluj-anpa-01-report.md"
+      ]
+    },
+    {
+      "batch_id": "P0-cluj-osm-bulk-02",
+      "filenames": [
+        "P0-cluj-osm-bulk-02-integrity-report.json",
+        "P0-cluj-osm-bulk-02-report.json"
+      ]
+    },
+    {
+      "batch_id": "P0-gorj-arebaltapeste-02",
+      "filenames": [
+        "P0-gorj-arebaltapeste-02-geometry-report.json",
+        "P0-gorj-arebaltapeste-02-report.json"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-romsilva-02",
+      "filenames": [
+        "P0-hunedoara-anpa-romsilva-02-integrity-report.json",
+        "P0-hunedoara-anpa-romsilva-02-report.json"
+      ]
+    },
+    {
+      "batch_id": "P0-hunedoara-anpa-romsilva-03",
+      "filenames": [
+        "P0-hunedoara-anpa-romsilva-03-integrity-report.json",
+        "P0-hunedoara-anpa-romsilva-03-report.json"
+      ]
+    }
+  ],
+  "external_actions": {
+    "github_push": false,
+    "production_promotion": false,
+    "statement": "No GitHub push and no Production promotion occurred."
+  },
+  "gates": {
+    "canonical_data_mutation": false,
+    "deterministic_aggregate_regeneration": "passed",
+    "duplicate_report_detection": "passed",
+    "local_tsc": "blocked: local TypeScript check/build was OOM in the local environment",
+    "unique_coverage": true,
+    "vercel_build": "passed: Vercel Preview deployment READY"
+  },
+  "git": {
+    "branch": "local/geometry-batches",
+    "commits": [
+      "9600a1fe268f96284fe3ae86b2b52f92da1bae7d feat(seo): migrate canonical URLs to unde-pescuim.ro",
+      "bfbe7e9cff2f1cd2af573634778f5d0e4ccf31ad qa: record custom-domain live verification",
+      "316d64a8f6e982f3a621ad89a190a5925a7518a6 chore(data): verify Botosani osm geometry batch",
+      "9be54185a028f2e84215d93e437032a2e9bbe7db fix(map): make county clip rebuilds provenance-aware",
+      "1bf31a63afd56e559939f2c1d881cfd5fc17e238 fix: distinguish unverified river sector focus",
+      "4469b769bdf79e0b1ea3c35373eb539b65fc68b3 fix: restore bounded Tarnava Mare focus affordance",
+      "6105371478f1279d64305324cbcf50fd86bcb401 fix: preserve valid multi-contract focus highlights",
+      "638503e33709d7086f05b28952a2c91f426fcec1 fix: fail closed on inferred Tarnava Mare sector focus",
+      "3a4f7c4d4d98a1d4e08b654c1448819a0bb293cf fix: fail closed on unproven Tarnava Mare sector focus",
+      "f1bf0169a4820c434602203ba13b8ac89af35a63 test: measure shared-river contract sectors",
+      "94c29b65cbfd25b4790dc2a67859cc52a96d9127 fix: prevent Olt disappearing during viewport pan",
+      "e16395d9099074124dc5a61f59b8f3472465a0dc fix: cull contracted waters by render geometry",
+      "04540c8f896106bab97a5e6512b63d8662786b25 fix: reset mobile water sheet snap on selection",
+      "b943d6f24b81801eecdbff5d34c75aa1e2594e26 audit: record Mures Harghita Covasna endpoints",
+      "e2109958d295aec952aea95fce38f69783f608b2 ci: pin generated audit outputs and isolate live-prod e2e",
+      "5fc10d087509fac4a8d1483e68e53289614ec51a feat: add safe incident routing guide",
+      "bc1511eb04926184aa03ae487f1c87a4e7ee43aa docs: publish integrated mobile regression report",
+      "64c5d38f1d33f589d92a53d22b583f9409e9b41c test: add mobile performance metrics and baseline comparisons",
+      "df62055a552ad064feacc2f03ddeaa2854127c02 test: record actionable mobile matrix diagnostics",
+      "b60c90d83d09ffd1fbf05765d64ea38e1563d70a test: add bounded mobile cache and network fixtures",
+      "f49c313bca7bab27d6a3d6d92e137746cf8746b4 docs: publish latest mobile coverage report",
+      "0d439d3cf27c906ce58782cc982dac354dac546a docs: record integrated mobile matrix run",
+      "1dca26fc199cc4499a2f312a110420acce5ab6fa test: make mobile fixtures and offline commands repeatable",
+      "2523b298c02a4f72bb7aa3ec3b4cac9a89fc30be fix: clean up mobile matrix server process group",
+      "04c94f18372e7c23a4d961aa3b2862d16cab5c23 docs: publish integrated mobile test report",
+      "4ac4f84cf017fdfaf17062faaf688f14a164819e docs: record mobile performance matrix evidence",
+      "a9c977cd0b5ac043b7ade974d65bd732aeb6e922 test: stabilize mobile offline matrix evidence",
+      "70aeee0911b6ac5c9cbfb226d767275bb7abedf0 docs: record repository verification results",
+      "ad5ae02df05291c51c321bbafc01a497a2d5df72 fix: restore Ialomita multipart geometry",
+      "df6f9006846a73b0647b5da508f08ba3ce85b2ad test: add repair record pipeline integration coverage"
+    ],
+    "head": "9600a1fe268f96284fe3ae86b2b52f92da1bae7d",
+    "worktree": "## local/geometry-batches\n?? .hermes/\n?? .local-work/.geometry-batch-dispatcher.lock\n?? .local-work/P0-alba-anpa-01-report.json\n?? .local-work/P0-alba-arebaltapeste-01-report.md\n?? .local-work/P0-alba-osm-bulk-01-report.json\n?? .local-work/P0-arad-anpa-romsilva-01-report.json\n?? .local-work/P0-arad-arebaltapeste-01-report.json\n?? .local-work/P0-arges-anpa-romsilva-01-report.json\n?? .local-work/P0-arges-arebaltapeste-01.json\n?? .local-work/P0-arges-osm-bulk-01-report.json\n?? .local-work/P0-arges-osm-bulk-02-report.json\n?? .local-work/P0-bacau-anpa-romsilva-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-01-report.json\n?? .local-work/P0-bacau-arebaltapeste-02-report.json\n?? .local-work/P0-bacau-arebaltapeste-03.report.json\n?? .local-work/P0-bacau-hotosm-01-report.json\n?? .local-work/P0-bihor-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-anpa-romsilva-01-report.json\n?? .local-work/P0-bistrita-nasaud-arebaltapeste-01-report.json\n?? .local-work/P0-bistrita-nasaud-osm-bulk-01-report.json\n?? .local-work/P0-botosani-hotosm-01-report.json\n?? .local-work/P0-brasov-anpa-01-report.json\n?? .local-work/P0-brasov-anpa-romsilva-01-report.json\n?? .local-work/P0-brasov-arebaltapeste-01-report.json\n?? .local-work/P0-brasov-hotosm-01-report.json\n?? .local-work/P0-buzau-anpa-01-report.json\n?? .local-work/P0-buzau-anpa-romsilva-01-record-check.json\n?? .local-work/P0-buzau-anpa-romsilva-01-report.md\n?? .local-work/P0-buzau-hotosm-01-report.json\n?? .local-work/P0-buzau-osm-bulk-01-report.json\n?? .local-work/P0-calarasi-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-01-report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-01.report.json\n?? .local-work/P0-caras-severin-anpa-romsilva-02.report.json\n?? .local-work/P0-caras-severin-arebaltapeste-01.report.json\n?? .local-work/P0-caras-severin-hotosm-01-report.json\n?? .local-work/P0-caras-severin-hotosm-02-report.json\n?? .local-work/P0-caras-severin-hotosm-03-report.json\n?? .local-work/P0-caras-severin-osm-bulk-01-report.json\n?? .local-work/P0-cluj-anpa-01-integrity-report.json\n?? .local-work/P0-cluj-anpa-01-report.md\n?? .local-work/P0-cluj-anpa-romsilva-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-01-report.json\n?? .local-work/P0-cluj-arebaltapeste-02-report.json\n?? .local-work/P0-cluj-hotosm-01-report.json\n?? .local-work/P0-cluj-hotosm-02-report.json\n?? .local-work/P0-cluj-hotosm-03-report.json\n?? .local-work/P0-cluj-osm-bulk-01.report.json\n?? .local-work/P0-cluj-osm-bulk-02-integrity-report.json\n?? .local-work/P0-cluj-osm-bulk-02-report.json\n?? .local-work/P0-constanta-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-01-report.json\n?? .local-work/P0-covasna-anpa-romsilva-01-report.json\n?? .local-work/P0-covasna-osm-bulk-01-report.json\n?? .local-work/P0-covasna-osm-bulk-02-report.json\n?? .local-work/P0-dambovita-anpa-romsilva-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-01-report.md\n?? .local-work/P0-dambovita-arebaltapeste-02-report.md\n?? .local-work/P0-dambovita-hotosm-01-report.json\n?? .local-work/P0-dolj-anpa-01-report.json\n?? .local-work/P0-dolj-anpa-02-report.json\n?? .local-work/P0-dolj-hotosm-01-report.json\n?? .local-work/P0-dolj-osm-bulk-01-report.json\n?? .local-work/P0-gorj-anpa-01-report.json\n?? .local-work/P0-gorj-arebaltapeste-01.report.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-flags.json\n?? .local-work/P0-gorj-arebaltapeste-02-geometry-report.json\n?? .local-work/P0-gorj-arebaltapeste-02-report.json\n?? .local-work/P0-gorj-hotosm-01-report.json\n?? .local-work/P0-gorj-osm-bulk-01.report.json\n?? .local-work/P0-harghita-anpa-01.report.json\n?? .local-work/P0-harghita-anpa-02.report.json\n?? .local-work/P0-harghita-anpa-03.report.json\n?? .local-work/P0-harghita-anpa-romsilva-01-report.json\n?? .local-work/P0-harghita-hotosm-01.report.json\n?? .local-work/P0-harghita-osm-bulk-01-report.json\n?? .local-work/P0-hunedoara-anpa-01.report.json\n?? .local-work/P0-hunedoara-anpa-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-01-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-county.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-flags.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-02-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-integrity-report.json\n?? .local-work/P0-hunedoara-anpa-romsilva-03-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-01-report.json\n?? .local-work/P0-hunedoara-arebaltapeste-02.report.json\n?? .local-work/P0-hunedoara-hotosm-01-report.json\n?? .local-work/P0-hunedoara-hotosm-02-report.json\n?? .local-work/P0-hunedoara-hotosm-03-report.json\n?? .local-work/P0-hunedoara-hotosm-05-report.json\n?? .local-work/P0-ialomita-hotosm-01-report.json\n?? .local-work/P0-iasi-anpa-01-report.json\n?? .local-work/P0-ilfov-anpa-01.report.json\n?? .local-work/P0-ilfov-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-anpa-01-report.json\n?? .local-work/P0-maramures-anpa-02-report.json\n?? .local-work/P0-maramures-anpa-03-report.json\n?? .local-work/P0-maramures-anpa-romsilva-01-report.json\n?? .local-work/P0-maramures-anpa-romsilva-02-report.json\n?? .local-work/P0-maramures-arebaltapeste-01.report.json\n?? .local-work/P0-maramures-hotosm-01-report.json\n?? .local-work/P0-maramures-osm-bulk-01-report.json\n?? .local-work/P0-mehedinti-hotosm-01-report.json\n?? .local-work/P0-mures-anpa-02-report.json\n?? .local-work/P0-mures-anpa-03.report.json\n?? .local-work/P0-mures-anpa-04-report.json\n?? .local-work/P0-mures-anpa-romsilva-01-county.json\n?? .local-work/P0-mures-anpa-romsilva-01-integrity.json\n?? .local-work/P0-mures-anpa-romsilva-01-report.json\n?? .local-work/P0-mures-anpa-romsilva-02.report.json\n?? .local-work/P0-mures-hotosm-01-report.json\n?? .local-work/P0-mures-osm-bulk-01-report.json\n?? .local-work/P0-neamt-anpa-01-report.json\n?? .local-work/P0-neamt-anpa-romsilva-01-report.json\n?? .local-work/P0-neamt-arebaltapeste-01-report.json\n?? .local-work/P0-neamt-hotosm-01.report.json\n?? .local-work/P0-olt-anpa-01.report.json\n?? .local-work/P0-olt-arebaltapeste-01-report.json\n?? .local-work/P0-olt-hotosm-01-report.json\n?? .local-work/P0-olt-hotosm-02-report.json\n?? .local-work/P0-prahova-anpa-romsilva-01-report.json\n?? .local-work/P0-prahova-arebaltapeste-01.report.json\n?? .local-work/P0-prahova-hotosm-01-report.json\n?? .local-work/P0-prahova-osm-bulk-01-report.json\n?? .local-work/P0-salaj-anpa-romsilva-01-report.json\n?? .local-work/P0-salaj-hotosm-01.report.json\n?? .local-work/P0-salaj-osm-bulk-01-report.json\n?? .local-work/P0-satu-mare-osm-bulk-01-report.md\n?? .local-work/P0-sibiu-anpa-01.report.json\n?? .local-work/P0-sibiu-anpa-romsilva-01.report.json\n?? .local-work/P0-sibiu-arebaltapeste-01.report.md\n?? .local-work/P0-sibiu-arebaltapeste-02-report.json\n?? .local-work/P0-sibiu-hotosm-01.report.json\n?? .local-work/P0-sibiu-hotosm-02-report.md\n?? .local-work/P0-sibiu-hotosm-03-report.json\n?? .local-work/P0-sibiu-osm-bulk-01-report.json\n?? .local-work/P0-sibiu-osm-bulk-02-report.json\n?? .local-work/P0-suceava-anpa-01-report.md\n?? .local-work/P0-suceava-anpa-romsilva-01-report.json\n?? .local-work/P0-suceava-anpa-romsilva-02-report.md\n?? .local-work/P0-suceava-arebaltapeste-01-report.json\n?? .local-work/P0-teleorman-anpa-01-report.json\n?? .local-work/P0-timis-anpa-03-report.json\n?? .local-work/P0-timis-anpa-romsilva-01-report.json\n?? .local-work/P0-timis-arebaltapeste-01-report.json\n?? .local-work/P0-timis-hotosm-01-report.json\n?? .local-work/P0-timis-osm-bulk-01-report.json\n?? .local-work/P0-valcea-anpa-01-report.json\n?? .local-work/P0-valcea-anpa-02-geometry-report.json\n?? .local-work/P0-valcea-anpa-romsilva-01.report.json\n?? .local-work/P0-valcea-arebaltapeste-02-report.json\n?? .local-work/P0-valcea-arebaltapeste-03.report.json\n?? .local-work/P0-valcea-arebaltapeste-05-report.json\n?? .local-work/P0-valcea-arebaltapeste-06.report.json\n?? .local-work/P0-valcea-arebaltapeste-07.report.json\n?? .local-work/P0-valcea-hotosm-01-report.json\n?? .local-work/P0-valcea-hotosm-02-report.md\n?? .local-work/P0-valcea-osm-bulk-01-report.json\n?? .local-work/P0-vaslui-osm-bulk-01-report.json\n?? .local-work/P0-vrancea-anpa-01-report.json\n?? .local-work/P0-vrancea-anpa-romsilva-01-report.json\n?? .local-work/P0-vrancea-osm-bulk-01-report.json\n?? .local-work/README.md\n?? .local-work/geometry-final-aggregate-test.py\n?? .local-work/geometry-final-aggregate.json\n?? .local-work/geometry-final-aggregate.md\n?? .local-work/geometry-final-aggregate.py\n?? .local-work/geometry-repair-P0-alba-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arad-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-arges-hotosm-01-report.md\n?? .local-work/geometry-repair-P0-bacau-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-bihor-arebaltapeste-03-report.md\n?? .local-work/geometry-repair-P0-bistrita-nasaud-hotosm-01-report.json\n?? .local-work/geometry-repair-P0-botosani-anpa-01-report.json\n?? .local-work/geometry-repair-P0-brasov-anpa-02.json\n?? .local-work/geometry-repair-P0-brasov-anpa-03.json\n?? .local-work/geometry-repair-P0-brasov-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-giurgiu-anpa-01.json\n?? .local-work/geometry-repair-P0-gorj-anpa-romsilva-01.json\n?? .local-work/geometry-repair-P0-harghita-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-hunedoara-osm-bulk-02-report.md\n?? .local-work/geometry-repair-P0-maramures-anpa-romsilva-03-report.md\n?? .local-work/geometry-repair-P0-mehedinti-anpa-romsilva-01-report.md\n?? .local-work/geometry-repair-P0-mures-anpa-01-report.md\n?? .local-work/geometry-repair-P0-salaj-anpa-01-report.md\n?? .local-work/geometry-repair-P0-satu-mare-anpa-01-report.md\n?? .local-work/geometry-repair-P0-suceava-osm-bulk-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-01-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-02-report.md\n?? .local-work/geometry-repair-P0-timis-anpa-04-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-01-report.md\n?? .local-work/geometry-repair-P0-valcea-arebaltapeste-04-report.md\n?? .local-work/geometry-repair-p0-P0-braila-arebaltapeste-01.json\n?? .local-work/geometry-repair-p0-batches.json\n?? .local-work/geometry-repair-p0-inventory.json\n?? .local-work/geometry-repair-p0-report.md\n?? .local-work/geometry-repair-p0-vaslui-anpa-01.json\n?? .local-work/p0-bihor-arebaltapeste-02-report.json\n?? .local-work/p0-bihor-osm-bulk-01-report.json\n?? .local-work/p0-bistrita-nasaud-anpa-01-report.json\n?? .local-work/p0-bistrita-nasaud-arebaltapeste-02-report.json\n?? .local-work/p0-botosani-arebaltapeste-01-report.json\n?? .local-work/p0-botosani-arebaltapeste-02-report.json\n?? .local-work/p0-hunedoara-hotosm-04-integrity.json\n?? .local-work/p0-hunedoara-hotosm-04-report.md\n?? .local-work/p0-maramures-hotosm-county-flags.json\n?? .local-work/p0-maramures-hotosm-county.json\n?? .local-work/p0-maramures-hotosm-integrity.json\n?? .local-work/p0-timis-anpa-05-integrity.json\n?? .local-work/p0-timis-anpa-05-report.json\n?? .local-work/rebuild_geometry_repair_p0_manifest.py\n?? .local-work/rebuild_unresolved_geometry_inventory.py\n?? .local-work/test_geometry_repair_p0_manifest.py\n?? .local-work/test_unresolved_geometry_inventory.py\n?? .local-work/unresolved-geometry-batches.json\n?? .local-work/unresolved-geometry-inventory.json\n?? .local-work/unresolved-geometry-report.md\n?? batches/\n?? src/lib/vercel-seo-config.test.ts"
+  },
+  "malformed_reports": [],
+  "missing_reports": [
+    "P0-alba-anpa-romsilva-01",
+    "P0-arad-anpa-01",
+    "P0-vaslui-anpa-01"
+  ],
+  "preview": {
+    "status": "READY (Vercel CLI observed locally)",
+    "url": "https://undepescuim-geofabrik-preview-gpin6wu2h-stefan-a190.vercel.app",
+    "verification": "Preview deployment READY; no Production promotion performed."
+  },
+  "report_counts": {
+    "changed": 1,
+    "completed": 40,
+    "missing": 3,
+    "no-op": 146
+  },
+  "schema_version": 1,
+  "scope": {
+    "all_records": 1013,
+    "batches": 190,
+    "class_1_target_coverage": 701,
+    "unresolved_class_2_to_6": 312
+  },
+  "unresolved": {
+    "artifact_links": {
+      "batches": "/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-batches.json",
+      "inventory": "/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-inventory.json",
+      "report": "/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-report.md"
+    },
+    "class_counts": {
+      "2": 163,
+      "3": 13,
+      "4": 6,
+      "5": 12,
+      "6": 118
+    }
+  },
+  "validation": {
+    "canonical_data_mutation": false,
+    "duplicate_reports_detected": true,
+    "malformed_reports_listed": [],
+    "unique_target_coverage": true
+  }
+}
