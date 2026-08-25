@@ -9,9 +9,12 @@ import argparse, hashlib, json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INVENTORY = ROOT / ".local-work" / "unresolved-geometry-inventory.json"
+# Shared source evidence lives outside this isolated worktree. Generated
+# artifacts remain local to the worktree and never mutate canonical data.
+LOCAL_WORK_ROOT = ROOT.parent.parent / ".local-work"
+INVENTORY = LOCAL_WORK_ROOT / "unresolved-geometry-inventory.json"
 OUTPUT = ROOT / "public" / "data" / "preview_class2_physical.json"
-CHUNKS = ROOT / ".local-work" / "class2-chunks.json"
+CHUNKS = LOCAL_WORK_ROOT / "class2-chunks.json"
 
 
 def stable_hash(value: object) -> str:
@@ -95,15 +98,19 @@ def build(input_path: Path = INVENTORY, chunk_id: str | None = None) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--chunk-id")
-    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     artifact = build(chunk_id=args.chunk_id)
     expected = len(chunk_slugs(args.chunk_id)) if args.chunk_id else 163
     if artifact["recordCount"] != expected:
         raise SystemExit(f"expected {expected} Class-2 records, got {artifact['recordCount']}")
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(artifact, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8")
-    print(f"wrote {args.output} ({artifact['recordCount']} records, {artifact['candidateCount']} physical candidates)")
+    output = args.output or (
+        ROOT / "public" / "data" / f"preview_class2_physical_{args.chunk_id.lower()}.json"
+        if args.chunk_id else OUTPUT
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(artifact, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8")
+    print(f"wrote {output} ({artifact['recordCount']} records, {artifact['candidateCount']} physical candidates)")
 
 
 if __name__ == "__main__":
