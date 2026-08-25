@@ -34,4 +34,38 @@ describe('Class 2 physical preview', () => {
   it('computes bounds from physical geometry only', () => {
     expect(previewBounds(artifact)).toEqual([23, 46, 24, 47]);
   });
+
+  it.each([
+    ['LineString', { type: 'LineString', coordinates: [[23, 46], [24, 47]] }, 24],
+    ['MultiLineString', { type: 'MultiLineString', coordinates: [[[23, 46], [24, 47]]] }, 24],
+    ['Polygon', { type: 'Polygon', coordinates: [[[23, 46], [24, 47], [25, 46], [23, 46]]] }, 25],
+    ['MultiPolygon', { type: 'MultiPolygon', coordinates: [[[[23, 46], [24, 47], [25, 46], [23, 46]]]] }, 25],
+  ])('computes bounds for %s geometry', (_type, geometry, maxLon) => {
+    const candidate = artifact.records[0].physicalCandidates[0];
+    const geometryArtifact = {
+      ...artifact,
+      records: [{
+        ...artifact.records[0],
+        physicalCandidates: [{ ...candidate, geometry }],
+      }],
+    } as Class2PreviewArtifact;
+
+    expect(previewBounds(geometryArtifact)).toEqual([23, 46, maxLon, 47]);
+  });
+
+  it('uses the fallback bounds for invalid or null geometry', () => {
+    const candidate = artifact.records[0].physicalCandidates[0];
+    const malformedArtifact = {
+      ...artifact,
+      records: [{
+        ...artifact.records[0],
+        physicalCandidates: [
+          { ...candidate, geometry: null },
+          { ...candidate, id: 'invalid', geometry: { type: 'GeometryCollection', geometries: [] } },
+        ],
+      }],
+    } as unknown as Class2PreviewArtifact;
+
+    expect(previewBounds(malformedArtifact)).toEqual([20, 43.5, 30, 48.5]);
+  });
 });

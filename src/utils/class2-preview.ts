@@ -48,6 +48,12 @@ export interface Class2PreviewArtifact {
   records: Class2PreviewRecord[];
 }
 
+type CoordinateGeometry = Exclude<GeoJSON.Geometry, GeoJSON.GeometryCollection>;
+
+function hasCoordinates(value: unknown): value is CoordinateGeometry {
+  return typeof value === 'object' && value !== null && 'coordinates' in value && Array.isArray(value.coordinates);
+}
+
 export function previewFeatures(artifact: Class2PreviewArtifact): GeoJSON.Feature[] {
   return artifact.records.flatMap((record) =>
     record.physicalCandidates.map((candidate) => ({
@@ -77,7 +83,9 @@ export function previewBounds(artifact: Class2PreviewArtifact): BBox {
     }
     value.forEach(visit);
   };
-  artifact.records.forEach((record) => record.physicalCandidates.forEach((candidate) => visit(candidate.geometry.coordinates)));
+  artifact.records.forEach((record) => record.physicalCandidates.forEach((candidate) => {
+    if (hasCoordinates(candidate.geometry)) visit(candidate.geometry.coordinates);
+  }));
   if (points.length === 0) return [20, 43.5, 30, 48.5];
   return points.reduce<BBox>(
     (bounds, [lon, lat]) => [Math.min(bounds[0], lon), Math.min(bounds[1], lat), Math.max(bounds[2], lon), Math.max(bounds[3], lat)],
