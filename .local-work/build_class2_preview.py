@@ -9,9 +9,12 @@ import argparse, hashlib, json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-INVENTORY = ROOT / ".local-work" / "unresolved-geometry-inventory.json"
+# Shared source evidence lives outside this isolated worktree. Generated
+# artifacts remain local to the worktree and never mutate canonical data.
+LOCAL_WORK_ROOT = ROOT.parent.parent / ".local-work"
+INVENTORY = LOCAL_WORK_ROOT / "unresolved-geometry-inventory.json"
 OUTPUT = ROOT / "public" / "data" / "preview_class2_physical.json"
-CHUNKS = ROOT / ".local-work" / "class2-chunks.json"
+CHUNKS = LOCAL_WORK_ROOT / "class2-chunks.json"
 
 
 def stable_hash(value: object) -> str:
