@@ -13,6 +13,7 @@ import {
   UNCONTRACTED_LAKE_COLOR,
   UNCONTRACTED_LAKE_FILL,
   POINT_FALLBACK_COLOR,
+  getPhysicalPreviewStyle,
 } from '@/utils/colors';
 
 describe('color constants', () => {
@@ -107,5 +108,14 @@ describe('uncontracted styles', () => {
     expect(s.color).toBe(UNCONTRACTED_LAKE_COLOR);
     expect(s.fillColor).toBe(UNCONTRACTED_LAKE_FILL);
     expect(s.fillOpacity).toBe(0.25);
+  });
+});
+
+describe('physical preview styles', () => {
+  it('always stays neutral teal and dashed, including when a water is selected', () => {
+    expect(getPhysicalPreviewStyle(false)).toEqual({
+      color: '#14b8a6', weight: 3, opacity: 0.9, dashArray: '7 5',
+    });
+    expect(getPhysicalPreviewStyle(true)).toEqual(getPhysicalPreviewStyle(false));
   });
 });

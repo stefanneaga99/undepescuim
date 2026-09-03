@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { measureContractSector, resolveMapSelectionFocus } from '@/utils/contract-sector';
+import { hasExplicitSectorInterval, measureContractSector, resolveMapSelectionFocus } from '@/utils/contract-sector';
 import { pointAtFraction } from '@/utils/river-course';
 import type { Water } from '@/types/data';
 
@@ -20,6 +20,14 @@ function water(over: Partial<Water>): Water {
 }
 
 describe('measureContractSector', () => {
+  it('only treats the documented Buzău/Covasna and Brașov endpoints as explicit', () => {
+    const waters = JSON.parse(readFileSync('public/data/waters.json', 'utf8')) as Water[];
+    expect(hasExplicitSectorInterval(waters.find((w) => w.slug === 'anpa-anpa-0261')!)).toBe(true);
+    expect(hasExplicitSectorInterval(waters.find((w) => w.slug === 'romsilva-brasov-buzaul-superior')!)).toBe(true);
+    for (const slug of ['anpa-anpa-0207', 'anpa-anpa-0210', 'anpa-anpa-0211', 'anpa-anpa-0214']) {
+      expect(hasExplicitSectorInterval(waters.find((w) => w.slug === slug)!)).toBe(false);
+    }
+  });
   it('reports the current Târnava Mare fallback as inferred, not source-backed', () => {
     const waters = JSON.parse(readFileSync('public/data/waters.json', 'utf8')) as Water[];
     const selected = waters.find((w) => w.slug === 'anpa-anpa-0333');

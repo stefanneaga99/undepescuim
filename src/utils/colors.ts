@@ -76,6 +76,12 @@ export const UNCONTRACTED_LAKE_FILL = '#14b8a6';
  * no mapped course'. Coverage (green/grey) still applies on top. */
 export const POINT_FALLBACK_COLOR = '#8b5cf6';
 
+/** Preview-only physical course: neutral and clearly distinct from legal coverage. */
+export function getPhysicalPreviewStyle(focused = false): PathOptions {
+  void focused;
+  return { color: UNCONTRACTED_COLOR, weight: 3, opacity: 0.9, dashArray: '7 5' };
+}
+
 /**
  * Style for bbox-fallback waters (t_cdb614de): a water with a known contract
  * bbox but NO real OSM geometry renders as a small filled DOT at the bbox

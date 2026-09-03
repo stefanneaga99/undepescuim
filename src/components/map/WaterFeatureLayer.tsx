@@ -19,6 +19,7 @@ import {
 } from '@/utils/river-course';
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 import type { MapSelectionFocus } from '@/utils/contract-sector';
+import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
@@ -257,6 +258,10 @@ export function WaterFeatureLayer({
     const out: GeoJSON.Feature[] = [];
     for (const w of allWaters) {
       if ((w.asociatie?.slug ?? null) !== coverageSlug) continue;
+      // A course_frac only locates a record; it never proves contractual
+      // endpoints. Never paint an inferred Voronoi slice as an association
+      // sector (notably Buzău 0207/0210/0211/0214).
+      if (!hasExplicitSectorInterval(w)) continue;
       const gk = groupKeyOf(w);
       if (!gk) continue;
       const group = contractGroup(w, allWaters);
