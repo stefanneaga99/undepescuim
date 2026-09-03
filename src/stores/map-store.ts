@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
-import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
 import { dedupePhysicalPreview, physicalPreviewWaters } from '@/utils/physical-preview';
+import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;

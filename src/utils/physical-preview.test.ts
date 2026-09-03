@@ -1,14 +1,11 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { dedupePhysicalPreview, isUnverifiedPhysicalPreview, physicalPreviewWaters } from '@/utils/physical-preview';
 import type { Water } from '@/types/data';
+import { dedupePhysicalPreview, isUnverifiedPhysicalPreview, physicalPreviewSelection, physicalPreviewWaters } from './physical-preview';
 
-const geometry = {
-  type: 'LineString' as const,
-  coordinates: [[25.9, 45.1], [27.7, 45.67]],
-};
+const geometry = { type: 'LineString' as const, coordinates: [[25.9, 45.1], [27.7, 45.67]] };
 
-const preview = (slug: string, riverGroup: string, geometryHash: string): Water => ({
+const preview = (slug: string, riverGroup = 'buzau', geometryHash = 'shared-course'): Water => ({
   slug,
   name: slug,
   judet: 'Buzău',
@@ -19,35 +16,45 @@ const preview = (slug: string, riverGroup: string, geometryHash: string): Water 
   asociatie: null,
   riverGroup,
   physicalPreview: true,
+  physicalSourceSlug: slug,
+  physicalRiverGroup: riverGroup,
+  physicalGeometryHash: geometryHash,
   legalStatus: 'legal sector unverified',
   physicalProvenance: { sourceBranch: 'local/class2-03', sourceCommit: 'abc', geometryHash },
 });
 
 describe('physical preview rendering', () => {
-  it('keeps canonical slug and derives geometry bbox', () => {
+  it('keeps canonical slug, full geometry, and legal disclosure separate from contracts', () => {
     const [water] = physicalPreviewWaters({
       schemaVersion: 1,
-      records: [{ slug: 'anpa-anpa-0211', name: 'Valea Buzăului inferior', county: 'Buzău', subtype: 'rau', sourceBranch: 'local/class2-09', sourceCommit: 'commit', physicalCandidates: [{ geometry, geometryHash: 'hash' }] }],
+      records: [{ slug: 'anpa-anpa-0214', name: 'Râul Buzăul inferior', county: 'Buzău', subtype: 'rau', riverGroup: 'buzau', sourceBranch: 'local/class2-03', sourceCommit: 'abc', physicalCandidates: [{ geometry, geometryHash: 'hash' }] }],
     });
-    expect(water.slug).toBe('anpa-anpa-0211');
+    expect(water.slug).toBe('anpa-anpa-0214');
     expect(water.bbox).toEqual([25.9, 45.1, 27.7, 45.67]);
     expect(water.geometry).toEqual(geometry);
-    expect(water.physicalPreview).toBe(true);
     expect(water.legalStatus).toBe('legal sector unverified');
+    expect(water.physicalSourceSlug).toBe('anpa-anpa-0214');
   });
 
-  it('renders the shared Buzău candidate once while retaining distinct river groups', () => {
-    const result = dedupePhysicalPreview([
-      preview('buzau-covasna', 'buzau', 'same-course'),
-      preview('buzau-buzau', 'buzau', 'same-course'),
-      preview('buzau-brasov', 'buzau', 'same-course'),
-      preview('other-river', 'other', 'same-course'),
+  it('paints the shared Buzău/Covasna course once while retaining every source alias', () => {
+    const records = dedupePhysicalPreview([
+      preview('anpa-anpa-0214'),
+      { ...preview('anpa-anpa-0261'), judet: 'Covasna' },
     ]);
-    expect(result.map((water) => water.slug)).toEqual(['buzau-covasna', 'other-river']);
+    expect(records).toHaveLength(1);
+    expect(records[0].geometry).toEqual(preview('x').geometry);
+    expect(records[0].physicalAliases).toEqual(['anpa-anpa-0214', 'anpa-anpa-0261']);
+    expect(physicalPreviewSelection(records[0], 'anpa-anpa-0214')).toBe(true);
+    expect(physicalPreviewSelection(records[0], 'anpa-anpa-0261')).toBe(true);
   });
 
-  it('recognizes only explicitly marked unverified previews', () => {
-    expect(isUnverifiedPhysicalPreview(preview('preview', 'buzau', 'hash'))).toBe(true);
-    expect(isUnverifiedPhysicalPreview({ ...preview('normal', 'buzau', 'hash'), physicalPreview: false })).toBe(false);
+  it('does not merge identical geometry hashes from different river groups', () => {
+    const records = dedupePhysicalPreview([preview('buzau'), preview('other', 'other')]);
+    expect(records).toHaveLength(2);
+  });
+
+  it('recognizes only explicitly disclosed physical previews', () => {
+    expect(isUnverifiedPhysicalPreview(preview('preview'))).toBe(true);
+    expect(isUnverifiedPhysicalPreview({ ...preview('normal'), physicalPreview: false })).toBe(false);
   });
 });
