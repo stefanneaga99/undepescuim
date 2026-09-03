@@ -1,0 +1,101 @@
+{
+  "allowedWritePaths": [
+    ".local-work/river-geometry-phase1-audit.json",
+    ".local-work/river-geometry-phase1-report.md",
+    ".local-work/river-geometry-phase1-manifest.json"
+  ],
+  "canonicalDataSha256BeforeAfter": {
+    "countyClips": [
+      "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+      "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92"
+    ],
+    "renderProvenance": [
+      "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5",
+      "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5"
+    ],
+    "segmentAudit": [
+      "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35",
+      "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35"
+    ],
+    "waters": [
+      "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+      "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+    ]
+  },
+  "doubleRunByteDeterminism": "verified by caller",
+  "generatorCommand": "python .local-work/audit_river_geometry_phase1.py --output-dir <temp> --source-root /home/stefan/undepescuim-local-work",
+  "generatorVersion": "1.0.0",
+  "outputFiles": [
+    {
+      "path": "river-geometry-phase1-audit.json",
+      "sha256": "77ce2f87553d61496e2320eb813aaabbdb524bc031d6aac3eed8a25f9035b244"
+    },
+    {
+      "path": "river-geometry-phase1-report.md",
+      "sha256": "0a9e8c487e9ca3c5d99443b9f7bb241a944b9a74c640832886aedd528d469017"
+    }
+  ],
+  "outputPayloadSha256": "9d8b82c4bf14e066b7cd5e2328bf39ce22c4f8df595a74f2099ceda8353a91e3",
+  "recordCount": 295,
+  "recordSlugSha256": "873c0b0acb14ccb13cdf4e9771bb683e978b835958b90aa898c57383e753c91a",
+  "schemaVersion": "river-geometry-phase1-manifest/v1",
+  "sourceFiles": [
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/.local-work/unresolved-class3-6-audit.json",
+      "availability": "available",
+      "exists": true,
+      "path": ".local-work/unresolved-class3-6-audit.json",
+      "schemaVersion": 1,
+      "sha256": "4e503b8c6b4507c9fd7d8f4252434ab5f5a410160f36947425584b10deb049d5"
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-inventory.json",
+      "availability": "available",
+      "exists": true,
+      "generatorVersion": "ugi-v1",
+      "path": ".local-work/unresolved-geometry-inventory.json",
+      "schemaVersion": 1,
+      "sha256": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3"
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/data/processed/geometry_render_repair_provenance.json",
+      "availability": "available",
+      "exists": true,
+      "path": "data/processed/geometry_render_repair_provenance.json",
+      "sha256": "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5"
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/data/processed/river_segment_audit.json",
+      "availability": "available",
+      "exists": true,
+      "path": "data/processed/river_segment_audit.json",
+      "sha256": "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35"
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim/.worktrees/t_6465ebb8/public/data/preview_class2_physical.json",
+      "availability": "unavailable",
+      "exists": false,
+      "path": "public/data/preview_class2_physical.json",
+      "sha256": null
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/public/data/waters.json",
+      "availability": "available",
+      "exists": true,
+      "path": "public/data/waters.json",
+      "sha256": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+    },
+    {
+      "absolutePath": "/home/stefan/undepescuim-local-work/public/data/waters_county_clips.json",
+      "availability": "available",
+      "exists": true,
+      "path": "public/data/waters_county_clips.json",
+      "sha256": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92"
+    }
+  ],
+  "toolVersions": {
+    "gitHead": "3d2e3823b5366301a0a48ae11d339a6858ed5ba0",
+    "gitStatus": "?? .local-work/",
+    "python": "3.12+"
+  }
+}
