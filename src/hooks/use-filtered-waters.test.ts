@@ -36,6 +36,27 @@ beforeEach(() => {
 });
 
 describe('useFilteredWaters', () => {
+  it.each([
+    ['anpa-anpa-0202', 'Brăila'],
+    ['anpa-anpa-0204', 'Brăila'],
+    ['romsilva-bacau-barzauta', 'Bacău'],
+    ['romsilva-covasna-sugo', 'Covasna'],
+    ['romsilva-maramures-crasna-frumusaua', 'Maramureș'],
+    ['vb2p0152', 'Olt'],
+  ])('keeps audited Class 4 geometry in the map input under %s', (slug, county) => {
+    const candidate = water({
+      slug,
+      judet: county,
+      geometry: { type: 'LineString', coordinates: [[23, 46], [23.1, 46.1]] },
+      geometryByCounty: { [county.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')]: null },
+    });
+    useMapStore.setState({ countyFilter: [county], waters: [candidate] });
+    const { result } = renderHook(() => useFilteredWaters());
+    expect(result.current).toHaveLength(1);
+    expect(result.current[0].slug).toBe(slug);
+    expect(result.current[0].geometry).toEqual(candidate.geometry);
+  });
+
   it('returns everything when no filters are active', () => {
     const { result } = renderHook(() => useFilteredWaters());
     expect(result.current.map((w) => w.slug)).toEqual(['cluj-river', 'cluj-lake', 'bihor-river']);

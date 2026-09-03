@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, it, expect } from 'vitest';
-import { countyClipKey, countyRenderGeometry } from '@/utils/county-clip';
+import { readFileSync } from 'node:fs';
+import { countyClipKey, countyRenderGeometry, CLASS4_RENDERING_REPAIR_SLUGS } from '@/utils/county-clip';
 import type { Water } from '@/types/data';
 
 function water(over: Partial<Water> = {}): Water {
@@ -35,6 +36,24 @@ describe('countyClipKey', () => {
 });
 
 describe('countyRenderGeometry', () => {
+  it('allowlists exactly the six audited Class 4 candidates', () => {
+    expect([...CLASS4_RENDERING_REPAIR_SLUGS].sort()).toEqual([
+      'anpa-anpa-0202',
+      'anpa-anpa-0204',
+      'romsilva-bacau-barzauta',
+      'romsilva-covasna-sugo',
+      'romsilva-maramures-crasna-frumusaua',
+      'vb2p0152',
+    ]);
+  });
+
+  it('matches the audited lazy-clip sentinels without changing the data artifact', () => {
+    const clips = JSON.parse(readFileSync('public/data/waters_county_clips.json', 'utf8')) as Record<string, Record<string, unknown>>;
+    for (const slug of CLASS4_RENDERING_REPAIR_SLUGS) {
+      expect(Object.values(clips[slug] ?? {})).toEqual([null]);
+    }
+  });
+
   it('returns full geometry when geometryByCounty is absent', () => {
     const w = water({ geometry: fullGeom });
     expect(countyRenderGeometry(w)).toBe(fullGeom);
@@ -72,8 +91,8 @@ describe('countyRenderGeometry', () => {
     ['romsilva-covasna-sugo', 'Covasna'],
     ['romsilva-maramures-crasna-frumusaua', 'Maramureș'],
     ['vb2p0152', 'Olt'],
-  ])('keeps source-backed foreign geometry explicitly hidden for %s', (slug, county) => {
+  ])('keeps source-backed Class 4 geometry renderable for %s', (slug, county) => {
     const w = water({ slug, judet: county, geometry: fullGeom, geometryByCounty: { [countyClipKey(county)]: null } });
-    expect(countyRenderGeometry(w)).toBeNull();
+    expect(countyRenderGeometry(w)).toBe(fullGeom);
   });
 });

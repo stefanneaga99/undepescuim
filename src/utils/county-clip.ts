@@ -1,6 +1,21 @@
 import type { Water } from '@/types/data';
 
 /**
+ * Class 4 rendering repair candidates from the bounded audit. Their source
+ * geometry is intentionally retained when the lazy clip artifact contains
+ * an explicit hide sentinel; this changes only county-filter projection and
+ * does not alter the canonical geometry or its unresolved provenance.
+ */
+export const CLASS4_RENDERING_REPAIR_SLUGS = new Set([
+  'anpa-anpa-0202',
+  'anpa-anpa-0204',
+  'romsilva-bacau-barzauta',
+  'romsilva-covasna-sugo',
+  'romsilva-maramures-crasna-frumusaua',
+  'vb2p0152',
+]);
+
+/**
  * Normalize a county name to the key used in `Water.geometryByCounty`
  * (t_117f0b99): lowercase, diacritics stripped, all separators removed.
  * 'Bistrița-Năsăud' and 'Bistrița - Năsăud' both become 'bistritanasaud',
@@ -42,6 +57,12 @@ export function countyRenderGeometry(
   const key = countyClipKey(water.judet ?? '');
   if (!(key in byCounty)) return (water.geometry as NonNullable<Water['geometry']> | null) ?? undefined;
   const clip = byCounty[key];
-  if (!clip) return null;
+  if (!clip) {
+    // The six bounded Class 4 records have stale/over-broad null clip
+    // sentinels. Keep their existing source geometry visible rather than
+    // changing the data or manufacturing replacement geometry.
+    if (CLASS4_RENDERING_REPAIR_SLUGS.has(water.slug) && water.geometry) return water.geometry;
+    return null;
+  }
   return clip as NonNullable<Water['geometry']>;
 }
