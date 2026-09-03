@@ -28,14 +28,14 @@
   "outputFiles": [
     {
       "path": "river-geometry-phase1-audit.json",
-      "sha256": "77ce2f87553d61496e2320eb813aaabbdb524bc031d6aac3eed8a25f9035b244"
+      "sha256": "98c0d40bf327eaa69e2242c80ddd3f24224dde34fcf6fc7bb9fed287476d2bae"
     },
     {
       "path": "river-geometry-phase1-report.md",
       "sha256": "0a9e8c487e9ca3c5d99443b9f7bb241a944b9a74c640832886aedd528d469017"
     }
   ],
-  "outputPayloadSha256": "9d8b82c4bf14e066b7cd5e2328bf39ce22c4f8df595a74f2099ceda8353a91e3",
+  "outputPayloadSha256": "4290e83328b3fd812944aac068394c42911f456cdec54a97e42e5d6d5b92b4a9",
   "recordCount": 295,
   "recordSlugSha256": "873c0b0acb14ccb13cdf4e9771bb683e978b835958b90aa898c57383e753c91a",
   "schemaVersion": "river-geometry-phase1-manifest/v1",
