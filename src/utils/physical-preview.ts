@@ -45,6 +45,7 @@ export function physicalPreviewWaters(artifact: PhysicalPreviewArtifact): Water[
       bbox,
       asociatie: null,
       geometry: c.geometry,
+      riverGroup: typeof record.riverGroup === 'string' ? record.riverGroup : undefined,
       physicalPreview: true,
       legalStatus: 'legal sector unverified',
       physicalProvenance: {
@@ -54,4 +55,21 @@ export function physicalPreviewWaters(artifact: PhysicalPreviewArtifact): Water[
       },
     } satisfies Water];
   });
+}
+
+/** Keep one rendered line per shared physical candidate while retaining provenance. */
+export function dedupePhysicalPreview(waters: Water[]): Water[] {
+  const seen = new Set<string>();
+  return waters.filter((water) => {
+    const hash = water.physicalProvenance?.geometryHash;
+    const key = hash ? `${water.riverGroup ?? 'ungrouped'}:${hash}` : water.slug;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+/** A physical preview is never a legal-sector claim. */
+export function isUnverifiedPhysicalPreview(water: Water): boolean {
+  return water.physicalPreview === true && water.legalStatus === 'legal sector unverified';
 }

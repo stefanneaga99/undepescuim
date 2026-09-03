@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
-import { physicalPreviewWaters } from '@/utils/physical-preview';
+import { dedupePhysicalPreview, physicalPreviewWaters } from '@/utils/physical-preview';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -256,7 +256,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
       set({ associations, waters, uncontracted: majors, physicalPreview, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
       setTimeout(() => void Promise.resolve(fetch('/data/preview_class2_physical.json')).then(async (res) => {
         if (!res.ok) return;
-        set({ physicalPreview: physicalPreviewWaters(await res.json()) });
+        set({ physicalPreview: dedupePhysicalPreview(physicalPreviewWaters(await res.json())) });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
       try {
         await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
