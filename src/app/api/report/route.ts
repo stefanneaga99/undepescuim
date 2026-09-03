@@ -5,7 +5,7 @@ import { buildIssueText } from '@/lib/issue-text';
 import { reportDeduper } from '@/lib/report-dedupe';
 import { parseReportContext } from '@/lib/report-context';
 
-const REPO = 'neagastefan99/undepescuim';
+const REPO = 'stefanneaga99/undepescuim';
 const GITHUB_TIMEOUT_MS = 20_000;
 
 const REASON_LABELS: Record<string, string> = {

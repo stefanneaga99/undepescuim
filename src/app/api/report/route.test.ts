@@ -89,7 +89,7 @@ describe('POST /api/report', () => {
 
   it('200 with issueUrl on success, sending a Bearer token + report payload', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
-    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/neagastefan99/undepescuim/issues/1' }));
+    const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/stefanneaga99/undepescuim/issues/1' }));
     vi.stubGlobal('fetch', fetchMock);
 
     const res = await POST(request({
@@ -101,10 +101,10 @@ describe('POST /api/report', () => {
     }));
 
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({ ok: true, issueUrl: 'https://github.com/neagastefan99/undepescuim/issues/1' });
+    expect(await res.json()).toEqual({ ok: true, issueUrl: 'https://github.com/stefanneaga99/undepescuim/issues/1' });
 
     const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
-    expect(url).toBe('https://api.github.com/repos/neagastefan99/undepescuim/issues');
+    expect(url).toBe('https://api.github.com/repos/stefanneaga99/undepescuim/issues');
     const headers = init.headers as Record<string, string>;
     // Guards the Authorization header — it MUST be a real Bearer token, not a
     // redaction artifact (a previous write persisted '*** ${token}' here,

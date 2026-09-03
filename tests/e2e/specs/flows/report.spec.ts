@@ -35,7 +35,7 @@ test.describe('F8 — report flow', () => {
         contentType: 'application/json',
         json: {
           ok: !!(body.reason && body.waterSlug && body.waterName),
-          issueUrl: 'https://github.com/neagastefan99/undepescuim/issues/1',
+          issueUrl: 'https://github.com/stefanneaga99/undepescuim/issues/1',
         },
       });
     });
@@ -61,7 +61,7 @@ test.describe('F8 — report flow', () => {
     await expect(dialog.successText).toBeVisible();
     await expect(dialog.githubLink).toHaveAttribute(
       'href',
-      'https://github.com/neagastefan99/undepescuim/issues/1',
+      'https://github.com/stefanneaga99/undepescuim/issues/1',
     );
   });
 
