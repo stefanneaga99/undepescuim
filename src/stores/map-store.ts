@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
+import { physicalPreviewWaters } from '@/utils/physical-preview';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -255,18 +256,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
       set({ associations, waters, uncontracted: majors, physicalPreview, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
       setTimeout(() => void Promise.resolve(fetch('/data/preview_class2_physical.json')).then(async (res) => {
         if (!res.ok) return;
-        const artifact = (await res.json()) as { schemaVersion?: number; records?: Array<Record<string, unknown>> };
-        if (artifact.schemaVersion !== 1 || !Array.isArray(artifact.records)) return;
-        const preview = artifact.records.flatMap((record) => {
-          const candidates = Array.isArray(record.physicalCandidates) ? record.physicalCandidates : [];
-          const candidate = candidates[0];
-          if (!candidate || typeof candidate !== 'object') return [];
-          const c = candidate as { geometry?: Water['geometry']; bbox?: Water['bbox']; geometryHash?: string };
-          if (!c.geometry?.coordinates?.length) return [];
-          const bbox = c.bbox ?? [25, 46, 25, 46];
-          return [{ slug: `class2-preview-${String(record.slug)}`, name: String(record.name), judet: String(record.county), type: 'ape', subtype: record.subtype === 'lac' ? 'lac' : 'rau', coordinates: [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2] as [number, number], bbox, asociatie: null, geometry: c.geometry, physicalPreview: true, legalStatus: 'legal sector unverified', physicalProvenance: { sourceBranch: String(record.sourceBranch), sourceCommit: String(record.sourceCommit), geometryHash: c.geometryHash } } satisfies Water];
-        });
-        set({ physicalPreview: preview });
+        set({ physicalPreview: physicalPreviewWaters(await res.json()) });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
       try {
         await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
