@@ -30,6 +30,7 @@ export function WaterDetailSheet() {
   const waterSheetOpen = useMapStore((s) => s.waterSheetOpen);
   const waters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
+  const physicalPreview = useMapStore((s) => s.physicalPreview);
   const associations = useMapStore((s) => s.associations);
   const closeWaterSheet = useMapStore((s) => s.closeWaterSheet);
   const { t } = useI18n();
@@ -50,6 +51,7 @@ export function WaterDetailSheet() {
   const water =
     waters.find((w) => w.slug === selectedWaterSlug) ??
     uncontracted.find((w) => w.slug === selectedWaterSlug) ??
+    physicalPreview.find((w) => w.slug === selectedWaterSlug) ??
     null;
 
   // Card association: prefer the canonical 82-association record; fall back to

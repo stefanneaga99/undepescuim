@@ -13,6 +13,7 @@ import { UncontractedWaterLayer } from '@/components/map/UncontractedWaterLayer'
 import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 import { registerReportMapReader } from '@/hooks/use-report-context';
+import { PhysicalPreviewLayer } from '@/components/map/PhysicalPreviewLayer';
 
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
@@ -28,6 +29,7 @@ export function MapView() {
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
   const allWaters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
+  const physicalPreview = useMapStore((s) => s.physicalPreview);
 
   // Focus: when a water/contract is selected from the detail card, highlight
   // the water in orange. t_b1547e24: EVERY water gets the highlight —
@@ -84,6 +86,7 @@ export function MapView() {
       {/* Uncontracted overlay renders BELOW contracted waters so clicks on a
           contracted river always win over the teal background layer. */}
       <UncontractedWaterLayer waters={filteredUncontracted} focusColor={focusColor} />
+      <PhysicalPreviewLayer waters={physicalPreview} />
       <WaterFeatureLayer
         waters={filteredWaters}
         allWaters={allWaters}
