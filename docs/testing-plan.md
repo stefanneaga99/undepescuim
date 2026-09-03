@@ -40,7 +40,7 @@ are reusable — see §8).
 | Node / npm | v22.23.2 / 10.9.8 (package.json uses **npm**, not pnpm) |
 | Python | 3.12.3. `.venv` has `shapely 2.1.2` + `numpy 2.5.2` but **no pytest / no requests**; system `python3` has `pytest 9.1.1` + `requests 2.33.0` but **no shapely** |
 | tsconfig alias | `"@/*": ["./src/*"]` — vitest must mirror this |
-| Git | `github.com/neagastefan99/undepescuim`, branch `main`, no `.github/workflows/` |
+| Git | `github.com/stefanneaga99/undepescuim`, branch `main`, no `.github/workflows/` |
 
 **Key gap:** there is *no single Python interpreter with every dependency*.
 Pipeline tests need `shapely` (from `.venv`) AND `pytest`. Resolution in §4 —

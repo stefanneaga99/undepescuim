@@ -4,7 +4,7 @@
 **Author:** plan-maker
 **Date:** 2026-08-16
 **Status:** DRAFT — for review (see §9)
-**Repo:** `/home/stefan/undepescuim` (GitHub `neagastefan99/undepescuim`, public)
+**Repo:** `/home/stefan/undepescuim` (GitHub `stefanneaga99/undepescuim`, public)
 
 ---
 
@@ -52,12 +52,12 @@ hardening + adding automated guards, not fixing an active exploit.
 
 | # | Item | Finding | Risk |
 |---|------|---------|------|
-| 1a | GH token handling | `REPORT_GITHUB_TOKEN` read from `process.env` (server-side only, never `NEXT_PUBLIC_`), used as `Authorization: Bearer ${token}`. `[CONFIRMED]` correct. Token scope per ARCHITECTURE.md is fine-grained **Issues: Read & Write on `neagastefan99/undepescuim` only** — `[RUNTIME]` verify in GitHub → Settings → Developer settings → Fine-grained tokens. | Token theft = repo write (issues) |
+| 1a | GH token handling | `REPORT_GITHUB_TOKEN` read from `process.env` (server-side only, never `NEXT_PUBLIC_`), used as `Authorization: Bearer ${token}`. `[CONFIRMED]` correct. Token scope per ARCHITECTURE.md is fine-grained **Issues: Read & Write on `stefanneaga99/undepescuim` only** — `[RUNTIME]` verify in GitHub → Settings → Developer settings → Fine-grained tokens. | Token theft = repo write (issues) |
 | 1b | Token leakage in responses/logs | Responses return only generic codes (`invalid_json`, `invalid_reason`, `missing_water`, `not_configured`, `github_error`) — never the token. `[CONFIRMED]` **BUT** line 71 logs `res.text()` of the GitHub error body: `console.error('[report] create issue failed', res.status, await res.text())`. GitHub error bodies do not include the token, and Vercel function logs are private, but a paranoid future edit could log the request/response headers. Flag as a review item. | Low (log hygiene) |
 | 1c | Input validation | `reason` whitelisted against a `Set` (5 values). `[CONFIRMED]` ✓. Length caps: `waterSlug` 128, `waterName` 256, `details` 2000, `contactEmail` 254. `[CONFIRMED]` ✓. **No format validation** on slug/name/email; `contactEmail` is not validated as an email. | Low |
 | 1d | Rate limiting | **NONE.** No per-IP/per-key throttle, no captcha, no Vercel WAF rule. The only bot defense is a honeypot `website` field (hidden, `tabIndex=-1`, `aria-hidden`; filled → silent `200 {ok:true, issueUrl:null}`). Honeypot stops naive bots, not a scripted loop. `[CONFIRMED]` | **HIGH** (spam/abuse) |
 | 1e | Abuse / spam issue creation | Confirmed risk — an attacker can `curl` the endpoint in a loop to flood the repo with `report`-labelled issues and burn the token's GitHub API quota (fine-grained tokens: 5,000 req/hr). | **HIGH** |
-| 1f | SSRF | **No URL inputs anywhere** in the request schema. The only outbound fetch is a hardcoded `https://api.github.com/repos/neagastefan99/undepescuim/issues`. `[CONFIRMED]` no SSRF. | None |
+| 1f | SSRF | **No URL inputs anywhere** in the request schema. The only outbound fetch is a hardcoded `https://api.github.com/repos/stefanneaga99/undepescuim/issues`. `[CONFIRMED]` no SSRF. | None |
 | 1g | Error messages / stack traces | All error paths return generic JSON; no stack traces. `[CONFIRMED]` ✓ | None |
 | 1h | Content injection (issue title/body) | `waterName` is interpolated **unescaped** into the issue **title**; `details` and `contactEmail` into the **body**. User input can inject GitHub markdown: `@mentions` (pings maintainers/other users), `#refs`, embedded images (tracking pixels / IP logging), `[x]` task lists, links. No code execution on GitHub, but a spam/phish/notification-abuse vector. `[CONFIRMED]` | Low–Med |
 | 1i | PII in public issue | `contactEmail` is written verbatim into a **public** GitHub issue body. The form labels it "optional, for clarifications" with no warning that it becomes public. `[CONFIRMED]` | Privacy (Med) |
@@ -215,7 +215,7 @@ Also verify `https://undepescuim.ro` auto-upgrades `http://` → 301 to https (H
 
 1. GitHub → Settings → Developer settings → Fine-grained PATs → find the token backing
    `REPORT_GITHUB_TOKEN`.
-2. Assert: **repository access = `neagastefan99/undepescuim` only** (not "all repos"),
+2. Assert: **repository access = `stefanneaga99/undepescuim` only** (not "all repos"),
    permissions = **Issues: Read & Write only**, no `Contents`, no org/admin scopes.
 
 ### SEC-05 — Secret hygiene (static, scripted)

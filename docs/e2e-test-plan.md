@@ -34,7 +34,7 @@ Out of scope (documented, not implemented):
 | Data (served from `/public/data/`) | `associations.json` (43 KB), `waters.json` (**38 MB**), `uncontracted_rivers.json` (2.3 MB), `uncontracted_lakes.json` (3.3 MB), `counties.geojson` (227 KB) |
 | Playwright | `playwright@1.62.1` installed (raw `chromium` API only — **`@playwright/test` is NOT installed**) |
 | CI | **none** (no `.github/` directory) |
-| Report API | `POST /api/report` → GitHub issue on `neagastefan99/undepescuim` (label `report`); needs `REPORT_GITHUB_TOKEN`, else `503` |
+| Report API | `POST /api/report` → GitHub issue on `stefanneaga99/undepescuim` (label `report`); needs `REPORT_GITHUB_TOKEN`, else `503` |
 
 The app is a **data directory** — data correctness *is* the product. Half the existing
 tests are data-integrity assertions on the served JSON. The plan keeps that tier.
