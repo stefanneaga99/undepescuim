@@ -1,0 +1,1439 @@
+{
+  "allowedWritePaths": [
+    ".local-work/river-geometry-confirmed-batches.json",
+    ".local-work/river-geometry-confirmed-batches.md"
+  ],
+  "candidateRecords": [
+    {
+      "canonicalGeometrySha256": "33c87ab3f0c73fe554a05bd798d10f2efbabe29ac7df6ce83cd1bd6f94d4f882",
+      "classification": "RENDERING_FIX",
+      "eligible": false,
+      "identity": {
+        "county": "Bacău",
+        "name": "Râul Bărzăuța",
+        "riverGroup": "barzauta",
+        "subtype": "rau"
+      },
+      "inputHashes": {
+        "countyClips": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "inventory": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3",
+        "waters": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      },
+      "recordSha256": "564445544fea698547fee5d7770d218d930f2d8ec086cdfc0ff61e4db498fac3",
+      "rejectionReason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "reproductionStatus": "NOT_REPRODUCED",
+      "slug": "romsilva-bacau-barzauta",
+      "sourceCandidateHashes": [
+        "da15f4bfac734e170b3a6bc26c0ffb78200bcb62271b70dc5d9c18a49de50f07"
+      ]
+    },
+    {
+      "canonicalGeometrySha256": "02ce3e2c49f7857bb41b6ec06633f8bf3601829cc3bf9a42b286a207e9f9c6b4",
+      "classification": "RENDERING_FIX",
+      "eligible": false,
+      "identity": {
+        "county": "Covasna",
+        "name": "Râul Șugo",
+        "riverGroup": "sugo",
+        "subtype": "rau"
+      },
+      "inputHashes": {
+        "countyClips": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "inventory": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3",
+        "waters": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      },
+      "recordSha256": "742152b1eedaa1f5da61e1a7f0c52535511ca8b7da6d595ce3035681d9557652",
+      "rejectionReason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "reproductionStatus": "NOT_REPRODUCED",
+      "slug": "romsilva-covasna-sugo",
+      "sourceCandidateHashes": [
+        "35f1d23498157c80bb53f0210cd8b04c71a715345940f35ca4b4fbf8ffd7c880"
+      ]
+    },
+    {
+      "canonicalGeometrySha256": "72296fcead3dcd206ab1cdbae03e20c86e5a021c275f31b9ed0c72c10bfdd03a",
+      "classification": "RENDERING_FIX",
+      "eligible": false,
+      "identity": {
+        "county": "Maramureș",
+        "name": "Râul Crasna (Frumușaua)",
+        "riverGroup": "crasna",
+        "subtype": "rau"
+      },
+      "inputHashes": {
+        "countyClips": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "inventory": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3",
+        "waters": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      },
+      "recordSha256": "00231ae6ca1e6787f07931b1fd1cceec1122cd73796c16da0de4d4dbedcac8ee",
+      "rejectionReason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "reproductionStatus": "NOT_REPRODUCED",
+      "slug": "romsilva-maramures-crasna-frumusaua",
+      "sourceCandidateHashes": [
+        "7d6e75e731c01aaeed2a1f53e4a12206629e9b76578a5f075dfe391fa1162732"
+      ]
+    },
+    {
+      "canonicalGeometrySha256": "4b556411ff5991cf37c2b5b7521214697d31c3aa11cabafdb6d70c56f5d0ce33",
+      "classification": "RENDERING_FIX",
+      "eligible": false,
+      "identity": {
+        "county": "Olt",
+        "name": "Râul Geamărtălui ",
+        "riverGroup": "geamartalui",
+        "subtype": "rau"
+      },
+      "inputHashes": {
+        "countyClips": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "inventory": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3",
+        "waters": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      },
+      "recordSha256": "35e98b97a0ac7b4407383e685a4b83574a7b4a0c67207cca5f65fd8f71c9cc28",
+      "rejectionReason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "reproductionStatus": "NOT_REPRODUCED",
+      "slug": "vb2p0152",
+      "sourceCandidateHashes": [
+        "105e87089a9cbebf171e77aa052a62f8843b63b83367fc04fd33628a9bf08836"
+      ]
+    }
+  ],
+  "classificationCounts": {
+    "CONTRACT_ENDPOINT_MISSING": 12,
+    "NO_SAFE_GEOMETRY": 108,
+    "RENDERING_FIX": 4,
+    "SAME_NAME_REVIEW": 10,
+    "SOURCE_BACKED_PHYSICAL_PREVIEW_ONLY": 161
+  },
+  "confirmedExecutionBatches": [],
+  "generatorVersion": "1.0.0",
+  "outputPayloadSha256": "75b16491e2b80d5e1b2c44ed6836f115fd28c82fc13bfbc32784420d589b2419",
+  "parentAudit": {
+    "auditPath": ".local-work/river-geometry-phase1-audit.json",
+    "auditSha256": "98c0d40bf327eaa69e2242c80ddd3f24224dde34fcf6fc7bb9fed287476d2bae",
+    "canonicalDataSha256BeforeAfter": {
+      "countyClips": [
+        "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+        "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92"
+      ],
+      "renderProvenance": [
+        "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5",
+        "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5"
+      ],
+      "segmentAudit": [
+        "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35",
+        "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35"
+      ],
+      "waters": [
+        "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+        "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      ]
+    },
+    "gitRef": "origin/agent/t_6465ebb8",
+    "manifestPath": ".local-work/river-geometry-phase1-manifest.json",
+    "manifestSha256": "e61cdc90f29e67725c77d0938385191da84fea0fa8388a300faee10d98ffa029",
+    "outputPayloadSha256": "3437b5c771e6e4e8cd473097b12bb6bd999fa8e2f6b95044caa667b3a787228b",
+    "reportPath": ".local-work/river-geometry-phase1-report.md",
+    "reportSha256": "0a9e8c487e9ca3c5d99443b9f7bb241a944b9a74c640832886aedd528d469017",
+    "sourceManifest": [
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/.local-work/unresolved-class3-6-audit.json",
+        "availability": "available",
+        "exists": true,
+        "path": ".local-work/unresolved-class3-6-audit.json",
+        "schemaVersion": 1,
+        "sha256": "4e503b8c6b4507c9fd7d8f4252434ab5f5a410160f36947425584b10deb049d5"
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/.local-work/unresolved-geometry-inventory.json",
+        "availability": "available",
+        "exists": true,
+        "generatorVersion": "ugi-v1",
+        "path": ".local-work/unresolved-geometry-inventory.json",
+        "schemaVersion": 1,
+        "sha256": "10a3a36de5d0201719eba9da42f60a66f05bea737cff338732f064ceeafedaa3"
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/data/processed/geometry_render_repair_provenance.json",
+        "availability": "available",
+        "exists": true,
+        "path": "data/processed/geometry_render_repair_provenance.json",
+        "sha256": "e0eee331cec48c8c9db3afda68217b66727cc651294a13fd60834dd368ebb0d5"
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/data/processed/river_segment_audit.json",
+        "availability": "available",
+        "exists": true,
+        "path": "data/processed/river_segment_audit.json",
+        "sha256": "9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35"
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim/.worktrees/t_6465ebb8/public/data/preview_class2_physical.json",
+        "availability": "unavailable",
+        "exists": false,
+        "path": "public/data/preview_class2_physical.json",
+        "sha256": null
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/public/data/waters.json",
+        "availability": "available",
+        "exists": true,
+        "path": "public/data/waters.json",
+        "sha256": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0"
+      },
+      {
+        "absolutePath": "/home/stefan/undepescuim-local-work/public/data/waters_county_clips.json",
+        "availability": "available",
+        "exists": true,
+        "path": "public/data/waters_county_clips.json",
+        "sha256": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92"
+      }
+    ]
+  },
+  "partitionPolicy": {
+    "batchSizeMax": 20,
+    "batchSizeMin": 10,
+    "confirmedOnly": true,
+    "disjointBy": [
+      "slug",
+      "riverGroup",
+      "geometrySha256",
+      "county",
+      "sourceFamily"
+    ],
+    "groupBy": [
+      "countyNormalized",
+      "sourceFamilyNormalized"
+    ],
+    "oneActiveExecutioner": true,
+    "rootCommitRequired": true,
+    "worktreeRequired": true
+  },
+  "preconditions": {
+    "blockers": [
+      "No candidate has reproduction.status == REPRODUCED in the completed parent audit; all four RENDERING_FIX rows are NOT_REPRODUCED.",
+      "The completed audit records no two clean reproducible root-cause observations for any RENDERING_FIX row.",
+      "Reviewer acceptance of a root-cause report is not recorded.",
+      "The parent audit explicitly reports batch eligibility blocked; SOURCE_BACKED_PHYSICAL_PREVIEW_ONLY rows cannot enter canonical rendering repair batches."
+    ],
+    "lockedSourceCanonicalHashes": true,
+    "passed": false,
+    "renderingFixCount": 4,
+    "reviewerAcceptanceRecorded": false,
+    "twoCleanReproducibleRootCauseObservations": false
+  },
+  "recordHashes": [
+    {
+      "sha256": "3a31679ed04f8c0aa74488c4b4f3f19d0d2875f82155bbd5b49845d56e04b5cf",
+      "slug": "0a4d89le"
+    },
+    {
+      "sha256": "1cbee5fe9723e48e4c1c2bad2f249310fc922b0948f95a79c9315b3528205a16",
+      "slug": "0djgr9l8"
+    },
+    {
+      "sha256": "ed427d522e496abb297007c8109f598855293e4675f852917fe9c189515cbd90",
+      "slug": "0dsbiw28"
+    },
+    {
+      "sha256": "dbdcaf0a259db7efc7ecb9e696a5f792f0a034bb8a81e2556bbee8860def5bd3",
+      "slug": "1f162p36"
+    },
+    {
+      "sha256": "c5ba4ffcd15383280172952b27a242cd51f4ceab06becd9f5e419f85836c6601",
+      "slug": "1zqkhha4"
+    },
+    {
+      "sha256": "4586a18ce6c0a476c6d1d31a9d2ef3afea5cef3db3d24394d41fe073e0aef9e8",
+      "slug": "2dxykcpr"
+    },
+    {
+      "sha256": "c5071ed4434637bf95f7d63941a218fa46840085044563ca844e4e0f35b2e600",
+      "slug": "2g9hg98a"
+    },
+    {
+      "sha256": "8c32cb1afeb2cad0cec652222041bf6244986767941f1c0481d83e6331960c45",
+      "slug": "2tehod7w"
+    },
+    {
+      "sha256": "9bc28a21fe7d24346e9568f83b18601f09738ca1a3fe6922d0f23752a1fae44b",
+      "slug": "3e8t20hn"
+    },
+    {
+      "sha256": "47391518453a24fcbdd1948ba6f3aab71298ced2e4de0b33c668866a7c9dcdae",
+      "slug": "3gl3r1sa"
+    },
+    {
+      "sha256": "6113b7ed35af19d0aa01c4a66f77f71cb0541659168c19b2a6e33de83618386d",
+      "slug": "44plkztf"
+    },
+    {
+      "sha256": "e8cabcb79e9420e2cef1ad8730925541a1089dbb12952375b9fd7793c2c30c5e",
+      "slug": "7jpc32e8"
+    },
+    {
+      "sha256": "9d8cfde207db3a3643e4ba802b8824f33a86978c0893319286c9ebd15cd2261d",
+      "slug": "7oju77qb"
+    },
+    {
+      "sha256": "890e558e8b373665bd518c35ce1c098a5cace73f190db0a6680eb18a265653e7",
+      "slug": "7ull4jnk"
+    },
+    {
+      "sha256": "3aa96b444f10326710bc1fbfc2946641da2a3934db2d54c3e3d374d61710374d",
+      "slug": "8rd9jm0l"
+    },
+    {
+      "sha256": "c26d8879d81de22dc75efb08e41377fbde6e54bcdc20de2963460fc1ac42d1aa",
+      "slug": "9h06oubr"
+    },
+    {
+      "sha256": "7335f243303ba0baed00a72d62afca7d3464f1fccf26d69c7c69e3ff825ebafe",
+      "slug": "9y116j3m"
+    },
+    {
+      "sha256": "947ca19d858ae97560db657b526dba5c634dd0b733d4e6a289c3c917bd9a737e",
+      "slug": "a2qs9hkg"
+    },
+    {
+      "sha256": "fcbac2ddbcf6cb82e769a334d79acb8bf750e7fe9c9a0722188b7836c8f4fb50",
+      "slug": "ab4t7anb"
+    },
+    {
+      "sha256": "ac789e034c6fbbb07a27ad91f90a35e4d36f52bdf0ad8a5022f325f0d369629f",
+      "slug": "aksrc2lo"
+    },
+    {
+      "sha256": "907a6a71c592564a7ed9532b9647e1faa9a02ce215b6c6585e9cc84129d7c238",
+      "slug": "anpa-anpa-0011"
+    },
+    {
+      "sha256": "6d0bd4ac24ad1f173c8bb73d41f6aaa77264fa1acd1473708247e72d943063d0",
+      "slug": "anpa-anpa-0015"
+    },
+    {
+      "sha256": "e36474e16d80a0696d04c6b4444832ea9f16bc34622dba6ef71755c6b05b97f9",
+      "slug": "anpa-anpa-0018"
+    },
+    {
+      "sha256": "c788d429dbd75179333bd0d8bc82142c3fbb47dd47532b8788863ab89da78c83",
+      "slug": "anpa-anpa-0019"
+    },
+    {
+      "sha256": "ae09a9f59722fc15a7437981e1c5227502214e08410a3df6bc9f181f2f976bae",
+      "slug": "anpa-anpa-0023"
+    },
+    {
+      "sha256": "b364c671332cf8f794b67fa80d18036416c57bd286e8d9a5bc29989222b06e81",
+      "slug": "anpa-anpa-0026"
+    },
+    {
+      "sha256": "7e3ed543c8650de6da2ffbc4ebd0229d254ae1b1e001092fe823c1c08e75acdc",
+      "slug": "anpa-anpa-0040"
+    },
+    {
+      "sha256": "15d411ecba92c063360ce0f47a56655516d371eb9960ecb4f67e4e78e8a76ebc",
+      "slug": "anpa-anpa-0056"
+    },
+    {
+      "sha256": "ed4dff214c5927ebd3a9b5e5e81f8b8a7cb13a47ff356fa722593d4f721db65a",
+      "slug": "anpa-anpa-0066"
+    },
+    {
+      "sha256": "f015d2b1070cc62e4d3b3e277c747cd250a96a10765cfcc91b12415812ee9118",
+      "slug": "anpa-anpa-0091"
+    },
+    {
+      "sha256": "9c649bf4e1c33845bb7902dd83460b7b4c916f4dbadd35be1f4793c901a87270",
+      "slug": "anpa-anpa-0094"
+    },
+    {
+      "sha256": "000f043aeb25fcd90d5d76d8a12b57efcbfddf4822003ca33d4a4612cfd21241",
+      "slug": "anpa-anpa-0097"
+    },
+    {
+      "sha256": "c8c646ea9d1d8d4fe05074eb440a32afc8f4108003c31f8595d52dd765556292",
+      "slug": "anpa-anpa-0098"
+    },
+    {
+      "sha256": "c6aaf64afdf10297aaa9bfe3ab4bd16872e798e9f07cf4ac34ffb1dd4137f4ef",
+      "slug": "anpa-anpa-0125"
+    },
+    {
+      "sha256": "8b76bba6dcd7fe9954f2bf348478050841bdc175c586f1b0d03bdcbadaccceea",
+      "slug": "anpa-anpa-0131"
+    },
+    {
+      "sha256": "5dee38373640b987c4bb739c5dcb2c1a47831608a88ce2ff37f8273e8150ba38",
+      "slug": "anpa-anpa-0134"
+    },
+    {
+      "sha256": "2529bcd88192d595165f421453b692cee3c590f734d93bd20274a1bb09001317",
+      "slug": "anpa-anpa-0135"
+    },
+    {
+      "sha256": "c8adbdaa32da16469bdabb9b4f997c37bf44e5d88187d07dffccd87bfdc1708d",
+      "slug": "anpa-anpa-0152"
+    },
+    {
+      "sha256": "8e237d1da06a40d1473ee1c38e84f97ed149ac643863771c1791dc0b3f3e0841",
+      "slug": "anpa-anpa-0154"
+    },
+    {
+      "sha256": "43ec21e1ca0b0dede1e8d6bd79ecf5a96c67b4a29335c1c9524d53a0fbecbcf4",
+      "slug": "anpa-anpa-0156"
+    },
+    {
+      "sha256": "07015a2f82c83094b6ffc974e97a7eb8c91db0dd02edaac922c10bf13d0b23dd",
+      "slug": "anpa-anpa-0157"
+    },
+    {
+      "sha256": "162ebf8e68e88f59b385a0af9f53c2336ae4879605606b0eb0346d03972d9933",
+      "slug": "anpa-anpa-0158"
+    },
+    {
+      "sha256": "ab3845f93d0b3eb7e97bbd2d55af00fb3f25d60e6376dd1b495bf12494b4e0f2",
+      "slug": "anpa-anpa-0159"
+    },
+    {
+      "sha256": "a0d600461316c277da8a2270b7ace67d735b73df234bffbb8b983d8b8e3fd7bf",
+      "slug": "anpa-anpa-0160"
+    },
+    {
+      "sha256": "61303d74be3db18102a79b76e0eccaa1439a350dcaf63d1699915a9106bf7dec",
+      "slug": "anpa-anpa-0161"
+    },
+    {
+      "sha256": "1b95bf97a95547da3bff6ba2247e3b4346f0f7730ff6633abf7f03a34dd00dd9",
+      "slug": "anpa-anpa-0162"
+    },
+    {
+      "sha256": "b3cc18fbab0b86db852fbb1e478bd5cbed20d5588c2e3c0b3dd868ec62294702",
+      "slug": "anpa-anpa-0168"
+    },
+    {
+      "sha256": "bf7a91a01ba736497417c1f202f6acdae613fbaf1e9e59dfa17f35c902ee46cb",
+      "slug": "anpa-anpa-0184"
+    },
+    {
+      "sha256": "6601827894c02ba17866bf88512854b22f574cf6767eb9a7c4be0be12e3a02d2",
+      "slug": "anpa-anpa-0185"
+    },
+    {
+      "sha256": "10f1d3f5eae14e03ff2646c15d0f1028406ed15c5a0eeb2496ab2547299034af",
+      "slug": "anpa-anpa-0192"
+    },
+    {
+      "sha256": "21d990d3cc4c6d99ca417113a8eb412670b827bb6daccb7432ad88806cebd33f",
+      "slug": "anpa-anpa-0206"
+    },
+    {
+      "sha256": "c0b2b0325eefa5415599dcc4faff4193431b69b598855f4810c4d35c957e8111",
+      "slug": "anpa-anpa-0207"
+    },
+    {
+      "sha256": "975e3c64297f8c810fdb56efbd736085af7fbc614db92772a70126bf1d6504e7",
+      "slug": "anpa-anpa-0210"
+    },
+    {
+      "sha256": "a8bd94c88ac82e04992902a52e9bd6b5f361d76362042c7ec1772876879a1a78",
+      "slug": "anpa-anpa-0211"
+    },
+    {
+      "sha256": "b98a847619bf540a51267bf1bebc0cd06980cd69a59ef5c6ffb4f5691639810b",
+      "slug": "anpa-anpa-0212"
+    },
+    {
+      "sha256": "5d2eaf3e7b5dd958a70da453ff0d1d27de82cafbcb62ca82ed7972a75d8637c2",
+      "slug": "anpa-anpa-0213"
+    },
+    {
+      "sha256": "9d25c661f17b49f33a42dd73368b0de20c0de67c3c71047f609c4e8c2bc59640",
+      "slug": "anpa-anpa-0214"
+    },
+    {
+      "sha256": "d134342ba9b024d71b9138297f499474e56548767c5f36c7e7d4a2666906c15d",
+      "slug": "anpa-anpa-0215"
+    },
+    {
+      "sha256": "66679658116ba382264c8290d8f8f5e888a5e1cd7c9e85d2c96a9f93cf1d1ab0",
+      "slug": "anpa-anpa-0220"
+    },
+    {
+      "sha256": "180cb2a3046501893cb89ffc4454ea990070a0f068964bb09fcee5e4a08952a2",
+      "slug": "anpa-anpa-0221"
+    },
+    {
+      "sha256": "b36a82c173c8ef9c5a98948a7c8fc05efc2bf9bf5589037609b139a498748c17",
+      "slug": "anpa-anpa-0228"
+    },
+    {
+      "sha256": "2504fce97f8cc66d8dac0c14e4ed4a12f3831869a446740b8744e1437a7518c2",
+      "slug": "anpa-anpa-0229"
+    },
+    {
+      "sha256": "ad4a7f90cb1db7a50ae49558251d18f621de3ce8cce905491851240f1ae50007",
+      "slug": "anpa-anpa-0230"
+    },
+    {
+      "sha256": "c575254c4101e74d5ca38fa2217e915472052a13cc8890aa4b7c627eee6bb744",
+      "slug": "anpa-anpa-0231"
+    },
+    {
+      "sha256": "969dd7064d5463bd71bb7478762035e5ceb7c8b84a75cac8c93d320c559ea3cd",
+      "slug": "anpa-anpa-0236"
+    },
+    {
+      "sha256": "e81d52f24f57d76907582f35445bdc82a73aca124dfc097bf93e273b1f039014",
+      "slug": "anpa-anpa-0248"
+    },
+    {
+      "sha256": "d73fe5c627bc5a7d45854369dc0b3f328610333fa8423958a8a8358211f57ced",
+      "slug": "anpa-anpa-0249"
+    },
+    {
+      "sha256": "0f74bad85996966ba8296548f2627742c0f6119eb42a5dc8a947b0696ecc14fa",
+      "slug": "anpa-anpa-0250"
+    },
+    {
+      "sha256": "1a6a07c797d38ea5adfd41548f5e6084e568ebc2a3592c24f224f6f537e6b258",
+      "slug": "anpa-anpa-0252"
+    },
+    {
+      "sha256": "7a7d4adedce5997477d49d40c21ccb3c0c8146a6a44fcf2cf5ddcc2bd7e4360d",
+      "slug": "anpa-anpa-0253"
+    },
+    {
+      "sha256": "2eb8a50c479ea812ae57ddcc0a33c7073f236459b09dba31da2b67fe6e9a5638",
+      "slug": "anpa-anpa-0254"
+    },
+    {
+      "sha256": "792422aea36dbd2db529470510f758a3854aa493393d0aa366f1a82ae13070ad",
+      "slug": "anpa-anpa-0261"
+    },
+    {
+      "sha256": "e71c8729d5b739096da4210015e02927214bf35ead315e286e2c4a1adb22e23a",
+      "slug": "anpa-anpa-0264"
+    },
+    {
+      "sha256": "d33032dc9e1919fecc3359f2437d7f33882eaf3ff4fb992cdabf1c051f6390ad",
+      "slug": "anpa-anpa-0278"
+    },
+    {
+      "sha256": "8e1be9df9a0d1404b5dde1ed76da46bdc999ade03791de8168335001c7a33779",
+      "slug": "anpa-anpa-0279"
+    },
+    {
+      "sha256": "7e6c4d4455cbd4cfddbef1bed1d8f95989db35e38babfcac6005a7282191bf3e",
+      "slug": "anpa-anpa-0280"
+    },
+    {
+      "sha256": "8a1d1679b16c73ac543bdde52ad56aad5422bbaad72b381e4d8e912d8e74d11f",
+      "slug": "anpa-anpa-0293"
+    },
+    {
+      "sha256": "01629aefcfeaca3dc652e8636c046a28ed475cde7ee15124a554da490c843f3c",
+      "slug": "anpa-anpa-0295"
+    },
+    {
+      "sha256": "cbf8ff7d48c8903a0336beedcee5f430171501c176d3eaf32ac75a7e9c146c06",
+      "slug": "anpa-anpa-0296"
+    },
+    {
+      "sha256": "f220be3e96f6d9b7337edf593dcfa484e0e81b5704569fdad4c21fecd071c6a3",
+      "slug": "anpa-anpa-0297"
+    },
+    {
+      "sha256": "8f03544d3542850346bb7b1da665705f1470f485d1077270ba7a51dc8d79fd9c",
+      "slug": "anpa-anpa-0298"
+    },
+    {
+      "sha256": "0f4ab531ddf2d1d03b65d80e34568379a097b58ac8d045e5b17e5c0117c023d9",
+      "slug": "anpa-anpa-0302"
+    },
+    {
+      "sha256": "ca95891464fe29d7837d3f3339414f508f8fb2a47f293419b6f4de84e450ee41",
+      "slug": "anpa-anpa-0310"
+    },
+    {
+      "sha256": "9966e6df57ed58ded40b2cefa6bb584ba4d714a7c0cbc285d7267eb21c0e6e80",
+      "slug": "anpa-anpa-0323"
+    },
+    {
+      "sha256": "420d7cf8d56683b674520e1e2a8943864165ebeda016a8550bd0e37127f4f470",
+      "slug": "anpa-anpa-0326"
+    },
+    {
+      "sha256": "de27a6c4427c968fab54447cde01e05b984223d3d6f5153b3d66071023946973",
+      "slug": "anpa-anpa-0329"
+    },
+    {
+      "sha256": "ca03740290df62547534400e6a87912951cb27dd878db031b50434d2d3f03192",
+      "slug": "anpa-anpa-0331"
+    },
+    {
+      "sha256": "560406aaf756038a9e52b014fb5d1fbdae706884e266835ea47a3e41fb187e9a",
+      "slug": "anpa-anpa-0332"
+    },
+    {
+      "sha256": "c5d061da61825e21d920f27a9901d1065342c8795da3e26a5f0a3922bf4231b4",
+      "slug": "anpa-anpa-0333"
+    },
+    {
+      "sha256": "47e6d2012a0880b69b0ba6e0bcb5a0b3865bbc16058eabfdb20a5eadc7d396dd",
+      "slug": "anpa-anpa-0334"
+    },
+    {
+      "sha256": "2e15f3b545aa78acec8414bc0f66c690b1a5e93c9471596c87bbcbf53c62da1c",
+      "slug": "anpa-anpa-0337"
+    },
+    {
+      "sha256": "7b69da58826c7deb8ed0179843af2ff378740b3e6b5ed0e05feba49874c98064",
+      "slug": "anpa-anpa-0339"
+    },
+    {
+      "sha256": "4fb1d9855be2438ae59b9f894b7611cfcf16c22fe0dac485ad293ca90b78410b",
+      "slug": "anpa-anpa-0341"
+    },
+    {
+      "sha256": "cc5b1c0f1228b1c93b13e3a04b84195d881139fa69c90d1d575567a39fcfea86",
+      "slug": "anpa-anpa-0354"
+    },
+    {
+      "sha256": "64d75ffcd857dcc20dc1c81219b7b5839384bb1768f051a177edba7e1a6c3ec6",
+      "slug": "anpa-anpa-0370"
+    },
+    {
+      "sha256": "6dc99ef932540dc9ad9c898c11b38fb20258943ca70bc2306361b3932cca689e",
+      "slug": "anpa-anpa-0373"
+    },
+    {
+      "sha256": "3f67f86352e74db309dadbcc6bd8256508d3730fbd45733846a0410958e328bf",
+      "slug": "anpa-anpa-0377"
+    },
+    {
+      "sha256": "f5921124f1bec760539f734fca2351033adfbcd89a05195f160f95fc3781cca7",
+      "slug": "anpa-anpa-0378"
+    },
+    {
+      "sha256": "f6992963df127073ad7ce01b56622e0c3a213ea05673727900233c701483d9d2",
+      "slug": "anpa-anpa-0379"
+    },
+    {
+      "sha256": "d5bcaa10ed4fd46a3c067f47860ffbe976d75e1745d5d758b1f6fa3ae706ff0d",
+      "slug": "anpa-anpa-0387"
+    },
+    {
+      "sha256": "2e3990a098835f8d91f5d16ef1966545467e45248be879e7da7603184e2d1f3b",
+      "slug": "anpa-anpa-0388"
+    },
+    {
+      "sha256": "4aca0c5433d991909348d099b3c210d503f1187a24e05b881d2592f938aa5797",
+      "slug": "anpa-anpa-0389"
+    },
+    {
+      "sha256": "3849b462de4bef8d493711ead502099777677d7fb7438a4b897342d03a4d5f85",
+      "slug": "anpa-anpa-0390"
+    },
+    {
+      "sha256": "6f555a20856e8677f55af88fb6ff2676ee2afaf58787d86d3781f15146a85bbb",
+      "slug": "anpa-anpa-0392"
+    },
+    {
+      "sha256": "d3e0f8d51c03e22ee703a428ececb22a52b9898a83c82caa7ec7c357c9f7aa92",
+      "slug": "anpa-anpa-0393"
+    },
+    {
+      "sha256": "aad6003516a25f3ea54fc1f2eb599351002b9dc1dae4c2181c7e1a32ed737658",
+      "slug": "anpa-anpa-0400"
+    },
+    {
+      "sha256": "7d7d76945b44b35b0188e57e673f374141ee1eeb59d89219d2793bb4fa0b6a94",
+      "slug": "anpa-anpa-0402"
+    },
+    {
+      "sha256": "02aa70c394c597bb1e096bb2c1eb73db1e054c7829e6652d27eaae0faa785ffc",
+      "slug": "anpa-anpa-0407"
+    },
+    {
+      "sha256": "bb3d71554af5b3f34d45dbb87d5c4b74186c39b316a29f9090c8e037f4b109ae",
+      "slug": "anpa-anpa-0408"
+    },
+    {
+      "sha256": "7e0e0b47fa9d0ed1ea835ff709e1011e610f104be62d9e470a9417cdf57f9061",
+      "slug": "anpa-anpa-0413"
+    },
+    {
+      "sha256": "329e2435734a9141dd4ceec928c4d3b595a9d12f4bcf03304c81f77c15cd236d",
+      "slug": "anpa-anpa-0415"
+    },
+    {
+      "sha256": "c2eb2b1a40e7b95513e1bd2c0298f984000e9117ee9271b180e3c0297e84e12b",
+      "slug": "anpa-anpa-0416"
+    },
+    {
+      "sha256": "0bd5597b7db6c74fb480d528b387ca038a6a562a14728dfa5a1216e33dc1977c",
+      "slug": "anpa-anpa-0417"
+    },
+    {
+      "sha256": "c1b7ae63586a9c9331786f8d690b9cdaf5dab95f805fad8ccfbe0e82638b06e1",
+      "slug": "anpa-anpa-0418"
+    },
+    {
+      "sha256": "3f9e450b5b56eb583c772fcc097f511076a2ca34b028c36c7425f961b80e5f21",
+      "slug": "anpa-anpa-0422"
+    },
+    {
+      "sha256": "a7e32fb972638eda2bafb046e7c36ac547d91f6bbdb67ee4eab9a70c8662b350",
+      "slug": "anpa-anpa-0423"
+    },
+    {
+      "sha256": "a1b9a06c9bf0693952058f8e1ce2dbf2f60d16a3c77a5c013f0cddb2468657ba",
+      "slug": "anpa-anpa-0425"
+    },
+    {
+      "sha256": "b3f5ebb8221e3db26052b46c1552c10a6ee8894f1bf5c06c1c2755b97d0319e2",
+      "slug": "anpa-anpa-0426"
+    },
+    {
+      "sha256": "a23c3e3d00c6ba8aa7ee34385d1d6e3cd1d4fbf0a0ed0648f92d3dac5903fb91",
+      "slug": "anpa-anpa-0435"
+    },
+    {
+      "sha256": "792f4c0d622149f2935a185006ba5c6dcc84e1220d1d44893105995093f938fc",
+      "slug": "anpa-anpa-0437"
+    },
+    {
+      "sha256": "9b88929bacc9418dbfa3a4c4dae4c686ec417f5bc80e315735a15c333fb7104c",
+      "slug": "anpa-anpa-0440"
+    },
+    {
+      "sha256": "bfee45747c65b21e3068a2b889a324e2d5aeae67d088cbac5da45a357d3df6dd",
+      "slug": "anpa-anpa-0453"
+    },
+    {
+      "sha256": "5c2ef1403e6baac6c49349d9540aaa338fae7139b79db4bdd2dbcbcd5e4a3ace",
+      "slug": "anpa-anpa-0454"
+    },
+    {
+      "sha256": "f6040611ce7eca9ab7c319a6e971cf826c600181c717fbe761d9d53a78f135c6",
+      "slug": "anpa-anpa-0455"
+    },
+    {
+      "sha256": "a1fabb89c1c5f27ca3038029fdcdc43184d9f2510fa60732e348f40639c6fd8c",
+      "slug": "anpa-anpa-0463"
+    },
+    {
+      "sha256": "104a2b6ecd76268d47b9e54a2840f2b42676861ae99bc25ce24212448dd3d8c0",
+      "slug": "anpa-anpa-0469"
+    },
+    {
+      "sha256": "84416369bd8640d474c9131d56600e55378eeafc14ad2faa062c5f5d0238c74d",
+      "slug": "anpa-anpa-0496"
+    },
+    {
+      "sha256": "9c6012f963180878385d9e7e051924e1a0aba8748f314150a50cf9a63d07200b",
+      "slug": "anpa-anpa-0504"
+    },
+    {
+      "sha256": "e4a8e3ae486bd23e3cc402e58051c1d786a5d5810b4f0d136cb3b84a060e8254",
+      "slug": "anpa-anpa-0505"
+    },
+    {
+      "sha256": "9793f9166bf16022205644eaf58b4b22ca1917b2ddffb2127a1e288d231e9ebd",
+      "slug": "anpa-anpa-0508"
+    },
+    {
+      "sha256": "45810c383ce07dca2f2bf511851e8baf1016beb134f18bfbcbedc2a541888435",
+      "slug": "anpa-anpa-0512"
+    },
+    {
+      "sha256": "6b79867d9f02db5a757f86f486922c215f24fdbc187f04a72b9f0643a13f228a",
+      "slug": "anpa-anpa-0519"
+    },
+    {
+      "sha256": "dac2eeea2eab1fa43b78e25b632ce114a32c5a2e241e4b40884851c90c3e9919",
+      "slug": "anpa-anpa-0521"
+    },
+    {
+      "sha256": "99de5d2fc70fe062c00c96ea8c44e6edc760eb492b65278ecc543908d92d0e4e",
+      "slug": "anpa-anpa-0530"
+    },
+    {
+      "sha256": "f7ff038a8ed6d3e218888e9d72987107e170cda5270d4a217c226cbe23de7432",
+      "slug": "anpa-anpa-0552"
+    },
+    {
+      "sha256": "4c848b883a080ce6b2003a14f43207bbc38ce1b2579108eadb3396f24c6bc43f",
+      "slug": "anpa-anpa-0555"
+    },
+    {
+      "sha256": "baf735da62d48d6e5e1afac9f6ac8b1862493b767846a0bcf10ad7de71a0bb1b",
+      "slug": "anpa-anpa-0562"
+    },
+    {
+      "sha256": "8b6853b31b91af247fb565fee9fc3173dd013ba034d00cf63d1f5b9f62f6e5fb",
+      "slug": "anpa-anpa-0563"
+    },
+    {
+      "sha256": "78b56d0bf3116cdd8edb6ec0a02c1831456129581acdd5ae7879d4513da821be",
+      "slug": "anpa-anpa-0565"
+    },
+    {
+      "sha256": "6166703a860a6039ece7c6d94f0db3836486240198ea3c51693bf9dcfe75885f",
+      "slug": "anpa-anpa-0566"
+    },
+    {
+      "sha256": "4d8ae11cc57b4b9da4601c4466efd33478f6f44b40c3c981c4358bd0e98db331",
+      "slug": "anpa-anpa-0567"
+    },
+    {
+      "sha256": "3221509210f250dd1710db958630f94b0d4ab56f1748c5dd9bc627b2003d9f2d",
+      "slug": "anpa-anpa-0568"
+    },
+    {
+      "sha256": "468eb1bad7fbf7a4e85c42843914a531c3513955d66830cdefdbc09b2982f3c5",
+      "slug": "anpa-anpa-0569"
+    },
+    {
+      "sha256": "0f275285695a128142af684afd4c3663553332010e7d835b855ecdb6f6d43d1a",
+      "slug": "anpa-anpa-0570"
+    },
+    {
+      "sha256": "547e3458622a4a7bdca473ae1f68635ee6f9b5dcc56266102d59d49621960ee8",
+      "slug": "anpa-anpa-0574"
+    },
+    {
+      "sha256": "298341087ba6b825e30273efbc48b19c8ea7797bce5f4a94c75726dfe4655b37",
+      "slug": "anpa-anpa-0581"
+    },
+    {
+      "sha256": "a2a1cb23527036db16261b407ef7bea2a1295c32edc624adfaa47962e16a0123",
+      "slug": "anpa-anpa-0584"
+    },
+    {
+      "sha256": "15e549f118556d00a61b6615c269e902521ded3471e57f78d048023c21b56af1",
+      "slug": "anpa-anpa-0585"
+    },
+    {
+      "sha256": "a626434fcd8d6f8b301ea4eb635ae27bb10fedee1993b33e86a5802489705f19",
+      "slug": "anpa-anpa-0609"
+    },
+    {
+      "sha256": "6a29f7933922866d574c62f7003e1a2e333cf89f900a278f4efaafa9f23ce240",
+      "slug": "anpa-anpa-0611"
+    },
+    {
+      "sha256": "d51ef658b6b00769a05f4f70a39d1a27a7693cff617553bb936fd2cc66111105",
+      "slug": "anpa-anpa-0612"
+    },
+    {
+      "sha256": "a997e70f1f74969562f9c562cde5a6dce6fe47b99fd05a5077ebf2c6edd0ee7d",
+      "slug": "anpa-anpa-0614"
+    },
+    {
+      "sha256": "ebc6a0f95611df120d77c7907493a81306e78c167c83c5d451661d977b815348",
+      "slug": "anpa-anpa-0615"
+    },
+    {
+      "sha256": "9ffb65145050ac3d66a64de80f8a85eb1298396e2d0a31b8f024f851f1e5ac37",
+      "slug": "anpa-anpa-0622"
+    },
+    {
+      "sha256": "4f7b5139378b7738c46213ebff306160a6830ba3fb7e09bcde2d07263b6eb2a1",
+      "slug": "anpa-anpa-0623"
+    },
+    {
+      "sha256": "8c294deec92e50b973a4d4876f185c46c9a965aea139b08524fab0929d273ac8",
+      "slug": "anpa-anpa-0627"
+    },
+    {
+      "sha256": "56597b4dae7dd088c2eb8d3d7c9102e7b6b6bbf5d89ec21d84c53a2a43de1731",
+      "slug": "anpa-anpa-0669"
+    },
+    {
+      "sha256": "a16ac3e374e4586b0c713a91d2187ef331695d6a1089582ce37944edcd8f2d53",
+      "slug": "anpa-anpa-0671"
+    },
+    {
+      "sha256": "d6f42645d6715668dea0a639c92152c3ce7dd7e51b5cc21dd4fc882e1c5d395a",
+      "slug": "anpa-anpa-0674"
+    },
+    {
+      "sha256": "5d6e080258bdf5dec8840250c1809741f64ece8ddacc94949ce80823e7952ab8",
+      "slug": "anpa-anpa-0677"
+    },
+    {
+      "sha256": "c8b0e7040a58b92fad804da6a46228ea5b25ea7a1e4a7e1eeb30230b017cda3e",
+      "slug": "anpa-anpa-0680"
+    },
+    {
+      "sha256": "48499168c2e9a0ce661ca349239f44d52923541d5878b328154ef8ac8b8a33db",
+      "slug": "anpa-bacau-bistrita-39"
+    },
+    {
+      "sha256": "da57514ea87dd7de316b19c764e6f1cf090619c8289cf6e85d7da90987b34b5e",
+      "slug": "anpa-bn-bistrita-28"
+    },
+    {
+      "sha256": "d695c79904f01e13cd52e65afc1791aa53437e90156ede540dcf6ae6103c4d6d",
+      "slug": "anpa-bn-somesul-mare-61"
+    },
+    {
+      "sha256": "1cde59d5ef73987dc1ddbf809f6bef1776c7e40119679c3938a2422ca93affe5",
+      "slug": "anpa-harghita-tarnava-mica-5"
+    },
+    {
+      "sha256": "0ccd7ddb4a9158b2cf4a49ff69854e0ed74cd176a702f214f7e4c5e93de89c4f",
+      "slug": "anpa-mures-tarnava-mica-96"
+    },
+    {
+      "sha256": "3a8f470447720dcc1136313a375820b5b07666228ec0cdfaf603d299f9c63889",
+      "slug": "anpa-neamt-bistrita-32"
+    },
+    {
+      "sha256": "b34f0b7199f4cd5799897d5232b0483ecbeb60e00f15d4f0647da5d2635449d4",
+      "slug": "anpa-neamt-moldova-bradul"
+    },
+    {
+      "sha256": "1ae780aca9aec7d95b60da981fb183db3ba00f63b985d647497414acf74b25f1",
+      "slug": "anpa-neamt-moldova-roman"
+    },
+    {
+      "sha256": "88e75de9d8997e74d0aeb5cbbf21307211ba6110c9012b1fba7a3ee6661bd006",
+      "slug": "anpa-romsilva-0239"
+    },
+    {
+      "sha256": "57c8f92742c4a51b966b3f2d72454bcadc94f256ac85b2006e7ef1fd92d9c356",
+      "slug": "anpa-salaj-crasna-65"
+    },
+    {
+      "sha256": "c276cdeb4a87c0cfafb1fd73739f5e5ba48562c47731cd5de9a5915f61f645fd",
+      "slug": "anpa-salaj-somesul-mare-93"
+    },
+    {
+      "sha256": "9981eef372977694a348cfc9b8e20f9590cde85b5c228bed5ea21c34c753a919",
+      "slug": "anpa-suceava-moldova-59"
+    },
+    {
+      "sha256": "858677f4ffe8b7805247e8151a26467460bc97915f040e97c05676cdf8c250fa",
+      "slug": "basca-mare-covasna"
+    },
+    {
+      "sha256": "eaf74e6ccb928b4e7cd35998c77ed01da54797387177ac69798615e8aaec0d7f",
+      "slug": "bv8qho87"
+    },
+    {
+      "sha256": "eb0d340b80241cccce57c1896037603f94ac0c74f01dbeef7b2123d8252658cf",
+      "slug": "c1gifahb"
+    },
+    {
+      "sha256": "56f247ff17446082fb4996123b2704cf3b21d1f74a8695b4728446f7ab8081db",
+      "slug": "d5xhbhta"
+    },
+    {
+      "sha256": "69ac577f3cda77335b5897417987f9d989c59324476f738e76d69e0ff77f6c96",
+      "slug": "dcomrepi"
+    },
+    {
+      "sha256": "4e40965c14b4afc0fcdb6693c3ac3dd69f6f88de6d8501cb3b2cbedc91f28eae",
+      "slug": "do8k78x0"
+    },
+    {
+      "sha256": "dc44d8b9958a5b5f7ec05e1d56c539a4ffdf067a05fce41a170272b5b9e7f06e",
+      "slug": "dre11dij"
+    },
+    {
+      "sha256": "ce399f0bb86523eec8bad80b29a0e7ba4f997573cb9db89c6033fb333ce0254b",
+      "slug": "e8r6r01g"
+    },
+    {
+      "sha256": "4e96b88a34b70c0bbc9f14df53869239605417fcec37af14b632994e6118e5cb",
+      "slug": "ebhj5eyj"
+    },
+    {
+      "sha256": "ab1c460da23eb8d37a0a8c5072be67774983afffb7f3241bc7c0d11f0337612e",
+      "slug": "eebjo69e"
+    },
+    {
+      "sha256": "eb3d4ff165e9a8d19959aee2b2fb261ec324addf842c02a0b5767c8e551fcf30",
+      "slug": "f553avch"
+    },
+    {
+      "sha256": "b879dc1c62c7db5577fbd339ca552a48f31532b9f52009fbb11abdeab4d09695",
+      "slug": "fanvixkg"
+    },
+    {
+      "sha256": "489f33ca01c717edc792db48229b71b6b533fb9b96823906993a776de9f2df79",
+      "slug": "fee3lhad"
+    },
+    {
+      "sha256": "5afe6a592d7fc535f0f2410235d6725d2d9bbed037926abf344d2d3d04567559",
+      "slug": "fouqynmq"
+    },
+    {
+      "sha256": "bb5bfbbf8d6c3b5b39ebc3917d9d71c2c7062deba7c1408f1575e0ae9b8006d3",
+      "slug": "g39ohi12"
+    },
+    {
+      "sha256": "88782ccf7e43d4d1bef5b1b354fa979f7ffb679698a1287278fbf06b1c055f10",
+      "slug": "ggka27ea"
+    },
+    {
+      "sha256": "a162c1c7bdca11356fb88476055e45d577eac348fcf77ed5ec91ca19ea3d1959",
+      "slug": "gunskubl"
+    },
+    {
+      "sha256": "b5e7921125816fde23f3dfb139a9263f8a3d90c9fb39929a1c6c3991f9940237",
+      "slug": "gvmaf2tz"
+    },
+    {
+      "sha256": "2ac947c8683f4231f17fc5ab473ce9e31f0f3ebd3694461fd16825bcd01e1178",
+      "slug": "gxjd56ii"
+    },
+    {
+      "sha256": "3e42d2d567b871c1c2462fc4a5131581e1c73df2b159671f7f2b5561cf4c94fd",
+      "slug": "hao8h0b2"
+    },
+    {
+      "sha256": "5e064d7f31bbce0367f55edba32895eadb0b23c61d21c7e607eb34148a110e96",
+      "slug": "hmidzduu"
+    },
+    {
+      "sha256": "e1584279d2e5f8c8a9fc20081c68173047b1fc5286ee6679041af77405494364",
+      "slug": "i9uffwbx"
+    },
+    {
+      "sha256": "11ffda305020f03e9a765f8c044c4d4cbae9292571cda4d6f2608d49f0457448",
+      "slug": "jw9il5yo"
+    },
+    {
+      "sha256": "9b472143fa6279021c3cc6f235422d212a7f986e75a1245521b2b89a88e2cc2c",
+      "slug": "k44320iw"
+    },
+    {
+      "sha256": "6f0c706054361aee2210728438e47b1d894c142787d2e81fe4fa9d02468ae14d",
+      "slug": "msh7jb28"
+    },
+    {
+      "sha256": "8676a9d11007c86cab4fb393f7f3fb4f92115511f3df0e65c2461ebfe9f73e5f",
+      "slug": "n7cuf5cs"
+    },
+    {
+      "sha256": "0459c4aba1c792f25df4d5b66c115edd8db2b95d221625253fd01a7ae40d5557",
+      "slug": "nb7yzcmh"
+    },
+    {
+      "sha256": "73ec92cfca81bf53af39785fc7fa03f3da9bc8fa6a11ac3ecb84c64b67e20852",
+      "slug": "p3puv4bx"
+    },
+    {
+      "sha256": "20ef297f98e1bc9a0c2b1b298f6e7139c00db0d896d2a84c530eb897cc5ee105",
+      "slug": "pgabr5sd"
+    },
+    {
+      "sha256": "e57e0adebe5cb405f529405f942c0aa04a6e386e4080515d11a1d8134720592d",
+      "slug": "romsilva-alba-ariesul-mare"
+    },
+    {
+      "sha256": "995bc98a2c16e4ee70a74e7573d223224930053874b83d3631e4dee58ff479b0",
+      "slug": "romsilva-alba-ariesul-mare-inferior"
+    },
+    {
+      "sha256": "e6ab3777379b457641922618b2612a5d3be1bb501ffb34da7f7da7cea20a08ba",
+      "slug": "romsilva-alba-ariesul-mare-mijlociu"
+    },
+    {
+      "sha256": "d8e40d825e3b43a3e3fa642c748e899388b7d8ee8de4b2091299db4947b9307a",
+      "slug": "romsilva-alba-fenesasa"
+    },
+    {
+      "sha256": "ed36ced270bd153b149bb28b9ddc955b05a48d04a61cae902846bf68d193b5da",
+      "slug": "romsilva-alba-sebesul-inferior"
+    },
+    {
+      "sha256": "2c13a8b16ceb7516e0e25a0408fb645223f5d6bf43cd95fb8f52c10004db06ad",
+      "slug": "romsilva-alba-sebesul-mijlociu"
+    },
+    {
+      "sha256": "951ae42874fe9204c981389cf97e45d1f5a77d5fc207ee0552da7d62953e8654",
+      "slug": "romsilva-alba-valea-galzii"
+    },
+    {
+      "sha256": "91f1cface19e12f2b3658bc5ae22ccd4e6b09cb0e48b32052e32ab89abd34abe",
+      "slug": "romsilva-alba-valea-mare"
+    },
+    {
+      "sha256": "a10aff4038a9d3631d89c555e6006528abe0dad948c930ed91863539c72f9430",
+      "slug": "romsilva-arad-avram-iancu"
+    },
+    {
+      "sha256": "913f0834117379ec61b9c94f57a7dc7a4e6d9a1827a2df897b0a106e1a1dba1e",
+      "slug": "romsilva-arad-beliu"
+    },
+    {
+      "sha256": "5e7921692df77de31ed2407bc49fde98ad6146de2bcbc4ad381f7ee1f9778590",
+      "slug": "romsilva-arad-iacobini"
+    },
+    {
+      "sha256": "7d4764000a8e90f0217e6c0e3f092f87e7086f3066f5d728998151595d188117",
+      "slug": "romsilva-arad-moneasa-inferioara"
+    },
+    {
+      "sha256": "05489008b3b23f05bf9ad0dc76989d3283f8c509ce8479e5e5b77656b7dc0859",
+      "slug": "romsilva-arad-pamesti"
+    },
+    {
+      "sha256": "7e3edee3cec3b2fee001d86d28612e004fa0d8851f83451221aa7f50d32b7030",
+      "slug": "romsilva-arad-stejar"
+    },
+    {
+      "sha256": "47ddd58c72a6f5d8f5147deeb6d54a4816115c44afed1ea6cdf1934bf1ecb05f",
+      "slug": "romsilva-arad-toc"
+    },
+    {
+      "sha256": "6c9b6349a139e7a5fcb92c84867d48cf81d37202763e71baa0017a99793b881d",
+      "slug": "romsilva-arad-zimbru"
+    },
+    {
+      "sha256": "42b498ebdf477084a661bc9b5071112cec56f419f4c1197b7522632f3ff8923a",
+      "slug": "romsilva-arges-doamnei-mijlociu"
+    },
+    {
+      "sha256": "becdf8bd6eaf7d4ae7f95abfad0fd4e58b6311e928026c7c58e15418fa18a32c",
+      "slug": "romsilva-arges-rausor"
+    },
+    {
+      "sha256": "dbb270aee531503321f16707fc8cf9169646b4f6bc8f64d23cc4b569c3b7a2ca",
+      "slug": "romsilva-arges-rausor-2"
+    },
+    {
+      "sha256": "564445544fea698547fee5d7770d218d930f2d8ec086cdfc0ff61e4db498fac3",
+      "slug": "romsilva-bacau-barzauta"
+    },
+    {
+      "sha256": "8e4b3c06eaa1283e0aa644f4e6fb9fed54f299576fe8d227573c256f6f7b0da4",
+      "slug": "romsilva-bacau-casinul-superior"
+    },
+    {
+      "sha256": "c6f3889e0ef7ea1f09b235dcb4d36a07b5f19f2ff0fad3eaa34561c4f29dc1dc",
+      "slug": "romsilva-bihor-valea-draganului"
+    },
+    {
+      "sha256": "64149f7eaf9c6f4ef9a1bf3bfa6a0a9113e90d6db18d602ded1c75e53454e522",
+      "slug": "romsilva-bihor-valea-iadului-inferior"
+    },
+    {
+      "sha256": "e769d74549e18ce09bf4e80d1274aa3f4a0d1b88709153ff74142adc51c38630",
+      "slug": "romsilva-bistrita-nasaud-somesul-mare-superior"
+    },
+    {
+      "sha256": "005aeeb447bc8740b6a2004e8b180f8992512909e00e1bae40768684329c43aa",
+      "slug": "romsilva-brasov-buzaul-superior"
+    },
+    {
+      "sha256": "5b517bb2ae3ada83484bfe7191f6aec4b23b7d8360c43bbcbf7dfe5c5799db6c",
+      "slug": "romsilva-caras-severin-barzava-superioara"
+    },
+    {
+      "sha256": "39d1267fe33306a866982c0620bf7c5099d99e9b9aebaf6c892e846648bb340d",
+      "slug": "romsilva-caras-severin-cerna-inferioara"
+    },
+    {
+      "sha256": "31390566077c774b242076ba87eabaa8becddd7696936e675c9a1ef1e96e5859",
+      "slug": "romsilva-caras-severin-cerna-mijlocie"
+    },
+    {
+      "sha256": "eae800958fa5367633d1b8efb2286ef7f8999f96ba7e96dbab48a6ec2e60608a",
+      "slug": "romsilva-caras-severin-cernisoara-iardastrita"
+    },
+    {
+      "sha256": "f5f06395578ed4604641795af2fb1a852ada6a86bb174df7b71ce8d0ace29815",
+      "slug": "romsilva-caras-severin-higeg"
+    },
+    {
+      "sha256": "d07e1f9e3e3eb99e1a43999c30d61e2942e6b1c8dc80b3ecfae199578ff50e7e",
+      "slug": "romsilva-caras-severin-higigel"
+    },
+    {
+      "sha256": "58a4d1f9714f53f11599d5211ac4c4a657f6b053f2eef0725e6593aa34419fcd",
+      "slug": "romsilva-caras-severin-izvoarele-timisului"
+    },
+    {
+      "sha256": "c35bf6b4d9798b2dc6f79072901e0c50e18dc161863dc1b400205394191e2a77",
+      "slug": "romsilva-cluj-2-somesul-cald-mijlociu"
+    },
+    {
+      "sha256": "98919c36285b77430e3c56c846910bb561e950a988fcaf5f64ed2baa5cd5b7c5",
+      "slug": "romsilva-cluj-somesul-rece-mijlociu"
+    },
+    {
+      "sha256": "05ba418e5f334d2f37abb06e6bb7d501ff04c375abf5165aad5f61bf9749f0ff",
+      "slug": "romsilva-cluj-somesul-rece-superior"
+    },
+    {
+      "sha256": "b5ddf9cff75dad53cee59decbceefdef846b33b043cc4b69e228dc09f499745a",
+      "slug": "romsilva-covasna-barzauta"
+    },
+    {
+      "sha256": "93b59bca73f05b46379065d0e57412a0898401263a4e555692a9e1088c353272",
+      "slug": "romsilva-covasna-basca-mica"
+    },
+    {
+      "sha256": "742152b1eedaa1f5da61e1a7f0c52535511ca8b7da6d595ce3035681d9557652",
+      "slug": "romsilva-covasna-sugo"
+    },
+    {
+      "sha256": "4e773758d0eedd75825ec35dd17906213d4c988babbd5b1218188876be968cb4",
+      "slug": "romsilva-dambovita-ialomita-superioara"
+    },
+    {
+      "sha256": "b76009414e4fe1013cd20d47cd9bf4bea5d05bc7e6e564d86746d00b86cbdaf2",
+      "slug": "romsilva-dambovita-runcu"
+    },
+    {
+      "sha256": "4061eb96f8144b79740df52f713b3e581712f2d5134ab647957987844634c955",
+      "slug": "romsilva-gorj-bistricioara"
+    },
+    {
+      "sha256": "c633da7ffaa21a0f7a043bb3cf25c2a0c158cb6c7d19383bbf6cf8aafe2ac833",
+      "slug": "romsilva-gorj-oltet"
+    },
+    {
+      "sha256": "867c3be8953c7b253f1bb5a717473ea13b0559824c9aa06f275b226e1811075f",
+      "slug": "romsilva-gorj-valea-bratcului"
+    },
+    {
+      "sha256": "3f49a89303986b2115e7458da86c81f397bd80e1a19bc3150511eaf64ed09535",
+      "slug": "romsilva-harghita-bicazul-mijlociu"
+    },
+    {
+      "sha256": "b8d5fe2b1ae334dd7d695c00ce37f3f631f5c69e6e4c15f8e42598cfd4ea01cd",
+      "slug": "romsilva-harghita-bistricioara-tronson-ii"
+    },
+    {
+      "sha256": "9d8435922c5e0bc9c4dad4e6f1efb491c888f4240e546c6788e33d1611547e1b",
+      "slug": "romsilva-hunedoara-gradistea-superioara"
+    },
+    {
+      "sha256": "be7c035a561643d9bd79fd161af2174fd396ff9f411c4ddcaa79de559438b80e",
+      "slug": "romsilva-hunedoara-nucsorul-inferior"
+    },
+    {
+      "sha256": "ae4b6f380298978d34b3f69a4b14cfeb92ab28bb46b5f0a232e7a0d6774f303e",
+      "slug": "romsilva-hunedoara-raul-barbat-inferior"
+    },
+    {
+      "sha256": "14dc40c2065c8f429397701150be8ea32804c93bb573ec5ba63724b1386c144c",
+      "slug": "romsilva-maramures-botiza"
+    },
+    {
+      "sha256": "aba593e5fbad908660c8fdd7455b46ceff5fee3d249e4fd1598ed00542314b6d",
+      "slug": "romsilva-maramures-chiuzbaia"
+    },
+    {
+      "sha256": "00231ae6ca1e6787f07931b1fd1cceec1122cd73796c16da0de4d4dbedcac8ee",
+      "slug": "romsilva-maramures-crasna-frumusaua"
+    },
+    {
+      "sha256": "17b8401666a458c94e1b54583114f6e73e5de3e4578e1402247d7cb99a2dfd24",
+      "slug": "romsilva-maramures-faina-wasser"
+    },
+    {
+      "sha256": "451e79ab8418cf15259a03555f76f0952110fa1299ba389c2b4116c5afc820a9",
+      "slug": "romsilva-maramures-ruscova-inferioara"
+    },
+    {
+      "sha256": "2e3caba927d9def0d24867d5108c530b9fd13faf59ec34366f20c7f5d57551cf",
+      "slug": "romsilva-maramures-viseul-inferior"
+    },
+    {
+      "sha256": "8ce34d776b595e3d60787546032034174e328ee7c47f84f862c03cb30950d4ce",
+      "slug": "romsilva-maramures-viseul-mijlociu"
+    },
+    {
+      "sha256": "ff79507c82e73ffed4b508c7583d999ff873514df5d4596808be9727fe3485ee",
+      "slug": "romsilva-mehedinti-cerna"
+    },
+    {
+      "sha256": "496a26c6666b64f008a703adb1946caecdad16ac279219e39d0e5e81a1bcdecf",
+      "slug": "romsilva-mures-gurghiul-mijlociu"
+    },
+    {
+      "sha256": "f607a2743547528e8fa35d8b1f6b73ec3158c5bfb2b2dfc1d1b4fde398f16c5a",
+      "slug": "romsilva-mures-mures-iii"
+    },
+    {
+      "sha256": "4354c3f141e1609742857bb947523616e23e1e0f75e582d0adb9c546938b9b1c",
+      "slug": "romsilva-neamt-bistrita-iv"
+    },
+    {
+      "sha256": "2dd066cba4e02961f64aad1b6b597196a13763fb548346ab73aeea3f2ea54f5c",
+      "slug": "romsilva-neamt-tarcau"
+    },
+    {
+      "sha256": "bd97642f9566df9ed0c3731ac0bf6bb5aed09f3d14431559657963e90c852cee",
+      "slug": "romsilva-salaj-barcaul-inferior"
+    },
+    {
+      "sha256": "b92194d57b07b877e342460ece9ad91d10b2f8d9e514abeee2a1c7847af647f3",
+      "slug": "romsilva-salaj-barcaul-mijlociu"
+    },
+    {
+      "sha256": "1fcff77ed637c8052bd3801c117660071d7572d70a12a42a8c4a682a82b15ba3",
+      "slug": "romsilva-sibiu-bistra"
+    },
+    {
+      "sha256": "3f4ae9fd87d5007859b36acd7be8c7f2be8fe32b51badd9d4a071e29e4785c52",
+      "slug": "romsilva-sibiu-ciban"
+    },
+    {
+      "sha256": "3ed0466f8dc784dc1667329dbfe8c3383951c9d4d9348e74ee3e0a7d4b907b04",
+      "slug": "romsilva-sibiu-sadu-mijlociu"
+    },
+    {
+      "sha256": "82568aabfe84462623f190f8c202f1c3100a00fec4f07e822b0c48bf45de0122",
+      "slug": "romsilva-sibiu-sadu-superior"
+    },
+    {
+      "sha256": "28f26af80a4a06c9edb89cef0c6123cc060467963ec7a6a37b7a394c22983be7",
+      "slug": "romsilva-sibiu-sebesul-superior"
+    },
+    {
+      "sha256": "d82fb0db51a0165bd122974305afde429cdd9495f9ba87a81b0004166968730b",
+      "slug": "romsilva-suceava-afluentii-suhei"
+    },
+    {
+      "sha256": "94ffafb9e65aef1c1a134abd3f35a82d261349ae2670266fcca7cb0cea96278e",
+      "slug": "romsilva-suceava-barnarel"
+    },
+    {
+      "sha256": "b59d2f98713af23e578376d0730ac763475dd793375c708a7b5ee69aabca5fc5",
+      "slug": "romsilva-suceava-izvoarele-dornei"
+    },
+    {
+      "sha256": "9862aebacb5f04e1765c9825ca2d838188ce9ddd9cbde60c21d0dceb0688fcad",
+      "slug": "romsilva-suceava-neagra-inferioara"
+    },
+    {
+      "sha256": "59ae4a2e3f15e1e442e0b044861ab585fad27f70284ee442ac631dffbc307603",
+      "slug": "romsilva-valcea-izvoarele-latoritei"
+    },
+    {
+      "sha256": "7f544f7971a59042e93111282b8a692da9ae8733af66152498bcddea9682e506",
+      "slug": "romsilva-valcea-izvorul-lotrului"
+    },
+    {
+      "sha256": "02b20cdd6b13ece3b087051c4b23fd38913f96aef9aeacb8a8367c8d8f114f96",
+      "slug": "romsilva-valcea-latorita-inferioara"
+    },
+    {
+      "sha256": "6d13923ca264da19c97447cbca9b890acb1e9a4ba4feaef95e5206f9ba86c057",
+      "slug": "romsilva-valcea-lotru-superior"
+    },
+    {
+      "sha256": "38a3ee322cc91e8d1816aa17d12b6f607da11e03aeae994fad302842b0765c9d",
+      "slug": "romsilva-vrancea-coza"
+    },
+    {
+      "sha256": "7bcea23802b799a41e4b285d5a41862a0601ec36862eab609b2ed7cc2bab3433",
+      "slug": "romsilva-vrancea-putna-mijlocie"
+    },
+    {
+      "sha256": "2442065187e92b750b0512572564ef14d426fb02e1b7bb4a8b3a0ab6208750aa",
+      "slug": "romsilva-vrancea-putna-superioara"
+    },
+    {
+      "sha256": "63e18178edb8dbb6e6b0325fd9507b807ef78510ab9459cde7f906e92827e4c0",
+      "slug": "romsilva-vrancea-zabala-superioara"
+    },
+    {
+      "sha256": "0c58a05809273c3b1679beb93e72c092a09113859239f16c232d4664bf8185a8",
+      "slug": "sopv2vba"
+    },
+    {
+      "sha256": "7790d706968e8b7ddcf3eb6fde61e668aceeaf3f72feae22a42220dba2f97f66",
+      "slug": "teziodii"
+    },
+    {
+      "sha256": "5fc4c9dae6189ea15798ff159bea07118bfcab5f0dfe47f50dddfc7bd5f4d9dd",
+      "slug": "tozghzao"
+    },
+    {
+      "sha256": "585b54b38869c0c4ab3f4a2ef8e67d621e9da85d8906205cafdd891fa934151f",
+      "slug": "u84uqnip"
+    },
+    {
+      "sha256": "35e98b97a0ac7b4407383e685a4b83574a7b4a0c67207cca5f65fd8f71c9cc28",
+      "slug": "vb2p0152"
+    },
+    {
+      "sha256": "8f75d542d1caa201dcc0e13f25215de6cb1d0722599ec63db5cb2ef5d2b69593",
+      "slug": "w69nse7i"
+    },
+    {
+      "sha256": "0be86b959fc52f8f9c09633dfc5fa94a6d5dfb480ab58243d90f1cb9dcf08374",
+      "slug": "w9ifusdl"
+    },
+    {
+      "sha256": "c63c999012b96bdd51c4fdb353c4bb03b98c62eb98acdc8035964dae91f43004",
+      "slug": "y6i6nikh"
+    },
+    {
+      "sha256": "7e02414dde0b58aeb9b44417583045e775934da920cedc5503b2fdbbc0282b8e",
+      "slug": "yfzdgchv"
+    },
+    {
+      "sha256": "f028359f65e60d120a8951172b2a43f95f963e9a4d3e9e366ad7a84220fc23b2",
+      "slug": "ys4a4vw8"
+    },
+    {
+      "sha256": "33114c41fb67a5c7676194cf1e7b3ea2eec9f869977f47aac7abb1a5a6b5ea69",
+      "slug": "yu63lkif"
+    },
+    {
+      "sha256": "75d89859c49b51e87a68ed664da6f5555467919c8121e1971178854b4f933d62",
+      "slug": "z8u6g69z"
+    },
+    {
+      "sha256": "f2d87c04a9813b97789edceeb164a4ec8027a49dcaae0541a6eb96448b2b1d53",
+      "slug": "zdjui15p"
+    },
+    {
+      "sha256": "b4840b464b2e8d22676184662e7abdfdfa7f8628efb2150573bf90fb3a14c97e",
+      "slug": "zryn07zh"
+    }
+  ],
+  "schemaVersion": "river-geometry-confirmed-batches/v1",
+  "scope": "confirmed rendering execution-batch manifest only; rivers (subtype == rau); lakes excluded",
+  "selection": {
+    "recordSlugSha256": "873c0b0acb14ccb13cdf4e9771bb683e978b835958b90aa898c57383e753c91a",
+    "rejectedNonRiverOrMissingJoin": 17,
+    "rejectedRows": [],
+    "rejectedRowsNote": "Parent audit exposes the deterministic count (17) but no row-level rejected identities; no rejected identity is invented here.",
+    "scope": "subtype == rau",
+    "selectedCount": 295
+  },
+  "status": "blocked",
+  "unbatchedRows": [
+    {
+      "reason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "recordSha256": "564445544fea698547fee5d7770d218d930f2d8ec086cdfc0ff61e4db498fac3",
+      "slug": "romsilva-bacau-barzauta"
+    },
+    {
+      "reason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "recordSha256": "742152b1eedaa1f5da61e1a7f0c52535511ca8b7da6d595ce3035681d9557652",
+      "slug": "romsilva-covasna-sugo"
+    },
+    {
+      "reason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "recordSha256": "00231ae6ca1e6787f07931b1fd1cceec1122cd73796c16da0de4d4dbedcac8ee",
+      "slug": "romsilva-maramures-crasna-frumusaua"
+    },
+    {
+      "reason": "requires two clean reproducible root-cause observations; parent audit marks reproduction NOT_REPRODUCED",
+      "recordSha256": "35e98b97a0ac7b4407383e685a4b83574a7b4a0c67207cca5f65fd8f71c9cc28",
+      "slug": "vb2p0152"
+    }
+  ]
+}
