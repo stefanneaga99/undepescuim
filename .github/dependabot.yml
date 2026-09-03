@@ -1,5 +1,5 @@
 # REM-6: Dependabot — weekly npm + GitHub Actions updates for
-# neagastefan99/undepescuim (public repo). See docs/security-test-plan.md §5.
+# stefanneaga99/undepescuim (public repo). See docs/security-test-plan.md §5.
 version: 2
 updates:
   - package-ecosystem: npm
