@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://unde-pescuim.ro/:path*",
+      "permanent": true,
+      "has": [{ "type": "host", "value": "www.unde-pescuim.ro" }]
+    }
+  ],
   "headers": [
     {
       "source": "/data/(.*)",

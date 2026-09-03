@@ -3,7 +3,7 @@
 Hartă interactivă a apelor de pescuit din România, cu informații despre ape
 contractate și necontractate, asociații, permise și reguli.
 
-Aplicația este disponibilă la [undepescuim.vercel.app](https://undepescuim.vercel.app)
+Aplicația este disponibilă la [unde-pescuim.ro](https://unde-pescuim.ro) (fallback: [undepescuim.vercel.app](https://undepescuim.vercel.app)).
 și este publicată automat de Vercel la fiecare push pe `main`.
 
 ## Funcționalități
