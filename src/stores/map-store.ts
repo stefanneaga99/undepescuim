@@ -34,6 +34,7 @@ interface MapStore {
   associations: Association[];
   waters: Water[];
   uncontracted: Water[];
+  physicalPreview: Water[];
   /** County boundary polygons (/data/counties.geojson) — nearby chip attribution (t_6c2ac870). */
   counties: CountyFeature[];
   /**
@@ -142,6 +143,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
   associations: [],
   waters: [],
   uncontracted: [],
+  physicalPreview: [],
   counties: [],
   dataUpdatedAt: null,
   dataStale: true,
@@ -215,6 +217,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
         watersRes.json(),
         majorsRes.json(),
       ])) as [Association[], Water[], Water[]];
+      const physicalPreview: Water[] = [];
       let locations: AssociationLocation[] = [];
       if (locationsRes?.ok) {
         try {
@@ -249,7 +252,22 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const meta = (await metaRes.json()) as { dataUpdatedAt?: string };
         dataUpdatedAt = typeof meta.dataUpdatedAt === "string" ? meta.dataUpdatedAt : null;
       }
-      set({ associations, waters, uncontracted: majors, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
+      set({ associations, waters, uncontracted: majors, physicalPreview, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
+      setTimeout(() => void Promise.resolve(fetch('/data/preview_class2_physical.json')).then(async (res) => {
+        if (!res.ok) return;
+        const artifact = (await res.json()) as { schemaVersion?: number; records?: Array<Record<string, unknown>> };
+        if (artifact.schemaVersion !== 1 || !Array.isArray(artifact.records)) return;
+        const preview = artifact.records.flatMap((record) => {
+          const candidates = Array.isArray(record.physicalCandidates) ? record.physicalCandidates : [];
+          const candidate = candidates[0];
+          if (!candidate || typeof candidate !== 'object') return [];
+          const c = candidate as { geometry?: Water['geometry']; bbox?: Water['bbox']; geometryHash?: string };
+          if (!c.geometry?.coordinates?.length) return [];
+          const bbox = c.bbox ?? [25, 46, 25, 46];
+          return [{ slug: `class2-preview-${String(record.slug)}`, name: String(record.name), judet: String(record.county), type: 'ape', subtype: record.subtype === 'lac' ? 'lac' : 'rau', coordinates: [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2] as [number, number], bbox, asociatie: null, geometry: c.geometry, physicalPreview: true, legalStatus: 'legal sector unverified', physicalProvenance: { sourceBranch: String(record.sourceBranch), sourceCommit: String(record.sourceCommit), geometryHash: c.geometryHash } } satisfies Water];
+        });
+        set({ physicalPreview: preview });
+      }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
       try {
         await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
       } catch (error) {

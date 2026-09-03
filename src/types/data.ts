@@ -198,6 +198,10 @@ export interface Water {
    * filter but never appears under a locality.
    */
   locality?: string | null;
+  /** Derived Class2 physical geometry shown only in the Preview overlay. */
+  physicalPreview?: boolean;
+  legalStatus?: 'legal sector unverified';
+  physicalProvenance?: { sourceBranch: string; sourceCommit: string; geometryHash?: string };
 }
 
 /** GeoJSON feature properties for Leaflet rendering */
