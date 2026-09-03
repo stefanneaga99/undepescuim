@@ -200,6 +200,13 @@ export interface Water {
   locality?: string | null;
   /** Derived Class2 physical geometry shown only in the Preview overlay. */
   physicalPreview?: boolean;
+  /** Canonical source record represented by a preview-only feature. */
+  physicalSourceSlug?: string;
+  /** Stable dedupe dimensions supplied by the preview aggregate. */
+  physicalRiverGroup?: string;
+  physicalGeometryHash?: string;
+  /** Canonical source records sharing the painted preview geometry. */
+  physicalAliases?: string[];
   legalStatus?: 'legal sector unverified';
   physicalProvenance?: { sourceBranch: string; sourceCommit: string; geometryHash?: string };
 }

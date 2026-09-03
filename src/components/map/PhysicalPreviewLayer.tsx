@@ -6,6 +6,7 @@ import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { useMapStore } from '@/stores/map-store';
 import { waterToGeoJSON } from '@/utils/geo';
 import { bboxInBounds, viewSuffix } from '@/utils/lod';
+import { physicalPreviewSelection } from '@/utils/physical-preview';
 import type { Water, WaterFeature } from '@/types/data';
 
 /** Preview-only physical lines. This layer never participates in legal contract resolution. */
@@ -20,11 +21,13 @@ export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const key = `${viewSuffix(view.zoom, view.bounds)}|${visible.map((w) => w.slug).join(',')}`;
   return <LeafletGeoJSON key={key} data={data} style={(feature) => {
     const f = feature as WaterFeature | undefined;
-    const focused = f?.properties.slug === selected;
+    const preview = f?.properties.slug ? waters.find((w) => w.slug === f.properties.slug) : undefined;
+    const focused = preview ? physicalPreviewSelection(preview, selected) : false;
     return { color: focused ? '#f97316' : '#7c3aed', weight: focused ? 5 : 3, opacity: 0.9, dashArray: focused ? undefined : '7 5' };
   }} onEachFeature={(feature, layer: L.Path) => {
     const f = feature as WaterFeature;
-    layer.on('click', () => selectWater(f.properties.slug));
+    const sourceSlug = waters.find((w) => w.slug === f.properties.slug)?.physicalSourceSlug ?? f.properties.slug;
+    layer.on('click', () => selectWater(sourceSlug));
     layer.bindTooltip(`${f.properties.name} · traseu fizic Preview`, { sticky: true });
   }} />;
 }

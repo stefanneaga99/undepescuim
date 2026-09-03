@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
+import { dedupePhysicalPreviewWaters } from '@/utils/physical-preview';
 import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
@@ -264,9 +265,9 @@ export const useMapStore = create<MapStore>((set, get) => ({
           const c = candidate as { geometry?: Water['geometry']; bbox?: Water['bbox']; geometryHash?: string };
           if (!c.geometry?.coordinates?.length) return [];
           const bbox = c.bbox ?? [25, 46, 25, 46];
-          return [{ slug: `class2-preview-${String(record.slug)}`, name: String(record.name), judet: String(record.county), type: 'ape', subtype: record.subtype === 'lac' ? 'lac' : 'rau', coordinates: [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2] as [number, number], bbox, asociatie: null, geometry: c.geometry, physicalPreview: true, legalStatus: 'legal sector unverified', physicalProvenance: { sourceBranch: String(record.sourceBranch), sourceCommit: String(record.sourceCommit), geometryHash: c.geometryHash } } satisfies Water];
+          return [{ slug: `class2-preview-${String(record.slug)}`, name: String(record.name), judet: String(record.county), type: 'ape', subtype: record.subtype === 'lac' ? 'lac' : 'rau', coordinates: [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2] as [number, number], bbox, asociatie: null, geometry: c.geometry, physicalPreview: true, physicalSourceSlug: String(record.slug), physicalRiverGroup: typeof record.riverGroup === 'string' ? record.riverGroup : undefined, physicalGeometryHash: c.geometryHash, legalStatus: 'legal sector unverified', physicalProvenance: { sourceBranch: String(record.sourceBranch), sourceCommit: String(record.sourceCommit), geometryHash: c.geometryHash } } satisfies Water];
         });
-        set({ physicalPreview: preview });
+        set({ physicalPreview: dedupePhysicalPreviewWaters(preview) });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
       try {
         await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
