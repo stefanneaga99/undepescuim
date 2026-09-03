@@ -28,3 +28,17 @@ def test_class2_preview_aggregate_schema_and_scope():
 def test_class2_preview_hash_is_stable_for_checked_in_artifact():
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest()
     assert digest == "8e5a548340d59187b5c02233889541375661f846cf9da2cb53a026bff37a4576"
+
+
+def test_buzau_preview_keeps_physical_course_separate_from_unverified_contracts():
+    payload = json.loads(ARTIFACT.read_text())
+    records = [record for record in payload["records"] if record.get("riverGroup") == "buzau"]
+    assert len(records) >= 6
+    candidates = [record["physicalCandidates"][0] for record in records]
+    assert len({candidate["geometryHash"] for candidate in candidates}) == 1
+    # The source artifact has no legally supported endpoints for these rows;
+    # the UI must not manufacture a clipped contractual segment.
+    for record in records:
+        assert "sectorStart" not in record
+        assert "sectorEnd" not in record
+        assert record["legalStatus"] == "legal sector unverified"
