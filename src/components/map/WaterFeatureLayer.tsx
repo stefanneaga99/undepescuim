@@ -18,6 +18,7 @@ import {
   waterKey,
 } from '@/utils/river-course';
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
+import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 import type { MapSelectionFocus } from '@/utils/contract-sector';
 import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 
@@ -266,6 +267,10 @@ export function WaterFeatureLayer({
       if (!gk) continue;
       const group = contractGroup(w, allWaters);
       if (group.length <= 1) continue; // single-contract → base layer colors it
+      // A course_frac is only a card/reference position.  Never turn it into
+      // a green contractual slice: the full shared course remains neutral /
+      // dashed until the source supplies both explicit endpoints.
+      if (!hasExplicitSectorInterval(w)) continue;
       // owner = the group member carrying the shared course (prefer another
       // member; a geometry-bearing member slices its OWN course)
       const owner =
