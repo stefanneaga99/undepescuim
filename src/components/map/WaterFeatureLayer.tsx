@@ -20,6 +20,7 @@ import {
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 import type { MapSelectionFocus } from '@/utils/contract-sector';
+import { dedupePhysicalPreview } from '@/utils/physical-preview';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
@@ -72,6 +73,7 @@ export function WaterFeatureLayer({
   // filter is an explicit "show me THIS place" — the matched set is small, so
   // the zoom LOD must NOT cull its small contracted waters/ponds either.
   const localityActive = useMapStore((s) => s.localityFilter.length > 0);
+  const previewCourses = useMemo(() => dedupePhysicalPreview(physicalPreview), [physicalPreview]);
 
   const map = useMap();
   // Keep focus rendering in a stable pane instead of relying on React/Leaflet
@@ -198,7 +200,7 @@ export function WaterFeatureLayer({
     if (!focusGroupKey || (focus.kind !== 'verified-sector-focus' && focus.kind !== 'whole-feature-focus')) return null;
     const [f0, f1] = focus.kind === 'verified-sector-focus' ? focus.interval : [0, 1];
     const features: GeoJSON.Feature[] = [];
-    for (const x of [...allWaters, ...physicalPreview]) {
+    for (const x of [...allWaters, ...previewCourses]) {
       if (groupKeyOf(x) !== focusGroupKey) continue;
       const g = x.geometry;
       if (!g) continue;
@@ -223,7 +225,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focus, allWaters, physicalPreview]);
+  }, [focusGroupKey, focus, allWaters, previewCourses]);
 
   // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
   // data prop changes.  The base layer already has a lifecycle key; the focus
