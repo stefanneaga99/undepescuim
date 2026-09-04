@@ -1,5 +1,5 @@
 import type { Water } from '@/types/data';
-import { contractGroup, contractInterval, partLength, pointAtFraction, sliceMultiLine } from '@/utils/river-course';
+import { contractGroup, contractInterval, groupKeyOf, partLength, pointAtFraction, sliceMultiLine } from '@/utils/river-course';
 
 export type SectorMeasurementMethod = 'explicit-interval' | 'voronoi-fallback' | 'unmeasurable';
 
@@ -46,14 +46,14 @@ export function isVerifiedSectorFocus(focus: MapSelectionFocus): focus is Extrac
 }
 
 /** Resolve semantic focus without allowing course_frac to become legal-looking geometry. */
-export function resolveMapSelectionFocus(selected: Water, allWaters: Water[]): MapSelectionFocus {
+export function resolveMapSelectionFocus(selected: Water, allWaters: Water[], physicalPreview: Water[] = []): MapSelectionFocus {
   if (selected.uncontracted) return { kind: 'whole-feature-focus' };
   const group = contractGroup(selected, allWaters);
   if (group.length <= 1) return { kind: 'whole-feature-focus' };
   if (hasExplicitSectorInterval(selected)) {
     return { kind: 'verified-sector-focus', interval: [selected.sectorStart!, selected.sectorEnd!] };
   }
-  const owner = group.find((w) => lineParts(w) !== null);
+  const owner = group.find((w) => lineParts(w) !== null) ?? physicalPreview.find((w) => groupKeyOf(w) === groupKeyOf(selected) && lineParts(w) !== null);
   const referencePoint =
     owner && typeof selected.course_frac === 'number' && Number.isFinite(selected.course_frac)
       ? pointAtFraction(lineParts(owner)!, Math.max(0, Math.min(1, selected.course_frac)))

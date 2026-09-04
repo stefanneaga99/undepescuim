@@ -35,6 +35,7 @@ interface WaterFeatureLayerProps {
   focusColor?: string | null;
   /** Semantic focus intent; inferred sectors are marker-only. */
   focus: MapSelectionFocus;
+  physicalPreview: Water[];
 }
 
 /**
@@ -62,6 +63,7 @@ export function WaterFeatureLayer({
   focusKey,
   focusColor,
   focus,
+  physicalPreview,
 }: WaterFeatureLayerProps) {
   const selectWater = useMapStore((s) => s.selectWater);
   const countyFilter = useMapStore((s) => s.countyFilter);
@@ -196,7 +198,7 @@ export function WaterFeatureLayer({
     if (!focusGroupKey || (focus.kind !== 'verified-sector-focus' && focus.kind !== 'whole-feature-focus')) return null;
     const [f0, f1] = focus.kind === 'verified-sector-focus' ? focus.interval : [0, 1];
     const features: GeoJSON.Feature[] = [];
-    for (const x of allWaters) {
+    for (const x of [...allWaters, ...physicalPreview]) {
       if (groupKeyOf(x) !== focusGroupKey) continue;
       const g = x.geometry;
       if (!g) continue;
@@ -221,7 +223,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focus, allWaters]);
+  }, [focusGroupKey, focus, allWaters, physicalPreview]);
 
   // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
   // data prop changes.  The base layer already has a lifecycle key; the focus
@@ -440,7 +442,13 @@ export function WaterFeatureLayer({
           })}
           onEachFeature={(feature, layer: L.Path) => {
             const f = feature as WaterFeature;
-            layer.on('click', (e: L.LeafletMouseEvent) => handleClick(f, e.latlng));
+            layer.on('click', (e: L.LeafletMouseEvent) => {
+              if (f.properties.slug.startsWith('class2-preview-') && selectedWaterSlug) {
+                selectWater(selectedWaterSlug);
+              } else {
+                handleClick(f, e.latlng);
+              }
+            });
             layer.bindTooltip(f.properties.name, { sticky: true, direction: 'top' });
           }}
         />

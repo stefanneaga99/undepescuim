@@ -48,8 +48,8 @@ export function MapView() {
   // (t_b6a0e2fe: shared helper — exact sector intervals win, else the
   // Voronoi interval over course_frac; single-contract rivers = [0, 1]).
   const focus = useMemo<MapSelectionFocus>(
-    () => (selected ? resolveMapSelectionFocus(selected, allWaters) : { kind: 'none' }),
-    [selected, allWaters],
+    () => (selected ? resolveMapSelectionFocus(selected, allWaters, physicalPreview) : { kind: 'none' }),
+    [selected, allWaters, physicalPreview],
   );
 
   return (
@@ -94,6 +94,7 @@ export function MapView() {
         focusKey={focusKey}
         focusColor={focusColor}
         focus={focus}
+        physicalPreview={physicalPreview}
       />
       <UserPositionLayer />
       <FlyToController />

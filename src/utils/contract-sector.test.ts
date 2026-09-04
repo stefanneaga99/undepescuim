@@ -65,6 +65,20 @@ describe('measureContractSector', () => {
     });
   });
 
+  it('uses the deduplicated physical preview as the reference course', () => {
+    const selected = water({ slug: '0207', riverGroup: 'buzau', course_frac: 0.25 });
+    const sibling = water({ slug: '0211', riverGroup: 'buzau', course_frac: 0.75 });
+    const preview = water({
+      slug: 'class2-preview-buzau',
+      riverGroup: 'buzau',
+      physicalPreview: true,
+      geometry: { type: 'LineString', coordinates: [[25, 47], [25, 46]] },
+    });
+    const focus = resolveMapSelectionFocus(selected, [selected, sibling], [preview]);
+    expect(focus.kind).toBe('feature-selected-unverified-sector');
+    if (focus.kind === 'feature-selected-unverified-sector') expect(focus.referencePoint).toEqual([25, 46.75]);
+  });
+
   it('interpolates a reference point on the measured course', () => {
     expect(pointAtFraction([[[0, 0], [10, 0]]], 0.25)).toEqual([2.5, 0]);
     expect(pointAtFraction([], 0.5)).toBeNull();
