@@ -19,7 +19,17 @@ WATERS = ROOT / "public/data/waters.json"
 LEGAL_SURFACES = [
     WATERS,
     ROOT / "public/data/associations.json",
+    ROOT / "public/data/association_locations.json",
     ROOT / "public/data/waters_county_clips.json",
+    ROOT / "data/processed/anpa_waters.jsonl",
+    ROOT / "data/processed/anpa_contracts.jsonl",
+    ROOT / "data/processed/anpa_romsilva_waters.jsonl",
+    ROOT / "data/processed/arebaltapeste_waters.jsonl",
+    ROOT / "data/processed/arebaltapeste_associations.jsonl",
+    ROOT / "data/processed/mures_harghita_covasna_endpoint_audit.json",
+    ROOT / "data/processed/river_segment_audit.json",
+    ROOT / "data/processed/permit_enrichment.json",
+    ROOT / "data/processed/permit_overrides.json",
 ]
 _MODULE = None
 
