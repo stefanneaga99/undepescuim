@@ -5,7 +5,7 @@ import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { waterToGeoJSON } from '@/utils/geo';
 import { bboxInBounds, viewSuffix } from '@/utils/lod';
-import { dedupePhysicalPreview, isUnverifiedPhysicalPreview } from '@/utils/physical-preview';
+import { dedupePhysicalPreview, isUnverifiedPhysicalPreview, physicalPreviewSelection } from '@/utils/physical-preview';
 import { getPhysicalPreviewStyle } from '@/utils/colors';
 import { useMapStore } from '@/stores/map-store';
 import type { Water, WaterFeature } from '@/types/data';
@@ -22,7 +22,13 @@ export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const data = useMemo(() => ({ type: 'FeatureCollection', features: visible.map(waterToGeoJSON) }) as GeoJSON.FeatureCollection, [visible]);
   const key = `${viewSuffix(view.zoom, view.bounds)}|${visible.map((w) => w.slug).join(',')}`;
   const selectWater = useMapStore((s) => s.selectWater);
-  return <LeafletGeoJSON key={key} data={data} style={() => getPhysicalPreviewStyle()} onEachFeature={(feature, layer: L.Path) => {
+  const selected = useMapStore((s) => s.selectedWaterSlug);
+  return <LeafletGeoJSON key={key} data={data} style={(feature) => {
+    const water = visible.find((w) => w.slug === (feature as WaterFeature).properties.slug);
+    return water && physicalPreviewSelection(water, selected)
+      ? { color: '#f97316', weight: 5, opacity: 1, dashArray: [] }
+      : getPhysicalPreviewStyle();
+  }} onEachFeature={(feature, layer: L.Path) => {
     const f = feature as WaterFeature;
     const sourceSlug = visible.find((w) => w.slug === f.properties.slug)?.physicalSourceSlug ?? f.properties.slug;
     layer.on('click', () => selectWater(sourceSlug));

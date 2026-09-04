@@ -233,6 +233,8 @@ export interface WaterFeatureProperties {
   lengthKm?: number;
   /** surface area in ha (uncontracted lakes/ponds; zoom LOD) */
   areaHa?: number;
+  physicalSourceSlug?: string;
+  physicalAliases?: string[];
 }
 
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;
