@@ -20,7 +20,6 @@ import {
 import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 import type { MapSelectionFocus } from '@/utils/contract-sector';
-import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
