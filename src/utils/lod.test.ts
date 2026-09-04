@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import type { LatLngBounds } from 'leaflet';
-import { bboxInBounds, geometryBbox, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
+import { bboxInBounds, cullWatersForView, geometryBbox, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
 
 function bounds(west: number, south: number, east: number, north: number): LatLngBounds {
   const make = (w: number, s: number, e: number, n: number): LatLngBounds => ({
@@ -81,5 +81,18 @@ describe('viewport helpers', () => {
     expect(renderBbox({ bbox, geometry: { type: 'LineString', coordinates: [[25.2, Number.NaN]] } })).toEqual(bbox);
     expect(renderBbox({ bbox, geometry: { type: 'MultiLineString', coordinates: [[[25.2, 46], [25.3]]] } })).toEqual(bbox);
     expect(geometryBbox({ type: 'Point', coordinates: [25.2, 46] })).toBeUndefined();
+  });
+
+  it('pins selected focus through viewport and LOD culling while using actual preview geometry', () => {
+    const farSmall = { slug: 'selected', subtype: 'rau', lengthKm: 1, bbox: [29, 49, 30, 50] as [number, number, number, number] };
+    const stalePreview = {
+      slug: 'preview', subtype: 'rau', lengthKm: 40,
+      bbox: [20, 40, 21, 41] as [number, number, number, number],
+      geometry: { type: 'LineString', coordinates: [[25, 46], [25.1, 46.1]] },
+    };
+    const hidden = { slug: 'hidden', subtype: 'rau', lengthKm: 1, bbox: [25, 46, 25.1, 46.1] as [number, number, number, number] };
+    expect(cullWatersForView(
+      [farSmall, stalePreview, hidden], lodThresholds(7), bounds(24.5, 45.5, 25.5, 46.5), new Set(['selected']),
+    ).map((water) => water.slug)).toEqual(['selected', 'preview']);
   });
 });

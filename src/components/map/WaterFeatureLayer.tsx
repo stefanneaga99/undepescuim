@@ -7,7 +7,7 @@ import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
 
-import { bboxInBounds, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
+import { cullWatersForView, lodThresholds, viewSuffix } from '@/utils/lod';
 import {
   contractAtFraction,
   contractGroup,
@@ -69,6 +69,7 @@ export function WaterFeatureLayer({
   const selectWater = useMapStore((s) => s.selectWater);
   const countyFilter = useMapStore((s) => s.countyFilter);
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  const selectedPhysicalSegmentId = useMapStore((s) => s.selectedPhysicalSegmentId);
   // t_9529e678 (mirrored from the uncontracted layer): an active locality
   // filter is an explicit "show me THIS place" — the matched set is small, so
   // the zoom LOD must NOT cull its small contracted waters/ponds either.
@@ -123,9 +124,7 @@ export function WaterFeatureLayer({
         if (w.asociatie?.slug === coverageSlug) pinned.add(w.slug);
       }
     }
-    return waters.filter(
-      (w) => pinned.has(w.slug) || (passesLod(w, lod) && bboxInBounds(renderBbox(w), view.bounds)),
-    );
+    return cullWatersForView(waters, lod, view.bounds, pinned);
   }, [waters, allWaters, view, lod, coverageSlug, selectedWaterSlug]);
 
   const featureCollection = useMemo(() => watersToFeatureCollection(visibleWaters), [visibleWaters]);
@@ -200,7 +199,10 @@ export function WaterFeatureLayer({
     if (!focusGroupKey || (focus.kind !== 'verified-sector-focus' && focus.kind !== 'whole-feature-focus')) return null;
     const [f0, f1] = focus.kind === 'verified-sector-focus' ? focus.interval : [0, 1];
     const features: GeoJSON.Feature[] = [];
-    for (const x of [...allWaters, ...previewCourses]) {
+    const focusCourses = focus.kind === 'verified-sector-focus' && focus.geometryHash
+      ? previewCourses.filter((course) => course.physicalGeometryHash === focus.geometryHash)
+      : [...allWaters, ...previewCourses];
+    for (const x of focusCourses) {
       if (groupKeyOf(x) !== focusGroupKey) continue;
       const g = x.geometry;
       if (!g) continue;
@@ -445,8 +447,8 @@ export function WaterFeatureLayer({
           onEachFeature={(feature, layer: L.Path) => {
             const f = feature as WaterFeature;
             layer.on('click', (e: L.LeafletMouseEvent) => {
-              if (f.properties.slug.startsWith('class2-preview-') && selectedWaterSlug) {
-                selectWater(selectedWaterSlug);
+              if (f.properties.slug.startsWith('physical-preview-') && selectedWaterSlug) {
+                selectWater(selectedWaterSlug, selectedPhysicalSegmentId ?? undefined);
               } else {
                 handleClick(f, e.latlng);
               }

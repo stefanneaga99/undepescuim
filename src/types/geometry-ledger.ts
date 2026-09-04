@@ -82,6 +82,7 @@ export type RuntimeSelectedFocus =
       readonly kind: 'verified-sector-focus';
       readonly interval: readonly [number, number];
       readonly segmentId?: string;
+      readonly geometryHash?: string;
     }
   | {
       readonly kind: 'feature-selected-unverified-sector';

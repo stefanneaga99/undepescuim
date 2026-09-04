@@ -8,7 +8,7 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 - Canonical geometry: **714 present**, **299 absent**.
 - Unresolved inventory: **312**; classes `{"2": 163, "3": 13, "4": 6, "5": 12, "6": 118}`.
 - Class2 physical source: **148 records / 168 candidates / 76 all-candidate `(riverGroup, geometryHash)` keys**.
-- Current runtime consumes candidate index 0 and deduplicates those to **69 representatives**; Production exposes only the first Buzău alias, as recorded below.
+- Current runtime validates every exact candidate identity and deduplicates all candidates to **76 representatives**.
 - `repaired` means render-ready canonical geometry in the frozen dataset; it does not claim this audit changed or newly proved the legal sector.
 - `preview-only` is a neutral physical course and never legal ownership/association/endpoint evidence.
 - `selected-focus` is runtime-only and is deliberately absent from persisted geometry variants.
@@ -50,7 +50,7 @@ The four prior `RENDERING_FIX` rows remain `NOT_REPRODUCED` and ineligible in th
 - Limitation: Physical-preview aliases share one deduplicated feature; clicking that feature opens its representative source card, so non-representative alias card text is not independently observable from the map layer.
 - Limitation: Browser observations describe rendering only and are never legal ownership, association or endpoint evidence.
 - Buzău Production feature aliases are `["anpa-anpa-0207"]` at all probes, while the source-backed ledger group has six exact aliases.
-- Buzău renders neutral teal `#14b8a6`, weight 3, dash `7 5`; its click opens the canonical AJVPS card without the physical-preview disclosure.
+- Frozen Production baseline: Buzău renders neutral teal `#14b8a6`, weight 3, dash `7 5`; its click opened the canonical AJVPS card without the physical-preview disclosure before this runtime fix.
 - Mobile probes use the Vaul bottom sheet at `35vh`; desktop probes use the right aside. All four probes reported zero console/page errors.
 - Historical candidate click-resolution: Bacău Bărzăuța opens the Covasna sector card; Maramureș Crasna (Frumușaua) opens the Satu Mare Crasna card. Șugo and Geamărtălui resolve to matching-county cards.
 - Per-target feature properties, styles, card text, culling-before/after-fit and visible filter controls are retained in `docs/evidence/geometry-ledger-production-observations.json`.

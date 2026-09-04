@@ -66,6 +66,15 @@ export interface AssociationLocation {
   review: { status: 'approved' | 'needs_review'; approvedAt?: string };
 }
 
+/** Source-backed projection of one legal record onto a neutral physical course. */
+export interface PhysicalSegmentProjection {
+  sourceSlug: string;
+  segmentId: string;
+  geometryHash: string;
+  start: number;
+  end: number;
+}
+
 /**
  * A county boundary feature from /data/counties.geojson (t_6c2ac870) —
  * simplified Nominatim polygons, one per county. Used by the nearby-waters
@@ -204,8 +213,12 @@ export interface Water {
   physicalSourceSlug?: string;
   physicalRiverGroup?: string;
   physicalGeometryHash?: string;
+  /** Stable ledger identity for this neutral full-course candidate. */
+  physicalSegmentId?: string;
   /** Canonical source records sharing the painted preview geometry. */
   physicalAliases?: string[];
+  /** Explicit, source-backed segment projections sharing this physical course. */
+  physicalSegments?: PhysicalSegmentProjection[];
 
   legalStatus?: 'legal sector unverified';
   physicalProvenance?: { sourceBranch: string; sourceCommit: string; geometryHash?: string };
@@ -235,6 +248,9 @@ export interface WaterFeatureProperties {
   areaHa?: number;
   physicalSourceSlug?: string;
   physicalAliases?: string[];
+  physicalGeometryHash?: string;
+  physicalSegmentId?: string;
+  physicalSegments?: PhysicalSegmentProjection[];
 }
 
 export type WaterFeature = GeoJSON.Feature<GeoJSON.Geometry, WaterFeatureProperties>;

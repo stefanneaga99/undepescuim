@@ -20,6 +20,9 @@ export function waterToGeoJSON(water: Water): WaterFeature {
     areaHa: water.areaHa,
     physicalSourceSlug: water.physicalSourceSlug,
     physicalAliases: water.physicalAliases,
+    physicalGeometryHash: water.physicalGeometryHash,
+    physicalSegmentId: water.physicalSegmentId,
+    physicalSegments: water.physicalSegments,
   };
   // Real geometry from the geocoding pipeline takes priority
   if (water.geometry && water.geometry.coordinates?.length) {

@@ -5,6 +5,7 @@ import {
   EXPANDED_RADIUS_KM,
   NEARBY_LIMIT,
 } from '@/stores/map-store';
+import type { GeometryLedger } from '@/types/geometry-ledger';
 import type { Water } from '@/types/data';
 
 function water(over: Partial<Water>): Water {
@@ -37,10 +38,13 @@ function resetStore(extra: Partial<ReturnType<typeof useMapStore.getState>> = {}
     associations: [],
     waters: [],
     uncontracted: [],
+    physicalPreview: [],
+    geometryLedger: null,
     counties: [],
     dataLoaded: false,
     selectedAssociationSlug: null,
     selectedWaterSlug: null,
+    selectedPhysicalSegmentId: null,
     waterSheetOpen: false,
     countyFilter: [],
     localityFilter: [],
@@ -108,6 +112,23 @@ describe('selection basics', () => {
     useMapStore.getState().closeWaterSheet();
     expect(useMapStore.getState().waterSheetOpen).toBe(false);
     expect(useMapStore.getState().selectedWaterSlug).toBe('cluj-river');
+  });
+
+  it('keeps an exact physical course identity only for the matching selection', () => {
+    const physicalSegmentId = 'b'.repeat(64);
+    useMapStore.setState({
+      waters,
+      physicalPreview: [water({
+        slug: 'preview', physicalPreview: true, physicalSegmentId,
+        physicalAliases: ['cluj-river'], asociatie: null,
+      })],
+    });
+    useMapStore.getState().selectWater('cluj-river', physicalSegmentId);
+    expect(useMapStore.getState().selectedPhysicalSegmentId).toBe(physicalSegmentId);
+    useMapStore.getState().closeWaterSheet();
+    expect(useMapStore.getState().selectedPhysicalSegmentId).toBe(physicalSegmentId);
+    useMapStore.getState().selectWater('bihor-river');
+    expect(useMapStore.getState().selectedPhysicalSegmentId).toBeNull();
   });
 });
 
@@ -296,6 +317,31 @@ describe('loadData', () => {
     } as Response;
   }
 
+  it('clears network-generation physical identities when loading an offline snapshot', async () => {
+    window.localStorage.setItem('undepescuim.offline-data.v1', JSON.stringify({
+      schemaVersion: 1,
+      syncedAt: '2026-09-04T00:00:00Z',
+      dataUpdatedAt: '2026-09-04T00:00:00Z',
+      associations: [],
+      waters,
+      uncontracted: [],
+    }));
+    vi.stubGlobal('navigator', { onLine: false });
+    useMapStore.setState({
+      physicalPreview: [water({ slug: 'stale-preview', physicalPreview: true })],
+      geometryLedger: { artifact: 'public-geometry-ledger', schemaVersion: 1, lockedCommit: '1'.repeat(40), records: [] },
+      selectedPhysicalSegmentId: 'a'.repeat(64),
+    });
+
+    await useMapStore.getState().loadData();
+
+    expect(useMapStore.getState().physicalPreview).toEqual([]);
+    expect(useMapStore.getState().geometryLedger).toBeNull();
+    expect(useMapStore.getState().selectedPhysicalSegmentId).toBeNull();
+    window.localStorage.clear();
+    vi.unstubAllGlobals();
+  });
+
   it('loads assoc/waters/counties/meta + majors first-paint, then streams full uncontracted in the background', async () => {
     const majors: Water[] = [water({ slug: 'unc-major', uncontracted: true, asociatie: null })];
     const fetchMock = vi.fn()
@@ -339,6 +385,94 @@ describe('loadData', () => {
     vi.stubGlobal('fetch', fetchMock);
     await useMapStore.getState().loadData();
     expect(useMapStore.getState().dataLoaded).toBe(true);
+    vi.unstubAllGlobals();
+  });
+
+  it('loads validated ledger-backed previews without resetting active filters', async () => {
+    const geometryHash = '61fa81bf8c39dea4b84fee94b9b0585fe92dc0e821b9b91fa863e00ababdab50';
+    const ledger: GeometryLedger = {
+      artifact: 'public-geometry-ledger', schemaVersion: 1, lockedCommit: '1'.repeat(40),
+      records: [{
+        sourceSlug: 'preview-river', name: 'Râul Preview', county: 'Buzău', subtype: 'rau',
+        aliases: ['preview-river'], riverGroup: 'preview', classification: 'preview-only',
+        geometryVariants: [{
+          state: 'physical-full-course-preview', start: null, end: null,
+          evidenceSourceId: 'commit:path#candidate', segmentId: 'b'.repeat(64),
+          geometry: { geometryHash, type: 'LineString', bbox: [25, 45, 26, 46], coordinateCount: 2, valid: true, validityEvidence: 'finite' },
+        }],
+      }],
+    };
+    const preview = {
+      schemaVersion: 1,
+      records: [{
+        slug: 'preview-river', sourceBranch: 'fixture', sourceCommit: 'abc',
+        physicalCandidates: [{ id: 'candidate', geometryHash, geometry: { type: 'LineString', coordinates: [[25, 45], [26, 46]] } }],
+      }],
+    };
+    const fetchMock = vi.fn(async (input: string | URL | Request) => {
+      const url = String(input);
+      if (url.endsWith('/associations.json')) return jsonResponse([]);
+      if (url.endsWith('/waters.json')) return jsonResponse(waters);
+      if (url.endsWith('/counties.geojson')) return jsonResponse({ type: 'FeatureCollection', features: [] });
+      if (url.endsWith('/meta.json')) return jsonResponse({ dataUpdatedAt: null });
+      if (url.endsWith('/uncontracted_majors.json') || url.endsWith('/uncontracted_rivers.json') || url.endsWith('/uncontracted_lakes.json')) return jsonResponse([]);
+      if (url.endsWith('/association_locations.json')) return jsonResponse({ schemaVersion: 1, locations: [] });
+      if (url.endsWith('/preview_class2_physical.json')) return jsonResponse(preview);
+      if (url.endsWith('/geometry-ledger.json')) return jsonResponse(ledger);
+      return jsonResponse({}, false, 404);
+    });
+    vi.stubGlobal('fetch', fetchMock);
+    useMapStore.setState({ countyFilter: ['Cluj'], localityFilter: ['Cluj-Napoca'], waterTypeFilter: 'rau' });
+
+    await useMapStore.getState().loadData();
+    await vi.waitFor(() => expect(useMapStore.getState().physicalPreview).toHaveLength(1));
+
+    const state = useMapStore.getState();
+    expect(state.physicalPreview[0]).toMatchObject({ physicalGeometryHash: geometryHash, physicalSegmentId: 'b'.repeat(64) });
+    expect(state.geometryLedger?.records).toHaveLength(1);
+    expect(state.countyFilter).toEqual(['Cluj']);
+    expect(state.localityFilter).toEqual(['Cluj-Napoca']);
+    expect(state.waterTypeFilter).toBe('rau');
+    vi.unstubAllGlobals();
+  });
+
+  it('ignores a stale deferred preview load after a newer loadData generation', async () => {
+    const deferred = <T,>() => {
+      let resolve!: (value: T) => void;
+      const promise = new Promise<T>((done) => { resolve = done; });
+      return { promise, resolve };
+    };
+    const oldPreview = deferred<Response>();
+    const oldLedger = deferred<Response>();
+    const newPreview = deferred<Response>();
+    const newLedger = deferred<Response>();
+    let previewCalls = 0;
+    let ledgerCalls = 0;
+    const emptyLedger = (commit: string) => ({
+      artifact: 'public-geometry-ledger', schemaVersion: 1, lockedCommit: commit, records: [],
+    });
+    const fetchMock = vi.fn(async (input: string | URL | Request) => {
+      const url = String(input);
+      if (url.endsWith('/preview_class2_physical.json')) return (++previewCalls === 1 ? oldPreview : newPreview).promise;
+      if (url.endsWith('/geometry-ledger.json')) return (++ledgerCalls === 1 ? oldLedger : newLedger).promise;
+      if (url.endsWith('/associations.json') || url.endsWith('/waters.json') || url.endsWith('/uncontracted_majors.json') || url.endsWith('/uncontracted_rivers.json') || url.endsWith('/uncontracted_lakes.json')) return jsonResponse([]);
+      if (url.endsWith('/counties.geojson')) return jsonResponse({ type: 'FeatureCollection', features: [] });
+      if (url.endsWith('/association_locations.json')) return jsonResponse({ schemaVersion: 1, locations: [] });
+      return jsonResponse({}, false, 404);
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    await useMapStore.getState().loadData();
+    await vi.waitFor(() => expect(previewCalls).toBe(1));
+    await useMapStore.getState().loadData();
+    await vi.waitFor(() => expect(previewCalls).toBe(2));
+    newPreview.resolve(jsonResponse({ schemaVersion: 1, records: [] }));
+    newLedger.resolve(jsonResponse(emptyLedger('2'.repeat(40))));
+    await vi.waitFor(() => expect(useMapStore.getState().geometryLedger?.lockedCommit).toBe('2'.repeat(40)));
+    oldPreview.resolve(jsonResponse({ schemaVersion: 1, records: [] }));
+    oldLedger.resolve(jsonResponse(emptyLedger('1'.repeat(40))));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(useMapStore.getState().geometryLedger?.lockedCommit).toBe('2'.repeat(40));
     vi.unstubAllGlobals();
   });
 });

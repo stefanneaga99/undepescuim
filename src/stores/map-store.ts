@@ -1,8 +1,10 @@
 import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
+import type { GeometryLedger } from '@/types/geometry-ledger';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 import { dedupePhysicalPreview, physicalPreviewWaters } from '@/utils/physical-preview';
-import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
+import { parseGeometryLedger } from '@/utils/geometry-ledger';
+import { isDataStale, readOfflineDataset, writeOfflineDataset, type OfflineDataset } from '@/lib/offline-data';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -36,6 +38,7 @@ interface MapStore {
   waters: Water[];
   uncontracted: Water[];
   physicalPreview: Water[];
+  geometryLedger: GeometryLedger | null;
   /** County boundary polygons (/data/counties.geojson) — nearby chip attribution (t_6c2ac870). */
   counties: CountyFeature[];
   /**
@@ -65,6 +68,7 @@ interface MapStore {
   // Selection layer (mutually independent)
   selectedAssociationSlug: string | null; // null = no association selected
   selectedWaterSlug: string | null; // null = detail sheet closed
+  selectedPhysicalSegmentId: string | null;
   /**
    * t_21d2f68d: the water detail sheet open flag, DECOUPLED from the
    * selection. Closing the sheet (Escape / × / drag) keeps `selectedWaterSlug`
@@ -105,7 +109,7 @@ interface MapStore {
   loadData: () => Promise<void>;
   loadCountyClips: () => Promise<void>;
   selectAssociation: (slug: string | null) => void;
-  selectWater: (slug: string | null) => void;
+  selectWater: (slug: string | null, physicalSegmentId?: string) => void;
   /** Close the water detail sheet WITHOUT clearing the selection (orange focus stays). */
   closeWaterSheet: () => void;
   consumeAssociationFlyToSuppression: () => void;
@@ -140,11 +144,24 @@ function markPerfDataLoaded() {
   }
 }
 
+let loadGeneration = 0;
+let offlineWriteQueue: Promise<void> = Promise.resolve();
+
+function persistOfflineDataset(generation: number, dataset: OfflineDataset): Promise<void> {
+  offlineWriteQueue = offlineWriteQueue
+    .catch(() => undefined)
+    .then(async () => {
+      if (generation === loadGeneration) await writeOfflineDataset(dataset);
+    });
+  return offlineWriteQueue;
+}
+
 export const useMapStore = create<MapStore>((set, get) => ({
   associations: [],
   waters: [],
   uncontracted: [],
   physicalPreview: [],
+  geometryLedger: null,
   counties: [],
   dataUpdatedAt: null,
   dataStale: true,
@@ -155,6 +172,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
 
   selectedAssociationSlug: null,
   selectedWaterSlug: null,
+  selectedPhysicalSegmentId: null,
   waterSheetOpen: false,
 
   countyFilter: [],
@@ -169,11 +187,17 @@ export const useMapStore = create<MapStore>((set, get) => ({
   nearbyRadiusKm: DEFAULT_RADIUS_KM,
 
   loadData: async () => {
+    const generation = ++loadGeneration;
     // Offline launches must never even attempt a network request. The local
     // snapshot is deliberately all-or-nothing; corrupt/partial data is ignored.
     const offline = typeof navigator !== 'undefined' && !navigator.onLine;
     if (offline) {
       const cached = await readOfflineDataset();
+      if (generation !== loadGeneration) return;
+      // The offline snapshot intentionally excludes the network-only geometry
+      // ledger and physical preview. Never retain those identities from an
+      // earlier online generation alongside newly loaded canonical data.
+      set({ physicalPreview: [], geometryLedger: null, selectedPhysicalSegmentId: null });
       if (cached) {
         set({
           associations: cached.associations,
@@ -218,6 +242,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
         watersRes.json(),
         majorsRes.json(),
       ])) as [Association[], Water[], Water[]];
+      if (generation !== loadGeneration) return;
       const physicalPreview: Water[] = [];
       let locations: AssociationLocation[] = [];
       if (locationsRes?.ok) {
@@ -253,13 +278,20 @@ export const useMapStore = create<MapStore>((set, get) => ({
         const meta = (await metaRes.json()) as { dataUpdatedAt?: string };
         dataUpdatedAt = typeof meta.dataUpdatedAt === "string" ? meta.dataUpdatedAt : null;
       }
-      set({ associations, waters, uncontracted: majors, physicalPreview, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
-      setTimeout(() => void Promise.resolve(fetch('/data/preview_class2_physical.json')).then(async (res) => {
-        if (!res.ok) return;
-        set({ physicalPreview: dedupePhysicalPreview(physicalPreviewWaters(await res.json())) });
+      if (generation !== loadGeneration) return;
+      set({ associations, waters, uncontracted: majors, physicalPreview, geometryLedger: null, counties, dataUpdatedAt, dataStale: isDataStale(dataUpdatedAt), dataLoaded: true });
+      setTimeout(() => void Promise.all([
+        fetch('/data/preview_class2_physical.json'),
+        fetch('/data/geometry-ledger.json'),
+      ]).then(async ([previewRes, ledgerRes]) => {
+        if (!previewRes.ok || !ledgerRes.ok) return;
+        const ledger = parseGeometryLedger(await ledgerRes.json());
+        const physicalPreview = dedupePhysicalPreview(await physicalPreviewWaters(await previewRes.json(), ledger));
+        if (generation !== loadGeneration) return;
+        set({ geometryLedger: ledger, physicalPreview });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
       try {
-        await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
+        await persistOfflineDataset(generation, { schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
       } catch (error) {
         console.warn('[map-store] offline snapshot not persisted:', error);
       }
@@ -280,6 +312,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
             extra = [...extra, ...lakes];
           }
           set((s) => {
+            if (generation !== loadGeneration) return s;
             // If the county clips already loaded, apply them to the fresh
             // teal waters too (they were empty when loadCountyClips ran).
             let pool = extra;
@@ -289,7 +322,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
                 bySlug[w.slug] ? { ...w, geometryByCounty: bySlug[w.slug] } : w,
               );
             }
-            void writeOfflineDataset({
+            void persistOfflineDataset(generation, {
               schemaVersion: 1,
               syncedAt: new Date().toISOString(),
               dataUpdatedAt: s.dataUpdatedAt,
@@ -305,6 +338,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
         }
       })();
     } catch (err) {
+      if (generation !== loadGeneration) return;
       // Never leave the skeleton spinning forever — render an empty map instead.
       console.error('[map-store] loadData failed:', err);
       set({ dataLoaded: true });
@@ -359,11 +393,11 @@ export const useMapStore = create<MapStore>((set, get) => ({
   // F2a: the chip opens the association detail sheet; opening it dismisses
   // the water sheet (one-at-a-time, mirrors the existing selection rules).
   openAssociationSheet: () =>
-    set({ associationSheetOpen: true, selectedWaterSlug: null, waterSheetOpen: false }),
+    set({ associationSheetOpen: true, selectedWaterSlug: null, selectedPhysicalSegmentId: null, waterSheetOpen: false }),
   closeAssociationSheet: () => set({ associationSheetOpen: false }),
   closeWaterSheet: () => set({ waterSheetOpen: false }),
 
-  selectWater: (slug) => {
+  selectWater: (slug, physicalSegmentId) => {
     // t_7a7192ea Bug 2: clicking a river/lake takes over from any active
     // association filter — clear selectedAssociationSlug so the map stops
     // showing the association's green/grey coverage, then select the clicked
@@ -377,14 +411,19 @@ export const useMapStore = create<MapStore>((set, get) => ({
     // defensive "as needed" — normally only waters that pass the filters are
     // rendered/clickable, but never leave a selection invisible).
     if (slug === null) {
-      set({ selectedWaterSlug: null, waterSheetOpen: false });
+      set({ selectedWaterSlug: null, selectedPhysicalSegmentId: null, waterSheetOpen: false });
       return;
     }
-    const { countyFilter, localityFilter, waterTypeFilter, waters, uncontracted, selectedAssociationSlug } = get();
+    const { countyFilter, localityFilter, waterTypeFilter, waters, uncontracted, physicalPreview, selectedAssociationSlug } = get();
     const water =
       waters.find((w) => w.slug === slug) ??
       uncontracted.find((w) => w.slug === slug) ??
+      physicalPreview.find((w) => w.slug === slug || w.physicalAliases?.includes(slug)) ??
       null;
+    const selectedPhysicalSegmentId = physicalPreview.some((preview) =>
+      preview.physicalSegmentId === physicalSegmentId &&
+      (preview.slug === slug || preview.physicalAliases?.includes(slug)),
+    ) ? physicalSegmentId ?? null : null;
     // Same equality the coverage styling uses (colors.ts getFeatureStyle),
     // so a green-highlighted water keeps the association and a grey/dimmed
     // one clears it — visually consistent. Uncontracted waters have no
@@ -402,6 +441,7 @@ export const useMapStore = create<MapStore>((set, get) => ({
     const clearingAssociationByClick = !belongsToAssociation && selectedAssociationSlug !== null;
     set({
       selectedWaterSlug: slug,
+      selectedPhysicalSegmentId,
       waterSheetOpen: true,
       selectedAssociationSlug: belongsToAssociation ? selectedAssociationSlug : null,
       associationSheetOpen: false,

@@ -87,6 +87,23 @@ describe('waterToGeoJSON', () => {
     expect((f.properties as { _hidden?: boolean })._hidden).toBeUndefined();
   });
 
+  it('preserves ledger preview identities and aliases in GeoJSON properties', () => {
+    const f = waterToGeoJSON(water({
+      physicalPreview: true,
+      physicalSourceSlug: 'source-a',
+      physicalAliases: ['source-a', 'source-b'],
+      physicalGeometryHash: 'a'.repeat(64),
+      physicalSegmentId: 'b'.repeat(64),
+      geometry: { type: 'LineString', coordinates: [[23, 46], [24, 47]] },
+    }));
+    expect(f.properties).toMatchObject({
+      physicalSourceSlug: 'source-a',
+      physicalAliases: ['source-a', 'source-b'],
+      physicalGeometryHash: 'a'.repeat(64),
+      physicalSegmentId: 'b'.repeat(64),
+    });
+  });
+
   it('renders a bbox-fallback POINT at the bbox center when no geometry', () => {
     const f = waterToGeoJSON(water({ bbox: [23.0, 46.0, 24.0, 47.0], coordinates: undefined as never }));
     expect(f.geometry.type).toBe('Point');

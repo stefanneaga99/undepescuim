@@ -91,7 +91,7 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
       {isPhysicalPreview && (
         <div className="rounded-md border border-violet-200 bg-violet-50 px-3 py-2.5 text-sm text-violet-950 dark:border-violet-900 dark:bg-violet-950/40 dark:text-violet-100" data-testid="physical-preview-disclosure">
           <p className="font-medium">Traseu fizic Preview</p>
-          <p className="mt-0.5 text-xs leading-relaxed">Acest traseu este o geometrie fizică experimentală. Status juridic: legal sector unverified. Nu reprezintă limite contractuale verificate.</p>
+          <p className="mt-0.5 text-xs leading-relaxed">Acest traseu este o geometrie fizică experimentală. Status juridic: sector legal neverificat. Nu reprezintă limite contractuale verificate.</p>
         </div>
       )}
 

@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import type { Association, ReportReason } from '@/types/data';
 import type { ReportContextV1 } from '@/types/report-context';
 import { readReportMapContext } from '@/hooks/use-report-context';
+import { reportWaterSlug } from '@/utils/physical-preview';
 
 /**
  * Water detail UI (component_structure_plan.md §3.11 + mobile-layout-spec §3,
@@ -27,6 +28,7 @@ import { readReportMapContext } from '@/hooks/use-report-context';
  */
 export function WaterDetailSheet() {
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  const selectedPhysicalSegmentId = useMapStore((s) => s.selectedPhysicalSegmentId);
   const waterSheetOpen = useMapStore((s) => s.waterSheetOpen);
   const waters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
@@ -47,11 +49,20 @@ export function WaterDetailSheet() {
   });
   const openReport = (reason: ReportReason | null) => setReport({ open: true, reason });
 
-  // Contracted waters first, then uncontracted OSM rivers (t_471dad64).
+  // An exact clicked physical surface takes precedence; otherwise resolve the
+  // canonical contracted pool before uncontracted OSM waters (t_471dad64).
+  const selectedPhysicalPreview = physicalPreview.find((w) =>
+    w.physicalSegmentId === selectedPhysicalSegmentId &&
+    (w.slug === selectedWaterSlug || (selectedWaterSlug !== null && w.physicalAliases?.includes(selectedWaterSlug))),
+  );
+  // A click on the neutral physical course carries its exact segment identity.
+  // Prefer that runtime surface over the same-slug canonical record so the
+  // card keeps the physical-preview/legal-unverified disclosure. Ordinary
+  // canonical selections have no physical segment id and retain their card.
   const water =
+    selectedPhysicalPreview ??
     waters.find((w) => w.slug === selectedWaterSlug) ??
     uncontracted.find((w) => w.slug === selectedWaterSlug) ??
-    physicalPreview.find((w) => w.slug === selectedWaterSlug) ??
     null;
 
   // Card association: prefer the canonical 82-association record; fall back to
@@ -82,9 +93,10 @@ export function WaterDetailSheet() {
   const buildReportContext = useCallback((): ReportContextV1 | null => {
     if (!water) return null;
     const state = useMapStore.getState();
+    const subjectWaterSlug = reportWaterSlug(water, state.selectedWaterSlug);
     return {
       schemaVersion: 1, captureVersion: 'map-report-context-v1',
-      subject: { water: { slug: water.slug, name: water.name }, selection: {
+      subject: { water: { slug: subjectWaterSlug, name: water.name }, selection: {
         selectedWaterSlug: state.selectedWaterSlug ?? '',
         segment: water.sectorStart !== undefined || water.sectorEnd !== undefined
           ? { kind: 'river-interval', riverGroup: water.riverGroup ?? null, startFraction: water.sectorStart ?? null, endFraction: water.sectorEnd ?? null }

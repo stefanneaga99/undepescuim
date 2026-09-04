@@ -72,11 +72,55 @@ describe('measureContractSector', () => {
       slug: 'class2-preview-buzau',
       riverGroup: 'buzau',
       physicalPreview: true,
+      physicalAliases: ['0207', '0211'],
       geometry: { type: 'LineString', coordinates: [[25, 47], [25, 46]] },
     });
     const focus = resolveMapSelectionFocus(selected, [selected, sibling], [preview]);
     expect(focus.kind).toBe('feature-selected-unverified-sector');
     if (focus.kind === 'feature-selected-unverified-sector') expect(focus.referencePoint).toEqual([25, 46.75]);
+  });
+
+  it('uses only the ledger-backed explicit physical projection as selected focus', () => {
+    const selected = water({ slug: '0261', riverGroup: 'buzau', course_frac: 0.12 });
+    const sibling = water({ slug: '0214', riverGroup: 'buzau', course_frac: 0.8 });
+    const preview = water({
+      slug: 'preview-buzau', riverGroup: 'buzau', physicalPreview: true,
+      geometry: { type: 'LineString', coordinates: [[25, 47], [25, 46]] },
+      physicalAliases: ['0214', '0261'],
+      physicalSegments: [{
+        sourceSlug: '0261', segmentId: 'c'.repeat(64), geometryHash: 'a'.repeat(64),
+        start: 0.0774, end: 0.1641,
+      }],
+    });
+
+    expect(resolveMapSelectionFocus(selected, [selected, sibling], [preview])).toEqual({
+      kind: 'verified-sector-focus', interval: [0.0774, 0.1641], segmentId: 'c'.repeat(64),
+      geometryHash: 'a'.repeat(64),
+    });
+    expect(resolveMapSelectionFocus(sibling, [selected, sibling], [preview]).kind).toBe(
+      'feature-selected-unverified-sector',
+    );
+  });
+
+  it('does not verify an alias spanning multiple physical courses without an exact selected identity', () => {
+    const selected = water({ slug: 'selected', riverGroup: 'x', course_frac: 0.5 });
+    const sibling = water({ slug: 'sibling', riverGroup: 'x', course_frac: 0.8 });
+    const course = (fullId: string, segment: string, hash: string): Water => water({
+      slug: `preview-${hash[0]}`, riverGroup: 'x', physicalPreview: true,
+      physicalSegmentId: fullId, physicalGeometryHash: hash, physicalAliases: ['selected'],
+      physicalSegments: [{ sourceSlug: 'selected', segmentId: segment, geometryHash: hash, start: 0.2, end: 0.4 }],
+      geometry: { type: 'LineString', coordinates: [[25, 47], [25, 46]] },
+    });
+    const first = course('1'.repeat(64), 'a'.repeat(64), 'c'.repeat(64));
+    const second = course('2'.repeat(64), 'b'.repeat(64), 'd'.repeat(64));
+    second.physicalSegments = [];
+
+    expect(resolveMapSelectionFocus(selected, [selected, sibling], [first, second]).kind).toBe(
+      'feature-selected-unverified-sector',
+    );
+    expect(resolveMapSelectionFocus(selected, [selected, sibling], [first, second], first.physicalSegmentId)).toEqual({
+      kind: 'verified-sector-focus', interval: [0.2, 0.4], segmentId: 'a'.repeat(64), geometryHash: 'c'.repeat(64),
+    });
   });
 
   it('interpolates a reference point on the measured course', () => {

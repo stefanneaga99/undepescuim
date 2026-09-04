@@ -1,5 +1,6 @@
 import type { Water } from '@/types/data';
-import { contractGroup, contractInterval, groupKeyOf, partLength, pointAtFraction, sliceMultiLine } from '@/utils/river-course';
+import type { RuntimeSelectedFocus } from '@/types/geometry-ledger';
+import { contractGroup, contractInterval, partLength, pointAtFraction, sliceMultiLine } from '@/utils/river-course';
 
 export type SectorMeasurementMethod = 'explicit-interval' | 'voronoi-fallback' | 'unmeasurable';
 
@@ -35,25 +36,45 @@ function lineParts(water: Water): [number, number][][] | null {
   return null;
 }
 
-export type MapSelectionFocus =
-  | { kind: 'none' }
-  | { kind: 'whole-feature-focus' }
-  | { kind: 'verified-sector-focus'; interval: [number, number] }
-  | { kind: 'feature-selected-unverified-sector'; referencePoint: [number, number] | null; accessibleLabel: string };
+export type MapSelectionFocus = RuntimeSelectedFocus;
 
 export function isVerifiedSectorFocus(focus: MapSelectionFocus): focus is Extract<MapSelectionFocus, { kind: 'verified-sector-focus' }> {
   return focus.kind === 'verified-sector-focus';
 }
 
 /** Resolve semantic focus without allowing course_frac to become legal-looking geometry. */
-export function resolveMapSelectionFocus(selected: Water, allWaters: Water[], physicalPreview: Water[] = []): MapSelectionFocus {
+export function resolveMapSelectionFocus(
+  selected: Water,
+  allWaters: Water[],
+  physicalPreview: Water[] = [],
+  selectedPhysicalSegmentId: string | null = null,
+): MapSelectionFocus {
   if (selected.uncontracted) return { kind: 'whole-feature-focus' };
+  const matchingCourses = physicalPreview.filter((preview) =>
+    selectedPhysicalSegmentId
+      ? preview.physicalSegmentId === selectedPhysicalSegmentId
+      : (preview.physicalAliases ?? []).includes(selected.slug),
+  );
+  const projections = matchingCourses
+    .flatMap((preview) => preview.physicalSegments ?? [])
+    .filter((segment) => segment.sourceSlug === selected.slug);
+  const uniqueProjections = [...new Map(projections.map((segment) => [segment.segmentId, segment])).values()];
+  if (uniqueProjections.length === 1 && (selectedPhysicalSegmentId !== null || matchingCourses.length === 1)) {
+    const projected = uniqueProjections[0];
+    return {
+      kind: 'verified-sector-focus',
+      interval: [projected.start, projected.end],
+      segmentId: projected.segmentId,
+      geometryHash: projected.geometryHash,
+    };
+  }
   const group = contractGroup(selected, allWaters);
   if (group.length <= 1) return { kind: 'whole-feature-focus' };
   if (hasExplicitSectorInterval(selected)) {
     return { kind: 'verified-sector-focus', interval: [selected.sectorStart!, selected.sectorEnd!] };
   }
-  const owner = group.find((w) => lineParts(w) !== null) ?? physicalPreview.find((w) => groupKeyOf(w) === groupKeyOf(selected) && lineParts(w) !== null);
+  const owner = group.find((w) => lineParts(w) !== null) ??
+    (matchingCourses.length === 1 ? matchingCourses[0] : null);
   const referencePoint =
     owner && typeof selected.course_frac === 'number' && Number.isFinite(selected.course_frac)
       ? pointAtFraction(lineParts(owner)!, Math.max(0, Math.min(1, selected.course_frac)))

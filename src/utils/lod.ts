@@ -104,6 +104,16 @@ export function renderBbox(water: { bbox?: BBox; geometry?: unknown }): BBox | u
   return geometryBbox(water.geometry) ?? water.bbox;
 }
 
+/** Apply shared LOD + actual-render-geometry culling while preserving pinned focus. */
+export function cullWatersForView<
+  T extends { slug: string; lengthKm?: number; areaHa?: number; subtype?: string; bbox?: BBox; geometry?: unknown },
+>(waters: T[], thresholds: LodThresholds, bounds: LatLngBounds, pinned: ReadonlySet<string>): T[] {
+  return waters.filter(
+    (water) => pinned.has(water.slug) ||
+      (passesLod(water, thresholds) && bboxInBounds(renderBbox(water), bounds)),
+  );
+}
+
 /**
  * Compact signature of a viewport for react-leaflet layer re-keying —
  * mirrors the UncontractedWaterLayer layerKey, so pan/zoom remounts the layer.

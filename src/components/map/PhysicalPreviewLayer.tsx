@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import L from 'leaflet';
 import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
 import { waterToGeoJSON } from '@/utils/geo';
-import { bboxInBounds, viewSuffix } from '@/utils/lod';
+import { bboxInBounds, renderBbox, viewSuffix } from '@/utils/lod';
 import { dedupePhysicalPreview, isUnverifiedPhysicalPreview } from '@/utils/physical-preview';
 import { getPhysicalPreviewStyle } from '@/utils/colors';
 import { useMapStore } from '@/stores/map-store';
@@ -16,7 +16,7 @@ export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const [view, setView] = useState({ zoom: map.getZoom(), bounds: map.getBounds() });
   useMapEvents({ moveend: () => setView({ zoom: map.getZoom(), bounds: map.getBounds() }) });
   const visible = useMemo(
-    () => dedupePhysicalPreview(waters.filter(isUnverifiedPhysicalPreview)).filter((w) => bboxInBounds(w.bbox, view.bounds)),
+    () => dedupePhysicalPreview(waters.filter(isUnverifiedPhysicalPreview)).filter((w) => bboxInBounds(renderBbox(w), view.bounds)),
     [waters, view],
   );
   const data = useMemo(() => ({ type: 'FeatureCollection', features: visible.map(waterToGeoJSON) }) as GeoJSON.FeatureCollection, [visible]);
@@ -24,8 +24,9 @@ export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const selectWater = useMapStore((s) => s.selectWater);
   return <LeafletGeoJSON key={key} data={data} style={() => getPhysicalPreviewStyle()} onEachFeature={(feature, layer: L.Path) => {
     const f = feature as WaterFeature;
-    const sourceSlug = visible.find((w) => w.slug === f.properties.slug)?.physicalSourceSlug ?? f.properties.slug;
-    layer.on('click', () => selectWater(sourceSlug));
+    const preview = visible.find((w) => w.slug === f.properties.slug);
+    const sourceSlug = preview?.physicalSourceSlug ?? f.properties.slug;
+    layer.on('click', () => selectWater(sourceSlug, preview?.physicalSegmentId));
     layer.bindTooltip(`${f.properties.name} · traseu fizic (previzualizare; sector legal neverificat)`, { sticky: true });
   }} />;
 }

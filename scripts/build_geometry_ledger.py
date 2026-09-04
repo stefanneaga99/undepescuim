@@ -6,6 +6,7 @@ import argparse
 import hashlib
 import json
 import math
+import struct
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Iterable
@@ -55,10 +56,23 @@ OUTPUTS = {
 }
 
 
+def canonical_number_values(value: Any) -> Any:
+    """Normalize integer-valued floats to JSON numbers shared with browsers."""
+    if isinstance(value, float):
+        if not math.isfinite(value):
+            raise ValueError("geometry values must be finite")
+        return int(value) if value.is_integer() else value
+    if isinstance(value, list):
+        return [canonical_number_values(item) for item in value]
+    if isinstance(value, dict):
+        return {key: canonical_number_values(item) for key, item in value.items()}
+    return value
+
+
 def canonical_bytes(value: Any) -> bytes:
     try:
         return json.dumps(
-            value,
+            canonical_number_values(value),
             ensure_ascii=False,
             sort_keys=True,
             separators=(",", ":"),
@@ -66,6 +80,33 @@ def canonical_bytes(value: Any) -> bytes:
         ).encode("utf-8")
     except ValueError as exc:
         raise ValueError("geometry values must be finite") from exc
+
+
+def geometry_identity_token(value: Any) -> str:
+    """Language-neutral canonical token over JSON values using IEEE-754 numbers."""
+    if isinstance(value, bool):
+        return "b1" if value else "b0"
+    if isinstance(value, (int, float)):
+        number = float(value)
+        if not math.isfinite(number):
+            raise ValueError("geometry values must be finite")
+        return f"d{struct.pack('>d', number).hex()}"
+    if isinstance(value, str):
+        return f"s{json.dumps(value, ensure_ascii=False, separators=(',', ':'))}"
+    if value is None:
+        return "n"
+    if isinstance(value, list):
+        return f"[{','.join(geometry_identity_token(item) for item in value)}]"
+    if isinstance(value, dict):
+        return "{" + ",".join(
+            f"{geometry_identity_token(key)}:{geometry_identity_token(value[key])}"
+            for key in sorted(value)
+        ) + "}"
+    raise ValueError("geometry contains unsupported JSON value")
+
+
+def geometry_identity_bytes(value: Any) -> bytes:
+    return geometry_identity_token(value).encode("utf-8")
 
 
 def sha256_bytes(value: bytes) -> str:
@@ -117,7 +158,7 @@ def geometry_summary(geometry: dict[str, Any]) -> dict[str, Any]:
     if not points:
         raise ValueError("geometry must contain coordinates")
     normalized = {"type": geometry["type"], "coordinates": geometry["coordinates"]}
-    digest = sha256_bytes(canonical_bytes(normalized))
+    digest = sha256_bytes(geometry_identity_bytes(normalized))
     xs, ys = zip(*points)
     return {
         "geometryHash": digest,
@@ -169,19 +210,24 @@ def preview_index(preview: dict[str, Any]) -> tuple[dict[str, dict[str, Any]], d
             if not geometry:
                 continue
             digest = geometry_summary(geometry)["geometryHash"]
+            if candidate.get("geometryHash") != digest:
+                raise ValueError(f"{record['slug']} candidate geometryHash is not canonical")
             aliases[(str(group or ""), digest)].append(record["slug"])
     return records, {key: sorted(set(values)) for key, values in aliases.items()}
 
 
 def runtime_preview_keys(preview: dict[str, Any]) -> set[tuple[str, str]]:
-    """Mirror the current UI: it consumes the first candidate per source record."""
+    """Mirror the current UI: validate and consume every ledger candidate."""
     keys: set[tuple[str, str]] = set()
     for record in preview.get("records", []):
         candidates = record.get("physicalCandidates", [])
-        if not candidates or not candidates[0].get("geometry"):
-            continue
-        digest = geometry_summary(candidates[0]["geometry"])["geometryHash"]
-        keys.add((str(record.get("riverGroup") or ""), digest))
+        for candidate in candidates:
+            if not candidate.get("geometry"):
+                continue
+            digest = geometry_summary(candidate["geometry"])["geometryHash"]
+            if candidate.get("geometryHash") != digest:
+                raise ValueError(f"{record['slug']} runtime candidate geometryHash is not canonical")
+            keys.add((str(record.get("riverGroup") or ""), digest))
     return keys
 
 
@@ -412,7 +458,7 @@ def build(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], s
             "sourceSlug": "immutable canonical water slug",
             "aliases": "sorted unique exact canonical slugs only",
             "riverGroup": "explicit canonical/source mapping only; never name-inferred",
-            "geometryHash": "SHA-256 canonical JSON: ensure_ascii=false, sorted keys, compact separators, finite values",
+            "geometryHash": "SHA-256 language-neutral geometry token: sorted keys, UTF-8 strings, finite IEEE-754 binary64 numbers",
             "segmentId": "sha256(sourceSlug + NUL + geometryHash + NUL + evidenceSourceId + NUL + start + NUL + end)",
             "selected-focus": "runtime-only and never persisted as legal geometry",
         },
@@ -517,7 +563,7 @@ def render_report(
         f"- Canonical geometry: **{totals['canonicalGeometryPresent']} present**, **{totals['canonicalGeometryAbsent']} absent**.",
         f"- Unresolved inventory: **{totals['unresolvedInventory']}**; classes `{json.dumps(totals['unresolvedByClass'], sort_keys=True)}`.",
         f"- Class2 physical source: **{totals['class2PreviewRecords']} records / {totals['class2PreviewCandidates']} candidates / {totals['physicalPreviewRepresentativeKeys']} all-candidate `(riverGroup, geometryHash)` keys**.",
-        f"- Current runtime consumes candidate index 0 and deduplicates those to **{totals['physicalPreviewRuntimeRepresentatives']} representatives**; Production exposes only the first Buzău alias, as recorded below.",
+        f"- Current runtime validates every exact candidate identity and deduplicates all candidates to **{totals['physicalPreviewRuntimeRepresentatives']} representatives**.",
         "- `repaired` means render-ready canonical geometry in the frozen dataset; it does not claim this audit changed or newly proved the legal sector.",
         "- `preview-only` is a neutral physical course and never legal ownership/association/endpoint evidence.",
         "- `selected-focus` is runtime-only and is deliberately absent from persisted geometry variants.",
@@ -543,7 +589,7 @@ def render_report(
         properties = buzau[0].get("featureProperties", [{}])
         aliases = properties[0].get("physicalAliases", []) if properties else []
         lines.append(f"- Buzău Production feature aliases are `{json.dumps(aliases, ensure_ascii=False)}` at all probes, while the source-backed ledger group has six exact aliases.")
-        lines.append("- Buzău renders neutral teal `#14b8a6`, weight 3, dash `7 5`; its click opens the canonical AJVPS card without the physical-preview disclosure.")
+        lines.append("- Frozen Production baseline: Buzău renders neutral teal `#14b8a6`, weight 3, dash `7 5`; its click opened the canonical AJVPS card without the physical-preview disclosure before this runtime fix.")
     lines.append("- Mobile probes use the Vaul bottom sheet at `35vh`; desktop probes use the right aside. All four probes reported zero console/page errors.")
     lines.append("- Historical candidate click-resolution: Bacău Bărzăuța opens the Covasna sector card; Maramureș Crasna (Frumușaua) opens the Satu Mare Crasna card. Șugo and Geamărtălui resolve to matching-county cards.")
     lines.append("- Per-target feature properties, styles, card text, culling-before/after-fit and visible filter controls are retained in `docs/evidence/geometry-ledger-production-observations.json`.")

@@ -27,7 +27,7 @@ def test_class2_preview_aggregate_schema_and_scope():
 
 def test_class2_preview_hash_is_stable_for_checked_in_artifact():
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest()
-    assert digest == "8e5a548340d59187b5c02233889541375661f846cf9da2cb53a026bff37a4576"
+    assert digest == "d12da466430d51237dd9266e234188949b18e62d2720005956b72bfd31fe6468"
 
 
 def test_buzau_preview_keeps_physical_course_separate_from_unverified_contracts():

@@ -72,15 +72,7 @@ def run_generator(output_root: Path) -> None:
 def test_canonical_geometry_hash_and_segment_identity_reject_nonfinite_values():
     ledger = load_module()
     geometry = {"coordinates": [[25.0, 45.0], [25.5, 45.5]], "type": "LineString"}
-    expected_hash = hashlib.sha256(
-        json.dumps(
-            geometry,
-            ensure_ascii=False,
-            sort_keys=True,
-            separators=(",", ":"),
-            allow_nan=False,
-        ).encode()
-    ).hexdigest()
+    expected_hash = hashlib.sha256(ledger.geometry_identity_bytes(geometry)).hexdigest()
     assert ledger.geometry_summary(geometry)["geometryHash"] == expected_hash
     expected_segment = hashlib.sha256(
         f"water-a\0{expected_hash}\0commit:path#water-a\0null\0null".encode()
@@ -116,7 +108,7 @@ def test_checked_in_ledger_is_complete_deterministic_and_public_projection_is_re
     assert authoritative["totals"]["rivers"] == 761
     assert authoritative["totals"]["lakes"] == 252
     assert authoritative["totals"]["unresolvedInventory"] == 312
-    assert authoritative["totals"]["physicalPreviewRuntimeRepresentatives"] == 69
+    assert authoritative["totals"]["physicalPreviewRuntimeRepresentatives"] == 76
     assert len(authoritative["records"]) == 1013
     assert len({record["sourceSlug"] for record in authoritative["records"]}) == 1013
     assert len(public["records"]) == 1013
@@ -166,6 +158,20 @@ def test_aliases_groups_states_and_historical_candidates_are_explicit():
         assert record["historicalAudit"]["candidate"] is True
         assert record["historicalAudit"]["reproduction"] == "NOT_REPRODUCED"
         assert record["browserObservations"]
+
+
+def test_preview_candidate_hashes_are_canonical_geometry_hashes():
+    preview = json.loads((ROOT / "public/data/preview_class2_physical.json").read_text())
+    ledger = load_module()
+    for record in preview["records"]:
+        for candidate in record.get("physicalCandidates", []):
+            assert candidate["geometryHash"] == ledger.geometry_summary(candidate["geometry"])["geometryHash"]
+
+
+def test_geometry_hash_uses_cross_runtime_number_canonicalization():
+    ledger = load_module()
+    geometry = {"type": "LineString", "coordinates": [[25.1, 45.0], [26.2, 46.3]]}
+    assert ledger.geometry_summary(geometry)["geometryHash"] == "a4cb439fa7a35a3f083a2892282a8b0041a998bd43dd729a6ac55ee2231bc431"
 
 
 def test_every_geometry_variant_has_required_evidence_and_valid_identity():

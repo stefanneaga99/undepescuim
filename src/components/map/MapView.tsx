@@ -27,6 +27,7 @@ export function MapView() {
   const filteredUncontracted = useFilteredUncontracted();
   const coverageSlug = useMapStore((s) => s.selectedAssociationSlug);
   const selectedWaterSlug = useMapStore((s) => s.selectedWaterSlug);
+  const selectedPhysicalSegmentId = useMapStore((s) => s.selectedPhysicalSegmentId);
   const allWaters = useMapStore((s) => s.waters);
   const uncontracted = useMapStore((s) => s.uncontracted);
   const physicalPreview = useMapStore((s) => s.physicalPreview);
@@ -48,8 +49,8 @@ export function MapView() {
   // (t_b6a0e2fe: shared helper — exact sector intervals win, else the
   // Voronoi interval over course_frac; single-contract rivers = [0, 1]).
   const focus = useMemo<MapSelectionFocus>(
-    () => (selected ? resolveMapSelectionFocus(selected, allWaters, physicalPreview) : { kind: 'none' }),
-    [selected, allWaters, physicalPreview],
+    () => (selected ? resolveMapSelectionFocus(selected, allWaters, physicalPreview, selectedPhysicalSegmentId) : { kind: 'none' }),
+    [selected, allWaters, physicalPreview, selectedPhysicalSegmentId],
   );
 
   return (
