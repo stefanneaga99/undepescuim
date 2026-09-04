@@ -1,0 +1,3114 @@
+{
+  "artifact": "geometry-ledger-production-observations",
+  "schemaVersion": 1,
+  "productionUrl": "https://unde-pescuim.ro",
+  "deployment": {
+    "id": "dpl_BhofeXcCTCBWEqdZeYfzjGSJd1hf",
+    "url": "https://undepescuim-kwnwwz56y-stefan-a190.vercel.app",
+    "target": "production",
+    "aliases": [
+      "https://unde-pescuim.ro",
+      "https://www.unde-pescuim.ro",
+      "https://undepescuim.vercel.app"
+    ],
+    "createdAtEpochMs": 1788506499507,
+    "commit": null
+  },
+  "immutableHttpArtifacts": [
+    {
+      "url": "https://unde-pescuim.ro/",
+      "sha256": "5540f61a46d1e893c57c2fc46d857cd0c5c89f32e05548e119c32d88bd85171d",
+      "bytes": 28128
+    },
+    {
+      "url": "https://unde-pescuim.ro/data/waters.json",
+      "sha256": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+      "bytes": 10599467
+    },
+    {
+      "url": "https://unde-pescuim.ro/data/waters_county_clips.json",
+      "sha256": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+      "bytes": 1821636
+    },
+    {
+      "url": "https://unde-pescuim.ro/data/preview_class2_physical.json",
+      "sha256": "8e5a548340d59187b5c02233889541375661f846cf9da2cb53a026bff37a4576",
+      "bytes": 10393036
+    }
+  ],
+  "probes": [
+    {
+      "viewport": "390x844",
+      "actualViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "serviceWorkers": "block",
+      "url": "https://unde-pescuim.ro/",
+      "httpStatus": 200,
+      "serviceWorkerState": {
+        "controller": false,
+        "registrations": []
+      },
+      "consoleErrors": [],
+      "map": {
+        "center": {
+          "lat": 44.52298063624132,
+          "lng": 23.837109999999996
+        },
+        "zoom": 12,
+        "renderedPathCount": 21,
+        "visibleControlsText": [
+          "RomânăRO",
+          "EnglishEN",
+          "Alba",
+          "Arad",
+          "Argeș",
+          "Bacău",
+          "Bihor",
+          "Bistrița-Năsăud",
+          "Botoșani",
+          "Brașov",
+          "Brăila",
+          "București",
+          "Buzău",
+          "Caraș-Severin",
+          "Călărași",
+          "Cluj",
+          "Constanța",
+          "Covasna",
+          "Dâmbovița",
+          "Dolj",
+          "Galați",
+          "Giurgiu",
+          "Gorj",
+          "Harghita",
+          "Hunedoara",
+          "Ialomița",
+          "Iași",
+          "Ilfov",
+          "Maramureș",
+          "Mehedinți"
+        ]
+      },
+      "targets": [
+        {
+          "targetSlug": "anpa-anpa-0207",
+          "canonicalName": "Râul Buzăul superior cu afluenții săi",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": null,
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "anpa-anpa-0207",
+                "name": "Râul Buzăul superior cu afluenții săi",
+                "subtype": "rau",
+                "judet": "Buzău",
+                "asociatieSlug": null,
+                "riverGroup": "buzau",
+                "uncontracted": false,
+                "physicalSourceSlug": "anpa-anpa-0207",
+                "physicalAliases": [
+                  "anpa-anpa-0207"
+                ]
+              },
+              "style": {
+                "color": "#14b8a6",
+                "weight": 3,
+                "opacity": 0.9,
+                "dashArray": "7 5",
+                "fillColor": null,
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "anpa-anpa-0210",
+          "canonicalName": "Valea Buzăului superior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0211",
+          "canonicalName": "Valea Buzăului inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0214",
+          "canonicalName": "Râul Buzăul inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0261",
+          "canonicalName": "Pârâu Buzăul Mijlociu",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-brasov-buzaul-superior",
+          "canonicalName": "Râul Buzăul superior",
+          "canonicalCounty": "Brașov",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-bacau-barzauta",
+          "canonicalName": "Râul Bărzăuța",
+          "canonicalCounty": "Bacău",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              26.22875,
+              46.16252,
+              26.29309,
+              46.33434
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-covasna-sugo",
+          "canonicalName": "Râul Șugo",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              25.92814,
+              46.13137,
+              25.94325,
+              46.15762
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-maramures-crasna-frumusaua",
+          "canonicalName": "Râul Crasna (Frumușaua)",
+          "canonicalCounty": "Maramureș",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              22.43277,
+              47.0387,
+              22.92212,
+              47.76289
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-maramures-crasna-frumusaua",
+                "name": "Râul Crasna (Frumușaua)",
+                "subtype": "rau",
+                "judet": "Maramureș",
+                "asociatieSlug": "directia-silvica-maramures",
+                "riverGroup": "crasna",
+                "uncontracted": false,
+                "lengthKm": 131.9
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "vb2p0152",
+          "canonicalName": "Râul Geamărtălui ",
+          "canonicalCounty": "Olt",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": [
+            23.9055819,
+            44.3590658,
+            24.1017021,
+            44.4674185
+          ],
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              23.82537,
+              44.51437,
+              23.84885,
+              44.53159
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        }
+      ],
+      "evidencePath": "docs/evidence/production-390x844-sw-block.png",
+      "evidenceSha256": "c0bd85d3fffcd0b4cfa9ee841cec006c83638eca543f9964af224ef0f372db83"
+    },
+    {
+      "viewport": "390x844",
+      "actualViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "serviceWorkers": "allow",
+      "url": "https://unde-pescuim.ro/",
+      "httpStatus": 200,
+      "serviceWorkerState": {
+        "controller": true,
+        "registrations": [
+          {
+            "scope": "https://unde-pescuim.ro/",
+            "active": "https://unde-pescuim.ro/sw.js"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "map": {
+        "center": {
+          "lat": 44.52298063624132,
+          "lng": 23.837109999999996
+        },
+        "zoom": 12,
+        "renderedPathCount": 21,
+        "visibleControlsText": [
+          "RomânăRO",
+          "EnglishEN",
+          "Alba",
+          "Arad",
+          "Argeș",
+          "Bacău",
+          "Bihor",
+          "Bistrița-Năsăud",
+          "Botoșani",
+          "Brașov",
+          "Brăila",
+          "București",
+          "Buzău",
+          "Caraș-Severin",
+          "Călărași",
+          "Cluj",
+          "Constanța",
+          "Covasna",
+          "Dâmbovița",
+          "Dolj",
+          "Galați",
+          "Giurgiu",
+          "Gorj",
+          "Harghita",
+          "Hunedoara",
+          "Ialomița",
+          "Iași",
+          "Ilfov",
+          "Maramureș",
+          "Mehedinți"
+        ]
+      },
+      "targets": [
+        {
+          "targetSlug": "anpa-anpa-0207",
+          "canonicalName": "Râul Buzăul superior cu afluenții săi",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": null,
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "anpa-anpa-0207",
+                "name": "Râul Buzăul superior cu afluenții săi",
+                "subtype": "rau",
+                "judet": "Buzău",
+                "asociatieSlug": null,
+                "riverGroup": "buzau",
+                "uncontracted": false,
+                "physicalSourceSlug": "anpa-anpa-0207",
+                "physicalAliases": [
+                  "anpa-anpa-0207"
+                ]
+              },
+              "style": {
+                "color": "#14b8a6",
+                "weight": 3,
+                "opacity": 0.9,
+                "dashArray": "7 5",
+                "fillColor": null,
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "anpa-anpa-0210",
+          "canonicalName": "Valea Buzăului superior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0211",
+          "canonicalName": "Valea Buzăului inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0214",
+          "canonicalName": "Râul Buzăul inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0261",
+          "canonicalName": "Pârâu Buzăul Mijlociu",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-brasov-buzaul-superior",
+          "canonicalName": "Râul Buzăul superior",
+          "canonicalCounty": "Brașov",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-bacau-barzauta",
+          "canonicalName": "Râul Bărzăuța",
+          "canonicalCounty": "Bacău",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              26.22875,
+              46.16252,
+              26.29309,
+              46.33434
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-covasna-sugo",
+          "canonicalName": "Râul Șugo",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              25.92814,
+              46.13137,
+              25.94325,
+              46.15762
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-maramures-crasna-frumusaua",
+          "canonicalName": "Râul Crasna (Frumușaua)",
+          "canonicalCounty": "Maramureș",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              22.43277,
+              47.0387,
+              22.92212,
+              47.76289
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-maramures-crasna-frumusaua",
+                "name": "Râul Crasna (Frumușaua)",
+                "subtype": "rau",
+                "judet": "Maramureș",
+                "asociatieSlug": "directia-silvica-maramures",
+                "riverGroup": "crasna",
+                "uncontracted": false,
+                "lengthKm": 131.9
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "vb2p0152",
+          "canonicalName": "Râul Geamărtălui ",
+          "canonicalCounty": "Olt",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": [
+            23.9055819,
+            44.3590658,
+            24.1017021,
+            44.4674185
+          ],
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              23.82537,
+              44.51437,
+              23.84885,
+              44.53159
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "vaul-bottom-sheet",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        }
+      ],
+      "evidencePath": "docs/evidence/production-390x844-sw-allow.png",
+      "evidenceSha256": "b76ee67b47b797e890031d0db7a1558fcfa0259d0417d0d0b9c67bd42f0a439e"
+    },
+    {
+      "viewport": "1280x800",
+      "actualViewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "serviceWorkers": "block",
+      "url": "https://unde-pescuim.ro/",
+      "httpStatus": 200,
+      "serviceWorkerState": {
+        "controller": false,
+        "registrations": []
+      },
+      "consoleErrors": [],
+      "map": {
+        "center": {
+          "lat": 44.52298063624132,
+          "lng": 23.837109999999996
+        },
+        "zoom": 12,
+        "renderedPathCount": 55,
+        "visibleControlsText": [
+          "Caută asociația…",
+          "RomânăRO",
+          "EnglishEN",
+          "Alba",
+          "Arad",
+          "Argeș",
+          "Bacău",
+          "Bihor",
+          "Bistrița-Năsăud",
+          "Botoșani",
+          "Brașov",
+          "Brăila",
+          "București",
+          "Buzău",
+          "Caraș-Severin",
+          "Călărași",
+          "Cluj",
+          "Constanța",
+          "Covasna",
+          "Dâmbovița",
+          "Dolj",
+          "Galați",
+          "Giurgiu",
+          "Gorj",
+          "Harghita",
+          "Hunedoara",
+          "Ialomița",
+          "Iași",
+          "Ilfov",
+          "Maramureș"
+        ]
+      },
+      "targets": [
+        {
+          "targetSlug": "anpa-anpa-0207",
+          "canonicalName": "Râul Buzăul superior cu afluenții săi",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": null,
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "anpa-anpa-0207",
+                "name": "Râul Buzăul superior cu afluenții săi",
+                "subtype": "rau",
+                "judet": "Buzău",
+                "asociatieSlug": null,
+                "riverGroup": "buzau",
+                "uncontracted": false,
+                "physicalSourceSlug": "anpa-anpa-0207",
+                "physicalAliases": [
+                  "anpa-anpa-0207"
+                ]
+              },
+              "style": {
+                "color": "#14b8a6",
+                "weight": 3,
+                "opacity": 0.9,
+                "dashArray": "7 5",
+                "fillColor": null,
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "anpa-anpa-0210",
+          "canonicalName": "Valea Buzăului superior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0211",
+          "canonicalName": "Valea Buzăului inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0214",
+          "canonicalName": "Râul Buzăul inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0261",
+          "canonicalName": "Pârâu Buzăul Mijlociu",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-brasov-buzaul-superior",
+          "canonicalName": "Râul Buzăul superior",
+          "canonicalCounty": "Brașov",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-bacau-barzauta",
+          "canonicalName": "Râul Bărzăuța",
+          "canonicalCounty": "Bacău",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              26.22875,
+              46.16252,
+              26.29309,
+              46.33434
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-covasna-sugo",
+          "canonicalName": "Râul Șugo",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              25.92814,
+              46.13137,
+              25.94325,
+              46.15762
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-maramures-crasna-frumusaua",
+          "canonicalName": "Râul Crasna (Frumușaua)",
+          "canonicalCounty": "Maramureș",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              22.43277,
+              47.0387,
+              22.92212,
+              47.76289
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-maramures-crasna-frumusaua",
+                "name": "Râul Crasna (Frumușaua)",
+                "subtype": "rau",
+                "judet": "Maramureș",
+                "asociatieSlug": "directia-silvica-maramures",
+                "riverGroup": "crasna",
+                "uncontracted": false,
+                "lengthKm": 131.9
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "vb2p0152",
+          "canonicalName": "Râul Geamărtălui ",
+          "canonicalCounty": "Olt",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": [
+            23.9055819,
+            44.3590658,
+            24.1017021,
+            44.4674185
+          ],
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              23.82537,
+              44.51437,
+              23.84885,
+              44.53159
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        }
+      ],
+      "evidencePath": "docs/evidence/production-1280x800-sw-block.png",
+      "evidenceSha256": "715f73b8e3a11e5dd88d51a33836707c5252d39e3fb527010c98e676ce73a8a9"
+    },
+    {
+      "viewport": "1280x800",
+      "actualViewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "serviceWorkers": "allow",
+      "url": "https://unde-pescuim.ro/",
+      "httpStatus": 200,
+      "serviceWorkerState": {
+        "controller": true,
+        "registrations": [
+          {
+            "scope": "https://unde-pescuim.ro/",
+            "active": "https://unde-pescuim.ro/sw.js"
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "map": {
+        "center": {
+          "lat": 44.52298063624132,
+          "lng": 23.837109999999996
+        },
+        "zoom": 12,
+        "renderedPathCount": 55,
+        "visibleControlsText": [
+          "Caută asociația…",
+          "RomânăRO",
+          "EnglishEN",
+          "Alba",
+          "Arad",
+          "Argeș",
+          "Bacău",
+          "Bihor",
+          "Bistrița-Năsăud",
+          "Botoșani",
+          "Brașov",
+          "Brăila",
+          "București",
+          "Buzău",
+          "Caraș-Severin",
+          "Călărași",
+          "Cluj",
+          "Constanța",
+          "Covasna",
+          "Dâmbovița",
+          "Dolj",
+          "Galați",
+          "Giurgiu",
+          "Gorj",
+          "Harghita",
+          "Hunedoara",
+          "Ialomița",
+          "Iași",
+          "Ilfov",
+          "Maramureș"
+        ]
+      },
+      "targets": [
+        {
+          "targetSlug": "anpa-anpa-0207",
+          "canonicalName": "Râul Buzăul superior cu afluenții săi",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": null,
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "anpa-anpa-0207",
+                "name": "Râul Buzăul superior cu afluenții săi",
+                "subtype": "rau",
+                "judet": "Buzău",
+                "asociatieSlug": null,
+                "riverGroup": "buzau",
+                "uncontracted": false,
+                "physicalSourceSlug": "anpa-anpa-0207",
+                "physicalAliases": [
+                  "anpa-anpa-0207"
+                ]
+              },
+              "style": {
+                "color": "#14b8a6",
+                "weight": 3,
+                "opacity": 0.9,
+                "dashArray": "7 5",
+                "fillColor": null,
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "anpa-anpa-0210",
+          "canonicalName": "Valea Buzăului superior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0211",
+          "canonicalName": "Valea Buzăului inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0214",
+          "canonicalName": "Râul Buzăul inferior",
+          "canonicalCounty": "Buzău",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "anpa-anpa-0261",
+          "canonicalName": "Pârâu Buzăul Mijlociu",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-brasov-buzaul-superior",
+          "canonicalName": "Râul Buzăul superior",
+          "canonicalCounty": "Brașov",
+          "canonicalGeometryPresent": false,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": null,
+            "presentAfterFit": false
+          },
+          "featureCount": 0,
+          "features": [],
+          "card": null
+        },
+        {
+          "targetSlug": "romsilva-bacau-barzauta",
+          "canonicalName": "Râul Bărzăuța",
+          "canonicalCounty": "Bacău",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              26.22875,
+              46.16252,
+              26.29309,
+              46.33434
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-bacau-barzauta",
+                "name": "Râul Bărzăuța",
+                "subtype": "rau",
+                "judet": "Bacău",
+                "asociatieSlug": "directia-silvica-bacau",
+                "riverGroup": "barzauta",
+                "uncontracted": false,
+                "lengthKm": 42.3
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-covasna-sugo",
+          "canonicalName": "Râul Șugo",
+          "canonicalCounty": "Covasna",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": true,
+            "fitUsed": [
+              25.92814,
+              46.13137,
+              25.94325,
+              46.15762
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "romsilva-covasna-sugo",
+                "name": "Râul Șugo",
+                "subtype": "rau",
+                "judet": "Covasna",
+                "asociatieSlug": "directia-silvica-covasna",
+                "riverGroup": "sugo",
+                "uncontracted": false,
+                "lengthKm": 3.5
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "romsilva-maramures-crasna-frumusaua",
+          "canonicalName": "Râul Crasna (Frumușaua)",
+          "canonicalCounty": "Maramureș",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": null,
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              22.43277,
+              47.0387,
+              22.92212,
+              47.76289
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 1,
+          "features": [
+            {
+              "properties": {
+                "slug": "romsilva-maramures-crasna-frumusaua",
+                "name": "Râul Crasna (Frumușaua)",
+                "subtype": "rau",
+                "judet": "Maramureș",
+                "asociatieSlug": "directia-silvica-maramures",
+                "riverGroup": "crasna",
+                "uncontracted": false,
+                "lengthKm": 131.9
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        },
+        {
+          "targetSlug": "vb2p0152",
+          "canonicalName": "Râul Geamărtălui ",
+          "canonicalCounty": "Olt",
+          "canonicalGeometryPresent": true,
+          "canonicalBbox": [
+            23.9055819,
+            44.3590658,
+            24.1017021,
+            44.4674185
+          ],
+          "culling": {
+            "presentAtPriorView": false,
+            "fitUsed": [
+              23.82537,
+              44.51437,
+              23.84885,
+              44.53159
+            ],
+            "presentAfterFit": true
+          },
+          "featureCount": 2,
+          "features": [
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#000",
+                "weight": 16,
+                "opacity": 0,
+                "dashArray": null,
+                "fillColor": null,
+                "fillOpacity": 0
+              }
+            },
+            {
+              "properties": {
+                "slug": "vb2p0152",
+                "name": "Râul Geamărtălui ",
+                "subtype": "rau",
+                "judet": "Olt",
+                "asociatieSlug": "ajvps-olt",
+                "riverGroup": "geamartalui",
+                "uncontracted": false,
+                "lengthKm": 2.8
+              },
+              "style": {
+                "color": "#3b82f6",
+                "weight": 2,
+                "opacity": 1,
+                "dashArray": null,
+                "fillColor": "#3b82f6",
+                "fillOpacity": 0.2
+              }
+            }
+          ],
+          "card": {
+            "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+            "surface": "desktop-aside",
+            "disclosure": null,
+            "sheetSnapHeight": "35vh"
+          }
+        }
+      ],
+      "evidencePath": "docs/evidence/production-1280x800-sw-allow.png",
+      "evidenceSha256": "715f73b8e3a11e5dd88d51a33836707c5252d39e3fb527010c98e676ce73a8a9"
+    }
+  ],
+  "observations": {
+    "anpa-anpa-0207": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "anpa-anpa-0207",
+            "name": "Râul Buzăul superior cu afluenții săi",
+            "subtype": "rau",
+            "judet": "Buzău",
+            "asociatieSlug": null,
+            "riverGroup": "buzau",
+            "uncontracted": false,
+            "physicalSourceSlug": "anpa-anpa-0207",
+            "physicalAliases": [
+              "anpa-anpa-0207"
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "color": "#14b8a6",
+            "weight": 3,
+            "opacity": 0.9,
+            "dashArray": "7 5",
+            "fillColor": null,
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": null,
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "anpa-anpa-0207",
+            "name": "Râul Buzăul superior cu afluenții săi",
+            "subtype": "rau",
+            "judet": "Buzău",
+            "asociatieSlug": null,
+            "riverGroup": "buzau",
+            "uncontracted": false,
+            "physicalSourceSlug": "anpa-anpa-0207",
+            "physicalAliases": [
+              "anpa-anpa-0207"
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "color": "#14b8a6",
+            "weight": 3,
+            "opacity": 0.9,
+            "dashArray": "7 5",
+            "fillColor": null,
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": null,
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "anpa-anpa-0207",
+            "name": "Râul Buzăul superior cu afluenții săi",
+            "subtype": "rau",
+            "judet": "Buzău",
+            "asociatieSlug": null,
+            "riverGroup": "buzau",
+            "uncontracted": false,
+            "physicalSourceSlug": "anpa-anpa-0207",
+            "physicalAliases": [
+              "anpa-anpa-0207"
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "color": "#14b8a6",
+            "weight": 3,
+            "opacity": 0.9,
+            "dashArray": "7 5",
+            "fillColor": null,
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": null,
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "anpa-anpa-0207",
+            "name": "Râul Buzăul superior cu afluenții săi",
+            "subtype": "rau",
+            "judet": "Buzău",
+            "asociatieSlug": null,
+            "riverGroup": "buzau",
+            "uncontracted": false,
+            "physicalSourceSlug": "anpa-anpa-0207",
+            "physicalAliases": [
+              "anpa-anpa-0207"
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "color": "#14b8a6",
+            "weight": 3,
+            "opacity": 0.9,
+            "dashArray": "7 5",
+            "fillColor": null,
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Buzăul superior cu afluenții săiRâuBuzăuSectorcursul principalDimensiune32 KmAsociațieAJVPS BUZĂUstr. Unirii, Bl. 12F, Buzăuwww.ajvpsbuzau.ro/ro/descriereLocații și contacte publiceContact centralBuzău, BuzăuStr. Unirii, bloc 12F, parter, 120020ajvps_buzau@yahoo.comNecesită reconfirmareSursa oficialăClub / contact localPătârlagele, BuzăuStr. Nicolae Bălcescu nr. 99, bloc C4, parter, 127430Necesită reconfirmareSursa oficialăPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS BUZĂU este valabil pe acest sector.ReferințăContract 22/19.09.2017 (2017-09-19)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": null,
+          "presentAfterFit": true
+        }
+      }
+    ],
+    "anpa-anpa-0210": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      }
+    ],
+    "anpa-anpa-0211": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      }
+    ],
+    "anpa-anpa-0214": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      }
+    ],
+    "anpa-anpa-0261": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      }
+    ],
+    "romsilva-brasov-buzaul-superior": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 0,
+        "featureProperties": [],
+        "styles": [],
+        "card": null,
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": null,
+          "presentAfterFit": false
+        }
+      }
+    ],
+    "romsilva-bacau-barzauta": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          },
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            26.22875,
+            46.16252,
+            26.29309,
+            46.33434
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          },
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            26.22875,
+            46.16252,
+            26.29309,
+            46.33434
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          },
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            26.22875,
+            46.16252,
+            26.29309,
+            46.33434
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          },
+          {
+            "slug": "romsilva-bacau-barzauta",
+            "name": "Râul Bărzăuța",
+            "subtype": "rau",
+            "judet": "Bacău",
+            "asociatieSlug": "directia-silvica-bacau",
+            "riverGroup": "barzauta",
+            "uncontracted": false,
+            "lengthKm": 42.3
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul BărzăuțaRâuCovasnaSectorDe la Apa Lină - la limita cu O.S. DărmăneștiDimensiune15 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            26.22875,
+            46.16252,
+            26.29309,
+            46.33434
+          ],
+          "presentAfterFit": true
+        }
+      }
+    ],
+    "romsilva-covasna-sugo": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          },
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            25.92814,
+            46.13137,
+            25.94325,
+            46.15762
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          },
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            25.92814,
+            46.13137,
+            25.94325,
+            46.15762
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          },
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            25.92814,
+            46.13137,
+            25.94325,
+            46.15762
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          },
+          {
+            "slug": "romsilva-covasna-sugo",
+            "name": "Râul Șugo",
+            "subtype": "rau",
+            "judet": "Covasna",
+            "asociatieSlug": "directia-silvica-covasna",
+            "riverGroup": "sugo",
+            "uncontracted": false,
+            "lengthKm": 3.5
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul ȘugoRâuCovasnaSectorIzvoare - confl. cu pârâul VîrghișDimensiune18 KmAsociațieDirecția Silvică Covasna0267351890sfgh.rosilva.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul Direcția Silvică Covasna este valabil pe acest sector.ReferințăAdministrat de RNP-Romsilva – ape de munte în administrare directă (Protocol 12935/LAV/17.09.2013, ANEXA 1 – Lista habitatelor piscicole naturale din apele de munte); O.S. D. S. CovasnaDatele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": true,
+          "fitUsed": [
+            25.92814,
+            46.13137,
+            25.94325,
+            46.15762
+          ],
+          "presentAfterFit": true
+        }
+      }
+    ],
+    "romsilva-maramures-crasna-frumusaua": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "romsilva-maramures-crasna-frumusaua",
+            "name": "Râul Crasna (Frumușaua)",
+            "subtype": "rau",
+            "judet": "Maramureș",
+            "asociatieSlug": "directia-silvica-maramures",
+            "riverGroup": "crasna",
+            "uncontracted": false,
+            "lengthKm": 131.9
+          }
+        ],
+        "styles": [
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            22.43277,
+            47.0387,
+            22.92212,
+            47.76289
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "romsilva-maramures-crasna-frumusaua",
+            "name": "Râul Crasna (Frumușaua)",
+            "subtype": "rau",
+            "judet": "Maramureș",
+            "asociatieSlug": "directia-silvica-maramures",
+            "riverGroup": "crasna",
+            "uncontracted": false,
+            "lengthKm": 131.9
+          }
+        ],
+        "styles": [
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            22.43277,
+            47.0387,
+            22.92212,
+            47.76289
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "romsilva-maramures-crasna-frumusaua",
+            "name": "Râul Crasna (Frumușaua)",
+            "subtype": "rau",
+            "judet": "Maramureș",
+            "asociatieSlug": "directia-silvica-maramures",
+            "riverGroup": "crasna",
+            "uncontracted": false,
+            "lengthKm": 131.9
+          }
+        ],
+        "styles": [
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            22.43277,
+            47.0387,
+            22.92212,
+            47.76289
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 1,
+        "featureProperties": [
+          {
+            "slug": "romsilva-maramures-crasna-frumusaua",
+            "name": "Râul Crasna (Frumușaua)",
+            "subtype": "rau",
+            "judet": "Maramureș",
+            "asociatieSlug": "directia-silvica-maramures",
+            "riverGroup": "crasna",
+            "uncontracted": false,
+            "lengthKm": 131.9
+          }
+        ],
+        "styles": [
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul CrasnaRâuSatu MareSectorSupur MoftinDimensiune28 KMAsociațieAJVPS SATU MARE0261717620Satu Mare, str. Petofi Șandor, nr. 38ajvpssm.roPermis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS SATU MARE este valabil pe acest sector.ReferințăContract 12/13.09.2017 (2017-09-13)Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            22.43277,
+            47.0387,
+            22.92212,
+            47.76289
+          ],
+          "presentAfterFit": true
+        }
+      }
+    ],
+    "vb2p0152": [
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          },
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            23.82537,
+            44.51437,
+            23.84885,
+            44.53159
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "390x844",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          },
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Permis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "vaul-bottom-sheet",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            23.82537,
+            44.51437,
+            23.84885,
+            44.53159
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "block",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          },
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            23.82537,
+            44.51437,
+            23.84885,
+            44.53159
+          ],
+          "presentAfterFit": true
+        }
+      },
+      {
+        "viewport": "1280x800",
+        "serviceWorkers": "allow",
+        "featureCount": 2,
+        "featureProperties": [
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          },
+          {
+            "slug": "vb2p0152",
+            "name": "Râul Geamărtălui ",
+            "subtype": "rau",
+            "judet": "Olt",
+            "asociatieSlug": "ajvps-olt",
+            "riverGroup": "geamartalui",
+            "uncontracted": false,
+            "lengthKm": 2.8
+          }
+        ],
+        "styles": [
+          {
+            "color": "#000",
+            "weight": 16,
+            "opacity": 0,
+            "dashArray": null,
+            "fillColor": null,
+            "fillOpacity": 0
+          },
+          {
+            "color": "#3b82f6",
+            "weight": 2,
+            "opacity": 1,
+            "dashArray": null,
+            "fillColor": "#3b82f6",
+            "fillOpacity": 0.2
+          }
+        ],
+        "card": {
+          "text": "Râul Geamărtălui RâuOltSectorIntrare județ Olt - conf. râul OltețDimensiune20 kmAsociațieAJVPS OLT0249415633str. N. Titulescu, nr. 39, Slatinawww.facebook.com/ajvpsolt1Permis național de pescuit (ANADSPA)Permis: verifică cu asociațiaPermisul AJVPS OLT este valabil pe acest sector.ReferințăLista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024Datele sunt corecteRaportează o problemăPermis & Reguli 2026Dimensiuni de reținereAm văzut braconaj sau poluare",
+          "surface": "desktop-aside",
+          "disclosure": null,
+          "sheetSnapHeight": "35vh"
+        },
+        "culling": {
+          "presentAtPriorView": false,
+          "fitUsed": [
+            23.82537,
+            44.51437,
+            23.84885,
+            44.53159
+          ],
+          "presentAfterFit": true
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Vercel inspect verified deployment ID, URL, aliases and creation time but did not expose a git commit field; commit mapping is therefore not asserted.",
+    "Physical-preview aliases share one deduplicated feature; clicking that feature opens its representative source card, so non-representative alias card text is not independently observable from the map layer.",
+    "Browser observations describe rendering only and are never legal ownership, association or endpoint evidence."
+  ]
+}
