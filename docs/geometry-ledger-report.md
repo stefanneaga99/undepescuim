@@ -15,6 +15,16 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 
 ## Immutable legal surfaces
 
+- `data/processed/anpa_contracts.jsonl`: `e49b90f7d9c2d2faa214eef7d2d75ce92c4ef32ec325c615fec23a61253eb27b` (before = after)
+- `data/processed/anpa_romsilva_waters.jsonl`: `e9f9e48edf79c24b54f7baf6beea3328972d3f41346b4bc42ff528e301749c6b` (before = after)
+- `data/processed/anpa_waters.jsonl`: `af1311584384ae75290b43a442e6b78cb9067924a506c3c4bc6eb93033215a9d` (before = after)
+- `data/processed/arebaltapeste_associations.jsonl`: `757ad07257cf42fa8c28b99ed74cd5a9c529973409a265a58cd7bf0cb236eb8a` (before = after)
+- `data/processed/arebaltapeste_waters.jsonl`: `88e479305d3cb9b19ae51363328091a32f72e8ea0b79bdf077ce9fd22529b87a` (before = after)
+- `data/processed/mures_harghita_covasna_endpoint_audit.json`: `065872997c7c05b0a96b33637e39fe7053bd034c79b34c48eff0faa9ec2e8dae` (before = after)
+- `data/processed/permit_enrichment.json`: `e7035af369c726b1f24b32d5041814742aec2ed4ca00ce02da3e70d006110d75` (before = after)
+- `data/processed/permit_overrides.json`: `4d25281bc7b3cbf7b254a235aaf77f4a05c843da4e565e92fd2da0de36f015fa` (before = after)
+- `data/processed/river_segment_audit.json`: `9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35` (before = after)
+- `public/data/association_locations.json`: `bc54ab5ce74c07e282ac2d1f51b16247180d2d5bfd5e3389f2c11735a9c6b9a7` (before = after)
 - `public/data/associations.json`: `388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9` (before = after)
 - `public/data/waters.json`: `56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0` (before = after)
 - `public/data/waters_county_clips.json`: `4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92` (before = after)

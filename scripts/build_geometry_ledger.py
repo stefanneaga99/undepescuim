@@ -19,7 +19,17 @@ SUPPORTED_TYPES = {"Point", "LineString", "MultiLineString", "Polygon", "MultiPo
 CANONICAL_SURFACES = [
     "public/data/waters.json",
     "public/data/associations.json",
+    "public/data/association_locations.json",
     "public/data/waters_county_clips.json",
+    "data/processed/anpa_waters.jsonl",
+    "data/processed/anpa_contracts.jsonl",
+    "data/processed/anpa_romsilva_waters.jsonl",
+    "data/processed/arebaltapeste_waters.jsonl",
+    "data/processed/arebaltapeste_associations.jsonl",
+    "data/processed/mures_harghita_covasna_endpoint_audit.json",
+    "data/processed/river_segment_audit.json",
+    "data/processed/permit_enrichment.json",
+    "data/processed/permit_overrides.json",
 ]
 INPUTS = {
     "waters": "public/data/waters.json",
@@ -29,6 +39,10 @@ INPUTS = {
     "uncontractedLakes": "public/data/uncontracted_lakes.json",
     "uncontractedMajors": "public/data/uncontracted_majors.json",
     "pipelineManifest": "data/processed/pipeline_manifest.json",
+    "snapshotManifest": "data/processed/osm_river_snapshot_manifest.json",
+    "segmentAudit": "data/processed/river_segment_audit.json",
+    "traceability": "data/processed/traceability_report.json",
+    "integrityReport": "data/processed/integrity_report.json",
     "renderRepairProvenance": "data/processed/geometry_render_repair_provenance.json",
     "unresolvedEvidence": "data/processed/geometry_ledger_unresolved_evidence.json",
     "productionEvidence": "docs/evidence/geometry-ledger-production-observations.json",
