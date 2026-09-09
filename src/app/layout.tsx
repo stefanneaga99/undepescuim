@@ -6,6 +6,7 @@ import { ServiceWorkerRegister } from "@/components/pwa/ServiceWorkerRegister";
 import { I18nProvider } from "@/i18n/provider";
 import { siteUrl } from "@/lib/site-url";
 import { siteMetadata } from "@/lib/site-metadata";
+import { LegalFooter } from "@/components/legal/LegalPage";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               applied client-side (no hydration mismatch). */}
           <I18nProvider>{children}</I18nProvider>
         </ThemeProvider>
+        <LegalFooter />
         {/* F6 PWA light: register the Serwist SW (prod builds only — dev has
             no cache tier and a stray SW would confuse HMR). */}
         <ServiceWorkerRegister />
