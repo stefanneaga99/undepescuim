@@ -7,12 +7,34 @@ import {
   readOfflineDataset,
   syncOfflineDataset,
 } from './offline-data';
+import {
+  disableOffline,
+  getOfflinePreference,
+  setOfflinePreference,
+} from './offline-preferences';
 
 const water = { slug: 'w', name: 'W', judet: 'Cluj', type: 'ape', subtype: 'lac', coordinates: [23, 46], bbox: [23, 46, 23, 46], asociatie: null } as never;
 
 beforeEach(() => localStorage.clear());
 
 describe('offline dataset snapshots', () => {
+  it('does not opt into optional storage until explicitly enabled', () => {
+    expect(getOfflinePreference()).toBe('unknown');
+    setOfflinePreference('disabled');
+    expect(getOfflinePreference()).toBe('disabled');
+    setOfflinePreference('enabled');
+    expect(getOfflinePreference()).toBe('enabled');
+  });
+
+  it('revoking offline access clears the snapshot and preference', async () => {
+    const existing = makeOfflineDataset({ dataUpdatedAt: null, associations: [], waters: [], uncontracted: [] });
+    localStorage.setItem(OFFLINE_DATA_KEY, JSON.stringify(existing));
+    setOfflinePreference('enabled');
+    await disableOffline();
+    expect(getOfflinePreference()).toBe('disabled');
+    expect(localStorage.getItem(OFFLINE_DATA_KEY)).toBeNull();
+  });
+
   it('marks the exact 30-day boundary stale', () => {
     const now = Date.parse('2026-01-31T00:00:00.000Z');
     expect(isDataStale(new Date(now - DATA_STALE_AFTER_MS).toISOString(), now)).toBe(true);

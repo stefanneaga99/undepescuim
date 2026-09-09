@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { Association, AssociationLocation, ContractFilter, CountyFeature, Water, WaterTypeFilter } from '@/types/data';
 import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from '@/utils/geo';
 import { isDataStale, readOfflineDataset, writeOfflineDataset } from '@/lib/offline-data';
+import { getOfflinePreference } from '@/lib/offline-preferences';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -171,7 +172,8 @@ export const useMapStore = create<MapStore>((set, get) => ({
     // Offline launches must never even attempt a network request. The local
     // snapshot is deliberately all-or-nothing; corrupt/partial data is ignored.
     const offline = typeof navigator !== 'undefined' && !navigator.onLine;
-    if (offline) {
+    const offlineEnabled = getOfflinePreference() === 'enabled';
+    if (offline && offlineEnabled) {
       const cached = await readOfflineDataset();
       if (cached) {
         set({
@@ -268,10 +270,12 @@ export const useMapStore = create<MapStore>((set, get) => ({
         });
         set({ physicalPreview: preview });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
-      try {
-        await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
-      } catch (error) {
-        console.warn('[map-store] offline snapshot not persisted:', error);
+      if (getOfflinePreference() === 'enabled') {
+        try {
+          await writeOfflineDataset({ schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
+        } catch (error) {
+          console.warn('[map-store] offline snapshot not persisted:', error);
+        }
       }
       markPerfDataLoaded();
       // P1 §4.5: the FULL uncontracted overlay streams in the background once
@@ -299,14 +303,16 @@ export const useMapStore = create<MapStore>((set, get) => ({
                 bySlug[w.slug] ? { ...w, geometryByCounty: bySlug[w.slug] } : w,
               );
             }
-            void writeOfflineDataset({
-              schemaVersion: 1,
-              syncedAt: new Date().toISOString(),
-              dataUpdatedAt: s.dataUpdatedAt,
-              associations: s.associations,
-              waters: s.waters,
-              uncontracted: pool,
-            }).catch((error) => console.warn('[map-store] complete offline snapshot not persisted:', error));
+            if (getOfflinePreference() === 'enabled') {
+              void writeOfflineDataset({
+                schemaVersion: 1,
+                syncedAt: new Date().toISOString(),
+                dataUpdatedAt: s.dataUpdatedAt,
+                associations: s.associations,
+                waters: s.waters,
+                uncontracted: pool,
+              }).catch((error) => console.warn('[map-store] complete offline snapshot not persisted:', error));
+            }
             return { ...s, uncontracted: pool };
           });
         } catch (e) {

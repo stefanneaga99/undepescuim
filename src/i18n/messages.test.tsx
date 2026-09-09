@@ -103,6 +103,15 @@ describe('I18nProvider', () => {
     expect(screen.getByTestId('string').textContent).toBe('Specii');
   });
 
+  it('does not persist the default locale without an explicit choice', () => {
+    render(
+      <I18nProvider>
+        <Probe />
+      </I18nProvider>,
+    );
+    expect(window.localStorage.getItem(STORAGE_KEY)).toBeNull();
+  });
+
   it('toggles RO ⇄ EN and persists to localStorage', async () => {
     const user = userEvent.setup();
     render(
