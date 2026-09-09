@@ -96,7 +96,11 @@ export default defineConfig({
       name: 'mobile',
       grepInvert: /@data/,
       testIgnore: /live-prod\.spec\.ts/,
-      use: { ...devices['iPhone 14'], browserName: 'chromium' },
+      use: {
+        ...devices['iPhone 14'],
+        browserName: 'chromium',
+        viewport: { width: 390, height: 844 },
+      },
     },
     {
       // 768×1024 — the `md` breakpoint boundary: desktop filter panel but

@@ -125,4 +125,59 @@ test.describe('ledger-backed Class2 physical preview rendering', () => {
       }
     }
   });
+
+  test('exercises every Buzău alias through the physical pane without changing legal counts', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.leaflet-container')).toBeVisible();
+    await expect.poll(() => previewLayers(page).then((layers) => layers.length), { timeout: 45_000 }).toBeGreaterThan(0);
+    await page.evaluate(() => {
+      const map = (window as unknown as { __UNDEPESCUIM_MAP__?: BrowserMap }).__UNDEPESCUIM_MAP__;
+      map?.fitBounds([[45.07086, 25.97799], [45.67344, 27.74236]], { animate: false, maxZoom: 10 });
+    });
+    await expect.poll(async () => (await previewLayers(page)).some((feature) =>
+      (feature.properties?.physicalAliases as string[] | undefined)?.includes('anpa-anpa-0207'),
+    )).toBe(true);
+
+    const before = await page.evaluate(() => ({
+      legalPaths: document.querySelectorAll('.leaflet-overlay-pane:not(.physical-preview-pane) path, .water-focus-pane path, .water-association-pane path').length,
+      physicalPane: (() => {
+        const pane = document.querySelector<HTMLElement>('.physical-preview-pane');
+        return pane ? {
+          zIndex: getComputedStyle(pane).zIndex,
+          pointerEvents: getComputedStyle(pane).pointerEvents,
+          pathCount: pane.querySelectorAll('path').length,
+        } : null;
+      })(),
+    }));
+    expect(before.physicalPane).toMatchObject({ zIndex: '410', pointerEvents: 'auto' });
+    expect(before.physicalPane?.pathCount).toBeGreaterThan(0);
+
+    const aliases = ['anpa-anpa-0207', 'anpa-anpa-0210', 'anpa-anpa-0211', 'anpa-anpa-0214', 'anpa-anpa-0261', 'romsilva-brasov-buzaul-superior'];
+    for (const alias of aliases) {
+      const feature = (await previewLayers(page)).find((candidate) =>
+        (candidate.properties?.physicalAliases as string[] | undefined)?.includes(alias),
+      );
+      expect(feature, `missing physical alias ${alias}`).toBeTruthy();
+      const segments = feature?.properties?.physicalSegments as Array<Record<string, unknown>> | undefined;
+      if (alias === 'anpa-anpa-0261' || alias === 'romsilva-brasov-buzaul-superior') {
+        expect(segments).toEqual(expect.arrayContaining([
+          expect.objectContaining({ sourceSlug: alias, start: expect.any(Number), end: expect.any(Number) }),
+        ]));
+      } else {
+        expect(segments?.some((segment) => segment.sourceSlug === alias)).toBe(false);
+      }
+      await page.evaluate(() => {
+        const map = (window as unknown as { __UNDEPESCUIM_MAP__?: BrowserMap }).__UNDEPESCUIM_MAP__;
+        const layer = Object.values(map?._layers ?? {}).find((candidate) =>
+          (candidate.feature?.properties?.physicalAliases as string[] | undefined)?.includes('anpa-anpa-0207'),
+        );
+        layer?.fire('click', { latlng: map?.getCenter() });
+      });
+      await expect(page.getByTestId('water-card')).toBeVisible();
+      await expect(page.getByTestId('water-card')).toContainText('Râul Buzăul superior');
+      await page.keyboard.press('Escape');
+    }
+    const after = await page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane:not(.physical-preview-pane) path, .water-focus-pane path, .water-association-pane path').length);
+    expect(after).toBe(before.legalPaths);
+  });
 });
