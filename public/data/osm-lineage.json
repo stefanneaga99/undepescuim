@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "ledger_version": "2026-08-20",
+  "scope": "Shipped files and runtime map resources containing, displaying, or derived from OpenStreetMap data.",
+  "license": {
+    "name": "Open Database License (ODbL) 1.0",
+    "attribution_url": "https://www.openstreetmap.org/copyright",
+    "copyright_notice": "© OpenStreetMap contributors",
+    "classification_policy": "Only geometry and boundary data evidenced as OSM-derived is classified odbl. Files that combine OSM geometry with contractual, association, or other sources are classified mixed; this ledger does not assert that non-OSM fields are ODbL-covered."
+  },
+  "runtime": {
+    "tile_url_template": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "tile_provider": "OpenStreetMap standard tile service",
+    "tile_access": "Viewport-driven Leaflet requests only; no prefetch, bulk download, or offline-area fill.",
+    "referer_policy": "The browser supplies the site Referer; the application does not forge or suppress it.",
+    "cache_policy": "Viewed tiles only, HTTP cache semantics plus a maximum seven-day service-worker retention window; server Cache-Control is not overridden."
+  },
+  "artifacts": [
+    {
+      "path": "public/data/waters.json",
+      "source_urls": ["https://data.humdata.org/dataset/hotosm_rou_waterways", "https://overpass-api.de/api/interpreter", "https://nominatim.openstreetmap.org/"],
+      "accessed_at": "2026-08-11",
+      "transformations": ["Matched contracted source records to OSM waterways", "Ordered and deduplicated river courses", "Attached OSM geometry to contractual water records"],
+      "sha256": "56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0",
+      "license_classification": "mixed",
+      "required_notice": "OSM-derived geometry: © OpenStreetMap contributors, ODbL; contractual and association fields retain their source-specific status. See https://www.openstreetmap.org/copyright."
+    },
+    {
+      "path": "public/data/uncontracted_rivers.json",
+      "source_urls": ["https://overpass-api.de/api/interpreter"],
+      "accessed_at": "2026-08-12",
+      "transformations": ["Excluded courses matched to contracted waters", "Removed duplicate contracted runs", "Simplified and rounded geometry", "Assigned Romanian county by boundary containment"],
+      "sha256": "06414eb6c569770513c10d90d8a68d3338d7f4508ef5c7d76cb20add195db4dd",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/uncontracted_lakes.json",
+      "source_urls": ["https://overpass-api.de/api/interpreter"],
+      "accessed_at": "2026-08-12",
+      "transformations": ["Selected named and area-qualified water polygons", "Simplified proportionally to polygon size", "Rounded coordinates and retained valid holes", "Assigned Romanian county by boundary containment"],
+      "sha256": "59c9b9969f3c501e06bdabc2cf33d06e4ccf1c055680169264cbce636e17f44e",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/uncontracted_majors.json",
+      "source_urls": ["https://overpass-api.de/api/interpreter"],
+      "accessed_at": "2026-08-12",
+      "transformations": ["Selected major uncontracted waterways from the OSM-derived overlay", "Simplified geometry for low-zoom rendering"],
+      "sha256": "d3a0d657d28fa74cadbd8e0ab28ae78f15eac756993e4190071d94889101256c",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/waters_county_clips.json",
+      "source_urls": ["https://overpass-api.de/api/interpreter", "https://nominatim.openstreetmap.org/"],
+      "accessed_at": "2026-08-12",
+      "transformations": ["Clipped OSM-derived water geometry to county boundaries", "Normalized county keys for lazy map rendering"],
+      "sha256": "4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/counties.geojson",
+      "source_urls": ["https://nominatim.openstreetmap.org/"],
+      "accessed_at": "2026-08-12",
+      "transformations": ["Fetched Romanian administrative boundary relations", "Simplified polygons for browser delivery"],
+      "sha256": "3b6c0dc382db4d61707f133db7d9876c80981a9f3d74e84ed19651c298d81ac5",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/association_locations.json",
+      "source_urls": ["https://nominatim.openstreetmap.org/", "https://arebaltapeste.ro/"],
+      "accessed_at": "2026-08-20",
+      "transformations": ["Geocoded selected public association locations", "Joined geocodes to source-specific association records"],
+      "sha256": "bc54ab5ce74c07e282ac2d1f51b16247180d2d5bfd5e3389f2c11735a9c6b9a7",
+      "license_classification": "mixed",
+      "required_notice": "OSM geocodes, where present, are © OpenStreetMap contributors under ODbL; other association fields retain their source-specific status. https://www.openstreetmap.org/copyright"
+    },
+    {
+      "path": "public/data/preview_class2_physical.json",
+      "source_urls": ["https://overpass-api.de/api/interpreter"],
+      "accessed_at": "2026-08-20",
+      "transformations": ["Aggregated OSM physical water geometry for preview-only rendering", "Kept separate from contractual ownership data"],
+      "sha256": "8e5a548340d59187b5c02233889541375661f846cf9da2cb53a026bff37a4576",
+      "license_classification": "odbl",
+      "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
+    }
+  ]
+}

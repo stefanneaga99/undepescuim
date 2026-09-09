@@ -10,6 +10,11 @@
 - **Fetched:** 2026-08-11
 - **License:** Open Database License (ODC-ODbL) — © OpenStreetMap contributors
 
+The repository-wide, versioned lineage ledger is
+[`public/data/osm-lineage.json`](../../public/data/osm-lineage.json). It
+distinguishes OSM-derived geometry from mixed contractual/association records
+and records the required attribution URL: <https://www.openstreetmap.org/copyright>.
+
 ## Files
 
 The following large files are NOT committed to git (see `.gitignore`).
