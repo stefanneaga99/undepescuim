@@ -33,7 +33,10 @@ test.describe('P1 map controls and visual states', () => {
     expect((await map.focusSnapshot()).slug).toBe('raul-somesul-test');
 
     await page.keyboard.press('Escape');
-    await map.zoomTo(9);
+    // The fallback lake is in Ilfov while the preceding contracted-water
+    // assertion leaves the map centered over the Cluj cluster. Re-center it
+    // before inspecting the viewport-culled fallback marker.
+    await map.panTo(44.46, 26.1, 9);
     const fallbackColors = await page.evaluate((slug) => {
       const mapInstance = (window as unknown as { __UNDEPESCUIM_MAP__?: TestMap }).__UNDEPESCUIM_MAP__;
       const colors: string[] = [];

@@ -186,7 +186,7 @@ export async function clickWaterByPixel(page: Page, slug: string): Promise<void>
 export async function countPathsByColor(page: Page, colors: readonly string[]): Promise<number> {
   return page.evaluate((colors) => {
     const set = new Set(colors.map((c) => c.toLowerCase()));
-    return [...document.querySelectorAll('.leaflet-overlay-pane path, .water-focus-pane path, .water-association-pane path')].filter(
+    return [...document.querySelectorAll('.leaflet-overlay-pane:not(.physical-preview-pane) path, .water-focus-pane path, .water-association-pane path')].filter(
       (p) => set.has((p.getAttribute('stroke') || '').toLowerCase()),
     ).length;
   }, colors as string[]);
@@ -194,7 +194,7 @@ export async function countPathsByColor(page: Page, colors: readonly string[]): 
 
 /** Total vector overlay paths (contracted + uncontracted + slices). */
 export async function countAllPaths(page: Page): Promise<number> {
-  return page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane path, .water-focus-pane path, .water-association-pane path').length);
+  return page.evaluate(() => document.querySelectorAll('.leaflet-overlay-pane:not(.physical-preview-pane) path, .water-focus-pane path, .water-association-pane path').length);
 }
 
 /** Semantic snapshot of the dedicated focus pane (style + geometry, not store state). */
