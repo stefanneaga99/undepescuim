@@ -6,6 +6,7 @@ import { AssociationSearch } from '@/components/associations/AssociationSearch';
 import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 import { PwaStatusBar } from '@/components/pwa/PwaStatusBar';
+import { OfflineControls } from '@/components/pwa/OfflineControls';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/i18n/provider';
 import {
@@ -86,6 +87,7 @@ export function Header() {
 
       {/* F6 PWA light: data freshness chip (≥sm) + offline banner (all sizes). */}
       <PwaStatusBar />
+      <OfflineControls />
 
       {/* t_5a65abcf: RO 🇷🇴 / EN 🇬🇧 flag buttons — active highlighted, RO hard
           default, persists to localStorage. Compact (h-6) so it stays

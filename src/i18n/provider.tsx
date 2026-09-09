@@ -79,10 +79,10 @@ function commitLocale(next: Locale): void {
 export function I18nProvider({ children }: { children: ReactNode }) {
   const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  // Sync <html lang> on mount once (the browser-detected locale may differ
-  // from the SSR 'ro'); storage writes happen in commitLocale on change.
+  // Sync <html lang> on mount once. Reading an existing explicit choice is
+  // allowed; the default must not create a storage record by itself.
   useEffect(() => {
-    commitLocale(detectLocale());
+    document.documentElement.lang = detectLocale();
   }, []);
 
   const setLocale = useCallback((next: Locale) => {

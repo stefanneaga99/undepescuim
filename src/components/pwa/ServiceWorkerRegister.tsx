@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { getOfflinePreference, registerOfflineServiceWorker } from "@/lib/offline-preferences";
 
 /**
  * F6 (t_0618943a): PWA light — client-side service worker registration
@@ -15,12 +16,8 @@ import { useEffect } from "react";
  */
 export function ServiceWorkerRegister() {
   useEffect(() => {
-    if ("serviceWorker" in navigator && process.env.NODE_ENV === "production") {
-      void navigator.serviceWorker
-        .register("/sw.js", { updateViaCache: "none" })
-        .catch(() => {
-          // A blocked/failed SW must never make the interactive app fail.
-        });
+    if ("serviceWorker" in navigator && process.env.NODE_ENV === "production" && getOfflinePreference() === "enabled") {
+      void registerOfflineServiceWorker();
     }
   }, []);
   return null;
