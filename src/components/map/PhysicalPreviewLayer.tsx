@@ -13,6 +13,13 @@ import type { Water, WaterFeature } from '@/types/data';
 /** Preview-only physical lines. This layer never participates in legal contract resolution. */
 export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const map = useMap();
+  const pane = useMemo(() => {
+    const existing = map.getPane('physical-preview');
+    const physicalPane = existing ?? map.createPane('physical-preview');
+    physicalPane.classList.add('physical-preview-pane');
+    physicalPane.style.zIndex = '410';
+    return 'physical-preview';
+  }, [map]);
   const [view, setView] = useState({ zoom: map.getZoom(), bounds: map.getBounds() });
   useMapEvents({ moveend: () => setView({ zoom: map.getZoom(), bounds: map.getBounds() }) });
   const visible = useMemo(
@@ -22,7 +29,7 @@ export function PhysicalPreviewLayer({ waters }: { waters: Water[] }) {
   const data = useMemo(() => ({ type: 'FeatureCollection', features: visible.map(waterToGeoJSON) }) as GeoJSON.FeatureCollection, [visible]);
   const key = `${viewSuffix(view.zoom, view.bounds)}|${visible.map((w) => w.slug).join(',')}`;
   const selectWater = useMapStore((s) => s.selectWater);
-  return <LeafletGeoJSON key={key} data={data} style={() => getPhysicalPreviewStyle()} onEachFeature={(feature, layer: L.Path) => {
+  return <LeafletGeoJSON pane={pane} key={key} data={data} style={() => getPhysicalPreviewStyle()} onEachFeature={(feature, layer: L.Path) => {
     const f = feature as WaterFeature;
     const preview = visible.find((w) => w.slug === f.properties.slug);
     const sourceSlug = preview?.physicalSourceSlug ?? f.properties.slug;
