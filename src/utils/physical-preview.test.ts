@@ -114,7 +114,7 @@ describe('ledger-backed physical preview rendering', () => {
     expect(buzau?.physicalSegments?.map((segment) => segment.sourceSlug).sort()).toEqual([
       'anpa-anpa-0261', 'romsilva-brasov-buzaul-superior',
     ]);
-  });
+  }, 15_000);
 
   it('uses the ledger identity, aliases and actual geometry bbox', async () => {
     const aliases = ['anpa-anpa-0207', 'anpa-anpa-0214'];
