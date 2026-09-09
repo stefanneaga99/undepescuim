@@ -193,6 +193,16 @@ const ro = {
     stale: 'Necesită reîmprospătare',
     staleTitle: 'Datele au peste 30 de zile; reîmprospătează când revine conexiunea.',
   },
+  privacy: {
+    preferences: 'Preferințe de confidențialitate',
+    offlineTitle: 'Activezi accesul offline?',
+    offlineDescription: 'Opțional: salvează datele hărții și doar dalele OSM vizitate pe acest dispozitiv. Nu preîncărcăm harta și nu folosim analiză sau urmărire.',
+    enableOffline: 'Activează offline',
+    continueOnline: 'Continuă online',
+    offlineEnabled: 'Accesul offline este activ. Datele sunt păstrate local și expiră automat.',
+    offlineDisabled: 'Accesul offline este dezactivat; aplicația folosește conexiunea online.',
+    disableOffline: 'Dezactivează și șterge datele offline',
+  },
   speciesSearch: {
     placeholder: 'Caută după nume sau dimensiune (ex. somn, 40)…',
     empty: 'Nicio specie găsită',
@@ -454,6 +464,16 @@ const en: Messages = {
     offlineFrom: '— data from {date}',
     stale: 'Refresh required',
     staleTitle: 'Data is older than 30 days; refresh when connectivity returns.',
+  },
+  privacy: {
+    preferences: 'Privacy preferences',
+    offlineTitle: 'Enable offline access?',
+    offlineDescription: 'Optional: save map data and only OSM tiles you visit on this device. We do not prefetch the map or use analytics or tracking.',
+    enableOffline: 'Enable offline',
+    continueOnline: 'Continue online',
+    offlineEnabled: 'Offline access is enabled. Data is stored locally and expires automatically.',
+    offlineDisabled: 'Offline access is disabled; the app uses the online connection.',
+    disableOffline: 'Disable and clear offline data',
   },
   speciesSearch: {
     placeholder: 'Search by name or size (e.g. catfish, 40)…',

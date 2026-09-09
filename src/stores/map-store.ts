@@ -5,6 +5,7 @@ import { distanceToWaterKm, nearbyCounty, nearestWaters, type NearbyWater } from
 import { dedupePhysicalPreview, physicalPreviewWaters } from '@/utils/physical-preview';
 import { parseGeometryLedger } from '@/utils/geometry-ledger';
 import { isDataStale, readOfflineDataset, writeOfflineDataset, type OfflineDataset } from '@/lib/offline-data';
+import { getOfflinePreference } from '@/lib/offline-preferences';
 
 /** Geolocation MVP constants (docs/geolocation-feasibility.md §5). */
 export const DEFAULT_RADIUS_KM = 25;
@@ -191,7 +192,8 @@ export const useMapStore = create<MapStore>((set, get) => ({
     // Offline launches must never even attempt a network request. The local
     // snapshot is deliberately all-or-nothing; corrupt/partial data is ignored.
     const offline = typeof navigator !== 'undefined' && !navigator.onLine;
-    if (offline) {
+    const offlineEnabled = getOfflinePreference() === 'enabled';
+    if (offline && offlineEnabled) {
       const cached = await readOfflineDataset();
       if (generation !== loadGeneration) return;
       // The offline snapshot intentionally excludes the network-only geometry
@@ -290,10 +292,12 @@ export const useMapStore = create<MapStore>((set, get) => ({
         if (generation !== loadGeneration) return;
         set({ geometryLedger: ledger, physicalPreview });
       }).catch((error) => console.warn('[map-store] physical preview ignored:', error)), 0);
-      try {
-        await persistOfflineDataset(generation, { schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
-      } catch (error) {
-        console.warn('[map-store] offline snapshot not persisted:', error);
+      if (getOfflinePreference() === 'enabled') {
+        try {
+          await persistOfflineDataset(generation, { schemaVersion: 1, syncedAt: new Date().toISOString(), dataUpdatedAt, associations, waters, uncontracted: majors });
+        } catch (error) {
+          console.warn('[map-store] offline snapshot not persisted:', error);
+        }
       }
       markPerfDataLoaded();
       // P1 §4.5: the FULL uncontracted overlay streams in the background once
@@ -322,14 +326,16 @@ export const useMapStore = create<MapStore>((set, get) => ({
                 bySlug[w.slug] ? { ...w, geometryByCounty: bySlug[w.slug] } : w,
               );
             }
-            void persistOfflineDataset(generation, {
-              schemaVersion: 1,
-              syncedAt: new Date().toISOString(),
-              dataUpdatedAt: s.dataUpdatedAt,
-              associations: s.associations,
-              waters: s.waters,
-              uncontracted: pool,
-            }).catch((error) => console.warn('[map-store] complete offline snapshot not persisted:', error));
+            if (getOfflinePreference() === 'enabled') {
+              void persistOfflineDataset(generation, {
+                schemaVersion: 1,
+                syncedAt: new Date().toISOString(),
+                dataUpdatedAt: s.dataUpdatedAt,
+                associations: s.associations,
+                waters: s.waters,
+                uncontracted: pool,
+              }).catch((error) => console.warn('[map-store] complete offline snapshot not persisted:', error));
+            }
             return { ...s, uncontracted: pool };
           });
         } catch (e) {
