@@ -42,7 +42,7 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
     association?.permitIssuer ?? water.asociatie?.permitIssuer;
 
   return (
-    <div data-testid="water-card" className="flex flex-col gap-3">
+    <div data-testid="water-card" data-water-slug={water.slug} className="flex flex-col gap-3">
       {/* Header: name + badges */}
       <div className="flex flex-wrap items-center gap-1.5 pr-8">
         <h2 className="mr-auto text-base font-bold leading-tight">{water.name}</h2>
