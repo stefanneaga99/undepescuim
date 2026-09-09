@@ -7,12 +7,10 @@ import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
+
 import { useI18n } from '@/i18n/provider';
 import type { ReportReason } from '@/types/data';
-import type { ReportContextV1 } from '@/types/report-context';
+
 
 const REASON_OPTIONS: { value: ReportReason; labelKey: `report.reasons.${ReportReason}` }[] = [
   { value: 'data_correct', labelKey: 'report.reasons.data_correct' },
@@ -29,7 +27,7 @@ interface ReportFormProps {
   waterName?: string;
   /** Pre-select a reason when the dialog opens (used by the quick positive-signal tap). */
   initialReason?: ReportReason | null;
-  buildReportContext?: () => ReportContextV1 | null;
+
 }
 
 type Phase = 'idle' | 'submitting' | 'success' | 'error';
@@ -47,16 +45,15 @@ const subscribeOnline = (callback: () => void) => {
 const onlineSnapshot = () => navigator.onLine;
 const onlineServerSnapshot = () => true;
 
-export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason, buildReportContext }: ReportFormProps) {
+export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialReason }: ReportFormProps) {
   const { t } = useI18n();
   const [reason, setReason] = useState<ReportReason | null>(null);
-  const [details, setDetails] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
+
   const [website, setWebsite] = useState(''); // honeypot
   const [phase, setPhase] = useState<Phase>('idle');
   const [errorKind, setErrorKind] = useState<ErrorKind>('network');
   const [issueUrl, setIssueUrl] = useState<string | null>(null);
-  const [includeContext, setIncludeContext] = useState(false);
+
   const [prevOpen, setPrevOpen] = useState(open);
   const isSubmittingRef = useRef(false);
   const abortRef = useRef<AbortController | null>(null);
@@ -72,7 +69,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
   const reset = () => {
     abortRef.current?.abort();
     abortRef.current = null;
-    setReason(null); setDetails(''); setContactEmail(''); setWebsite(''); setIncludeContext(false);
+    setReason(null); setWebsite('');
     setPhase('idle'); setIssueUrl(null); setErrorKind('network');
     isSubmittingRef.current = false;
   };
@@ -97,10 +94,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
           reason,
           waterSlug: waterSlug ?? '',
           waterName: waterName ?? '',
-          details,
-          contactEmail,
           website,
-          ...(includeContext && buildReportContext ? { reportContext: buildReportContext() } : {}),
         }),
         signal: controller.signal,
       });
@@ -174,38 +168,7 @@ export function ReportForm({ open, onOpenChange, waterSlug, waterName, initialRe
               ))}
             </fieldset>
 
-            <div className="flex flex-col gap-1.5">
-              <Label htmlFor="report-details">{t('report.detailsLabel')}</Label>
-              <Textarea
-                id="report-details"
-                value={details}
-                onChange={(e) => setDetails(e.target.value)}
-                placeholder={t('report.detailsPlaceholder')}
-              />
-            </div>
-
-            <div className="flex flex-col gap-1.5">
-              <Label htmlFor="report-email">{t('report.emailLabel')}</Label>
-              <Input
-                id="report-email"
-                type="email"
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                placeholder={t('report.emailPlaceholder')}
-              />
-              {/* REM-4: explicit consent notice — the address is published in a
-                  PUBLIC GitHub issue when provided. */}
-              <p className="text-xs text-muted-foreground">
-                {t('report.consent')}
-              </p>
-            </div>
-
-            {buildReportContext && (
-              <label className="flex items-start gap-2 rounded-md border p-2 text-xs">
-                <input type="checkbox" checked={includeContext} onChange={(e) => setIncludeContext(e.target.checked)} className="mt-0.5" data-testid="report-context-consent" />
-                <span>{t('report.contextConsent')}</span>
-              </label>
-            )}
+            <p className="rounded-md border p-2 text-xs text-muted-foreground">{t('report.publicFieldsDisclosure')}</p>
 
             {/* honeypot — hidden from humans, filled by bots */}
             <input

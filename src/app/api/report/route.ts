@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server';
 import { getClientIp, reportRateLimiter } from '@/lib/rate-limit';
 import { buildIssueText } from '@/lib/issue-text';
 import { reportDeduper } from '@/lib/report-dedupe';
-import { parseReportContext } from '@/lib/report-context';
+import { sanitizeSlug, sanitizeWaterName } from '@/lib/sanitize';
+
 
 const REPO = 'stefanneaga99/undepescuim';
 const GITHUB_TIMEOUT_MS = 20_000;
@@ -33,21 +34,15 @@ export async function POST(request: Request) {
   const reason = typeof b.reason === 'string' ? b.reason : '';
   const waterSlug = typeof b.waterSlug === 'string' ? b.waterSlug.trim().slice(0, 128) : '';
   const waterName = typeof b.waterName === 'string' ? b.waterName.trim().slice(0, 256) : '';
-  const details = typeof b.details === 'string' ? b.details.trim().slice(0, 2000) : '';
-  const contactEmail = typeof b.contactEmail === 'string' ? b.contactEmail.trim().slice(0, 254) : '';
   const honeypot = typeof b.website === 'string' ? b.website.trim() : '';
-  const parsedContext = parseReportContext(b.reportContext);
-  // The public context must describe the same water as the canonical report
-  // fields; stale A→B payloads degrade to a base report, never a mixed issue.
-  const reportContext = parsedContext &&
-    parsedContext.subject.water.slug === waterSlug &&
-    parsedContext.subject.water.name === waterName
-    ? parsedContext : null;
 
   if (!REASONS.has(reason)) {
     return NextResponse.json({ ok: false, error: 'invalid_reason' }, { status: 400 });
   }
-  if (!waterSlug || !waterName) {
+  // Canonical identities are generated static-data values, not free text.
+  // Reject values whose normalized representation differs; this prevents a
+  // caller from turning the public issue into an arbitrary-content channel.
+  if (!waterSlug || !waterName || sanitizeSlug(waterSlug) !== waterSlug || sanitizeWaterName(waterName) !== waterName) {
     return NextResponse.json({ ok: false, error: 'missing_water' }, { status: 400 });
   }
   // Honeypot: bots fill the hidden "website" field — silently drop WITHOUT
@@ -56,7 +51,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, issueUrl: null });
   }
 
-  const digest = reportDigest([reason, waterSlug, waterName, details, contactEmail]);
+  const digest = reportDigest([reason, waterSlug, waterName, '', '']);
 
   // Validated human request → dedupe/coalesce → first request uses the rate
   // limit → GitHub issue creation. Duplicate joins do not consume quota.
@@ -77,7 +72,7 @@ export async function POST(request: Request) {
 
     const { title, body: bodyText } = buildIssueText({
       reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName,
-      waterSlug, details, contactEmail, reportContext,
+      waterSlug,
     });
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), GITHUB_TIMEOUT_MS);
