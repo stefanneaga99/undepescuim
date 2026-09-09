@@ -8,7 +8,7 @@ import { MapShell } from '@/components/map/MapShell';
  */
 export default function Home() {
   return (
-    <main className="flex h-dvh flex-col overflow-hidden">
+    <main className="flex h-[calc(100dvh-4.5rem)] flex-col overflow-hidden md:h-[calc(100dvh-3.5rem)]">
       <Header />
       <Suspense fallback={null}>
         <MapShell />

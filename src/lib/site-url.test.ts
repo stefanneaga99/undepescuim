@@ -23,6 +23,10 @@ describe("canonical site URLs", () => {
       `${SITE_URL}/specii`,
       `${SITE_URL}/permis`,
       `${SITE_URL}/sesizeaza`,
+      `${SITE_URL}/confidentialitate`,
+      `${SITE_URL}/termeni`,
+      `${SITE_URL}/contact`,
+      `${SITE_URL}/licente`,
     ]);
     expect(robots()).toMatchObject({
       sitemap: `${SITE_URL}/sitemap.xml`,
