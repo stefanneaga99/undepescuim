@@ -30,43 +30,23 @@ describe('buildIssueText', () => {
     expect(namePart).not.toContain('#'); // ref sigil stripped
   });
 
-  it('wraps details in a fenced block so raw markdown cannot inject', () => {
-    const details = '@someuser #123 ![x](https://attacker.example/px.png) [ ] task';
-    const { body } = buildIssueText({ ...base, details });
-    // the raw text is preserved inside the fence...
-    expect(body).toContain(details);
-    expect(body).toContain('```\n' + details + '\n```');
-    // ...and nothing raw sits outside the fence
-    const afterFence = body.split('```')[2] ?? '';
-    expect(afterFence).not.toContain('@someuser');
-  });
-
-  it('never leaks the email as raw text / @mention vector', () => {
-    const { body } = buildIssueText({ ...base, contactEmail: 'user@example.com' });
-    // inline-code-wrapped, not raw
-    expect(body).toContain('`user@example.com`');
-    expect(body).not.toContain('\nuser@example.com\n');
-  });
-
-  it('neutralizes newline smuggling in the email field', () => {
-    // "user@example.com\n@maintainer" -> control chars stripped -> two @s ->
-    // fails the email sanity regex -> treated as anonymous, no mention anywhere.
+  it('publishes only the enumerated reason and canonical water identity', () => {
     const { body } = buildIssueText({
       ...base,
-      contactEmail: 'user@example.com\n@maintainer',
+
     });
-    expect(body).not.toContain('@maintainer');
-    expect(body).toContain('_(anonim)_');
+    expect(body).toContain('`other`');
+    expect(body).toContain('Râul Bâsca — `raul-basca`');
+    expect(body).not.toContain('secret@example.com');
+    expect(body).not.toContain('45.1');
+    expect(body).not.toContain('ghp_very-secret');
+    expect(body).not.toContain('Detalii');
+    expect(body).not.toContain('Context');
   });
 
-  it('marks anonymous contact explicitly', () => {
-    const { body } = buildIssueText(base);
-    expect(body).toContain('_(anonim)_');
-  });
-
-  it('contains the reason key and timestamp footer', () => {
+  it('contains the reason key and public-field disclosure', () => {
     const { body } = buildIssueText(base);
     expect(body).toContain('`other`');
-    expect(body).toContain('Trimis automat');
+    expect(body).toContain('Date publicate');
   });
 });

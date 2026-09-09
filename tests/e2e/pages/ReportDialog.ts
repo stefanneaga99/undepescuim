@@ -27,13 +27,6 @@ export class ReportDialog {
     return this.dialog.getByRole('button', { name: 'Închide' });
   }
 
-  get details() {
-    return this.dialog.getByLabel('Detalii (opțional)');
-  }
-
-  get email() {
-    return this.dialog.getByLabel(/Email/);
-  }
 
   get successText() {
     return this.dialog.getByText('Mulțumim! Raportul a fost trimis.');

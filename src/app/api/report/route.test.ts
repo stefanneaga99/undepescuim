@@ -54,6 +54,12 @@ describe('POST /api/report', () => {
     expect(await res.json()).toMatchObject({ error: 'missing_water' });
   });
 
+  it('rejects non-canonical water identity instead of publishing arbitrary text', async () => {
+    const res = await POST(request({ reason: 'other', waterSlug: 'valid-slug', waterName: 'Name <script>' }));
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ error: 'missing_water' });
+  });
+
   it('silently drops honeypot submissions (bots filling `website`)', async () => {
     const res = await POST(request({ waterSlug: 'x', waterName: 'y', reason: 'other', website: 'spam.example' }));
     expect(res.status).toBe(200);
@@ -69,11 +75,13 @@ describe('POST /api/report', () => {
 
   it('502 github_error when GitHub returns a non-OK status', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
+    const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
     const fetchMock = vi.fn().mockResolvedValue(githubResponse(false, 422, {}));
     vi.stubGlobal('fetch', fetchMock);
     const res = await POST(request({ waterSlug: 'x', waterName: 'y', reason: 'other' }));
     expect(res.status).toBe(502);
     expect(await res.json()).toMatchObject({ error: 'github_error' });
+    expect(errorSpy.mock.calls.flat().join(' ')).not.toMatch(/ghp_test|@|45\.\d|25\.\d/);
   });
 
   it('502 github_unreachable when the upstream request fails without retrying the mutation', async () => {
@@ -113,21 +121,23 @@ describe('POST /api/report', () => {
     const sent = JSON.parse(init.body as string);
     expect(sent.title).toContain('Râul Buzău');
     expect(sent.labels).toEqual(['report']);
+    expect(sent.body).not.toContain('fisher@example.ro');
+    expect(sent.body).not.toContain('Mouth is further south');
   });
 
-  it('sanitizes matching context and drops stale A→B context', async () => {
+  it('ignores map context, including stale or location-bearing context', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/context' }));
     vi.stubGlobal('fetch', fetchMock);
     const context = { schemaVersion: 1, captureVersion: 'map-report-context-v1', subject: { water: { slug: 'b', name: 'B' }, selection: { selectedWaterSlug: 'b', segment: null, associationSlug: null, contractRef: null } }, map: null, filters: { counties: [], localities: [], waterType: 'all', contractStatus: 'all', selectedAssociationSlug: null }, page: { pathname: '/' }, client: { formFactor: 'desktop' }, provenance: { appVersion: null, dataUpdatedAt: null, gitSha: null }, consent: { approximateMap: true, preciseLocation: false, screenshot: false } };
     await POST(request({ waterSlug: 'b', waterName: 'B', reason: 'other', reportContext: context }));
     const sent = JSON.parse((fetchMock.mock.calls[0][1] as RequestInit).body as string);
-    expect(sent.body).toContain('Context hartă');
+    expect(sent.body).not.toContain('Context hartă');
     resetReportDeduper();
     fetchMock.mockClear();
     await POST(request({ waterSlug: 'b', waterName: 'B', reason: 'other', reportContext: { ...context, subject: { ...context.subject, water: { slug: 'a', name: 'A' }, selection: { ...context.subject.selection, selectedWaterSlug: 'a' } } } }));
     const staleSent = JSON.parse((fetchMock.mock.calls[0][1] as RequestInit).body as string);
-    expect(staleSent.body).toContain('nepartajat');
+    expect(staleSent.body).not.toContain('nepartajat');
     expect(staleSent.body).not.toContain('— A');
   });
 
@@ -156,7 +166,7 @@ describe('POST /api/report', () => {
     expect(fetchMock).toHaveBeenCalledTimes(5);
   });
 
-  it('includes rounded precise GPS only after affirmative consent', async () => {
+  it('never publishes precise GPS, even when legacy context supplies consent', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     const fetchMock = vi.fn().mockResolvedValue(githubResponse(true, 201, { html_url: 'https://github.com/issues/gps' }));
     vi.stubGlobal('fetch', fetchMock);
@@ -176,8 +186,8 @@ describe('POST /api/report', () => {
     resetReportDeduper();
     await POST(request({ waterSlug: 'gps-water', waterName: 'GPS test water', reason: 'other', reportContext: { ...baseContext, consent: { approximateMap: true, preciseLocation: true, screenshot: false } } }));
     const withConsent = JSON.parse((fetchMock.mock.calls[1][1] as RequestInit).body as string);
-    expect(withConsent.body).toContain('45.12');
-    expect(withConsent.body).toContain('25.99');
+    expect(withConsent.body).not.toContain('45.12');
+    expect(withConsent.body).not.toContain('25.99');
   });
 
   it('coalesces overlapping identical requests into one GitHub issue', async () => {
@@ -209,7 +219,7 @@ describe('POST /api/report', () => {
     expect(fetchMock).toHaveBeenCalledOnce();
   });
 
-  it('does not merge reports with different details', async () => {
+  it('does not let ignored optional details bypass duplicate coalescing', async () => {
     process.env.REPORT_GITHUB_TOKEN = 'ghp_test';
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(githubResponse(true, 201, { html_url: 'https://github.com/issues/4' }))
@@ -218,6 +228,6 @@ describe('POST /api/report', () => {
     const base = { waterSlug: 'same', waterName: 'Same', reason: 'other' };
     await POST(request({ ...base, details: 'A' }));
     await POST(request({ ...base, details: 'B' }));
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock).toHaveBeenCalledOnce();
   });
 });

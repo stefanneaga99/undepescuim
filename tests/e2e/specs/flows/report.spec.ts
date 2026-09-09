@@ -85,30 +85,6 @@ test.describe('F8 — report flow', () => {
     await expect(dialog.githubLink).toBeVisible();
   });
 
-  test('details + email are optional and carried on the payload', async ({ mapReady, page }, testInfo) => {
-    skipTablet(testInfo);
-    await mapReady();
-    const map = new MapPage(page);
-    const dialog = new ReportDialog(page);
-
-    const payloadPromise = page.waitForRequest((r) => r.url().endsWith('/api/report'));
-    await map.clickWater('raul-somesul-test');
-    await map.waterCard.clickButton(map.waterCard.reportFlag);
-
-    await dialog.pickReason('other');
-    await dialog.details.fill('Bariera lipsește pe sectorul test');
-    await dialog.email.fill('pescar@exemplu.ro');
-    await dialog.submit();
-
-    const payload = payloadPromise.then((r) => r.postDataJSON());
-    await expect(dialog.successText).toBeVisible();
-    const body = await payload;
-    expect(body.reason).toBe('other');
-    expect(body.waterSlug).toBe('raul-somesul-test');
-    expect(body.waterName).toBe('Râul Someșul Test');
-    expect(body.details).toContain('Bariera lipsește');
-    expect(body.contactEmail).toBe('pescar@exemplu.ro');
-  });
 
   test('mobile report success preserves multi-contract sector focus pane', async ({ mapReady, page, collectedErrors }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile', 'focus persistence regression is mobile-only');
