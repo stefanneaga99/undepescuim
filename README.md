@@ -82,6 +82,15 @@ Reîmprospătarea completă se poate porni cu:
 npm run data:refresh
 ```
 
+### Date OpenStreetMap și atribuire
+
+Geometriile și limitele derivate din OpenStreetMap sunt disponibile sub ODbL
+și sunt atribuite vizibil pe hartă. Inventarul versionat al surselor, datelor
+de acces, transformărilor, clasificărilor și hash-urilor se află în
+[`public/data/osm-lineage.json`](public/data/osm-lineage.json). Pentru textul
+complet al licenței și al atribuirii, vezi
+<https://www.openstreetmap.org/copyright>.
+
 Workflow-ul `Monthly Data Refresh` rulează și lunar. Pipeline-ul are verificări
 de integritate, trasabilitate, determinism și bugete de dimensiune înainte ca
 datele regenerate să fie acceptate.
