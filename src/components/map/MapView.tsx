@@ -14,6 +14,7 @@ import { UserPositionLayer } from '@/components/map/UserPositionLayer';
 import { FOCUS_COLOR } from '@/utils/colors';
 import { registerReportMapReader } from '@/hooks/use-report-context';
 import { PhysicalPreviewLayer } from '@/components/map/PhysicalPreviewLayer';
+import { MapAttribution } from '@/components/map/MapAttribution';
 
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
@@ -101,6 +102,7 @@ export function MapView() {
       <FlyToController />
       <LocalityViewportController />
       <MapTestBridge />
+      <MapAttribution />
     </MapContainer>
   );
 }
