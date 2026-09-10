@@ -2,11 +2,12 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import L from 'leaflet';
-import { GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
+import { useMap, useMapEvents } from 'react-leaflet';
+import { ManagedGeoJSONLayer } from './use-managed-geojson';
 import { useMapStore } from '@/stores/map-store';
 import { waterToGeoJSON } from '@/utils/geo';
 import { getUncontractedLakeStyle, getUncontractedStyle, NEUTRAL_COLOR } from '@/utils/colors';
-import { bboxInBounds, lodThresholds, passesLod, viewSuffix } from '@/utils/lod';
+import { bboxInBounds, lodThresholds, passesLod } from '@/utils/lod';
 import type { Water, WaterFeature } from '@/types/data';
 
 interface UncontractedWaterLayerProps {
@@ -82,8 +83,6 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
   // The county/type filter is part of the key: react-leaflet v5 ignores the
   // data prop change without a key change, so the teal layer would otherwise
   // keep stale rivers after a filter toggle (t_117f0b99).
-  const filterSig = waters.length ? `${waters.length}:${waters[0].slug}:${waters[waters.length - 1].slug}` : 'empty';
-  const layerKey = `${viewSuffix(view.zoom, view.bounds)}|${filterSig}`;
 
   const isPolygonFeature = (f: GeoJSON.Feature) =>
     f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon';
@@ -160,8 +159,7 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
       {/* Invisible wide hit polylines — reliable click/tap on thin rivers.
           Dropped at zoom < 10 (M14 — rivers too dense to tap individually). */}
       {hitCollection && (
-        <LeafletGeoJSON
-          key={`hits-${layerKey}`}
+        <ManagedGeoJSONLayer
           data={hitCollection}
           style={() => ({ weight: 14, opacity: 0 })}
           onEachFeature={(feature, layer: L.Path) => {
@@ -171,8 +169,7 @@ export function UncontractedWaterLayer({ waters, focusColor }: UncontractedWater
         />
       )}
       {/* Visible layer: dashed teal rivers + filled teal ponds (orange when focused) */}
-      <LeafletGeoJSON
-        key={`vis-${layerKey}`}
+      <ManagedGeoJSONLayer
         data={{ type: 'FeatureCollection', features: visibleFeatures } as GeoJSON.FeatureCollection}
         style={focusAwareStyle}
         onEachFeature={(feature, layer: L.Path) => {

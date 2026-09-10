@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import L from 'leaflet';
 import { CircleMarker, GeoJSON as LeafletGeoJSON, useMap, useMapEvents } from 'react-leaflet';
+import { ManagedGeoJSONLayer } from './use-managed-geojson';
 import { useMapStore } from '@/stores/map-store';
 import { watersToFeatureCollection } from '@/utils/geo';
 import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/colors';
 
-import { bboxInBounds, lodThresholds, passesLod, renderBbox, viewSuffix } from '@/utils/lod';
+import { bboxInBounds, lodThresholds, passesLod, renderBbox } from '@/utils/lod';
 import {
   contractAtFraction,
   contractGroup,
@@ -125,7 +126,6 @@ export function WaterFeatureLayer({
 
   const featureCollection = useMemo(() => watersToFeatureCollection(visibleWaters), [visibleWaters]);
 
-  const layerKey = `${viewSuffix(view.zoom, view.bounds)}|${coverageSlug ?? 'neutral'}|${visibleWaters.map((w) => w.slug).join(',')}`;
 
   // Exact river-group key of the focused contract (t_ac697770) — matches
   // focus slices across name variants ('Râul Oltul superior' / 'Râul Olt').
@@ -397,11 +397,8 @@ export function WaterFeatureLayer({
       )}
       {/* key forces remount on filter change — react-leaflet v5 ignores data
           prop changes without a key change (stale hit targets otherwise). */}
-      {hitCollection && (
-        <GeoJSONHits key={`hits-${layerKey}`} data={hitCollection} onFeatureClick={handleClick} />
-      )}
-      <LeafletGeoJSON
-        key={layerKey}
+      {hitCollection && <GeoJSONHits data={hitCollection} onFeatureClick={handleClick} />}
+      <ManagedGeoJSONLayer
         data={featureCollection}
         style={focusAwareStyle}
         pointToLayer={(feature, latlng) =>
@@ -492,7 +489,7 @@ function GeoJSONHits({
   onFeatureClick: (f: WaterFeature, latlng?: L.LatLng) => void;
 }) {
   return (
-    <LeafletGeoJSON
+    <ManagedGeoJSONLayer
       data={data}
       style={() => ({ color: '#000', weight: 16, opacity: 0, fillOpacity: 0 })}
       pointToLayer={(_feature, latlng) =>
