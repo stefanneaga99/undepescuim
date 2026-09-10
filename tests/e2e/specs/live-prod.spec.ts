@@ -12,6 +12,11 @@ async function waitForApp(page: Page) {
   await expect(page.locator('main')).toBeVisible();
   await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 45_000 });
   await expect.poll(() => page.locator('.leaflet-overlay-pane path').count(), { timeout: 45_000 }).toBeGreaterThan(0);
+  // A fresh browser may receive the optional offline-storage consent sheet.
+  // Dismiss it through the real user action before probing map hit-testing;
+  // otherwise the modal legitimately owns the pointer route on mobile.
+  const continueOnline = page.getByRole('button', { name: /Continuă online|Continue online/i });
+  if (await continueOnline.isVisible().catch(() => false)) await continueOnline.click();
 }
 
 async function clickMapPath(page: Page): Promise<{ slug: string; name: string }> {

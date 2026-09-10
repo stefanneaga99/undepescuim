@@ -226,6 +226,10 @@ export async function focusSnapshot(page: Page): Promise<{
     const pathOwners: Array<{ slug: string; pane: string }> = [];
     map?.eachLayer((layer: any) => {
       if (!layer._path || !layer.feature?.properties?.slug) return;
+      // Physical-preview geometry is an asynchronous, non-legal overlay. It
+      // may arrive after a report snapshot and must not make selection-focus
+      // preservation assertions compare unrelated layer inventory.
+      if (layer.feature.properties.slug.startsWith('class2-preview-')) return;
       pathOwners.push({
         slug: layer.feature.properties.slug,
         pane: layer._pane?.className ?? '',
