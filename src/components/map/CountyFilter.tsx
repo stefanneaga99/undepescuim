@@ -25,13 +25,12 @@ interface CountyFilterProps {
  */
 export function CountyFilter({ counties, selected, onToggle, clipsLoading }: CountyFilterProps) {
   const { t } = useI18n();
-  if (counties.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-1">
+    <div data-testid="county-filter-section" className="flex min-h-[52px] flex-col gap-1">
       <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
         {t('filters.countyLabel')}
-        {clipsLoading && (
+        {(clipsLoading || counties.length === 0) && (
           <span
             role="status"
             aria-label={t('filters.clipsLoading')}

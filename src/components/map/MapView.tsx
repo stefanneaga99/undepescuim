@@ -15,6 +15,9 @@ import { FOCUS_COLOR } from '@/utils/colors';
 import { registerReportMapReader } from '@/hooks/use-report-context';
 import { PhysicalPreviewLayer } from '@/components/map/PhysicalPreviewLayer';
 
+/** Measured Lighthouse remediation: avoid Leaflet's long zoom transition task. */
+export const MAP_ANIMATION_OPTIONS = { zoomAnimation: false } as const;
+
 /**
  * Leaflet map wrapper — loaded via dynamic(ssr:false) from MapShell.
  * (react-leaflet v5 is ESM-only and touches window at module eval.)
@@ -57,6 +60,7 @@ export function MapView() {
       center={[45.95, 24.95]}
       zoom={7}
       zoomControl={false}
+      {...MAP_ANIMATION_OPTIONS}
       className="map-touch z-0 h-full w-full"
     >
       <TileLayer

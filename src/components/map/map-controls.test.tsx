@@ -6,6 +6,8 @@ import { LocateButton } from './LocateButton';
 import { MapSkeleton } from './MapSkeleton';
 import { SheetGrabber } from '@/components/ui/sheet-grabber';
 import { I18nProvider } from '@/i18n/provider';
+import { CountyFilter } from './CountyFilter';
+import { MAP_ANIMATION_OPTIONS } from './MapView';
 
 const store = {
   selectedAssociationSlug: null as string | null,
@@ -91,5 +93,25 @@ describe('map control regressions', () => {
       bottom: '16px',
       transform: 'translateY(calc(-1 * var(--sheet-snap-h, 0vh)))',
     });
+  });
+
+  it('reserves the county filter row while county data is loading', () => {
+    const { rerender } = renderWithI18n(
+      <CountyFilter counties={[]} selected={[]} onToggle={vi.fn()} />,
+    );
+    const section = screen.getByTestId('county-filter-section');
+    expect(section).toHaveClass('min-h-[52px]');
+    expect(screen.getByRole('status')).toHaveAttribute('aria-label', 'Se încarcă județele…');
+
+    rerender(
+      <I18nProvider>
+        <CountyFilter counties={['Alba']} selected={[]} onToggle={vi.fn()} />
+      </I18nProvider>,
+    );
+    expect(screen.getByTestId('county-filter-section')).toHaveClass('min-h-[52px]');
+  });
+
+  it('disables Leaflet zoom animation without changing map zoom semantics', () => {
+    expect(MAP_ANIMATION_OPTIONS).toEqual({ zoomAnimation: false });
   });
 });
