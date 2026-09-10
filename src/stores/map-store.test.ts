@@ -318,6 +318,7 @@ describe('loadData', () => {
   }
 
   it('clears network-generation physical identities when loading an offline snapshot', async () => {
+    window.localStorage.setItem('undepescuim.offline-preference.v1', 'enabled');
     window.localStorage.setItem('undepescuim.offline-data.v1', JSON.stringify({
       schemaVersion: 1,
       syncedAt: '2026-09-04T00:00:00Z',

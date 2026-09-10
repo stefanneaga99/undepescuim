@@ -84,7 +84,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-20",
       "transformations": ["Aggregated OSM physical water geometry for preview-only rendering", "Kept separate from contractual ownership data"],
-      "sha256": "8e5a548340d59187b5c02233889541375661f846cf9da2cb53a026bff37a4576",
+      "sha256": "d12da466430d51237dd9266e234188949b18e62d2720005956b72bfd31fe6468",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     }
