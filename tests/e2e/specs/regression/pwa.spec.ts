@@ -31,6 +31,13 @@ async function stubTiles(page: Page) {
   );
 }
 
+/** Offline storage and its service worker require an explicit user choice. */
+async function optIntoOffline(page: Page) {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('undepescuim.offline-preference.v1', 'enabled');
+  });
+}
+
 /** Wait until the service worker is active (registered + activated). */
 async function waitForSwReady(page: Page): Promise<void> {
   await page.waitForFunction(
@@ -74,6 +81,7 @@ async function cacheSummary(page: Page) {
 test.describe('PWA light', () => {
   test.setTimeout(120_000);
   test('service worker registers and takes control', async ({ page }) => {
+    await optIntoOffline(page);
     const swEvents: string[] = [];
     page.on('console', (m) => {
       if (m.text().includes('serviceWorker') || m.text().includes('Service worker')) {
@@ -172,6 +180,7 @@ test.describe('PWA light', () => {
   });
 
   test('offline reload serves shell + data from the SW cache', async ({ page }) => {
+    await optIntoOffline(page);
     await stubTiles(page);
 
     // First visit ONLINE: SW registers, data fetches populate app-data.
@@ -220,6 +229,7 @@ test.describe('PWA light', () => {
   });
 
   test('visited tiles are cached with bounded storage and a 7-day TTL (no prefetch)', async ({ page }) => {
+    await optIntoOffline(page);
     await stubTiles(page);
     await page.goto('/');
     await waitForMapThenSw(page);
