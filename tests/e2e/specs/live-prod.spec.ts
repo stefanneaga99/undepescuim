@@ -14,22 +14,70 @@ async function waitForApp(page: Page) {
   await expect.poll(() => page.locator('.leaflet-overlay-pane path').count(), { timeout: 45_000 }).toBeGreaterThan(0);
 }
 
-async function clickMapPath(page: Page): Promise<void> {
-  const paths = page.locator('.leaflet-overlay-pane path');
-  const count = await paths.count();
-  expect(count, 'production map should contain clickable water paths').toBeGreaterThan(0);
-  // Try several paths: a path can be a short segment or hidden below another
-  // Leaflet layer at its centre. This is deliberately a no-dead-zone sweep.
-  for (let i = 0; i < Math.min(count, 8); i += 1) {
-    const path = paths.nth((i * 7) % count);
-    if (!(await path.isVisible().catch(() => false))) continue;
-    const box = await path.boundingBox().catch(() => null);
-    if (box) {
-      await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2).catch(() => undefined);
+async function clickMapPath(page: Page): Promise<{ slug: string; name: string }> {
+  const candidates = await page.evaluate(() => {
+    const map = (window as Window & {
+      __UNDEPESCUIM_MAP__?: {
+        eachLayer: (visit: (layer: {
+          _path?: SVGPathElement;
+          feature?: { properties?: { slug?: string; name?: string } };
+        }) => void) => void;
+      };
+    }).__UNDEPESCUIM_MAP__;
+    if (!map) return null;
+
+    // A bounding-box centre is often empty space for a curved river. Find a
+    // real point on each rendered path instead, and only accept it when the
+    // browser's hit-test chain lands in the Leaflet overlay. This exercises
+    // the same pointer route as a user (unlike layer.fire/force-click).
+    const candidates: Array<{ x: number; y: number; slug: string; name: string }> = [];
+    map.eachLayer((layer) => {
+      const path = layer._path;
+      const props = layer.feature?.properties;
+      if (!path || !props?.slug || !props.name || !path.isConnected) return;
+      const ctm = path.ownerSVGElement?.getScreenCTM();
+      const length = path.getTotalLength();
+      if (!ctm || !length) return;
+      for (let i = 1; i < 20; i += 1) {
+        const point = path.getPointAtLength(length * (i / 20));
+        const screen = new DOMPoint(point.x, point.y).matrixTransform(ctm);
+        const hit = document.elementFromPoint(screen.x, screen.y);
+        const hitStyle = hit ? getComputedStyle(hit) : null;
+        if (hit?.closest('.leaflet-overlay-pane') && hitStyle?.pointerEvents !== 'none') {
+          // Overlapping rivers are legitimate: the browser dispatches the
+          // event to the topmost path, not necessarily the path we sampled.
+          // Report that actual hit identity so the assertion checks the
+          // selection result rather than a coincidental nearby feature.
+          let hitProps: { slug: string; name: string } = { slug: props.slug, name: props.name };
+          map.eachLayer((other) => {
+            if (other._path === hit && other.feature?.properties?.slug && other.feature.properties.name) {
+              hitProps = { slug: other.feature.properties.slug, name: other.feature.properties.name };
+            }
+          });
+          candidates.push({ x: screen.x, y: screen.y, slug: hitProps.slug, name: hitProps.name });
+          break;
+        }
+      }
+    });
+    return candidates;
+  });
+
+  expect(candidates, 'production map bridge should be available').not.toBeNull();
+  if (!candidates) throw new Error('production map bridge is unavailable');
+  expect(candidates, 'production map should contain a real on-stroke hit point').not.toHaveLength(0);
+  const card = page.getByTestId('water-card');
+  for (const identity of candidates.slice(0, 20)) {
+    await page.mouse.click(identity.x, identity.y);
+    if (await card.isVisible().catch(() => false)) {
+      // Sector resolution may legitimately replace a river's display name
+      // with the contract sector owning the exact click fraction. Assert the
+      // resulting named card, not a coincidental nearby layer.
+      await expect(card.locator('h2.font-bold').last()).toHaveText(/\S+/);
+      return identity;
     }
-    if (await page.getByTestId('water-card').isVisible().catch(() => false)) return;
   }
-  await expect(page.getByTestId('water-card')).toBeVisible({ timeout: 10_000 });
+  await expect(card).toBeVisible({ timeout: 10_000 });
+  return candidates[0];
 }
 
 test.describe('live production', () => {
