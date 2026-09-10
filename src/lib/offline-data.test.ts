@@ -49,6 +49,7 @@ describe('offline dataset snapshots', () => {
   });
 
   it('syncs all pools and does not persist a partial response', async () => {
+    setOfflinePreference('enabled');
     const response = (body: unknown, ok = true) => ({ ok, json: async () => body }) as Response;
     const fetcher = vi.fn()
       .mockResolvedValueOnce(response([]))
@@ -63,7 +64,8 @@ describe('offline dataset snapshots', () => {
   });
 
   it('rejects failed sync without replacing the previous snapshot', async () => {
-    const existing = makeOfflineDataset({ dataUpdatedAt: null, associations: [], waters: [], uncontracted: [] });
+    setOfflinePreference('enabled');
+    const existing = makeOfflineDataset({ dataUpdatedAt: new Date().toISOString(), associations: [], waters: [], uncontracted: [] });
     localStorage.setItem(OFFLINE_DATA_KEY, JSON.stringify(existing));
     const fetcher = vi.fn().mockResolvedValue({ ok: false, status: 503 });
     await expect(syncOfflineDataset(fetcher as typeof fetch)).rejects.toThrow();

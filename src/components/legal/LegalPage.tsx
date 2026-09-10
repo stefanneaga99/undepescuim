@@ -31,7 +31,7 @@ export function LegalPage({
   sections: Array<{ heading: string; body: string }>;
 }) {
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 md:px-6 md:py-12">
+    <main className="mx-auto flex min-w-0 w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 md:px-6 md:py-12">
       <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-100">
         <strong>Suprafață în curs de completare</strong>
         <p className="mt-1 leading-relaxed">
@@ -46,7 +46,7 @@ export function LegalPage({
         {sections.map((section) => (
           <section key={section.heading} className="rounded-lg border p-5">
             <h2 className="text-lg font-semibold">{section.heading}</h2>
-            <p className="mt-2 leading-7 text-muted-foreground">{section.body}</p>
+            <p className="mt-2 break-words leading-7 text-muted-foreground [overflow-wrap:anywhere]">{section.body}</p>
           </section>
         ))}
       </div>
