@@ -3,6 +3,10 @@ import { POST } from '@/app/api/report/route';
 import { resetReportDeduper } from '@/lib/report-dedupe';
 import { resetReportRateLimiter } from '@/lib/rate-limit';
 
+vi.mock('@/lib/canonical-water', () => ({
+  canonicalWater: (slug: string, name: string) => /[<>]/.test(name) ? null : { slug, name },
+}));
+
 // The route reads process.env.REPORT_GITHUB_TOKEN at request time.
 const REAL_TOKEN = process.env.REPORT_GITHUB_TOKEN;
 

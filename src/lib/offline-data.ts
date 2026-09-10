@@ -71,7 +71,7 @@ export async function readOfflineDataset(): Promise<OfflineDataset | null> {
   if (typeof raw === 'string') {
     try { raw = JSON.parse(raw); } catch { raw = undefined; }
   }
-  if (isDataset(raw)) return raw;
+  if (isDataset(raw) && !isDataStale(raw.dataUpdatedAt)) return raw;
   await invalidateOfflineDataset();
   return null;
 }
@@ -79,6 +79,7 @@ export async function readOfflineDataset(): Promise<OfflineDataset | null> {
 /** Replace the snapshot transactionally; quota errors leave the previous snapshot intact. */
 export async function writeOfflineDataset(dataset: OfflineDataset): Promise<void> {
   if (!isDataset(dataset)) throw new Error('cannot persist invalid offline dataset');
+  if (typeof window !== 'undefined' && localStorageOrNull()?.getItem('undepescuim.offline-preference.v1') !== 'enabled') throw new Error('offline storage requires explicit consent');
   const idb = indexedDbOrNull();
   if (idb) {
     const db = await openDatabase();
@@ -117,6 +118,7 @@ export function makeOfflineDataset(input: Omit<OfflineDataset, 'schemaVersion' |
 }
 
 export async function syncOfflineDataset(fetcher: typeof fetch = fetch): Promise<OfflineDataset> {
+  if (typeof window !== 'undefined' && localStorageOrNull()?.getItem('undepescuim.offline-preference.v1') !== 'enabled') throw new Error('offline storage requires explicit consent');
   const responses = await Promise.all([
     fetcher('/data/associations.json'), fetcher('/data/waters.json'),
     fetcher('/data/uncontracted_rivers.json'), fetcher('/data/uncontracted_lakes.json'),

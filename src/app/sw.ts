@@ -23,6 +23,7 @@ declare global {
 declare const self: ServiceWorkerGlobalScope;
 
 const DAY = 24 * 60 * 60;
+let offlineRevoked = false;
 
 const serwist = new Serwist({
   precacheEntries: self.__SW_MANIFEST,
@@ -36,7 +37,7 @@ const serwist = new Serwist({
       // 7-day TTL to honour OSM Tile Usage Policy §3.2 (server sends ~6d + 7d
       // stale-while-revalidate). DO NOT extend past 7d; no prefetch/offline
       // download (policy §4 prohibits it).
-      matcher: ({ url }) => url.hostname === "tile.openstreetmap.org",
+      matcher: ({ url }) => !offlineRevoked && url.hostname === "tile.openstreetmap.org",
       handler: new CacheFirst({
         cacheName: BASEMAP_CACHE_NAME,
         plugins: [
@@ -53,7 +54,7 @@ const serwist = new Serwist({
     {
       // Static data — fresh-first, fall back to cache when offline.
       matcher: ({ url, sameOrigin }) =>
-        sameOrigin && url.pathname.startsWith("/data/"),
+        !offlineRevoked && sameOrigin && url.pathname.startsWith("/data/"),
       handler: new NetworkFirst({
         cacheName: "app-data",
         networkTimeoutSeconds: 4,
@@ -79,8 +80,15 @@ const serwist = new Serwist({
 
 serwist.addEventListeners();
 
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "undepescuim-offline-revoked") offlineRevoked = true;
+});
+
 // Runtime caches are not part of Serwist's precache cleanup. Remove old
 // versions during activation so deployments cannot strand obsolete tiles.
 self.addEventListener("activate", (event) => {
-  event.waitUntil(cleanupObsoleteBasemapCaches());
+  event.waitUntil(Promise.all([
+    cleanupObsoleteBasemapCaches(),
+    ...(offlineRevoked && typeof caches !== 'undefined' ? [caches.delete('app-data'), caches.delete('serwist-expiration')] : []),
+  ]));
 });

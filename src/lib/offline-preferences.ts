@@ -1,7 +1,7 @@
 import { invalidateOfflineDataset } from './offline-data';
 
 export const OFFLINE_PREFERENCE_KEY = 'undepescuim.offline-preference.v1';
-export const OFFLINE_CACHE_NAMES = ['app-data', 'osm-tiles'];
+export const OFFLINE_CACHE_NAMES = ['app-data', 'osm-tiles-v2', 'osm-tiles', 'serwist-expiration', 'serwist-precache-v2'];
 export type OfflinePreference = 'unknown' | 'enabled' | 'disabled';
 
 export function getOfflinePreference(): OfflinePreference {
@@ -28,14 +28,20 @@ export async function clearOfflineCaches(): Promise<void> {
   await Promise.all(OFFLINE_CACHE_NAMES.map((name) => caches.delete(name)));
 }
 
+export async function clearOfflineStorage(): Promise<void> {
+  await Promise.all([clearOfflineCaches(), invalidateOfflineDataset()]);
+}
+
 /** Revoke consent before clearing data, so concurrent loads cannot repopulate it. */
 export async function disableOffline(): Promise<void> {
   setOfflinePreference('disabled');
   await Promise.all([
-    invalidateOfflineDataset(),
-    clearOfflineCaches(),
+    clearOfflineStorage(),
     ...(typeof navigator !== 'undefined' && 'serviceWorker' in navigator
-      ? [navigator.serviceWorker.getRegistrations().then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))]
+      ? [navigator.serviceWorker.getRegistrations().then((registrations) => Promise.all(registrations.map((registration) => {
+        registration.active?.postMessage({ type: 'undepescuim-offline-revoked' });
+        return registration.unregister();
+      })))]
       : []),
   ]);
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Database } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
@@ -31,7 +32,7 @@ export function OfflineControls() {
     setOpen(false);
   };
 
-  return (
+  const content = (
     <>
       {preference === 'unknown' && (
         <div role="region" aria-label={t('privacy.offlineTitle')} data-testid="offline-choice" className="fixed bottom-3 left-3 z-[1250] max-w-[min(28rem,calc(100vw-1.5rem))] rounded-lg border bg-background p-3 text-xs shadow-lg">
@@ -58,4 +59,5 @@ export function OfflineControls() {
       </Dialog>
     </>
   );
+  return typeof document === 'undefined' ? null : createPortal(content, document.body);
 }

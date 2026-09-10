@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { getClientIp, reportRateLimiter } from '@/lib/rate-limit';
 import { buildIssueText } from '@/lib/issue-text';
 import { reportDeduper } from '@/lib/report-dedupe';
-import { sanitizeSlug, sanitizeWaterName } from '@/lib/sanitize';
+import { canonicalWater } from '@/lib/canonical-water';
 
 
 const REPO = 'stefanneaga99/undepescuim';
@@ -42,7 +42,8 @@ export async function POST(request: Request) {
   // Canonical identities are generated static-data values, not free text.
   // Reject values whose normalized representation differs; this prevents a
   // caller from turning the public issue into an arbitrary-content channel.
-  if (!waterSlug || !waterName || sanitizeSlug(waterSlug) !== waterSlug || sanitizeWaterName(waterName) !== waterName) {
+  const canonical = waterSlug && waterName ? canonicalWater(waterSlug, waterName) : null;
+  if (!canonical) {
     return NextResponse.json({ ok: false, error: 'missing_water' }, { status: 400 });
   }
   // Honeypot: bots fill the hidden "website" field — silently drop WITHOUT
@@ -51,7 +52,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, issueUrl: null });
   }
 
-  const digest = reportDigest([reason, waterSlug, waterName, '', '']);
+  const digest = reportDigest([reason, canonical.slug, canonical.name, '', '']);
 
   // Validated human request → dedupe/coalesce → first request uses the rate
   // limit → GitHub issue creation. Duplicate joins do not consume quota.
@@ -71,8 +72,8 @@ export async function POST(request: Request) {
     if (!token) throw new ReportHttpError('not_configured', 503);
 
     const { title, body: bodyText } = buildIssueText({
-      reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName,
-      waterSlug,
+      reasonLabel: REASON_LABELS[reason], reasonKey: reason, waterName: canonical.name,
+      waterSlug: canonical.slug,
     });
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), GITHUB_TIMEOUT_MS);
