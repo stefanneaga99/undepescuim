@@ -1,0 +1,2489 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "before": {
+    "inner": [
+      1280,
+      800
+    ],
+    "map": {
+      "x": 0,
+      "y": 56,
+      "w": 1280,
+      "h": 744
+    },
+    "paths": [
+      {
+        "i": 0,
+        "bounds": {
+          "x": 467,
+          "y": 374,
+          "w": 11,
+          "h": 16
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 1,
+        "bounds": {
+          "x": 943,
+          "y": 628,
+          "w": 17,
+          "h": 19
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 2,
+        "bounds": {
+          "x": 481,
+          "y": 320,
+          "w": 12,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 3,
+        "bounds": {
+          "x": 614,
+          "y": 216,
+          "w": 7,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 4,
+        "bounds": {
+          "x": 570,
+          "y": 277,
+          "w": 5,
+          "h": 26
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 5,
+        "bounds": {
+          "x": 532,
+          "y": 436,
+          "w": 8,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 6,
+        "bounds": {
+          "x": 211,
+          "y": 414,
+          "w": 34,
+          "h": 25
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<button type=\"button\" aria-pressed=\"false\" data-testid=\"county-chip\" data-county=\"Prahova\" class=\"ma"
+      },
+      {
+        "i": 7,
+        "bounds": {
+          "x": 589,
+          "y": 295,
+          "w": 5,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 8,
+        "bounds": {
+          "x": 610,
+          "y": 283,
+          "w": 12,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 9,
+        "bounds": {
+          "x": 298,
+          "y": 419,
+          "w": 12,
+          "h": 2
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 10,
+        "bounds": {
+          "x": 809,
+          "y": 623,
+          "w": 9,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 11,
+        "bounds": {
+          "x": 800,
+          "y": 219,
+          "w": 94,
+          "h": 53
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 12,
+        "bounds": {
+          "x": 818,
+          "y": 257,
+          "w": 20,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 13,
+        "bounds": {
+          "x": 546,
+          "y": 271,
+          "w": 18,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 14,
+        "bounds": {
+          "x": 703,
+          "y": 582,
+          "w": 13,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#7c3aed\" stroke-opacity=\"0.9\" stroke-width=\"3\" stroke-line"
+      },
+      {
+        "i": 15,
+        "bounds": {
+          "x": 292,
+          "y": 252,
+          "w": 128,
+          "h": 40
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 16,
+        "bounds": {
+          "x": 607,
+          "y": 545,
+          "w": 24,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 17,
+        "bounds": {
+          "x": 516,
+          "y": 318,
+          "w": 8,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 18,
+        "bounds": {
+          "x": 404,
+          "y": 543,
+          "w": 6,
+          "h": 26
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 19,
+        "bounds": {
+          "x": 687,
+          "y": 324,
+          "w": 19,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 20,
+        "bounds": {
+          "x": 687,
+          "y": 324,
+          "w": 19,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 21,
+        "bounds": {
+          "x": 277,
+          "y": 425,
+          "w": 59,
+          "h": 31
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 22,
+        "bounds": {
+          "x": 290,
+          "y": 442,
+          "w": 16,
+          "h": 10
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 23,
+        "bounds": {
+          "x": 292,
+          "y": 252,
+          "w": 67,
+          "h": 40
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 24,
+        "bounds": {
+          "x": 565,
+          "y": 281,
+          "w": 5,
+          "h": 13
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 25,
+        "bounds": {
+          "x": 499,
+          "y": 266,
+          "w": 7,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 26,
+        "bounds": {
+          "x": 578,
+          "y": 225,
+          "w": 10,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 27,
+        "bounds": {
+          "x": 597,
+          "y": 393,
+          "w": 6,
+          "h": 16
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 28,
+        "bounds": {
+          "x": 583,
+          "y": 491,
+          "w": 11,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 29,
+        "bounds": {
+          "x": 530,
+          "y": 314,
+          "w": 5,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 30,
+        "bounds": {
+          "x": 495,
+          "y": 291,
+          "w": 39,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 31,
+        "bounds": {
+          "x": 439,
+          "y": 418,
+          "w": 4,
+          "h": 13
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 32,
+        "bounds": {
+          "x": 623,
+          "y": 652,
+          "w": 26,
+          "h": 15
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 33,
+        "bounds": {
+          "x": 577,
+          "y": 255,
+          "w": 13,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 34,
+        "bounds": {
+          "x": 855,
+          "y": 585,
+          "w": 57,
+          "h": 76
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 35,
+        "bounds": {
+          "x": 907,
+          "y": 514,
+          "w": 29,
+          "h": 69
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 36,
+        "bounds": {
+          "x": 998,
+          "y": 527,
+          "w": 67,
+          "h": 40
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 37,
+        "bounds": {
+          "x": 998,
+          "y": 526,
+          "w": 81,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 38,
+        "bounds": {
+          "x": 908,
+          "y": 543,
+          "w": 6,
+          "h": 38
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 39,
+        "bounds": {
+          "x": 493,
+          "y": 256,
+          "w": 14,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 40,
+        "bounds": {
+          "x": 675,
+          "y": 365,
+          "w": 22,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 41,
+        "bounds": {
+          "x": 709,
+          "y": 236,
+          "w": 5,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 42,
+        "bounds": {
+          "x": 587,
+          "y": 299,
+          "w": 2,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 43,
+        "bounds": {
+          "x": 602,
+          "y": 279,
+          "w": 6,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 44,
+        "bounds": {
+          "x": 517,
+          "y": 669,
+          "w": 12,
+          "h": 10
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 45,
+        "bounds": {
+          "x": 621,
+          "y": 257,
+          "w": 24,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 46,
+        "bounds": {
+          "x": 654,
+          "y": 470,
+          "w": 8,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 47,
+        "bounds": {
+          "x": 744,
+          "y": 497,
+          "w": 14,
+          "h": 17
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 48,
+        "bounds": {
+          "x": 459,
+          "y": 293,
+          "w": 16,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#3b82f6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 49,
+        "bounds": {
+          "x": 315,
+          "y": 431,
+          "w": 21,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 50,
+        "bounds": {
+          "x": 581,
+          "y": 502,
+          "w": 15,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 51,
+        "bounds": {
+          "x": 508,
+          "y": 662,
+          "w": 12,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 52,
+        "bounds": {
+          "x": 778,
+          "y": 495,
+          "w": 10,
+          "h": 20
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 53,
+        "bounds": {
+          "x": 439,
+          "y": 337,
+          "w": 7,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 54,
+        "bounds": {
+          "x": 867,
+          "y": 253,
+          "w": 13,
+          "h": 13
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 55,
+        "bounds": {
+          "x": 286,
+          "y": 472,
+          "w": 14,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 56,
+        "bounds": {
+          "x": 883,
+          "y": 655,
+          "w": 3,
+          "h": 18
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 57,
+        "bounds": {
+          "x": 303,
+          "y": 545,
+          "w": 18,
+          "h": 17
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 58,
+        "bounds": {
+          "x": 942,
+          "y": 597,
+          "w": 10,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 59,
+        "bounds": {
+          "x": 952,
+          "y": 576,
+          "w": 16,
+          "h": 54
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 60,
+        "bounds": {
+          "x": 633,
+          "y": 305,
+          "w": 11,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 61,
+        "bounds": {
+          "x": 505,
+          "y": 263,
+          "w": 12,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 62,
+        "bounds": {
+          "x": 912,
+          "y": 446,
+          "w": 13,
+          "h": 22
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 63,
+        "bounds": {
+          "x": 548,
+          "y": 305,
+          "w": 13,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 64,
+        "bounds": {
+          "x": 884,
+          "y": 260,
+          "w": 3,
+          "h": 10
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 65,
+        "bounds": {
+          "x": 328,
+          "y": 311,
+          "w": 18,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#3b82f6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 66,
+        "bounds": {
+          "x": 337,
+          "y": 365,
+          "w": 33,
+          "h": 27
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 67,
+        "bounds": {
+          "x": 709,
+          "y": 606,
+          "w": 31,
+          "h": 31
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 68,
+        "bounds": {
+          "x": 875,
+          "y": 250,
+          "w": 9,
+          "h": 19
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 69,
+        "bounds": {
+          "x": 956,
+          "y": 556,
+          "w": 16,
+          "h": 17
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 70,
+        "bounds": {
+          "x": 634,
+          "y": 220,
+          "w": 1,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 71,
+        "bounds": {
+          "x": 537,
+          "y": 316,
+          "w": 5,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 72,
+        "bounds": {
+          "x": 779,
+          "y": 600,
+          "w": 5,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 73,
+        "bounds": {
+          "x": 508,
+          "y": 242,
+          "w": 4,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 74,
+        "bounds": {
+          "x": 654,
+          "y": 349,
+          "w": 7,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 75,
+        "bounds": {
+          "x": 720,
+          "y": 528,
+          "w": 14,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 76,
+        "bounds": {
+          "x": 558,
+          "y": 516,
+          "w": 2,
+          "h": 19
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 77,
+        "bounds": {
+          "x": 773,
+          "y": 166,
+          "w": 16,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 78,
+        "bounds": {
+          "x": 421,
+          "y": 554,
+          "w": 50,
+          "h": 38
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 79,
+        "bounds": {
+          "x": 828,
+          "y": 488,
+          "w": 27,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      }
+    ],
+    "bodyPointer": "auto",
+    "zoom": 7,
+    "errors": []
+  },
+  "candidates": [
+    {
+      "x": 476.23675537109375,
+      "y": 388.76324462890625,
+      "slug": "unc-0f0847fbf7",
+      "name": "Abrud",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 959.4259643554688,
+      "y": 629.27783203125,
+      "slug": "unc-3bc60fedb5",
+      "name": "Agi Cabul",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 489.5879821777344,
+      "y": 320.5293273925781,
+      "slug": "unc-02e62b92e1",
+      "name": "Agârbiciu",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 615.4949340820312,
+      "y": 218.9898681640625,
+      "slug": "unc-79319be62f",
+      "name": "Anieșul Mic",
+      "hit": "#8b5cf6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 571,
+      "y": 290.1196746826172,
+      "slug": "unc-c760fd2e20",
+      "name": "Apatiu",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    }
+  ],
+  "target": {
+    "x": 476.23675537109375,
+    "y": 388.76324462890625,
+    "slug": "unc-0f0847fbf7",
+    "name": "Abrud",
+    "hit": "#14b8a6",
+    "hitClass": "leaflet-interactive"
+  },
+  "after": {
+    "selected": "Abrud",
+    "zoom": 7,
+    "bodyPointer": "auto",
+    "hitChain": [
+      {
+        "tag": "path",
+        "cls": "leaflet-interactive",
+        "z": "auto",
+        "pe": "auto"
+      },
+      {
+        "tag": "g",
+        "cls": {},
+        "z": "auto",
+        "pe": "none"
+      },
+      {
+        "tag": "svg",
+        "cls": "leaflet-zoom-animated",
+        "z": "200",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "leaflet-pane leaflet-overlay-pane",
+        "z": "400",
+        "pe": "auto"
+      },
+      {
+        "tag": "DIV",
+        "cls": "leaflet-pane leaflet-map-pane",
+        "z": "400",
+        "pe": "auto"
+      },
+      {
+        "tag": "DIV",
+        "cls": "map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom",
+        "z": "0",
+        "pe": "auto"
+      },
+      {
+        "tag": "DIV",
+        "cls": "relative min-h-0 flex-1",
+        "z": "auto",
+        "pe": "auto"
+      },
+      {
+        "tag": "DIV",
+        "cls": "relative flex min-h-0 flex-1 flex-col",
+        "z": "auto",
+        "pe": "auto"
+      }
+    ]
+  },
+  "consoleErrors": []
+}
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "before": {
+    "inner": [
+      390,
+      844
+    ],
+    "map": {
+      "x": 0,
+      "y": 222,
+      "w": 390,
+      "h": 622
+    },
+    "paths": [
+      {
+        "i": 0,
+        "bounds": {
+          "x": 22,
+          "y": 479,
+          "w": 11,
+          "h": 16
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 1,
+        "bounds": {
+          "x": 36,
+          "y": 425,
+          "w": 12,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 2,
+        "bounds": {
+          "x": 169,
+          "y": 321,
+          "w": 7,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 3,
+        "bounds": {
+          "x": 125,
+          "y": 382,
+          "w": 5,
+          "h": 26
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 4,
+        "bounds": {
+          "x": 87,
+          "y": 541,
+          "w": 8,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 5,
+        "bounds": {
+          "x": 144,
+          "y": 400,
+          "w": 5,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 6,
+        "bounds": {
+          "x": 165,
+          "y": 388,
+          "w": 12,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 7,
+        "bounds": {
+          "x": 364,
+          "y": 728,
+          "w": 9,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 8,
+        "bounds": {
+          "x": 355,
+          "y": 324,
+          "w": 74,
+          "h": 48
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 9,
+        "bounds": {
+          "x": 373,
+          "y": 362,
+          "w": 20,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 10,
+        "bounds": {
+          "x": 101,
+          "y": 376,
+          "w": 18,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 11,
+        "bounds": {
+          "x": 258,
+          "y": 687,
+          "w": 13,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#7c3aed\" stroke-opacity=\"0.9\" stroke-width=\"3\" stroke-line"
+      },
+      {
+        "i": 12,
+        "bounds": {
+          "x": -25,
+          "y": 362,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 13,
+        "bounds": {
+          "x": 162,
+          "y": 650,
+          "w": 24,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 14,
+        "bounds": {
+          "x": 71,
+          "y": 423,
+          "w": 8,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 15,
+        "bounds": {
+          "x": -39,
+          "y": 648,
+          "w": 4,
+          "h": 26
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 16,
+        "bounds": {
+          "x": 242,
+          "y": 429,
+          "w": 19,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 17,
+        "bounds": {
+          "x": 242,
+          "y": 429,
+          "w": 19,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 18,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 19,
+        "bounds": {
+          "x": 120,
+          "y": 386,
+          "w": 5,
+          "h": 13
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 20,
+        "bounds": {
+          "x": 54,
+          "y": 371,
+          "w": 7,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 21,
+        "bounds": {
+          "x": 133,
+          "y": 330,
+          "w": 10,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 22,
+        "bounds": {
+          "x": 152,
+          "y": 498,
+          "w": 6,
+          "h": 16
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 23,
+        "bounds": {
+          "x": 138,
+          "y": 596,
+          "w": 11,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 24,
+        "bounds": {
+          "x": 85,
+          "y": 419,
+          "w": 5,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 25,
+        "bounds": {
+          "x": 50,
+          "y": 396,
+          "w": 39,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 26,
+        "bounds": {
+          "x": -6,
+          "y": 523,
+          "w": 4,
+          "h": 13
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 27,
+        "bounds": {
+          "x": 178,
+          "y": 757,
+          "w": 26,
+          "h": 15
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 28,
+        "bounds": {
+          "x": 132,
+          "y": 360,
+          "w": 13,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 29,
+        "bounds": {
+          "x": 410,
+          "y": 755,
+          "w": 19,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 30,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 31,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 32,
+        "bounds": {
+          "x": 48,
+          "y": 361,
+          "w": 14,
+          "h": 21
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 33,
+        "bounds": {
+          "x": 230,
+          "y": 470,
+          "w": 22,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 34,
+        "bounds": {
+          "x": 264,
+          "y": 341,
+          "w": 5,
+          "h": 12
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 35,
+        "bounds": {
+          "x": 142,
+          "y": 404,
+          "w": 2,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 36,
+        "bounds": {
+          "x": 157,
+          "y": 384,
+          "w": 6,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 37,
+        "bounds": {
+          "x": 72,
+          "y": 774,
+          "w": 12,
+          "h": 10
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 38,
+        "bounds": {
+          "x": 176,
+          "y": 362,
+          "w": 24,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 39,
+        "bounds": {
+          "x": 209,
+          "y": 575,
+          "w": 8,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 40,
+        "bounds": {
+          "x": 299,
+          "y": 602,
+          "w": 14,
+          "h": 17
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 41,
+        "bounds": {
+          "x": 14,
+          "y": 398,
+          "w": 16,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#3b82f6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 42,
+        "bounds": {
+          "x": 136,
+          "y": 607,
+          "w": 15,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 43,
+        "bounds": {
+          "x": 63,
+          "y": 767,
+          "w": 12,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 44,
+        "bounds": {
+          "x": 333,
+          "y": 600,
+          "w": 10,
+          "h": 20
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 45,
+        "bounds": {
+          "x": -6,
+          "y": 442,
+          "w": 7,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 46,
+        "bounds": {
+          "x": 422,
+          "y": 358,
+          "w": 7,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 47,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 48,
+        "bounds": {
+          "x": 188,
+          "y": 410,
+          "w": 11,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 49,
+        "bounds": {
+          "x": 60,
+          "y": 368,
+          "w": 12,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 50,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 51,
+        "bounds": {
+          "x": 103,
+          "y": 410,
+          "w": 13,
+          "h": 4
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 52,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 53,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 54,
+        "bounds": {
+          "x": 264,
+          "y": 711,
+          "w": 31,
+          "h": 31
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 55,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 56,
+        "bounds": {
+          "x": 189,
+          "y": 325,
+          "w": 1,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 57,
+        "bounds": {
+          "x": 92,
+          "y": 421,
+          "w": 5,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 58,
+        "bounds": {
+          "x": 334,
+          "y": 705,
+          "w": 5,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 59,
+        "bounds": {
+          "x": 63,
+          "y": 347,
+          "w": 4,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 60,
+        "bounds": {
+          "x": 209,
+          "y": 454,
+          "w": 7,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 61,
+        "bounds": {
+          "x": 275,
+          "y": 633,
+          "w": 14,
+          "h": 14
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 62,
+        "bounds": {
+          "x": 113,
+          "y": 621,
+          "w": 2,
+          "h": 19
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#8b5cf6\" stroke-opacity=\"1\" stroke-width=\"2\" stroke-lineca"
+      },
+      {
+        "i": 63,
+        "bounds": {
+          "x": 328,
+          "y": 271,
+          "w": 16,
+          "h": 11
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 64,
+        "bounds": {
+          "x": -24,
+          "y": 659,
+          "w": 50,
+          "h": 38
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 65,
+        "bounds": {
+          "x": 383,
+          "y": 593,
+          "w": 27,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 66,
+        "bounds": {
+          "x": 281,
+          "y": 704,
+          "w": 2,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 67,
+        "bounds": {
+          "x": 61,
+          "y": 498,
+          "w": 16,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 68,
+        "bounds": {
+          "x": 51,
+          "y": 360,
+          "w": 9,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 69,
+        "bounds": {
+          "x": 237,
+          "y": 545,
+          "w": 15,
+          "h": 6
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 70,
+        "bounds": {
+          "x": -33,
+          "y": 455,
+          "w": 18,
+          "h": 8
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto"
+      },
+      {
+        "i": 71,
+        "bounds": {
+          "x": 0,
+          "y": 222,
+          "w": 0,
+          "h": 0
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 72,
+        "bounds": {
+          "x": 145,
+          "y": 794,
+          "w": 21,
+          "h": 7
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<button type=\"button\" aria-label=\"Localizează-mă\" data-testid=\"locate-button\" class=\"map-touch inlin"
+      },
+      {
+        "i": 73,
+        "bounds": {
+          "x": 72,
+          "y": 383,
+          "w": 3,
+          "h": 10
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      },
+      {
+        "i": 74,
+        "bounds": {
+          "x": 195,
+          "y": 337,
+          "w": 14,
+          "h": 9
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 75,
+        "bounds": {
+          "x": 138,
+          "y": 682,
+          "w": 13,
+          "h": 24
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 76,
+        "bounds": {
+          "x": 167,
+          "y": 372,
+          "w": 9,
+          "h": 5
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 77,
+        "bounds": {
+          "x": 366,
+          "y": 597,
+          "w": 6,
+          "h": 38
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 78,
+        "bounds": {
+          "x": 206,
+          "y": 660,
+          "w": 2,
+          "h": 25
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<div class=\"map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-gr"
+      },
+      {
+        "i": 79,
+        "bounds": {
+          "x": 190,
+          "y": 336,
+          "w": 6,
+          "h": 3
+        },
+        "stroke": "#14b8a6",
+        "strokeWidth": "1.5",
+        "pointerEvents": "auto",
+        "zIndex": "auto",
+        "hit": "<path class=\"leaflet-interactive\" stroke=\"#14b8a6\" stroke-opacity=\"0.8\" stroke-width=\"1.5\" stroke-li"
+      }
+    ],
+    "bodyPointer": "auto",
+    "zoom": 7,
+    "errors": []
+  },
+  "candidates": [
+    {
+      "x": 31.236757278442383,
+      "y": 493.76324462890625,
+      "slug": "unc-0f0847fbf7",
+      "name": "Abrud",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 44.58797836303711,
+      "y": 425.5293273925781,
+      "slug": "unc-02e62b92e1",
+      "name": "Agârbiciu",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 170.49493408203125,
+      "y": 323.98986053466797,
+      "slug": "unc-79319be62f",
+      "name": "Anieșul Mic",
+      "hit": "#8b5cf6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 126,
+      "y": 395.1196746826172,
+      "slug": "unc-c760fd2e20",
+      "name": "Apatiu",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    },
+    {
+      "x": 89.30042266845703,
+      "y": 551.5665283203125,
+      "slug": "unc-0d3a9d1a89",
+      "name": "Apold",
+      "hit": "#14b8a6",
+      "hitClass": "leaflet-interactive"
+    }
+  ],
+  "target": {
+    "x": 31.236757278442383,
+    "y": 493.76324462890625,
+    "slug": "unc-0f0847fbf7",
+    "name": "Abrud",
+    "hit": "#14b8a6",
+    "hitClass": "leaflet-interactive"
+  },
+  "after": {
+    "selected": "Abrud",
+    "zoom": 7,
+    "bodyPointer": "none",
+    "hitChain": [
+      {
+        "tag": "path",
+        "cls": "leaflet-interactive",
+        "z": "auto",
+        "pe": "auto"
+      },
+      {
+        "tag": "g",
+        "cls": {},
+        "z": "auto",
+        "pe": "none"
+      },
+      {
+        "tag": "svg",
+        "cls": "leaflet-zoom-animated",
+        "z": "200",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "leaflet-pane leaflet-overlay-pane",
+        "z": "400",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "leaflet-pane leaflet-map-pane",
+        "z": "400",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "map-touch z-0 h-full w-full leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom",
+        "z": "0",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "relative min-h-0 flex-1",
+        "z": "auto",
+        "pe": "none"
+      },
+      {
+        "tag": "DIV",
+        "cls": "relative flex min-h-0 flex-1 flex-col",
+        "z": "auto",
+        "pe": "none"
+      }
+    ]
+  },
+  "consoleErrors": []
+}
