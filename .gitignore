@@ -100,3 +100,6 @@ public/data/meta.json
 # monthly refresh staging output — uploaded as a workflow artifact, never committed
 /data/raw/refresh/*
 !/data/raw/refresh/.gitkeep
+
+# river network build intermediates (T2.4)
+/data/rivernet/courses_all.jsonl.gz

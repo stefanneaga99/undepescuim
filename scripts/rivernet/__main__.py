@@ -40,6 +40,12 @@ def _fetch_input(args: list[str]) -> int:
     return cli(args)
 
 
+def _build(args: list[str]) -> int:
+    from .build import cli
+
+    return cli(args)
+
+
 def _parse(args: list[str]) -> int:
     from .limits_parser import cli
 
@@ -48,6 +54,7 @@ def _parse(args: list[str]) -> int:
 
 HANDLERS["extract"] = _extract
 HANDLERS["parse"] = _parse
+HANDLERS["build"] = _build
 HANDLERS["fetch-input"] = _fetch_input
 
 

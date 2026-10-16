@@ -1,0 +1,66 @@
+name: rivernet-build
+
+# Builds the OSM river network + courses from the pinned extract and opens a PR
+# with the changed data/rivernet/** files (river geometry v2, T2.4). Manual only.
+# Requires: Settings > Actions > "Allow GitHub Actions to create and approve
+# pull requests". Later tasks extend this workflow (parse, match, resolve, report).
+
+on:
+  workflow_dispatch:
+    inputs:
+      extract_url:
+        description: "Override the extract URL (default: extract.url from input_manifest.json)"
+        type: string
+        default: ""
+      allow_unpinned:
+        description: "Allow an unpinned extract (sha256 null) — first run only"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install --quiet -r requirements-dev.txt
+      - name: Fetch pinned extract
+        run: |
+          mkdir -p work
+          flags=""
+          if [ "${{ inputs.allow_unpinned }}" = "true" ]; then flags="--allow-unpinned"; fi
+          if [ -n "${{ inputs.extract_url }}" ]; then
+            curl -fsSL "${{ inputs.extract_url }}" -o work/water-extract.jsonl.gz
+          else
+            PYTHONPATH=scripts python -m rivernet fetch-input --section extract --out work/water-extract.jsonl.gz $flags
+          fi
+      - name: Build network and courses
+        run: |
+          PYTHONPATH=scripts python -m rivernet build \
+            --extract work/water-extract.jsonl.gz --out-dir data/rivernet
+          cat data/rivernet/build_summary.json
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/rivernet data/sectors && [ -z "$(git ls-files --others --exclude-standard data/rivernet data/sectors)" ]; then
+            echo "No changes in data/rivernet or data/sectors"; exit 0
+          fi
+          branch="data/rivernet-$(date -u +%Y%m%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/rivernet data/sectors
+          git commit -m "data(rivernet): rebuild courses and QA"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "data(rivernet): rebuild courses and QA" \
+            --body "Automated rebuild from the pinned OSM extract. See data/rivernet/qa.json and build_summary.json."
