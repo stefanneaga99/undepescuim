@@ -5,25 +5,27 @@
  * Pipeline:
  *   1. Load every source module in scripts/sources/*.mjs
  *   2. Each source fetches fresh data and returns a map of
- *      { "relative/path/under/public/data.json": <JSON-serializable value> }
+ *      { "relative/path/data.json": <JSON-serializable value> }
  *   3. Validate outputs (non-empty, JSON-serializable, GeoJSON-valid when .geojson)
- *   4. Write outputs to public/data/
+ *   4. Write outputs to the staging dir data/raw/refresh/ (override with
+ *      REFRESH_OUTPUT_DIR). NEVER to public/data/ — see lib/refresh-config.mjs.
  *   5. Print summary: files written, record counts, failures
  *
- * Failure policy: a source that throws is logged and skipped (last good data
- * on disk is kept). If EVERY source fails, exit non-zero so the GitHub Actions
- * run surfaces as failed and triggers a notification.
+ * Failure policy: a source that throws is logged and skipped. If EVERY source
+ * fails, exit non-zero so the GitHub Actions run surfaces as failed and
+ * triggers a notification.
  *
  * Usage: node scripts/refresh-data.mjs
  */
 import { mkdir, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { resolveRefreshOutputDir, safeOutputPath } from './lib/refresh-config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const SOURCES_DIR = path.join(__dirname, 'sources');
-const DATA_DIR = path.join(ROOT, 'public', 'data');
+const DATA_DIR = resolveRefreshOutputDir(ROOT);
 
 const encoder = new TextEncoder();
 
@@ -92,7 +94,7 @@ async function main() {
           continue;
         }
         validateOutput(relPath, value);
-        const target = path.join(DATA_DIR, relPath);
+        const target = safeOutputPath(DATA_DIR, relPath);
         await mkdir(path.dirname(target), { recursive: true });
         await writeFile(target, encoder.encode(serialize(value)));
         const count = Array.isArray(value) ? value.length
@@ -104,7 +106,7 @@ async function main() {
     } catch (err) {
       entry.error = err.message;
       failedAny = true;
-      console.error(`[refresh] ${source.name}: FAILED — ${err.message} (keeping last good data)`);
+      console.error(`[refresh] ${source.name}: FAILED — ${err.message} (nothing written for this source)`);
     }
     summary.sources.push(entry);
   }
