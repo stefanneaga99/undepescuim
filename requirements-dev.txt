@@ -7,3 +7,11 @@ pytest-cov==6.0.0
 shapely==2.1.2
 numpy==2.5.2
 requests==2.33.0
+
+# river geometry v2 (scripts/rivernet, docs/plans/river-geometry-v2.md).
+# Bounded ranges rather than exact pins: exact versions were not verifiable
+# when these were added (no PyPI access in the authoring sandbox). Tighten to
+# exact pins once CI has resolved them.
+networkx>=3.4,<4
+pyproj>=3.7,<4
+osmium>=4.0,<5
