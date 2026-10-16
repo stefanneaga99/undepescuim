@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "source": "geofabrik",
+  "description": "Pinned OSM input for the river network build. Fill url+sha256 after running the osm-extract workflow once (see docs/plans/river-geometry-v2.md, owner step O2).",
+  "pbf": {
+    "url": "https://download.geofabrik.de/europe/romania-latest.osm.pbf",
+    "sha256": null,
+    "osm_timestamp": null
+  },
+  "extract": {
+    "url": null,
+    "sha256": null
+  },
+  "filters": [
+    "nwr/waterway",
+    "nwr/natural=water",
+    "nwr/landuse=reservoir",
+    "nwr/water=reservoir",
+    "r/type=waterway",
+    "r/admin_level=6",
+    "n/place=city,town,village,hamlet",
+    "nwr/man_made=bridge,dam",
+    "w/bridge"
+  ]
+}

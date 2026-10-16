@@ -34,7 +34,14 @@ def _extract(args: list[str]) -> int:
     return cli(args)
 
 
+def _fetch_input(args: list[str]) -> int:
+    from .fetch_input import cli
+
+    return cli(args)
+
+
 HANDLERS["extract"] = _extract
+HANDLERS["fetch-input"] = _fetch_input
 
 
 def build_parser() -> argparse.ArgumentParser:
