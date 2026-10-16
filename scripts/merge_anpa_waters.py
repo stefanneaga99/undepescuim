@@ -7,9 +7,14 @@ contract list, including many rivers like Râul Buzău) is parsed but never
 merged. This script merges ANPA waters missing from the frontend, attaches
 OSM geometry where available, and writes the combined waters.json.
 
-Usage: python3 scripts/merge_anpa_waters.py
+Usage: python3 scripts/merge_anpa_waters.py [--allow-missing-index]
+
+The OSM index (data/rivers_osm.geojson) is a gitignored input. If it is missing
+the script stops with an error instead of silently merging without geometry;
+pass --allow-missing-index to opt in to that legacy behaviour.
 """
 
+import argparse
 import json
 import re
 import sqlite3
@@ -30,11 +35,21 @@ def norm(s: str) -> str:
     return " ".join(s.lower().split())
 
 
-def load_osm_index() -> dict:
-    """name(norm) -> geometry from the bulk OSM download (rivers_osm.geojson)."""
+def load_osm_index(allow_missing: bool = False) -> dict:
+    """name(norm) -> geometry from the bulk OSM download (rivers_osm.geojson).
+
+    Raises SystemExit when the (gitignored) file is missing, unless
+    ``allow_missing`` is set — then an empty index is returned.
+    """
     idx_file = ROOT / "data" / "rivers_osm.geojson"
     if not idx_file.exists():
-        return {}
+        if allow_missing:
+            print(f"[merge] WARN {idx_file} missing — merging without OSM geometry")
+            return {}
+        raise SystemExit(
+            f"[merge] ERROR: {idx_file} is missing (gitignored OSM input) — the legacy "
+            "matcher cannot run. Pass --allow-missing-index to merge without geometry."
+        )
     data = json.loads(idx_file.read_text(encoding="utf-8"))
 
     nodes = {
@@ -116,12 +131,16 @@ def anpa_subtype(w: dict) -> str:
     return "lac"
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    ap = argparse.ArgumentParser(description="Merge ANPA canonical waters into waters.json")
+    ap.add_argument("--allow-missing-index", action="store_true",
+                    help="merge without OSM geometry if data/rivers_osm.geojson is missing")
+    args = ap.parse_args(argv)
     fe = json.loads(FE_WATERS.read_text(encoding="utf-8"))
     fe_by_name = {norm(x["name"]): x for x in fe}
 
     anpa = [json.loads(l) for l in ANPA_FILE.read_text(encoding="utf-8").splitlines() if l.strip()]
-    osm_index = load_osm_index()
+    osm_index = load_osm_index(allow_missing=args.allow_missing_index)
     print(f"[merge] frontend: {len(fe)} waters, ANPA: {len(anpa)}")
 
     added, skipped, updated = 0, 0, 0

@@ -24,6 +24,11 @@ Modes:
                      then hash-diff the copy's public/data vs the real repo.
                      Reports per-file identical / different (the diff is the
                      audit trail — plan §6.2 pass criteria).
+                     FAILS FAST: the first step that exits non-zero aborts the
+                     rebuild with exit 1 (later steps would run on a broken
+                     state and the hash diff would be meaningless).
+  --keep-going       with --to: legacy behaviour — warn about a failing step
+                     and carry on, then hash-diff. Opt-in only.
 
 Known non-reproducible steps (documented, plan §11.2): the overlay builders
 emit PRE-fix overlays (the A1/A1.5 fixes — fix_duplicate_slugs_overlay.py +
@@ -272,7 +277,26 @@ def cmd_verify() -> None:
     print("[verify] PASS: deterministic derivations reproduce the committed files")
 
 
-def cmd_to(dest: Path) -> None:
+def run_steps(dest: Path, keep_going: bool = False) -> list[str]:
+    """Run FULL_STEPS inside the scratch copy; return the failing steps.
+
+    Stops at the first failure unless ``keep_going`` is set.
+    """
+    failed: list[str] = []
+    for step in FULL_STEPS:
+        print(f"[to] running {step} ...")
+        r = subprocess.run([PY, str(dest / step)], cwd=dest)
+        if r.returncode != 0:
+            failed.append(step)
+            if keep_going:
+                print(f"[to] WARN {step} exited {r.returncode} (continuing)")
+            else:
+                print(f"[to] ERROR {step} exited {r.returncode}")
+                break
+    return failed
+
+
+def cmd_to(dest: Path, keep_going: bool = False) -> None:
     if dest.exists():
         shutil.rmtree(dest)
     print(f"[to] scratch rebuild at {dest}")
@@ -300,11 +324,11 @@ def cmd_to(dest: Path) -> None:
         if p.is_dir() and not target.exists():
             target.symlink_to(p, target_is_directory=True)
     # run the canonical sequence INSIDE the copy
-    for step in FULL_STEPS:
-        print(f"[to] running {step} ...")
-        r = subprocess.run([PY, str(dest / step)], cwd=dest)
-        if r.returncode != 0:
-            print(f"[to] WARN {step} exited {r.returncode} (continuing)")
+    failed = run_steps(dest, keep_going=keep_going)
+    if failed and not keep_going:
+        print(f"[to] FAIL: step {failed[0]} exited non-zero — aborting "
+              f"(use --keep-going to continue past failing steps)")
+        sys.exit(1)
     # hash-diff
     diffs = []
     for pattern in OUTPUTS:
@@ -329,6 +353,8 @@ def main() -> None:
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--verify", action="store_true")
     ap.add_argument("--to", type=Path, help="full canonical rebuild in a scratch dir")
+    ap.add_argument("--keep-going", action="store_true",
+                    help="with --to: continue past failing steps (legacy behaviour)")
     args = ap.parse_args()
 
     if args.manifest:
@@ -338,7 +364,7 @@ def main() -> None:
     if args.verify:
         cmd_verify()
     if args.to:
-        cmd_to(args.to)
+        cmd_to(args.to, keep_going=args.keep_going)
     if not (args.manifest or args.check or args.verify or args.to):
         ap.print_help()
 
