@@ -28,6 +28,15 @@ PLANNED: dict[str, str] = {
 HANDLERS: dict[str, Callable[[list[str]], int]] = {}
 
 
+def _extract(args: list[str]) -> int:
+    from .extract import cli  # lazy: keeps `--help` instant
+
+    return cli(args)
+
+
+HANDLERS["extract"] = _extract
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="python -m rivernet",

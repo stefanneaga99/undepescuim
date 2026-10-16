@@ -13,6 +13,8 @@ def test_no_command_prints_help_and_succeeds():
 
 def test_unimplemented_commands_exit_with_status_2():
     for name in cli.PLANNED:
+        if name in cli.HANDLERS:
+            continue  # implemented by a landed task
         assert cli.main([name]) == 2
 
 
