@@ -53,7 +53,14 @@ def _parse(args: list[str]) -> int:
 
 
 HANDLERS["extract"] = _extract
+def _match(args: list[str]) -> int:
+    from .matcher import cli
+
+    return cli(args)
+
+
 HANDLERS["parse"] = _parse
+HANDLERS["match"] = _match
 HANDLERS["build"] = _build
 HANDLERS["fetch-input"] = _fetch_input
 
