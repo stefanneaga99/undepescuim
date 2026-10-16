@@ -77,6 +77,13 @@ def _review_page(args: list[str]) -> int:
     return cli(args)
 
 
+def _publish(args: list[str]) -> int:
+    from .publish import cli
+
+    return cli(args)
+
+
+HANDLERS["publish"] = _publish
 HANDLERS["resolve"] = _resolve
 HANDLERS["report"] = _report
 HANDLERS["review-page"] = _review_page

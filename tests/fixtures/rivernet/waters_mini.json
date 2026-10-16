@@ -1,0 +1,625 @@
+[
+ {
+  "slug": "1xqpi6rz",
+  "name": "Pâraiele Boia Mare",
+  "judet": "Vâlcea",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "-",
+  "dimensiune": "10 Km",
+  "pescuit_interzis": false,
+  "referinta": "Lista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024",
+  "coordinates": [
+   24.4255825,
+   45.5071921
+  ],
+  "driving": [
+   24.4255825,
+   45.5071921
+  ],
+  "bbox": [
+   24.3740036,
+   45.4957894,
+   24.4589145,
+   45.5322861
+  ],
+  "asociatie": {
+   "name": "AJVPS VÂLCEA",
+   "name_long": "Asociaţia Judeţeană a Vânătorilor şi Pescarilor Sportivi Vâlcea",
+   "slug": "ajvps-valcea",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": {
+   "type": "MultiLineString",
+   "coordinates": [
+    [
+     [
+      24.45891,
+      45.53229
+     ],
+     [
+      24.45576,
+      45.53049
+     ],
+     [
+      24.44915,
+      45.53104
+     ]
+    ],
+    [
+     [
+      24.44915,
+      45.53104
+     ],
+     [
+      24.43814,
+      45.52465
+     ],
+     [
+      24.43254,
+      45.51507
+     ],
+     [
+      24.43303,
+      45.51328
+     ],
+     [
+      24.43152,
+      45.51317
+     ]
+    ],
+    [
+     [
+      24.43152,
+      45.51317
+     ],
+     [
+      24.43041,
+      45.51181
+     ]
+    ],
+    [
+     [
+      24.43041,
+      45.51181
+     ],
+     [
+      24.43046,
+      45.50965
+     ],
+     [
+      24.42437,
+      45.50552
+     ],
+     [
+      24.42371,
+      45.50131
+     ],
+     [
+      24.41996,
+      45.50051
+     ],
+     [
+      24.41674,
+      45.49736
+     ],
+     [
+      24.40419,
+      45.49579
+     ],
+     [
+      24.38919,
+      45.49834
+     ],
+     [
+      24.38487,
+      45.50086
+     ],
+     [
+      24.374,
+      45.50207
+     ]
+    ],
+    [
+     [
+      24.374,
+      45.50207
+     ],
+     [
+      24.37368,
+      45.50204
+     ]
+    ]
+   ]
+  },
+  "course_frac": 0.7204,
+  "locality": null,
+  "lengthKm": 9.2
+ },
+ {
+  "slug": "aoja7n5d",
+  "name": "Râul Crișul Alb",
+  "judet": "Arad",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "Localitatea Ionești- Frontieră cu Ungaria cu afluenții",
+  "dimensiune": "168 Km",
+  "pescuit_interzis": false,
+  "referinta": "Lista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 26.04.2024",
+  "coordinates": [
+   21.947218027633756,
+   46.430827362010426
+  ],
+  "driving": [
+   21.947218027633756,
+   46.430827362010426
+  ],
+  "bbox": [
+   21.3298178,
+   46.2345496,
+   22.5632019,
+   46.6316181
+  ],
+  "asociatie": {
+   "name": "AJVPS ARAD",
+   "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Arad",
+   "slug": "ajvps-arad",
+   "telefon": "0744 556 887",
+   "adresa": "str. Mărășești, nr. 6, Arad",
+   "siteUrl": "https://avpsro.eu/ajvpsarad/",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": {
+   "type": "LineString",
+   "coordinates": [
+    [
+     21.53072,
+     46.49955
+    ],
+    [
+     21.53052,
+     46.50032
+    ],
+    [
+     21.53052,
+     46.50103
+    ],
+    [
+     21.53086,
+     46.50193
+    ],
+    [
+     21.53163,
+     46.50281
+    ],
+    [
+     21.53216,
+     46.50324
+    ],
+    [
+     21.53262,
+     46.50378
+    ],
+    [
+     21.53255,
+     46.50429
+    ],
+    [
+     21.53175,
+     46.50514
+    ],
+    [
+     21.53117,
+     46.50606
+    ],
+    [
+     21.53036,
+     46.5072
+    ],
+    [
+     21.52926,
+     46.5081
+    ],
+    [
+     21.52784,
+     46.5089
+    ],
+    [
+     21.52639,
+     46.50991
+    ],
+    [
+     21.52418,
+     46.51137
+    ],
+    [
+     21.52313,
+     46.5119
+    ],
+    [
+     21.52193,
+     46.51275
+    ],
+    [
+     21.52044,
+     46.51367
+    ],
+    [
+     21.51983,
+     46.51417
+    ],
+    [
+     21.51938,
+     46.51463
+    ],
+    [
+     21.51879,
+     46.51521
+    ],
+    [
+     21.51817,
+     46.51565
+    ],
+    [
+     21.51698,
+     46.5168
+    ],
+    [
+     21.5162,
+     46.51728
+    ],
+    [
+     21.51489,
+     46.51742
+    ],
+    [
+     21.51359,
+     46.51734
+    ],
+    [
+     21.51247,
+     46.51751
+    ],
+    [
+     21.51194,
+     46.51776
+    ],
+    [
+     21.5117,
+     46.518
+    ],
+    [
+     21.51101,
+     46.51903
+    ],
+    [
+     21.51051,
+     46.51947
+    ],
+    [
+     21.50892,
+     46.52059
+    ],
+    [
+     21.50847,
+     46.52114
+    ],
+    [
+     21.50835,
+     46.52168
+    ],
+    [
+     21.50854,
+     46.52355
+    ],
+    [
+     21.50838,
+     46.52396
+    ],
+    [
+     21.50785,
+     46.52454
+    ],
+    [
+     21.50744,
+     46.52519
+    ],
+    [
+     21.50732,
+     46.5261
+    ],
+    [
+     21.50755,
+     46.52698
+    ],
+    [
+     21.50755,
+     46.52765
+    ],
+    [
+     21.50731,
+     46.52822
+    ],
+    [
+     21.50638,
+     46.52924
+    ],
+    [
+     21.50584,
+     46.52956
+    ],
+    [
+     21.50209,
+     46.53079
+    ],
+    [
+     21.49984,
+     46.53145
+    ],
+    [
+     21.49831,
+     46.53196
+    ],
+    [
+     21.49669,
+     46.53246
+    ],
+    [
+     21.4961,
+     46.53275
+    ],
+    [
+     21.49534,
+     46.53294
+    ],
+    [
+     21.49416,
+     46.53354
+    ]
+   ]
+  },
+  "riverGroup": "crisul-alb",
+  "locality": "Chișineu-Criș",
+  "lengthKm": 5.3
+ },
+ {
+  "slug": "anpa-anpa-0379",
+  "name": "Râul Crișul Alb, cu afluenții",
+  "judet": "Hunedoara",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "Pod Brad- Ocișor",
+  "dimensiune": "",
+  "pescuit_interzis": false,
+  "referinta": "Contract 678/107/22.03.1987 (1987-03-22)",
+  "coordinates": null,
+  "driving": null,
+  "bbox": null,
+  "asociatie": {
+   "name": "AJVPS HUNEDOARA",
+   "slug": "ajvps-hunedoara",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": null,
+  "riverGroup": "crisul-alb",
+  "locality": "Brad"
+ },
+ {
+  "slug": "anpa-anpa-0134",
+  "name": "Râul Colibița superioară",
+  "judet": "Bistrița-Năsăud",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "Izvoare – vărsare în lacul Colibița",
+  "dimensiune": "21 Km",
+  "pescuit_interzis": false,
+  "referinta": "Contract 82/11.04.2019 (2019-04-11)",
+  "coordinates": [
+   24.8876,
+   47.1709
+  ],
+  "driving": null,
+  "bbox": [
+   24.8776,
+   47.1609,
+   24.8976,
+   47.1809
+  ],
+  "asociatie": {
+   "name": "AJVPS BISTRIȚA-NĂSĂUD",
+   "slug": "ajvps-bistrita-nasaud",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": null,
+  "riverGroup": "colibita",
+  "locality": null,
+  "source_detail": "sweep_remaining:locality_bbox (documented-unmatchable, village anchor) | second_pass:unmatchable",
+  "bbox_render": "point"
+ },
+ {
+  "slug": "anpa-anpa-0135",
+  "name": "Râul Colibița inferioară",
+  "judet": "Bistrița-Năsăud",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "Aval baraj Colibița – conf. pârâul Pietroasa",
+  "dimensiune": "31 Km",
+  "pescuit_interzis": false,
+  "referinta": "Contract 82/11.04.2019 (2019-04-11)",
+  "coordinates": [
+   24.8876,
+   47.1709
+  ],
+  "driving": null,
+  "bbox": [
+   24.8776,
+   47.1609,
+   24.8976,
+   47.1809
+  ],
+  "asociatie": {
+   "name": "AJVPS BISTRIȚA-NĂSĂUD",
+   "slug": "ajvps-bistrita-nasaud",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": null,
+  "riverGroup": "colibita",
+  "locality": null,
+  "source_detail": "sweep_remaining:locality_bbox (documented-unmatchable, village anchor) | second_pass:unmatchable",
+  "bbox_render": "point"
+ },
+ {
+  "slug": "jrlgyh2h",
+  "name": "Acumulare Agrement",
+  "judet": "Bacău",
+  "type": "ape",
+  "subtype": "lac",
+  "limite": "Bacău",
+  "dimensiune": "50 ha",
+  "pescuit_interzis": false,
+  "referinta": "Lista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024",
+  "coordinates": [
+   26.92668096762032,
+   46.56464089079679
+  ],
+  "driving": [
+   26.92668096762032,
+   46.56464089079679
+  ],
+  "bbox": [
+   26.923014,
+   46.55703,
+   26.931644,
+   46.57411
+  ],
+  "asociatie": {
+   "name": "AJVPS BACĂU",
+   "name_long": "Asociația Județeană a Vănătorilor și Pescarilor Sportivi Bacău",
+   "slug": "ajvps-bacau",
+   "adresa": "str. Mihai Viteazu, nr. 4, Bacău",
+   "siteUrl": "https://ajvpsbc.ro/",
+   "permitIssuer": "asociatie"
+  },
+  "geometry": {
+   "type": "Polygon",
+   "coordinates": [
+    [
+     [
+      26.9236,
+      46.57399
+     ],
+     [
+      26.92576,
+      46.57223
+     ],
+     [
+      26.93162,
+      46.55925
+     ],
+     [
+      26.9277,
+      46.55705
+     ],
+     [
+      26.92445,
+      46.56179
+     ],
+     [
+      26.9236,
+      46.57399
+     ]
+    ],
+    [
+     [
+      26.92652,
+      46.56361
+     ],
+     [
+      26.92775,
+      46.56461
+     ],
+     [
+      26.9246,
+      46.56382
+     ],
+     [
+      26.9257,
+      46.56025
+     ],
+     [
+      26.9283,
+      46.56012
+     ],
+     [
+      26.92904,
+      46.56155
+     ],
+     [
+      26.92652,
+      46.56361
+     ]
+    ],
+    [
+     [
+      26.92685,
+      46.55933
+     ],
+     [
+      26.92645,
+      46.56015
+     ],
+     [
+      26.926,
+      46.55972
+     ],
+     [
+      26.92685,
+      46.55933
+     ]
+    ]
+   ]
+  },
+  "source": "hotosm",
+  "source_detail": "bbox_fix:lake:Lacul de acumulare Bacău I",
+  "locality": "Bacău",
+  "areaHa": 44.92
+ },
+ {
+  "slug": "gxjd56ii",
+  "name": "Pârâul Nou Roman",
+  "judet": "Sibiu",
+  "type": "ape",
+  "subtype": "rau",
+  "limite": "Pod rutier loc. Noul Roman - vărsare râul Olt",
+  "dimensiune": "1.5 Km",
+  "pescuit_interzis": false,
+  "referinta": "Lista habitatelor piscicole naturale contractate de către asociațiile de pescari recreativi prin contracte pentru utilizarea resurselor acvatice vii în scop recreativ, la data 01.02.2024",
+  "coordinates": [
+   24.5870161,
+   45.8155317
+  ],
+  "driving": [
+   24.5870161,
+   45.8155317
+  ],
+  "bbox": [
+   24.5651977,
+   45.7969888,
+   24.6142987,
+   45.8209828
+  ],
+  "asociatie": {
+   "name": "FLY FISHING CLUB SIBIU",
+   "name_long": "Fly Fishing Club Sibiu",
+   "slug": "fly-fishing-club-sibiu",
+   "telefon": "0745804295",
+   "adresa": "str Islazului nr 44 Sibiu",
+   "siteUrl": "https://flyfishingclubsibiu.ro/",
+   "permitIssuer": "asociatie",
+   "permitUrl": "https://flyfishingclubsibiu.ro/tarife/"
+  },
+  "locality": "Arpașu de Jos",
+  "bbox_render": "point",
+  "source_detail": " | second_pass:keep_point"
+ }
+]
