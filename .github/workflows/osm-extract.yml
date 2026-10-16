@@ -1,0 +1,82 @@
+name: osm-extract
+
+# Builds the normalised OSM water extract (river geometry v2, T1.2) from the
+# input pinned in data/rivernet/input_manifest.json. Manual only; never writes
+# to the repository. Pin the printed SHA-256 values in the manifest afterwards.
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_unpinned:
+        description: "Allow an unpinned (sha256 null) input — first run only"
+        type: boolean
+        default: false
+      publish_release:
+        description: "Attach the extract to a GitHub release (osm-extract-<date>)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write # only used by the optional release step
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install osmium-tool
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq osmium-tool
+          osmium --version
+      - name: Fetch pinned PBF
+        run: |
+          mkdir -p work
+          flags=""
+          if [ "${{ inputs.allow_unpinned }}" = "true" ]; then flags="--allow-unpinned"; fi
+          PYTHONPATH=scripts python -m rivernet fetch-input --section pbf --out work/input.osm.pbf $flags
+      - name: Filter water features
+        run: |
+          filters=$(python -c "import json;print(' '.join(json.load(open('data/rivernet/input_manifest.json'))['filters']))")
+          echo "filters: $filters"
+          osmium tags-filter work/input.osm.pbf $filters -o work/water.osm.pbf --overwrite
+          osmium cat work/water.osm.pbf -f opl -o work/water.opl --overwrite
+          osmium export work/water.osm.pbf -f geojsonseq --geometry-types=polygon \
+            --add-unique-id=type_id -o work/water-areas.geojsonseq --overwrite
+      - name: Normalise
+        run: |
+          pbf_sha=$(sha256sum work/input.osm.pbf | cut -d' ' -f1)
+          ts=$(osmium fileinfo -g header.option.timestamp work/input.osm.pbf 2>/dev/null || true)
+          filters=$(python -c "import json;print(' '.join(json.load(open('data/rivernet/input_manifest.json'))['filters']))")
+          PYTHONPATH=scripts python -m rivernet extract \
+            --opl work/water.opl --areas work/water-areas.geojsonseq \
+            --out work/water-extract.jsonl.gz \
+            --pbf-sha256 "$pbf_sha" --osm-timestamp "$ts" --filters "$filters" \
+            --bbox 20.2 43.5 30.0 48.3
+          {
+            echo "## OSM extract"
+            echo "- pbf sha256: \`$pbf_sha\`"
+            echo "- osm timestamp: \`$ts\`"
+            echo "- extract sha256: \`$(sha256sum work/water-extract.jsonl.gz | cut -d' ' -f1)\`"
+            echo "- extract size: $(du -h work/water-extract.jsonl.gz | cut -f1)"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: water-extract
+          path: work/water-extract.jsonl.gz
+          retention-days: 30
+      - name: Publish release asset
+        if: ${{ inputs.publish_release }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="osm-extract-$(date -u +%Y%m%d)"
+          gh release create "$tag" work/water-extract.jsonl.gz \
+            --title "$tag" --notes "Normalised OSM water extract (schema v1)." \
+            || gh release upload "$tag" work/water-extract.jsonl.gz --clobber

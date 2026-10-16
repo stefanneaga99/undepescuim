@@ -1,4 +1,5 @@
 {"type":"Feature","id":"w100","properties":{"natural":"water","name":"Lacul Mic","water":"reservoir","foo":"bar"},"geometry":{"type":"Polygon","coordinates":[[[25.0,45.0],[25.00123456789,45.0],[25.0,45.00123456789],[25.0,45.0]]]}}
-{"type":"Feature","id":"r101","properties":{"boundary":"administrative","admin_level":"6","name":"Județul Test"},"geometry":{"type":"MultiPolygon","coordinates":[[[[25.0,45.0],[26.0,45.0],[26.0,46.0],[25.0,45.0]]]]}}
+{"type":"Feature","id":"r101","properties":{"boundary":"administrative","admin_level":"4","name":"Județul Test"},"geometry":{"type":"MultiPolygon","coordinates":[[[[25.0,45.0],[26.0,45.0],[26.0,46.0],[25.0,45.0]]]]}}
 {"type":"Feature","id":"w102","properties":{"building":"yes"},"geometry":{"type":"Polygon","coordinates":[[[25.0,45.0],[25.1,45.0],[25.1,45.1],[25.0,45.0]]]}}
 {"type":"Feature","id":"w103","properties":{"natural":"water"},"geometry":{"type":"LineString","coordinates":[[25.0,45.0],[25.1,45.0]]}}
+{"type":"Feature","id":"r104","properties":{"boundary":"administrative","admin_level":"6","name":"Oras"},"geometry":{"type":"Polygon","coordinates":[[[25.0,45.0],[25.1,45.0],[25.1,45.1],[25.0,45.0]]]}}
