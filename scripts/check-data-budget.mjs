@@ -5,8 +5,10 @@
  *   M7  Total data JSON transferred (gzip)        < 2.5 MB
  *   M8  waters.json gzip size (compact)           < 1.5 MB
  *   M9  JSON text parsed on main thread (compact) < 6 MB
- *   +   Dead weight: waters_geocoded.geojson / waters.geojson must NOT
- *       exist in public/data (never fetched, shipped to every visitor).
+ *   +   Allowlist: public/data may contain ONLY the files listed in
+ *       scripts/lib/data-budget.mjs (anything else is shipped to every
+ *       visitor but never fetched — e.g. backups, geocoder intermediates).
+ *   +   INFO: gzip size of the lazily-loaded files (reported, not blocking).
  *
  * Measured on the same 5 files the app fetches in loadData() (map-store.ts):
  * associations.json, waters.json, uncontracted_rivers.json,
@@ -23,6 +25,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { LAZY_DATA_FILES, findUnexpectedFiles } from './lib/data-budget.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'public', 'data');
@@ -39,9 +42,6 @@ const FETCHED = [
   'counties.geojson',
   'uncontracted_majors.json',
 ];
-// Dead weight: must NOT ship to every visitor (never fetched, regenerated).
-const DEAD_WEIGHT = ['waters_geocoded.geojson', 'waters.geojson', 'reciprocity.json'];
-
 const MB = 1024 * 1024;
 const LIMITS = {
   M7: 2.5 * MB,
@@ -104,12 +104,27 @@ check(
   `${(totalCompact / MB).toFixed(2)} MB`,
 );
 
-console.log('\nDead weight (must be absent from public/data/):');
-for (const file of DEAD_WEIGHT) {
-  check(
-    !existsSync(join(dataDir, file)),
-    `${file} absent`,
-    existsSync(join(dataDir, file)) ? `PRESENT — ${(readFileSync(join(dataDir, file)).length / MB).toFixed(2)} MB shipped to every visitor but never fetched` : 'ok',
+console.log('\nAllowlist (public/data/ may only contain files listed in scripts/lib/data-budget.mjs):');
+const unexpected = findUnexpectedFiles(dataDir);
+check(
+  unexpected.length === 0,
+  'no unexpected files in public/data/',
+  unexpected.length === 0
+    ? 'ok'
+    : `UNEXPECTED: ${unexpected.join(', ')} — shipped to every visitor; remove them or add them to the allowlist deliberately`,
+);
+
+console.log('\nLazy files (INFO — not part of M7-M9):');
+for (const file of LAZY_DATA_FILES) {
+  const path = join(dataDir, file);
+  if (!existsSync(path)) {
+    console.log(`  INFO  ${file.padEnd(32)} not present`);
+    continue;
+  }
+  const raw = readFileSync(path);
+  const gzip = gzipSync(raw, { level: 9 }).length;
+  console.log(
+    `  INFO  ${file.padEnd(32)} raw=${(raw.length / MB).toFixed(2).padStart(6)} MB  gzip-9=${(gzip / MB).toFixed(2).padStart(6)} MB`,
   );
 }
 

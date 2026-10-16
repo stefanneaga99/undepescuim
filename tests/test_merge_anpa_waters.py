@@ -6,9 +6,12 @@ public/data/waters.json or data/cache/geocode.db. Idempotency of the file-level
 merge is covered by the pure-function contract: adding an existing name skips
 it, upgrading geometry is a no-op when not better.
 """
+import json
+
 import pytest
 
-from merge_anpa_waters import norm, anpa_subtype, osm_geometry_for
+import merge_anpa_waters
+from merge_anpa_waters import norm, anpa_subtype, osm_geometry_for, load_osm_index
 
 
 class TestNorm:
@@ -67,6 +70,35 @@ class TestOsmGeometryFor:
     def test_no_match(self):
         assert osm_geometry_for("Lacul Inventat", self._index()) is None
         assert osm_geometry_for("", self._index()) is None
+
+
+class TestLoadOsmIndex:
+    """data/rivers_osm.geojson is a gitignored input: a missing file must be a
+    loud error, not a silent merge without geometry."""
+
+    def test_missing_index_is_an_error(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(merge_anpa_waters, "ROOT", tmp_path)
+        with pytest.raises(SystemExit) as excinfo:
+            load_osm_index()
+        message = str(excinfo.value)
+        assert "rivers_osm.geojson" in message
+        assert "--allow-missing-index" in message
+
+    def test_missing_index_can_be_allowed_explicitly(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(merge_anpa_waters, "ROOT", tmp_path)
+        assert load_osm_index(allow_missing=True) == {}
+
+    def test_present_index_is_loaded(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(merge_anpa_waters, "ROOT", tmp_path)
+        (tmp_path / "data").mkdir()
+        (tmp_path / "data" / "rivers_osm.geojson").write_text(json.dumps({"elements": [
+            {"type": "node", "id": 1, "lat": 46.0, "lon": 24.0},
+            {"type": "node", "id": 2, "lat": 46.1, "lon": 24.1},
+            {"type": "way", "id": 10, "nodes": [1, 2], "tags": {"name": "Râul Probă"}},
+        ]}), encoding="utf-8")
+        index = load_osm_index()
+        assert list(index) == ["raul proba"]
+        assert index["raul proba"]["coordinates"] == [[24.0, 46.0], [24.1, 46.1]]
 
 
 class TestMergeIdempotency:

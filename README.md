@@ -76,11 +76,15 @@ principal conține 1.013 ape contractate și 96 de asociații; straturile
 necontractate și geometriile pe județe sunt păstrate separat pentru încărcare
 și randare eficientă.
 
-Reîmprospătarea completă se poate porni cu:
+Scraperele surselor se pot rula cu:
 
 ```bash
 npm run data:refresh
 ```
+
+Rezultatul se scrie în `data/raw/refresh/` (ignorat de git), **nu** în
+`public/data/`; workflow-ul lunar îl încarcă drept artefact. Promovarea datelor
+în `public/data/` este un pas separat, revizuit manual.
 
 ### Date OpenStreetMap și atribuire
 
@@ -91,9 +95,10 @@ de acces, transformărilor, clasificărilor și hash-urilor se află în
 complet al licenței și al atribuirii, vezi
 <https://www.openstreetmap.org/copyright>.
 
-Workflow-ul `Monthly Data Refresh` rulează și lunar. Pipeline-ul are verificări
-de integritate, trasabilitate, determinism și bugete de dimensiune înainte ca
-datele regenerate să fie acceptate.
+Workflow-ul `Monthly Data Refresh` rulează lunar și doar verifică scraperele
+(fără commit). Pipeline-ul de date are verificări de integritate, trasabilitate,
+determinism și bugete de dimensiune înainte ca datele regenerate să fie
+acceptate.
 
 ## Raportarea problemelor de date
 

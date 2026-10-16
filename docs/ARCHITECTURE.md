@@ -83,6 +83,11 @@ asset-urile Next primesc cache immutable, iar datele au cache de 24 de ore.
 Node din `scripts/` acoperă geocodarea, asocierea cu județe/localități,
 simplificarea geometriei, trasabilitatea și verificările de integritate.
 
+Direcția planificată pentru geometria râurilor și a sectoarelor (rețea de ape
+construită din OpenStreetMap, sectoare tăiate în pipeline) este descrisă în
+[`docs/plans/river-geometry-v2.md`](plans/river-geometry-v2.md) și în
+[`docs/adr/0001-river-network-and-precut-sectors.md`](adr/0001-river-network-and-precut-sectors.md).
+
 GitHub Actions rulează:
 
 - unit tests și coverage pentru TypeScript;

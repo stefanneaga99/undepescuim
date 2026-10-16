@@ -4,8 +4,13 @@ on:
     - cron: '0 3 1 * *'   # 1st of month, 03:00 UTC
   workflow_dispatch:        # Manual trigger for testing
 
+# Read-only: this job scrapes sources into data/raw/refresh/ and uploads the
+# result as an artifact. It never commits to the repository and never writes the
+# published data directory (the scraper output shape differs from what the
+# frontend reads).
+# Promoting refreshed data is a separate, reviewed step.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   refresh:
@@ -30,23 +35,13 @@ jobs:
           key: geocode-cache-${{ github.run_id }}
           restore-keys: geocode-cache-
 
-      - name: Run data refresh
+      - name: Scrape sources (no publish)
         run: npm run data:refresh
 
-      # Perf regression guard on freshly regenerated data (M7/M8/M9). PASSING
-      # since P0 — a monthly refresh that re-introduces un-simplified geometry
-      # or re-ships dead files now BLOCKS the commit that follows.
-      - name: Enforce data payload budgets (M7/M8/M9)
-        run: node scripts/check-data-budget.mjs
-
-      - name: Commit & Push changes
-        run: |
-          git config user.name "data-bot"
-          git config user.email "data-bot@undepescuim.ro"
-          git add public/data/
-          if git diff --staged --quiet; then
-            echo "No data changes, skipping commit"
-          else
-            git commit -m "data: monthly refresh $(date +%Y-%m-%d)"
-            git push
-          fi
+      - name: Upload refresh output
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-refresh-${{ github.run_id }}
+          path: data/raw/refresh/
+          if-no-files-found: warn
+          retention-days: 30
