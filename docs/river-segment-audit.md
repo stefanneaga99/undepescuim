@@ -22,7 +22,7 @@ The command is read-only with respect to the snapshot and public data unless
 Cerna–Vâlcea, Ialomița, Șieu and Timiș scope is considered. A repair requires
 one complete, unambiguous OSM relation per owner and geometry-only findings;
 ambiguous or incomplete evidence remains blocking. Repairs preserve
-`public/data/waters.json.audit-backup.json`, emit a before/after JSON diff and
+`data/cache/waters.json.audit-backup.json` (gitignored; never inside `public/data/`), emit a before/after JSON diff and
 OSM provenance, and re-run the audit before evaluating the gate. Contract
 ownership, association, source rows and contractual fractions are never
 modified.

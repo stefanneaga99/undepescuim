@@ -257,7 +257,10 @@ def repair_geometries(index, root, report, scope, diff_path, provenance_path):
   water['geometry'] = geometry
   changes.append({'river_group': river.get('river_group'), 'owner_slug': water.get('slug'), 'before': before, 'after': geometry, 'provenance': provenance})
  if changes:
-  backup = waters_path.with_name('waters.json.audit-backup.json')
+  # Keep the backup OUT of public/data (anything there ships to every visitor);
+  # data/cache/ is gitignored scratch space.
+  backup = root / 'data/cache/waters.json.audit-backup.json'
+  backup.parent.mkdir(parents=True, exist_ok=True)
   if backup.exists() and backup.read_bytes() != original:
    raise RuntimeError(f'refusing to overwrite non-matching backup: {backup}')
   if not backup.exists(): backup.write_bytes(original)
