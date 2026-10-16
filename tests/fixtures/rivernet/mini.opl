@@ -1,0 +1,18 @@
+n1 v1 dV x25.0000000 y45.0000000 T
+n2 v1 dV x25.0010000 y45.0010000 T
+n3 v1 dV x25.0020000 y45.0020000 Twaterway=weir,name=Prag
+n4 v1 dV x25.0030000 y45.0030000 T
+n5 v1 dV x25.0010001 y45.0010500 T
+n6 v1 dV x25.0010002 y45.0011000 T
+n7 v1 dV x26.5000000 y46.5000000 T
+n8 v1 dV x26.5010000 y46.5010000 T
+n9 v1 dV x25.0100000 y45.0100000 Tplace=village,name=Plopeni,source=x
+n10 v1 dD x25.5 y45.5 T
+w10 v1 dV Twaterway=river,name=R%e2%ul%20%Mic,source=bing,name:en=Small%20%river Nn1,n2,n3,n4
+w11 v1 dV Tbridge=yes,highway=residential Nn5,n6
+w12 v1 dV Tbridge=yes,highway=residential Nn7,n8
+w13 v1 dV Thighway=residential Nn1,n6
+w14 v1 dV T Nn2,n4
+r20 v1 dV Ttype=waterway,name=Mic,waterway=river Mw10@main_stream,w14@,n3@weir
+r21 v1 dV Ttype=route,route=bus Mw13@
+r22 v1 dD Ttype=waterway Mw10@
