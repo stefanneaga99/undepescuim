@@ -200,6 +200,9 @@ class Context:
     uat_areas: list[Area] = field(default_factory=list)
     county_polys: dict[str, PolygonIndex] = field(default_factory=dict)
     country_poly: PolygonIndex | None = None
+    node_coords: dict[int, tuple[float, float]] = field(default_factory=dict)
+    way_coords: dict[int, list[tuple[float, float]]] = field(default_factory=dict)
+    area_by_id: dict[str, "Area"] = field(default_factory=dict)
     _lines: dict[str, Line] = field(default_factory=dict)
     _by_key: dict[str, list[str]] = field(default_factory=dict)
 
@@ -249,15 +252,19 @@ def build_context(
     for n in extract.nodes.values():
         t = n.tags
         if t.get("place") in PLACE_TAGS and t.get("name"):
+            ctx.node_coords[n.id] = n.coord
             p = Place(n.id, t["name"], n.coord)
             ctx.places.add(p, *n.coord)
             ctx.place_names.setdefault(core(t["name"]), []).append(p)
         wt = t.get("waterway")
         if wt in ("dam", "weir", "waterfall"):
+            ctx.node_coords[n.id] = n.coord
             ctx.features.add(Feature(n.id, wt, t.get("name"), [n.coord]), *n.coord)
     for w in extract.ways.values():
         t = w.tags
         wt = t.get("waterway")
+        if wt in ("dam", "weir", "waterfall") or (t.get("bridge") and (t.get("highway") or t.get("railway"))):
+            ctx.way_coords[w.id] = list(w.coords)
         if wt in ("dam", "weir", "waterfall"):
             mid = w.coords[len(w.coords) // 2]
             ctx.features.add(Feature(w.id, wt, t.get("name"), list(w.coords)), *mid)
@@ -275,8 +282,10 @@ def build_context(
                 ctx.county_polys[_county_key(t.get("name"))] = poly
             elif lvl == "8":
                 ctx.uat_areas.append(Area(a.id, t, poly))
+                ctx.area_by_id[a.id] = ctx.uat_areas[-1]
         elif t.get("natural") == "water" or t.get("landuse") == "reservoir":
             ctx.water_areas.append(Area(a.id, t, PolygonIndex(dict(a.geometry))))
+            ctx.area_by_id[a.id] = ctx.water_areas[-1]
     if counties_geojson and not ctx.county_polys:
         for f in counties_geojson.get("features", []):
             ctx.county_polys[_county_key(f["properties"].get("name"))] = PolygonIndex(f["geometry"])

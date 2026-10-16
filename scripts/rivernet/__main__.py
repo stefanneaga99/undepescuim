@@ -59,6 +59,13 @@ def _match(args: list[str]) -> int:
     return cli(args)
 
 
+def _resolve(args: list[str]) -> int:
+    from .sectors import cli
+
+    return cli(args)
+
+
+HANDLERS["resolve"] = _resolve
 HANDLERS["parse"] = _parse
 HANDLERS["match"] = _match
 HANDLERS["build"] = _build

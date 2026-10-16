@@ -1,0 +1,360 @@
+"""Sector assembly, status and validation (plan T3.4).
+
+``resolve_sector`` turns (water, parsed limit, matched course) into a
+``SectorRecord`` dict (plan §3.5); ``flag_overlaps`` adds the cross-sector
+overlap check; ``cli`` is ``python -m rivernet resolve``.
+"""
+
+from __future__ import annotations
+
+import json
+from typing import Any, Iterable, Mapping
+
+from .matcher import contract_km
+from .resolvers import Candidate, Context, resolve_endpoint
+from .textnorm import fold
+
+SAME_POINT_M = 200.0
+AMBIGUOUS_GAP = 0.1
+AMBIGUOUS_M = 200.0
+MAX_SEGMENT_M = 1000.0
+COUNTY_BUFFER_M = 500.0
+BAND_RESOLVED = (0.6, 1.6)
+BAND_HIGH = (0.8, 1.25)
+MIN_CONF_RESOLVED = 0.6
+MIN_CONF_HIGH = 0.8
+OVERLAP_REVIEW_SHARE = 0.5
+
+
+# ---------------------------------------------------------------- endpoint dicts
+
+
+def _ep(kind: str, c: Candidate) -> dict[str, Any]:
+    return {"m": round(c.m, 1), "kind": kind, "anchor": c.anchor, "confidence": c.confidence,
+            "method": c.method, "dist_m": None if c.dist_m is None else round(c.dist_m, 1)}
+
+
+def _override_candidate(ov: Mapping[str, Any], course: Mapping[str, Any], ctx: Context, role: str) -> Candidate | None:
+    a = ov["anchor"]
+    line = ctx.line(course)
+    t = a["type"]
+    if t == "measure":
+        m = float(a["m"])
+        if m > course["length_m"]:
+            return None
+        return Candidate(m, 1.0, "override", {"type": "measure"})
+    if t == "node":
+        pt = ctx.node_coords.get(a["id"])
+        if pt is None:
+            return None
+        m, d = line.locate(*pt)
+        return Candidate(m, 1.0, "override", {"type": "node", "id": a["id"]}, d)
+    if t == "way":
+        pts = ctx.way_coords.get(a["id"])
+        if not pts:
+            return None
+        m, d = min((line.locate(*p) for p in pts), key=lambda x: x[1])
+        return Candidate(m, 1.0, "override", {"type": "way", "id": a["id"]}, d)
+    area = ctx.area_by_id.get(str(a["id"]))
+    if area is None:
+        return None
+    from .courses import county_intervals
+
+    iv = county_intervals(line, area.poly)
+    if not iv:
+        return None
+    return Candidate(iv[0][0] if role == "from" else iv[-1][1], 1.0, "override", {"type": "area", "id": a["id"]})
+
+
+def _pick(cands: list[Candidate]) -> tuple[Candidate | None, list[str]]:
+    if not cands:
+        return None, []
+    reasons = []
+    if len(cands) > 1 and cands[0].confidence - cands[1].confidence < AMBIGUOUS_GAP \
+            and abs(cands[0].m - cands[1].m) > AMBIGUOUS_M:
+        reasons.append("ambiguous")
+    return cands[0], reasons
+
+
+# ------------------------------------------------------------------- the record
+
+
+def _base(water: Mapping[str, Any], spec: Mapping[str, Any], match: Mapping[str, Any], network_version: str) -> dict[str, Any]:
+    km = contract_km(water.get("dimensiune"))
+    return {
+        "slug": water["slug"], "name": water.get("name"), "judet": water.get("judet"),
+        "limite": water.get("limite") or "", "contract_km": km,
+        "includes_tributaries": bool(spec.get("includes_tributaries")),
+        "parse": {"scope": spec.get("scope"), "from": spec.get("from"), "to": spec.get("to")},
+        "course": {"course_id": match.get("course_id"), "match_score": match.get("score"), "method": match.get("method")},
+        "from": None, "to": None, "length_m": None, "km_ratio": None,
+        "status": "unresolved", "confidence": "low", "reasons": [], "override_ids": [],
+        "network_version": network_version,
+    }
+
+
+def _unresolved(rec: dict[str, Any], *reasons: str) -> dict[str, Any]:
+    rec["status"], rec["confidence"] = "unresolved", "low"
+    rec["reasons"] = sorted(set(rec["reasons"]) | set(reasons))
+    return rec
+
+
+def _band(ratio: float | None, band: tuple[float, float], tribs: bool) -> bool:
+    if ratio is None:
+        return True
+    if tribs:
+        return ratio <= band[1]
+    return band[0] <= ratio <= band[1]
+
+
+def classify(rec: dict[str, Any]) -> None:
+    """Set ``status`` and ``confidence`` from endpoint confidences and km_ratio (§3.5)."""
+    lo = min(rec["from"]["confidence"], rec["to"]["confidence"])
+    ratio, tribs = rec["km_ratio"], rec["includes_tributaries"]
+    known = ratio is not None
+    if lo >= MIN_CONF_HIGH and known and _band(ratio, BAND_HIGH, tribs):
+        conf = "high"
+    elif lo >= MIN_CONF_RESOLVED and _band(ratio, BAND_RESOLVED, tribs):
+        conf = "medium"
+    else:
+        conf = "low"
+    rec["confidence"] = conf
+    rec["status"] = "resolved" if conf in ("high", "medium") else "review"
+    if lo < MIN_CONF_RESOLVED:
+        rec["reasons"].append("endpoint_confidence_low")
+    if known and not _band(ratio, BAND_RESOLVED, tribs):
+        rec["reasons"].append("km_ratio_out_of_band")
+
+
+def validate(rec: dict[str, Any], course: Mapping[str, Any], ctx: Context) -> list[str]:
+    """Invariants of §3.5; returns the names of the failed ones."""
+    bad: list[str] = []
+    f, t = rec["from"]["m"], rec["to"]["m"]
+    if not (0 <= f < t <= course["length_m"] + 0.5) or abs(rec["length_m"] - (t - f)) > 0.2:
+        bad.append("measure_order")
+        return bad
+    for end in ("from", "to"):
+        e = rec[end]
+        if e["kind"] == "CONFLUENCE" and e["method"] in ("tributary_junction", "outlet_into_named"):
+            ok = abs(e["m"] - course["length_m"]) <= 1.0 or any(abs(e["m"] - j["m"]) <= 1.0 for j in course.get("junctions") or [])
+            if not ok:
+                bad.append(f"confluence_not_on_junction:{end}")
+    line = ctx.line(course)
+    pts = line.substring(f, t)
+    spans = [(s["m_from"] - 1, s["m_to"] + 1) for s in course.get("synthetic") or []]
+    from .geodesy import vincenty_m
+
+    for a, b in zip(pts, pts[1:]):
+        seg = vincenty_m(a[0], a[1], b[0], b[1])
+        if seg > MAX_SEGMENT_M:
+            mid = line.locate((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)[0]
+            if not any(lo <= mid <= hi for lo, hi in spans):
+                bad.append("segment_gt_1km")
+                break
+    poly = ctx.county_polys.get(fold(rec.get("judet")))
+    if poly is not None and "COUNTY_LIMIT" not in (rec["from"]["kind"], rec["to"]["kind"]):
+        samples = [pts[0], pts[len(pts) // 2], pts[-1]]
+        if all(poly.distance_m(x, y, COUNTY_BUFFER_M) > COUNTY_BUFFER_M for x, y in samples):
+            bad.append("outside_county")
+    return bad
+
+
+def _finish(rec, course, ctx) -> dict[str, Any]:
+    rec["length_m"] = round(rec["to"]["m"] - rec["from"]["m"], 1)
+    km = rec["contract_km"]
+    rec["km_ratio"] = round(rec["length_m"] / (km * 1000), 3) if km else None
+    classify(rec)
+    bad = validate(rec, course, ctx)
+    if bad:
+        rec["reasons"] += [f"invariant:{b}" for b in bad]
+        if rec["status"] == "resolved":
+            rec["status"] = "review"
+        rec["confidence"] = "low"
+    rec["reasons"] = sorted(set(rec["reasons"]))
+    return rec
+
+
+def resolve_sector(
+    water: Mapping[str, Any],
+    spec: Mapping[str, Any],
+    match: Mapping[str, Any],
+    ctx: Context,
+    endpoint_overrides: Mapping[tuple[str, str], Mapping[str, Any]] | None = None,
+    network_version: str = "",
+) -> dict[str, Any]:
+    rec = _base(water, spec, match, network_version)
+    dim = (water.get("dimensiune") or "").lower()
+    if " ha" in dim or dim.strip().endswith("ha"):
+        rec["contract_km"] = None
+        rec["reasons"].append("contract_unit_ha")
+    elif rec["contract_km"] is None:
+        rec["reasons"].append("contract_km_missing")
+    scope = spec.get("scope")
+    if scope in ("empty", "unparsed", None):
+        return _unresolved(rec, "limite_unusable")
+    cid = match.get("course_id")
+    course = ctx.courses.get(cid) if cid else None
+    if course is None:
+        return _unresolved(rec, "course_" + (match.get("method") or "missing") if not cid else "course_record_missing")
+    ovs = endpoint_overrides or {}
+    judet = water.get("judet")
+    length = course["length_m"]
+
+    if scope == "whole_course":
+        c0, c1 = Candidate(0.0, 0.95, "whole_course"), Candidate(length, 0.95, "whole_course")
+        rec["from"], rec["to"] = _ep("SOURCE", c0), _ep("MOUTH", c1)
+    elif scope == "whole_county":
+        want = fold(spec.get("county") or "")
+        ivs = [(c["m_from"], c["m_to"]) for c in course.get("counties") or [] if fold(c.get("county")) == want]
+        if not ivs:
+            return _unresolved(rec, "county_not_on_course")
+        if len(ivs) > 1:
+            rec["reasons"].append("county_interval_multiple")
+        a, b = max(ivs, key=lambda x: x[1] - x[0])
+        rec["from"] = _ep("COUNTY", Candidate(a, 0.9, "county_interval"))
+        rec["to"] = _ep("COUNTY", Candidate(b, 0.9, "county_interval"))
+    elif scope == "locality_list":
+        found: list[Candidate] = []
+        for name in spec.get("localities") or []:
+            cs = resolve_endpoint({"kind": "LOCALITY", "target": name, "qualifier": "at"}, course, ctx, role="from", judet=judet)
+            if cs:
+                found.append(cs[0])
+        if len(found) < 2:
+            return _unresolved(rec, "locality_list_unresolved")
+        lo, hi = min(found, key=lambda c: c.m), max(found, key=lambda c: c.m)
+        rec["from"], rec["to"] = _ep("LOCALITY", lo), _ep("LOCALITY", hi)
+    elif scope == "interval":
+        specs = {"from": spec.get("from"), "to": spec.get("to")}
+        picked: dict[str, Candidate | None] = {}
+        allc: dict[str, list[Candidate]] = {}
+        order = sorted(("from", "to"), key=lambda e: (specs[e] or {}).get("kind") == "BRIDGE")
+        km = rec["contract_km"]
+        for end in order:
+            es = specs[end]
+            if es is None:
+                picked[end], allc[end] = None, []
+                continue
+            if (slug_end := (water["slug"], end)) in ovs:
+                oc = _override_candidate(ovs[slug_end], course, ctx, end)
+                if oc is not None:
+                    rec["override_ids"].append(f"{water['slug']}:{end}")
+                    picked[end], allc[end] = oc, [oc]
+                    continue
+            other = picked.get("to" if end == "from" else "from")
+            window = None
+            if other is not None:
+                span = km * 1000 * BAND_RESOLVED[1] if km else length
+                window = (max(0.0, other.m - span), other.m) if end == "from" else (other.m, min(length, other.m + span))
+            cs = resolve_endpoint(es, course, ctx, role=end, judet=judet, window=window)
+            allc[end] = cs
+            p, why = _pick(cs)
+            picked[end] = p
+            rec["reasons"] += [f"endpoint_{w}:{end}" for w in why]
+        for end in ("from", "to"):
+            if picked.get(end) is None:
+                rec["reasons"].append(f"endpoint_unresolved:{end}")
+        if picked["from"] is None or picked["to"] is None:
+            return _unresolved(rec)
+        f, t = picked["from"], picked["to"]
+        if abs(f.m - t.m) < SAME_POINT_M:
+            weak = "from" if f.confidence <= t.confidence else "to"
+            alt = [c for c in allc[weak][1:] if abs(c.m - (t if weak == "from" else f).m) >= SAME_POINT_M]
+            if alt:
+                if weak == "from":
+                    f = alt[0]
+                else:
+                    t = alt[0]
+                rec["reasons"].append(f"second_best:{weak}")
+        kf, kt = specs["from"]["kind"], specs["to"]["kind"]
+        if f.m > t.m:
+            f, t, kf, kt = t, f, kt, kf
+            rec["reasons"].append("swapped_order")
+        rec["from"], rec["to"] = _ep(kf, f), _ep(kt, t)
+    else:
+        return _unresolved(rec, "scope_unsupported")
+    if rec["to"]["m"] - rec["from"]["m"] <= 0:
+        return _unresolved(rec, "empty_sector")
+    return _finish(rec, course, ctx)
+
+
+# --------------------------------------------------------------------- overlaps
+
+
+def flag_overlaps(records: list[dict[str, Any]]) -> None:
+    """Flag ``overlap:<slug>`` on both sides; > 50% of the shorter sector (and
+    neither is whole_county) downgrades ``resolved`` to ``review``."""
+    by_course: dict[str, list[dict[str, Any]]] = {}
+    for r in records:
+        if r["from"] and r["to"] and r["course"]["course_id"]:
+            by_course.setdefault(r["course"]["course_id"], []).append(r)
+    for recs in by_course.values():
+        recs.sort(key=lambda r: r["slug"])
+        for i, a in enumerate(recs):
+            for b in recs[i + 1:]:
+                lo = max(a["from"]["m"], b["from"]["m"])
+                hi = min(a["to"]["m"], b["to"]["m"])
+                if hi - lo <= 1.0:
+                    continue
+                for x, y in ((a, b), (b, a)):
+                    x["reasons"] = sorted(set(x["reasons"]) | {f"overlap:{y['slug']}"})
+                shorter = min(a["length_m"], b["length_m"])
+                county = "whole_county" in (a["parse"]["scope"], b["parse"]["scope"])
+                if shorter > 0 and (hi - lo) / shorter > OVERLAP_REVIEW_SHARE and not county:
+                    for x in (a, b):
+                        if x["status"] == "resolved":
+                            x["status"] = "review"
+                        x["reasons"] = sorted(set(x["reasons"]) | {"overlap_gt_50pct"})
+
+
+# -------------------------------------------------------------------------- CLI
+
+
+def cli(argv: list[str]) -> int:
+    """`python -m rivernet resolve`: write data/sectors/sectors.jsonl."""
+    import argparse
+    import gzip
+    import sys
+    from collections import Counter
+    from pathlib import Path
+
+    from .extract_schema import load_extract
+    from .overrides import load_endpoint_overrides
+    from .resolvers import build_context
+
+    ap = argparse.ArgumentParser(prog="rivernet resolve")
+    ap.add_argument("--extract", required=True)
+    ap.add_argument("--courses", default="data/rivernet/courses.jsonl.gz")
+    ap.add_argument("--waters", default="public/data/waters.json")
+    ap.add_argument("--parsed", default="data/sectors/limits_parsed.jsonl")
+    ap.add_argument("--matches", default="data/sectors/matches.jsonl")
+    ap.add_argument("--overrides", default="data/sectors/endpoint_overrides.json")
+    ap.add_argument("--counties", default="public/data/counties.geojson")
+    ap.add_argument("--out", default="data/sectors/sectors.jsonl")
+    ns = ap.parse_args(argv)
+
+    for p in (ns.courses, ns.parsed, ns.matches):
+        if not Path(p).exists():
+            print(f"rivernet resolve: {p} missing - run build/parse/match first", file=sys.stderr)
+            return 1
+    ex = load_extract(ns.extract)
+    with gzip.open(ns.courses, "rt", encoding="utf-8") as f:
+        courses = [json.loads(x) for x in f if x.strip()]
+    cj = json.loads(Path(ns.counties).read_text(encoding="utf-8")) if Path(ns.counties).exists() else None
+    ctx = build_context(ex, courses, cj)
+    ts = (ex.meta.osm_timestamp or "")[:10].replace("-", "")
+    version = f"ro-water-{ts}" if ts else "ro-water-unknown"
+    parsed = {r["slug"]: r["spec"] for r in map(json.loads, Path(ns.parsed).read_text(encoding="utf-8").splitlines())}
+    matches = {r["slug"]: r for r in map(json.loads, Path(ns.matches).read_text(encoding="utf-8").splitlines())}
+    ovs = load_endpoint_overrides(ns.overrides)
+    waters = json.loads(Path(ns.waters).read_text(encoding="utf-8"))
+    recs = []
+    for w in sorted((w for w in waters if w.get("subtype") == "rau"), key=lambda w: w["slug"]):
+        recs.append(resolve_sector(w, parsed.get(w["slug"], {"scope": "empty"}), matches.get(w["slug"], {}), ctx, ovs, version))
+    flag_overlaps(recs)
+    out = Path(ns.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with out.open("w", encoding="utf-8", newline="\n") as f:
+        for r in recs:
+            f.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
+    print(json.dumps(dict(sorted(Counter(r["status"] for r in recs).items()))))
+    return 0
