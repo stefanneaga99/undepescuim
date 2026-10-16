@@ -13,7 +13,11 @@ import path from 'node:path';
 /** Default staging directory, relative to the repository root. */
 export const DEFAULT_REFRESH_DIR = path.join('data', 'raw', 'refresh');
 
-/** True when `child` is `parent` itself or lies inside it. */
+/**
+ * True when `child` is `parent` itself or lies inside it.
+ * @param {string} parent
+ * @param {string} child
+ */
 function isInside(parent, child) {
   const rel = path.relative(parent, child);
   return rel === '' || (!rel.startsWith('..') && !path.isAbsolute(rel));
@@ -23,6 +27,9 @@ function isInside(parent, child) {
  * Resolve the directory refresh outputs are written to.
  * Honours `REFRESH_OUTPUT_DIR` (absolute, or relative to `root`). Throws if the
  * result is `public/` or anywhere below it.
+ * @param {string} root repository root
+ * @param {Record<string, string | undefined>} [env]
+ * @returns {string}
  */
 export function resolveRefreshOutputDir(root, env = process.env) {
   const configured = env.REFRESH_OUTPUT_DIR;
@@ -38,6 +45,9 @@ export function resolveRefreshOutputDir(root, env = process.env) {
 /**
  * Join a source-provided relative path onto the output dir, refusing anything
  * that would escape it (absolute paths, `..` segments).
+ * @param {string} outputDir
+ * @param {string} relPath
+ * @returns {string}
  */
 export function safeOutputPath(outputDir, relPath) {
   if (typeof relPath !== 'string' || relPath.length === 0) {
