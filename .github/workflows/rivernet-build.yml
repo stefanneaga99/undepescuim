@@ -47,6 +47,12 @@ jobs:
           PYTHONPATH=scripts python -m rivernet build \
             --extract work/water-extract.jsonl.gz --out-dir data/rivernet
           cat data/rivernet/build_summary.json
+      - name: Parse limits and match courses
+        run: |
+          PYTHONPATH=scripts python -m rivernet parse
+          courses=data/rivernet/courses.jsonl.gz
+          if [ ! -f "$courses" ]; then courses=data/rivernet/courses_all.jsonl.gz; fi
+          PYTHONPATH=scripts python -m rivernet match --courses "$courses"
       - name: Open pull request
         env:
           GH_TOKEN: ${{ github.token }}
