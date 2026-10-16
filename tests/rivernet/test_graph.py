@@ -1,20 +1,7 @@
-from rivernet.extract_schema import Extract, Meta, Way
+from _factory import make_extract
+from rivernet.extract_schema import Way
 from rivernet.geodesy import line_length_m, vincenty_m
 from rivernet.graph import build_graph
-
-
-def make_extract(ways):
-    """ways: list of (way_id, [(node_id, lon, lat), ...], tags)."""
-    meta = Meta(1, "test", None, None, None, None, None)
-    ex = Extract(meta=meta)
-    for wid, pts, tags in ways:
-        ex.ways[wid] = Way(
-            id=wid,
-            nodes=tuple(p[0] for p in pts),
-            coords=tuple((p[1], p[2]) for p in pts),
-            tags=tags,
-        )
-    return ex
 
 
 RIVER = {"waterway": "river", "name": "Râul Mare"}
