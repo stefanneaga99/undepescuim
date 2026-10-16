@@ -1,0 +1,2893 @@
+{
+ "_comment": "Hand-labelled; never generated from parser output. Real strings from public/data/waters.json.",
+ "cases": [
+  {
+   "raw": "Izvoare - conf. râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "de la izvoare - la confluența cu Râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. râul Someșul Mare",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Someșul Mare"
+   }
+  },
+  {
+   "raw": "izvoare- conf. Râul Trotuș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Trotuș"
+   }
+  },
+  {
+   "raw": "Izvoare - vârsare în råul Arieş",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Arieș"
+   }
+  },
+  {
+   "raw": "De la izvoare pana la Paraul Iza",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Iza"
+   }
+  },
+  {
+   "raw": "Izvoare - confluența cu Râul Mureş",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. pârâul Bumbului",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bumbului"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. râul Valea Ilvei",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Ilvei"
+   }
+  },
+  {
+   "raw": "Izvoare – vărsare, în râul Luncavăț",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Luncavăț"
+   }
+  },
+  {
+   "raw": "Izvoare - confl cu Râul Jiu",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Jiu"
+   }
+  },
+  {
+   "raw": "Izvoare - la confluenţa cu râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "izvoare - confluența cu Râul Gurghiu",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Gurghiu"
+   }
+  },
+  {
+   "raw": "Izvoare - vărsare Bistriţa",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bistrița"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. Șieu.",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Șieu"
+   }
+  },
+  {
+   "raw": "Izvoare-conf. Dunărea",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Dunărea"
+   }
+  },
+  {
+   "raw": "Izvoare – Conf. Cu Râul Negru",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Negru"
+   }
+  },
+  {
+   "raw": "izvoare - conf. cu Valea Băiței",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Băiței"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. cu Bârsa Fierarului și toți afluenții",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bârsa Fierarului"
+   },
+   "includes_tributaries": true
+  },
+  {
+   "raw": "Izvoare - confluența cu Dunărea",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Dunărea"
+   }
+  },
+  {
+   "raw": "Izvoare - la confl cu Pârâul Vinului",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Vinului"
+   }
+  },
+  {
+   "raw": "izvoare – conf. cu Siretul",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Siretul"
+   }
+  },
+  {
+   "raw": "Izvoare – conf. Târnava Mare",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Târnava Mare"
+   }
+  },
+  {
+   "raw": "Izvoare - confl. cu râul Timiș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Timiș"
+   }
+  },
+  {
+   "raw": "Aval baraj Prisaca - confluența cu pr. Belareca",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Prisaca"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Belareca"
+   }
+  },
+  {
+   "raw": "Izvoare – Pod CFR",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "road_ref": "CFR"
+   }
+  },
+  {
+   "raw": "Izvoare - baraj Baciu",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Baciu"
+   }
+  },
+  {
+   "raw": "izvoare – baraj Râușor",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Râușor"
+   }
+  },
+  {
+   "raw": "Izvoare – Baraj Măneciu",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Măneciu"
+   }
+  },
+  {
+   "raw": "Izvoare - Amonte Lac Bondureasa",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Bondureasa"
+   }
+  },
+  {
+   "raw": "Izvoare – vărsare în lacul Colibița",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Colibița"
+   }
+  },
+  {
+   "raw": "Izvoare – vărsare în Lacul de acumulare Brădișor",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Brădișor"
+   }
+  },
+  {
+   "raw": "Izvoare – coada lac Zetea",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Zetea"
+   }
+  },
+  {
+   "raw": "Izvoare - lac Oașa",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Oașa"
+   }
+  },
+  {
+   "raw": "Izvoare - confluența Lac Vidraru",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Vidraru"
+   }
+  },
+  {
+   "raw": "Izvoare - confl. Lac Beliș",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Beliș"
+   }
+  },
+  {
+   "raw": "Izvoare-Frontieră cu Ungaria",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Ungaria"
+   }
+  },
+  {
+   "raw": "Izvoare – limită jud. Bacău",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Bacău"
+   }
+  },
+  {
+   "raw": "Izvor – limită jud. Harghita",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Harghita"
+   }
+  },
+  {
+   "raw": "izvoare – pod Groșii",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Groșii"
+   }
+  },
+  {
+   "raw": "izvoare - pod sat Corbești",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Corbești"
+   }
+  },
+  {
+   "raw": "Izvoare – podul de ciment Budacul de Sus",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Budacul de Sus"
+   }
+  },
+  {
+   "raw": "Izvoare - localitatea Văleni",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Văleni"
+   }
+  },
+  {
+   "raw": "Izvoare-sat Vaidei",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Vaidei"
+   }
+  },
+  {
+   "raw": "Izvoare - intrare Zlatna",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "upstream",
+    "target": "Zlatna"
+   }
+  },
+  {
+   "raw": "Izvoare - amonte sat Preoreasa",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "upstream",
+    "target": "Preoreasa"
+   }
+  },
+  {
+   "raw": "Izvoare – aval loc. Crișeni",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "downstream",
+    "target": "Crișeni"
+   }
+  },
+  {
+   "raw": "Izvoare - DN 1",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "ROAD",
+    "qualifier": "at",
+    "road_ref": "DN 1"
+   }
+  },
+  {
+   "raw": "Izvoare - drum forestier Bodvai",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "ROAD",
+    "qualifier": "at",
+    "locality_hint": "Bodvai"
+   }
+  },
+  {
+   "raw": "izvoare – Dămăcușeni",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Dămăcușeni"
+   }
+  },
+  {
+   "raw": "Izvoare - cascada Putnei",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "WATERFALL",
+    "qualifier": "at",
+    "target": "Putnei"
+   }
+  },
+  {
+   "raw": "izvoare până la Cheile Râmeț",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cheile Râmeț"
+   }
+  },
+  {
+   "raw": "izvoare – Valea Ruoaia",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Ruoaia"
+   }
+  },
+  {
+   "raw": "Izvoare - Râul Bâlea",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bâlea"
+   }
+  },
+  {
+   "raw": "izvoare - Râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Izvoare-DN 67 D Tg. Jiu-Baia de Aramă",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "ROAD",
+    "qualifier": "at",
+    "locality_hint": "Tg. Jiu-Baia de Aramă",
+    "road_ref": "DN 67D"
+   }
+  },
+  {
+   "raw": "izvoare, loc. Groși – conf. cu râul Crișul Repede",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at",
+    "locality_hint": "Groși"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crișul Repede"
+   }
+  },
+  {
+   "raw": "Izvorul Bradeana - Valea Băii",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at",
+    "locality_hint": "Bradeana"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Băii"
+   }
+  },
+  {
+   "raw": "Izvoare Vl. Canciu - confl. cu Vl. Molivis",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at",
+    "locality_hint": "Vl. Canciu"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Vl. Molivis"
+   }
+  },
+  {
+   "raw": "Pe raza județului Dâmbovița",
+   "scope": "whole_county",
+   "county": "Dâmbovița"
+  },
+  {
+   "raw": "pe raza județului Teleorman",
+   "scope": "whole_county",
+   "county": "Teleorman"
+  },
+  {
+   "raw": "Județ Arad",
+   "scope": "whole_county",
+   "county": "Arad"
+  },
+  {
+   "raw": "jud. Călărași",
+   "scope": "whole_county",
+   "county": "Călărași"
+  },
+  {
+   "raw": "pe raza jud. Dolj",
+   "scope": "whole_county",
+   "county": "Dolj"
+  },
+  {
+   "raw": "Pe teritoriul jud. Neamț",
+   "scope": "whole_county",
+   "county": "Neamț"
+  },
+  {
+   "raw": "pe raza jud. Vrancea",
+   "scope": "whole_county",
+   "county": "Vrancea"
+  },
+  {
+   "raw": "Intrare județ Buzău – ieșire județ Buzău.",
+   "scope": "whole_county",
+   "county": "Buzău"
+  },
+  {
+   "raw": "intrare județ Bacău - ieșire din județ Bacău fără lacurile de acumulare",
+   "scope": "whole_county",
+   "county": "Bacău"
+  },
+  {
+   "raw": "partea neamenajată pe raza județului Teleorman",
+   "scope": "whole_county",
+   "county": "Teleorman"
+  },
+  {
+   "raw": "toata lungimea canalului",
+   "scope": "whole_course"
+  },
+  {
+   "raw": "cursul principal",
+   "scope": "whole_course"
+  },
+  {
+   "raw": "",
+   "scope": "empty"
+  },
+  {
+   "raw": "-",
+   "scope": "empty"
+  },
+  {
+   "raw": "—",
+   "scope": "empty"
+  },
+  {
+   "raw": "Surcea, Sântionlunca, Ozun, Comandău",
+   "scope": "locality_list",
+   "localities": [
+    "Surcea",
+    "Sântionlunca",
+    "Ozun",
+    "Comandău"
+   ]
+  },
+  {
+   "raw": "Cefa - Rădvani",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cefa"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Rădvani"
+   }
+  },
+  {
+   "raw": "Tărian – Tămașda",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tărian"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tămașda"
+   }
+  },
+  {
+   "raw": "Huțani – Corni",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Huțani"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Corni"
+   }
+  },
+  {
+   "raw": "Oroftiana de Sus – Bădărăi",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Oroftiana de Sus"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bădărăi"
+   }
+  },
+  {
+   "raw": "Lungești – Gligorești",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Lungești"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Gligorești"
+   }
+  },
+  {
+   "raw": "Baia de Arieș – Vidolm",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Baia de Arieș"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Vidolm"
+   }
+  },
+  {
+   "raw": "Dersca – Lunca",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Dersca"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Lunca"
+   }
+  },
+  {
+   "raw": "Suharău – Românești",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Suharău"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Românești"
+   }
+  },
+  {
+   "raw": "Peștișani - Rogojel",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Peștișani"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Rogojel"
+   }
+  },
+  {
+   "raw": "Slătioara - Bălcești",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Slătioara"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bălcești"
+   }
+  },
+  {
+   "raw": "Mănești – Ologeni",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Mănești"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ologeni"
+   }
+  },
+  {
+   "raw": "Malul cu Flori – Brezoaele",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Malul cu Flori"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Brezoaele"
+   }
+  },
+  {
+   "raw": "Fieni - Buftea",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Fieni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Buftea"
+   }
+  },
+  {
+   "raw": "Ulmi - Ciocănești",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ulmi"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ciocănești"
+   }
+  },
+  {
+   "raw": "Bumbești Jiu - Țânțăreni",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bumbești Jiu"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Țânțăreni"
+   }
+  },
+  {
+   "raw": "Mihăileni – Talpa",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Mihăileni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Talpa"
+   }
+  },
+  {
+   "raw": "Baia de Aramă - Corcova",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Baia de Aramă"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Corcova"
+   }
+  },
+  {
+   "raw": "Stâna de Mureș- Băcăinți",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Stâna de Mureș"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Băcăinți"
+   }
+  },
+  {
+   "raw": "Celei - Arjoci",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Celei"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Arjoci"
+   }
+  },
+  {
+   "raw": "Tudora – Pleșu",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tudora"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Pleșu"
+   }
+  },
+  {
+   "raw": "Glambocata – Potlogi",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Glambocata"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Potlogi"
+   }
+  },
+  {
+   "raw": "Roșia de Secaș – Obreja",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Roșia de Secaș"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Obreja"
+   }
+  },
+  {
+   "raw": "Runcu – Stolojani",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Runcu"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Stolojani"
+   }
+  },
+  {
+   "raw": "Cetatea de Baltă – Blaj",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cetatea de Baltă"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Blaj"
+   }
+  },
+  {
+   "raw": "Tismana - Rogojel",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tismana"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Rogojel"
+   }
+  },
+  {
+   "raw": "Culmea Dărăbani – Ripiceni",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Culmea Dărăbani"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ripiceni"
+   }
+  },
+  {
+   "raw": "Bărăteaz - Beregsău Mare",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bărăteaz"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Beregsău Mare"
+   }
+  },
+  {
+   "raw": "Gelu - Biled",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Gelu"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Biled"
+   }
+  },
+  {
+   "raw": "Darova - Boldur",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Darova"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Boldur"
+   }
+  },
+  {
+   "raw": "Sculea - Deta",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Sculea"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Deta"
+   }
+  },
+  {
+   "raw": "Foieni - Sânmartinu Maghiar",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Foieni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Sânmartinu Maghiar"
+   }
+  },
+  {
+   "raw": "Salcia – Cetate",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Salcia"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cetate"
+   }
+  },
+  {
+   "raw": "Moțăței – Catane",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Moțăței"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Catane"
+   }
+  },
+  {
+   "raw": "Leica Veche – Călugăreni",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Leica Veche"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Călugăreni"
+   }
+  },
+  {
+   "raw": "Ionășeni – Bucecea",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ionășeni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bucecea"
+   }
+  },
+  {
+   "raw": "Darabani – Bajura",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Darabani"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bajura"
+   }
+  },
+  {
+   "raw": "Zalău – Moiad",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Zalău"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Moiad"
+   }
+  },
+  {
+   "raw": "Huța – Jibou",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Huța"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Jibou"
+   }
+  },
+  {
+   "raw": "Fildu de sus – Tihău",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Fildu de sus"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tihău"
+   }
+  },
+  {
+   "raw": "Gârceiu – Cehu Silvaniei",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Gârceiu"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cehu Silvaniei"
+   }
+  },
+  {
+   "raw": "Năpradea – Traniș",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Năpradea"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Traniș"
+   }
+  },
+  {
+   "raw": "Loc. Dobriceni – conf. Raul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Dobriceni"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Comuna Crăiești – conf. Râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Crăiești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Localitatea Batoș – conf. Râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Batoș"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "loc. Augustin – Veneția de Jos",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Augustin"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Veneția de Jos"
+   }
+  },
+  {
+   "raw": "Loc. Rădeni – loc. Tutova",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Rădeni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Tutova"
+   }
+  },
+  {
+   "raw": "Localitatea Moeciul de Sus - localitatea Predeluț",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Moeciul de Sus"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Predeluț"
+   }
+  },
+  {
+   "raw": "Gârceni – loc. Vaslui",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Gârceni"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Vaslui"
+   }
+  },
+  {
+   "raw": "Baraj Bondureasa - localitatea Caps",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Bondureasa"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Caps"
+   }
+  },
+  {
+   "raw": "baraj Dobroneanu – comuna Brădet",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Dobroneanu"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Brădet"
+   }
+  },
+  {
+   "raw": "Acumulare Liebling - comuna Gad",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Liebling"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Gad"
+   }
+  },
+  {
+   "raw": "Confl. Valea Drăganului - Confl. Valea Iadului",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Drăganului"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Iadului"
+   }
+  },
+  {
+   "raw": "conf. Pârâul Cărăsău - conf. Râul Trotuș",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Cărăsău"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Trotuș"
+   }
+  },
+  {
+   "raw": "conf. râul Crișul Pietros – conf. Valea Finișului",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crișul Pietros"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Finișului"
+   }
+  },
+  {
+   "raw": "Conf. pârâul Nadășa – conf. Râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Nadășa"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "conf. pârâul Crivadia – conf. râul Bărbat",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crivadia"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bărbat"
+   }
+  },
+  {
+   "raw": "conf. Valea Râșnoavei – conf. Valea Fetii",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Râșnoavei"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Fetii"
+   }
+  },
+  {
+   "raw": "conf. cu pârâul Putna – conf. cu râul Siret",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Putna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Siret"
+   }
+  },
+  {
+   "raw": "conf. Râul Taia – conf. cu Jiul de vest",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Taia"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Jiul de vest"
+   }
+  },
+  {
+   "raw": "Conf. Pârâul Bumbului - conf. râul Someșul Mare",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bumbului"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Someșul Mare"
+   }
+  },
+  {
+   "raw": "conf. Râul Giurgea - conf. Râul Lăpuș",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Giurgea"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Lăpuș"
+   }
+  },
+  {
+   "raw": "confl. pr. Brateș - la confl. cu pîrîul Bistrița",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Brateș"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Bistrița"
+   }
+  },
+  {
+   "raw": "conf. Basca Mare - conf. cu râul Buzău",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Basca Mare"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Buzău"
+   }
+  },
+  {
+   "raw": "Conf. cu Brădești – conf. cu Milcoiu Alb",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Brădești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Milcoiu Alb"
+   }
+  },
+  {
+   "raw": "Confluența Valea Iazului - pod Nușfalău",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Valea Iazului"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Nușfalău"
+   }
+  },
+  {
+   "raw": "vărsare pârâul Crasna – vărsare râul Grămăticu",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crasna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Grămăticu"
+   }
+  },
+  {
+   "raw": "Aval pârâu Dobra - Baia de Arieș",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "downstream",
+    "target": "Dobra"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Baia de Arieș"
+   }
+  },
+  {
+   "raw": "Zlatna - conf. râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Zlatna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Cheile Râmet - conf. Cu Råul Mureş",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cheile Râmet"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Bucunici - conf. râul Sebeș",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bucunici"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Sebeș"
+   }
+  },
+  {
+   "raw": "Copăceni – conf. cu râul Crișul Negru",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Copăceni"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crișul Negru"
+   }
+  },
+  {
+   "raw": "Fundata – conf. Râul Arieșul Mare",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Fundata"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Arieșul Mare"
+   }
+  },
+  {
+   "raw": "Milcoiu - Râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Milcoiu"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Loc. Filia – Râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Filia"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Baraj Ișalnița – Râul Jiu",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Ișalnița"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Jiu"
+   }
+  },
+  {
+   "raw": "Făurei Sat-conf. cu Dunărea",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Făurei Sat"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Dunărea"
+   }
+  },
+  {
+   "raw": "Hotarele – vărsare Dunăre",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Hotarele"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Dunăre"
+   }
+  },
+  {
+   "raw": "Baraj Brădișor-conf. Râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Brădișor"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Baraj Leșu - confl. Crișul Repede",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Leșu"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Crișul Repede"
+   }
+  },
+  {
+   "raw": "barajul Siriu – vărsare",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Siriu"
+   },
+   "to": {
+    "kind": "MOUTH",
+    "qualifier": "at"
+   }
+  },
+  {
+   "raw": "Baraj Măneciu – Pod Zamfira",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Măneciu"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Zamfira"
+   }
+  },
+  {
+   "raw": "limită Baraj Zugreni – pod Mălișor",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Zugreni"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Mălișor"
+   }
+  },
+  {
+   "raw": "Baraj Bicaz-Lac Pangrati",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Bicaz"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Pangrati"
+   }
+  },
+  {
+   "raw": "Baraj Beliș - lac Tarnița",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Beliș"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Tarnița"
+   }
+  },
+  {
+   "raw": "Lac Hațeg – Lac Subcetate",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Hațeg"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Subcetate"
+   }
+  },
+  {
+   "raw": "Lac acumulare Gura Râului - pod Cristian",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Gura Râului"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Cristian"
+   }
+  },
+  {
+   "raw": "acumulare Petrești- conf. râul Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Petrești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Aval baraj Râușor – uzina de apă Câmpulung",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Râușor"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "uzina de apă Câmpulung"
+   }
+  },
+  {
+   "raw": "Aval baraj Colibița – conf. pârâul Pietroasa",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Colibița"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Pietroasa"
+   }
+  },
+  {
+   "raw": "aval baraj Miniș – conf. râul Nera",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Miniș"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Nera"
+   }
+  },
+  {
+   "raw": "Aval baraj lac Zetea – pod Desag",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_DOWNSTREAM",
+    "qualifier": "at",
+    "target": "Zetea"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Desag"
+   }
+  },
+  {
+   "raw": "Coada lac Prisaca - confluența cu pârâul Craiova",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Prisaca"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Craiova"
+   }
+  },
+  {
+   "raw": "Coada lacului Malaia – loc. Voineasa",
+   "scope": "interval",
+   "from": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Malaia"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Voineasa"
+   }
+  },
+  {
+   "raw": "Izvorul Minunilor - Lacul Leşu",
+   "scope": "interval",
+   "from": {
+    "kind": "SOURCE",
+    "qualifier": "at",
+    "locality_hint": "Minunilor"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Leșu"
+   }
+  },
+  {
+   "raw": "Pod școala Răcătău - lacul Gilău",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "școala Răcătău"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Gilău"
+   }
+  },
+  {
+   "raw": "Piscul Negru - confluența Lac Vidraru",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Piscul Negru"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Vidraru"
+   }
+  },
+  {
+   "raw": "Baraj Vidra - Lac Voineasa",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Vidra"
+   },
+   "to": {
+    "kind": "LAKE_UPSTREAM",
+    "qualifier": "at",
+    "target": "Voineasa"
+   }
+  },
+  {
+   "raw": "Baraj Baciu - Pod Stefan din loc.Slatina",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Baciu"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "target": "Stefan",
+    "locality_hint": "Slatina"
+   }
+  },
+  {
+   "raw": "pod DN Moisei – pod Slătioara",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Moisei",
+    "road_ref": "DN"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Slătioara"
+   }
+  },
+  {
+   "raw": "pod Bocicoiel - pod CFR Leordina",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Bocicoiel"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Leordina",
+    "road_ref": "CFR"
+   }
+  },
+  {
+   "raw": "Pod rutier loc. Noul Roman - vărsare râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Noul Roman"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Aval pod Berevoești – conf. cu râul Târgului (comuna Titești)",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "downstream",
+    "locality_hint": "Berevoești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Târgului"
+   }
+  },
+  {
+   "raw": "Pod Lunca Largă – conf. Râul Arieșul",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Lunca Largă"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Arieșul"
+   }
+  },
+  {
+   "raw": "pod Bucov – conf. cu râul Prahova",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Bucov"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Prahova"
+   }
+  },
+  {
+   "raw": "Pod Domnești – conf. râul Argeș",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Domnești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Argeș"
+   }
+  },
+  {
+   "raw": "Pod auto Repedea pana in Raul Viseu",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Repedea"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Viseu"
+   }
+  },
+  {
+   "raw": "pod Slatina – Cerneți",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Slatina"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Cerneți"
+   }
+  },
+  {
+   "raw": "Pod Slătioara-vărsare Tisa",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Slătioara"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Tisa"
+   }
+  },
+  {
+   "raw": "Șopotu Nou – pod Sasca Montană",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Șopotu Nou"
+   },
+   "to": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Sasca Montană"
+   }
+  },
+  {
+   "raw": "pod comuna Cristian – conf. cu râul Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Cristian"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "DN 67 Novaci -conf. Râul Jiu",
+   "scope": "interval",
+   "from": {
+    "kind": "ROAD",
+    "qualifier": "at",
+    "locality_hint": "Novaci",
+    "road_ref": "DN 67"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Jiu"
+   }
+  },
+  {
+   "raw": "Podul de fier Subcetate - Limita județ Mureș",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Subcetate"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Mureș"
+   }
+  },
+  {
+   "raw": "Pod fier Cătălina – Vărsare Olt",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "at",
+    "locality_hint": "Cătălina"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olt"
+   }
+  },
+  {
+   "raw": "Aval podul din comuna Mușetești – conf. râul Argeș",
+   "scope": "interval",
+   "from": {
+    "kind": "BRIDGE",
+    "qualifier": "downstream",
+    "locality_hint": "Mușetești"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Argeș"
+   }
+  },
+  {
+   "raw": "Nedelea – ieșire din județ Prahova",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Nedelea"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Prahova"
+   }
+  },
+  {
+   "raw": "Comuna Lapoș – ieșire din județ Prahova",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Lapoș"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Prahova"
+   }
+  },
+  {
+   "raw": "Secu-limita jud. Caraș-Severin",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Secu"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Caraș-Severin"
+   }
+  },
+  {
+   "raw": "Limita jud. HD - localitatea Bumbești Jiu",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Hunedoara"
+   },
+   "to": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Bumbești Jiu"
+   }
+  },
+  {
+   "raw": "limita jud. Covasna – conf. Râul Trotuș",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Covasna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Trotuș"
+   }
+  },
+  {
+   "raw": "Intrare județ Olt - conf. râul Olteț",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Olt"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Olteț"
+   }
+  },
+  {
+   "raw": "Loc. Izbiceni- limită județ Teleorman",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Izbiceni"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Teleorman"
+   }
+  },
+  {
+   "raw": "limita județ - conf. Râul Trotuș",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Trotuș"
+   }
+  },
+  {
+   "raw": "Limită jud. Brașov – limită Jud. Buzău",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Brașov"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Buzău"
+   }
+  },
+  {
+   "raw": "conf. cu pârâul Sibiciu – la ieșire din județ Buzău",
+   "scope": "interval",
+   "from": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Sibiciu"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Buzău"
+   }
+  },
+  {
+   "raw": "Limită jud. Mureș, loc. Sângeorzu de Pădure– conf. cu Târnava Mică",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Mureș",
+    "locality_hint": "Sângeorzu de Pădure"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Târnava Mică"
+   }
+  },
+  {
+   "raw": "Veneția de Jos - limita cu jud. Sibiu",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Veneția de Jos"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Sibiu"
+   }
+  },
+  {
+   "raw": "Baraj Reconstrucția - limită jud. Bacău",
+   "scope": "interval",
+   "from": {
+    "kind": "DAM",
+    "qualifier": "at",
+    "target": "Reconstrucția"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Bacău"
+   }
+  },
+  {
+   "raw": "Comuna Oiești – limita jud. (comuna Pătroaia, jud. Dâmbovița)",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Oiești"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Dâmbovița"
+   }
+  },
+  {
+   "raw": "limita jud. Harghita - vărsare Râul Siret (limita jud. Vrancea)",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Harghita"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Siret"
+   }
+  },
+  {
+   "raw": "limita cu jud. Covasna-până la conf. cu pârâul Sibiciu",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Covasna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Sibiciu"
+   }
+  },
+  {
+   "raw": "granița cu Ucraina – limită județ Suceava (comuna Dolhasca)",
+   "scope": "interval",
+   "from": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Ucraina"
+   },
+   "to": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Suceava"
+   }
+  },
+  {
+   "raw": "Salonta – frontieră cu Ungaria",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Salonta"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Ungaria"
+   }
+  },
+  {
+   "raw": "Limită jud. Timiș – frontieră cu Serbia",
+   "scope": "interval",
+   "from": {
+    "kind": "COUNTY_LIMIT",
+    "qualifier": "at",
+    "target": "Timiș"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Serbia"
+   }
+  },
+  {
+   "raw": "Localitatea Ionești- Frontieră cu Ungaria cu afluenții",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Ionești"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Ungaria"
+   },
+   "includes_tributaries": true
+  },
+  {
+   "raw": "Comuna Periam - frontieră cu Serbia",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Periam"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Serbia"
+   }
+  },
+  {
+   "raw": "Loc. Curtea - frontieră cu Serbia",
+   "scope": "interval",
+   "from": {
+    "kind": "LOCALITY",
+    "qualifier": "at",
+    "target": "Curtea"
+   },
+   "to": {
+    "kind": "BORDER",
+    "qualifier": "at",
+    "target": "Serbia"
+   }
+  },
+  {
+   "raw": "Drum N.I. - vărsare",
+   "scope": "interval",
+   "from": {
+    "kind": "ROAD",
+    "qualifier": "at",
+    "road_ref": "N.I."
+   },
+   "to": {
+    "kind": "MOUTH",
+    "qualifier": "at"
+   }
+  },
+  {
+   "raw": "Izvoare – Drum N.I. – vărsare",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Cascada Beușnița - confluența râul Nera",
+   "scope": "interval",
+   "from": {
+    "kind": "WATERFALL",
+    "qualifier": "at",
+    "target": "Beușnița"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Nera"
+   }
+  },
+  {
+   "raw": "Cascada Putna - confluența cu râul Coza",
+   "scope": "interval",
+   "from": {
+    "kind": "WATERFALL",
+    "qualifier": "at",
+    "target": "Putna"
+   },
+   "to": {
+    "kind": "CONFLUENCE",
+    "qualifier": "at",
+    "target": "Coza"
+   }
+  },
+  {
+   "raw": "între loc. Săpata - loc. Măceșu de Jos loc. Catane - loc. Bistreț",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Vorona – Teodoru – Joldești",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Valea Vida",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Vedea",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Bălan",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Afluent Râul Olt",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Artificial",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "mal stâng mal drept",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Huda lui Papară - Izvoare – vărsare în râul Arieș",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Canal artificial, din Râul Crișul Alb",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "și afluenții",
+   "scope": "unparsed",
+   "includes_tributaries": true
+  },
+  {
+   "raw": "Izvoare – sat Vlădeni - vărsare",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Pod Bila - pod Cârlibaba - centru",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "Rețeaua ANIF de desecare a loc. Comăneasca",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "paralel cu DN 55A,",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "canal de desecare situat în incinta fostului IAS Făcăieni",
+   "scope": "unparsed"
+  },
+  {
+   "raw": "zona Biled",
+   "scope": "unparsed"
+  }
+ ]
+}
