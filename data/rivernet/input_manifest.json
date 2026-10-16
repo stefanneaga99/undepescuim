@@ -17,7 +17,7 @@
     "nwr/landuse=reservoir",
     "nwr/water=reservoir",
     "r/type=waterway",
-    "r/admin_level=6",
+    "r/admin_level=2,4,8",
     "n/place=city,town,village,hamlet",
     "nwr/man_made=bridge,dam",
     "w/bridge"

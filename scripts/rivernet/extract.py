@@ -195,8 +195,13 @@ class GridIndex:
 # ------------------------------------------------------------------------ areas
 
 
+ADMIN_LEVELS_KEEP = frozenset({"2", "4", "8"})  # country, judet, UAT
+
+
 def _area_wanted(tags: dict[str, str]) -> bool:
-    return any(tags.get(key) in values for key, values in _AREA_TAGS_KEEP)
+    if tags.get("boundary") == "administrative":
+        return tags.get("admin_level") in ADMIN_LEVELS_KEEP
+    return any(tags.get(key) in values for key, values in _AREA_TAGS_KEEP if key != "boundary")
 
 
 def iter_areas(path: str | Path) -> Iterator[dict[str, Any]]:
