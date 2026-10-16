@@ -12,6 +12,6 @@ requests==2.33.0
 # Bounded ranges rather than exact pins: exact versions were not verifiable
 # when these were added (no PyPI access in the authoring sandbox). Tighten to
 # exact pins once CI has resolved them.
+# (OSM extraction uses the osmium-tool CLI in a workflow, not pyosmium.)
 networkx>=3.4,<4
 pyproj>=3.7,<4
-osmium>=4.0,<5
