@@ -54,6 +54,7 @@ jobs:
           if [ ! -f "$courses" ]; then courses=data/rivernet/courses_all.jsonl.gz; fi
           PYTHONPATH=scripts python -m rivernet match --courses "$courses"
           PYTHONPATH=scripts python -m rivernet resolve --extract work/water-extract.jsonl.gz --courses "$courses"
+          PYTHONPATH=scripts python -m rivernet report --courses "$courses"
       - name: Open pull request
         env:
           GH_TOKEN: ${{ github.token }}

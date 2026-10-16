@@ -65,7 +65,21 @@ def _resolve(args: list[str]) -> int:
     return cli(args)
 
 
+def _report(args: list[str]) -> int:
+    from .report import cli
+
+    return cli(args)
+
+
+def _review_page(args: list[str]) -> int:
+    from .review_page import cli
+
+    return cli(args)
+
+
 HANDLERS["resolve"] = _resolve
+HANDLERS["report"] = _report
+HANDLERS["review-page"] = _review_page
 HANDLERS["parse"] = _parse
 HANDLERS["match"] = _match
 HANDLERS["build"] = _build
