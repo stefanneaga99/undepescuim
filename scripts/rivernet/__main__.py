@@ -40,7 +40,14 @@ def _fetch_input(args: list[str]) -> int:
     return cli(args)
 
 
+def _parse(args: list[str]) -> int:
+    from .limits_parser import cli
+
+    return cli(args)
+
+
 HANDLERS["extract"] = _extract
+HANDLERS["parse"] = _parse
 HANDLERS["fetch-input"] = _fetch_input
 
 

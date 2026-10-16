@@ -1,0 +1,28 @@
+{
+  "endpointKinds": {
+    "BORDER": 18,
+    "BRIDGE": 73,
+    "CONFLUENCE": 409,
+    "COUNTY_LIMIT": 42,
+    "DAM": 29,
+    "LAKE_DOWNSTREAM": 12,
+    "LAKE_UPSTREAM": 39,
+    "LOCALITY": 351,
+    "MOUTH": 5,
+    "ROAD": 9,
+    "SOURCE": 324,
+    "UNKNOWN": 9,
+    "WATERFALL": 4
+  },
+  "scopes": {
+    "empty": 16,
+    "interval": 662,
+    "locality_list": 1,
+    "unparsed": 60,
+    "whole_county": 19,
+    "whole_course": 3
+  },
+  "total": 761,
+  "unparsedOrUnknown": 69,
+  "unparsedOrUnknownShare": 0.0907
+}

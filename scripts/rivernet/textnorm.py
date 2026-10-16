@@ -149,3 +149,26 @@ def river_key(name: str | None) -> str:
     """The most specific match key for a river name ('' if there is none)."""
     keys = river_keys(name)
     return keys[0] if keys else ""
+
+
+# ISO-style county codes used in ANPA texts ("Limita jud. HD") -> display name.
+COUNTY_CODES: dict[str, str] = {
+    "AB": "Alba", "AR": "Arad", "AG": "Argeș", "BC": "Bacău", "BH": "Bihor",
+    "BN": "Bistrița-Năsăud", "BT": "Botoșani", "BV": "Brașov", "BR": "Brăila",
+    "BZ": "Buzău", "CS": "Caraș-Severin", "CL": "Călărași", "CJ": "Cluj",
+    "CT": "Constanța", "CV": "Covasna", "DB": "Dâmbovița", "DJ": "Dolj",
+    "GL": "Galați", "GR": "Giurgiu", "GJ": "Gorj", "HR": "Harghita",
+    "HD": "Hunedoara", "IL": "Ialomița", "IS": "Iași", "IF": "Ilfov",
+    "MM": "Maramureș", "MH": "Mehedinți", "MS": "Mureș", "NT": "Neamț",
+    "OT": "Olt", "PH": "Prahova", "SM": "Satu Mare", "SJ": "Sălaj",
+    "SB": "Sibiu", "SV": "Suceava", "TR": "Teleorman", "TM": "Timiș",
+    "TL": "Tulcea", "VS": "Vaslui", "VL": "Vâlcea", "VN": "Vrancea",
+    "B": "București",
+}
+
+
+def county_names_folded() -> dict[str, str]:
+    """folded county name -> display name (also folded code -> display name)."""
+    out = {fold(name): name for name in COUNTY_CODES.values()}
+    out.update({code.lower(): name for code, name in COUNTY_CODES.items() if len(code) > 1})
+    return out
