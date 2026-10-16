@@ -115,7 +115,9 @@ def test_checked_in_ledger_is_complete_deterministic_and_public_projection_is_re
     assert "coordinates" not in set(nested_keys(public))
     assert "geojson" not in set(nested_keys(public))
     assert manifest["canonicalNoMutation"]["status"] == "PASS"
-    assert manifest["staleManifestReconciliation"]["status"] == "STALE_RECORDED"
+    # The pipeline manifest was re-pinned (T0.6); it must stay reconciled.
+    assert manifest["staleManifestReconciliation"]["status"] == "CURRENT"
+    assert manifest["staleManifestReconciliation"]["mismatches"] == []
 
 
 def test_aliases_groups_states_and_historical_candidates_are_explicit():
