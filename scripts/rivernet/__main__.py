@@ -40,7 +40,14 @@ def _fetch_input(args: list[str]) -> int:
     return cli(args)
 
 
+def _build(args: list[str]) -> int:
+    from .build import cli
+
+    return cli(args)
+
+
 HANDLERS["extract"] = _extract
+HANDLERS["build"] = _build
 HANDLERS["fetch-input"] = _fetch_input
 
 
