@@ -85,6 +85,23 @@ class PolygonIndex:
                     break
         return best
 
+    def boundary_distance_m(self, lon: float, lat: float, max_m: float) -> float:
+        """Distance in metres from a point to the polygon *boundary* (whether the
+        point is inside or outside), looking only at edges within roughly
+        ``max_m`` of the point's latitude band. Returns ``inf`` if none is that close."""
+        reach = int(max_m / 1100.0) + 2
+        cell = math.floor(lat / _CELL_DEG)
+        seen: set[int] = set()
+        best = math.inf
+        for c in range(cell - reach, cell + reach + 1):
+            for idx in self._cells.get(c, ()):
+                if idx in seen:
+                    continue
+                seen.add(idx)
+                ax, ay, bx, by = self._edges[idx]
+                best = min(best, _point_segment_dist_m(lon, lat, ax, ay, bx, by))
+        return best if best <= max_m else math.inf
+
 
 def bisect_boundary(
     a: Sequence[float], b: Sequence[float], poly: PolygonIndex, iterations: int = 40
