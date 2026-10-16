@@ -38,7 +38,7 @@ The four prior `RENDERING_FIX` rows remain `NOT_REPRODUCED` and ineligible in th
 
 ## Pipeline manifest reconciliation
 
-- STALE `public/data/waters_county_clips.json`: manifest `feb35105be12c8d6f85367f041d4354fb8355354919c2c3f484ccd15ef982fbc`, actual `4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92`
+- No stale output hashes detected.
 
 ## Production browser evidence
 
