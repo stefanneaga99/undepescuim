@@ -10,7 +10,7 @@ from rivernet.textnorm import river_key
 
 LAT = 46.0
 LONS = [24.0 + 0.05 * i for i in range(9)]  # 24.00 .. 24.40
-COORDS = [(x, LAT) for x in LONS]
+COORDS = [(round(24.0 + 0.005 * i, 6), LAT) for i in range(81)]  # vertices every ~386 m
 LINE = Line.from_coords(COORDS)
 LEN = LINE.length_m
 
