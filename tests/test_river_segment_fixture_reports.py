@@ -167,7 +167,8 @@ def test_repair_preserves_contract_fields_and_emits_provenance(tmp_path):
     assert before[0]["asociatie"] == after[0]["asociatie"]
     assert before[0]["riverGroup"] == after[0]["riverGroup"]
     assert before[0]["geometry"] != after[0]["geometry"]
-    assert json.loads((root / "public/data/waters.json.audit-backup.json").read_text()) == before
+    assert json.loads((root / "data/cache/waters.json.audit-backup.json").read_text()) == before
+    assert not (root / "public/data/waters.json.audit-backup.json").exists()
     assert json.loads(diff.read_text())["changes"][0]["provenance"]["osm_relation_id"] == 9001
     assert json.loads(provenance.read_text())["repairs"][0]["osm_way_ids"] == [9101, 9102]
 
