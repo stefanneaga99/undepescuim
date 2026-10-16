@@ -103,3 +103,6 @@ public/data/meta.json
 
 # river network build intermediates (T2.4)
 /data/rivernet/courses_all.jsonl.gz
+
+# rivernet review pages (generated, not shipped)
+/data/sectors/review/
