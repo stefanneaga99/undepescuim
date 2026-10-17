@@ -56,7 +56,9 @@ _TRAILING_QUALIFIERS = frozenset(
 )
 
 # A qualifier phrase that starts a free-text tail: "Olt sector Făgăraș" -> "olt".
-_TAIL_MARKERS = frozenset({"sector", "zona"})
+_TAIL_MARKERS = frozenset({"sector", "zona", "fara"})  # "Prut – fără lacul Stânca"
+# "<river> cu|și afluenții / pâraiele / revărsări": what the contract adds to the river
+_CONTRACT_EXTRAS = ("afluent", "parai", "revars")
 
 # "Jiul de Vest" has the shorter alias "Jiul".
 _CARDINALS = frozenset({"est", "vest", "nord", "sud"})
@@ -112,7 +114,7 @@ def river_keys(name: str | None) -> list[str]:
     # 2. cut free-text tails ("sector ...", "zona ...") that don't start the name
     for i in range(1, len(tokens)):
         if tokens[i] in _TAIL_MARKERS or (
-            tokens[i] == "cu" and i + 1 < len(tokens) and tokens[i + 1].startswith(("afluent", "parai"))
+            tokens[i] in ("cu", "si") and i + 1 < len(tokens) and tokens[i + 1].startswith(_CONTRACT_EXTRAS)
         ):
             tokens = tokens[:i]
             break

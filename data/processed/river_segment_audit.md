@@ -45,9 +45,9 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Constanța | 3 | 1 | 2 | 0 | 23 | 109 | partial |
 | Covasna | 22 | 15 | 7 | 1 | 68 | 87 | blocked |
 | Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
-| Dolj | 18 | 12 | 6 | 0 | 40 | 182 | partial |
+| Dolj | 18 | 13 | 5 | 0 | 40 | 182 | partial |
 | Dâmbovița | 17 | 16 | 1 | 10 | 51 | 151 | blocked |
-| Galați | 2 | 0 | 2 | 6 | 15 | 100 | blocked |
+| Galați | 2 | 1 | 1 | 6 | 15 | 100 | blocked |
 | Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
 | Gorj | 26 | 21 | 5 | 0 | 49 | 58 | partial |
 | Harghita | 44 | 32 | 12 | 1 | 429 | 72 | blocked |
@@ -63,12 +63,12 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
 | Satu Mare | 11 | 7 | 4 | 0 | 20 | 72 | partial |
 | Sibiu | 48 | 38 | 10 | 1 | 89 | 169 | blocked |
-| Suceava | 36 | 19 | 17 | 6 | 103 | 62 | blocked |
+| Suceava | 36 | 20 | 16 | 6 | 103 | 62 | blocked |
 | Sălaj | 15 | 12 | 3 | 0 | 37 | 40 | partial |
 | Teleorman | 6 | 6 | 0 | 1 | 34 | 160 | blocked |
 | Timiș | 41 | 37 | 4 | 4 | 47 | 236 | blocked |
 | Tulcea | 0 | 0 | 0 | 0 | 94 | 851 | covered |
-| Vaslui | 7 | 5 | 2 | 0 | 12 | 54 | partial |
+| Vaslui | 7 | 6 | 1 | 0 | 12 | 54 | partial |
 | Vrancea | 15 | 9 | 6 | 6 | 28 | 33 | blocked |
 | Vâlcea | 74 | 65 | 9 | 4 | 306 | 97 | blocked |
 

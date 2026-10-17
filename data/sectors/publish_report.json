@@ -201,7 +201,6 @@
   },
   {
    "blockers": [
-    "anpa-anpa-0280",
     "fanvixkg"
    ],
    "members": [
@@ -337,20 +336,6 @@
     "53mzatrd"
    ],
    "riverGroup": "prahova"
-  },
-  {
-   "blockers": [
-    "anpa-anpa-0297",
-    "anpa-anpa-0622",
-    "o4sf1fah"
-   ],
-   "members": [
-    "anpa-anpa-0297",
-    "anpa-anpa-0389",
-    "anpa-anpa-0622",
-    "o4sf1fah"
-   ],
-   "riverGroup": "prut"
   },
   {
    "blockers": [
@@ -556,10 +541,6 @@
   {
    "reason": "status_unresolved",
    "slug": "1xe7y7xg"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "o4sf1fah"
   },
   {
    "reason": "status_unresolved",
@@ -842,7 +823,7 @@
    "slug": "3gl3r1sa"
   },
   {
-   "reason": "status_unresolved",
+   "reason": "review_without_override",
    "slug": "ehwpvgwh"
   },
   {
@@ -1447,10 +1428,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "anpa-anpa-0280"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "anpa-anpa-0281"
   },
   {
@@ -1480,10 +1457,6 @@
   {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0295"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0297"
   },
   {
    "reason": "status_unresolved",
@@ -1826,12 +1799,8 @@
    "slug": "anpa-anpa-0539"
   },
   {
-   "reason": "status_unresolved",
+   "reason": "review_without_override",
    "slug": "anpa-anpa-0554"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0555"
   },
   {
    "reason": "status_unresolved",
@@ -1967,10 +1936,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "anpa-anpa-0622"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "anpa-anpa-0624"
   },
   {
@@ -2022,7 +1987,7 @@
    "slug": "anpa-anpa-0250"
   },
   {
-   "reason": "status_unresolved",
+   "reason": "review_without_override",
    "slug": "anpa-anpa-0192"
   },
   {
@@ -2734,13 +2699,14 @@
    "slug": "anpa-vrancea-ramnicu-sarat"
   }
  ],
- "kept_legacy_count": 564,
+ "kept_legacy_count": 559,
  "mode": "write",
  "preview_groups_replaced": [
   "aries",
   "crisul-alb",
   "latorita",
-  "negru"
+  "negru",
+  "prut"
  ],
  "switched": [
   {
@@ -2751,6 +2717,11 @@
   {
    "riverGroup": null,
    "slug": "0rc761a8",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "prut",
+   "slug": "o4sf1fah",
    "status": "resolved"
   },
   {
@@ -3176,8 +3147,19 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "jiu",
+   "slug": "anpa-anpa-0280",
+   "status": "resolved"
+  },
+  {
    "riverGroup": null,
    "slug": "anpa-anpa-0290",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "prut",
+   "slug": "anpa-anpa-0297",
    "status": "resolved"
   },
   {
@@ -3378,6 +3360,11 @@
    "status": "resolved"
   },
   {
+   "riverGroup": "somuzul-mic",
+   "slug": "anpa-anpa-0555",
+   "status": "resolved"
+  },
+  {
    "riverGroup": null,
    "slug": "anpa-anpa-0577",
    "status": "resolved"
@@ -3438,6 +3425,11 @@
    "status": "resolved"
   },
   {
+   "riverGroup": "prut",
+   "slug": "anpa-anpa-0622",
+   "status": "resolved"
+  },
+  {
    "riverGroup": null,
    "slug": "anpa-anpa-0623",
    "status": "resolved"
@@ -3483,7 +3475,6 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "prut",
    "slug": "anpa-anpa-0389",
    "status": "resolved"
@@ -3761,5 +3752,5 @@
    "status": "resolved"
   }
  ],
- "switched_count": 197
+ "switched_count": 202
 }

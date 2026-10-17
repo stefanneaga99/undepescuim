@@ -123,7 +123,7 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0189"}
 {"candidates": [["name:vistea mare:n2953834245", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:vistea mare:n2953834245", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0190"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0191"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0192"}
+{"candidates": [["rel:1567969", 1.0, "name+county;mention=1;fit=1.00"], ["name:olt:n126181035", 0.8, "name+county;mention=0;fit=1.00"], ["name:olt:n6246716155", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:1567969", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0192"}
 {"candidates": [["anar:RO8-1-77-0-0-0-0", 0.71, "anar_longer+county;mention=0;fit=1.00"], ["name:venetia:n11351327828", 0.6954, "name+county;mention=0;fit=0.48"]], "course_id": "anar:RO8-1-77-0-0-0-0", "method": "anar_longer+county", "score": 0.71, "slug": "anpa-anpa-0193"}
 {"candidates": [["name:lisa:n6292096355", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:lisa:n6292096355", "method": "stem+county", "score": 0.71, "slug": "anpa-anpa-0194"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0206"}
@@ -173,7 +173,7 @@
 {"candidates": [["rel:6256432", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6256432", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0265"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0278"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0279"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0280"}
+{"candidates": [["rel:7691863", 0.8, "name+county;mention=0;fit=1.00"], ["name:jiu:n240693697", 0.6041, "name+county;mention=0;fit=0.02"]], "course_id": "rel:7691863", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0280"}
 {"candidates": [["name:balasan:n4456417663", 0.9579, "name+county;mention=1;fit=0.79"], ["name:balasan:n4222617917", 0.8668, "name+county;mention=1;fit=0.33"], ["name:balasan:n4455479289", 0.8634, "name+county;mention=1;fit=0.32"], ["name:balasan:n7602572294", 0.6001, "name+county;mention=0;fit=0.00"]], "course_id": null, "method": "ambiguous", "score": 0.9579, "slug": "anpa-anpa-0281"}
 {"candidates": [["name:baboia:n1304638815", 0.9535, "name+county;mention=1;fit=0.77"], ["name:baboia:n9741312460", 0.9319, "name+county;mention=1;fit=0.66"]], "course_id": null, "method": "ambiguous", "score": 0.9535, "slug": "anpa-anpa-0282"}
 {"candidates": [["name:desnatui:n9772507206", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:desnatui:n9772507206", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0283"}
@@ -321,8 +321,8 @@
 {"candidates": [["name:stramba:n6071859552", 0.6343, "stem+county;mention=0;fit=0.62"], ["name:stramba:n6071860125", 0.5889, "stem+county;mention=0;fit=0.39"], ["name:stramba:n1143732062", 0.5449, "stem+county;mention=0;fit=0.17"]], "course_id": null, "method": "ambiguous", "score": 0.6343, "slug": "anpa-anpa-0539"}
 {"candidates": [["rel:7689581", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:7689581", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0552"}
 {"candidates": [["rel:7691126", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:7691126", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0553"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0554"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0555"}
+{"candidates": [["name:somuzul mare:n12270696086", 0.6068, "name+county;mention=0;fit=0.03"]], "course_id": "name:somuzul mare:n12270696086", "method": "name+county", "score": 0.6068, "slug": "anpa-anpa-0554"}
+{"candidates": [["name:somuzul mic:n2303915319", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:somuzul mic:n2303915319", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0555"}
 {"candidates": [["rel:10968622", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:10968622", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0561"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0562"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0563"}
@@ -371,7 +371,7 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0617"}
 {"candidates": [["name:timisat:n9913456613", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:timisat:n9913456613", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0618"}
 {"candidates": [["rel:13451904", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13451904", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0621"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0622"}
+{"candidates": [["rel:1566139", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:1566139", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0622"}
 {"candidates": [["anar:RO12-1-78-14a-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO12-1-78-14a-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0623"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0624"}
 {"candidates": [["anar:RO12-1-78-34-0-0-0", 0.91, "anar_longer+county;mention=1;fit=1.00"], ["name:tutova:n6262477898", 0.6862, "name+county;mention=0;fit=0.43"]], "course_id": "anar:RO12-1-78-34-0-0-0", "method": "anar_longer+county", "score": 0.91, "slug": "anpa-anpa-0626"}
@@ -437,7 +437,7 @@
 {"candidates": [["rel:6285566", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6285566", "method": "name+county", "score": 0.8, "slug": "ecgdxky1"}
 {"candidates": [["rel:18008322", 0.7195, "name+county;mention=0;fit=0.60"]], "course_id": "rel:18008322", "method": "name+county", "score": 0.7195, "slug": "ee2ppm7f"}
 {"candidates": [["anar:RO13-1-08-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-08-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "eebjo69e"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ehwpvgwh"}
+{"candidates": [["rel:1567969", 1.0, "name+county;mention=1;fit=1.00"], ["name:olt:n126181035", 0.8, "name+county;mention=0;fit=1.00"], ["name:olt:n6246716155", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:1567969", "method": "name+county", "score": 1.0, "slug": "ehwpvgwh"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "eql8hwtl"}
 {"candidates": [["rel:18016354", 1.0, "name+county;mention=1;fit=1.00"], ["name:baseu:n3413915742", 0.8203, "name+county;mention=1;fit=0.10"]], "course_id": "rel:18016354", "method": "name+county", "score": 1.0, "slug": "evp4346r"}
 {"candidates": [["name:valea jelnei:n5043502679", 0.515, "stem+county;mention=0;fit=0.03"]], "course_id": "name:valea jelnei:n5043502679", "method": "stem+county", "score": 0.515, "slug": "ewp217d3"}
@@ -504,7 +504,7 @@
 {"candidates": [["anar:RO12-1-53-8-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-53-8-0-0-0", "method": "anar+county", "score": 0.71, "slug": "nz1rw5qw"}
 {"candidates": [["anar:RO8-1-80-2-0-0-0", 0.71, "anar_longer+county;mention=0;fit=1.00"], ["name:stramba:n3431590957", 0.6898, "name+county;mention=0;fit=0.45"]], "course_id": "anar:RO8-1-80-2-0-0-0", "method": "anar_longer+county", "score": 0.71, "slug": "o0375dc2"}
 {"candidates": [["rel:6271264", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6271264", "method": "name+county", "score": 0.8, "slug": "o35qm79k"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "o4sf1fah"}
+{"candidates": [["rel:1566139", 1.0, "name+county;mention=1;fit=1.00"], ["name:prut:n238047056", 0.6019, "name+county;mention=0;fit=0.01"], ["name:prut:n6682054149", 0.6018, "name+county;mention=0;fit=0.01"], ["name:prut:n238037038", 0.6009, "name+county;mention=0;fit=0.00"], ["name:prut:n6226191720", 0.6007, "name+county;mention=0;fit=0.00"]], "course_id": "rel:1566139", "method": "name+county", "score": 1.0, "slug": "o4sf1fah"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "okzevg19"}
 {"candidates": [["rel:6214982", 0.7271, "name+county;mention=0;fit=0.64"]], "course_id": "rel:6214982", "method": "name+county", "score": 0.7271, "slug": "p2lc5wx6"}
 {"candidates": [["anar:RO4-1-81-11-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-11-0-0-0", "method": "anar+county", "score": 0.71, "slug": "p3puv4bx"}

@@ -231,6 +231,7 @@ class Context:
     names: dict[str, list[str]] = field(default_factory=dict)  # course_id -> keys (all courses)
     _lines: dict[str, Line] = field(default_factory=dict)
     _by_key: dict[str, list[str]] = field(default_factory=dict)
+    _anar_by_name: dict[str, set[str]] | None = None  # name key / "stem:" key -> ANAR course ids
 
     def line(self, course: Mapping[str, Any]) -> Line:
         cid = course["course_id"]
@@ -454,16 +455,27 @@ def _anar_outlet(target, keys, course, ctx):
     """CONFLUENCE fallback: an ANAR cadastral tributary named like the target
     whose outlet lies within ANAR_OUTLET_M of the course (the tributary is
     missing from OSM, or not joined to it)."""
+    if ctx._anar_by_name is None:  # built once per context
+        idx: dict[str, set[str]] = {}
+        for cid, other in ctx.courses.items():
+            if other.get("source") != "anar":
+                continue
+            for n in [other.get("name"), *(other.get("aliases") or [])]:
+                for k in river_keys(n):
+                    idx.setdefault(k, set()).add(cid)
+                if stem_key(n):
+                    idx.setdefault("stem:" + stem_key(n), set()).add(cid)
+        ctx._anar_by_name = idx
     st = stem_key(target)
+    hits: set[str] = set()
+    for k in keys:
+        hits |= ctx._anar_by_name.get(k, set())
+    if st:
+        hits |= ctx._anar_by_name.get("stem:" + st, set())
     line = ctx.line(course)
     out: list[Candidate] = []
-    for cid in sorted(ctx.courses):
+    for cid in sorted(hits - {course["course_id"]}):
         other = ctx.courses[cid]
-        if other.get("source") != "anar" or cid == course["course_id"]:
-            continue
-        names = [other.get("name"), *(other.get("aliases") or [])]
-        if not any(set(river_keys(n)) & keys or (st and stem_key(n) == st) for n in names):
-            continue
         ox, oy = other["geometry"]["coordinates"][-1]
         m, d = line.locate(ox, oy)
         if d <= ANAR_OUTLET_M:

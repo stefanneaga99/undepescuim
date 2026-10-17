@@ -201,30 +201,12 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0280",
-   "name": "Râul Jiu și afluenții săi",
-   "judet": "Dolj",
-   "asociatie": "AJVPS DOLJ",
-   "riverGroup": "jiu",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0287",
    "name": "Gârla Mălăieni",
    "judet": "Dolj",
    "asociatie": "AJVPS DOLJ",
    "riverGroup": null,
    "fallback": "no_geometry",
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0297",
-   "name": "Râul Prut",
-   "judet": "Galați",
-   "asociatie": "AJVPS GALAȚI",
-   "riverGroup": "prut",
-   "fallback": null,
    "justified": true
   },
   {
@@ -462,15 +444,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0555",
-   "name": "Râul Șomuzul Mic și afluenții",
-   "judet": "Suceava",
-   "asociatie": "AJVPS BOTOȘANI",
-   "riverGroup": "somuzul-mic",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0559",
    "name": "Acumulare Dragomira",
    "judet": "Suceava",
@@ -558,15 +531,6 @@
    "asociatie": "ASOCIAȚIA FLY FISHING RARĂU",
    "riverGroup": null,
    "fallback": "no_geometry",
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0622",
-   "name": "Râul Prut și revărsări",
-   "judet": "Vaslui",
-   "asociatie": "AJVPS VASLUI",
-   "riverGroup": "prut",
-   "fallback": null,
    "justified": true
   },
   {
