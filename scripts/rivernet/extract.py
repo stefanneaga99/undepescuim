@@ -39,7 +39,8 @@ TAG_WHITELIST = frozenset(
         "ref", "ref:cadastre", "ref:cadastral", "ref:wise", "wikidata",
         "waterway", "natural", "water", "landuse", "intermittent", "tunnel",
         "culvert", "boat", "salt", "type", "boundary", "admin_level", "place",
-        "man_made", "bridge", "dam", "weir", "power", "ford", "lock", "layer",
+        "man_made", "bridge", "bridge:name", "highway", "railway",  # plan §3.3: bridge type
+        "dam", "weir", "power", "ford", "lock", "layer",
         "start_date", "population", "is_in", "is_in:county",
     }
 )

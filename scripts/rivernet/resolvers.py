@@ -75,6 +75,17 @@ GENERIC = re.compile(
     r"orasul|municipiul|loc|com|jud|judetul|de|din|la|cu)\s+)+"
 )
 PLACE_TAGS = {"city", "town", "village", "hamlet", "suburb", "locality", "isolated_dwelling"}
+# bridge=* values that are not a crossing a limite could name
+NOT_CROSSING = {"no", "aqueduct", "abandoned", "construction", "collapsed", "proposed"}
+
+
+def is_crossing_bridge(tags: Mapping[str, str]) -> bool:
+    """A road/rail bridge way. The pinned extract (osm-extract-20261017) kept
+    ``bridge`` but not ``highway``/``railway``, so an untyped bridge counts too."""
+    b = tags.get("bridge")
+    if not b or b in NOT_CROSSING or tags.get("waterway"):
+        return False
+    return True
 
 
 @dataclass
@@ -182,6 +193,15 @@ class Bridge:
     def names(self) -> list[str]:
         return [self.tags[k] for k in ("name", "bridge:name") if self.tags.get(k)]
 
+    @property
+    def rail(self) -> bool | None:
+        """True rail, False road, None when the extract did not keep the type."""
+        if self.tags.get("railway"):
+            return True
+        if self.tags.get("highway"):
+            return False
+        return None
+
 
 @dataclass
 class Area:
@@ -269,12 +289,12 @@ def build_context(
     for w in extract.ways.values():
         t = w.tags
         wt = t.get("waterway")
-        if wt in ("dam", "weir", "waterfall") or (t.get("bridge") and (t.get("highway") or t.get("railway"))):
+        if wt in ("dam", "weir", "waterfall") or is_crossing_bridge(t):
             ctx.way_coords[w.id] = list(w.coords)
         if wt in ("dam", "weir", "waterfall"):
             mid = w.coords[len(w.coords) // 2]
             ctx.features.add(Feature(w.id, wt, t.get("name"), list(w.coords)), *mid)
-        if t.get("bridge") and (t.get("highway") or t.get("railway")):
+        if is_crossing_bridge(t):
             mid = w.coords[len(w.coords) // 2]
             ctx.bridges.add(Bridge(w.id, t, list(w.coords)), *mid)
     for a in extract.areas.values():
@@ -599,7 +619,7 @@ def _bridge(spec, course, ctx, window=None, **_):
     if ref:
         pool = [b for b in pool if any(ref_match(ref, r) for r in b.refs)]
     if railway:
-        pool = [b for b in pool if b.tags.get("railway")]
+        pool = [b for b in pool if b.rail is not False]  # rail, or type unknown
     crossings = list(_bridge_crossings(ctx, course, pool))
     if window is not None:
         lo, hi = window
@@ -609,7 +629,7 @@ def _bridge(spec, course, ctx, window=None, **_):
         if anchors and pdist is not None and pdist > BRIDGE_PLACE_M:
             continue
         name_hit = bool(target) and any(name_sim(n, target) >= LAKE_FUZZY for n in b.names)
-        has_ref = bool(ref) or railway
+        has_ref = bool(ref) or (railway and b.rail is True)
         has_place = bool(anchors)
         if has_ref and has_place:
             conf = C_BRIDGE_REF_PLACE
