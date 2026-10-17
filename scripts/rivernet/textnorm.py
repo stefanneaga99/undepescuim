@@ -47,7 +47,12 @@ _GENERIC_PREFIXES = frozenset(
 
 # Trailing sector / position qualifiers (already folded).
 _TRAILING_QUALIFIERS = frozenset(
-    {"superior", "mijlociu", "inferior", "amonte", "aval", "i", "ii", "iii", "iv"}
+    {
+        "superior", "superioara", "superioare",
+        "mijlociu", "mijlocie", "mijlocii",
+        "inferior", "inferioara", "inferioare",
+        "amonte", "aval", "i", "ii", "iii", "iv",
+    }
 )
 
 # A qualifier phrase that starts a free-text tail: "Olt sector Făgăraș" -> "olt".
@@ -106,7 +111,9 @@ def river_keys(name: str | None) -> list[str]:
 
     # 2. cut free-text tails ("sector ...", "zona ...") that don't start the name
     for i in range(1, len(tokens)):
-        if tokens[i] in _TAIL_MARKERS:
+        if tokens[i] in _TAIL_MARKERS or (
+            tokens[i] == "cu" and i + 1 < len(tokens) and tokens[i + 1].startswith(("afluent", "parai"))
+        ):
             tokens = tokens[:i]
             break
 
@@ -172,3 +179,27 @@ def county_names_folded() -> dict[str, str]:
     out = {fold(name): name for name in COUNTY_CODES.values()}
     out.update({code.lower(): name for code, name in COUNTY_CODES.items() if len(code) > 1})
     return out
+
+
+def article_variants(key: str) -> list[str]:
+    """Extra low-priority keys for Romanian definite article / genitive on the
+    last token: ``gurghiul`` -> ``gurghiu``/``gurghi``, ``buzaului`` -> ``buzau``."""
+    if not key:
+        return []
+    head, _, last = key.rpartition(" ")
+    out: list[str] = []
+    if len(last) > 5 and last.endswith("ului"):
+        out.append(last[:-3])
+    elif len(last) > 4 and last.endswith("ul"):
+        out += [last[:-1], last[:-2]]
+    return [(head + " " + v).strip() for v in out]
+
+
+def river_match_keys(name: str | None) -> list[str]:
+    """``river_keys`` plus the article variants (lowest priority, no duplicates)."""
+    keys = river_keys(name)
+    for k in list(keys):
+        for v in article_variants(k):
+            if v not in keys:
+                keys.append(v)
+    return keys

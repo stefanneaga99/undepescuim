@@ -91,3 +91,12 @@ def test_workflow_contract():
 
 def test_big_intermediates_are_gitignored():
     assert "/data/rivernet/courses_all.jsonl.gz" in (ROOT / ".gitignore").read_text(encoding="utf-8")
+
+
+def test_is_candidate_uses_aliases_and_article_variants():
+    from rivernet.build import is_candidate
+
+    assert is_candidate({"name_key": "olt", "aliases": []}, {"olt"})
+    assert is_candidate({"name_key": "gurghiul", "aliases": []}, {"gurghiu"})
+    assert is_candidate({"name_key": "maros", "aliases": ["Mureș"]}, {"mures"})
+    assert not is_candidate({"name_key": "olt", "aliases": []}, {"jiu"})

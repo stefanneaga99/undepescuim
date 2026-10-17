@@ -24,7 +24,7 @@ from .courses import build_courses
 from .extract_schema import load_extract
 from .graph import build_graph
 from .qa import qa_report, write_qa
-from .textnorm import river_keys
+from .textnorm import article_variants, river_keys, river_match_keys
 
 DEFAULT_MAX_COMMIT_MB = 25.0
 
@@ -33,8 +33,15 @@ def river_candidate_keys(waters: Iterable[dict[str, Any]]) -> set[str]:
     keys: set[str] = set()
     for w in waters:
         if w.get("subtype") == "rau":
-            keys.update(river_keys(w.get("name")))
+            keys.update(river_match_keys(w.get("name")))
     return keys
+
+
+def is_candidate(rec: dict[str, Any], keys: set[str]) -> bool:
+    """A course is a candidate when its name key or any alias key is wanted."""
+    if rec["name_key"] in keys or any(v in keys for v in article_variants(rec["name_key"])):
+        return True
+    return any(k in keys for a in rec.get("aliases") or [] for k in river_match_keys(a))
 
 
 def write_jsonl_gz(path: Path, records: Iterable[dict[str, Any]]) -> int:
@@ -69,7 +76,7 @@ def build(
     if waters_path is not None:
         waters = json.loads(Path(waters_path).read_text(encoding="utf-8"))
         candidate_keys = river_candidate_keys(waters)
-        subset = [r for r in records if r["name_key"] in candidate_keys]
+        subset = [r for r in records if is_candidate(r, candidate_keys)]
 
     subset_path = out / "courses.jsonl.gz"
     subset_size = write_jsonl_gz(subset_path, subset)
