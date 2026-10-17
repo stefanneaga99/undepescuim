@@ -543,42 +543,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0519",
-   "name": "Râul Olt",
-   "judet": "Sibiu",
-   "asociatie": "AJVPS SIBIU",
-   "riverGroup": "olt",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0496",
-   "name": "Râul Someș",
-   "judet": "Satu Mare",
-   "asociatie": "AJVPS SATU MARE",
-   "riverGroup": "somes",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0230",
-   "name": "Râul Argeș",
-   "judet": "Călărași",
-   "asociatie": "AJVPS CĂLĂRAȘI",
-   "riverGroup": "arges",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0298",
-   "name": "Râul Argeș",
-   "judet": "Giurgiu",
-   "asociatie": "AJVPS GIURGIU",
-   "riverGroup": "arges",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0454",
    "name": "Râul Târnava Mare",
    "judet": "Mureș",
@@ -1087,15 +1051,6 @@
    "name": "Râul Târnava Mică",
    "judet": "Harghita",
    "asociatie": "AVPS TÂRNAVA MARE",
-   "riverGroup": "tarnava-mica",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-mures-tarnava-mica-96",
-   "name": "Râul Târnava Mică",
-   "judet": "Mureș",
-   "asociatie": "AJVPS MUREȘ",
    "riverGroup": "tarnava-mica",
    "fallback": null,
    "justified": true

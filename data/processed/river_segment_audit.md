@@ -30,12 +30,12 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 |---|---:|---:|---:|---:|---:|---:|---|
 | Alba | 49 | 36 | 13 | 0 | 132 | 112 | partial |
 | Arad | 34 | 24 | 10 | 0 | 41 | 138 | partial |
-| Argeș | 36 | 27 | 9 | 0 | 154 | 183 | partial |
+| Argeș | 36 | 28 | 8 | 0 | 154 | 183 | partial |
 | Bacău | 24 | 23 | 1 | 0 | 79 | 62 | partial |
 | Bihor | 41 | 28 | 13 | 0 | 136 | 280 | partial |
 | Bistrița-Năsăud | 31 | 22 | 9 | 0 | 108 | 49 | partial |
 | Botoșani | 28 | 19 | 9 | 0 | 25 | 128 | partial |
-| Brașov | 33 | 28 | 5 | 3 | 270 | 123 | blocked |
+| Brașov | 33 | 29 | 4 | 3 | 270 | 123 | blocked |
 | Brăila | 8 | 5 | 3 | 0 | 11 | 70 | partial |
 | București | 0 | 0 | 0 | 0 | 0 | 47 | covered |
 | Buzău | 14 | 11 | 3 | 0 | 65 | 63 | partial |
@@ -43,11 +43,11 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Cluj | 42 | 34 | 8 | 0 | 218 | 156 | partial |
 | Constanța | 3 | 1 | 2 | 0 | 23 | 109 | partial |
 | Covasna | 22 | 15 | 7 | 1 | 68 | 87 | blocked |
-| Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
+| Călărași | 9 | 5 | 4 | 0 | 19 | 125 | partial |
 | Dolj | 18 | 13 | 5 | 0 | 40 | 182 | partial |
 | Dâmbovița | 17 | 16 | 1 | 0 | 51 | 151 | partial |
 | Galați | 2 | 2 | 0 | 0 | 15 | 100 | covered |
-| Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
+| Giurgiu | 5 | 4 | 1 | 0 | 14 | 268 | partial |
 | Gorj | 26 | 21 | 5 | 0 | 49 | 58 | partial |
 | Harghita | 44 | 32 | 12 | 1 | 429 | 72 | blocked |
 | Hunedoara | 70 | 63 | 7 | 0 | 138 | 120 | partial |
@@ -56,12 +56,12 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
 | Maramureș | 50 | 38 | 12 | 0 | 129 | 58 | partial |
 | Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
-| Mureș | 41 | 34 | 7 | 0 | 198 | 142 | partial |
+| Mureș | 41 | 35 | 6 | 0 | 198 | 142 | partial |
 | Neamț | 22 | 14 | 8 | 0 | 382 | 53 | partial |
 | Olt | 15 | 14 | 1 | 1 | 69 | 235 | blocked |
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
-| Satu Mare | 11 | 7 | 4 | 0 | 20 | 72 | partial |
-| Sibiu | 48 | 38 | 10 | 1 | 89 | 169 | blocked |
+| Satu Mare | 11 | 8 | 3 | 0 | 20 | 72 | partial |
+| Sibiu | 48 | 39 | 9 | 1 | 89 | 169 | blocked |
 | Suceava | 36 | 21 | 15 | 0 | 103 | 62 | partial |
 | Sălaj | 15 | 12 | 3 | 0 | 37 | 40 | partial |
 | Teleorman | 6 | 6 | 0 | 1 | 34 | 160 | blocked |

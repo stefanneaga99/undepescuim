@@ -259,11 +259,9 @@
   },
   {
    "blockers": [
-    "3gl3r1sa",
     "anpa-anpa-0192",
     "anpa-anpa-0250",
     "anpa-anpa-0339",
-    "anpa-anpa-0519",
     "ehwpvgwh",
     "y6i6nikh"
    ],
@@ -350,16 +348,14 @@
   },
   {
    "blockers": [
-    "anpa-anpa-0496",
-    "lagsqhtl"
+    "anpa-harghita-tarnava-mica-5"
    ],
    "members": [
-    "anpa-anpa-0402",
-    "anpa-anpa-0496",
-    "anpa-salaj-somesul-mare-93",
-    "lagsqhtl"
+    "anpa-harghita-tarnava-mica-5",
+    "anpa-mures-tarnava-mica-96",
+    "hj594dti"
    ],
-   "riverGroup": "somes"
+   "riverGroup": "tarnava-mica"
   },
   {
    "blockers": [
@@ -504,14 +500,6 @@
   {
    "reason": "review_without_override",
    "slug": "7nc9pf1u"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "fouqynmq"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "3614s8es"
   },
   {
    "reason": "status_unresolved",
@@ -758,10 +746,6 @@
    "slug": "y6i6nikh"
   },
   {
-   "reason": "status_unresolved",
-   "slug": "3gl3r1sa"
-  },
-  {
    "reason": "review_without_override",
    "slug": "ehwpvgwh"
   },
@@ -854,10 +838,6 @@
    "slug": "8rd9jm0l"
   },
   {
-   "reason": "status_unresolved",
-   "slug": "lagsqhtl"
-  },
-  {
    "reason": "review_without_override",
    "slug": "wv8ykggg"
   },
@@ -894,7 +874,7 @@
    "slug": "ks2vsbaf"
   },
   {
-   "reason": "review_without_override",
+   "reason": "d8_group_blocked",
    "slug": "hj594dti"
   },
   {
@@ -1911,22 +1891,6 @@
   },
   {
    "reason": "review_without_override",
-   "slug": "anpa-anpa-0519"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0496"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0230"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "anpa-anpa-0298"
-  },
-  {
-   "reason": "review_without_override",
    "slug": "anpa-anpa-0454"
   },
   {
@@ -2567,10 +2531,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "anpa-mures-tarnava-mica-96"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "anpa-bn-somesul-mare-61"
   },
   {
@@ -2594,9 +2554,10 @@
    "slug": "anpa-vrancea-ramnicu-sarat"
   }
  ],
- "kept_legacy_count": 546,
+ "kept_legacy_count": 537,
  "mode": "write",
  "preview_groups_replaced": [
+  "arges",
   "aries",
   "crisul-alb",
   "ialomita",
@@ -2625,6 +2586,16 @@
   {
    "riverGroup": null,
    "slug": "csn7z0u6",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "arges",
+   "slug": "fouqynmq",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "arges",
+   "slug": "3614s8es",
    "status": "resolved"
   },
   {
@@ -2809,6 +2780,12 @@
   },
   {
    "d8": "partial",
+   "riverGroup": "olt",
+   "slug": "3gl3r1sa",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
    "riverGroup": "oltet",
    "slug": "e8r6r01g",
    "status": "resolved"
@@ -2851,6 +2828,11 @@
   {
    "riverGroup": "siret",
    "slug": "9m2irr6m",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "somes",
+   "slug": "lagsqhtl",
    "status": "resolved"
   },
   {
@@ -3377,6 +3359,12 @@
   {
    "d8": "partial",
    "riverGroup": "olt",
+   "slug": "anpa-anpa-0519",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "olt",
    "slug": "anpa-anpa-0581",
    "status": "resolved"
   },
@@ -3426,9 +3414,23 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "somes",
    "slug": "anpa-anpa-0402",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "somes",
+   "slug": "anpa-anpa-0496",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "arges",
+   "slug": "anpa-anpa-0230",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "arges",
+   "slug": "anpa-anpa-0298",
    "status": "resolved"
   },
   {
@@ -3670,6 +3672,11 @@
   },
   {
    "d8": "partial",
+   "riverGroup": "tarnava-mica",
+   "slug": "anpa-mures-tarnava-mica-96",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "somes",
    "slug": "anpa-salaj-somesul-mare-93",
    "status": "resolved"
@@ -3707,5 +3714,5 @@
    "status": "resolved"
   }
  ],
- "switched_count": 215
+ "switched_count": 224
 }

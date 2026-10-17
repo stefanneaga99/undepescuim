@@ -352,6 +352,226 @@
       "reason": "'Buftea': Buftea (Ilfov) is 19.5 km from the river; the Dâmbovița contract ends where the Ialomița leaves Dâmbovița county toward Ilfov/Buftea, m 137.4 km of course rel:6153744. Fieni (m 40.9 km) -> exit = 96.5 km vs 95 km contract.",
       "reviewer": "Claude Code (proposed in the Mureș/Ialomița PR; owner to confirm)",
       "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-mures-tarnava-mica-96",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 13539.2
+      },
+      "reason": "'Limită Jud. conf. cu pârâul Iuhod': the Iuhod joins at the Harghita/Mureș county limit; the Târnava Mică enters Mureș at m 13.5 km of course rel:6274658.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-mures-tarnava-mica-96",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 460352669
+      },
+      "reason": "'comuna Adămuș sat Cornești': OSM place node Cornești (460352669) projects to m 125.3 km. County entry -> Cornești = 111.8 km vs 96 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "hj594dti",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 422869430
+      },
+      "reason": "'Cetatea de Baltă': the village node (422869430, m 134.6 km) instead of the UAT edge (m 127.9 km), which lies in the Mureș/Alba zigzag.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "hj594dti",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 422868211
+      },
+      "reason": "'Blaj': Blaj town node (422868211, m 170.2 km). Cetatea de Baltă -> Blaj = 35.6 km vs 23 km contract (inside the 0.6–1.6 band).",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0519",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 329373.4
+      },
+      "reason": "'Limită jud. Brașov': the Olt leaves Brașov for Sibiu at m 329.4 km of course rel:1567969 (the county_limit resolver picked an earlier zigzag at m 144.1 km).",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0519",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 380888.5
+      },
+      "reason": "'limită Jud. Vâlcea': the Olt leaves Sibiu at m 380.9 km. Sibiu span = 51.5 km vs 56 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "3gl3r1sa",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 413584504
+      },
+      "reason": "'Lunca Câlnicului': OSM place node 413584504 projects to m 141.6 km of course rel:1567969 (Feldioara m 168.7 km lies between, as listed).",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "3gl3r1sa",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 460101901
+      },
+      "reason": "'Augustin': OSM place node 460101901 projects to m 202.6 km. Lunca Câlnicului -> Augustin = 61.0 km vs 64 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0230",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 344972936
+      },
+      "reason": "'Hotarele': OSM place node 344972936 projects to m 237.5 km of course rel:5815028:1.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0230",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 277954.9
+      },
+      "reason": "'vărsare Dunăre': end of course rel:5815028:1 at the Danube. Hotarele -> mouth = 40.5 km vs 40 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0298",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 138471.1
+      },
+      "reason": "'Pod Popa Nae': the bridge isn't named in OSM; the Giurgiu contract starts where the Argeș enters Giurgiu for good after the Dâmbovița/Giurgiu zigzag, m 138.5 km (the bridge resolver hit a bridge at m 2.0 km in Argeș county).",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0298",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 344972936
+      },
+      "reason": "'Hotarele': OSM place node 344972936, m 237.5 km; shared endpoint with the Călărași contract anpa-anpa-0230.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "fouqynmq",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 0.0
+      },
+      "reason": "'Comuna Oiești': course rel:5815028:1 starts 2.3 km from Oiești (place projection m 0); pin the start explicitly.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "fouqynmq",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 82703.7
+      },
+      "reason": "'limita jud. (comuna Pătroaia, jud. Dâmbovița)': the Argeș leaves Argeș county at m 82.7 km. 82.7 km vs 87 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "3614s8es",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 82703.7
+      },
+      "reason": "'Valea Mare': the Dâmbovița contract starts at the Argeș/Dâmbovița limit, m 82.7 km (Valea Mare node 460187045 projects to m 81.3 km, 5.7 km off the river).",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "3614s8es",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 287378494
+      },
+      "reason": "'Potlogi': OSM place node 287378494 projects to m 136.5 km. County entry -> Potlogi = 53.8 km vs 50 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "lagsqhtl",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 0.0
+      },
+      "reason": "'Conf. Someșul Mic cu Someșul Mare': course rel:89135 starts at the confluence at Dej.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "lagsqhtl",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 27136.9
+      },
+      "reason": "'limita cu jud. Sălaj': the Someș leaves Cluj at m 27.1 km. 27.1 km vs 32 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0496",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 165515.4
+      },
+      "reason": "'mal stâng mal drept' (both banks, no limits): the Satu Mare county span of course rel:89135 starts at m 165.5 km.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0496",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 248678.3
+      },
+      "reason": "Satu Mare county span ends at m 248.7 km. Span = 83.2 km vs 83.4 km contract.",
+      "reviewer": "Claude Code (proposed in the P5 batch-3 PR; owner to confirm)",
+      "date": "2026-10-17"
     }
   ]
 }

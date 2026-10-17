@@ -43,12 +43,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 9,
+      "missing_geometry": 8,
       "overlay": {
         "lakes": 183,
         "rivers": 154
       },
-      "with_geometry": 27
+      "with_geometry": 28
     },
     {
       "contracted": 24,
@@ -110,12 +110,12 @@
         "missing_segment": 3
       },
       "finding_count": 3,
-      "missing_geometry": 5,
+      "missing_geometry": 4,
       "overlay": {
         "lakes": 123,
         "rivers": 270
       },
-      "with_geometry": 28
+      "with_geometry": 29
     },
     {
       "contracted": 8,
@@ -220,12 +220,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 5,
+      "missing_geometry": 4,
       "overlay": {
         "lakes": 125,
         "rivers": 19
       },
-      "with_geometry": 4
+      "with_geometry": 5
     },
     {
       "contracted": 18,
@@ -272,12 +272,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 2,
+      "missing_geometry": 1,
       "overlay": {
         "lakes": 268,
         "rivers": 14
       },
-      "with_geometry": 3
+      "with_geometry": 4
     },
     {
       "contracted": 26,
@@ -391,12 +391,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 7,
+      "missing_geometry": 6,
       "overlay": {
         "lakes": 142,
         "rivers": 198
       },
-      "with_geometry": 34
+      "with_geometry": 35
     },
     {
       "contracted": 22,
@@ -445,12 +445,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 4,
+      "missing_geometry": 3,
       "overlay": {
         "lakes": 72,
         "rivers": 20
       },
-      "with_geometry": 7
+      "with_geometry": 8
     },
     {
       "contracted": 48,
@@ -460,12 +460,12 @@
         "missing_segment": 1
       },
       "finding_count": 1,
-      "missing_geometry": 10,
+      "missing_geometry": 9,
       "overlay": {
         "lakes": 169,
         "rivers": 89
       },
-      "with_geometry": 38
+      "with_geometry": 39
     },
     {
       "contracted": 36,

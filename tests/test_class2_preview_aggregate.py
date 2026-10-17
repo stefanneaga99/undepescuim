@@ -34,7 +34,7 @@ def test_class2_preview_aggregate_schema_and_scope():
 def test_class2_preview_hash_is_stable_for_checked_in_artifact():
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest()
     # re-pinned at the river geometry v2 cutover (T4.4): switched groups preview their rivernet course
-    assert digest == "10758a7b656e3fb9b05f89dedc51d6997d5b32a48d86fb9000719137c8063bea"
+    assert digest == "95e4f72d3f8bf2e22d6298f1807d7fda8c24ca3e55e4417c3f3f9da6f1bbea64"
 
 
 def test_buzau_preview_keeps_physical_course_separate_from_unverified_contracts():
