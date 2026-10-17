@@ -32,7 +32,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Arad | 34 | 24 | 10 | 0 | 41 | 138 | partial |
 | Argeș | 36 | 28 | 8 | 0 | 154 | 183 | partial |
 | Bacău | 24 | 23 | 1 | 0 | 79 | 62 | partial |
-| Bihor | 41 | 28 | 13 | 0 | 136 | 280 | partial |
+| Bihor | 41 | 30 | 11 | 0 | 136 | 280 | partial |
 | Bistrița-Năsăud | 31 | 23 | 8 | 0 | 108 | 49 | partial |
 | Botoșani | 28 | 19 | 9 | 0 | 25 | 128 | partial |
 | Brașov | 33 | 29 | 4 | 3 | 270 | 123 | blocked |
@@ -42,7 +42,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Caraș-Severin | 41 | 33 | 8 | 4 | 128 | 60 | blocked |
 | Cluj | 42 | 34 | 8 | 0 | 218 | 156 | partial |
 | Constanța | 3 | 1 | 2 | 0 | 23 | 109 | partial |
-| Covasna | 22 | 15 | 7 | 1 | 68 | 87 | blocked |
+| Covasna | 22 | 16 | 6 | 1 | 68 | 87 | blocked |
 | Călărași | 9 | 5 | 4 | 0 | 19 | 125 | partial |
 | Dolj | 18 | 13 | 5 | 0 | 40 | 182 | partial |
 | Dâmbovița | 17 | 16 | 1 | 0 | 51 | 151 | partial |

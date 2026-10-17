@@ -69,12 +69,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 13,
+      "missing_geometry": 11,
       "overlay": {
         "lakes": 280,
         "rivers": 136
       },
-      "with_geometry": 28
+      "with_geometry": 30
     },
     {
       "contracted": 31,
@@ -207,12 +207,12 @@
         "missing_segment": 1
       },
       "finding_count": 1,
-      "missing_geometry": 7,
+      "missing_geometry": 6,
       "overlay": {
         "lakes": 87,
         "rivers": 68
       },
-      "with_geometry": 15
+      "with_geometry": 16
     },
     {
       "contracted": 9,
