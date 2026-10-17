@@ -221,3 +221,11 @@ def test_cli(tmp_path):
     assert [(r["slug"], r["method"]) for r in rows] == [
         ("s1", "name+county"), ("s2", "ambiguous"), ("s3", "no_candidate")]
     assert matcher.cli(["--courses", str(tmp_path / "missing.gz")]) == 1
+
+
+def test_definite_article_variant_matches():
+    cs = [course("a", "Gurghiu", ["Mureș"])]
+    r = match(water("Râul Gurghiul mijlociu", "Mureș"), cs)
+    assert r.course_id == "a" and r.score < 1.0
+    assert match(water("Râul Gurghiu", "Mureș"), [course("b", "Gurghiul", ["Mureș"])], by_key=None).course_id == "b"
+    assert match(water("Gurghiu", "Mureș"), [], by_key=index_courses([course("b", "Gurghiul", ["Mureș"])])).course_id == "b"

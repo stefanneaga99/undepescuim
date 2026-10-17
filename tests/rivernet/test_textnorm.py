@@ -98,3 +98,25 @@ def test_river_keys_have_no_duplicates():
 def test_same_river_written_differently_shares_a_key():
     variants = ["Râul Mureș", "Mureş", "Pr. Mureș Inferior", "Râul Mureș II"]
     assert {river_key(v) for v in variants} == {"mures"}
+
+
+def test_feminine_qualifiers_and_afluenti_tail():
+    from rivernet.textnorm import river_keys
+
+    assert river_keys("Râul Prahova mijlocie ") == ["prahova"]
+    assert river_keys("Râul Prahova superioară") == ["prahova"]
+    assert river_keys("Râul Cibinul Inferioară") == ["cibinul"]
+    assert river_keys("Râul Jiul de vest – superior cu afluenții") == ["jiul de vest", "jiul"]
+    assert river_keys("Valea Călinești cu pâraiele Călinești, Sulița") == ["valea calinesti", "calinesti"]
+    assert river_keys("Valea cu Apă") == ["valea cu apa", "cu apa"]  # 'cu' alone is not a tail
+
+
+def test_article_variants_and_match_keys():
+    from rivernet.textnorm import article_variants, river_match_keys
+
+    assert article_variants("gurghiul") == ["gurghiu", "gurghi"]
+    assert article_variants("buzaului") == ["buzau"]
+    assert article_variants("valea cibinul") == ["valea cibinu", "valea cibin"]
+    assert article_variants("olt") == [] and article_variants("") == []
+    assert river_match_keys("Râul Gurghiul mijlociu")[0] == "gurghiul"
+    assert "gurghiu" in river_match_keys("Râul Gurghiul mijlociu")

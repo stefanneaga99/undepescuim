@@ -384,3 +384,12 @@ def test_build_context_counties_geojson_fallback():
 def test_candidate_to_dict():
     d = R.Candidate(12.34, 0.9, "x", {"type": "node"}, 5.55).to_dict()
     assert d["m"] == 12.3 and d["dist_m"] == 5.5 or d["dist_m"] == 5.6
+
+
+def test_confluence_uses_course_index_for_courses_outside_the_subset():
+    c = course(receives_into="rel:424242")
+    ctx = ctx_for([c])
+    assert res(ep("CONFLUENCE", target="Mureș"), ctx, c) == []
+    ctx.names = {"rel:424242": ["mures"]}
+    out = res(ep("CONFLUENCE", target="Mureș"), ctx, c)
+    assert out and out[0].method == "outlet_into_named"

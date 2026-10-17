@@ -203,6 +203,7 @@ class Context:
     node_coords: dict[int, tuple[float, float]] = field(default_factory=dict)
     way_coords: dict[int, list[tuple[float, float]]] = field(default_factory=dict)
     area_by_id: dict[str, "Area"] = field(default_factory=dict)
+    names: dict[str, list[str]] = field(default_factory=dict)  # course_id -> keys (all courses)
     _lines: dict[str, Line] = field(default_factory=dict)
     _by_key: dict[str, list[str]] = field(default_factory=dict)
 
@@ -330,6 +331,8 @@ def _course_keys_of(ctx: Context, cid: str | None) -> set[str]:
         for a in c.get("aliases") or []:
             keys.update(river_keys(a))
         return keys - {""}
+    if cid in ctx.names:
+        return set(ctx.names[cid])
     parts = cid.split(":")
     return {parts[1]} if len(parts) >= 3 and parts[0] == "name" else set()
 

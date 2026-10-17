@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from typing import Any, Callable, Iterable, Mapping
 
-from .textnorm import fold, river_key, river_keys
+from .textnorm import article_variants, fold, river_key, river_keys, river_match_keys
 
 W_NAME, W_MENTION, W_LENGTH = 0.6, 0.2, 0.2
 FUZZY_MIN = 0.88
@@ -54,9 +54,9 @@ def contract_km(dimensiune: str | None) -> float | None:
 
 def _course_keys(c: Mapping[str, Any]) -> tuple[str, set[str]]:
     primary = c.get("name_key") or river_key(c.get("name"))
-    alt: set[str] = set()
+    alt: set[str] = set(article_variants(primary))
     for a in c.get("aliases") or []:
-        alt.update(river_keys(a))
+        alt.update(river_match_keys(a))
     return primary, alt
 
 
@@ -113,7 +113,7 @@ def match(
     if overrides and slug in overrides:
         return MatchResult(overrides[slug]["course_id"], 1.0, "override", [(overrides[slug]["course_id"], 1.0, "override")])
 
-    keys = river_keys(water.get("name"))
+    keys = river_match_keys(water.get("name"))
     if not keys:
         return MatchResult(None, 0.0, "no_candidate")
 
