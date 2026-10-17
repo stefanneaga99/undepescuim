@@ -19,16 +19,16 @@ def geometry_sha(geometry):
     return hashlib.sha256(json.dumps(geometry, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
-def test_ialomita_restores_hash_verified_multipart_geometry_and_topology():
+def test_ialomita_is_a_precut_sector_without_the_bad_chords():
+    # River geometry v2: the hash-verified legacy MultiLineString (EXPECTED_SHA)
+    # was replaced by the contract's own pre-cut sector (Fieni -> Dâmbovița exit).
     w = water()
-    assert geometry_sha(w["geometry"]) == EXPECTED_SHA
-    assert EXPECTED_SHA != BAD_SHA
-    assert w["geometry"]["type"] == "MultiLineString"
-    assert max_geometry_edge_m(w["geometry"]) < 20_000
+    assert w["geometryKind"] == "sector" and w["source"] == "rivernet"
+    assert geometry_sha(w["geometry"]) not in (BAD_SHA, EXPECTED_SHA)
+    assert max_geometry_edge_m(w["geometry"]) < 1_000  # stricter than the legacy 20 km bound
 
 
-def test_ialomita_dambovita_clip_is_derived_and_present():
+def test_ialomita_dambovita_sector_needs_no_county_clip():
+    # the sector lies inside Dâmbovița, so no per-county clip is stored for it
     clips = json.loads((ROOT / "public/data/waters_county_clips.json").read_text())
-    clip = clips[SLUG]["dambovita"]
-    assert clip["type"] == "MultiLineString"
-    assert len(clip["coordinates"]) > 1
+    assert SLUG not in clips

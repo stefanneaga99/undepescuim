@@ -282,15 +282,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0377",
-   "name": "Râul Mureș, cu afluenții",
-   "judet": "Hunedoara",
-   "asociatie": "AJVPS HUNEDOARA",
-   "riverGroup": "mures",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0378",
    "name": "Râul Strei, cu afluenții",
    "judet": "Hunedoara",
@@ -369,15 +360,6 @@
    "asociatie": "AJVPS MUREȘ",
    "riverGroup": null,
    "fallback": "no_geometry",
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0453",
-   "name": "Râul Mureș IV",
-   "judet": "Mureș",
-   "asociatie": "AJVPS MUREȘ",
-   "riverGroup": "mures",
-   "fallback": null,
    "justified": true
   },
   {
@@ -570,15 +552,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0426",
-   "name": "Râul Mureș",
-   "judet": "Mureș",
-   "asociatie": "AJVPS MUREȘ",
-   "riverGroup": "mures",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0496",
    "name": "Râul Someș",
    "judet": "Satu Mare",
@@ -602,15 +575,6 @@
    "judet": "Giurgiu",
    "asociatie": "AJVPS GIURGIU",
    "riverGroup": "arges",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0388",
-   "name": "Raul Ialomița",
-   "judet": "Ialomița",
-   "asociatie": "AVPS IALOMIȚA",
-   "riverGroup": "ialomita",
    "fallback": null,
    "justified": true
   },
@@ -953,15 +917,6 @@
    "judet": "Mureș",
    "asociatie": "Direcția Silvică Mureș",
    "riverGroup": "gurghi",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "romsilva-mures-mures-iii",
-   "name": "Râul Mureş III",
-   "judet": "Mureș",
-   "asociatie": "Direcția Silvică Mureș",
-   "riverGroup": "mures",
    "fallback": null,
    "justified": true
   },

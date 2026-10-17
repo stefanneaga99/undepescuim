@@ -1,18 +1,18 @@
 {
  "by_status": {
-  "resolved": 221,
-  "review": 114,
-  "unresolved": 426
+  "resolved": 228,
+  "review": 113,
+  "unresolved": 420
  },
  "by_status_confidence": {
-  "resolved/high": 58,
-  "resolved/medium": 163,
-  "review/low": 111,
+  "resolved/high": 62,
+  "resolved/medium": 166,
+  "review/low": 110,
   "review/medium": 3,
-  "unresolved/low": 426
+  "unresolved/low": 420
  },
  "chord_check": {
-  "checked": 221,
+  "checked": 228,
   "max_segment_m": 3624.6,
   "worst": [
    [
@@ -59,11 +59,11 @@
  },
  "km_ratio_histogram": {
   "0.5-0.8": 69,
-  "0.8-1.25": 142,
-  "1.25-2": 47,
+  "0.8-1.25": 147,
+  "1.25-2": 49,
   "<0.5": 45,
-  ">2": 17,
-  "unknown": 441
+  ">2": 16,
+  "unknown": 435
  },
  "per_county": {
   "Alba": {
@@ -71,7 +71,7 @@
    "total": 41
   },
   "Arad": {
-   "resolved": 6,
+   "resolved": 7,
    "total": 22
   },
   "Argeș": {
@@ -131,7 +131,7 @@
    "total": 12
   },
   "Dâmbovița": {
-   "resolved": 5,
+   "resolved": 6,
    "total": 12
   },
   "Galați": {
@@ -151,11 +151,11 @@
    "total": 37
   },
   "Hunedoara": {
-   "resolved": 7,
+   "resolved": 8,
    "total": 33
   },
   "Ialomița": {
-   "resolved": 0,
+   "resolved": 1,
    "total": 2
   },
   "Iași": {
@@ -175,7 +175,7 @@
    "total": 3
   },
   "Mureș": {
-   "resolved": 12,
+   "resolved": 15,
    "total": 39
   },
   "Neamț": {
@@ -228,7 +228,7 @@
   }
  },
  "shadow": {
-  "compared": 335,
+  "compared": 341,
   "rows": [
    {
     "hausdorff_m": 808.9,
@@ -350,10 +350,17 @@
     "slug": "3e8t20hn"
    },
    {
-    "hausdorff_m": 17417.3,
+    "hausdorff_m": 152121.6,
+    "legacy_approx": false,
+    "new_km": 97.76,
+    "old_km": 417.75,
+    "slug": "3ek8e82l"
+   },
+   {
+    "hausdorff_m": 16559.8,
     "legacy_approx": true,
     "new_km": 35.17,
-    "old_km": 7.69,
+    "old_km": 8.68,
     "slug": "3p16514b"
    },
    {
@@ -504,10 +511,10 @@
     "slug": "9h0azllr"
    },
    {
-    "hausdorff_m": 8024.7,
+    "hausdorff_m": 18339.4,
     "legacy_approx": true,
     "new_km": 40.19,
-    "old_km": 52.78,
+    "old_km": 2.71,
     "slug": "9m2irr6m"
    },
    {
@@ -546,10 +553,10 @@
     "slug": "anpa-anpa-0056"
    },
    {
-    "hausdorff_m": 32794.5,
+    "hausdorff_m": 31870.9,
     "legacy_approx": true,
     "new_km": 109.81,
-    "old_km": 19.89,
+    "old_km": 20.17,
     "slug": "anpa-anpa-0066"
    },
    {
@@ -763,10 +770,10 @@
     "slug": "anpa-anpa-0290"
    },
    {
-    "hausdorff_m": null,
-    "legacy_approx": false,
+    "hausdorff_m": 74244.5,
+    "legacy_approx": true,
     "new_km": 152.6,
-    "old_km": 0.0,
+    "old_km": 38.96,
     "slug": "anpa-anpa-0296"
    },
    {
@@ -917,11 +924,25 @@
     "slug": "anpa-anpa-0375"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 102.87,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0377"
+   },
+   {
     "hausdorff_m": 13940.0,
     "legacy_approx": true,
     "new_km": 34.07,
     "old_km": 4.85,
     "slug": "anpa-anpa-0379"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 203.79,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0388"
    },
    {
     "hausdorff_m": 37518.4,
@@ -931,10 +952,10 @@
     "slug": "anpa-anpa-0389"
    },
    {
-    "hausdorff_m": 19733.2,
+    "hausdorff_m": 18331.7,
     "legacy_approx": true,
     "new_km": 63.37,
-    "old_km": 9.24,
+    "old_km": 6.72,
     "slug": "anpa-anpa-0390"
    },
    {
@@ -1020,6 +1041,13 @@
     "new_km": 20.03,
     "old_km": 19.92,
     "slug": "anpa-anpa-0425"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 151.36,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0426"
    },
    {
     "hausdorff_m": 7435.7,
@@ -1108,6 +1136,13 @@
    {
     "hausdorff_m": null,
     "legacy_approx": false,
+    "new_km": 21.58,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0453"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
     "new_km": 0.3,
     "old_km": 0.0,
     "slug": "anpa-anpa-0454"
@@ -1134,10 +1169,10 @@
     "slug": "anpa-anpa-0463"
    },
    {
-    "hausdorff_m": 18570.8,
+    "hausdorff_m": 16577.0,
     "legacy_approx": true,
     "new_km": 56.62,
-    "old_km": 4.46,
+    "old_km": 5.36,
     "slug": "anpa-anpa-0469"
    },
    {
@@ -1197,10 +1232,10 @@
     "slug": "anpa-anpa-0521"
    },
    {
-    "hausdorff_m": null,
-    "legacy_approx": false,
+    "hausdorff_m": 55863.2,
+    "legacy_approx": true,
     "new_km": 145.85,
-    "old_km": 0.0,
+    "old_km": 35.6,
     "slug": "anpa-anpa-0552"
    },
    {
@@ -1386,10 +1421,10 @@
     "slug": "anpa-anpa-0626"
    },
    {
-    "hausdorff_m": null,
-    "legacy_approx": false,
+    "hausdorff_m": 58130.4,
+    "legacy_approx": true,
     "new_km": 101.13,
-    "old_km": 0.0,
+    "old_km": 17.11,
     "slug": "anpa-anpa-0674"
    },
    {
@@ -1638,9 +1673,9 @@
     "slug": "hj594dti"
    },
    {
-    "hausdorff_m": 75426.9,
+    "hausdorff_m": 263004.2,
     "legacy_approx": false,
-    "new_km": 601.23,
+    "new_km": 211.61,
     "old_km": 786.15,
     "slug": "hmd3pa0v"
    },
@@ -2198,6 +2233,13 @@
     "slug": "romsilva-mures-isticeu"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 26.02,
+    "old_km": 0.0,
+    "slug": "romsilva-mures-mures-iii"
+   },
+   {
     "hausdorff_m": 80.9,
     "legacy_approx": false,
     "new_km": 13.77,
@@ -2429,10 +2471,10 @@
     "slug": "rw5qqi3t"
    },
    {
-    "hausdorff_m": null,
-    "legacy_approx": false,
+    "hausdorff_m": 46685.5,
+    "legacy_approx": true,
     "new_km": 121.16,
-    "old_km": 0.0,
+    "old_km": 24.57,
     "slug": "sopv2vba"
    },
    {
@@ -2580,7 +2622,7 @@
  "top_reasons": [
   [
    "endpoint_unresolved",
-   219
+   212
   ],
   [
    "course_no_candidate",
@@ -2588,11 +2630,11 @@
   ],
   [
    "km_ratio_out_of_band",
-   95
+   94
   ],
   [
    "limite_unusable",
-   70
+   69
   ],
   [
    "fallback_source:anar",
@@ -2600,11 +2642,11 @@
   ],
   [
    "overlap",
-   54
+   56
   ],
   [
    "endpoint_ambiguous",
-   47
+   45
   ],
   [
    "contract_km_missing",
@@ -2620,7 +2662,7 @@
   ],
   [
    "overlap_gt_50pct",
-   32
+   31
   ],
   [
    "endpoint_confidence_low",

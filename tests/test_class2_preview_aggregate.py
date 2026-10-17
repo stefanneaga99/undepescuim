@@ -14,7 +14,7 @@ def test_class2_preview_aggregate_schema_and_scope():
     assert payload["excludedChunks"] == ["CLASS2-01"]
     assert payload["recordCount"] == 148
     # 168 before river geometry v2; switched groups preview one rivernet course each
-    assert payload["candidateCount"] == 162
+    assert payload["candidateCount"] == 161
     assert payload["candidateCount"] == sum(len(r["physicalCandidates"]) for r in payload["records"])
     assert len({record["slug"] for record in payload["records"]}) == 148
     for record in payload["records"]:
@@ -34,7 +34,7 @@ def test_class2_preview_aggregate_schema_and_scope():
 def test_class2_preview_hash_is_stable_for_checked_in_artifact():
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest()
     # re-pinned at the river geometry v2 cutover (T4.4): switched groups preview their rivernet course
-    assert digest == "f0dc60a7805eff4c55eb7682041fe666c06502af31a17864947d2f2b044758cf"
+    assert digest == "10758a7b656e3fb9b05f89dedc51d6997d5b32a48d86fb9000719137c8063bea"
 
 
 def test_buzau_preview_keeps_physical_course_separate_from_unverified_contracts():

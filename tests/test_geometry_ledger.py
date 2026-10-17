@@ -108,8 +108,8 @@ def test_checked_in_ledger_is_complete_deterministic_and_public_projection_is_re
     assert authoritative["totals"]["rivers"] == 761
     assert authoritative["totals"]["lakes"] == 252
     assert authoritative["totals"]["unresolvedInventory"] == 312
-    # 75 since the Siret group (two preview candidates) switched to its single rivernet course
-    assert authoritative["totals"]["physicalPreviewRuntimeRepresentatives"] == 75
+    # 76 before river geometry v2; switched groups preview one rivernet course each
+    assert authoritative["totals"]["physicalPreviewRuntimeRepresentatives"] == 74
     assert len(authoritative["records"]) == 1013
     assert len({record["sourceSlug"] for record in authoritative["records"]}) == 1013
     assert len(public["records"]) == 1013

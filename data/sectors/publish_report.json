@@ -189,18 +189,6 @@
   },
   {
    "blockers": [
-    "3ek8e82l",
-    "anpa-anpa-0388"
-   ],
-   "members": [
-    "3ek8e82l",
-    "anpa-anpa-0388",
-    "romsilva-dambovita-ialomita-superioara"
-   ],
-   "riverGroup": "ialomita"
-  },
-  {
-   "blockers": [
     "fanvixkg"
    ],
    "members": [
@@ -268,27 +256,6 @@
     "anpa-suceava-moldova-59"
    ],
    "riverGroup": "moldova"
-  },
-  {
-   "blockers": [
-    "anpa-anpa-0377",
-    "anpa-anpa-0426",
-    "anpa-anpa-0453",
-    "hmd3pa0v",
-    "romsilva-mures-mures-iii"
-   ],
-   "members": [
-    "anpa-anpa-0323",
-    "anpa-anpa-0337",
-    "anpa-anpa-0377",
-    "anpa-anpa-0426",
-    "anpa-anpa-0453",
-    "anpa-anpa-0584",
-    "hmd3pa0v",
-    "romsilva-mures-mures-iii",
-    "yu63lkif"
-   ],
-   "riverGroup": "mures"
   },
   {
    "blockers": [
@@ -728,10 +695,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "3ek8e82l"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "q0k04upr"
   },
   {
@@ -781,10 +744,6 @@
   {
    "reason": "status_unresolved",
    "slug": "65cb7tk8"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "hmd3pa0v"
   },
   {
    "reason": "status_unresolved",
@@ -1491,10 +1450,6 @@
    "slug": "anpa-anpa-0335"
   },
   {
-   "reason": "review_without_override",
-   "slug": "anpa-anpa-0338"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0339"
   },
@@ -1557,10 +1512,6 @@
   {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0376"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0377"
   },
   {
    "reason": "status_unresolved",
@@ -1705,10 +1656,6 @@
   {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0451"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0453"
   },
   {
    "reason": "status_unresolved",
@@ -1968,10 +1915,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "anpa-anpa-0426"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "anpa-anpa-0496"
   },
   {
@@ -1981,10 +1924,6 @@
   {
    "reason": "review_without_override",
    "slug": "anpa-anpa-0298"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0388"
   },
   {
    "reason": "review_without_override",
@@ -2443,10 +2382,6 @@
    "slug": "romsilva-mures-gudea"
   },
   {
-   "reason": "status_unresolved",
-   "slug": "romsilva-mures-mures-iii"
-  },
-  {
    "reason": "review_without_override",
    "slug": "romsilva-mures-salard"
   },
@@ -2659,12 +2594,14 @@
    "slug": "anpa-vrancea-ramnicu-sarat"
   }
  ],
- "kept_legacy_count": 554,
+ "kept_legacy_count": 546,
  "mode": "write",
  "preview_groups_replaced": [
   "aries",
   "crisul-alb",
+  "ialomita",
   "latorita",
+  "mures",
   "negru",
   "prut",
   "siret"
@@ -2810,6 +2747,11 @@
    "status": "resolved"
   },
   {
+   "riverGroup": "ialomita",
+   "slug": "3ek8e82l",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "jiul-de-est",
    "slug": "dmswvndo",
    "status": "resolved"
@@ -2835,9 +2777,13 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "mures",
    "slug": "yu63lkif",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "mures",
+   "slug": "hmd3pa0v",
    "status": "resolved"
   },
   {
@@ -3154,7 +3100,6 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "mures",
    "slug": "anpa-anpa-0323",
    "status": "resolved"
@@ -3170,10 +3115,14 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "mures",
    "slug": "anpa-anpa-0337",
    "status": "resolved"
+  },
+  {
+   "riverGroup": "izvorul-mures",
+   "slug": "anpa-anpa-0338",
+   "status": "review"
   },
   {
    "riverGroup": "fisag",
@@ -3203,6 +3152,11 @@
   {
    "riverGroup": null,
    "slug": "anpa-anpa-0375",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "mures",
+   "slug": "anpa-anpa-0377",
    "status": "resolved"
   },
   {
@@ -3283,6 +3237,11 @@
   {
    "riverGroup": null,
    "slug": "anpa-anpa-0444",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "mures",
+   "slug": "anpa-anpa-0453",
    "status": "resolved"
   },
   {
@@ -3422,7 +3381,11 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
+   "riverGroup": "mures",
+   "slug": "anpa-anpa-0426",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "mures",
    "slug": "anpa-anpa-0584",
    "status": "resolved"
@@ -3466,6 +3429,11 @@
    "d8": "partial",
    "riverGroup": "somes",
    "slug": "anpa-anpa-0402",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ialomita",
+   "slug": "anpa-anpa-0388",
    "status": "resolved"
   },
   {
@@ -3568,7 +3536,6 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "ialomita",
    "slug": "romsilva-dambovita-ialomita-superioara",
    "status": "resolved"
@@ -3621,6 +3588,11 @@
   {
    "riverGroup": "zebrac",
    "slug": "romsilva-mures-zebrac",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "mures",
+   "slug": "romsilva-mures-mures-iii",
    "status": "resolved"
   },
   {
@@ -3735,5 +3707,5 @@
    "status": "resolved"
   }
  ],
- "switched_count": 207
+ "switched_count": 215
 }

@@ -9,11 +9,11 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 
 ## Summary
 
-- **PASS_CONTRACTED**: 3
-- **UNRESOLVED_NO_OSM_MATCH**: 16
-- **missing_segment**: 24
-- **truncated_head**: 6
-- **truncated_mouth**: 6
+- **PASS_CONTRACTED**: 4
+- **UNRESOLVED_NO_OSM_MATCH**: 15
+- **missing_segment**: 21
+- **truncated_head**: 5
+- **truncated_mouth**: 5
 
 ## Baseline deltas
 
@@ -45,18 +45,18 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Covasna | 22 | 15 | 7 | 1 | 68 | 87 | blocked |
 | Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
 | Dolj | 18 | 13 | 5 | 0 | 40 | 182 | partial |
-| Dâmbovița | 17 | 16 | 1 | 10 | 51 | 151 | blocked |
+| Dâmbovița | 17 | 16 | 1 | 0 | 51 | 151 | partial |
 | Galați | 2 | 2 | 0 | 0 | 15 | 100 | covered |
 | Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
 | Gorj | 26 | 21 | 5 | 0 | 49 | 58 | partial |
 | Harghita | 44 | 32 | 12 | 1 | 429 | 72 | blocked |
-| Hunedoara | 70 | 62 | 8 | 0 | 138 | 120 | partial |
-| Ialomița | 6 | 3 | 3 | 5 | 4 | 113 | blocked |
+| Hunedoara | 70 | 63 | 7 | 0 | 138 | 120 | partial |
+| Ialomița | 6 | 4 | 2 | 0 | 4 | 113 | partial |
 | Iași | 6 | 4 | 2 | 0 | 76 | 244 | partial |
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
 | Maramureș | 50 | 38 | 12 | 0 | 129 | 58 | partial |
 | Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
-| Mureș | 41 | 31 | 10 | 0 | 198 | 142 | partial |
+| Mureș | 41 | 34 | 7 | 0 | 198 | 142 | partial |
 | Neamț | 22 | 14 | 8 | 0 | 382 | 53 | partial |
 | Olt | 15 | 14 | 1 | 1 | 69 | 235 | blocked |
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
@@ -80,11 +80,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `cerna-valcea`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 7844.783829386986, "midpoint": [22.955611, 45.8525721], "start_fraction": 0.0}
 - `cerna-valcea`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
 - `cerna-valcea`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
-- `ialomita`: **missing_segment** — {"end_fraction": 0.13, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 39401.861728674776, "midpoint": [25.4284591804039, 45.08159500696998], "start_fraction": 0.05}
-- `ialomita`: **missing_segment** — {"end_fraction": 0.2, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 14775.69814825304, "midpoint": [25.60586621976741, 44.876208273716394], "start_fraction": 0.17}
-- `ialomita`: **missing_segment** — {"end_fraction": 1.0, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 349691.5228419886, "midpoint": [26.061667487725543, 41.9681192709235], "start_fraction": 0.29}
-- `ialomita`: **truncated_head** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
-- `ialomita`: **truncated_mouth** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}}
 - `lacul de acumulare belis fantanele`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
 - `lacul de acumulare gilau`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
 - `lacul rosu`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
