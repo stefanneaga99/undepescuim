@@ -19,25 +19,42 @@ TEMPLATE = """<!doctype html><html lang="ro"><head><meta charset="utf-8"><title>
 #list{width:340px;overflow:auto;border-right:1px solid #ccc;padding:8px}#map{flex:1}
 .it{padding:6px;border-bottom:1px solid #eee;cursor:pointer}.it:hover{background:#f3f3f3}
 .s-resolved{border-left:4px solid #d32f2f}.s-review{border-left:4px solid #f57c00}.s-unresolved{border-left:4px solid #9e9e9e}
-small{color:#555}</style></head><body><div id="app"><div id="list">
-<h3>__TITLE__</h3><label>Status <select id="f"><option value="">all</option><option>resolved</option><option>review</option><option>unresolved</option></select></label>
+small{color:#555}.lg{font-size:12px;margin:6px 0 10px;line-height:1.7}
+.lg i{display:inline-block;width:22px;height:0;vertical-align:middle;margin-right:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #333;vertical-align:middle;margin-right:4px}</style></head><body><div id="app"><div id="list">
+<h3>__TITLE__</h3>
+<div class="lg"><i style="border-top:5px solid #d32f2f"></i>sector nou (resolved)
+<i style="border-top:5px solid #f57c00;margin-left:8px"></i>review<br>
+<i style="border-top:3px dashed #333"></i>geometria veche
+<span class="dot" style="background:#2e7d32;margin-left:8px"></span>de la
+<span class="dot" style="background:#1565c0;margin-left:8px"></span>până la</div><label>Status <select id="f"><option value="">all</option><option>resolved</option><option>review</option><option>unresolved</option></select></label>
 <div id="items"></div></div><div id="map"></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/__LV__/leaflet.min.js"></script>
 <script>
 const DATA = __DATA__;
 const map = L.map('map').setView([45.9, 24.9], 7);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18, attribution: '&copy; OpenStreetMap'}).addTo(map);
+// Esri basemaps: they load from file:// pages and previews (no Referer), unlike
+// tile.openstreetmap.org, whose usage policy blocks those. Light grey by
+// default so the sector lines stand out; topographic map for place names.
+const esri = (svc) => `https://server.arcgisonline.com/ArcGIS/rest/services/${svc}/MapServer/tile/{z}/{y}/{x}`;
+const light = L.tileLayer(esri('Canvas/World_Light_Gray_Base'), {maxZoom: 16, attribution: 'Tiles &copy; Esri'}).addTo(map);
+const labels = L.tileLayer(esri('Canvas/World_Light_Gray_Reference'), {maxZoom: 16}).addTo(map);
+const topo = L.tileLayer(esri('World_Topo_Map'), {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
+L.control.layers({'Hartă deschisă': light, 'Hartă topografică': topo}, {'Nume localități': labels}).addTo(map);
 const layers = {};
 const items = document.getElementById('items');
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 function ep(e){return e?esc(e.kind)+' ('+esc(e.method)+', '+e.confidence+') m='+e.m:'-';}
 DATA.forEach(d=>{
   const g = L.layerGroup();
-  if (d.old) L.geoJSON(d.old,{style:{color:'#888',weight:3,opacity:.7}}).addTo(g);
+  if (d.old) L.geoJSON(d.old,{style:{color:'#333',weight:3,opacity:.85,dashArray:'6 6'}}).addTo(g);
   if (d.coords && d.coords.length) {
-    L.polyline(d.coords.map(c=>[c[1],c[0]]),{color:d.status==='resolved'?'#d32f2f':'#f57c00',weight:4}).addTo(g);
-    [['from',d.coords[0]],['to',d.coords[d.coords.length-1]]].forEach(([k,c])=>{
-      L.circleMarker([c[1],c[0]],{radius:6,color:'#000',fillColor:'#fff',fillOpacity:1}).bindPopup(k+': '+ep(d[k])).addTo(g);});
+    const ll = d.coords.map(c=>[c[1],c[0]]);
+    L.polyline(ll,{color:'#fff',weight:9,opacity:.9}).addTo(g);  // white casing
+    L.polyline(ll,{color:d.status==='resolved'?'#d32f2f':'#f57c00',weight:5}).addTo(g);
+    [['from',d.coords[0],'#2e7d32'],['to',d.coords[d.coords.length-1],'#1565c0']].forEach(([k,c,col])=>{
+      L.circleMarker([c[1],c[0]],{radius:8,color:'#fff',weight:3,fillColor:col,fillOpacity:1})
+        .bindTooltip(k==='from'?'de la':'până la',{permanent:false}).bindPopup(k+': '+ep(d[k])).addTo(g);});
   }
   g.bindPopup('<b>'+esc(d.name)+'</b><br>'+esc(d.limite)+'<br>contract '+esc(d.contract_km)+' km, drawn '+esc(d.drawn_km)+' km<br>'+esc(d.status)+' / '+esc(d.confidence)+'<br>'+esc((d.reasons||[]).join(', ')));
   layers[d.slug] = g;
