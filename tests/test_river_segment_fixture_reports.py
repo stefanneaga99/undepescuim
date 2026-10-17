@@ -211,3 +211,22 @@ def test_report_keeps_each_overlay_classification(tmp_path):
     report = json.loads(output_json.read_text())
     assert {x["slug"] for x in report["overlays"]} == {"unc-river", "unc-lake"}
     assert report["cells"][0]["overlay"] == {"rivers": 1, "lakes": 1}
+
+
+def test_precut_sector_is_exempt_from_full_course_coverage(tmp_path):
+    """River geometry v2 cutover: a pre-cut sector draws only its own stretch."""
+    root, index = materialize_case(tmp_path, "tarnava_injected_gap")
+    waters_path = root / "public/data/waters.json"
+    waters = json.loads(waters_path.read_text(encoding="utf-8"))
+    waters[0]["geometryKind"] = "sector"
+    waters_path.write_text(json.dumps(waters, ensure_ascii=False), encoding="utf-8")
+    output_json, output_md = root / "report.json", root / "report.md"
+    result = subprocess.run(
+        [sys.executable, str(ROOT / "scripts/audit_river_segments.py"), "--osm-index", str(index), "--root", str(root),
+         "--out-json", str(output_json), "--out-md", str(output_md), "--gate"],
+        cwd=ROOT, capture_output=True, text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    river = json.loads(output_json.read_text())["rivers"][0]
+    assert river["precut_sectors"] == [waters[0]["slug"]]
+    assert not any(f["code"] in ("missing_segment", "truncated_head", "truncated_mouth") for f in river["findings"])

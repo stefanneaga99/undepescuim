@@ -29,33 +29,33 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 
 | County | Contracted | Geometry | Missing | Findings | Overlay rivers | Overlay lakes | Status |
 |---|---:|---:|---:|---:|---:|---:|---|
-| Alba | 49 | 32 | 17 | 0 | 132 | 112 | partial |
-| Arad | 34 | 22 | 12 | 0 | 41 | 138 | partial |
+| Alba | 49 | 33 | 16 | 0 | 132 | 112 | partial |
+| Arad | 34 | 24 | 10 | 0 | 41 | 138 | partial |
 | Argeș | 36 | 27 | 9 | 0 | 154 | 183 | partial |
 | Bacău | 24 | 21 | 3 | 6 | 79 | 62 | blocked |
-| Bihor | 41 | 23 | 18 | 0 | 138 | 280 | partial |
+| Bihor | 41 | 27 | 14 | 0 | 138 | 280 | partial |
 | Bistrița-Năsăud | 31 | 21 | 10 | 0 | 108 | 49 | partial |
-| Botoșani | 28 | 14 | 14 | 6 | 25 | 128 | blocked |
+| Botoșani | 28 | 18 | 10 | 6 | 25 | 128 | blocked |
 | Brașov | 33 | 28 | 5 | 3 | 270 | 123 | blocked |
 | Brăila | 8 | 5 | 3 | 6 | 11 | 70 | blocked |
 | București | 0 | 0 | 0 | 0 | 0 | 47 | covered |
 | Buzău | 14 | 7 | 7 | 0 | 65 | 63 | partial |
 | Caraș-Severin | 41 | 32 | 9 | 4 | 128 | 60 | blocked |
-| Cluj | 42 | 33 | 9 | 0 | 218 | 156 | partial |
+| Cluj | 42 | 34 | 8 | 0 | 218 | 156 | partial |
 | Constanța | 3 | 1 | 2 | 0 | 23 | 109 | partial |
-| Covasna | 22 | 13 | 9 | 1 | 68 | 87 | blocked |
+| Covasna | 22 | 14 | 8 | 1 | 68 | 87 | blocked |
 | Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
 | Dolj | 18 | 12 | 6 | 0 | 40 | 182 | partial |
-| Dâmbovița | 17 | 12 | 5 | 10 | 51 | 151 | blocked |
+| Dâmbovița | 17 | 13 | 4 | 10 | 51 | 151 | blocked |
 | Galați | 2 | 0 | 2 | 6 | 15 | 100 | blocked |
 | Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
-| Gorj | 26 | 19 | 7 | 0 | 49 | 58 | partial |
-| Harghita | 44 | 29 | 15 | 1 | 429 | 72 | blocked |
-| Hunedoara | 70 | 60 | 10 | 0 | 139 | 120 | partial |
+| Gorj | 26 | 20 | 6 | 0 | 49 | 58 | partial |
+| Harghita | 44 | 30 | 14 | 1 | 429 | 72 | blocked |
+| Hunedoara | 70 | 62 | 8 | 0 | 139 | 120 | partial |
 | Ialomița | 6 | 3 | 3 | 5 | 4 | 113 | blocked |
 | Iași | 6 | 2 | 4 | 6 | 76 | 244 | blocked |
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
-| Maramureș | 50 | 32 | 18 | 0 | 129 | 58 | partial |
+| Maramureș | 50 | 37 | 13 | 0 | 129 | 58 | partial |
 | Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
 | Mureș | 41 | 31 | 10 | 0 | 198 | 142 | partial |
 | Neamț | 22 | 13 | 9 | 6 | 382 | 53 | blocked |
@@ -63,14 +63,14 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
 | Satu Mare | 11 | 7 | 4 | 0 | 20 | 72 | partial |
 | Sibiu | 48 | 38 | 10 | 1 | 89 | 169 | blocked |
-| Suceava | 36 | 18 | 18 | 6 | 103 | 62 | blocked |
+| Suceava | 36 | 19 | 17 | 6 | 103 | 62 | blocked |
 | Sălaj | 15 | 9 | 6 | 0 | 37 | 40 | partial |
 | Teleorman | 6 | 5 | 1 | 1 | 34 | 160 | blocked |
-| Timiș | 41 | 34 | 7 | 4 | 48 | 236 | blocked |
+| Timiș | 41 | 35 | 6 | 4 | 48 | 236 | blocked |
 | Tulcea | 0 | 0 | 0 | 0 | 94 | 851 | covered |
 | Vaslui | 7 | 4 | 3 | 0 | 12 | 54 | partial |
 | Vrancea | 15 | 8 | 7 | 6 | 28 | 33 | blocked |
-| Vâlcea | 74 | 62 | 12 | 4 | 306 | 97 | blocked |
+| Vâlcea | 74 | 63 | 11 | 4 | 306 | 97 | blocked |
 
 ## Findings
 

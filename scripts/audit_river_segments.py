@@ -157,17 +157,24 @@ def audit(index, root, alias_path=None, exception_path=None):
   if len(member)!=len(ids): findings.append({'code':'osm_source_incomplete','missing_way_ids':sorted(set(ids)-set(ways))})
   if not owner: findings.append({'code':'MISSING_CONTRACTED','relation_name':name,'aliases_considered':sorted(set(norm(n) for n in names))})
   elif not pub: findings.append({'code':'missing_segment','reason':'published_geometry_missing','length_m':0})
-  runs=uncovered_runs(osm,pub) if pub and osm else []
+  # River geometry v2 (plan T4.4): pre-cut sectors draw only their own
+  # contracted stretch, never the full course, so full-course coverage,
+  # terminal truncation and legacy interval checks do not apply. Their
+  # geometry is validated by the rivernet invariants instead; the jump and
+  # duplicate checks above still run.
+  precut=bool(candidates) and all(w.get('geometryKind')=='sector' for w in candidates)
+  runs=uncovered_runs(osm,pub) if pub and osm and not precut else []
   for run in runs: findings.append({'code':'missing_segment',**run})
-  findings += [{'code':x} for x in terminal_findings(osm,pub)]
-  findings += sector_findings(candidates)
+  if not precut:
+   findings += [{'code':x} for x in terminal_findings(osm,pub)]
+   findings += sector_findings(candidates)
   group=(owner.get('riverGroup') or norm(name)) if owner else norm(name)
   for finding in findings:
    ex=exception_for(finding, group, exceptions)
    if ex: finding['gate_exception']={'id':ex.get('id'),'expires_on':ex['expires_on']}
    else: hard.append(finding.get('code','unknown'))
   status='PASS_CONTRACTED' if not findings and owner else ('MISSING_CONTRACTED' if not owner else 'UNRESOLVED_NO_OSM_MATCH')
-  out.append({'river_group':group,'owner_slug':owner.get('slug') if owner else None,'source_rows':[r.get('id') for r in src if any(norm(r.get('water_name') or r.get('name'))==norm(n) for n in names)],'osm':{'osm_id':rel['osm_id'],'relation_ids':[rel['osm_id']],'way_ids':ids,'match_status':'confirmed' if owner else 'unresolved'},'topology':{'components':1 if len(member)==len(ids) else 2,'internal_gaps':runs},'coverage':{'osm_to_published':coverage_fraction(osm,pub) if pub else 0.0,'published_to_osm':coverage_fraction(pub,osm) if osm else 0.0},'segments':[{'segment_id':f"{rel['osm_id']}:main",'status':status,'fraction':[0,1],'length_m':round(line_length(osm),3),'evidence':list(osm[::max(1,len(osm)//5)])[:5]}], 'findings':findings,'registry':{'alias_used':alias_used}})
+  out.append({'river_group':group,'owner_slug':owner.get('slug') if owner else None,'source_rows':[r.get('id') for r in src if any(norm(r.get('water_name') or r.get('name'))==norm(n) for n in names)],'osm':{'osm_id':rel['osm_id'],'relation_ids':[rel['osm_id']],'way_ids':ids,'match_status':'confirmed' if owner else 'unresolved'},'topology':{'components':1 if len(member)==len(ids) else 2,'internal_gaps':runs},'coverage':{'osm_to_published':coverage_fraction(osm,pub) if pub else 0.0,'published_to_osm':coverage_fraction(pub,osm) if osm else 0.0},'segments':[{'segment_id':f"{rel['osm_id']}:main",'status':status,'fraction':[0,1],'length_m':round(line_length(osm),3),'evidence':list(osm[::max(1,len(osm)//5)])[:5]}], 'findings':findings,'registry':{'alias_used':alias_used},**({'precut_sectors':sorted(w.get('slug') for w in candidates)} if precut else {})})
  counts=Counter(r['segments'][0]['status'] for r in out)
  for river in out:
   for finding in river['findings']:
