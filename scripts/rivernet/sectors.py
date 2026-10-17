@@ -17,7 +17,12 @@ from .textnorm import fold
 SAME_POINT_M = 200.0
 AMBIGUOUS_GAP = 0.1
 AMBIGUOUS_M = 200.0
-MAX_SEGMENT_M = 1000.0
+# A rivernet course joins OSM ways only at shared nodes and records every gap
+# bridge as a synthetic span, so a long segment outside those spans is a
+# coarsely mapped OSM way, not a chord across a gap. Over COARSE_SEGMENT_M it
+# is reported (non-blocking); over MAX_SEGMENT_M it is a blocking invariant.
+COARSE_SEGMENT_M = 1000.0
+MAX_SEGMENT_M = 5000.0
 COUNTY_BUFFER_M = 500.0
 BAND_RESOLVED = (0.6, 1.6)
 BAND_HIGH = (0.8, 1.25)
@@ -144,13 +149,17 @@ def validate(rec: dict[str, Any], course: Mapping[str, Any], ctx: Context) -> li
     spans = [(s["m_from"] - 1, s["m_to"] + 1) for s in course.get("synthetic") or []]
     from .geodesy import vincenty_m
 
+    worst = 0.0
     for a, b in zip(pts, pts[1:]):
         seg = vincenty_m(a[0], a[1], b[0], b[1])
-        if seg > MAX_SEGMENT_M:
+        if seg > COARSE_SEGMENT_M:
             mid = line.locate((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)[0]
             if not any(lo <= mid <= hi for lo, hi in spans):
-                bad.append("segment_gt_1km")
-                break
+                worst = max(worst, seg)
+    if worst > MAX_SEGMENT_M:
+        bad.append("segment_gt_5km")
+    elif worst > COARSE_SEGMENT_M:
+        rec["reasons"].append("coarse_osm_segment")
     poly = ctx.county_polys.get(fold(rec.get("judet")))
     if poly is not None and "COUNTY_LIMIT" not in (rec["from"]["kind"], rec["to"]["kind"]):
         samples = [pts[0], pts[len(pts) // 2], pts[-1]]
@@ -197,13 +206,31 @@ def resolve_sector(
     elif rec["contract_km"] is None:
         rec["reasons"].append("contract_km_missing")
     scope = spec.get("scope")
-    if scope in ("empty", "unparsed", None):
-        return _unresolved(rec, "limite_unusable")
     cid = match.get("course_id")
     course = ctx.courses.get(cid) if cid else None
+    ovs = endpoint_overrides or {}
+    if scope in ("empty", "unparsed", None):
+        # Reviewed overrides for BOTH ends define the sector even when the limite
+        # text is unusable (e.g. cadastral river-km markers: "Jirlău km 183 -
+        # Voinești km 309").
+        ends = {e: ovs.get((water["slug"], e)) for e in ("from", "to")}
+        if course is None or not all(ends.values()):
+            return _unresolved(rec, "limite_unusable")
+        picked = {e: _override_candidate(ends[e], course, ctx, e) for e in ends}
+        if not all(picked.values()):
+            return _unresolved(rec, "limite_unusable", "override_anchor_unresolvable")
+        f, t = picked["from"], picked["to"]
+        if f.m > t.m:
+            f, t = t, f
+            rec["reasons"].append("swapped_order")
+        rec["override_ids"] += [f"{water['slug']}:from", f"{water['slug']}:to"]
+        rec["reasons"].append("limite_unusable_overridden")
+        rec["from"], rec["to"] = _ep("OVERRIDE", f), _ep("OVERRIDE", t)
+        if rec["to"]["m"] - rec["from"]["m"] <= 0:
+            return _unresolved(rec, "empty_sector")
+        return _finish(rec, course, ctx)
     if course is None:
         return _unresolved(rec, "course_" + (match.get("method") or "missing") if not cid else "course_record_missing")
-    ovs = endpoint_overrides or {}
     judet = water.get("judet")
     length = course["length_m"]
 
@@ -347,6 +374,10 @@ def resolve_best(
 # --------------------------------------------------------------------- overlaps
 
 
+def _plausible(rec: Mapping[str, Any]) -> bool:
+    return _band(rec.get("km_ratio"), BAND_RESOLVED, bool(rec.get("includes_tributaries")))
+
+
 def flag_overlaps(records: list[dict[str, Any]]) -> None:
     """Flag ``overlap:<slug>`` on both sides; > 50% of the shorter sector (and
     neither is whole_county) downgrades ``resolved`` to ``review``."""
@@ -367,10 +398,12 @@ def flag_overlaps(records: list[dict[str, Any]]) -> None:
                 shorter = min(a["length_m"], b["length_m"])
                 county = "whole_county" in (a["parse"]["scope"], b["parse"]["scope"])
                 if shorter > 0 and (hi - lo) / shorter > OVERLAP_REVIEW_SHARE and not county:
-                    for x in (a, b):
-                        if x["status"] == "resolved":
-                            x["status"] = "review"
+                    for x, y in ((a, b), (b, a)):
                         x["reasons"] = sorted(set(x["reasons"]) | {"overlap_gt_50pct"})
+                        # an implausible partner (its own km_ratio outside the resolved
+                        # band, so it is already in review) cannot demote x
+                        if x["status"] == "resolved" and _plausible(y):
+                            x["status"] = "review"
 
 
 # -------------------------------------------------------------------------- CLI

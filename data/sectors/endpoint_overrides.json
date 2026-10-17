@@ -1,4 +1,60 @@
 {
   "schema": 1,
-  "overrides": []
+  "overrides": [
+    {
+      "slug": "anpa-anpa-0214",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 186964.7
+      },
+      "reason": "'la ieșire din județ Buzău': the course leaves Buzău county for Brăila at m 186964.7 (course rel:12800074 (Buzău, OSM extract 2026-10-16)); the resolver had taken the county ENTRY (m 44967.8) and swapped the ends. Sibiciu conf. (m 81.7 km) -> exit = 105 km vs 107 km contract.",
+      "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0261",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 48023.2
+      },
+      "reason": "'limită Jud. Buzău': the Covasna/Buzău border zigzags across the river between m 44967.8 and m 48023.2 (course rel:12800074 (Buzău, OSM extract 2026-10-16)); the last crossing ends the Covasna stretch. Brașov limit (m 23.4 km) -> 48.0 km = 24.6 km vs 25 km contract.",
+      "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0211",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 71803.6
+      },
+      "reason": "'barajul Siriu – vărsare', 12 km: the first confluence 12 km below the Siriu dam (m 59.98 km) is the Nehoiu stream (ANAR RO12-1-82-16, OSM junction node 1598439867 at m 71803.6, course rel:12800074 (Buzău, OSM extract 2026-10-16)) = 11.8 km. Interpretation of 'vărsare'; owner to confirm.",
+      "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "ufdigh4c",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 186964.7
+      },
+      "reason": "'Jirlău km 183': Jirlău lies at the Buzău/Brăila county border (m 186964.7, course rel:12800074 (Buzău, OSM extract 2026-10-16)); the cadastral km 183 maps to m 178-183 on the course, so the contract starts where the river enters Brăila.",
+      "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "ufdigh4c",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 460062812
+      },
+      "reason": "'Voinești km 309': Voinești (Brăila), OSM place node on the left bank 291 m from the river, 2.2 km above the Siret confluence; km 309 exceeds the cadastral length (295.5 km), so the village is the anchor.",
+      "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
+      "date": "2026-10-17"
+    }
+  ]
 }

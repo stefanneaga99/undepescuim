@@ -138,33 +138,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0211",
-   "name": "Valea Buzăului inferior",
-   "judet": "Buzău",
-   "asociatie": "AJVPS BUZĂU",
-   "riverGroup": "buzau",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0213",
-   "name": "Râul Călmățui cu afluenții săi",
-   "judet": "Buzău",
-   "asociatie": "AJVPS BUZĂU",
-   "riverGroup": "calmatui",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0214",
-   "name": "Râul Buzăul inferior",
-   "judet": "Buzău",
-   "asociatie": "AJVPS BUZĂU",
-   "riverGroup": "buzau",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0220",
    "name": "Râul Bârzava inferioară",
    "judet": "Caraș-Severin",
@@ -225,15 +198,6 @@
    "asociatie": "AJVPS CONSTANȚA",
    "riverGroup": null,
    "fallback": "no_geometry",
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0261",
-   "name": "Pârâu Buzăul Mijlociu",
-   "judet": "Covasna",
-   "asociatie": "AJVPS COVASNA",
-   "riverGroup": "buzau",
-   "fallback": null,
    "justified": true
   },
   {
@@ -606,15 +570,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0623",
-   "name": "Râul Racova",
-   "judet": "Vaslui",
-   "asociatie": "AJVPS VASLUI",
-   "riverGroup": null,
-   "fallback": "no_geometry",
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0677",
    "name": "Râul Zăbala inferioara",
    "judet": "Vrancea",
@@ -660,28 +615,10 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0584",
-   "name": "Râul Mureș",
-   "judet": "Timiș",
-   "asociatie": "AJVPS TIMIȘ",
-   "riverGroup": "mures",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0552",
    "name": "Râul Siret",
    "judet": "Suceava",
    "asociatie": "AJVPS BOTOȘANI",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0066",
-   "name": "Râul Siret",
-   "judet": "Bacău",
-   "asociatie": "Centrul Regional de Ecologie Bacău",
    "riverGroup": "siret",
    "fallback": null,
    "justified": true
@@ -755,15 +692,6 @@
    "judet": "Sibiu",
    "asociatie": "AJVPS SIBIU",
    "riverGroup": "tarnava-mare",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0585",
-   "name": "Râul Bârzava",
-   "judet": "Timiș",
-   "asociatie": "AJVPS TIMIȘ",
-   "riverGroup": "barzava",
    "fallback": null,
    "justified": true
   },
@@ -1200,15 +1128,6 @@
    "justified": true
   },
   {
-   "slug": "romsilva-valcea-lotru-superior",
-   "name": "Râul Lotru Superior",
-   "judet": "Vâlcea",
-   "asociatie": "Direcția Silvică Vâlcea",
-   "riverGroup": "lotru",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "romsilva-vrancea-putna-superioara",
    "name": "Râul Putna Superioara",
    "judet": "Vrancea",
@@ -1231,15 +1150,6 @@
    "name": "Râul Bistrița",
    "judet": "Neamț",
    "asociatie": "AJVPS NEAMȚ",
-   "riverGroup": "bistrita",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-bacau-bistrita-39",
-   "name": "Râul Bistrița",
-   "judet": "Bacău",
-   "asociatie": "AJVPS BACĂU",
    "riverGroup": "bistrita",
    "fallback": null,
    "justified": true

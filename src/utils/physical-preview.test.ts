@@ -111,8 +111,10 @@ describe('ledger-backed physical preview rendering', () => {
       'anpa-anpa-0207', 'anpa-anpa-0210', 'anpa-anpa-0211',
       'anpa-anpa-0214', 'anpa-anpa-0261', 'romsilva-brasov-buzaul-superior',
     ]);
+    // anpa-anpa-0261 now draws its own pre-cut sector (river geometry v2, D8 partial
+    // switch), so only the Brașov member keeps an explicit projection on the preview course.
     expect(buzau?.physicalSegments?.map((segment) => segment.sourceSlug).sort()).toEqual([
-      'anpa-anpa-0261', 'romsilva-brasov-buzaul-superior',
+      'romsilva-brasov-buzaul-superior',
     ]);
   }, 15_000);
 

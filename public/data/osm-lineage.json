@@ -21,7 +21,7 @@
       "source_urls": ["https://data.gov.ro/dataset/hidrografie", "https://data.humdata.org/dataset/hotosm_rou_waterways", "https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz", "https://nominatim.openstreetmap.org/", "https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-11",
       "transformations": ["Matched contracted source records to OSM waterways", "Ordered and deduplicated river courses", "Attached OSM geometry to contractual water records", "rivernet-v2: pinned OSM extract https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz (sha256 1e1373150909fc0debe5bd98cb5dcf84d71643517d3ff7b76123a4cc66f3a246, OSM 2026-10-16T20:21:21Z)", "rivernet-v2: directed waterway graph from shared OSM node ids, course stitching, linear referencing", "rivernet-v2: contract limite parsed and resolved to OSM anchors (confluences, places, bridges, dams, lakes, county limits)", "rivernet-v2: sector substring per contract, Douglas-Peucker simplify 5 m, 5 dp", "rivernet-v2: fallback geometry for courses missing from OSM from ANAR Hidrografie (anar-hidrografie-20250212, CC BY 4.0)"],
-      "sha256": "0154621d747d0ae0dc3fe684fabedf805ba668b1af2cd3a6e0ad4fe14955f408",
+      "sha256": "a1d6b5417bd26cc6379a3e365666fb09c4ffe35ee74d9854290d0644e3a221d6",
       "license_classification": "mixed",
       "required_notice": "OSM-derived geometry: © OpenStreetMap contributors, ODbL; contractual and association fields retain their source-specific status. See https://www.openstreetmap.org/copyright. Sectors marked geometry:anar-hidrografie use © Administrația Națională Apele Române (ANAR), data.gov.ro, CC BY 4.0."
     },
@@ -30,7 +30,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-12",
       "transformations": ["Excluded courses matched to contracted waters", "Removed duplicate contracted runs", "Simplified and rounded geometry", "Assigned Romanian county by boundary containment"],
-      "sha256": "6cbe81663967bc5500f8255a4961591e942e16d088f5b992b33bdb1aff1b7613",
+      "sha256": "f2d426111354f4de67a84494d9942dcc59a53bd889724070c78098651f716872",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },
@@ -48,7 +48,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-12",
       "transformations": ["Selected major uncontracted waterways from the OSM-derived overlay", "Simplified geometry for low-zoom rendering"],
-      "sha256": "cd2cb93efa6d7c59f30a67afd1d41f0135601d86928f7cb60fa8a3afc93ab45d",
+      "sha256": "e01fc998f9f581fe06b31046c657f707836def7453ba88c5a5867899a7c43ce8",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },
@@ -57,7 +57,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter", "https://nominatim.openstreetmap.org/"],
       "accessed_at": "2026-08-12",
       "transformations": ["Clipped OSM-derived water geometry to county boundaries", "Normalized county keys for lazy map rendering", "rivernet-v2: pre-cut sectors clipped to their county (buffer 0.002 deg), simplified 0.0001 deg"],
-      "sha256": "82e24fda3ec63f1622bd10b78906a6b4127beece53a226fe4dcb8aacff15d73e",
+      "sha256": "0fd7e4a16c4e073d8d140aa70e9f1a871cb80ec1e917f843e0e22ff37b6a0b4b",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },
@@ -93,7 +93,7 @@
       "source_urls": ["https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz", "https://data.gov.ro/dataset/hidrografie"],
       "accessed_at": "2026-10-17",
       "transformations": ["rivernet-v2: per-sector endpoint evidence (kind, OSM anchor id, confidence, Romanian label from the contract limite)"],
-      "sha256": "7a2188fa6fd2d79e31600a8cf376bc586281592b7327c5feca1233b854e525c8",
+      "sha256": "cac4dfdbf4a76a64ea48891dab4245add02cb9bfac17ce26c725578d082eee86",
       "license_classification": "mixed",
       "required_notice": "OSM anchors: © OpenStreetMap contributors, ODbL, https://www.openstreetmap.org/copyright; endpoint labels derive from contract limite texts. Sectors marked geometry:anar-hidrografie use © Administrația Națională Apele Române (ANAR), data.gov.ro, CC BY 4.0."
     }

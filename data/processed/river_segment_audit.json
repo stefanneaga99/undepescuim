@@ -17,12 +17,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 14,
+      "missing_geometry": 13,
       "overlay": {
         "lakes": 112,
         "rivers": 132
       },
-      "with_geometry": 35
+      "with_geometry": 36
     },
     {
       "contracted": 34,
@@ -59,12 +59,12 @@
         "sector_mismatch": 5
       },
       "finding_count": 6,
-      "missing_geometry": 3,
+      "missing_geometry": 1,
       "overlay": {
         "lakes": 62,
         "rivers": 79
       },
-      "with_geometry": 21
+      "with_geometry": 23
     },
     {
       "contracted": 41,
@@ -158,12 +158,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 6,
+      "missing_geometry": 3,
       "overlay": {
         "lakes": 63,
         "rivers": 65
       },
-      "with_geometry": 8
+      "with_geometry": 11
     },
     {
       "contracted": 41,
@@ -216,12 +216,12 @@
         "missing_segment": 1
       },
       "finding_count": 1,
-      "missing_geometry": 8,
+      "missing_geometry": 7,
       "overlay": {
         "lakes": 87,
         "rivers": 68
       },
-      "with_geometry": 14
+      "with_geometry": 15
     },
     {
       "contracted": 9,
@@ -259,12 +259,12 @@
         "truncated_mouth": 2
       },
       "finding_count": 10,
-      "missing_geometry": 2,
+      "missing_geometry": 1,
       "overlay": {
         "lakes": 151,
         "rivers": 51
       },
-      "with_geometry": 15
+      "with_geometry": 16
     },
     {
       "contracted": 2,
@@ -515,12 +515,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 4,
+      "missing_geometry": 3,
       "overlay": {
         "lakes": 40,
         "rivers": 37
       },
-      "with_geometry": 11
+      "with_geometry": 12
     },
     {
       "contracted": 6,
@@ -547,12 +547,12 @@
         "truncated_mouth": 1
       },
       "finding_count": 4,
-      "missing_geometry": 6,
+      "missing_geometry": 4,
       "overlay": {
         "lakes": 236,
-        "rivers": 48
+        "rivers": 47
       },
-      "with_geometry": 35
+      "with_geometry": 37
     },
     {
       "contracted": 0,
@@ -573,12 +573,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 3,
+      "missing_geometry": 2,
       "overlay": {
         "lakes": 54,
         "rivers": 12
       },
-      "with_geometry": 4
+      "with_geometry": 5
     },
     {
       "contracted": 15,
@@ -606,12 +606,12 @@
         "truncated_mouth": 1
       },
       "finding_count": 4,
-      "missing_geometry": 10,
+      "missing_geometry": 9,
       "overlay": {
         "lakes": 97,
         "rivers": 306
       },
-      "with_geometry": 64
+      "with_geometry": 65
     }
   ],
   "gate": {
@@ -66152,13 +66152,6 @@
       "kind": "river",
       "name": "Rozalia",
       "slug": "unc-8c78c750f4"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Timiș",
-      "kind": "river",
-      "name": "Aranca",
-      "slug": "unc-91801d68a8"
     },
     {
       "classification": "uncontracted",
