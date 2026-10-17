@@ -172,10 +172,21 @@ def test_endpoint_override_way_and_area():
 
 
 def test_validation_flags_long_segment_and_review():
-    coords = [[24.0, LAT], [24.4, LAT]]  # one ~30 km segment
+    coords = [[24.0, LAT], [24.4, LAT]]  # one ~30 km segment: chord-scale, blocking
     c = course(geometry={"type": "LineString", "coordinates": coords})
     r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]))
-    assert r["status"] == "review" and "invariant:segment_gt_1km" in r["reasons"]
+    assert r["status"] == "review" and "invariant:segment_gt_5km" in r["reasons"]
+
+
+def test_coarse_osm_segment_is_reported_but_not_blocking():
+    coords = [[24.0, LAT], [24.015, LAT], [24.03, LAT]]  # two ~1.16 km segments of one OSM way
+    c = course(geometry={"type": "LineString", "coordinates": coords})
+    km = c["length_m"] / 1000
+    from rivernet.lr import Line
+    c["length_m"] = Line.from_coords([tuple(x) for x in coords]).length_m
+    r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]), w=water(km=f"{c['length_m'] / 1000:.2f} km"))
+    assert r["status"] == "resolved" and "coarse_osm_segment" in r["reasons"]
+    assert not any(x.startswith("invariant:") for x in r["reasons"])
 
 
 def test_synthetic_span_excuses_long_segment():
@@ -183,7 +194,7 @@ def test_synthetic_span_excuses_long_segment():
     c = course(geometry={"type": "LineString", "coordinates": coords},
                synthetic=[{"m_from": 0.0, "m_to": LEN, "kind": "gap_bridge", "gap_m": LEN}])
     r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]))
-    assert "invariant:segment_gt_1km" not in r["reasons"]
+    assert not any(x.startswith("invariant:segment") for x in r["reasons"])
 
 
 def test_validation_outside_county():
@@ -356,3 +367,46 @@ def test_override_and_unusable_limite_skip_alternatives():
     assert r["course"]["course_id"] == "name:test:n2"
     r2 = rb({"scope": "unparsed"}, ctx, {**m, "method": "name+county"})
     assert r2["status"] == "unresolved" and "limite_unusable" in r2["reasons"]
+
+
+# ------------------------------- unusable limite + overrides; plausible overlaps
+
+
+def ov(m):
+    return {"anchor": {"type": "measure", "m": m}, "reason": "r", "reviewer": "x", "date": "2026-10-17"}
+
+
+def test_unusable_limite_with_both_endpoint_overrides_is_resolved():
+    w = water(km=f"{(12000 - 2000) / 1000:.1f} km", limite="Jirlău km 183- Voinești km 309")
+    ovs = {("w1", "from"): ov(12000.0), ("w1", "to"): ov(2000.0)}  # given downstream-first: swapped
+    r = rs({"scope": "unparsed"}, w=w, ovs=ovs)
+    assert (r["from"]["m"], r["to"]["m"]) == (2000.0, 12000.0)
+    assert r["from"]["kind"] == "OVERRIDE" and r["status"] == "resolved"
+    assert {"limite_unusable_overridden", "swapped_order"} <= set(r["reasons"])
+    assert r["override_ids"] == ["w1:from", "w1:to"]
+
+
+def test_unusable_limite_needs_both_overrides_and_a_valid_anchor():
+    r = rs({"scope": "unparsed"}, ovs={("w1", "from"): ov(1000.0)})
+    assert r["status"] == "unresolved" and r["reasons"] == ["limite_unusable"]
+    r = rs({"scope": "empty"}, ovs={("w1", "from"): ov(1000.0), ("w1", "to"): ov(LEN + 5000)})
+    assert r["status"] == "unresolved" and "override_anchor_unresolvable" in r["reasons"]
+
+
+def rec_on(slug, f, t, ratio, status="resolved"):
+    return {"slug": slug, "course": {"course_id": "c"}, "parse": {"scope": "interval"}, "includes_tributaries": False,
+            "from": {"m": f}, "to": {"m": t}, "length_m": t - f, "km_ratio": ratio, "status": status, "reasons": []}
+
+
+def test_implausible_partner_cannot_demote_a_plausible_sector():
+    good = rec_on("good", 80_000, 187_000, 0.98)
+    bad = rec_on("bad", 0, 296_000, 9.27, status="review")  # 'cursul principal' read as the whole river
+    S.flag_overlaps([good, bad])
+    assert good["status"] == "resolved" and "overlap_gt_50pct" in good["reasons"] and "overlap:bad" in good["reasons"]
+    assert bad["status"] == "review"
+
+
+def test_two_plausible_overlapping_sectors_still_demote_each_other():
+    a, b = rec_on("a", 0, 10_000, 1.0), rec_on("b", 1_000, 11_000, 1.0)
+    S.flag_overlaps([a, b])
+    assert a["status"] == b["status"] == "review"

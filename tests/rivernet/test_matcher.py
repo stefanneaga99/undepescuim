@@ -149,14 +149,17 @@ def test_indexed_lookup_equals_scan():
 GOOD = {"slug": "s", "reason": "r", "reviewer": "me", "date": "2026-10-17"}
 
 
-def test_committed_registries_valid_and_empty():
+def test_committed_registries_are_valid_and_reference_real_waters():
     from pathlib import Path
 
-    root = Path(__file__).resolve().parents[2] / "data" / "sectors"
-    c = json.loads((root / "course_overrides.json").read_text(encoding="utf-8"))
-    e = json.loads((root / "endpoint_overrides.json").read_text(encoding="utf-8"))
-    assert validate_course_overrides(c) == [] and c["overrides"] == []
-    assert validate_endpoint_overrides(e) == [] and e["overrides"] == []
+    root = Path(__file__).resolve().parents[2]
+    c = json.loads((root / "data/sectors/course_overrides.json").read_text(encoding="utf-8"))
+    e = json.loads((root / "data/sectors/endpoint_overrides.json").read_text(encoding="utf-8"))
+    assert validate_course_overrides(c) == [] and validate_endpoint_overrides(e) == []
+    slugs = {w["slug"] for w in json.loads((root / "public/data/waters.json").read_text(encoding="utf-8"))}
+    for o in c["overrides"] + e["overrides"]:
+        assert o["slug"] in slugs, o["slug"]
+        assert o["reason"].strip() and o["reviewer"].strip()
 
 
 def test_course_override_schema():

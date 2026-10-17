@@ -142,11 +142,17 @@ def test_aliases_groups_states_and_historical_candidates_are_explicit():
     assert buzau["endpointEvidence"]["status"] == "not-verified"
     assert "course_frac" not in set(nested_keys(buzau["endpointEvidence"]))
 
-    explicit = records["anpa-anpa-0261"]
+    explicit = records["romsilva-brasov-buzaul-superior"]
     assert "explicit-physical-segment" in {
         variant["state"] for variant in explicit["geometryVariants"]
     }
     assert explicit["endpointEvidence"]["status"] == "source-backed-explicit"
+
+    # river geometry v2: 0261 now carries its own pre-cut sector (D8 partial switch)
+    precut = records["anpa-anpa-0261"]
+    assert precut["classification"] == "repaired"
+    assert "canonical-legal-sector" in {variant["state"] for variant in precut["geometryVariants"]}
+    assert precut["endpointEvidence"]["status"] == "resolved-limite"
 
     expected_classification = {
         "romsilva-bacau-barzauta": "unresolved",
