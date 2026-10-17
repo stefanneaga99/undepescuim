@@ -349,6 +349,26 @@ def _aliases(tags: dict[str, str], name: str) -> list[str]:
     return sorted(found)
 
 
+def _merge_partial_wikidata(wg: WaterGraph, groups: dict[str, list[EdgeRef]]) -> None:
+    """Fold a name-only group (``nk:x``) into the wikidata group whose majority
+    name key is ``x`` when exactly one such group exists.
+
+    Wikidata is often tagged on part of a river's ways only (Teleajen: the
+    lower 31 km), which split one river into consecutive courses. Same-named
+    rivers elsewhere are unaffected: chaining still needs shared nodes or a
+    gap of at most GAP_BRIDGE_MAX_M, so far-apart pieces stay separate courses.
+    """
+    by_key: dict[str, list[str]] = {}
+    for gkey in sorted(groups):
+        if gkey.startswith("wd:"):
+            key = _majority([wg.g.edges[e]["name_key"] for e in groups[gkey]])
+            by_key.setdefault(key, []).append(gkey)
+    for key, wds in by_key.items():
+        nk = f"nk:{key}"
+        if len(wds) == 1 and nk in groups:
+            groups[wds[0]] = sorted(groups[wds[0]] + groups.pop(nk), key=lambda e: (e[2], e[0], e[1]))
+
+
 def build_courses(wg: WaterGraph, extract: Extract) -> list[Course]:
     reservoirs = _Reservoirs(extract)
     courses: list[Course] = []
@@ -404,6 +424,7 @@ def build_courses(wg: WaterGraph, extract: Extract) -> list[Course]:
             continue
         gkey = f"wd:{data['wikidata']}" if data["wikidata"] else f"nk:{data['name_key']}"
         groups.setdefault(gkey, []).append(e)
+    _merge_partial_wikidata(wg, groups)
     for gkey in sorted(groups):
         gedges = groups[gkey]
         paths = [p for p in (_longest_path(wg, comp) for comp in _components(gedges)) if p]

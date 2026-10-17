@@ -439,3 +439,41 @@ def test_near_outlet_ignores_fallback_courses():
     t = anar_trib("anar:RO1", "Tărcăița", 24.2, 0.00027)
     (c,) = res(ep("CONFLUENCE", target="Tărcăița"), ctx_for(extra=[t]))
     assert c.method == "anar_outlet"
+
+
+# ------------------------------------------- receiving river by proximity
+
+
+def receiver(cid, name, lon):
+    # a north-south river passing through (lon, LAT)
+    pts = [[lon, LAT - 0.05], [lon, LAT + 0.05]]
+    return {"course_id": cid, "name": name, "name_key": river_key(name), "aliases": [], "length_m": 11000.0,
+            "geometry": {"type": "LineString", "coordinates": pts}, "junctions": [], "receives_into": None,
+            "counties": []}
+
+
+def test_outlet_near_named_when_receives_into_is_missing():
+    end_lon = COORDS[-1][0]
+    ctx = ctx_for(extra=[receiver("name:mures:n9", "Mureș", end_lon + 0.0005)])  # ~39 m east of our outlet
+    (c,) = res(ep("CONFLUENCE", target="râul Mureș"), ctx)
+    assert c.method == "outlet_near_named" and c.confidence == R.C_CONF_OUTLET_NEAR_NAMED == 0.85
+    assert c.m == LEN and c.anchor["id"] == "name:mures:n9" and c.dist_m < 50
+
+
+def test_outlet_near_named_respects_distance_and_skips_same_name():
+    end_lon = COORDS[-1][0]
+    far = receiver("name:mures:n9", "Mureș", end_lon + 0.005)  # ~390 m
+    assert res(ep("CONFLUENCE", target="Mureș"), ctx_for(extra=[far])) == []
+    same = receiver("name:test:n7", "Test", end_lon)  # another piece of our own river is not a confluence
+    assert res(ep("CONFLUENCE", target="Test"), ctx_for(extra=[same])) == []
+
+
+def test_confluence_target_with_trailing_place_and_genitive():
+    end_lon = COORDS[-1][0]
+    ctx = ctx_for(extra=[receiver("name:somesul mic:n9", "Someșul Mic", end_lon)])
+    (c,) = res(ep("CONFLUENCE", target="Someșul Mic Gilău"), ctx)
+    assert c.method == "outlet_near_named"
+    trib = course(receives_into="name:lotru:n1")
+    ctx2 = ctx_for([trib], extra=[receiver("name:lotru:n1", "Lotru", 30.0)])
+    (c2,) = res(ep("CONFLUENCE", target="Lotrului"), ctx2, c=trib)
+    assert c2.method == "outlet_into_named"

@@ -29,6 +29,10 @@ AMBIGUITY_GAP = 0.1
 NAME_EXACT, NAME_ALT_KEY = 1.0, 0.9
 NAME_STEM = 0.85  # tiers 2/3: inflection-insensitive stem equality
 FALLBACK_SOURCE = "anar"  # course records from rivernet.hidrografie
+# An OSM course shorter than FRAGMENT_FIT x contract km is a fragment (OSM
+# name-courses break at unnamed stretches); a fallback course of the same stem
+# replaces it when it fits (>= LONGER_FIT x contract) or is LONGER_FACTOR x longer.
+FRAGMENT_FIT, LONGER_FIT, LONGER_FACTOR = 0.6, 0.8, 2.0
 
 KM_RE = re.compile(r"(\d+(?:[.,]\d+)?)\s*km", re.I)
 
@@ -38,7 +42,7 @@ class MatchResult:
     course_id: str | None
     score: float
     # override | name+county | fuzzy+county | stem+county | anar+county | anar_fuzzy+county
-    # | ambiguous | no_candidate | no_county_match
+    # | anar_longer+county | ambiguous | no_candidate | no_county_match
     method: str
     candidates: list[tuple[str, float, str]] = field(default_factory=list)
 
@@ -164,13 +168,19 @@ def match(
                 hits[c["course_id"]] = (c, r, "fuzzy")
         method_prefix = "fuzzy"
     res = _score(hits, water, spec, county_ok, mention_hook, method_prefix)
-    if res.method not in _MISSES or by_stem is None:
+    if by_stem is None:
         return res
-
     st = stem_key(water.get("name"))
     stem_hits = list(by_stem.get(st, ())) if st else []
+    if res.course_id is not None:
+        return _prefer_longer(res, hits, stem_hits, water, spec, county_ok, mention_hook)
+    if res.method not in _MISSES:
+        return res
+
     osm = {c["course_id"]: (c, NAME_STEM, "stem") for c in stem_hits if not is_fallback(c)}
     res2 = _score(osm, water, spec, county_ok, mention_hook, "stem")
+    if res2.course_id is not None:
+        return _prefer_longer(res2, osm, stem_hits, water, spec, county_ok, mention_hook)
     if res2.method not in _MISSES:
         return res2
     anar = {c["course_id"]: (c, NAME_STEM, "anar") for c in stem_hits if is_fallback(c)}
@@ -191,6 +201,31 @@ def match(
 
 
 _MISSES = ("no_candidate", "no_county_match")
+
+
+def _prefer_longer(
+    res: MatchResult,
+    hits: Mapping[str, tuple[Mapping[str, Any], float, str]],
+    stem_hits: list[Mapping[str, Any]],
+    water: Mapping[str, Any],
+    spec: Mapping[str, Any] | None,
+    county_ok: Callable[..., bool] | None,
+    mention_hook: Callable[[Mapping[str, Any], Mapping[str, Any]], bool] | None,
+) -> MatchResult:
+    """Swap an OSM fragment for a same-stem fallback course that covers the contract."""
+    km = contract_km(water.get("dimensiune"))
+    if not km or (spec or {}).get("includes_tributaries"):
+        return res
+    osm_len = float(hits[res.course_id][0].get("length_m") or 0.0)
+    if osm_len >= FRAGMENT_FIT * km * 1000:
+        return res
+    longer = {c["course_id"]: (c, NAME_STEM, "anar_longer") for c in stem_hits if is_fallback(c)
+              and (float(c.get("length_m") or 0) >= LONGER_FIT * km * 1000
+                   or float(c.get("length_m") or 0) >= LONGER_FACTOR * osm_len)}
+    alt = _score(longer, water, spec, county_ok, mention_hook, "anar_longer")
+    if alt.course_id is None:
+        return res
+    return MatchResult(alt.course_id, alt.score, alt.method, alt.candidates + res.candidates[:2])
 
 
 def _score(

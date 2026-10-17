@@ -188,7 +188,7 @@ def test_wanted_by_county_and_osm_coverage():
     osm = [{"course_id": "name:cibin:n1", "name": "Cibin", "aliases": [], "counties": [{"county": "Sibiu"}]},
            {"course_id": "anar:x", "source": "anar", "name": "Lisa", "counties": [{"county": "Alba"}]}]
     covered = H.osm_coverage(osm)
-    assert covered == {("cibin", "sibiu")}
+    assert covered == {("cibin", "sibiu"): 0.0}
     keep = H.wanted(waters, parsed, covered)
     assert keep(["Lisa"], set()) and keep(["Lisa"], {"Alba"}) and not keep(["Lisa"], {"Cluj"})
     assert keep(["Tarcaita"], {"Alba"})  # a confluence target of an Alba water

@@ -285,3 +285,36 @@ def test_fallback_courses_are_ignored_without_stem_index():
     assert match(water("Lisa", "Brașov"), cs).method == "no_candidate"
     assert index_courses(cs) == {}
     assert set(index_stems(cs + [course("x", "Lisa", ["Alba"], aliases=["Lisa Mare"])])) == {"lis", "lis mar"}
+
+
+def test_osm_fragment_is_replaced_by_longer_fallback_course():
+    cs = [course("osm", "Jolotca", ["Harghita"], length_km=5.2), anar("anar:RO1", "Jolotca", ["Harghita"], length_km=15.9)]
+    r = tiered(water("Râul Jolotca", "Harghita", km="15 km"), cs)
+    assert r.course_id == "anar:RO1" and r.method == "anar_longer+county"
+    assert [c[0] for c in r.candidates] == ["anar:RO1", "osm"]  # the OSM fragment stays an alternative
+
+
+def test_fragment_swap_needs_a_fitting_or_much_longer_course():
+    w = water("Râul Siriu", "Buzău", km="38 km")
+    short = [course("osm", "Siriu", ["Buzău"], length_km=8.5), anar("anar:RO1", "Siriu", ["Buzău"], length_km=12.0)]
+    assert tiered(w, short).course_id == "osm"  # 12 km: neither >= 0.8 x 38 nor >= 2 x 8.5
+    double = [course("osm", "Siriu", ["Buzău"], length_km=8.5), anar("anar:RO1", "Siriu", ["Buzău"], length_km=18.0)]
+    assert tiered(w, double).course_id == "anar:RO1"
+
+
+def test_no_fragment_swap_when_osm_fits_or_contract_unknown_or_tributaries():
+    cs = [course("osm", "Jolotca", ["Harghita"], length_km=12.0), anar("anar:RO1", "Jolotca", ["Harghita"], length_km=15.9)]
+    assert tiered(water("Râul Jolotca", "Harghita", km="15 km"), cs).course_id == "osm"
+    frag = [course("osm", "Jolotca", ["Harghita"], length_km=2.0), anar("anar:RO1", "Jolotca", ["Harghita"], length_km=15.9)]
+    assert tiered(water("Râul Jolotca", "Harghita", km=""), frag).course_id == "osm"
+    r = match(water("Râul Jolotca", "Harghita", km="15 km"), [], spec={"includes_tributaries": True},
+              by_key=index_courses(frag), by_stem=index_stems(frag))
+    assert r.course_id == "osm"
+    other_county = [course("osm", "Jolotca", ["Harghita"], length_km=2.0), anar("anar:RO1", "Jolotca", ["Mureș"], length_km=15.9)]
+    assert tiered(water("Râul Jolotca", "Harghita", km="15 km"), other_county).course_id == "osm"
+
+
+def test_stem_tier_fragment_is_also_replaced():
+    cs = [course("osm", "Pojorâta", ["Brașov"], length_km=2.0), anar("anar:RO1", "Pojorâta", ["Brașov"], length_km=10.0)]
+    r = tiered(water("Valea Pojorâtei", "Brașov", km="10 km"), cs)
+    assert r.course_id == "anar:RO1" and r.method == "anar_longer+county"

@@ -1,10 +1,10 @@
 {
  "candidate_filter": "river_keys + stem_key(water.name) of subtype rau",
  "commit_courses": true,
- "courses_all_bytes": 12958020,
- "courses_bytes": 5275410,
- "courses_candidates": 1105,
- "courses_total": 6413,
+ "courses_all_bytes": 12953198,
+ "courses_bytes": 5273990,
+ "courses_candidates": 1082,
+ "courses_total": 6365,
  "extract_pbf_sha256": "2d3ed964ab7b53b1f1df56c179d4eb738b015cae809543d50389e16ca95245fc",
  "max_commit_mb": 25.0,
  "osm_timestamp": "2026-10-16T20:21:21Z"
