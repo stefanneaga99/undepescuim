@@ -1,18 +1,18 @@
 {
  "by_status": {
-  "resolved": 104,
-  "review": 97,
-  "unresolved": 560
+  "resolved": 140,
+  "review": 127,
+  "unresolved": 494
  },
  "by_status_confidence": {
-  "resolved/high": 35,
-  "resolved/medium": 69,
-  "review/low": 93,
-  "review/medium": 4,
-  "unresolved/low": 560
+  "resolved/high": 41,
+  "resolved/medium": 99,
+  "review/low": 120,
+  "review/medium": 7,
+  "unresolved/low": 494
  },
  "chord_check": {
-  "checked": 104,
+  "checked": 140,
   "max_segment_m": 988.4,
   "worst": [
    [
@@ -36,6 +36,10 @@
     946.0
    ],
    [
+    "uerba1xr",
+    894.3
+   ],
+   [
     "anpa-anpa-0390",
     889.2
    ],
@@ -44,34 +48,30 @@
     882.9
    ],
    [
-    "e8r6r01g",
-    781.9
+    "0b5imfgi",
+    835.2
    ],
    [
-    "romsilva-prahova-telejenel",
-    774.7
-   ],
-   [
-    "ikpdjomr",
-    716.1
+    "anpa-anpa-0425",
+    813.1
    ]
   ]
  },
  "km_ratio_histogram": {
-  "0.5-0.8": 44,
-  "0.8-1.25": 73,
-  "1.25-2": 27,
-  "<0.5": 34,
-  ">2": 14,
-  "unknown": 569
+  "0.5-0.8": 56,
+  "0.8-1.25": 103,
+  "1.25-2": 35,
+  "<0.5": 46,
+  ">2": 17,
+  "unknown": 504
  },
  "per_county": {
   "Alba": {
-   "resolved": 3,
+   "resolved": 5,
    "total": 41
   },
   "Arad": {
-   "resolved": 4,
+   "resolved": 6,
    "total": 22
   },
   "Argeș": {
@@ -83,19 +83,19 @@
    "total": 16
   },
   "Bihor": {
-   "resolved": 1,
+   "resolved": 8,
    "total": 39
   },
   "Bistrița-Năsăud": {
-   "resolved": 3,
+   "resolved": 5,
    "total": 27
   },
   "Botoșani": {
-   "resolved": 1,
+   "resolved": 5,
    "total": 25
   },
   "Brașov": {
-   "resolved": 1,
+   "resolved": 2,
    "total": 28
   },
   "Brăila": {
@@ -107,7 +107,7 @@
    "total": 13
   },
   "Caraș-Severin": {
-   "resolved": 2,
+   "resolved": 3,
    "total": 27
   },
   "Cluj": {
@@ -131,7 +131,7 @@
    "total": 12
   },
   "Dâmbovița": {
-   "resolved": 2,
+   "resolved": 3,
    "total": 12
   },
   "Galați": {
@@ -143,15 +143,15 @@
    "total": 5
   },
   "Gorj": {
-   "resolved": 5,
+   "resolved": 6,
    "total": 23
   },
   "Harghita": {
-   "resolved": 7,
+   "resolved": 9,
    "total": 37
   },
   "Hunedoara": {
-   "resolved": 5,
+   "resolved": 6,
    "total": 33
   },
   "Ialomița": {
@@ -163,11 +163,11 @@
    "total": 6
   },
   "Ilfov": {
-   "resolved": 0,
+   "resolved": 1,
    "total": 3
   },
   "Maramureș": {
-   "resolved": 3,
+   "resolved": 7,
    "total": 42
   },
   "Mehedinți": {
@@ -175,7 +175,7 @@
    "total": 3
   },
   "Mureș": {
-   "resolved": 6,
+   "resolved": 8,
    "total": 39
   },
   "Neamț": {
@@ -199,11 +199,11 @@
    "total": 31
   },
   "Suceava": {
-   "resolved": 2,
+   "resolved": 4,
    "total": 31
   },
   "Sălaj": {
-   "resolved": 4,
+   "resolved": 6,
    "total": 13
   },
   "Teleorman": {
@@ -211,7 +211,7 @@
    "total": 6
   },
   "Timiș": {
-   "resolved": 6,
+   "resolved": 7,
    "total": 35
   },
   "Vaslui": {
@@ -228,7 +228,7 @@
   }
  },
  "shadow": {
-  "compared": 201,
+  "compared": 267,
   "rows": [
    {
     "hausdorff_m": 808.9,
@@ -238,11 +238,32 @@
     "slug": "0700jcip"
    },
    {
+    "hausdorff_m": 35332.7,
+    "legacy_approx": false,
+    "new_km": 36.75,
+    "old_km": 94.59,
+    "slug": "0b5imfgi"
+   },
+   {
     "hausdorff_m": 769.8,
     "legacy_approx": true,
     "new_km": 5.3,
     "old_km": 4.37,
     "slug": "0d29kh5i"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 18.52,
+    "old_km": 0.0,
+    "slug": "0dsbiw28"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 9.44,
+    "old_km": 0.0,
+    "slug": "0rc761a8"
    },
    {
     "hausdorff_m": 28221.2,
@@ -266,6 +287,13 @@
     "slug": "1dy2bzbz"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 13.11,
+    "old_km": 0.0,
+    "slug": "1f162p36"
+   },
+   {
     "hausdorff_m": 102.1,
     "legacy_approx": false,
     "new_km": 26.03,
@@ -285,6 +313,13 @@
     "new_km": 26.26,
     "old_km": 24.91,
     "slug": "2bj7imws"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 9.08,
+    "old_km": 0.0,
+    "slug": "2g9hg98a"
    },
    {
     "hausdorff_m": 20263.9,
@@ -357,6 +392,13 @@
     "slug": "6vsle29k"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 7.32,
+    "old_km": 0.0,
+    "slug": "7jpc32e8"
+   },
+   {
     "hausdorff_m": 47944.6,
     "legacy_approx": false,
     "new_km": 108.21,
@@ -392,6 +434,20 @@
     "slug": "9h06oubr"
    },
    {
+    "hausdorff_m": 7126.9,
+    "legacy_approx": false,
+    "new_km": 26.49,
+    "old_km": 14.59,
+    "slug": "9h0azllr"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 20.85,
+    "old_km": 0.0,
+    "slug": "ab4t7anb"
+   },
+   {
     "hausdorff_m": null,
     "legacy_approx": false,
     "new_km": 28.97,
@@ -406,11 +462,53 @@
     "slug": "anpa-anpa-0066"
    },
    {
+    "hausdorff_m": 18870.6,
+    "legacy_approx": false,
+    "new_km": 34.65,
+    "old_km": 15.0,
+    "slug": "anpa-anpa-0142"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 20.29,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0154"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 20.56,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0160"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 7.52,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0161"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 25.73,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0162"
+   },
+   {
     "hausdorff_m": 98.2,
     "legacy_approx": false,
     "new_km": 10.49,
     "old_km": 8.92,
     "slug": "anpa-anpa-0193"
+   },
+   {
+    "hausdorff_m": 75.8,
+    "legacy_approx": false,
+    "new_km": 12.73,
+    "old_km": 11.89,
+    "slug": "anpa-anpa-0194"
    },
    {
     "hausdorff_m": null,
@@ -436,9 +534,30 @@
    {
     "hausdorff_m": null,
     "legacy_approx": false,
+    "new_km": 36.78,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0214"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
     "new_km": 56.48,
     "old_km": 0.0,
     "slug": "anpa-anpa-0215"
+   },
+   {
+    "hausdorff_m": 108.4,
+    "legacy_approx": false,
+    "new_km": 74.29,
+    "old_km": 70.77,
+    "slug": "anpa-anpa-0216"
+   },
+   {
+    "hausdorff_m": 19275.1,
+    "legacy_approx": false,
+    "new_km": 38.4,
+    "old_km": 15.17,
+    "slug": "anpa-anpa-0217"
    },
    {
     "hausdorff_m": 26087.3,
@@ -539,6 +658,13 @@
     "slug": "anpa-anpa-0322"
    },
    {
+    "hausdorff_m": 15688.7,
+    "legacy_approx": false,
+    "new_km": 34.2,
+    "old_km": 99.26,
+    "slug": "anpa-anpa-0324"
+   },
+   {
     "hausdorff_m": 15600.5,
     "legacy_approx": false,
     "new_km": 38.4,
@@ -567,6 +693,13 @@
     "slug": "anpa-anpa-0335"
    },
    {
+    "hausdorff_m": 97381.7,
+    "legacy_approx": false,
+    "new_km": 30.19,
+    "old_km": 281.28,
+    "slug": "anpa-anpa-0338"
+   },
+   {
     "hausdorff_m": 105.5,
     "legacy_approx": false,
     "new_km": 24.82,
@@ -579,6 +712,13 @@
     "new_km": 17.65,
     "old_km": 43.71,
     "slug": "anpa-anpa-0342"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 14.79,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0354"
    },
    {
     "hausdorff_m": 5154.2,
@@ -616,11 +756,25 @@
     "slug": "anpa-anpa-0391"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 27.22,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0397"
+   },
+   {
     "hausdorff_m": 93.2,
     "legacy_approx": false,
     "new_km": 23.44,
     "old_km": 22.75,
     "slug": "anpa-anpa-0398"
+   },
+   {
+    "hausdorff_m": 2644.9,
+    "legacy_approx": false,
+    "new_km": 17.7,
+    "old_km": 13.46,
+    "slug": "anpa-anpa-0399"
    },
    {
     "hausdorff_m": null,
@@ -630,11 +784,39 @@
     "slug": "anpa-anpa-0402"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 3.5,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0413"
+   },
+   {
     "hausdorff_m": 419.9,
     "legacy_approx": false,
     "new_km": 11.48,
     "old_km": 11.47,
     "slug": "anpa-anpa-0421"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 22.18,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0422"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 19.77,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0423"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 20.03,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0425"
    },
    {
     "hausdorff_m": 8773.7,
@@ -658,11 +840,25 @@
     "slug": "anpa-anpa-0431"
    },
    {
+    "hausdorff_m": 1892.5,
+    "legacy_approx": false,
+    "new_km": 3.46,
+    "old_km": 1.2,
+    "slug": "anpa-anpa-0432"
+   },
+   {
     "hausdorff_m": 10739.9,
     "legacy_approx": false,
     "new_km": 8.08,
     "old_km": 22.43,
     "slug": "anpa-anpa-0439"
+   },
+   {
+    "hausdorff_m": 3634.6,
+    "legacy_approx": false,
+    "new_km": 6.59,
+    "old_km": 11.57,
+    "slug": "anpa-anpa-0441"
    },
    {
     "hausdorff_m": 92.5,
@@ -721,6 +917,13 @@
     "slug": "anpa-anpa-0469"
    },
    {
+    "hausdorff_m": 12532.5,
+    "legacy_approx": false,
+    "new_km": 35.54,
+    "old_km": 21.48,
+    "slug": "anpa-anpa-0503"
+   },
+   {
     "hausdorff_m": 4485.5,
     "legacy_approx": false,
     "new_km": 8.45,
@@ -728,11 +931,25 @@
     "slug": "anpa-anpa-0509"
    },
    {
+    "hausdorff_m": 5759.2,
+    "legacy_approx": false,
+    "new_km": 66.08,
+    "old_km": 106.12,
+    "slug": "anpa-anpa-0510"
+   },
+   {
     "hausdorff_m": 98.4,
     "legacy_approx": false,
     "new_km": 51.58,
     "old_km": 47.39,
     "slug": "anpa-anpa-0511"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 26.55,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0512"
    },
    {
     "hausdorff_m": 101.9,
@@ -826,6 +1043,20 @@
     "slug": "anpa-anpa-0585"
    },
    {
+    "hausdorff_m": 35534.7,
+    "legacy_approx": false,
+    "new_km": 78.43,
+    "old_km": 41.06,
+    "slug": "anpa-anpa-0586"
+   },
+   {
+    "hausdorff_m": 1021.0,
+    "legacy_approx": false,
+    "new_km": 51.45,
+    "old_km": 52.2,
+    "slug": "anpa-anpa-0593"
+   },
+   {
     "hausdorff_m": 16456.6,
     "legacy_approx": false,
     "new_km": 31.24,
@@ -882,11 +1113,25 @@
     "slug": "anpa-anpa-0608"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 20.3,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0609"
+   },
+   {
     "hausdorff_m": 95.8,
     "legacy_approx": false,
     "new_km": 22.93,
     "old_km": 21.69,
     "slug": "anpa-anpa-0610"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 47.62,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0623"
    },
    {
     "hausdorff_m": null,
@@ -938,6 +1183,13 @@
     "slug": "anpa-salaj-crasna-65"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 93.54,
+    "old_km": 0.0,
+    "slug": "anpa-salaj-somesul-mare-93"
+   },
+   {
     "hausdorff_m": 28971.6,
     "legacy_approx": false,
     "new_km": 105.82,
@@ -973,6 +1225,13 @@
     "slug": "c4o6lkrr"
    },
    {
+    "hausdorff_m": 79.9,
+    "legacy_approx": false,
+    "new_km": 10.63,
+    "old_km": 10.11,
+    "slug": "cglgploz"
+   },
+   {
     "hausdorff_m": 103.4,
     "legacy_approx": false,
     "new_km": 48.98,
@@ -999,6 +1258,13 @@
     "new_km": 73.83,
     "old_km": 0.0,
     "slug": "e8r6r01g"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 45.6,
+    "old_km": 0.0,
+    "slug": "ebhj5eyj"
    },
    {
     "hausdorff_m": 109.9,
@@ -1057,6 +1323,20 @@
     "slug": "gs9etwp4"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 9.87,
+    "old_km": 0.0,
+    "slug": "gunskubl"
+   },
+   {
+    "hausdorff_m": 51.1,
+    "legacy_approx": false,
+    "new_km": 1.14,
+    "old_km": 2.09,
+    "slug": "h75ngnsv"
+   },
+   {
     "hausdorff_m": 85637.7,
     "legacy_approx": false,
     "new_km": 44.16,
@@ -1076,6 +1356,13 @@
     "new_km": 35.37,
     "old_km": 0.72,
     "slug": "ikpdjomr"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 7.89,
+    "old_km": 0.0,
+    "slug": "jw9il5yo"
    },
    {
     "hausdorff_m": null,
@@ -1127,6 +1414,13 @@
     "slug": "n5g2q7tx"
    },
    {
+    "hausdorff_m": 1264.4,
+    "legacy_approx": false,
+    "new_km": 27.29,
+    "old_km": 24.34,
+    "slug": "nz1rw5qw"
+   },
+   {
     "hausdorff_m": 99.3,
     "legacy_approx": false,
     "new_km": 8.08,
@@ -1139,6 +1433,20 @@
     "new_km": 24.78,
     "old_km": 23.69,
     "slug": "p2lc5wx6"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 19.48,
+    "old_km": 0.0,
+    "slug": "p3puv4bx"
+   },
+   {
+    "hausdorff_m": 177.3,
+    "legacy_approx": false,
+    "new_km": 5.01,
+    "old_km": 4.87,
+    "slug": "pjcgjuq0"
    },
    {
     "hausdorff_m": 5957.7,
@@ -1167,6 +1475,13 @@
     "new_km": 13.28,
     "old_km": 33.05,
     "slug": "romsilva-alba-ampoita"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 9.22,
+    "old_km": 0.0,
+    "slug": "romsilva-alba-ariesul-mare"
    },
    {
     "hausdorff_m": 29459.4,
@@ -1204,6 +1519,13 @@
     "slug": "romsilva-arad-julita"
    },
    {
+    "hausdorff_m": 5384.5,
+    "legacy_approx": true,
+    "new_km": 19.08,
+    "old_km": 15.95,
+    "slug": "romsilva-arad-moneasa-superioara"
+   },
+   {
     "hausdorff_m": 83.1,
     "legacy_approx": false,
     "new_km": 23.11,
@@ -1211,11 +1533,25 @@
     "slug": "romsilva-arad-petris"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 15.94,
+    "old_km": 0.0,
+    "slug": "romsilva-arad-stejar"
+   },
+   {
     "hausdorff_m": 88.8,
     "legacy_approx": false,
     "new_km": 15.34,
     "old_km": 14.79,
     "slug": "romsilva-arad-troas"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 21.03,
+    "old_km": 0.0,
+    "slug": "romsilva-arad-zimbru"
    },
    {
     "hausdorff_m": 2647.1,
@@ -1309,6 +1645,13 @@
     "slug": "romsilva-caras-severin-cerna-mijlocie"
    },
    {
+    "hausdorff_m": 11770.7,
+    "legacy_approx": false,
+    "new_km": 23.64,
+    "old_km": 59.01,
+    "slug": "romsilva-caras-severin-nera-superioara"
+   },
+   {
     "hausdorff_m": 621.6,
     "legacy_approx": false,
     "new_km": 14.23,
@@ -1337,6 +1680,13 @@
     "slug": "romsilva-gorj-tismana-i"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 11.65,
+    "old_km": 0.0,
+    "slug": "romsilva-gorj-valea-bratcului"
+   },
+   {
     "hausdorff_m": 104.3,
     "legacy_approx": false,
     "new_km": 21.54,
@@ -1356,6 +1706,41 @@
     "new_km": 21.04,
     "old_km": 20.05,
     "slug": "romsilva-harghita-valea-toplitei"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 52.26,
+    "old_km": 0.0,
+    "slug": "romsilva-hunedoara-gradistea-superioara"
+   },
+   {
+    "hausdorff_m": 33293.1,
+    "legacy_approx": false,
+    "new_km": 35.22,
+    "old_km": 0.68,
+    "slug": "romsilva-hunedoara-streiul-superior"
+   },
+   {
+    "hausdorff_m": 102.8,
+    "legacy_approx": false,
+    "new_km": 39.47,
+    "old_km": 36.88,
+    "slug": "romsilva-hunedoara-valea-dobrei"
+   },
+   {
+    "hausdorff_m": 218.1,
+    "legacy_approx": false,
+    "new_km": 2.42,
+    "old_km": 3.85,
+    "slug": "romsilva-maramures-baicu"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 10.39,
+    "old_km": 0.0,
+    "slug": "romsilva-maramures-chiuzbaia"
    },
    {
     "hausdorff_m": 86.2,
@@ -1477,11 +1862,53 @@
     "slug": "romsilva-prahova-telejenel"
    },
    {
+    "hausdorff_m": 106.9,
+    "legacy_approx": false,
+    "new_km": 25.37,
+    "old_km": 23.63,
+    "slug": "romsilva-prahova-valea-azugii"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 8.07,
+    "old_km": 0.0,
+    "slug": "romsilva-salaj-barcaul-mijlociu"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 12.94,
+    "old_km": 0.0,
+    "slug": "romsilva-sibiu-bistra"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 10.06,
+    "old_km": 0.0,
+    "slug": "romsilva-sibiu-ciban"
+   },
+   {
     "hausdorff_m": null,
     "legacy_approx": false,
     "new_km": 20.4,
     "old_km": 0.0,
     "slug": "romsilva-sibiu-sebesul-superior"
+   },
+   {
+    "hausdorff_m": 103.3,
+    "legacy_approx": false,
+    "new_km": 14.77,
+    "old_km": 14.51,
+    "slug": "romsilva-suceava-barnar"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 13.64,
+    "old_km": 0.0,
+    "slug": "romsilva-suceava-barnarel"
    },
    {
     "hausdorff_m": 84.7,
@@ -1496,6 +1923,13 @@
     "new_km": 24.66,
     "old_km": 23.01,
     "slug": "romsilva-timis-bega-poieni"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 15.42,
+    "old_km": 0.0,
+    "slug": "romsilva-valcea-izvorul-lotrului"
    },
    {
     "hausdorff_m": null,
@@ -1517,6 +1951,13 @@
     "new_km": 39.27,
     "old_km": 0.0,
     "slug": "romsilva-valcea-lotru-superior"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 18.02,
+    "old_km": 0.0,
+    "slug": "romsilva-vrancea-coza"
    },
    {
     "hausdorff_m": 86.5,
@@ -1561,6 +2002,13 @@
     "slug": "u7ipqokl"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 22.0,
+    "old_km": 0.0,
+    "slug": "uerba1xr"
+   },
+   {
     "hausdorff_m": 1019.1,
     "legacy_approx": false,
     "new_km": 6.01,
@@ -1580,6 +2028,13 @@
     "new_km": 12.21,
     "old_km": 126.19,
     "slug": "wv8ykggg"
+   },
+   {
+    "hausdorff_m": 108.6,
+    "legacy_approx": false,
+    "new_km": 55.64,
+    "old_km": 52.09,
+    "slug": "xd7hnzzl"
    },
    {
     "hausdorff_m": 14555.1,
@@ -1608,6 +2063,13 @@
     "new_km": 14.67,
     "old_km": 31.02,
     "slug": "ygy2n7uz"
+   },
+   {
+    "hausdorff_m": 104.5,
+    "legacy_approx": false,
+    "new_km": 45.88,
+    "old_km": 43.14,
+    "slug": "yjbfm1tc"
    },
    {
     "hausdorff_m": null,
@@ -1642,63 +2104,63 @@
  "top_reasons": [
   [
    "endpoint_unresolved",
-   259
+   274
   ],
   [
    "course_no_candidate",
-   206
+   127
+  ],
+  [
+   "km_ratio_out_of_band",
+   95
   ],
   [
    "limite_unusable",
    76
   ],
   [
-   "km_ratio_out_of_band",
-   73
-  ],
-  [
    "course_ambiguous",
-   41
+   48
   ],
   [
    "contract_km_missing",
    37
   ],
   [
-   "course_no_county_match",
-   27
+   "fallback_source:anar",
+   37
   ],
   [
    "invariant:segment_gt_1km",
-   24
+   27
+  ],
+  [
+   "overlap",
+   26
   ],
   [
    "endpoint_ambiguous",
    19
   ],
   [
-   "overlap",
+   "overlap_gt_50pct",
    16
   ],
   [
-   "overlap_gt_50pct",
-   11
+   "course_no_county_match",
+   14
+  ],
+  [
+   "endpoint_confidence_low",
+   9
   ],
   [
    "contract_unit_ha",
    8
   ],
   [
-   "county_interval_multiple",
-   6
-  ],
-  [
    "swapped_order",
-   6
-  ],
-  [
-   "endpoint_confidence_low",
-   5
+   8
   ]
  ],
  "total": 761

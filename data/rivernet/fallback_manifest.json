@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "source": "anar-hidrografie",
+  "description": "Pinned fallback geometry layer (plan T6.5): ANAR cadastral river network, normalised by `rivernet normalise-hidrografie`. OSM stays primary; see docs/data-sources/hidrografie.md.",
+  "licence": "CC-BY-4.0",
+  "attribution": "© Administrația Națională Apele Române (ANAR), data.gov.ro — CC BY 4.0",
+  "dataset_url": "https://data.gov.ro/dataset/hidrografie",
+  "resource": {
+    "name": "Cursuri de apa rauri",
+    "url": "https://data.gov.ro/dataset/99886f1e-a89e-4d65-9a6c-2fd64a2d1713/resource/098b75e5-d68b-496b-be9d-a934606eb9fc/download/cursuriaparauri.zip",
+    "sha256": "3f4830e4301c8826749fd2bdffb14aaf77d1f20f04f4c154098e84da36b58240",
+    "bytes": 160142454,
+    "files_dated": "2025-02-12",
+    "crs": "EPSG:3844 (Pulkovo 1942(58) / Stereo70)"
+  },
+  "asset": {
+    "release_tag": "anar-hidrografie-20250212",
+    "file": "anar-hidrografie.jsonl.gz",
+    "url": "https://github.com/stefanneaga99/undepescuim/releases/download/anar-hidrografie-20250212/anar-hidrografie.jsonl.gz",
+    "sha256": "e1c344b1cd0c27bc8d686acb24fb87296c7e75d3ea187f6c9952cdd4a0806a76",
+    "bytes": 12173980,
+    "ways": 4917
+  }
+}

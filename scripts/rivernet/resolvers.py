@@ -26,7 +26,7 @@ from .courses import county_intervals
 from .extract_schema import Extract
 from .lr import Line
 from .planar import PolygonIndex, metres_per_degree
-from .textnorm import fold, river_keys
+from .textnorm import fold, river_keys, stem_key
 
 # ------------------------------------------------------------ fixed confidences
 C_SOURCE = 0.9
@@ -36,6 +36,7 @@ C_CONF_OUTLET_INTO = 0.95
 C_CONF_JUNCTION = 0.95
 C_CONF_NEAR_OUTLET = 0.8
 C_CONF_BASE_NAME = 0.7  # target 'Arieșul Mare' vs OSM course 'Arieș'
+C_CONF_ANAR_OUTLET = 0.75  # tributary missing from OSM, outlet from the ANAR cadastre
 C_LAKE_NAMED = 0.9
 C_LAKE_UNNAMED = 0.7
 C_DAM_NAMED = 0.9
@@ -55,6 +56,7 @@ OTHER_COUNTY_PENALTY = 0.1
 
 BRAID_SHARE = 0.10
 NEAR_OUTLET_M = 50.0
+ANAR_OUTLET_M = 300.0  # ANAR vs OSM: median offset ~6 m, wider in braided valleys
 LAKE_FUZZY = 0.85
 PLACE_FUZZY = 0.9
 LAKE_UNNAMED_PLACE_M = 10_000.0
@@ -390,13 +392,36 @@ def _confluence(spec, course, ctx, **_):
     if not out:
         line = ctx.line(course)
         for other in ctx.courses_named(keys):
-            if other["course_id"] == course["course_id"]:
+            if other["course_id"] == course["course_id"] or other.get("source") == "anar":
                 continue
             ox, oy = other["geometry"]["coordinates"][-1]
             m, d = line.locate(ox, oy)
             if d <= NEAR_OUTLET_M:
                 out.append(Candidate(m, C_CONF_NEAR_OUTLET, "near_outlet",
                                      {"type": "course", "id": other["course_id"]}, d))
+    if not out:
+        out = _anar_outlet(target, keys, course, ctx)
+    return out
+
+
+def _anar_outlet(target, keys, course, ctx):
+    """CONFLUENCE fallback: an ANAR cadastral tributary named like the target
+    whose outlet lies within ANAR_OUTLET_M of the course (the tributary is
+    missing from OSM, or not joined to it)."""
+    st = stem_key(target)
+    line = ctx.line(course)
+    out: list[Candidate] = []
+    for cid in sorted(ctx.courses):
+        other = ctx.courses[cid]
+        if other.get("source") != "anar" or cid == course["course_id"]:
+            continue
+        names = [other.get("name"), *(other.get("aliases") or [])]
+        if not any(set(river_keys(n)) & keys or (st and stem_key(n) == st) for n in names):
+            continue
+        ox, oy = other["geometry"]["coordinates"][-1]
+        m, d = line.locate(ox, oy)
+        if d <= ANAR_OUTLET_M:
+            out.append(Candidate(m, C_CONF_ANAR_OUTLET, "anar_outlet", {"type": "course", "id": cid}, d))
     return out
 
 

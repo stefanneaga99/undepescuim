@@ -99,4 +99,4 @@ def qa_report(wg: WaterGraph, courses: list[Course], extract: Extract | None = N
 def write_qa(path: str | Path, report: dict[str, Any]) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8", newline="\n")

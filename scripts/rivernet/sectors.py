@@ -164,6 +164,13 @@ def _finish(rec, course, ctx) -> dict[str, Any]:
     km = rec["contract_km"]
     rec["km_ratio"] = round(rec["length_m"] / (km * 1000), 3) if km else None
     classify(rec)
+    if course.get("source") == "anar":  # fallback geometry is never high confidence
+        rec["reasons"].append("fallback_source:anar")
+        if rec["confidence"] == "high":
+            rec["confidence"] = "medium"
+        if (rec["course"].get("method") or "").startswith("anar_fuzzy") and rec["status"] == "resolved":
+            rec["status"] = "review"
+            rec["reasons"].append("fallback_fuzzy_match")
     bad = validate(rec, course, ctx)
     if bad:
         rec["reasons"] += [f"invariant:{b}" for b in bad]
