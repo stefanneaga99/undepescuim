@@ -217,3 +217,30 @@ def test_output_is_deterministic_under_input_order():
     a = [c.to_record() for c in courses_for(make_extract(ways, rels))]
     b = [c.to_record() for c in courses_for(make_extract(list(reversed(ways)), rels))]
     assert a == b
+
+
+def test_partial_wikidata_does_not_split_a_river():
+    # upper ways untagged, lower ways carry wikidata (Teleajen): one course
+    ex = make_extract(
+        [
+            (1, [(1, 25.00, 45.0), (2, 25.01, 45.0)], {"waterway": "river", "name": "Teleajen"}),
+            (2, [(2, 25.01, 45.0), (3, 25.02, 45.0)], {"waterway": "river", "name": "Teleajen", "wikidata": "Q1"}),
+            # a same-named river far away keeps its own course
+            (3, [(7, 26.00, 46.0), (8, 26.01, 46.0)], {"waterway": "river", "name": "Teleajen"}),
+        ]
+    )
+    cs = by_id(courses_for(ex))
+    assert set(cs) == {"name:teleajen:n3", "name:teleajen:n8"}
+    assert cs["name:teleajen:n3"].way_ids == [1, 2] and cs["name:teleajen:n3"].wikidata == "Q1"
+
+
+def test_two_wikidata_groups_with_one_name_leave_untagged_ways_alone():
+    ex = make_extract(
+        [
+            (1, [(1, 25.00, 45.0), (2, 25.01, 45.0)], {"waterway": "river", "name": "Bistra", "wikidata": "Q1"}),
+            (2, [(5, 26.00, 46.0), (6, 26.01, 46.0)], {"waterway": "river", "name": "Bistra", "wikidata": "Q2"}),
+            (3, [(2, 25.01, 45.0), (3, 25.02, 45.0)], {"waterway": "river", "name": "Bistra"}),
+        ]
+    )
+    cs = by_id(courses_for(ex))
+    assert set(cs) == {"name:bistra:n2", "name:bistra:n3", "name:bistra:n6"}

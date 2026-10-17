@@ -26,7 +26,7 @@ from .courses import county_intervals
 from .extract_schema import Extract
 from .lr import Line
 from .planar import PolygonIndex, metres_per_degree
-from .textnorm import fold, river_keys, stem_key
+from .textnorm import fold, river_keys, river_match_keys, stem_key
 
 # ------------------------------------------------------------ fixed confidences
 C_SOURCE = 0.9
@@ -35,6 +35,7 @@ C_MOUTH = 0.95
 C_CONF_OUTLET_INTO = 0.95
 C_CONF_JUNCTION = 0.95
 C_CONF_NEAR_OUTLET = 0.8
+C_CONF_OUTLET_NEAR_NAMED = 0.85  # our outlet touches a course named like the target
 C_CONF_BASE_NAME = 0.7  # target 'Arieșul Mare' vs OSM course 'Arieș'
 C_CONF_ANAR_OUTLET = 0.75  # tributary missing from OSM, outlet from the ANAR cadastre
 C_LAKE_NAMED = 0.9
@@ -56,6 +57,7 @@ OTHER_COUNTY_PENALTY = 0.1
 
 BRAID_SHARE = 0.10
 NEAR_OUTLET_M = 50.0
+OUTLET_NEAR_NAMED_M = 100.0
 ANAR_OUTLET_M = 300.0  # ANAR vs OSM: median offset ~6 m, wider in braided valleys
 LAKE_FUZZY = 0.85
 PLACE_FUZZY = 0.9
@@ -353,22 +355,26 @@ def _mouth(spec, course, ctx, **_):
 
 
 def _base_keys(keys: set[str]) -> set[str]:
-    """Shorter names a longer target may stand for: first token (+article variants)
-    of a multi-word key, e.g. 'ariesul mare' -> {'ariesul', 'aries'}."""
+    """Shorter names a longer target may stand for: every leading-token prefix
+    (+ article variants) of a multi-word key, e.g. 'ariesul mare' -> {'ariesul',
+    'aries'}, 'somesul mic gilau' (a river + a place) -> {'somesul mic', ...}."""
     from .textnorm import article_variants
 
     out: set[str] = set()
     for k in keys:
         toks = k.split(" ")
-        if len(toks) >= 2 and toks[0] not in ("valea", "vl"):
-            out.add(toks[0])
-            out.update(article_variants(toks[0]))
+        if len(toks) < 2 or toks[0] in ("valea", "vl"):
+            continue
+        for n in range(1, len(toks)):
+            pre = " ".join(toks[:n])
+            out.add(pre)
+            out.update(article_variants(pre))
     return out - keys
 
 
 def _confluence(spec, course, ctx, **_):
     target = spec.get("target")
-    keys = set(river_keys(target))
+    keys = set(river_match_keys(target))
     if not keys:
         return []
     out: list[Candidate] = []
@@ -390,6 +396,8 @@ def _confluence(spec, course, ctx, **_):
                     out.append(Candidate(j["m"], C_CONF_BASE_NAME, "tributary_junction_base_name",
                                          {"type": "node", "id": j.get("node"), "name": target}))
     if not out:
+        out = _outlet_near_named(target, keys | _base_keys(keys), course, ctx)
+    if not out:
         line = ctx.line(course)
         for other in ctx.courses_named(keys):
             if other["course_id"] == course["course_id"] or other.get("source") == "anar":
@@ -402,6 +410,24 @@ def _confluence(spec, course, ctx, **_):
     if not out:
         out = _anar_outlet(target, keys, course, ctx)
     return out
+
+
+def _outlet_near_named(target, keys, course, ctx):
+    """CONFLUENCE with the receiving river when ``receives_into`` is missing or
+    names something else (an unnamed connector, a side channel): this course's
+    outlet lies within OUTLET_NEAR_NAMED_M of a course named like the target."""
+    ox, oy = course["geometry"]["coordinates"][-1]
+    best = None
+    for other in ctx.courses_named(sorted(keys)):
+        if other["course_id"] == course["course_id"] or other.get("name_key") == course.get("name_key"):
+            continue
+        _, d = ctx.line(other).locate(ox, oy)
+        if d <= OUTLET_NEAR_NAMED_M and (best is None or d < best[1]):
+            best = (other["course_id"], d)
+    if best is None:
+        return []
+    return [Candidate(course["length_m"], C_CONF_OUTLET_NEAR_NAMED, "outlet_near_named",
+                      {"type": "course", "id": best[0], "name": target}, best[1])]
 
 
 def _anar_outlet(target, keys, course, ctx):

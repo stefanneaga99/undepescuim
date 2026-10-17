@@ -298,3 +298,61 @@ def test_anar_fuzzy_match_goes_to_review():
     m = {**MATCH, "method": "anar_fuzzy+county"}
     r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]), match=m)
     assert r["status"] == "review" and "fallback_fuzzy_match" in r["reasons"]
+
+
+# ---------------------------------------------------- alternative courses
+
+
+def short_course(cid="name:test:n2"):
+    coords = [(round(24.0 + 0.005 * i, 6), LAT) for i in range(11)]  # first ~3.9 km only
+    from rivernet.lr import Line as _L
+    ln = _L.from_coords(coords)
+    return course(cid=cid, length_m=ln.length_m, geometry={"type": "LineString", "coordinates": [list(c) for c in coords]})
+
+
+def rb(spec, ctx, match, w=None):
+    return S.resolve_best(w or water(km=f"{KM:.2f} km"), spec, match, ctx, None, "v")
+
+
+def test_alternative_course_replaces_an_unresolved_choice():
+    ctx = ctx_for([short_course(), course()], nodes=[place(1, "Aaa", 24.35, LAT + 0.002)])
+    m = {"course_id": "name:test:n2", "score": 0.8, "method": "name+county",
+         "candidates": [["name:test:n2", 0.8, ""], ["name:test:n1", 0.7, ""]]}
+    r = rb(interval(ep("SOURCE"), ep("LOCALITY", target="Aaa")), ctx, m)
+    assert r["course"]["course_id"] == "name:test:n1" and "alt_course" in r["reasons"]
+    assert r["course"]["method"] == "name+county|alt" and r["status"] in ("resolved", "review")
+
+
+def test_alternative_never_downgrades_and_resolved_is_kept():
+    ctx = ctx_for([short_course(), course()])
+    m = {"course_id": "name:test:n1", "score": 0.8, "method": "name+county",
+         "candidates": [["name:test:n1", 0.8, ""], ["name:test:n2", 0.7, ""]]}
+    r = rb(interval(ep("SOURCE"), ep("MOUTH")), ctx, m)
+    assert r["course"]["course_id"] == "name:test:n1" and "alt_course" not in r["reasons"]
+
+
+def test_ambiguous_match_resolved_by_the_single_resolving_candidate():
+    ctx = ctx_for([short_course(), course()], nodes=[place(1, "Aaa", 24.35, LAT + 0.002)])
+    m = {"course_id": None, "score": 0.8, "method": "ambiguous",
+         "candidates": [["name:test:n2", 0.8, ""], ["name:test:n1", 0.78, ""]]}
+    r = rb(interval(ep("SOURCE"), ep("LOCALITY", target="Aaa")), ctx, m)
+    assert r["course"]["course_id"] == "name:test:n1"
+    assert r["course"]["method"] == "ambiguous+endpoints" and "ambiguity_resolved_by_endpoints" in r["reasons"]
+
+
+def test_ambiguous_with_two_resolving_candidates_stays_unresolved():
+    ctx = ctx_for([course(cid="name:test:n2"), course()])
+    m = {"course_id": None, "score": 0.8, "method": "ambiguous",
+         "candidates": [["name:test:n2", 0.8, ""], ["name:test:n1", 0.78, ""]]}
+    r = rb(interval(ep("SOURCE"), ep("MOUTH")), ctx, m)
+    assert r["status"] == "unresolved" and r["course"]["course_id"] is None
+
+
+def test_override_and_unusable_limite_skip_alternatives():
+    ctx = ctx_for([short_course(), course()])
+    m = {"course_id": "name:test:n2", "score": 1.0, "method": "override",
+         "candidates": [["name:test:n2", 1.0, "override"], ["name:test:n1", 0.7, ""]]}
+    r = rb(interval(ep("SOURCE"), ep("LOCALITY", target="Nowhere")), ctx, m)
+    assert r["course"]["course_id"] == "name:test:n2"
+    r2 = rb({"scope": "unparsed"}, ctx, {**m, "method": "name+county"})
+    assert r2["status"] == "unresolved" and "limite_unusable" in r2["reasons"]

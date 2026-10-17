@@ -280,37 +280,44 @@ def index_entries(extract: Extract) -> dict[str, list[str]]:
     return out
 
 
-def osm_coverage(courses: Iterable[Mapping[str, Any]]) -> set[tuple[str, str]]:
-    """(stem, folded county) pairs that some OSM course already answers."""
-    out: set[tuple[str, str]] = set()
+def osm_coverage(courses: Iterable[Mapping[str, Any]]) -> dict[tuple[str, str], float]:
+    """(stem, folded county) -> length (m) of the longest OSM course answering it."""
+    out: dict[tuple[str, str], float] = {}
     for c in courses:
         if c.get("source") == SOURCE:
             continue
         stems = {stem_key(c.get("name"))} | {stem_key(a) for a in c.get("aliases") or []}
         for iv in c.get("counties") or []:
             county = fold(iv.get("county"))
-            out.update((st, county) for st in stems if st)
+            for st in stems:
+                if st:
+                    out[(st, county)] = max(out.get((st, county), 0.0), float(c.get("length_m") or 0.0))
     return out
 
 
 def wanted(
     waters: Iterable[Mapping[str, Any]],
     parsed: Mapping[str, Mapping[str, Any]],
-    covered: set[tuple[str, str]] | None = None,
+    covered: Mapping[tuple[str, str], float] | None = None,
 ) -> Callable[[list[str], set[str]], bool]:
     """Keep a course whose stem or key matches a river water's name, or a
     CONFLUENCE target in its ``limite``, in that water's county - unless an
     OSM course already answers that name there (``covered``, see
-    ``osm_coverage``): the matcher never reaches the fallback then.
+    ``osm_coverage``): the matcher never reaches the fallback then. For a
+    water's own name the OSM course must also not be a fragment (shorter than
+    ``matcher.FRAGMENT_FIT`` x contract km), which the matcher would replace.
 
     Called with an empty county set it is a pure name pre-filter."""
-    covered = covered or set()
+    from .matcher import FRAGMENT_FIT, contract_km
+
+    covered = covered or {}
     stems: dict[str, set[str]] = {}
     keys: dict[str, set[str]] = {}
 
-    def add(name: str | None, county: str, with_keys: bool) -> None:
+    def add(name: str | None, county: str, with_keys: bool, need_m: float = 0.0) -> None:
         st = stem_key(name)
-        if not st or (st, county) in covered:
+        have = covered.get((st, county))
+        if not st or (have is not None and have >= need_m):
             return
         stems.setdefault(st, set()).add(county)
         if with_keys:
@@ -321,7 +328,8 @@ def wanted(
         if w.get("subtype") != "rau":
             continue
         county = fold(w.get("judet"))
-        add(w.get("name"), county, False)
+        km = contract_km(w.get("dimensiune"))
+        add(w.get("name"), county, False, FRAGMENT_FIT * km * 1000 if km else 0.0)
         spec = parsed.get(w.get("slug")) or {}
         for end in ("from", "to"):
             e = spec.get(end) or {}

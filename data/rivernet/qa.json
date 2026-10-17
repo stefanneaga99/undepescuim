@@ -1,9 +1,9 @@
 {
- "courses_total": 6413,
+ "courses_total": 6365,
  "courses_with_qa_flags": {
   "cycle_broken": 3,
-  "has_synthetic": 165,
-  "multiple_sinks": 55,
+  "has_synthetic": 163,
+  "multiple_sinks": 56,
   "relation_member_missing": 59,
   "relation_split": 19
  },
@@ -1378,7 +1378,7 @@
   "edges": 125099,
   "nodes": 128503
  },
- "km_total": 56754.4,
+ "km_total": 56749.6,
  "max_segment_m": [
   {
    "course_id": "name:giurgiu - razmiresti:n260551982",
@@ -3407,8 +3407,8 @@
  ],
  "sinks_inland_total": 1041,
  "synthetic_connectors": {
-  "count": 233,
-  "max_gap_m": 1648.4,
-  "total_km": 20.324
+  "count": 227,
+  "max_gap_m": 3320.3,
+  "total_km": 23.3
  }
 }

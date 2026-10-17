@@ -284,6 +284,66 @@ def resolve_sector(
     return _finish(rec, course, ctx)
 
 
+# ------------------------------------------------------------ alternative courses
+
+ALT_MAX = 4  # match candidates tried after the chosen course
+_RANK = {"resolved": 2, "review": 1, "unresolved": 0}
+_CONF = {"high": 2, "medium": 1, "low": 0}
+
+
+def _rank(rec: Mapping[str, Any]) -> tuple[int, int]:
+    return _RANK[rec["status"]], _CONF[rec["confidence"]]
+
+
+def resolve_best(
+    water: Mapping[str, Any],
+    spec: Mapping[str, Any],
+    match: Mapping[str, Any],
+    ctx: Context,
+    endpoint_overrides: Mapping[tuple[str, str], Mapping[str, Any]] | None = None,
+    network_version: str = "",
+) -> dict[str, Any]:
+    """``resolve_sector`` plus endpoint evidence across the match candidates.
+
+    * chosen course not ``resolved``: the other candidates (up to ``ALT_MAX``)
+      are tried and one replaces it only with a strictly better status
+      (reason ``alt_course``) - e.g. an OSM fragment beats a fallback course
+      whose endpoints cannot be found, and vice versa;
+    * ``ambiguous`` match: a candidate is taken only when it is the single
+      one that resolves (else the single one reaching ``review``); reason
+      ``ambiguity_resolved_by_endpoints``.
+    Overrides are never second-guessed.
+    """
+    rec = resolve_sector(water, spec, match, ctx, endpoint_overrides, network_version)
+    method = match.get("method") or ""
+    if rec["status"] == "resolved" or method == "override" or spec.get("scope") in ("empty", "unparsed", None):
+        return rec
+    cands = [c[0] for c in match.get("candidates") or [] if c[0] != match.get("course_id") and c[0] in ctx.courses]
+    alts = []
+    for cid in cands[:ALT_MAX]:
+        m2 = {**match, "course_id": cid, "method": method}
+        alts.append(resolve_sector(water, spec, m2, ctx, endpoint_overrides, network_version))
+    if not alts:
+        return rec
+    if match.get("course_id") is None:  # ambiguous
+        for status in ("resolved", "review"):
+            hit = [a for a in alts if a["status"] == status]
+            if len(hit) == 1:
+                best = hit[0]
+                best["reasons"] = sorted(set(best["reasons"]) | {"ambiguity_resolved_by_endpoints"})
+                best["course"]["method"] = "ambiguous+endpoints"
+                return best
+            if len(hit) > 1:
+                break
+        return rec
+    best = max(alts, key=_rank)
+    if _rank(best) > _rank(rec) and best["status"] != rec["status"]:
+        best["reasons"] = sorted(set(best["reasons"]) | {"alt_course"})
+        best["course"]["method"] = method + "|alt"
+        return best
+    return rec
+
+
 # --------------------------------------------------------------------- overlaps
 
 
@@ -359,7 +419,7 @@ def cli(argv: list[str]) -> int:
     waters = json.loads(Path(ns.waters).read_text(encoding="utf-8"))
     recs = []
     for w in sorted((w for w in waters if w.get("subtype") == "rau"), key=lambda w: w["slug"]):
-        recs.append(resolve_sector(w, parsed.get(w["slug"], {"scope": "empty"}), matches.get(w["slug"], {}), ctx, ovs, version))
+        recs.append(resolve_best(w, parsed.get(w["slug"], {"scope": "empty"}), matches.get(w["slug"], {}), ctx, ovs, version))
     flag_overlaps(recs)
     out = Path(ns.out)
     out.parent.mkdir(parents=True, exist_ok=True)
