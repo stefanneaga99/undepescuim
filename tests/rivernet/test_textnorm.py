@@ -141,3 +141,17 @@ def test_stem_key_keeps_distinct_names_apart_and_short_tokens():
     assert textnorm.stem_key("Valea") == "val"  # a lone generic word is the name
     assert textnorm.stem_key("Ier") == "ier"  # never shorter than 3 letters
     assert textnorm.stem_key("") == "" and textnorm.stem_key(None) == ""
+
+
+@pytest.mark.parametrize("name,key", [
+    ("Prut– fără lacul Stânca", "prut"),
+    ("Râul Prut și revărsări", "prut"),
+    ("Râul Olt și afluenții săi", "olt"),
+    ("Râul Jiu și afluenții săi", "jiu"),
+    ("Râul Șomuzul Mare și afluenții", "somuzul mare"),
+    ("Râul Mureș, cu afluenții", "mures"),
+    ("Valea Urii cu pâraiele Uria și Murgoci", "valea urii"),
+    ("Izvoarele Moldovei și Sucevei", "izvoarele moldovei si sucevei"),  # "și" + a river: not an extra
+])
+def test_contract_extras_are_cut_from_the_name(name, key):
+    assert textnorm.river_key(name) == key

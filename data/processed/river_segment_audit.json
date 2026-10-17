@@ -242,12 +242,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 6,
+      "missing_geometry": 5,
       "overlay": {
         "lakes": 182,
         "rivers": 40
       },
-      "with_geometry": 12
+      "with_geometry": 13
     },
     {
       "contracted": 17,
@@ -275,12 +275,12 @@
         "sector_mismatch": 5
       },
       "finding_count": 6,
-      "missing_geometry": 2,
+      "missing_geometry": 1,
       "overlay": {
         "lakes": 100,
         "rivers": 15
       },
-      "with_geometry": 0
+      "with_geometry": 1
     },
     {
       "contracted": 5,
@@ -502,12 +502,12 @@
         "sector_mismatch": 5
       },
       "finding_count": 6,
-      "missing_geometry": 17,
+      "missing_geometry": 16,
       "overlay": {
         "lakes": 62,
         "rivers": 103
       },
-      "with_geometry": 19
+      "with_geometry": 20
     },
     {
       "contracted": 15,
@@ -573,12 +573,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 2,
+      "missing_geometry": 1,
       "overlay": {
         "lakes": 54,
         "rivers": 12
       },
-      "with_geometry": 5
+      "with_geometry": 6
     },
     {
       "contracted": 15,

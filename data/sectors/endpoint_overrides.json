@@ -55,6 +55,83 @@
       "reason": "'Voinești km 309': Voinești (Brăila), OSM place node on the left bank 291 m from the river, 2.2 km above the Siret confluence; km 309 exceeds the cadastral length (295.5 km), so the village is the anchor.",
       "reviewer": "Claude Code (proposed in the Buzău PR; owner to confirm)",
       "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0297",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 461618751
+      },
+      "reason": "'Vădeni, km114': Vădeni (Galați), OSM place node 320 m from the river at m 669.9 km of course rel:1566139 (Prut, OSM extract 2026-10-16), i.e. 113 km above the Danube - matches the river-km marker 114 (counted from the mouth). The limite is unparseable because of the km marker.",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0297",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 783128.9
+      },
+      "reason": "'Galați, conf. Dunărea': the Prut's mouth into the Danube at Galați = end of course rel:1566139 (Prut, OSM extract 2026-10-16) (receives_into the Danube course).",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0622",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 463297909
+      },
+      "reason": "'Drânceni-Cârja' (two localities joined by a hyphen, which the parser keeps as one toponym): Drânceni (Vaslui), OSM place node 313 m from the river at m 483.7 km of course rel:1566139 (Prut, OSM extract 2026-10-16), right below the Iași contract's end (Gorban).",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0622",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 463298869
+      },
+      "reason": "Cârja (Vaslui), OSM place node 1.1 km from the river at m 654.2 km of course rel:1566139 (Prut, OSM extract 2026-10-16), right above the Galați contract's start (Vădeni).",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "o4sf1fah",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 391294615
+      },
+      "reason": "'Oroftiana de Sus': OSM has the village as 'Oroftiana' (Botoșani), place node 855 m from the river at m 35.0 km of course rel:1566139 (Prut). Oroftiana -> Bădărăi = 214 km vs 194 km contract, which excludes the Stânca reservoir ('fără lacul Stânca').",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0280",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 461611608
+      },
+      "reason": "'Bâlta-Dunăre' (two endpoints joined by a bare hyphen, unparseable): Bâlta (Dolj), OSM place node 656 m from the river at m 136.7 km of course rel:7691863 (Jiu), just below the Gorj/Dolj border (m 134.4) and the Gorj Jiu sector's end (m 132.7).",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0280",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 271857.3
+      },
+      "reason": "'Dunăre': the Jiu's mouth into the Danube = end of course rel:7691863 (receives_into the Danube relation 89652). Bâlta -> Danube = 135 km vs 110 km contract.",
+      "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
+      "date": "2026-10-17"
     }
   ]
 }
