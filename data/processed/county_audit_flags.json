@@ -579,33 +579,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0552",
-   "name": "Râul Siret",
-   "judet": "Suceava",
-   "asociatie": "AJVPS BOTOȘANI",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0674",
-   "name": "Râul Siret",
-   "judet": "Vrancea",
-   "asociatie": "AJVPS VRANCEA",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0296",
-   "name": "Râul Siret",
-   "judet": "Galați",
-   "asociatie": "AJVPS GALAȚI",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0496",
    "name": "Râul Someș",
    "judet": "Satu Mare",

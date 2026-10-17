@@ -53,12 +53,9 @@
     {
       "contracted": 24,
       "county": "Bacău",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
       "missing_geometry": 1,
       "overlay": {
         "lakes": 62,
@@ -95,18 +92,15 @@
     {
       "contracted": 28,
       "county": "Botoșani",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
-      "missing_geometry": 10,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
+      "missing_geometry": 9,
       "overlay": {
         "lakes": 128,
         "rivers": 25
       },
-      "with_geometry": 18
+      "with_geometry": 19
     },
     {
       "contracted": 33,
@@ -126,12 +120,9 @@
     {
       "contracted": 8,
       "county": "Brăila",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
       "missing_geometry": 3,
       "overlay": {
         "lakes": 70,
@@ -269,18 +260,15 @@
     {
       "contracted": 2,
       "county": "Galați",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
-      "missing_geometry": 1,
+      "coverage_status": "covered",
+      "finding_codes": {},
+      "finding_count": 0,
+      "missing_geometry": 0,
       "overlay": {
         "lakes": 100,
         "rivers": 15
       },
-      "with_geometry": 1
+      "with_geometry": 2
     },
     {
       "contracted": 5,
@@ -356,12 +344,9 @@
     {
       "contracted": 6,
       "county": "Iași",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
       "missing_geometry": 2,
       "overlay": {
         "lakes": 244,
@@ -424,12 +409,9 @@
     {
       "contracted": 22,
       "county": "Neamț",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
       "missing_geometry": 8,
       "overlay": {
         "lakes": 53,
@@ -496,18 +478,15 @@
     {
       "contracted": 36,
       "county": "Suceava",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
-      "missing_geometry": 16,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
+      "missing_geometry": 15,
       "overlay": {
         "lakes": 62,
         "rivers": 103
       },
-      "with_geometry": 20
+      "with_geometry": 21
     },
     {
       "contracted": 15,
@@ -583,18 +562,15 @@
     {
       "contracted": 15,
       "county": "Vrancea",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 1,
-        "sector_mismatch": 5
-      },
-      "finding_count": 6,
-      "missing_geometry": 6,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
+      "missing_geometry": 5,
       "overlay": {
         "lakes": 33,
         "rivers": 28
       },
-      "with_geometry": 9
+      "with_geometry": 10
     },
     {
       "contracted": 74,
@@ -70456,62 +70432,7 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [
-        {
-          "code": "missing_segment",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "length_m": 0,
-          "reason": "published_geometry_missing"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "sopv2vba"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0469"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0066"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0296"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "9m2irr6m"
-        }
-      ],
+      "findings": [],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 10534882,
@@ -70539,6 +70460,16 @@
         ]
       },
       "owner_slug": "sopv2vba",
+      "precut_sectors": [
+        "9m2irr6m",
+        "anpa-anpa-0066",
+        "anpa-anpa-0296",
+        "anpa-anpa-0390",
+        "anpa-anpa-0469",
+        "anpa-anpa-0552",
+        "anpa-anpa-0674",
+        "sopv2vba"
+      ],
       "registry": {
         "alias_used": false
       },
@@ -70573,7 +70504,7 @@
           ],
           "length_m": 401034.279,
           "segment_id": "10534882:main",
-          "status": "UNRESOLVED_NO_OSM_MATCH"
+          "status": "PASS_CONTRACTED"
         }
       ],
       "source_rows": [
@@ -70598,62 +70529,7 @@
         "osm_to_published": 0.0,
         "published_to_osm": 0.0
       },
-      "findings": [
-        {
-          "code": "missing_segment",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "length_m": 0,
-          "reason": "published_geometry_missing"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "sopv2vba"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0469"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0066"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "anpa-anpa-0296"
-        },
-        {
-          "code": "sector_mismatch",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-siret-buffered-border-overlap"
-          },
-          "reason": "overlap",
-          "slug": "9m2irr6m"
-        }
-      ],
+      "findings": [],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 2911656,
@@ -70670,6 +70546,16 @@
         ]
       },
       "owner_slug": "sopv2vba",
+      "precut_sectors": [
+        "9m2irr6m",
+        "anpa-anpa-0066",
+        "anpa-anpa-0296",
+        "anpa-anpa-0390",
+        "anpa-anpa-0469",
+        "anpa-anpa-0552",
+        "anpa-anpa-0674",
+        "sopv2vba"
+      ],
       "registry": {
         "alias_used": false
       },
@@ -70704,7 +70590,7 @@
           ],
           "length_m": 43579.142,
           "segment_id": "2911656:main",
-          "status": "UNRESOLVED_NO_OSM_MATCH"
+          "status": "PASS_CONTRACTED"
         }
       ],
       "source_rows": [
@@ -71380,10 +71266,9 @@
   "schema_version": 1,
   "snapshot_sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
   "summary": {
-    "PASS_CONTRACTED": 1,
-    "UNRESOLVED_NO_OSM_MATCH": 18,
-    "missing_segment": 26,
-    "sector_mismatch": 10,
+    "PASS_CONTRACTED": 3,
+    "UNRESOLVED_NO_OSM_MATCH": 16,
+    "missing_segment": 24,
     "truncated_head": 6,
     "truncated_mouth": 6
   },

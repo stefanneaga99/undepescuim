@@ -5,10 +5,10 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 ## Scope and semantics
 
 - Canonical waters: **1013** (761 rivers, 252 lakes).
-- Canonical geometry: **778 present**, **235 absent**.
+- Canonical geometry: **782 present**, **231 absent**.
 - Unresolved inventory: **312**; classes `{"2": 163, "3": 13, "4": 6, "5": 12, "6": 118}`.
-- Class2 physical source: **148 records / 168 candidates / 76 all-candidate `(riverGroup, geometryHash)` keys**.
-- Current runtime validates every exact candidate identity and deduplicates all candidates to **76 representatives**.
+- Class2 physical source: **148 records / 162 candidates / 75 all-candidate `(riverGroup, geometryHash)` keys**.
+- Current runtime validates every exact candidate identity and deduplicates all candidates to **75 representatives**.
 - `repaired` means render-ready canonical geometry in the frozen dataset; it does not claim this audit changed or newly proved the legal sector.
 - `preview-only` is a neutral physical course and never legal ownership/association/endpoint evidence.
 - `selected-focus` is runtime-only and is deliberately absent from persisted geometry variants.
@@ -23,11 +23,11 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 - `data/processed/mures_harghita_covasna_endpoint_audit.json`: `065872997c7c05b0a96b33637e39fe7053bd034c79b34c48eff0faa9ec2e8dae` (before = after)
 - `data/processed/permit_enrichment.json`: `e7035af369c726b1f24b32d5041814742aec2ed4ca00ce02da3e70d006110d75` (before = after)
 - `data/processed/permit_overrides.json`: `4d25281bc7b3cbf7b254a235aaf77f4a05c843da4e565e92fd2da0de36f015fa` (before = after)
-- `data/processed/river_segment_audit.json`: `88f5e3dbbca9bf654df7cf85de0028e12a8ab54c6241765016bba6f0525a41c2` (before = after)
+- `data/processed/river_segment_audit.json`: `efeb6aca947f3cee69a25efc7a183b19d001826c7595d632e862fbf398a0729a` (before = after)
 - `public/data/association_locations.json`: `bc54ab5ce74c07e282ac2d1f51b16247180d2d5bfd5e3389f2c11735a9c6b9a7` (before = after)
 - `public/data/associations.json`: `388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9` (before = after)
-- `public/data/waters.json`: `1a84b708846822f1b217d231524a2ee75ab7aeebdf6b2321a8b1b5430af00ba6` (before = after)
-- `public/data/waters_county_clips.json`: `09297afa40940f46126eb35d1d4fec9f7f2b5868a2e969c20f16a9d935c91ecf` (before = after)
+- `public/data/waters.json`: `541de30f65a4a15cef0bd4e4fe94d35adc6ee006f98d7ece3b5b19c7d6ab3c42` (before = after)
+- `public/data/waters_county_clips.json`: `ef7899c7c1091b408992603ae008b2f73da2ca0666d1579f734302747d47af53` (before = after)
 
 ## Historical audit refs
 
@@ -57,8 +57,8 @@ The four prior `RENDERING_FIX` rows remain `NOT_REPRODUCED` and ineligible in th
 
 ## Classification totals
 
-- `preview-only`: 112
-- `repaired`: 776
+- `preview-only`: 108
+- `repaired`: 780
 - `unresolved`: 125
 
 ## Source-backed render repair provenance

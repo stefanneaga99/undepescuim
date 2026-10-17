@@ -95,7 +95,8 @@ describe('ledger-backed physical preview rendering', () => {
     const publicLedger = parseGeometryLedger(JSON.parse(readFileSync('public/data/geometry-ledger.json', 'utf8')));
     const previewArtifact = JSON.parse(readFileSync('public/data/preview_class2_physical.json', 'utf8'));
     const projected = dedupePhysicalPreview(await physicalPreviewWaters(previewArtifact, publicLedger));
-    expect(projected).toHaveLength(76);
+    // 75 since the Siret group (two preview candidates) switched to its single rivernet course
+    expect(projected).toHaveLength(75);
     for (const water of projected) {
       const exactAliases = publicLedger.records.filter((record) =>
         record.riverGroup === (water.physicalRiverGroup ?? null) &&

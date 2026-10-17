@@ -9,10 +9,9 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 
 ## Summary
 
-- **PASS_CONTRACTED**: 1
-- **UNRESOLVED_NO_OSM_MATCH**: 18
-- **missing_segment**: 26
-- **sector_mismatch**: 10
+- **PASS_CONTRACTED**: 3
+- **UNRESOLVED_NO_OSM_MATCH**: 16
+- **missing_segment**: 24
 - **truncated_head**: 6
 - **truncated_mouth**: 6
 
@@ -32,12 +31,12 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Alba | 49 | 36 | 13 | 0 | 132 | 112 | partial |
 | Arad | 34 | 24 | 10 | 0 | 41 | 138 | partial |
 | Argeș | 36 | 27 | 9 | 0 | 154 | 183 | partial |
-| Bacău | 24 | 23 | 1 | 6 | 79 | 62 | blocked |
+| Bacău | 24 | 23 | 1 | 0 | 79 | 62 | partial |
 | Bihor | 41 | 28 | 13 | 0 | 136 | 280 | partial |
 | Bistrița-Năsăud | 31 | 22 | 9 | 0 | 108 | 49 | partial |
-| Botoșani | 28 | 18 | 10 | 6 | 25 | 128 | blocked |
+| Botoșani | 28 | 19 | 9 | 0 | 25 | 128 | partial |
 | Brașov | 33 | 28 | 5 | 3 | 270 | 123 | blocked |
-| Brăila | 8 | 5 | 3 | 6 | 11 | 70 | blocked |
+| Brăila | 8 | 5 | 3 | 0 | 11 | 70 | partial |
 | București | 0 | 0 | 0 | 0 | 0 | 47 | covered |
 | Buzău | 14 | 11 | 3 | 0 | 65 | 63 | partial |
 | Caraș-Severin | 41 | 33 | 8 | 4 | 128 | 60 | blocked |
@@ -47,29 +46,29 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Călărași | 9 | 4 | 5 | 0 | 19 | 125 | partial |
 | Dolj | 18 | 13 | 5 | 0 | 40 | 182 | partial |
 | Dâmbovița | 17 | 16 | 1 | 10 | 51 | 151 | blocked |
-| Galați | 2 | 1 | 1 | 6 | 15 | 100 | blocked |
+| Galați | 2 | 2 | 0 | 0 | 15 | 100 | covered |
 | Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
 | Gorj | 26 | 21 | 5 | 0 | 49 | 58 | partial |
 | Harghita | 44 | 32 | 12 | 1 | 429 | 72 | blocked |
 | Hunedoara | 70 | 62 | 8 | 0 | 138 | 120 | partial |
 | Ialomița | 6 | 3 | 3 | 5 | 4 | 113 | blocked |
-| Iași | 6 | 4 | 2 | 6 | 76 | 244 | blocked |
+| Iași | 6 | 4 | 2 | 0 | 76 | 244 | partial |
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
 | Maramureș | 50 | 38 | 12 | 0 | 129 | 58 | partial |
 | Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
 | Mureș | 41 | 31 | 10 | 0 | 198 | 142 | partial |
-| Neamț | 22 | 14 | 8 | 6 | 382 | 53 | blocked |
+| Neamț | 22 | 14 | 8 | 0 | 382 | 53 | partial |
 | Olt | 15 | 14 | 1 | 1 | 69 | 235 | blocked |
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
 | Satu Mare | 11 | 7 | 4 | 0 | 20 | 72 | partial |
 | Sibiu | 48 | 38 | 10 | 1 | 89 | 169 | blocked |
-| Suceava | 36 | 20 | 16 | 6 | 103 | 62 | blocked |
+| Suceava | 36 | 21 | 15 | 0 | 103 | 62 | partial |
 | Sălaj | 15 | 12 | 3 | 0 | 37 | 40 | partial |
 | Teleorman | 6 | 6 | 0 | 1 | 34 | 160 | blocked |
 | Timiș | 41 | 37 | 4 | 4 | 47 | 236 | blocked |
 | Tulcea | 0 | 0 | 0 | 0 | 94 | 851 | covered |
 | Vaslui | 7 | 6 | 1 | 0 | 12 | 54 | partial |
-| Vrancea | 15 | 9 | 6 | 6 | 28 | 33 | blocked |
+| Vrancea | 15 | 10 | 5 | 0 | 28 | 33 | partial |
 | Vâlcea | 74 | 65 | 9 | 4 | 306 | 97 | blocked |
 
 ## Findings
@@ -91,18 +90,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `lacul rosu`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
 - `olt`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
 - `olt`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "sopv2vba"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0469"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0066"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0296"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "9m2irr6m"}
-- `siret`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "length_m": 0, "reason": "published_geometry_missing"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "sopv2vba"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0469"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0066"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "anpa-anpa-0296"}
-- `siret`: **sector_mismatch** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-siret-buffered-border-overlap"}, "reason": "overlap", "slug": "9m2irr6m"}
 - `taul tapului`: **missing_segment** — {"gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 0, "reason": "published_geometry_missing"}
 - `timis`: **missing_segment** — {"end_fraction": 0.09, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 863.2539827516384, "midpoint": [21.944973158843666, 45.674830187231706], "start_fraction": 0.07}
 - `timis`: **missing_segment** — {"end_fraction": 0.24, "gate_exception": {"expires_on": "2027-12-31", "id": "osm-snapshot-v1-ambiguous-waterbody-topology"}, "length_m": 431.62699137581876, "midpoint": [21.911206689832216, 45.68399335989003], "start_fraction": 0.23}
