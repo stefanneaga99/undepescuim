@@ -146,6 +146,19 @@
   },
   {
    "blockers": [
+    "7ull4jnk",
+    "9mfds2yv"
+   ],
+   "members": [
+    "7ull4jnk",
+    "9mfds2yv",
+    "jw9il5yo",
+    "w69nse7i"
+   ],
+   "riverGroup": "crisul-negru"
+  },
+  {
+   "blockers": [
     "bv8qho87",
     "do8k78x0",
     "n7cuf5cs",
@@ -268,7 +281,6 @@
   {
    "blockers": [
     "anpa-anpa-0192",
-    "anpa-anpa-0250",
     "anpa-anpa-0339",
     "ehwpvgwh",
     "y6i6nikh"
@@ -640,14 +652,6 @@
   {
    "reason": "status_unresolved",
    "slug": "9mfds2yv"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "w69nse7i"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "jw9il5yo"
   },
   {
    "reason": "status_unresolved",
@@ -1359,10 +1363,6 @@
   },
   {
    "reason": "status_unresolved",
-   "slug": "anpa-anpa-0283"
-  },
-  {
-   "reason": "status_unresolved",
    "slug": "anpa-anpa-0284"
   },
   {
@@ -1880,10 +1880,6 @@
   {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0681"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0250"
   },
   {
    "reason": "review_without_override",
@@ -2546,7 +2542,7 @@
    "slug": "anpa-vrancea-ramnicu-sarat"
   }
  ],
- "kept_legacy_count": 527,
+ "kept_legacy_count": 523,
  "mode": "write",
  "preview_groups_replaced": [
   "arges",
@@ -2680,6 +2676,18 @@
   {
    "riverGroup": "crisul-alb",
    "slug": "aoja7n5d",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "crisul-negru",
+   "slug": "w69nse7i",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "crisul-negru",
+   "slug": "jw9il5yo",
    "status": "resolved"
   },
   {
@@ -3070,6 +3078,11 @@
   },
   {
    "riverGroup": null,
+   "slug": "anpa-anpa-0283",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
    "slug": "anpa-anpa-0290",
    "status": "resolved"
   },
@@ -3386,6 +3399,12 @@
   {
    "riverGroup": null,
    "slug": "anpa-anpa-0678",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "olt",
+   "slug": "anpa-anpa-0250",
    "status": "resolved"
   },
   {
@@ -3758,5 +3777,5 @@
    "status": "resolved"
   }
  ],
- "switched_count": 234
+ "switched_count": 238
 }

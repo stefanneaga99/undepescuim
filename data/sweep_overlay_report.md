@@ -1,16 +1,16 @@
 # Overlay sweep report (t_963f40e4)
 
-Generated: sweep of 4133 uncontracted rivers + 5687 uncontracted lakes vs 796 contracted waters with geometry.
+Generated: sweep of 4133 uncontracted rivers + 5687 uncontracted lakes vs 799 contracted waters with geometry.
 
 ## Counts
 
 - DUPLICATE: **0**
 - AMBIGUOUS: **297**
-- TRIBUTARY: **1505**
+- TRIBUTARY: **1535**
 - NAME_COLLISION: **43**
-- total hits: **1845** (rivers 1802, lakes 43)
+- total hits: **1875** (rivers 1832, lakes 43)
 
-Confidence: {'medium': 1569, 'low': 233, 'high': 43}
+Confidence: {'medium': 1599, 'low': 233, 'high': 43}
 
 ## DUPLICATES
 
@@ -347,1532 +347,1562 @@ Confidence: {'medium': 1569, 'low': 233, 'high': 43}
 | 319 | river | Apatiu | Bistrița-Năsăud | Pârâul Meleș | touches Pârâul Meleș at mouth only (3% near) |
 | 320 | river | Apold | Sibiu | Râul Secaș | touches Râul Secaș at mouth only (4% near) |
 | 321 | river | Aranca | Timiș | Canal Aranca | touches Canal Aranca at mouth only (2% near) |
-| 322 | river | Arcuș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 323 | river | Ardan | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (6% near) |
-| 324 | river | Ardeleni | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (5% near) |
-| 325 | river | Ardeluța | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
-| 326 | river | Argel | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (11% near) |
-| 327 | river | Argestru | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 328 | river | Argestru | Suceava | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (33% near) |
-| 329 | river | Argova | Călărași | Canalul Scoiceni | touches Canalul Scoiceni at mouth only (2% near) |
-| 330 | river | Armăsarul | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 331 | river | Arpașu Mare | Sibiu | Râul Arpaș | touches Râul Arpaș at mouth only (20% near) |
-| 332 | river | Arpășel | Sibiu | Râul Arpaș | touches Râul Arpaș at mouth only (10% near) |
-| 333 | river | Arșița | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (14% near) |
-| 334 | river | Asăul Rece | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
-| 335 | river | Aușel | Hunedoara | Raul Taia Aușel Voievodul | touches Raul Taia Aușel Voievodul at mouth only (17% near) |
-| 336 | river | Bacta | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
-| 337 | river | Bahlui | Iași | Râul Jijia | touches Râul Jijia at mouth only (5% near) |
-| 338 | river | Baleia | Hunedoara | Râul Jiul de vest – superior cu afluenții | touches Râul Jiul de vest – superior cu afluenții at mouth only (20% near) |
-| 339 | river | Baleia | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (17% near) |
-| 340 | river | Baleia | Hunedoara | Râul Râul Bărbat Superior | touches Râul Râul Bărbat Superior at mouth only (17% near) |
-| 341 | river | Bandău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
-| 342 | river | Baranga | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (1% near) |
+| 322 | river | Arcuș | Covasna | Râul Olt | touches Râul Olt at mouth only (17% near) |
+| 323 | river | Arcuș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 324 | river | Ardan | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (6% near) |
+| 325 | river | Ardeleni | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (5% near) |
+| 326 | river | Ardeluța | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
+| 327 | river | Argel | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (11% near) |
+| 328 | river | Argestru | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 329 | river | Argestru | Suceava | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (33% near) |
+| 330 | river | Argova | Călărași | Canalul Scoiceni | touches Canalul Scoiceni at mouth only (2% near) |
+| 331 | river | Armăsarul | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 332 | river | Arpașu Mare | Sibiu | Râul Arpaș | touches Râul Arpaș at mouth only (20% near) |
+| 333 | river | Arpășel | Sibiu | Râul Arpaș | touches Râul Arpaș at mouth only (10% near) |
+| 334 | river | Arșița | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (14% near) |
+| 335 | river | Asăul Rece | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
+| 336 | river | Aușel | Hunedoara | Raul Taia Aușel Voievodul | touches Raul Taia Aușel Voievodul at mouth only (17% near) |
+| 337 | river | Bacta | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
+| 338 | river | Bahlui | Iași | Râul Jijia | touches Râul Jijia at mouth only (5% near) |
+| 339 | river | Baleia | Hunedoara | Râul Jiul de vest – superior cu afluenții | touches Râul Jiul de vest – superior cu afluenții at mouth only (20% near) |
+| 340 | river | Baleia | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (17% near) |
+| 341 | river | Baleia | Hunedoara | Râul Râul Bărbat Superior | touches Râul Râul Bărbat Superior at mouth only (17% near) |
+| 342 | river | Bandău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
 | 343 | river | Baranga | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (1% near) |
-| 344 | river | Barcău/Berettyó | Bihor | Râul Barcău | touches Râul Barcău at mouth only (3% near) |
-| 345 | river | Barcău/Berettyó | Bihor | Râul Barcăul Superior | touches Râul Barcăul Superior at mouth only (5% near) |
-| 346 | river | Barcău/Berettyó | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (3% near) |
-| 347 | river | Bardiu | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (14% near) |
-| 348 | river | Bascov | Argeș | Râul Argeș | touches Râul Argeș at mouth only (3% near) |
-| 349 | river | Becaș | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (0% near) |
-| 350 | river | Bedeu | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (14% near) |
+| 344 | river | Baranga | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (1% near) |
+| 345 | river | Barcău/Berettyó | Bihor | Râul Barcău | touches Râul Barcău at mouth only (3% near) |
+| 346 | river | Barcău/Berettyó | Bihor | Râul Barcăul Superior | touches Râul Barcăul Superior at mouth only (5% near) |
+| 347 | river | Barcău/Berettyó | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (3% near) |
+| 348 | river | Bardiu | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (14% near) |
+| 349 | river | Bascov | Argeș | Râul Argeș | touches Râul Argeș at mouth only (3% near) |
+| 350 | river | Becaș | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (0% near) |
 | 351 | river | Bedeu | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (14% near) |
-| 352 | river | Bedina | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (25% near) |
-| 353 | river | Belareca | Caraș-Severin | Râul Cerna inferioară | touches Râul Cerna inferioară at mouth only (3% near) |
-| 354 | river | Belareca | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (3% near) |
-| 355 | river | Belchin | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (3% near) |
-| 356 | river | Belchin | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (3% near) |
-| 357 | river | Belcina | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (4% near) |
-| 358 | river | Belcina | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (4% near) |
-| 359 | river | Belinul Mare | Covasna | Râul Olt | touches Râul Olt at mouth only (10% near) |
-| 360 | river | Belinul Mare | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
-| 361 | river | Beregsău | Timiș | Pârâul Bega Veche | touches Pârâul Bega Veche at mouth only (2% near) |
-| 362 | river | Beregsău | Timiș | Pârâul Măgheruș | touches Pârâul Măgheruș at mouth only (2% near) |
-| 363 | river | Beregsău | Timiș | Pârâul Lacului | touches Pârâul Lacului at mouth only (0% near) |
-| 364 | river | Beregsău | Timiș | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (2% near) |
-| 365 | river | Berettyó | Bihor | Râul Barcău | touches Râul Barcău at mouth only (3% near) |
-| 366 | river | Berettyó | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (3% near) |
-| 367 | river | Berettyó | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (3% near) |
-| 368 | river | Berzovița | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
-| 369 | river | Betel | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
-| 370 | river | Betel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 371 | river | Bichigiu | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (6% near) |
-| 372 | river | Biertan | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (8% near) |
-| 373 | river | Bila | Bistrița-Năsăud | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (20% near) |
-| 374 | river | Birda | Timiș | Pârâul Lunca Birda | touches Pârâul Lunca Birda at mouth only (22% near) |
-| 375 | river | Blandiana | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 376 | river | Bob | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (33% near) |
-| 377 | river | Boboroaia Mare | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
-| 378 | river | Bobu | Olt | Râul Olteț | touches Râul Olteț at mouth only (9% near) |
-| 379 | river | Bobu | Olt | Râul Olteț | touches Râul Olteț at mouth only (9% near) |
-| 380 | river | Bocicoel | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (4% near) |
-| 381 | river | Boholt | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (14% near) |
-| 382 | river | Boiu | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
-| 383 | river | Boișoara | Vâlcea | Râul Boia | touches Râul Boia at mouth only (11% near) |
-| 384 | river | Boju | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
-| 385 | river | Bolovan | Bistrița-Năsăud | Râul Budacul superior | touches Râul Budacul superior at mouth only (17% near) |
-| 386 | river | Bolovan | Bistrița-Năsăud | Râul Budacul inferior | touches Râul Budacul inferior at mouth only (17% near) |
-| 387 | river | Bolovan | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (14% near) |
-| 388 | river | Bolătău | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (7% near) |
-| 389 | river | Borcut | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (4% near) |
-| 390 | river | Borzia | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (20% near) |
-| 391 | river | Borzogheanu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
-| 392 | river | Borzont | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
-| 393 | river | Borzont | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (5% near) |
-| 394 | river | Borzontul Mic | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (12% near) |
-| 395 | river | Borșa | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (2% near) |
-| 396 | river | Bosnyák-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
-| 397 | river | Boul | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (7% near) |
-| 398 | river | Boz | Alba | Râul Secaș | touches Râul Secaș at mouth only (33% near) |
-| 399 | river | Boz | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (6% near) |
-| 400 | river | Bozom | Brașov | Râul Olt | touches Râul Olt at mouth only (17% near) |
-| 401 | river | Bozom | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 402 | river | Bozu | Vrancea | Râul Putna | touches Râul Putna at mouth only (25% near) |
-| 403 | river | Bradul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (8% near) |
-| 404 | river | Brateș | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (8% near) |
-| 405 | river | Bratoșa | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 406 | river | Bratoșa | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 407 | river | Brațul Borcea (Dunărea) | Călărași | Raul Ialomița | touches Raul Ialomița at mouth only (0% near) |
-| 408 | river | Breaza | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (33% near) |
-| 409 | river | Brescioara | Brașov | Valea Pojorâtei | touches Valea Pojorâtei at mouth only (14% near) |
-| 410 | river | Bretea | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (25% near) |
-| 411 | river | Brețcu | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
-| 412 | river | Briglez | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (2% near) |
-| 413 | river | Brâncoveanca | Dolj | Râul Teslui | touches Râul Teslui at mouth only (10% near) |
-| 414 | river | Brâtioara | Argeș | Râul Bratia | touches Râul Bratia at mouth only (33% near) |
-| 415 | river | Brădești | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (5% near) |
-| 416 | river | Brăteasca | Neamț | Râul Siret | touches Râul Siret at mouth only (7% near) |
-| 417 | river | Bucurusul Mare | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
-| 418 | river | Budacu | Neamț | Râul Borca | touches Râul Borca at mouth only (33% near) |
-| 419 | river | Budescu | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
-| 420 | river | Budulău | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
-| 421 | river | Buduș | Bistrița-Năsăud | Râul Budacul inferior | touches Râul Budacul inferior at mouth only (11% near) |
-| 422 | river | Budușel | Bistrița-Năsăud | Râul Bordușelu | touches Râul Bordușelu at mouth only (33% near) |
-| 423 | river | Buhai | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (9% near) |
-| 424 | river | Bulz | Bihor | Râul Crişul Pietros | touches Râul Crişul Pietros at mouth only (20% near) |
-| 425 | river | Bunești | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (3% near) |
-| 426 | river | Buzd | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
-| 427 | river | Buzăiel | Brașov | Râul Buzău | touches Râul Buzău at mouth only (8% near) |
-| 428 | river | Bánkó vőgye | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 429 | river | Bâlta | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (10% near) |
-| 430 | river | Bâlta | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (10% near) |
-| 431 | river | Bârgău | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (6% near) |
-| 432 | river | Bârnat | Bacău | Râul Bistrița | touches Râul Bistrița at mouth only (25% near) |
-| 433 | river | Bârsa Fierului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (7% near) |
-| 434 | river | Bârsa Groșetului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (8% near) |
-| 435 | river | Bârsa lui Bucur | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (8% near) |
-| 436 | river | Bârsa Tămașului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (33% near) |
-| 437 | river | Bârza | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (25% near) |
-| 438 | river | Bârzăvița | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (20% near) |
-| 439 | river | Bâsca Chiojd | Buzău | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (6% near) |
-| 440 | river | Bîlea | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (10% near) |
-| 441 | river | Băbiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (4% near) |
-| 442 | river | Băcișoara | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
-| 443 | river | Băiaș | Vâlcea | Râul Olt | touches Râul Olt at mouth only (5% near) |
-| 444 | river | Băiaș | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
-| 445 | river | Bălan | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (7% near) |
-| 446 | river | Bălăcășanca | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (6% near) |
-| 447 | river | Bălăneasa | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (4% near) |
-| 448 | river | Bălăneasa | Buzău | Râul Buzău | touches Râul Buzău at mouth only (4% near) |
-| 449 | river | Bătrâna | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (6% near) |
-| 450 | river | Bătrâna | Bihor | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (10% near) |
-| 451 | river | Bățanii | Covasna | Pârâu Baraolt inferior | touches Pârâu Baraolt inferior at mouth only (7% near) |
-| 452 | river | Bățanii | Covasna | Râul Baraolt superior | touches Râul Baraolt superior at mouth only (7% near) |
-| 453 | river | Calnic | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 454 | river | Calu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 455 | river | Camenca | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (7% near) |
-| 456 | river | Canal Moară | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (3% near) |
-| 457 | river | Canalul Gurghiu | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 458 | river | Canalul Gurghiu | Mureș | Râul Gurghiul inferior | touches Râul Gurghiul inferior at mouth only (20% near) |
-| 459 | river | Canalul Gurghiu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (20% near) |
-| 460 | river | Canalul Găvojdia | Timiș | Râul Timiș | touches Râul Timiș at mouth only (9% near) |
-| 461 | river | Canalul Morii | Mureș | Râul Mureș | touches Râul Mureș at mouth only (27% near) |
-| 462 | river | Capolnaș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 463 | river | Caraș | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (3% near) |
-| 464 | river | Carbunele | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (11% near) |
-| 465 | river | Carecna | Vrancea | Râul Siret | touches Râul Siret at mouth only (10% near) |
-| 466 | river | Carecna | Vrancea | Râul Siret | touches Râul Siret at mouth only (10% near) |
-| 467 | river | Carpen | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (20% near) |
-| 468 | river | Carpenul | Harghita | Râul Cașin | touches Râul Cașin at mouth only (20% near) |
-| 469 | river | Cartiu | Gorj | Râul Jiu  | touches Râul Jiu  at mouth only (9% near) |
-| 470 | river | Cazacul | Prahova | Valea Azugii | touches Valea Azugii at mouth only (20% near) |
-| 471 | river | Cașva | Mureș | Râul Gurghiul inferior | touches Râul Gurghiul inferior at mouth only (7% near) |
-| 472 | river | Cașva | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (7% near) |
-| 473 | river | Cercănelul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (20% near) |
-| 474 | river | Cernatu | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (14% near) |
-| 475 | river | Cernatul | Buzău | Râul Bâsca Mare | touches Râul Bâsca Mare at mouth only (33% near) |
-| 476 | river | Certej | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (12% near) |
-| 477 | river | Cetățuia | Dolj | Râul Desnățui | touches Râul Desnățui at mouth only (6% near) |
-| 478 | river | Ched | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 479 | river | Cheița | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (17% near) |
-| 480 | river | Chiriș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (5% near) |
-| 481 | river | Chiua | Vrancea | Râul Șușița | touches Râul Șușița at mouth only (25% near) |
-| 482 | river | Chiștelec | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
-| 483 | river | Cigher | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (3% near) |
-| 484 | river | Cigher | Arad | Canalul Morilor | touches Canalul Morilor at mouth only (5% near) |
-| 485 | river | Cinca | Timiș | Pârâul Timișana | touches Pârâul Timișana at mouth only (25% near) |
-| 486 | river | Cincu | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 487 | river | Cioara | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
-| 488 | river | Cioara | Alba | Râul Arieș | touches Râul Arieș at mouth only (20% near) |
-| 489 | river | Ciorogârla | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (2% near) |
-| 490 | river | Ciorogârla | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (2% near) |
-| 491 | river | Ciorogârla | Ilfov | Râul Sabar | touches Râul Sabar at mouth only (0% near) |
-| 492 | river | Ciortuș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (3% near) |
-| 493 | river | Ciucani | Harghita | Râul Fișag | touches Râul Fișag at mouth only (20% near) |
-| 494 | river | Ciugud | Alba | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
-| 495 | river | Ciunga | Alba | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
-| 496 | river | Ciutești (Sasca) | Vâlcea | Râul Topolog  | touches Râul Topolog  at mouth only (33% near) |
-| 497 | river | Cliț | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
-| 498 | river | Cobășel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 499 | river | Cojocul | Neamț | Râul Iapa | touches Râul Iapa at mouth only (20% near) |
-| 500 | river | Colții lui Andrei Mari | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (25% near) |
-| 501 | river | Coman | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (25% near) |
-| 502 | river | Conop | Arad | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
-| 503 | river | Corbul Ucii | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
-| 504 | river | Corbul Viștei | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 505 | river | Corlățeni | Suceava | Râul Moldova | touches Râul Moldova at mouth only (17% near) |
-| 506 | river | Cormeniș | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
-| 507 | river | Cornul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 508 | river | Corund | Harghita | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (8% near) |
-| 509 | river | Costești | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (5% near) |
-| 510 | river | Cotuș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
-| 511 | river | Cozmău | Bihor | Râul Barcău | touches Râul Barcău at mouth only (4% near) |
-| 512 | river | Cozmău | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (4% near) |
-| 513 | river | Coșuștea | Mehedinți | Râul Motru  | touches Râul Motru  at mouth only (2% near) |
-| 514 | river | Coțatcul | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (5% near) |
-| 515 | river | Cracăul Alb | Neamț | Râul Izvoarele Cracăului | touches Râul Izvoarele Cracăului at mouth only (27% near) |
-| 516 | river | Crainic | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (12% near) |
-| 517 | river | Crainici | Mehedinți | Râul Motru  | touches Râul Motru  at mouth only (9% near) |
-| 518 | river | Cremeneț | Vrancea | Râul Șușița | touches Râul Șușița at mouth only (14% near) |
-| 519 | river | Crevedia | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (4% near) |
-| 520 | river | Crevedia | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (4% near) |
-| 521 | river | Cristianu Mic | Vrancea | Râul Tișița | touches Râul Tișița at mouth only (33% near) |
-| 522 | river | Cristișor | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (17% near) |
-| 523 | river | Crivaia Mare | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
-| 524 | river | Crizbav | Brașov | Râul Olt | touches Râul Olt at mouth only (4% near) |
-| 525 | river | Crizbav | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 526 | river | Crișul Băiței | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (6% near) |
-| 527 | river | Crișul Băiței | Bihor | Valea Sighiștelului | touches Valea Sighiștelului at mouth only (0% near) |
-| 528 | river | Crișul Băiței | Bihor | Râul Crișul Băița | touches Râul Crișul Băița at mouth only (6% near) |
-| 529 | river | Crucea | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (17% near) |
-| 530 | river | Crăiasa | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (8% near) |
-| 531 | river | Cuca | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (11% near) |
-| 532 | river | Cuca | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (14% near) |
-| 533 | river | Cucuieți | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (14% near) |
-| 534 | river | Cucureasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (10% near) |
-| 535 | river | Cuejdiu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (3% near) |
-| 536 | river | Cuieșd | Mureș | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
-| 537 | river | Cungrea Mică | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 538 | river | Cupaș | Harghita | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (17% near) |
-| 539 | river | Curciu | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (8% near) |
-| 540 | river | Cvașnița | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
-| 541 | river | Câlnău | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (2% near) |
-| 542 | river | Câlnău | Buzău | Râul Buzău | touches Râul Buzău at mouth only (2% near) |
-| 543 | river | Câmpinița | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
-| 544 | river | Cârcinov | Argeș | Râul Argeș | touches Râul Argeș at mouth only (5% near) |
-| 545 | river | Cârja | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (17% near) |
-| 546 | river | Cârțibavul Mare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 547 | river | Cârțișoara | Sibiu | Râul Olt | touches Râul Olt at mouth only (7% near) |
-| 548 | river | Cârțișoara | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 549 | river | Cârțișoara | Sibiu | Râul Laita | touches Râul Laita at mouth only (14% near) |
-| 550 | river | Căciulata | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 551 | river | Călmățuiul Sec | Olt | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
-| 552 | river | Cănele | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
-| 553 | river | Căprioara | Arad | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
-| 554 | river | Căpriorul | Hunedoara | Valea Polatiște | touches Valea Polatiște at mouth only (25% near) |
-| 555 | river | Cărbunele Negru | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (5% near) |
-| 556 | river | Cărpănoasa | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (25% near) |
-| 557 | river | Cătina | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (8% near) |
-| 558 | river | Danube | Tulcea | Japșa Veriga | touches Japșa Veriga at mouth only (0% near) |
-| 559 | river | Danube | Tulcea | Râul Argeș | touches Râul Argeș at mouth only (0% near) |
-| 560 | river | Danube | Tulcea | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (0% near) |
-| 561 | river | Danube | Tulcea | Râul Drincea | touches Râul Drincea at mouth only (0% near) |
-| 562 | river | Danube | Tulcea | Râul Jieț | touches Râul Jieț at mouth only (0% near) |
-| 563 | river | Danube | Tulcea | Râul Siret | touches Râul Siret at mouth only (0% near) |
-| 564 | river | Danube | Tulcea | Râul Prut | touches Râul Prut at mouth only (0% near) |
-| 565 | river | Danube | Tulcea | Râul Comasca | touches Râul Comasca at mouth only (0% near) |
-| 566 | river | Danube | Tulcea | Râul Olt | touches Râul Olt at mouth only (0% near) |
-| 567 | river | Danube | Tulcea | Râul Timiș | touches Râul Timiș at mouth only (0% near) |
-| 568 | river | Danube | Tulcea | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
-| 569 | river | Danube | Tulcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (0% near) |
-| 570 | river | Danube | Tulcea | Râul Jiu  | touches Râul Jiu  at mouth only (0% near) |
-| 571 | river | Danube | Tulcea | Râul Șirinia | touches Râul Șirinia at mouth only (0% near) |
-| 572 | river | Danube | Tulcea | Râul Berzasca | touches Râul Berzasca at mouth only (0% near) |
-| 573 | river | Danube | Teleorman | Râul Olt | touches Râul Olt at mouth only (25% near) |
-| 574 | river | Danube | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 575 | river | Debren | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
-| 576 | river | Deia | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
-| 577 | river | Deia | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (8% near) |
-| 578 | river | Deleni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
-| 579 | river | Dipșa | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (3% near) |
-| 580 | river | Diviciorii Mari | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (7% near) |
-| 581 | river | Doamna | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
-| 582 | river | Dobricel | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (9% near) |
-| 583 | river | Dobru | Bacău | Râul Slănic Moldova | touches Râul Slănic Moldova at mouth only (12% near) |
-| 584 | river | Dobruș | Cluj | Valea Răcătăului | touches Valea Răcătăului at mouth only (14% near) |
-| 585 | river | Dobârlău | Covasna | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (5% near) |
-| 586 | river | Doftana | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
-| 587 | river | Doftenița | Bacău | Râul Dofteana | touches Râul Dofteana at mouth only (10% near) |
-| 588 | river | Dolu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (25% near) |
-| 589 | river | Domald | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
-| 590 | river | Domald | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
-| 591 | river | Doman | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (12% near) |
-| 592 | river | Domoșița | Vrancea | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
-| 593 | river | Donca | Mureș | Râul Bistra | touches Râul Bistra at mouth only (25% near) |
-| 594 | river | Dragovata | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
-| 595 | river | Dragoș | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
-| 596 | river | Dragoșa | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (17% near) |
-| 597 | river | Dragu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (3% near) |
-| 598 | river | Drahmirov | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
-| 599 | river | Drajna | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (7% near) |
-| 600 | river | Dresleuca | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (4% near) |
-| 601 | river | Drâslea | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (7% near) |
-| 602 | river | Drăghiciul | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (10% near) |
-| 603 | river | Drăghina | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (14% near) |
-| 604 | river | Drăguiasa | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (2% near) |
-| 605 | river | Dubul | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (25% near) |
-| 606 | river | Ducna | Teleorman | Râul Călmățui | touches Râul Călmățui at mouth only (4% near) |
-| 607 | river | Dumbrava | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (20% near) |
-| 608 | river | Dumitreasa | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (9% near) |
-| 609 | river | Dunărea | Dolj | Râul Drincea | touches Râul Drincea at mouth only (2% near) |
-| 610 | river | Dunărea | Teleorman | Râul Argeș | touches Râul Argeș at mouth only (0% near) |
-| 611 | river | Dunărea | Teleorman | Râul Comasca | touches Râul Comasca at mouth only (0% near) |
-| 612 | river | Dunărea | Teleorman | Râul Olt | touches Râul Olt at mouth only (0% near) |
-| 613 | river | Dunărea | Teleorman | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
-| 614 | river | Dunărea | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (0% near) |
-| 615 | river | Dunărea | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (0% near) |
-| 616 | river | Dunărea | Dolj | Râul Jieț | touches Râul Jieț at mouth only (0% near) |
-| 617 | river | Dunărea | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (0% near) |
-| 618 | river | Dunărea | Teleorman | Râul Olt | touches Râul Olt at mouth only (25% near) |
-| 619 | river | Dunărea | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 620 | river | Dunărea | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (2% near) |
-| 621 | river | Dunărea | Caraș-Severin | Râul Șirinia | touches Râul Șirinia at mouth only (0% near) |
-| 622 | river | Dunărea | Caraș-Severin | Râul Berzasca | touches Râul Berzasca at mouth only (0% near) |
-| 623 | river | Dunărea (Brațul Sulina) | Brăila | Japșa Veriga | touches Japșa Veriga at mouth only (0% near) |
-| 624 | river | Dunărea (Brațul Sulina) | Brăila | Râul Siret | touches Râul Siret at mouth only (0% near) |
-| 625 | river | Dunărea (Brațul Sulina) | Brăila | Râul Prut | touches Râul Prut at mouth only (2% near) |
-| 626 | river | Dunărea (Brațul Sulina) | Tulcea | Râul Prut | touches Râul Prut at mouth only (20% near) |
-| 627 | river | Dunărea (Brațul Sulina) | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (0% near) |
-| 628 | river | Dâmbovnic | Giurgiu | Râul Neajlov | touches Râul Neajlov at mouth only (6% near) |
-| 629 | river | Dâmbul | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (2% near) |
-| 630 | river | Dălghiu | Brașov | Râul Buzău | touches Râul Buzău at mouth only (7% near) |
-| 631 | river | Dămuc | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (4% near) |
-| 632 | river | Dăneasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (12% near) |
-| 633 | river | Eghersec | Harghita | Râul Uzul | touches Râul Uzul at mouth only (17% near) |
-| 634 | river | Eliseni | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
-| 635 | river | Ercea | Mureș | Pârâul Sar | touches Pârâul Sar at mouth only (33% near) |
-| 636 | river | Estelnic | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
-| 637 | river | Fagul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (25% near) |
-| 638 | river | Falcău | Suceava | Râul Brodina | touches Râul Brodina at mouth only (33% near) |
-| 639 | river | Feernic | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (3% near) |
-| 640 | river | Fehér-Körös | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (25% near) |
-| 641 | river | Fehér-Körös | Arad | Râul Crișul Alb, cu afluenții | touches Râul Crișul Alb, cu afluenții at mouth only (17% near) |
-| 642 | river | Fehér-Körös | Arad | Râul Zimbru | touches Râul Zimbru at mouth only (0% near) |
-| 643 | river | Fehér-Körös | Arad | Canalul Morilor | touches Canalul Morilor at mouth only (2% near) |
-| 644 | river | Fehéres-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
-| 645 | river | Feiurdeni | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
-| 646 | river | Feldrișel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
-| 647 | river | Feldrișel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
-| 648 | river | Felmer | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 649 | river | Fiad | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (7% near) |
-| 650 | river | Fiadțel | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (8% near) |
-| 651 | river | Filipea | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (14% near) |
-| 652 | river | Finiș | Bihor | Râul Vl. Finiş (Finişului) | touches Râul Vl. Finiş (Finişului) at mouth only (33% near) |
-| 653 | river | Fitod | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 654 | river | Fleț | Mureș | Pârâul Lut | touches Pârâul Lut at mouth only (6% near) |
-| 655 | river | Floarea | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (25% near) |
-| 656 | river | Florei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
-| 657 | river | Fotoș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 658 | river | Francul | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (33% near) |
-| 659 | river | Francul | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (33% near) |
-| 660 | river | Frasinul | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
-| 661 | river | Frumușaua | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (11% near) |
-| 662 | river | Frumușica | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (9% near) |
-| 663 | river | Frăsinet | Buzău | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (11% near) |
-| 664 | river | Furul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (17% near) |
-| 665 | river | Fânațele | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
-| 666 | river | Fântâna lui Gal | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
-| 667 | river | Fânâna Rece | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (33% near) |
-| 668 | river | Făgetul Oltului | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 669 | river | Fărău | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
-| 670 | river | Gabru | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (25% near) |
-| 671 | river | Gacinoiul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 672 | river | Gagi | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
-| 673 | river | Galbena | Hunedoara | Râul Mare inferior II  | touches Râul Mare inferior II  at mouth only (6% near) |
-| 674 | river | Galbena | Hunedoara | Râul Mare Superior | touches Râul Mare Superior at mouth only (6% near) |
-| 675 | river | Galbena | Bihor | Râul Crişul Pietros | touches Râul Crişul Pietros at mouth only (14% near) |
-| 676 | river | Galda | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
-| 677 | river | Galeșu | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (25% near) |
-| 678 | river | Galu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 679 | river | Garán-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (14% near) |
-| 680 | river | Geru | Galați | Râul Siret | touches Râul Siret at mouth only (3% near) |
-| 681 | river | Geru | Galați | Râul Siret | touches Râul Siret at mouth only (3% near) |
-| 682 | river | Ghemeș | Bistrița-Năsăud | Pârâul Lechința | touches Pârâul Lechința at mouth only (10% near) |
-| 683 | river | Ghemeș | Bistrița-Năsăud | Pârâul Lechința (Comlod) | touches Pârâul Lechința (Comlod) at mouth only (10% near) |
-| 684 | river | Ghepes | Bihor | Râul Barcău | touches Râul Barcău at mouth only (5% near) |
-| 685 | river | Ghepes | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (5% near) |
-| 686 | river | Ghimbășel | Brașov | Râul Olt | touches Râul Olt at mouth only (2% near) |
-| 687 | river | Ghimbășel | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (2% near) |
-| 688 | river | Ghimbășel | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (5% near) |
-| 689 | river | Ghimbășel | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
-| 690 | river | Ghinda | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (33% near) |
-| 691 | river | Ghipeș | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (12% near) |
-| 692 | river | Gingineasa | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (20% near) |
-| 693 | river | Gingineasa | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (20% near) |
-| 694 | river | Gioroc (Valea Morilor) | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (6% near) |
-| 695 | river | Gioroc (Valea Morilor) | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (6% near) |
-| 696 | river | Giurcuța | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (11% near) |
-| 697 | river | Gladna | Timiș | Râul Bega | touches Râul Bega at mouth only (4% near) |
-| 698 | river | Glavița-Bega | Timiș | Râul Bega | touches Râul Bega at mouth only (33% near) |
-| 699 | river | Glavița-Bega | Timiș | Pârâul Glavița | touches Pârâul Glavița at mouth only (33% near) |
-| 700 | river | Glodeasa | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
-| 701 | river | Gologan | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 702 | river | Gorul | Vrancea | Râul Zăbala mijlocie | touches Râul Zăbala mijlocie at mouth only (20% near) |
-| 703 | river | Gorul | Vrancea | Râul Zăbala Superioară | touches Râul Zăbala Superioară at mouth only (20% near) |
-| 704 | river | Goșmanu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (20% near) |
-| 705 | river | Graben | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
-| 706 | river | Grid | Hunedoara | Valea Luncanilor | touches Valea Luncanilor at mouth only (20% near) |
-| 707 | river | Grindu | Alba | Râul Mureș | touches Râul Mureș at mouth only (6% near) |
-| 708 | river | Grințieșul Mare | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
-| 709 | river | Groapa | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
-| 710 | river | Groapa Seacă | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (33% near) |
-| 711 | river | Grohotișul | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (25% near) |
-| 712 | river | Grohotișul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (0% near) |
-| 713 | river | Gropșoara | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (25% near) |
-| 714 | river | Grosul | Arad | Râul Mureș | touches Râul Mureș at mouth only (21% near) |
-| 715 | river | Gruiu | Ilfov | Râul Snagov | touches Râul Snagov at mouth only (12% near) |
-| 716 | river | Gubaș | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 717 | river | Guga | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (20% near) |
-| 718 | river | Guranda | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (7% near) |
-| 719 | river | Gurasada | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (11% near) |
-| 720 | river | Gurgui | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (12% near) |
-| 721 | river | Gușatul Mare | Bistrița-Năsăud | Râul Rebra | touches Râul Rebra at mouth only (6% near) |
-| 722 | river | Gânțaga | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (9% near) |
-| 723 | river | Gârbova | Alba | Râul Secaș | touches Râul Secaș at mouth only (3% near) |
-| 724 | river | Gârbova | Alba | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
-| 725 | river | Gârbău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
-| 726 | river | Gârbăul Dejului | Cluj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (10% near) |
-| 727 | river | Gârcin | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (25% near) |
-| 728 | river | Gârliște | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (11% near) |
-| 729 | river | Gîrla Mică | Iași | Râul Prut | touches Râul Prut at mouth only (3% near) |
-| 730 | river | Gădălin | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (5% near) |
-| 731 | river | Găureni | Bistrița-Năsăud | Râul Țibleș | touches Râul Țibleș at mouth only (6% near) |
-| 732 | river | Găureni | Bistrița-Năsăud | Râul Țibleș | touches Râul Țibleș at mouth only (6% near) |
-| 733 | river | Hadoș | Harghita | Râul Cașin | touches Râul Cașin at mouth only (17% near) |
-| 734 | river | Haiducul | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (17% near) |
-| 735 | river | Haneș | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (29% near) |
-| 736 | river | Highieșee | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (33% near) |
-| 737 | river | Hobana | Galați | Râul Bârlad | touches Râul Bârlad at mouth only (11% near) |
-| 738 | river | Hodrângușa | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
-| 739 | river | Holló-patak | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
-| 740 | river | Hollók patak | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 741 | river | Homorodul Cârbunos | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (8% near) |
-| 742 | river | Homorodul Vechi | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (3% near) |
-| 743 | river | Homorodul Vechi | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (8% near) |
-| 744 | river | Horgász | Covasna | Râul Covasna | touches Râul Covasna at mouth only (10% near) |
-| 745 | river | Horincea | Galați | Râul Prut | touches Râul Prut at mouth only (17% near) |
-| 746 | river | Hosu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (5% near) |
-| 747 | river | Hotarul | Brașov | Râul Olt | touches Râul Olt at mouth only (7% near) |
-| 748 | river | Hotarul | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 749 | river | Hoteag | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (8% near) |
-| 750 | river | Hoteag | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
-| 751 | river | Husuer | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (9% near) |
-| 752 | river | Huza | Cluj | Valea Ierii Superioară | touches Valea Ierii Superioară at mouth only (33% near) |
-| 753 | river | Huza | Cluj | Valea Ierii Mijlocie | touches Valea Ierii Mijlocie at mouth only (33% near) |
-| 754 | river | Hâciogosul | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (25% near) |
-| 755 | river | Hăghig | Covasna | Râul Olt | touches Râul Olt at mouth only (9% near) |
-| 756 | river | Hăghig | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
-| 757 | river | Hălmaș | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (7% near) |
-| 758 | river | Hăpria | Alba | Râul Mureș | touches Râul Mureș at mouth only (0% near) |
-| 759 | river | Hășdate | Cluj | Râul Arieș | touches Râul Arieș at mouth only (3% near) |
-| 760 | river | Hășdățel | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (33% near) |
-| 761 | river | Hășmaș | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (10% near) |
-| 762 | river | Iad | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (23% near) |
-| 763 | river | Ialomicioara | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (7% near) |
-| 764 | river | Ieduțul | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
-| 765 | river | Ierța | Cluj | Valea Ierii Superioară | touches Valea Ierii Superioară at mouth only (33% near) |
-| 766 | river | Ierța | Cluj | Valea Ierii Mijlocie | touches Valea Ierii Mijlocie at mouth only (33% near) |
-| 767 | river | Ighiu | Alba | Râul Ampoi | touches Râul Ampoi at mouth only (6% near) |
-| 768 | river | Ilișoara | Mureș | Râul Ilva | touches Râul Ilva at mouth only (33% near) |
-| 769 | river | Imper | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 770 | river | Inuc | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (5% near) |
-| 771 | river | Iovanu | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (20% near) |
-| 772 | river | Irișoara | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (9% near) |
-| 773 | river | Irugă | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
-| 774 | river | Ismar | Giurgiu | Râul Câlniștea | touches Râul Câlniștea at mouth only (3% near) |
-| 775 | river | Iuhodul Cald | Mureș | Râul Iuhod | touches Râul Iuhod at mouth only (12% near) |
-| 776 | river | Ivancic | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
-| 777 | river | Ivăneasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (8% near) |
-| 778 | river | Izvoare | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (5% near) |
-| 779 | river | Izvodia | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (33% near) |
-| 780 | river | Izvorul Budislavului | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (33% near) |
-| 781 | river | Izvorul Caprei | Argeș | Râul Capra | touches Râul Capra at mouth only (11% near) |
-| 782 | river | Izvorul Curpănului | Vâlcea | Valea Curpenului | touches Valea Curpenului at mouth only (25% near) |
-| 783 | river | Izvorul Furului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
-| 784 | river | Izvorul Gugu | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
-| 785 | river | Izvorul Malului | Suceava | Râul Moldova | touches Râul Moldova at mouth only (10% near) |
-| 786 | river | Izvorul Morarului | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
-| 787 | river | Izvorul Scării | Vâlcea | Râul Topologul superior | touches Râul Topologul superior at mouth only (20% near) |
-| 788 | river | Izvorul Surului | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (33% near) |
-| 789 | river | Jdimir | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
-| 790 | river | Jdimir | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
-| 791 | river | Jebuc | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (17% near) |
-| 792 | river | Jghiab | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
-| 793 | river | Jidvei | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
-| 794 | river | Jișa | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (17% near) |
-| 795 | river | Judele | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (15% near) |
-| 796 | river | Jupâneasa | Hunedoara | Râul Bănița | touches Râul Bănița at mouth only (33% near) |
-| 797 | river | Jărosul | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (20% near) |
-| 798 | river | Karaš | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (18% near) |
-| 799 | river | Kecskés patak | Harghita | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (33% near) |
-| 800 | river | Kraszna | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (5% near) |
-| 801 | river | Kraszna | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (5% near) |
-| 802 | river | La Hotar | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
-| 803 | river | Lala | Bistrița-Năsăud | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (14% near) |
-| 804 | river | Lapoș | Neamț | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (17% near) |
-| 805 | river | Larga | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (6% near) |
-| 806 | river | Laslea | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (7% near) |
-| 807 | river | Lazu | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (11% near) |
-| 808 | river | Lazu | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (8% near) |
-| 809 | river | Leghia | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (4% near) |
-| 810 | river | Lela | Suceava | Râul Moldova | touches Râul Moldova at mouth only (20% near) |
-| 811 | river | Lelești | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 812 | river | Lemnia | Covasna | Râul Negru I | touches Râul Negru I at mouth only (3% near) |
-| 813 | river | Leșul | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (5% near) |
-| 814 | river | Leșul | Bistrița-Năsăud | Pârâul Valea Leșului | touches Pârâul Valea Leșului at mouth only (0% near) |
-| 815 | river | Limbășelul | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
-| 816 | river | Lișava | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (6% near) |
-| 817 | river | Lonea | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (20% near) |
-| 818 | river | Lopatnic | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (3% near) |
-| 819 | river | Lotrișorul de Cozia | Vâlcea | Râul Olt | touches Râul Olt at mouth only (25% near) |
-| 820 | river | Lotrișorul de Cozia | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 821 | river | Lozna | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (1% near) |
-| 822 | river | Loznișoara | Caraș-Severin | Râul Pleșu Rusca | touches Râul Pleșu Rusca at mouth only (20% near) |
-| 823 | river | Luda Bara | Timiș | Pârâul Măgheruș | touches Pârâul Măgheruș at mouth only (17% near) |
-| 824 | river | Luizoaia | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (10% near) |
-| 825 | river | Lujerdiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (2% near) |
-| 826 | river | Lunca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 827 | river | Lunca Mare (Varșaraia) | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 828 | river | Lunca Meteșului | Alba | Râul Ampoita | touches Râul Ampoita at mouth only (9% near) |
-| 829 | river | Luncavicioara | Vâlcea | Râul Luncavăț | touches Râul Luncavăț at mouth only (11% near) |
-| 830 | river | Luncavicioara | Vâlcea | Râul Urșani  | touches Râul Urșani  at mouth only (11% near) |
-| 831 | river | Lungșoara | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (33% near) |
-| 832 | river | Lungșoara | Sibiu | Pârâul Tălmaciu | touches Pârâul Tălmaciu at mouth only (0% near) |
-| 833 | river | Lungșoara | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (33% near) |
-| 834 | river | Lungșoara | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (33% near) |
-| 835 | river | Lungșoara | Sibiu | Râul Sadu Inferior | touches Râul Sadu Inferior at mouth only (33% near) |
-| 836 | river | Lungșoara | Sibiu | Pârâul Tălmăcuț | touches Pârâul Tălmăcuț at mouth only (0% near) |
-| 837 | river | Luntrișoara | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (33% near) |
-| 838 | river | Luntrișoara | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
-| 839 | river | Lupsa | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
-| 840 | river | Lutoasa | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (33% near) |
-| 841 | river | Lókod-patak | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (8% near) |
-| 842 | river | Lăpușna | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (11% near) |
-| 843 | river | Lăpușnic | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
-| 844 | river | Macău | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (6% near) |
-| 845 | river | Madicea | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 846 | river | Maieru | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (25% near) |
-| 847 | river | Malnaș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 848 | river | Malnoves | Harghita | Râul Vârghișul superior | touches Râul Vârghișul superior at mouth only (8% near) |
-| 849 | river | Malomárok | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (25% near) |
-| 850 | river | Marița | Vâlcea | Râul Cerna | touches Râul Cerna at mouth only (8% near) |
-| 851 | river | Martonca | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (12% near) |
-| 852 | river | Mediașul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 853 | river | Megheș | Harghita | Râul Uzul | touches Râul Uzul at mouth only (33% near) |
-| 854 | river | Meghis | Sibiu | Râul Olt | touches Râul Olt at mouth only (32% near) |
-| 855 | river | Meghis | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (32% near) |
-| 856 | river | Mera | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (9% near) |
-| 857 | river | Mermezeu | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (4% near) |
-| 858 | river | Miclusa | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
-| 859 | river | Milcov | Vrancea | Râul Putna | touches Râul Putna at mouth only (2% near) |
-| 860 | river | Milova | Arad | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
-| 861 | river | Mintiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
-| 862 | river | Mircea | Argeș | Râul Buda | touches Râul Buda at mouth only (11% near) |
-| 863 | river | Mirăslău | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 864 | river | Misica | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (8% near) |
-| 865 | river | Mitarca | Dâmbovița | Râul Brătei | touches Râul Brătei at mouth only (33% near) |
-| 866 | river | Mizieș | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (14% near) |
-| 867 | river | Mociu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (3% near) |
-| 868 | river | Mogoș | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (17% near) |
-| 869 | river | Monoroștia | Arad | Râul Mureș | touches Râul Mureș at mouth only (8% near) |
-| 870 | river | Morii | Suceava | Râul Moldova | touches Râul Moldova at mouth only (25% near) |
-| 871 | river | Morișca | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (4% near) |
-| 872 | river | Mostiștea | Călărași | Canalul Scoiceni | touches Canalul Scoiceni at mouth only (0% near) |
-| 873 | river | Motnău | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (10% near) |
-| 874 | river | Movile | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (17% near) |
-| 875 | river | Moșna | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
-| 876 | river | Muereasca | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 877 | river | Muncel | Cluj | Râul Someș | touches Râul Someș at mouth only (5% near) |
-| 878 | river | Muncel | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (12% near) |
-| 879 | river | Mureșel | Arad | Râul Mureș | touches Râul Mureș at mouth only (10% near) |
-| 880 | river | Mureșul Mort | Arad | Râul Mureș | touches Râul Mureș at mouth only (2% near) |
-| 881 | river | Murgașul Mare | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (33% near) |
-| 882 | river | Murgașul Mare | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (33% near) |
-| 883 | river | Mușița | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (8% near) |
-| 884 | river | Mândra | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 885 | river | Mânăileasa | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (4% near) |
-| 886 | river | Mânăileasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (4% near) |
-| 887 | river | Mârdanu | Vrancea | Râul Zăbala mijlocie | touches Râul Zăbala mijlocie at mouth only (25% near) |
-| 888 | river | Mârdanu | Vrancea | Râul Zăbala Superioară | touches Râul Zăbala Superioară at mouth only (25% near) |
-| 889 | river | Mârza | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (9% near) |
-| 890 | river | Mârșa | Sibiu | Râul Olt | touches Râul Olt at mouth only (12% near) |
-| 891 | river | Mârșa | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
-| 892 | river | Mădăraș | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (12% near) |
-| 893 | river | Mădăraș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (19% near) |
-| 894 | river | Măgura | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (11% near) |
-| 895 | river | Măgura | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (20% near) |
-| 896 | river | Mălaiul | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (25% near) |
-| 897 | river | Mălin | Bistrița-Năsăud | Pârâul Meleș | touches Pârâul Meleș at mouth only (12% near) |
-| 898 | river | Mălăiești | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (20% near) |
-| 899 | river | Măria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (10% near) |
-| 900 | river | Mărăloiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (10% near) |
-| 901 | river | Nadășa | Mureș | Pârâul Beica | touches Pârâul Beica at mouth only (33% near) |
-| 902 | river | Neagra Șarului | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (3% near) |
-| 903 | river | Neamț (Ozana) | Neamț | Râul Moldova | touches Râul Moldova at mouth only (3% near) |
-| 904 | river | Nechit | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (6% near) |
-| 905 | river | Negoescu Mare | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
-| 906 | river | Negoiul | Mureș | Râul Ilva | touches Râul Ilva at mouth only (20% near) |
-| 907 | river | Negraș | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
-| 908 | river | Negrișoara | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (12% near) |
-| 909 | river | Nermed | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (9% near) |
-| 910 | river | Nima | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (0% near) |
-| 911 | river | Nișcov | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (3% near) |
-| 912 | river | Nișcov | Buzău | Râul Buzău | touches Râul Buzău at mouth only (3% near) |
-| 913 | river | Nádas patak;Sós-kút | Covasna | Râul Cormoș | touches Râul Cormoș at mouth only (8% near) |
-| 914 | river | Nădrab | Hunedoara | Râul Govăjdia | touches Râul Govăjdia at mouth only (4% near) |
-| 915 | river | Nădrăgel | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (17% near) |
-| 916 | river | Oancea | Galați | Râul Prut | touches Râul Prut at mouth only (33% near) |
-| 917 | river | Oanța | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (12% near) |
-| 918 | river | Oanțu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
-| 919 | river | Obârșia | Mehedinți | Râul Brebena - Bulba | touches Râul Brebena - Bulba at mouth only (20% near) |
-| 920 | river | Ohaba | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (6% near) |
-| 921 | river | Ohaba | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (20% near) |
-| 922 | river | Ohaba | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (3% near) |
-| 923 | river | Olpret | Cluj | Râul Someș | touches Râul Someș at mouth only (5% near) |
-| 924 | river | Olteana | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (5% near) |
-| 925 | river | Orjogoaia | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
-| 926 | river | Orman | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (12% near) |
-| 927 | river | Ormeniș | Alba | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
-| 928 | river | Ortoița | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (14% near) |
-| 929 | river | Otasău | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (3% near) |
-| 930 | river | P Boului | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
-| 931 | river | Padina | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (9% near) |
-| 932 | river | Padina lui Calinet | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (20% near) |
-| 933 | river | Paraul Lunii | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (20% near) |
-| 934 | river | Paraul Plostina | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
-| 935 | river | Paraul Poienii Greului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
-| 936 | river | Paraul Puscariei | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
-| 937 | river | Paraul Sarcea | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
-| 938 | river | Paraul Seciului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
-| 939 | river | Paraul Varteju | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (13% near) |
-| 940 | river | Paraul Vizuinii | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (7% near) |
-| 941 | river | Paraul Zaganului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
-| 942 | river | Paraué Mare | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
-| 943 | river | Paroş (Valea Mateşcilor) | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (8% near) |
-| 944 | river | Pasărea | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (0% near) |
-| 945 | river | Patul cel Mare | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 946 | river | Paulic | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
-| 947 | river | Pe Vale | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (11% near) |
-| 948 | river | Pentaia | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (12% near) |
-| 949 | river | Pesceana | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
-| 950 | river | Peșteana | Vâlcea | Râul Olteț | touches Râul Olteț at mouth only (20% near) |
-| 951 | river | Peștiș | Timiș | Râul Mureș | touches Râul Mureș at mouth only (10% near) |
-| 952 | river | Pețe | Timiș | Râul Bega | touches Râul Bega at mouth only (20% near) |
-| 953 | river | Pietrele | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (33% near) |
-| 954 | river | Pietriș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
-| 955 | river | Pietroasa | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (14% near) |
-| 956 | river | Pietrosu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (9% near) |
-| 957 | river | Pietrosu | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
-| 958 | river | Pietrosu | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (25% near) |
-| 959 | river | Pietrosul | Mureș | Râul Ilva | touches Râul Ilva at mouth only (17% near) |
-| 960 | river | Pilug | Hunedoara | Râul Jiul de vest – superior cu afluenții | touches Râul Jiul de vest – superior cu afluenții at mouth only (11% near) |
-| 961 | river | Pintic | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (9% near) |
-| 962 | river | Plăiuț | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (14% near) |
-| 963 | river | Pochivnica | Neamț | Râul Izvoarele Cracăului | touches Râul Izvoarele Cracăului at mouth only (33% near) |
-| 964 | river | Pociovaliștea | Alba | Râul Ocoliș | touches Râul Ocoliș at mouth only (20% near) |
-| 965 | river | Podvesochi | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (33% near) |
-| 966 | river | Poenari | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
-| 967 | river | Poienari | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (20% near) |
-| 968 | river | Poienari | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
-| 969 | river | Ponor | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (25% near) |
-| 970 | river | Popești | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (3% near) |
-| 971 | river | Porcul | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (33% near) |
-| 972 | river | Porcăreț | Hunedoara | Valea Luncanilor | touches Valea Luncanilor at mouth only (25% near) |
-| 973 | river | Porumbele | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
-| 974 | river | Porumbăcel | Sibiu | Râul Mare Porumbacu | touches Râul Mare Porumbacu at mouth only (11% near) |
-| 975 | river | Potoc | Timiș | Râul Bega | touches Râul Bega at mouth only (6% near) |
-| 976 | river | Potoc | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (17% near) |
-| 977 | river | Potoci | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (11% near) |
-| 978 | river | Pr. Buneasa | Mureș | Râul Gudea | touches Râul Gudea at mouth only (25% near) |
-| 979 | river | Pr. Gudea mică | Mureș | Râul Gudea | touches Râul Gudea at mouth only (14% near) |
-| 980 | river | Pr. Schwartz (Schwartz-patak) | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (4% near) |
-| 981 | river | Praid | Harghita | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
-| 982 | river | Precista | Bacău | Râul Siret | touches Râul Siret at mouth only (8% near) |
-| 983 | river | Priba | Argeș | Râul Argeș | touches Râul Argeș at mouth only (17% near) |
-| 984 | river | Prigoana | Alba | Râul Sebeș | touches Râul Sebeș at mouth only (8% near) |
-| 985 | river | Printre Văi | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (4% near) |
-| 986 | river | Priporul | Vâlcea | Râul Lotrișor Drăgănești | touches Râul Lotrișor Drăgănești at mouth only (33% near) |
-| 987 | river | Prislop | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (12% near) |
-| 988 | river | Prodae | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (17% near) |
-| 989 | river | Provița | Prahova | Râul Cricov | touches Râul Cricov at mouth only (2% near) |
-| 990 | river | Prut | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (14% near) |
-| 991 | river | Puini | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (4% near) |
-| 992 | river | Purcaru | Brașov | Râul Comana | touches Râul Comana at mouth only (20% near) |
-| 993 | river | Purcăreț | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (7% near) |
-| 994 | river | Pustiosu | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (20% near) |
-| 995 | river | Pângărăcior | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
-| 996 | river | Pârvei | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (12% near) |
-| 997 | river | Pârârul Roșu | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
-| 998 | river | Pârârul Roșu | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
-| 999 | river | pârâu | Alba | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
-| 1000 | river | pârâu | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (25% near) |
-| 1001 | river | pârâu | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 1002 | river | Pârâu Ciornovăt | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (5% near) |
-| 1003 | river | Pârâu Gârliște | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (10% near) |
-| 1004 | river | Pârâul Aldămaș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
-| 1005 | river | Pârâul Aluniș | Bacău | Râul Uzul | touches Râul Uzul at mouth only (7% near) |
-| 1006 | river | Pârâul Apa Lină | Covasna | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (8% near) |
-| 1007 | river | Pârâul Ardanului | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (25% near) |
-| 1008 | river | Pârâul Argintăria | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (17% near) |
-| 1009 | river | Pârâul Ascuns | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1010 | river | Pârâul Balogsás | Harghita | Râul Fișag | touches Râul Fișag at mouth only (25% near) |
-| 1011 | river | Pârâul Becaș | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
-| 1012 | river | Pârâul Belciu | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
-| 1013 | river | Pârâul Beliș | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (5% near) |
-| 1014 | river | Pârâul Beta | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1015 | river | Pârâul Beșa | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 1016 | river | Pârâul Bivolari | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 1017 | river | Pârâul Blojului | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
-| 1018 | river | Pârâul Blojului | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
-| 1019 | river | Pârâul Bogat | Harghita | Râul Vârghișul superior | touches Râul Vârghișul superior at mouth only (8% near) |
-| 1020 | river | Pârâul Boiu | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (33% near) |
-| 1021 | river | Pârâul Bolovăniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (11% near) |
-| 1022 | river | Pârâul Bongar | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (33% near) |
-| 1023 | river | Pârâul Boșor | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (14% near) |
-| 1024 | river | Pârâul Brebu | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (17% near) |
-| 1025 | river | Pârâul Brebu | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (8% near) |
-| 1026 | river | Pârâul Brătcuța | Bihor | Râul Crișul Repede inferior | touches Râul Crișul Repede inferior at mouth only (10% near) |
-| 1027 | river | Pârâul Brătcuța | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (10% near) |
-| 1028 | river | Pârâul Budiu | Mureș | Râul Mureș | touches Râul Mureș at mouth only (3% near) |
-| 1029 | river | Pârâul Buha | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (17% near) |
-| 1030 | river | Pârâul Bădenilor | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (12% near) |
-| 1031 | river | Pârâul Băilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1032 | river | Pârâul Băilor | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (7% near) |
-| 1033 | river | Pârâul Băilor Mari | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (20% near) |
-| 1034 | river | Pârâul Cad | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
-| 1035 | river | Pârâul Cet | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1036 | river | Pârâul Cetății | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1037 | river | Pârâul Chiara | Olt | Râul Dârjov | touches Râul Dârjov at mouth only (17% near) |
-| 1038 | river | Pârâul Chighenilor | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (8% near) |
-| 1039 | river | Pârâul Chiliilor | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (25% near) |
-| 1040 | river | Pârâul Chinteni | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (3% near) |
-| 1041 | river | Pârâul Chiojdeanca | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (33% near) |
-| 1042 | river | Pârâul Ciclova | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (4% near) |
-| 1043 | river | Pârâul Ciobotani | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (8% near) |
-| 1044 | river | Pârâul Ciubotei | Bacău | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (9% near) |
-| 1045 | river | Pârâul Ciubotei | Bacău | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
-| 1046 | river | Pârâul Ciurgheș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (10% near) |
-| 1047 | river | Pârâul Cladova | Arad | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
-| 1048 | river | Pârâul Coacăza | Bacău | Râul Tazlăul Sărat | touches Râul Tazlăul Sărat at mouth only (25% near) |
-| 1049 | river | Pârâul Cocoș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (4% near) |
-| 1050 | river | Pârâul Colina Mică | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (17% near) |
-| 1051 | river | Pârâul Cotârgași | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (11% near) |
-| 1052 | river | Pârâul Craiova | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (8% near) |
-| 1053 | river | Pârâul Crintei | Brașov | Valea Sâmbetei | touches Valea Sâmbetei at mouth only (33% near) |
-| 1054 | river | Pârâul Crucii1 | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
-| 1055 | river | Pârâul Crușitu | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (7% near) |
-| 1056 | river | Pârâul Cuchiniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
-| 1057 | river | Pârâul Curmăturii | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 1058 | river | Pârâul Câinelui | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
-| 1059 | river | Pârâul Căboaiei | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 1060 | river | Pârâul Căpriței | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1061 | river | Pârâul Dalei | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (33% near) |
-| 1062 | river | Pârâul Dalei | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (33% near) |
-| 1063 | river | Pârâul Delnița | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1064 | river | Pârâul Dignacea | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
-| 1065 | river | Pârâul Ditrău | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (2% near) |
-| 1066 | river | Pârâul Domoș | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (12% near) |
-| 1067 | river | Pârâul Drept | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
-| 1068 | river | Pârâul Drăcoiu | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (5% near) |
-| 1069 | river | Pârâul Ecem | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (33% near) |
-| 1070 | river | Pârâul Eghersec | Harghita | Râul Uzul | touches Râul Uzul at mouth only (17% near) |
-| 1071 | river | Pârâul Fagul Ciobanului | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1072 | river | Pârâul Fierarilor | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 1073 | river | Pârâul Firei | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (17% near) |
-| 1074 | river | Pârâul Galbena | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (33% near) |
-| 1075 | river | Pârâul Ghiduț | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (3% near) |
-| 1076 | river | Pârâul Ghiorfaș | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
-| 1077 | river | Pârâul Glodghilești | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
-| 1078 | river | Pârâul Gradina | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (17% near) |
-| 1079 | river | Pârâul Grasul | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (33% near) |
-| 1080 | river | Pârâul Grindeni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
-| 1081 | river | Pârâul Gropșoara | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
-| 1082 | river | Pârâul Gârbău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
-| 1083 | river | Pârâul Hancker | Harghita | Râul Mesteacănu | touches Râul Mesteacănu at mouth only (0% near) |
-| 1084 | river | Pârâul Hidegag | Mureș | Râul Sălard | touches Râul Sălard at mouth only (11% near) |
-| 1085 | river | Pârâul Horezu | Olt | Râul Geamărtălui  | touches Râul Geamărtălui  at mouth only (7% near) |
-| 1086 | river | Pârâul Hotaru | Harghita | Râul Șicasău | touches Râul Șicasău at mouth only (25% near) |
-| 1087 | river | Pârâul Hotarului | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (25% near) |
-| 1088 | river | Pârâul Hévíz | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
-| 1089 | river | Pârâul Iordăcheanu | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (17% near) |
-| 1090 | river | Pârâul Iovului | Alba | Râul Mureș | touches Râul Mureș at mouth only (28% near) |
-| 1091 | river | Pârâul Izărel | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
-| 1092 | river | Pârâul Jepilor | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
-| 1093 | river | Pârâul Jirca | Mureș | Râul Sălard | touches Râul Sălard at mouth only (20% near) |
-| 1094 | river | Pârâul Jombor | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1095 | river | Pârâul Kolos | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 1096 | river | Pârâul Lespezi | Argeș | Râul Capra | touches Râul Capra at mouth only (25% near) |
-| 1097 | river | Pârâul lui Chelemec | Covasna | Râul Negru II | touches Râul Negru II at mouth only (25% near) |
-| 1098 | river | Pârâul lui Melot | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (20% near) |
-| 1099 | river | Pârâul lui Molnar | Bacău | Râul Sulta | touches Râul Sulta at mouth only (33% near) |
-| 1100 | river | Pârâul Lunca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1101 | river | Pârâul Lupul | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (20% near) |
-| 1102 | river | Pârâul Lupul | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (20% near) |
-| 1103 | river | Pârâul Lupului | Bacău | Râul Sulta | touches Râul Sulta at mouth only (11% near) |
-| 1104 | river | Pârâul Lăzarea | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (0% near) |
-| 1105 | river | Pârâul Maleia | Hunedoara | Râul Jiul de est Inferior | touches Râul Jiul de est Inferior at mouth only (10% near) |
-| 1106 | river | Pârâul Martonca | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
-| 1107 | river | Pârâul Merila | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (20% near) |
-| 1108 | river | Pârâul Merilor | Harghita | Pârâul Vermet | touches Pârâul Vermet at mouth only (14% near) |
-| 1109 | river | Pârâul Meșterhazul | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
-| 1110 | river | Pârâul Milova | Arad | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
-| 1111 | river | Pârâul Mircea | Argeș | Râul Buda | touches Râul Buda at mouth only (17% near) |
-| 1112 | river | Pârâul Mitaciul Mic | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (17% near) |
-| 1113 | river | Pârâul Miștea | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
-| 1114 | river | Pârâul Mițului | Hunedoara | Râul Lăpuşnicul Mic | touches Râul Lăpuşnicul Mic at mouth only (25% near) |
-| 1115 | river | Pârâul Morii | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
-| 1116 | river | Pârâul Moșna | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (11% near) |
-| 1117 | river | Pârâul Mueruș | Bacău | Râul Ciobănuș | touches Râul Ciobănuș at mouth only (17% near) |
-| 1118 | river | Pârâul Mușețel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 1119 | river | Pârâul Mădărașul Mic | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (10% near) |
-| 1120 | river | Pârâul Nagyos | Harghita | Pârâul Mic | touches Pârâul Mic at mouth only (17% near) |
-| 1121 | river | Pârâul Nagyos | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 1122 | river | Pârâul Naiba | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (20% near) |
-| 1123 | river | Pârâul Neagra Călin | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
-| 1124 | river | Pârâul Neamțului | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
-| 1125 | river | Pârâul Negrei | Suceava | Râul Moldova | touches Râul Moldova at mouth only (17% near) |
-| 1126 | river | Pârâul Negruța | Bihor | Râul Crișul Repede inferior | touches Râul Crișul Repede inferior at mouth only (17% near) |
-| 1127 | river | Pârâul Negruța | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (17% near) |
-| 1128 | river | Pârâul Nilveș | Harghita | Pârâul Vermet | touches Pârâul Vermet at mouth only (14% near) |
-| 1129 | river | Pârâul Ocnei | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (8% near) |
-| 1130 | river | Pârâul Olanu | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (8% near) |
-| 1131 | river | Pârâul Pascu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
-| 1132 | river | Pârâul Peșcoasa Mare | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (20% near) |
-| 1133 | river | Pârâul Peșcoasa Mare | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
-| 1134 | river | Pârâul Peștilor | Sibiu | Râul Săliște | touches Râul Săliște at mouth only (33% near) |
-| 1135 | river | Pârâul Piatra Albă | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 1136 | river | Pârâul Piatra Caprei | Brașov | Valea Sâmbetei | touches Valea Sâmbetei at mouth only (25% near) |
-| 1137 | river | Pârâul Piatra Șoimilor | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1138 | river | Pârâul Pietrei | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
-| 1139 | river | Pârâul Pietroasa | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
-| 1140 | river | Pârâul Pietros | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1141 | river | Pârâul Plopilor | Vâlcea | Râul Cerna | touches Râul Cerna at mouth only (9% near) |
-| 1142 | river | Pârâul Poliștoaca | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (9% near) |
-| 1143 | river | Pârâul Popoiu | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (25% near) |
-| 1144 | river | Pârâul Potoci | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1145 | river | Pârâul Puturos | Harghita | Valea Topliței | touches Valea Topliței at mouth only (9% near) |
-| 1146 | river | Pârâul Puturos | Harghita | Râul Șugo | touches Râul Șugo at mouth only (33% near) |
-| 1147 | river | Pârâul Radna | Arad | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
-| 1148 | river | Pârâul Radului | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (20% near) |
-| 1149 | river | Pârâul Ravasz | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (26% near) |
-| 1150 | river | Pârâul Rece | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
-| 1151 | river | Pârâul Rece | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (4% near) |
-| 1152 | river | Pârâul Repede | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (12% near) |
-| 1153 | river | Pârâul Roua | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
-| 1154 | river | Pârâul Roua | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
-| 1155 | river | Pârâul Répád | Harghita | Râul Fișag | touches Râul Fișag at mouth only (8% near) |
-| 1156 | river | Pârâul Saldoboș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1157 | river | Pârâul Scroafei | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (3% near) |
-| 1158 | river | Pârâul Scurta | Gorj | Valea Sadului | touches Valea Sadului at mouth only (25% near) |
-| 1159 | river | Pârâul Sec | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (33% near) |
-| 1160 | river | Pârâul Sedloca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 1161 | river | Pârâul Siloș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 1162 | river | Pârâul Socilor | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (33% near) |
-| 1163 | river | Pârâul Socilor | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (33% near) |
-| 1164 | river | Pârâul Sorniac | Tulcea | Japșa Stanca | touches Japșa Stanca at mouth only (10% near) |
-| 1165 | river | Pârâul Strunga | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
-| 1166 | river | Pârâul Sugura | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (20% near) |
-| 1167 | river | Pârâul Sânmartin | Harghita | Râul Fișag | touches Râul Fișag at mouth only (25% near) |
-| 1168 | river | Pârâul Sărat | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (10% near) |
-| 1169 | river | Pârâul Sărat | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1170 | river | Pârâul Sărmașului | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (11% near) |
-| 1171 | river | Pârâul Talea | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
-| 1172 | river | Pârâul Talnic (Reitec) | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (14% near) |
-| 1173 | river | Pârâul Tare | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (3% near) |
-| 1174 | river | Pârâul Tompád | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1175 | river | Pârâul Trestiei | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (8% near) |
-| 1176 | river | Pârâul Trestiei | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1177 | river | Pârâul Trinkbach | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (0% near) |
-| 1178 | river | Pârâul Trinkbach | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (0% near) |
-| 1179 | river | Pârâul Trinkbach | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (0% near) |
-| 1180 | river | Pârâul Turia | Olt | Râul Dârjov | touches Râul Dârjov at mouth only (14% near) |
-| 1181 | river | Pârâul Turzii | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (11% near) |
-| 1182 | river | Pârâul Tușnad | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (11% near) |
-| 1183 | river | Pârâul Tușnad | Harghita | Râul Șugo | touches Râul Șugo at mouth only (11% near) |
-| 1184 | river | Pârâul Tók | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1185 | river | Pârâul Ulieș | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (8% near) |
-| 1186 | river | Pârâul Ursului | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (25% near) |
-| 1187 | river | Pârâul Ursului | Sibiu | Râul Măgura Cisnădiei | touches Râul Măgura Cisnădiei at mouth only (10% near) |
-| 1188 | river | Pârâul Valea Cărbunarilor | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (12% near) |
-| 1189 | river | Pârâul Valea Gârbovii | Alba | Râul Secaș | touches Râul Secaș at mouth only (3% near) |
-| 1190 | river | Pârâul Valea Joiței | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (12% near) |
-| 1191 | river | Pârâul Valea Seacă | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (3% near) |
-| 1192 | river | Pârâul Vinului | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
-| 1193 | river | Pârâul Vladului | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (12% near) |
-| 1194 | river | Pârâul Vârful Mare | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
-| 1195 | river | Pârâul Vârful Mic | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
-| 1196 | river | Pârâul Văcăriei | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1197 | river | Pârâul Vădana | Timiș | Râul Bega | touches Râul Bega at mouth only (14% near) |
-| 1198 | river | Pârâul Zălan | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1199 | river | Pârâul Zăpodie | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (7% near) |
-| 1200 | river | Pârâul Întortochiat | Harghita | Râul Cașin | touches Râul Cașin at mouth only (14% near) |
-| 1201 | river | Pârâul Între Pietre | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
-| 1202 | river | Pârâul Șeștina | Mureș | Râul Sălard | touches Râul Sălard at mouth only (20% near) |
-| 1203 | river | Pârâul Șoimoș | Arad | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
-| 1204 | river | Pârâul Șolea | Mureș | Râul Sălard | touches Râul Sălard at mouth only (14% near) |
-| 1205 | river | Pârâul Știuca | Timiș | Pârâul Cernabora | touches Pârâul Cernabora at mouth only (17% near) |
-| 1206 | river | Pârâul Șumuleu | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1207 | river | Pârâul Țiba Mare | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
-| 1208 | river | Pâstrâvului | Harghita | Râul Șicasău | touches Râul Șicasău at mouth only (7% near) |
-| 1209 | river | Păisul Mare | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (20% near) |
-| 1210 | river | Păltinoasa | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (33% near) |
-| 1211 | river | Păltinoasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
-| 1212 | river | Pănicel | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (29% near) |
-| 1213 | river | Pănuleț | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
-| 1214 | river | Păpăuți | Covasna | Râul Covasna | touches Râul Covasna at mouth only (9% near) |
-| 1215 | river | Părvu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1216 | river | Părău Iclejii | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
-| 1217 | river | Părău Iclejii | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
-| 1218 | river | Părău Iclejii | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (33% near) |
-| 1219 | river | Păscoaia | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (4% near) |
-| 1220 | river | Rachotiaș | Mureș | Valea Soveții | touches Valea Soveții at mouth only (17% near) |
-| 1221 | river | Racovița | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1222 | river | Racoș | Cluj | Valea Lonei | touches Valea Lonei at mouth only (8% near) |
-| 1223 | river | Racul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (11% near) |
-| 1224 | river | Rakottyás patak | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1225 | river | Rakta-ér | Satu Mare | Râul Someș | touches Râul Someș at mouth only (11% near) |
-| 1226 | river | Ramura Mică | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (20% near) |
-| 1227 | river | Raznic | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (5% near) |
-| 1228 | river | Raznic | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (5% near) |
-| 1229 | river | Rașcova | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (20% near) |
-| 1230 | river | Redișoara | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
-| 1231 | river | Remetea | Brașov | Râul Olt | touches Râul Olt at mouth only (12% near) |
-| 1232 | river | Remetea | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
-| 1233 | river | Remezeu | Suceava | Râul Suceava | touches Râul Suceava at mouth only (25% near) |
-| 1234 | river | Repatu | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 1235 | river | Repede | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (10% near) |
-| 1236 | river | Retevoiu | Brașov | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
-| 1237 | river | Reussbach | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (14% near) |
-| 1238 | river | Reviaca Mare | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
-| 1239 | river | Ribița | Hunedoara | Râul Crișul Alb, cu afluenții | touches Râul Crișul Alb, cu afluenții at mouth only (8% near) |
-| 1240 | river | Rica | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
-| 1241 | river | Richieiul | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
-| 1242 | river | Rituria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
-| 1243 | river | Rituria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
-| 1244 | river | Robaia | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (17% near) |
-| 1245 | river | Robaia | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (17% near) |
-| 1246 | river | Robaia | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (17% near) |
-| 1247 | river | Romoș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
-| 1248 | river | Ronișoara | Maramureș | Râul Iza | touches Râul Iza at mouth only (7% near) |
-| 1249 | river | Roșușul | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
-| 1250 | river | Rudarul | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (8% near) |
-| 1251 | river | Rudarul | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
-| 1252 | river | Runc | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1253 | river | Runc | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1254 | river | Rusciori | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (6% near) |
-| 1255 | river | Rușor | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (33% near) |
-| 1256 | river | Râmeț (Geoagiu) | Alba | Råul Geoagiu Inferior | touches Råul Geoagiu Inferior at mouth only (8% near) |
-| 1257 | river | Râmeț (Geoagiu) | Alba | Râul Mogoș - Cotu | touches Râul Mogoș - Cotu at mouth only (8% near) |
-| 1258 | river | Râmna | Vrancea | Râul Putna | touches Râul Putna at mouth only (2% near) |
-| 1259 | river | Râul Agăș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (11% near) |
-| 1260 | river | Râul Argetoaia | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (11% near) |
-| 1261 | river | Râul Argetoaia | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (11% near) |
-| 1262 | river | Râul Beghei | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (14% near) |
-| 1263 | river | Râul Bizdidel | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (5% near) |
-| 1264 | river | Râul Bolătău | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1265 | river | Râul Bârlui | Olt | Râul Olteț | touches Râul Olteț at mouth only (7% near) |
-| 1266 | river | Râul Bârlui | Olt | Râul Olteț | touches Râul Olteț at mouth only (7% near) |
-| 1267 | river | Râul Cernat | Covasna | Râul Negru II | touches Râul Negru II at mouth only (8% near) |
-| 1268 | river | Râul Cernat | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
-| 1269 | river | Râul Chilișca | Bacău | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (25% near) |
-| 1270 | river | Râul Ciumârna | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (20% near) |
-| 1271 | river | Râul Clănița | Teleorman | Râul Teleorman | touches Râul Teleorman at mouth only (14% near) |
-| 1272 | river | Râul Copăceoasa | Brașov | Valea Berivoi | touches Valea Berivoi at mouth only (14% near) |
-| 1273 | river | Râul Cotumba | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (20% near) |
-| 1274 | river | Râul Câinelui | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (25% near) |
-| 1275 | river | Râul Călata | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (4% near) |
-| 1276 | river | Râul Demăcușa | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (11% near) |
-| 1277 | river | Râul Glavacioc | Giurgiu | Râul Câlniștea | touches Râul Câlniștea at mouth only (2% near) |
-| 1278 | river | Râul Hălmăgel | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (14% near) |
-| 1279 | river | Râul Hălmăgel | Arad | Râul Hălmagiu | touches Râul Hălmagiu at mouth only (14% near) |
-| 1280 | river | Râul Mare - Cugir | Alba | Raul Mare | touches Raul Mare at mouth only (3% near) |
-| 1281 | river | Râul Moșna | Iași | Râul Prut | touches Râul Prut at mouth only (3% near) |
-| 1282 | river | Râul Obrezanului | Alba | Râul Secaș | touches Râul Secaș at mouth only (7% near) |
-| 1283 | river | Râul Pasărea | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (3% near) |
-| 1284 | river | Râul Porcului | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
-| 1285 | river | Râul Pănătău | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (33% near) |
-| 1286 | river | Râul Pănătău | Buzău | Râul Buzău | touches Râul Buzău at mouth only (33% near) |
-| 1287 | river | Râul Racovița | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (14% near) |
-| 1288 | river | Râul Rebricea | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (8% near) |
-| 1289 | river | Râul Robului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
-| 1290 | river | Râul Romosului | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
-| 1291 | river | Râul Răstolț | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (7% near) |
-| 1292 | river | Râul Satului | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
-| 1293 | river | Râul Seaca | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
-| 1294 | river | Râul Sec | Vâlcea | Râul Olt | touches Râul Olt at mouth only (20% near) |
-| 1295 | river | Râul Sec | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 1296 | river | Râul Senced | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
-| 1297 | river | Râul Soveto | Bacău | Râul Uzul | touches Râul Uzul at mouth only (12% near) |
-| 1298 | river | Râul Urmeniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
-| 1299 | river | Râul Valea Săpunului | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (4% near) |
-| 1300 | river | Râul Valea Săpunului | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (4% near) |
-| 1301 | river | Râul Valea Săpunului | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (4% near) |
-| 1302 | river | Râul Vilia | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (1% near) |
-| 1303 | river | Râul Vulcana | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (20% near) |
-| 1304 | river | Râul Vulcanu | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
-| 1305 | river | Râul Văidei | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (4% near) |
-| 1306 | river | Râul Vălenilor | Maramureș | Râul Iza | touches Râul Iza at mouth only (14% near) |
-| 1307 | river | Râul Înfundăturii | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (33% near) |
-| 1308 | river | Râușorul | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (11% near) |
-| 1309 | river | Râșca | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (4% near) |
-| 1310 | river | Râșca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
-| 1311 | river | Râșca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
-| 1312 | river | Râșca | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
-| 1313 | river | Râșca Mare | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (5% near) |
-| 1314 | river | Răcad | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (10% near) |
-| 1315 | river | Răcad | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (10% near) |
-| 1316 | river | Răchitiș | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (25% near) |
-| 1317 | river | Răcăștie | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (9% near) |
-| 1318 | river | Răul Gârbou | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (9% near) |
-| 1319 | river | Saca | Maramureș | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (17% near) |
-| 1320 | river | Sacovăț | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (3% near) |
-| 1321 | river | Sadova | Suceava | Râul Moldova | touches Râul Moldova at mouth only (12% near) |
-| 1322 | river | Sadu lui Sân | Gorj | Valea Sadului | touches Valea Sadului at mouth only (17% near) |
-| 1323 | river | Sadău | Suceava | Râul Brodina | touches Râul Brodina at mouth only (17% near) |
-| 1324 | river | Salca | Cluj | Râul Someș | touches Râul Someș at mouth only (9% near) |
-| 1325 | river | Salcia | Timiș | Pârâul Șurgani | touches Pârâul Șurgani at mouth only (4% near) |
-| 1326 | river | Sarchii | Mureș | Pârâul de Câmpie | touches Pârâul de Câmpie at mouth only (6% near) |
-| 1327 | river | Sașa Mândrei | Vâlcea | Valea Urii cu pâraiele Uria și Murgoci | touches Valea Urii cu pâraiele Uria și Murgoci at mouth only (33% near) |
-| 1328 | river | Seaca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
-| 1329 | river | Seaca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
-| 1330 | river | Sebiș | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (20% near) |
-| 1331 | river | Sebiș | Arad | Râul Moneasa Superioară | touches Râul Moneasa Superioară at mouth only (20% near) |
-| 1332 | river | Secu Mâhlit | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (25% near) |
-| 1333 | river | Secuieu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (17% near) |
-| 1334 | river | Secul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (14% near) |
-| 1335 | river | Segheș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1336 | river | Seinel | Maramureș | Râul Someș | touches Râul Someș at mouth only (4% near) |
-| 1337 | river | Seinel | Maramureș | Râul Someș | touches Râul Someș at mouth only (4% near) |
-| 1338 | river | Semeria | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
-| 1339 | river | Seviș | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (7% near) |
-| 1340 | river | Seviș | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (7% near) |
-| 1341 | river | Seviș | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (7% near) |
-| 1342 | river | Sicu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (2% near) |
-| 1343 | river | Silaș | Harghita | Râul Iuhod | touches Râul Iuhod at mouth only (33% near) |
-| 1344 | river | Silhoasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (12% near) |
-| 1345 | river | Simeria | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1346 | river | Simina | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (19% near) |
-| 1347 | river | Sineu | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (16% near) |
-| 1348 | river | Slamna | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 1349 | river | Slatina | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (3% near) |
-| 1350 | river | Slivețul | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (25% near) |
-| 1351 | river | Slănic | Argeș | Râul Bratia Inferior | touches Râul Bratia Inferior at mouth only (10% near) |
-| 1352 | river | Slănic | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (25% near) |
-| 1353 | river | Slănic | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (12% near) |
-| 1354 | river | Slătinița | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (11% near) |
-| 1355 | river | Slătioara | Maramureș | Râul Iza | touches Râul Iza at mouth only (10% near) |
-| 1356 | river | Socolău | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
-| 1357 | river | Solona | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1358 | river | Somonița | Arad | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 1359 | river | Spânu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
-| 1360 | river | Spătac | Alba | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (29% near) |
-| 1361 | river | Stogu | Vrancea | Râul Putna | touches Râul Putna at mouth only (33% near) |
-| 1362 | river | Stoia | Vâlcea | Râul Olănești cu pâraiele Cheia, Bacea și Mânza | touches Râul Olănești cu pâraiele Cheia, Bacea și Mânza at mouth only (25% near) |
-| 1363 | river | Stoienița | Hunedoara | Valea Polatiște | touches Valea Polatiște at mouth only (12% near) |
-| 1364 | river | Stolna | Cluj | Valea Lonei | touches Valea Lonei at mouth only (8% near) |
-| 1365 | river | Stremț | Alba | Råul Geoagiu Inferior | touches Råul Geoagiu Inferior at mouth only (2% near) |
-| 1366 | river | Stremț | Alba | Râul Mogoș - Cotu | touches Râul Mogoș - Cotu at mouth only (2% near) |
-| 1367 | river | Stremț | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
-| 1368 | river | Strâmbu | Brașov | Râul Buzău | touches Râul Buzău at mouth only (11% near) |
-| 1369 | river | Strâmtosu | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (33% near) |
-| 1370 | river | Strâmșoara | Brașov | Râul Strâmba | touches Râul Strâmba at mouth only (0% near) |
-| 1371 | river | Stâlpul | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (20% near) |
-| 1372 | river | Stânișoara | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (17% near) |
-| 1373 | river | Stăuini | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 1374 | river | Suceag | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (12% near) |
-| 1375 | river | Suceava River | Suceava | Râul Brodina | touches Râul Brodina at mouth only (4% near) |
-| 1376 | river | Suciuaș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (7% near) |
-| 1377 | river | Sudriaș | Timiș | Râul Timiș | touches Râul Timiș at mouth only (12% near) |
-| 1378 | river | Sugasău | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 1379 | river | Suha | Suceava | Râul Moldova | touches Râul Moldova at mouth only (3% near) |
-| 1380 | river | Suha Mare | Suceava | Râul Moldova | touches Râul Moldova at mouth only (4% near) |
-| 1381 | river | Suha Mare | Suceava | Râul Moldova | touches Râul Moldova at mouth only (4% near) |
-| 1382 | river | Suha Mică | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
-| 1383 | river | Suha Mică | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
-| 1384 | river | Suhard | Harghita | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (25% near) |
-| 1385 | river | Suliniș | Arad | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
-| 1386 | river | Sultan | Teleorman | Râul Olt | touches Râul Olt at mouth only (4% near) |
-| 1387 | river | Sultan | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
-| 1388 | river | Susai | Brașov | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
-| 1389 | river | Suseni | Gorj | Râul Șușița Seacă | touches Râul Șușița Seacă at mouth only (6% near) |
-| 1390 | river | Suseni | Gorj | Râul Șușița Verde | touches Râul Șușița Verde at mouth only (6% near) |
-| 1391 | river | Suseni | Gorj | Râul Șușița | touches Râul Șușița at mouth only (6% near) |
-| 1392 | river | Szamos | Satu Mare | Râul Someș | touches Râul Someș at mouth only (3% near) |
-| 1393 | river | Szász-patak | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (33% near) |
-| 1394 | river | Sár-Éger-csatorna | Satu Mare | Râul Tur | touches Râul Tur at mouth only (3% near) |
-| 1395 | river | Sáros-patak | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (12% near) |
-| 1396 | river | Sâmboleni | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (6% near) |
-| 1397 | river | Sâmnic | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
-| 1398 | river | Sângătin | Sibiu | Râul Secaș | touches Râul Secaș at mouth only (17% near) |
-| 1399 | river | Sânmartin de Beiuș | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (17% near) |
-| 1400 | river | Sârbi | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
-| 1401 | river | Sâva | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (25% near) |
-| 1402 | river | Sükő-pataka | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
-| 1403 | river | Săbășița | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (25% near) |
-| 1404 | river | Săcrieș | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (14% near) |
-| 1405 | river | Săcămaș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (14% near) |
-| 1406 | river | Sălaș | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (8% near) |
-| 1407 | river | Sălciva | Hunedoara | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
-| 1408 | river | Sălătruc | Cluj | Râul Someș | touches Râul Someș at mouth only (3% near) |
-| 1409 | river | Sălătrucel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1410 | river | Săpânța | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (6% near) |
-| 1411 | river | Sărat | Mureș | Valea Soveții | touches Valea Soveții at mouth only (12% near) |
-| 1412 | river | Sărmaș | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (11% near) |
-| 1413 | river | Sărăcelu | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
-| 1414 | river | Sărăcinul | Vâlcea | Râul Olt | touches Râul Olt at mouth only (7% near) |
-| 1415 | river | Sărăcinul | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1416 | river | Sărățel | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (4% near) |
-| 1417 | river | Sărățel | Buzău | Râul Buzău | touches Râul Buzău at mouth only (4% near) |
-| 1418 | river | Sărățica | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (17% near) |
-| 1419 | river | Săvăstreni | Brașov | Valea Dejani (Săvăstreni) | touches Valea Dejani (Săvăstreni) at mouth only (17% near) |
-| 1420 | river | Tarvezul | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
-| 1421 | river | Tejac | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (20% near) |
-| 1422 | river | Tejac | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (20% near) |
-| 1423 | river | Telcișor | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (9% near) |
-| 1424 | river | Teliu | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (14% near) |
-| 1425 | river | Terebici | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 1426 | river | Teuz | Arad | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (1% near) |
-| 1427 | river | Teșna | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (11% near) |
-| 1428 | river | Teșnița | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (17% near) |
-| 1429 | river | Ticoș | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (33% near) |
-| 1430 | river | Tifánpataka | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (20% near) |
-| 1431 | river | Tigheci | Vaslui | Râul Prut și revărsări | touches Râul Prut și revărsări at mouth only (10% near) |
-| 1432 | river | Tihul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (11% near) |
-| 1433 | river | Tihul Ilvei | Mureș | Râul Ilva | touches Râul Ilva at mouth only (17% near) |
-| 1434 | river | Tireu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (14% near) |
-| 1435 | river | Tisieu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (14% near) |
-| 1436 | river | Tisza | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (0% near) |
-| 1437 | river | Tisza | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (0% near) |
-| 1438 | river | Tiva | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 1439 | river | Tocile | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (6% near) |
-| 1440 | river | Tocile | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (6% near) |
-| 1441 | river | Tocile | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (6% near) |
-| 1442 | river | Tomoroga | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (25% near) |
-| 1443 | river | Tomoroga | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
-| 1444 | river | Trepteanca | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1445 | river | Trestia | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (25% near) |
-| 1446 | river | Treznea | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (10% near) |
-| 1447 | river | Turcinul Mare | Vâlcea | Râul Latorița Inferioară | touches Râul Latorița Inferioară at mouth only (25% near) |
-| 1448 | river | Turcu | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (11% near) |
-| 1449 | river | Turdaș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
-| 1450 | river | Turia | Covasna | Pârâu Cașin | touches Pârâu Cașin at mouth only (9% near) |
-| 1451 | river | Turnișoara | Sibiu | Râul Sebeș | touches Râul Sebeș at mouth only (33% near) |
-| 1452 | river | Tâmpa | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (33% near) |
-| 1453 | river | Târgul | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
-| 1454 | river | Târgul | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
-| 1455 | river | Târnava Seacă | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (33% near) |
-| 1456 | river | Tâșla | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (6% near) |
-| 1457 | river | Tóbükke-patak | Harghita | Râul Uzul | touches Râul Uzul at mouth only (20% near) |
-| 1458 | river | Tănase | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (8% near) |
-| 1459 | river | Tărcuța | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (14% near) |
-| 1460 | river | Tărhăuși | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (14% near) |
-| 1461 | river | Tărpiu | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (6% near) |
-| 1462 | river | Tărtărău | Alba | Râul Sebeș | touches Râul Sebeș at mouth only (9% near) |
-| 1463 | river | Tătărul | Sibiu | Râul Sebeșul de Sus | touches Râul Sebeșul de Sus at mouth only (17% near) |
-| 1464 | river | Ucișoara | Brașov | Valea Ucea Mare | touches Valea Ucea Mare at mouth only (17% near) |
-| 1465 | river | Ugruțiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (20% near) |
-| 1466 | river | Uila | Mureș | Pârâul Lut | touches Pârâul Lut at mouth only (8% near) |
-| 1467 | river | Ulieș | Mureș | Pârâul Lechința | touches Pârâul Lechința at mouth only (12% near) |
-| 1468 | river | Ungurelul | Gorj | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
-| 1469 | river | Unirea | Cluj | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
-| 1470 | river | Unu | Timiș | Pârâul Behela | touches Pârâul Behela at mouth only (23% near) |
-| 1471 | river | Urlatul Mare | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (17% near) |
-| 1472 | river | Urlătoarea | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (6% near) |
-| 1473 | river | Urlătoarea | Brașov | Râul Buzău | touches Râul Buzău at mouth only (12% near) |
-| 1474 | river | Urlățelul | Prahova | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (25% near) |
-| 1475 | river | Urlățelul | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
-| 1476 | river | Ursoaia | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (12% near) |
-| 1477 | river | V. Dracului | Gorj | Râul Olteț | touches Râul Olteț at mouth only (25% near) |
-| 1478 | river | Vad | Cluj | Râul Someș | touches Râul Someș at mouth only (7% near) |
-| 1479 | river | Vaidei | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (4% near) |
-| 1480 | river | Valcălița | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (10% near) |
-| 1481 | river | Valea Agăstău | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (25% near) |
-| 1482 | river | Valea Agăstău | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (25% near) |
-| 1483 | river | Valea Aiudului | Alba | Râul Izvoarele Ampoiului | touches Râul Izvoarele Ampoiului at mouth only (9% near) |
-| 1484 | river | Valea Aiudului | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
-| 1485 | river | Valea Albă | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
-| 1486 | river | Valea Albă | Teleorman | Râul Câlniștea | touches Râul Câlniștea at mouth only (12% near) |
-| 1487 | river | Valea Albă | Teleorman | Râul Câlniștea | touches Râul Câlniștea at mouth only (12% near) |
-| 1488 | river | Valea Albă | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (25% near) |
-| 1489 | river | Valea Albă | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (25% near) |
-| 1490 | river | Valea Albă | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (33% near) |
-| 1491 | river | Valea Aurului | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (9% near) |
-| 1492 | river | Valea Babei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
-| 1493 | river | Valea Banului | Sălaj | Râul Crasna | touches Râul Crasna at mouth only (25% near) |
-| 1494 | river | Valea Banului | Sălaj | Râul Crasna | touches Râul Crasna at mouth only (25% near) |
-| 1495 | river | Valea Banului | Sălaj | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (25% near) |
-| 1496 | river | Valea Bisericii | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (5% near) |
-| 1497 | river | Valea Bisericii | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (5% near) |
-| 1498 | river | Valea Bisericii | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
-| 1499 | river | Valea Blăjenilor | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (9% near) |
-| 1500 | river | Valea Borcutului | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (4% near) |
-| 1501 | river | Valea Boului | Brașov | Râul Homorod | touches Râul Homorod at mouth only (7% near) |
-| 1502 | river | Valea Boului | Brașov | Râul Geamăna | touches Râul Geamăna at mouth only (13% near) |
-| 1503 | river | Valea Boului | Brașov | Valea Homorod | touches Valea Homorod at mouth only (7% near) |
-| 1504 | river | Valea Boții | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
-| 1505 | river | Valea Brădetului | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (20% near) |
-| 1506 | river | Valea Brătoaia | Argeș | Râul Dambovicioara | touches Râul Dambovicioara at mouth only (33% near) |
-| 1507 | river | Valea Budacului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (20% near) |
-| 1508 | river | Valea Bârnii | Alba | Râul Vîltori - Feneș | touches Râul Vîltori - Feneș at mouth only (25% near) |
-| 1509 | river | Valea Băbiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (6% near) |
-| 1510 | river | Valea Bătrână | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
-| 1511 | river | Valea Caldă | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (8% near) |
-| 1512 | river | Valea Calului | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (11% near) |
-| 1513 | river | Valea Carelor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1514 | river | Valea Carelor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
-| 1515 | river | Valea Cascadelor | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (25% near) |
-| 1516 | river | Valea Ceaușoaiei | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
-| 1517 | river | Valea Cerbului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
-| 1518 | river | Valea Cetăți | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
-| 1519 | river | Valea Cetății | Brașov | Râul Olt | touches Râul Olt at mouth only (6% near) |
-| 1520 | river | Valea Cetății | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
-| 1521 | river | Valea Cetății | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (10% near) |
-| 1522 | river | Valea Cetății | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (10% near) |
-| 1523 | river | Valea Cheii | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (4% near) |
-| 1524 | river | Valea Ciripa | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
-| 1525 | river | Valea Ciripa | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
-| 1526 | river | Valea Coacăzei | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (17% near) |
-| 1527 | river | Valea Colbului | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
-| 1528 | river | Valea Comisului | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (33% near) |
-| 1529 | river | Valea Cornetului | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (9% near) |
-| 1530 | river | Valea Crișului | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
-| 1531 | river | Valea Crăciunului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (14% near) |
-| 1532 | river | Valea Crăciunului | Bihor | Drăgan | touches Drăgan at mouth only (14% near) |
-| 1533 | river | Valea cu Arini | Maramureș | Râul Runcu | touches Râul Runcu at mouth only (25% near) |
-| 1534 | river | Valea Cucerdea | Mureș | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
-| 1535 | river | Valea Câinelui | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
-| 1536 | river | Valea Câinelui | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (20% near) |
-| 1537 | river | Valea Căldărilor | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
-| 1538 | river | Valea Căprăreasa | Vâlcea | Râul Cheia | touches Râul Cheia at mouth only (33% near) |
-| 1539 | river | Valea de Brădet | Vâlcea | Râul Olănești  | touches Râul Olănești  at mouth only (8% near) |
-| 1540 | river | Valea Doamnele | Dâmbovița | Râul Ialomița superioară | touches Râul Ialomița superioară at mouth only (25% near) |
-| 1541 | river | Valea Dracului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (11% near) |
-| 1542 | river | Valea Dragostei | Alba | Râul Ariesul Mic | touches Râul Ariesul Mic at mouth only (17% near) |
-| 1543 | river | Valea Dragului | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (33% near) |
-| 1544 | river | Valea Drojdiei | Sibiu | Râul Săliște | touches Râul Săliște at mouth only (11% near) |
-| 1545 | river | Valea Drăcoița | Bihor | Râul Leuca | touches Râul Leuca at mouth only (25% near) |
-| 1546 | river | Valea Fetei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
-| 1547 | river | Valea Feții | Cluj | Valea Lonei | touches Valea Lonei at mouth only (33% near) |
-| 1548 | river | Valea Firei | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (7% near) |
-| 1549 | river | Valea Fratelui | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
-| 1550 | river | Valea Fratelui | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
-| 1551 | river | Valea Fratelui | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (29% near) |
-| 1552 | river | Valea Furcilor | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (20% near) |
-| 1553 | river | Valea Fânații | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (17% near) |
-| 1554 | river | Valea Fântânel | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
-| 1555 | river | Valea Fântânii | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
-| 1556 | river | Valea Fărnicioarei | Arad | Râul Leuca | touches Râul Leuca at mouth only (25% near) |
-| 1557 | river | Valea Galbena | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (25% near) |
-| 1558 | river | Valea Ghegheșului | Bihor | Râul Leuca | touches Râul Leuca at mouth only (33% near) |
-| 1559 | river | Valea Ghimbav | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (7% near) |
-| 1560 | river | Valea Ghinzii | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (14% near) |
-| 1561 | river | Valea Goblii | Alba | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
-| 1562 | river | Valea Hotarului | Vâlcea | Râul Olănești  | touches Râul Olănești  at mouth only (10% near) |
-| 1563 | river | Valea Hotarului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
-| 1564 | river | Valea Hrăii | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (9% near) |
-| 1565 | river | valea Huta | Sălaj | Valea Barcăului | touches Valea Barcăului at mouth only (25% near) |
-| 1566 | river | valea Huta | Sălaj | Râul Barcăul Superior | touches Râul Barcăul Superior at mouth only (25% near) |
-| 1567 | river | Valea Hăigașului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (12% near) |
-| 1568 | river | Valea Iașului | Argeș | Râul Argeș | touches Râul Argeș at mouth only (33% near) |
-| 1569 | river | Valea Izvorul Sec | Argeș | Râul Dambovicioara | touches Râul Dambovicioara at mouth only (6% near) |
-| 1570 | river | Valea Izvorul Sec | Argeș | Râul Capra | touches Râul Capra at mouth only (33% near) |
-| 1571 | river | Valea Izvorului | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (12% near) |
-| 1572 | river | Valea Izvorului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
-| 1573 | river | Valea Jepilor | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (9% near) |
-| 1574 | river | Valea Jighil | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
-| 1575 | river | Valea Jighil | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
-| 1576 | river | Valea Lacul Roșu | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
-| 1577 | river | Valea Largă | Cluj | Râul Arieș | touches Râul Arieș at mouth only (7% near) |
-| 1578 | river | Valea Largă | Alba | Râul Arieș | touches Râul Arieș at mouth only (17% near) |
-| 1579 | river | Valea Largă | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (33% near) |
-| 1580 | river | Valea Lazului | Maramureș | Râul Mara | touches Râul Mara at mouth only (33% near) |
-| 1581 | river | Valea lui Andraş | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (25% near) |
-| 1582 | river | Valea lui Andraş | Bihor | Drăgan | touches Drăgan at mouth only (25% near) |
-| 1583 | river | Valea lui Anghel | Vâlcea | Râul Luncavăț | touches Râul Luncavăț at mouth only (17% near) |
-| 1584 | river | Valea lui Bibarț | Alba | Râul Ampoi | touches Râul Ampoi at mouth only (17% near) |
-| 1585 | river | Valea lui Bogdan | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (14% near) |
-| 1586 | river | Valea lui Coman | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (17% near) |
-| 1587 | river | Valea lui Dan | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 1588 | river | Valea lui Dan | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 1589 | river | Valea lui Dobre | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (14% near) |
-| 1590 | river | Valea lui Fătul | Sibiu | Râul Sebeșul de Jos | touches Râul Sebeșul de Jos at mouth only (25% near) |
-| 1591 | river | Valea lui Ilie | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (25% near) |
-| 1592 | river | Valea lui Ionelu | Sibiu | Râul Sebeșul de Jos | touches Râul Sebeșul de Jos at mouth only (25% near) |
-| 1593 | river | Valea lui Ivan | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (17% near) |
-| 1594 | river | Valea lui Liman | Timiș | Râul Bega superior - Luncani | touches Râul Bega superior - Luncani at mouth only (17% near) |
-| 1595 | river | Valea lui Nan | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (33% near) |
-| 1596 | river | Valea lui Odobescu | Galați | Râul Siret | touches Râul Siret at mouth only (14% near) |
-| 1597 | river | Valea lui Odobescu | Galați | Râul Siret | touches Râul Siret at mouth only (14% near) |
-| 1598 | river | Valea lui Stan | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (10% near) |
-| 1599 | river | Valea Luncilor | Bihor | Valea Mișidului | touches Valea Mișidului at mouth only (33% near) |
-| 1600 | river | Valea Lungă | Brașov | Râul Olt | touches Râul Olt at mouth only (33% near) |
-| 1601 | river | Valea Lungă | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1602 | river | Valea Lungă | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (8% near) |
-| 1603 | river | Valea Lungă | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (5% near) |
-| 1604 | river | Valea Lupului | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (10% near) |
-| 1605 | river | Valea Lupului | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (25% near) |
-| 1606 | river | Valea Lupului | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
-| 1607 | river | Valea Lupului | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
-| 1608 | river | Valea Luțele | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (25% near) |
-| 1609 | river | Valea Maria | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (7% near) |
-| 1610 | river | Valea Maria | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (7% near) |
-| 1611 | river | Valea Mesteacănului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
-| 1612 | river | Valea Milea | Buzău | Râul Siriul | touches Râul Siriul at mouth only (25% near) |
-| 1613 | river | Valea Miții | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (11% near) |
-| 1614 | river | Valea Moara Dracului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
-| 1615 | river | Valea Moara Dracului | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
-| 1616 | river | Valea Morii | Mureș | Pârâul de Câmpie | touches Pârâul de Câmpie at mouth only (17% near) |
-| 1617 | river | Valea Morii | Maramureș | Râul Iza | touches Râul Iza at mouth only (20% near) |
-| 1618 | river | Valea Morii | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (17% near) |
-| 1619 | river | Valea Morii | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (33% near) |
-| 1620 | river | Valea Muntelui | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
-| 1621 | river | Valea Mușeteica | Argeș | Râul Buda | touches Râul Buda at mouth only (14% near) |
-| 1622 | river | Valea Mânării | Alba | Raul Mic | touches Raul Mic at mouth only (33% near) |
-| 1623 | river | Valea Mâzgavul | Vâlcea | Râul Topologul superior | touches Râul Topologul superior at mouth only (17% near) |
-| 1624 | river | Valea Mănăstirii | Dolj | Râul Amaradia | touches Râul Amaradia at mouth only (0% near) |
-| 1625 | river | Valea Mărului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
-| 1626 | river | Valea Mărului | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (5% near) |
-| 1627 | river | Valea Nimăieștilor | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (20% near) |
-| 1628 | river | Valea Noghieiului | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
-| 1629 | river | Valea Nucetului | Dâmbovița | Râul Ialomița superioară | touches Râul Ialomița superioară at mouth only (17% near) |
-| 1630 | river | Valea Obielei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
-| 1631 | river | Valea Ortelecului | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (10% near) |
-| 1632 | river | Valea Orății | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
-| 1633 | river | Valea Pacăului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (33% near) |
-| 1634 | river | Valea Padeșului | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (17% near) |
-| 1635 | river | Valea Paltinului | Sibiu | Pârâul Valea Strâmbii | touches Pârâul Valea Strâmbii at mouth only (33% near) |
-| 1636 | river | Valea Paltinului | Sibiu | Pârâul Valea Rîndiboului | touches Pârâul Valea Rîndiboului at mouth only (33% near) |
-| 1637 | river | Valea Pietrelor | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (14% near) |
-| 1638 | river | Valea Pietricelelor | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (33% near) |
-| 1639 | river | Valea Pietrii | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (33% near) |
-| 1640 | river | Valea Pleșcuței | Cluj | Valea Lonei | touches Valea Lonei at mouth only (25% near) |
-| 1641 | river | Valea Poienii | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (25% near) |
-| 1642 | river | Valea Poienii | Bihor | Drăgan | touches Drăgan at mouth only (25% near) |
-| 1643 | river | Valea Popii | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (25% near) |
-| 1644 | river | Valea Priborului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (25% near) |
-| 1645 | river | Valea Prihodistei | Alba | Raul Mic | touches Raul Mic at mouth only (33% near) |
-| 1646 | river | Valea Prisacina | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (17% near) |
-| 1647 | river | Valea Puturoasa | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 1648 | river | Valea Păltinişului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
-| 1649 | river | Valea Păltinişului | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
-| 1650 | river | Valea Pănăzii | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (25% near) |
-| 1651 | river | Valea Părușului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (33% near) |
-| 1652 | river | Valea Păstăilor | Maramureș | Râul Iza | touches Râul Iza at mouth only (11% near) |
-| 1653 | river | Valea Racilor | Cluj | Râul Arieș | touches Râul Arieș at mouth only (3% near) |
-| 1654 | river | Valea Rea | Satu Mare | Râul Tur | touches Râul Tur at mouth only (5% near) |
-| 1655 | river | Valea Rea | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
-| 1656 | river | Valea Rea | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
-| 1657 | river | Valea Rea | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (6% near) |
-| 1658 | river | Valea Reaua Mare | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (11% near) |
-| 1659 | river | Valea Reaua Mică | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (20% near) |
-| 1660 | river | Valea Rogoazei | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (33% near) |
-| 1661 | river | Valea Runcului | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (14% near) |
-| 1662 | river | Valea Rusului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (25% near) |
-| 1663 | river | Valea Râtului | Alba | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
-| 1664 | river | Valea Râșnoavei | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (11% near) |
-| 1665 | river | Valea Răchițelii | Hunedoara | Râul Govăjdia | touches Râul Govăjdia at mouth only (25% near) |
-| 1666 | river | Valea Satului | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (33% near) |
-| 1667 | river | Valea Satului | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (33% near) |
-| 1668 | river | Valea Satului | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (33% near) |
-| 1669 | river | Valea Satului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (17% near) |
-| 1670 | river | Valea Satului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (6% near) |
-| 1671 | river | Valea Satului | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
-| 1672 | river | Valea Satului | Bistrița-Năsăud | Râul Rebra | touches Râul Rebra at mouth only (11% near) |
-| 1673 | river | Valea Seacă | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (17% near) |
-| 1674 | river | Valea Seacă | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (17% near) |
-| 1675 | river | Valea Seacă | Suceava | Râul Moldova | touches Râul Moldova at mouth only (25% near) |
-| 1676 | river | Valea Seacă | Alba | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
-| 1677 | river | Valea Sigmirului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (10% near) |
-| 1678 | river | Valea Stanciului | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (17% near) |
-| 1679 | river | Valea Stanciului | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (17% near) |
-| 1680 | river | Valea Sterminoasă | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (17% near) |
-| 1681 | river | Valea Streicicea | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (17% near) |
-| 1682 | river | Valea Sturu | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (17% near) |
-| 1683 | river | Valea Sturu | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (17% near) |
-| 1684 | river | Valea Stâlpului | Timiș | Râul Bega superior - Luncani | touches Râul Bega superior - Luncani at mouth only (17% near) |
-| 1685 | river | Valea Stânei | Prahova | Râul Telejenel | touches Râul Telejenel at mouth only (12% near) |
-| 1686 | river | Valea Sândulești | Cluj | Râul Arieș | touches Râul Arieș at mouth only (14% near) |
-| 1687 | river | Valea Săbii | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (10% near) |
-| 1688 | river | Valea Sării | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (6% near) |
-| 1689 | river | Valea Sărății | Cluj | Valea Lonei | touches Valea Lonei at mouth only (9% near) |
-| 1690 | river | Valea Teiului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
-| 1691 | river | Valea Teleleu | Vâlcea | Valea Curpenului | touches Valea Curpenului at mouth only (25% near) |
-| 1692 | river | Valea Tigăi | Brașov | Râul Comana | touches Râul Comana at mouth only (25% near) |
-| 1693 | river | Valea Titișorului | Bihor | Râul Leuca | touches Râul Leuca at mouth only (33% near) |
-| 1694 | river | Valea Tufa | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
-| 1695 | river | Valea Turcului | Prahova | Valea Azugii | touches Valea Azugii at mouth only (25% near) |
-| 1696 | river | Valea Turnul | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (8% near) |
-| 1697 | river | Valea Tăcășelelor | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (5% near) |
-| 1698 | river | Valea Tărpiu | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (17% near) |
-| 1699 | river | Valea Unghia Mare | Prahova | Valea Azugii | touches Valea Azugii at mouth only (25% near) |
-| 1700 | river | Valea Untului | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (17% near) |
-| 1701 | river | Valea Urlieșu | Sibiu | Râul Sebeș | touches Râul Sebeș at mouth only (20% near) |
-| 1702 | river | Valea Ursului | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (12% near) |
-| 1703 | river | Valea Viilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 1704 | river | Valea Viilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
-| 1705 | river | Valea Vinului | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (17% near) |
-| 1706 | river | Valea Vinului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
-| 1707 | river | Valea Voievodeni | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
-| 1708 | river | Valea Vultureasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
-| 1709 | river | Valea Văiosu | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
-| 1710 | river | Valea Văiosu | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
-| 1711 | river | Valea Zamora | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
-| 1712 | river | Valea Zgarburei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
-| 1713 | river | Valea Zorilor | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (9% near) |
-| 1714 | river | Valea Zălanului | Covasna | Râul Aita | touches Râul Aita at mouth only (6% near) |
-| 1715 | river | Valea Șaeșului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (7% near) |
-| 1716 | river | Valea Șarpelui | Dolj | Râul Amaradia | touches Râul Amaradia at mouth only (20% near) |
-| 1717 | river | Valea Șipa | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
-| 1718 | river | Valea Țigăilor | Brașov | Râul Doftana Gârcin | touches Râul Doftana Gârcin at mouth only (25% near) |
-| 1719 | river | Varnița | Botoșani | Râul Miletin | touches Râul Miletin at mouth only (14% near) |
-| 1720 | river | Vaserul | Maramureș | Marele Novat | touches Marele Novat at mouth only (3% near) |
-| 1721 | river | Vaserul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (3% near) |
-| 1722 | river | Vasilatu | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (6% near) |
-| 1723 | river | Vaslui | Iași | Râul Vasluieț | touches Râul Vasluieț at mouth only (3% near) |
-| 1724 | river | Vetea Mare | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (33% near) |
-| 1725 | river | Veza | Alba | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
-| 1726 | river | Viemeșu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (20% near) |
-| 1727 | river | Vilia | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (2% near) |
-| 1728 | river | Vinești | Arad | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
-| 1729 | river | Vinul | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
-| 1730 | river | Vinț | Alba | Râul Mureș | touches Râul Mureș at mouth only (25% near) |
-| 1731 | river | Vitroape | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
-| 1732 | river | Vizăuți | Vrancea | Râul Putna | touches Râul Putna at mouth only (5% near) |
-| 1733 | river | Vișa | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (6% near) |
-| 1734 | river | Vișag | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
-| 1735 | river | Vișag | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
-| 1736 | river | Viștișoara | Brașov | Valea Viștea Mare | touches Valea Viștea Mare at mouth only (33% near) |
-| 1737 | river | Vlășinescu | Maramureș | Râul Runcu | touches Râul Runcu at mouth only (33% near) |
-| 1738 | river | Voineasa Mică | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
-| 1739 | river | Voineasa Mică | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
-| 1740 | river | Voineșița | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (7% near) |
-| 1741 | river | Voineșița | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (7% near) |
-| 1742 | river | Voiniceni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
-| 1743 | river | Voitinel | Suceava | Râul Suceava | touches Râul Suceava at mouth only (8% near) |
-| 1744 | river | Voroneț | Suceava | Râul Moldova | touches Râul Moldova at mouth only (20% near) |
-| 1745 | river | Vulcănița | Brașov | Râul Homorod | touches Râul Homorod at mouth only (0% near) |
-| 1746 | river | Vulcănița | Brașov | Valea Homorod | touches Valea Homorod at mouth only (0% near) |
-| 1747 | river | Vâna | Timiș | Pârâul Șurgani | touches Pârâul Șurgani at mouth only (5% near) |
-| 1748 | river | Văleanca | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (4% near) |
-| 1749 | river | Văleni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
-| 1750 | river | Vălerița | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (17% near) |
-| 1751 | river | Văratec | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (5% near) |
-| 1752 | river | Văratica | Vâlcea | Râul Olt | touches Râul Olt at mouth only (8% near) |
-| 1753 | river | Văratica | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
-| 1754 | river | Vărbila | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (10% near) |
-| 1755 | river | Vărmaga | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
-| 1756 | river | Văsălatu | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (33% near) |
-| 1757 | river | Vătafu | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (10% near) |
-| 1758 | river | Vătafu | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (10% near) |
-| 1759 | river | Zagon | Covasna | Râul Covasna | touches Râul Covasna at mouth only (11% near) |
-| 1760 | river | Zeletin | Prahova | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (11% near) |
-| 1761 | river | Zizin | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (5% near) |
-| 1762 | river | Zlagna | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (7% near) |
-| 1763 | river | Zlata | Hunedoara | Râul Mare inferior II  | touches Râul Mare inferior II  at mouth only (25% near) |
-| 1764 | river | Zlata | Hunedoara | Râul Mare Superior | touches Râul Mare Superior at mouth only (25% near) |
-| 1765 | river | Zlaști | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (3% near) |
-| 1766 | river | Zmeul | Iași | Râul Siret | touches Râul Siret at mouth only (33% near) |
-| 1767 | river | Zârna | Cluj | Valea Drăganului | touches Valea Drăganului at mouth only (20% near) |
-| 1768 | river | Zârna | Cluj | Drăgan | touches Drăgan at mouth only (20% near) |
-| 1769 | river | Zăbrăuți | Vrancea | Râul Siret | touches Râul Siret at mouth only (6% near) |
-| 1770 | river | Zăbrăuți | Vrancea | Râul Siret | touches Râul Siret at mouth only (6% near) |
-| 1771 | river | Zăpodie | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
-| 1772 | river | Între Hotare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
-| 1773 | river | Între Hotare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
-| 1774 | river | Șanțul | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
-| 1775 | river | Șapartoc | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
-| 1776 | river | Șcheiul | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
-| 1777 | river | Șerbăneasa | Vâlcea | Râul Topolog  | touches Râul Topolog  at mouth only (25% near) |
-| 1778 | river | Șimișna | Cluj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (0% near) |
-| 1779 | river | Șinca | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (3% near) |
-| 1780 | river | Șinca | Brașov | Râul Strâmba | touches Râul Strâmba at mouth only (6% near) |
-| 1781 | river | Șincai | Mureș | Pârâul Lechința | touches Pârâul Lechința at mouth only (33% near) |
-| 1782 | river | Șipoș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
-| 1783 | river | Șmig | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
-| 1784 | river | Șoarecul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
-| 1785 | river | Șomtelec | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (5% near) |
-| 1786 | river | Șoptana | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (25% near) |
-| 1787 | river | Șoptana | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (25% near) |
-| 1788 | river | Șoptana | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (25% near) |
-| 1789 | river | Știuca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
-| 1790 | river | Șuculețu | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
-| 1791 | river | Șugău | Maramureș | Râul Iza | touches Râul Iza at mouth only (12% near) |
-| 1792 | river | Țapu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (33% near) |
-| 1793 | river | Țepeșeni | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (33% near) |
-| 1794 | river | Țerova | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (10% near) |
-| 1795 | river | Țiganul | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (33% near) |
-| 1796 | river | Țigănești | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (25% near) |
-| 1797 | river | Țăsna | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (30% near) |
-| 1798 | river | Апшиця | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (3% near) |
-| 1799 | river | Косівська | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (3% near) |
-| 1800 | river | Лаура | Suceava | Valea Putnei | touches Valea Putnei at mouth only (11% near) |
-| 1801 | river | Тиса - Tisa | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
-| 1802 | river | Шопурка | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (11% near) |
+| 352 | river | Bedeu | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (14% near) |
+| 353 | river | Bedina | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (25% near) |
+| 354 | river | Belareca | Caraș-Severin | Râul Cerna inferioară | touches Râul Cerna inferioară at mouth only (3% near) |
+| 355 | river | Belareca | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (3% near) |
+| 356 | river | Belchin | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (3% near) |
+| 357 | river | Belchin | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (3% near) |
+| 358 | river | Belcina | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (4% near) |
+| 359 | river | Belcina | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (4% near) |
+| 360 | river | Belinul Mare | Covasna | Râul Olt | touches Râul Olt at mouth only (10% near) |
+| 361 | river | Belinul Mare | Covasna | Râul Olt | touches Râul Olt at mouth only (10% near) |
+| 362 | river | Belinul Mare | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
+| 363 | river | Beregsău | Timiș | Pârâul Bega Veche | touches Pârâul Bega Veche at mouth only (2% near) |
+| 364 | river | Beregsău | Timiș | Pârâul Măgheruș | touches Pârâul Măgheruș at mouth only (2% near) |
+| 365 | river | Beregsău | Timiș | Pârâul Lacului | touches Pârâul Lacului at mouth only (0% near) |
+| 366 | river | Beregsău | Timiș | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (2% near) |
+| 367 | river | Berettyó | Bihor | Râul Barcău | touches Râul Barcău at mouth only (3% near) |
+| 368 | river | Berettyó | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (3% near) |
+| 369 | river | Berettyó | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (3% near) |
+| 370 | river | Berzovița | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
+| 371 | river | Betel | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
+| 372 | river | Betel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 373 | river | Bichigiu | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (6% near) |
+| 374 | river | Biertan | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (8% near) |
+| 375 | river | Bila | Bistrița-Năsăud | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (20% near) |
+| 376 | river | Birda | Timiș | Pârâul Lunca Birda | touches Pârâul Lunca Birda at mouth only (22% near) |
+| 377 | river | Blandiana | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 378 | river | Bob | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (33% near) |
+| 379 | river | Boboroaia Mare | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
+| 380 | river | Bobu | Olt | Râul Olteț | touches Râul Olteț at mouth only (9% near) |
+| 381 | river | Bobu | Olt | Râul Olteț | touches Râul Olteț at mouth only (9% near) |
+| 382 | river | Bocicoel | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (4% near) |
+| 383 | river | Boholt | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (14% near) |
+| 384 | river | Boiu | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
+| 385 | river | Boișoara | Vâlcea | Râul Boia | touches Râul Boia at mouth only (11% near) |
+| 386 | river | Boju | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
+| 387 | river | Bolovan | Bistrița-Năsăud | Râul Budacul superior | touches Râul Budacul superior at mouth only (17% near) |
+| 388 | river | Bolovan | Bistrița-Năsăud | Râul Budacul inferior | touches Râul Budacul inferior at mouth only (17% near) |
+| 389 | river | Bolovan | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (14% near) |
+| 390 | river | Bolătău | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (7% near) |
+| 391 | river | Borcut | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (4% near) |
+| 392 | river | Borzia | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (20% near) |
+| 393 | river | Borzogheanu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
+| 394 | river | Borzont | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
+| 395 | river | Borzont | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (5% near) |
+| 396 | river | Borzontul Mic | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (12% near) |
+| 397 | river | Borșa | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (2% near) |
+| 398 | river | Bosnyák-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
+| 399 | river | Boul | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (7% near) |
+| 400 | river | Boz | Alba | Râul Secaș | touches Râul Secaș at mouth only (33% near) |
+| 401 | river | Boz | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (6% near) |
+| 402 | river | Bozom | Brașov | Râul Olt | touches Râul Olt at mouth only (17% near) |
+| 403 | river | Bozom | Brașov | Râul Olt | touches Râul Olt at mouth only (17% near) |
+| 404 | river | Bozom | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 405 | river | Bozu | Vrancea | Râul Putna | touches Râul Putna at mouth only (25% near) |
+| 406 | river | Bradul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (8% near) |
+| 407 | river | Brateș | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (8% near) |
+| 408 | river | Bratoșa | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 409 | river | Bratoșa | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 410 | river | Brațul Borcea (Dunărea) | Călărași | Raul Ialomița | touches Raul Ialomița at mouth only (0% near) |
+| 411 | river | Breaza | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (33% near) |
+| 412 | river | Brescioara | Brașov | Valea Pojorâtei | touches Valea Pojorâtei at mouth only (14% near) |
+| 413 | river | Bretea | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (25% near) |
+| 414 | river | Brețcu | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
+| 415 | river | Briglez | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (2% near) |
+| 416 | river | Brâncoveanca | Dolj | Râul Teslui | touches Râul Teslui at mouth only (10% near) |
+| 417 | river | Brâtioara | Argeș | Râul Bratia | touches Râul Bratia at mouth only (33% near) |
+| 418 | river | Brădești | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (5% near) |
+| 419 | river | Brăteasca | Neamț | Râul Siret | touches Râul Siret at mouth only (7% near) |
+| 420 | river | Bucurusul Mare | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
+| 421 | river | Budacu | Neamț | Râul Borca | touches Râul Borca at mouth only (33% near) |
+| 422 | river | Budescu | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
+| 423 | river | Budulău | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
+| 424 | river | Buduș | Bistrița-Năsăud | Râul Budacul inferior | touches Râul Budacul inferior at mouth only (11% near) |
+| 425 | river | Budușel | Bistrița-Năsăud | Râul Bordușelu | touches Râul Bordușelu at mouth only (33% near) |
+| 426 | river | Buhai | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (9% near) |
+| 427 | river | Bulz | Bihor | Râul Crişul Pietros | touches Râul Crişul Pietros at mouth only (20% near) |
+| 428 | river | Bunești | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (3% near) |
+| 429 | river | Buzat | Dolj | Râul Desnățui | touches Râul Desnățui at mouth only (3% near) |
+| 430 | river | Buzd | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
+| 431 | river | Buzăiel | Brașov | Râul Buzău | touches Râul Buzău at mouth only (8% near) |
+| 432 | river | Bánkó vőgye | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 433 | river | Bâlta | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (10% near) |
+| 434 | river | Bâlta | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (10% near) |
+| 435 | river | Bârgău | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (6% near) |
+| 436 | river | Bârnat | Bacău | Râul Bistrița | touches Râul Bistrița at mouth only (25% near) |
+| 437 | river | Bârsa Fierului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (7% near) |
+| 438 | river | Bârsa Groșetului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (8% near) |
+| 439 | river | Bârsa lui Bucur | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (8% near) |
+| 440 | river | Bârsa Tămașului | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (33% near) |
+| 441 | river | Bârza | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (25% near) |
+| 442 | river | Bârzăvița | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (20% near) |
+| 443 | river | Bâsca Chiojd | Buzău | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (6% near) |
+| 444 | river | Bîlea | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (10% near) |
+| 445 | river | Băbiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (4% near) |
+| 446 | river | Băcișoara | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
+| 447 | river | Băiaș | Vâlcea | Râul Olt | touches Râul Olt at mouth only (5% near) |
+| 448 | river | Băiaș | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
+| 449 | river | Bălan | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (7% near) |
+| 450 | river | Băldal | Dolj | Râul Desnățui | touches Râul Desnățui at mouth only (3% near) |
+| 451 | river | Bălăcășanca | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (6% near) |
+| 452 | river | Bălăneasa | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (4% near) |
+| 453 | river | Bălăneasa | Buzău | Râul Buzău | touches Râul Buzău at mouth only (4% near) |
+| 454 | river | Bătrâna | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (6% near) |
+| 455 | river | Bătrâna | Bihor | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (10% near) |
+| 456 | river | Bățanii | Covasna | Pârâu Baraolt inferior | touches Pârâu Baraolt inferior at mouth only (7% near) |
+| 457 | river | Bățanii | Covasna | Râul Baraolt superior | touches Râul Baraolt superior at mouth only (7% near) |
+| 458 | river | Calnic | Covasna | Râul Olt | touches Râul Olt at mouth only (8% near) |
+| 459 | river | Calnic | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 460 | river | Calu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 461 | river | Camenca | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (7% near) |
+| 462 | river | Canal Moară | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (3% near) |
+| 463 | river | Canalul Gurghiu | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 464 | river | Canalul Gurghiu | Mureș | Râul Gurghiul inferior | touches Râul Gurghiul inferior at mouth only (20% near) |
+| 465 | river | Canalul Gurghiu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (20% near) |
+| 466 | river | Canalul Găvojdia | Timiș | Râul Timiș | touches Râul Timiș at mouth only (9% near) |
+| 467 | river | Canalul Morii | Mureș | Râul Mureș | touches Râul Mureș at mouth only (27% near) |
+| 468 | river | Capolnaș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 469 | river | Caraș | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (3% near) |
+| 470 | river | Carbunele | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (11% near) |
+| 471 | river | Carecna | Vrancea | Râul Siret | touches Râul Siret at mouth only (10% near) |
+| 472 | river | Carecna | Vrancea | Râul Siret | touches Râul Siret at mouth only (10% near) |
+| 473 | river | Carpen | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (20% near) |
+| 474 | river | Carpenul | Harghita | Râul Cașin | touches Râul Cașin at mouth only (20% near) |
+| 475 | river | Cartiu | Gorj | Râul Jiu  | touches Râul Jiu  at mouth only (9% near) |
+| 476 | river | Cazacul | Prahova | Valea Azugii | touches Valea Azugii at mouth only (20% near) |
+| 477 | river | Cașva | Mureș | Râul Gurghiul inferior | touches Râul Gurghiul inferior at mouth only (7% near) |
+| 478 | river | Cașva | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (7% near) |
+| 479 | river | Cercănelul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (20% near) |
+| 480 | river | Cernatu | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (14% near) |
+| 481 | river | Cernatul | Buzău | Râul Bâsca Mare | touches Râul Bâsca Mare at mouth only (33% near) |
+| 482 | river | Certej | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (12% near) |
+| 483 | river | Cetățuia | Dolj | Râul Desnățui | touches Râul Desnățui at mouth only (6% near) |
+| 484 | river | Ched | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 485 | river | Cheița | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (17% near) |
+| 486 | river | Chiriș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (5% near) |
+| 487 | river | Chiua | Vrancea | Râul Șușița | touches Râul Șușița at mouth only (25% near) |
+| 488 | river | Chiștelec | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
+| 489 | river | Cigher | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (3% near) |
+| 490 | river | Cigher | Arad | Canalul Morilor | touches Canalul Morilor at mouth only (5% near) |
+| 491 | river | Cinca | Timiș | Pârâul Timișana | touches Pârâul Timișana at mouth only (25% near) |
+| 492 | river | Cincu | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 493 | river | Cioara | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
+| 494 | river | Cioara | Alba | Râul Arieș | touches Râul Arieș at mouth only (20% near) |
+| 495 | river | Ciorogârla | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (2% near) |
+| 496 | river | Ciorogârla | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (2% near) |
+| 497 | river | Ciorogârla | Ilfov | Râul Sabar | touches Râul Sabar at mouth only (0% near) |
+| 498 | river | Ciortuș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (3% near) |
+| 499 | river | Ciucani | Harghita | Râul Fișag | touches Râul Fișag at mouth only (20% near) |
+| 500 | river | Ciugud | Alba | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
+| 501 | river | Ciunga | Alba | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
+| 502 | river | Ciutești (Sasca) | Vâlcea | Râul Topolog  | touches Râul Topolog  at mouth only (33% near) |
+| 503 | river | Cliț | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
+| 504 | river | Cobășel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 505 | river | Cojocul | Neamț | Râul Iapa | touches Râul Iapa at mouth only (20% near) |
+| 506 | river | Colții lui Andrei Mari | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (25% near) |
+| 507 | river | Coman | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (25% near) |
+| 508 | river | Conop | Arad | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
+| 509 | river | Corbul Ucii | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
+| 510 | river | Corbul Viștei | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 511 | river | Corlățeni | Suceava | Râul Moldova | touches Râul Moldova at mouth only (17% near) |
+| 512 | river | Cormeniș | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
+| 513 | river | Cornul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 514 | river | Corund | Harghita | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (8% near) |
+| 515 | river | Costești | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (5% near) |
+| 516 | river | Cotuș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
+| 517 | river | Cozmău | Bihor | Râul Barcău | touches Râul Barcău at mouth only (4% near) |
+| 518 | river | Cozmău | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (4% near) |
+| 519 | river | Coșuștea | Mehedinți | Râul Motru  | touches Râul Motru  at mouth only (2% near) |
+| 520 | river | Coțatcul | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (5% near) |
+| 521 | river | Cracăul Alb | Neamț | Râul Izvoarele Cracăului | touches Râul Izvoarele Cracăului at mouth only (27% near) |
+| 522 | river | Crainic | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (12% near) |
+| 523 | river | Crainici | Mehedinți | Râul Motru  | touches Râul Motru  at mouth only (9% near) |
+| 524 | river | Cremeneț | Vrancea | Râul Șușița | touches Râul Șușița at mouth only (14% near) |
+| 525 | river | Crevedia | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (4% near) |
+| 526 | river | Crevedia | Dâmbovița | Râul Colentina | touches Râul Colentina at mouth only (4% near) |
+| 527 | river | Cristianu Mic | Vrancea | Râul Tișița | touches Râul Tișița at mouth only (33% near) |
+| 528 | river | Cristișor | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (17% near) |
+| 529 | river | Crivaia Mare | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
+| 530 | river | Crizbav | Brașov | Râul Olt | touches Râul Olt at mouth only (4% near) |
+| 531 | river | Crizbav | Brașov | Râul Olt | touches Râul Olt at mouth only (4% near) |
+| 532 | river | Crizbav | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 533 | river | Crișul Băiței | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (6% near) |
+| 534 | river | Crișul Băiței | Bihor | Valea Sighiștelului | touches Valea Sighiștelului at mouth only (0% near) |
+| 535 | river | Crișul Băiței | Bihor | Râul Crișul Băița | touches Râul Crișul Băița at mouth only (6% near) |
+| 536 | river | Crucea | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (17% near) |
+| 537 | river | Crăiasa | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (8% near) |
+| 538 | river | Cuca | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (11% near) |
+| 539 | river | Cuca | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (14% near) |
+| 540 | river | Cucuieți | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (14% near) |
+| 541 | river | Cucureasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (10% near) |
+| 542 | river | Cuejdiu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (3% near) |
+| 543 | river | Cuieșd | Mureș | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
+| 544 | river | Cungrea Mică | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 545 | river | Cupaș | Harghita | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (17% near) |
+| 546 | river | Curciu | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (8% near) |
+| 547 | river | Cvașnița | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
+| 548 | river | Câlnău | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (2% near) |
+| 549 | river | Câlnău | Buzău | Râul Buzău | touches Râul Buzău at mouth only (2% near) |
+| 550 | river | Câmpinița | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
+| 551 | river | Cârcinov | Argeș | Râul Argeș | touches Râul Argeș at mouth only (5% near) |
+| 552 | river | Cârja | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (17% near) |
+| 553 | river | Cârțibavul Mare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 554 | river | Cârțișoara | Sibiu | Râul Olt | touches Râul Olt at mouth only (7% near) |
+| 555 | river | Cârțișoara | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 556 | river | Cârțișoara | Sibiu | Râul Laita | touches Râul Laita at mouth only (14% near) |
+| 557 | river | Căciulata | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 558 | river | Călmățuiul Sec | Olt | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
+| 559 | river | Cănele | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
+| 560 | river | Căprioara | Arad | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
+| 561 | river | Căpriorul | Hunedoara | Valea Polatiște | touches Valea Polatiște at mouth only (25% near) |
+| 562 | river | Cărbunele Negru | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (5% near) |
+| 563 | river | Cărpănoasa | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (25% near) |
+| 564 | river | Cătina | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (8% near) |
+| 565 | river | Danube | Tulcea | Japșa Veriga | touches Japșa Veriga at mouth only (0% near) |
+| 566 | river | Danube | Tulcea | Râul Argeș | touches Râul Argeș at mouth only (0% near) |
+| 567 | river | Danube | Tulcea | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (0% near) |
+| 568 | river | Danube | Tulcea | Râul Drincea | touches Râul Drincea at mouth only (0% near) |
+| 569 | river | Danube | Tulcea | Râul Jieț | touches Râul Jieț at mouth only (0% near) |
+| 570 | river | Danube | Tulcea | Râul Siret | touches Râul Siret at mouth only (0% near) |
+| 571 | river | Danube | Tulcea | Râul Prut | touches Râul Prut at mouth only (0% near) |
+| 572 | river | Danube | Tulcea | Râul Comasca | touches Râul Comasca at mouth only (0% near) |
+| 573 | river | Danube | Tulcea | Râul Olt | touches Râul Olt at mouth only (0% near) |
+| 574 | river | Danube | Tulcea | Râul Timiș | touches Râul Timiș at mouth only (0% near) |
+| 575 | river | Danube | Tulcea | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
+| 576 | river | Danube | Tulcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (0% near) |
+| 577 | river | Danube | Tulcea | Râul Jiu  | touches Râul Jiu  at mouth only (0% near) |
+| 578 | river | Danube | Tulcea | Râul Șirinia | touches Râul Șirinia at mouth only (0% near) |
+| 579 | river | Danube | Tulcea | Râul Berzasca | touches Râul Berzasca at mouth only (0% near) |
+| 580 | river | Danube | Teleorman | Râul Olt | touches Râul Olt at mouth only (25% near) |
+| 581 | river | Danube | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 582 | river | Debren | Covasna | Râul Olt | touches Râul Olt at mouth only (9% near) |
+| 583 | river | Debren | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
+| 584 | river | Deia | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
+| 585 | river | Deia | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (8% near) |
+| 586 | river | Deleni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
+| 587 | river | Dipșa | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (3% near) |
+| 588 | river | Diviciorii Mari | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (7% near) |
+| 589 | river | Doamna | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
+| 590 | river | Dobricel | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (9% near) |
+| 591 | river | Dobru | Bacău | Râul Slănic Moldova | touches Râul Slănic Moldova at mouth only (12% near) |
+| 592 | river | Dobruș | Cluj | Valea Răcătăului | touches Valea Răcătăului at mouth only (14% near) |
+| 593 | river | Dobârlău | Covasna | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (5% near) |
+| 594 | river | Doftana | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
+| 595 | river | Doftenița | Bacău | Râul Dofteana | touches Râul Dofteana at mouth only (10% near) |
+| 596 | river | Dolu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (25% near) |
+| 597 | river | Domald | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
+| 598 | river | Domald | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
+| 599 | river | Doman | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (12% near) |
+| 600 | river | Domoșița | Vrancea | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
+| 601 | river | Donca | Mureș | Râul Bistra | touches Râul Bistra at mouth only (25% near) |
+| 602 | river | Dragovata | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
+| 603 | river | Dragoș | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
+| 604 | river | Dragoșa | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (17% near) |
+| 605 | river | Dragu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (3% near) |
+| 606 | river | Drahmirov | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
+| 607 | river | Drajna | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (7% near) |
+| 608 | river | Dresleuca | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (4% near) |
+| 609 | river | Drâslea | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (7% near) |
+| 610 | river | Drăghiciul | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (10% near) |
+| 611 | river | Drăghina | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (14% near) |
+| 612 | river | Drăguiasa | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (2% near) |
+| 613 | river | Dubul | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (25% near) |
+| 614 | river | Ducna | Teleorman | Râul Călmățui | touches Râul Călmățui at mouth only (4% near) |
+| 615 | river | Dumbrava | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (20% near) |
+| 616 | river | Dumitreasa | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (9% near) |
+| 617 | river | Dunărea | Dolj | Râul Drincea | touches Râul Drincea at mouth only (2% near) |
+| 618 | river | Dunărea | Teleorman | Râul Argeș | touches Râul Argeș at mouth only (0% near) |
+| 619 | river | Dunărea | Teleorman | Râul Comasca | touches Râul Comasca at mouth only (0% near) |
+| 620 | river | Dunărea | Teleorman | Râul Olt | touches Râul Olt at mouth only (0% near) |
+| 621 | river | Dunărea | Teleorman | Râul Călmățui | touches Râul Călmățui at mouth only (0% near) |
+| 622 | river | Dunărea | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (0% near) |
+| 623 | river | Dunărea | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (0% near) |
+| 624 | river | Dunărea | Dolj | Râul Jieț | touches Râul Jieț at mouth only (0% near) |
+| 625 | river | Dunărea | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (0% near) |
+| 626 | river | Dunărea | Teleorman | Râul Olt | touches Râul Olt at mouth only (25% near) |
+| 627 | river | Dunărea | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 628 | river | Dunărea | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (2% near) |
+| 629 | river | Dunărea | Caraș-Severin | Râul Șirinia | touches Râul Șirinia at mouth only (0% near) |
+| 630 | river | Dunărea | Caraș-Severin | Râul Berzasca | touches Râul Berzasca at mouth only (0% near) |
+| 631 | river | Dunărea (Brațul Sulina) | Brăila | Japșa Veriga | touches Japșa Veriga at mouth only (0% near) |
+| 632 | river | Dunărea (Brațul Sulina) | Brăila | Râul Siret | touches Râul Siret at mouth only (0% near) |
+| 633 | river | Dunărea (Brațul Sulina) | Brăila | Râul Prut | touches Râul Prut at mouth only (2% near) |
+| 634 | river | Dunărea (Brațul Sulina) | Tulcea | Râul Prut | touches Râul Prut at mouth only (20% near) |
+| 635 | river | Dunărea (Brațul Sulina) | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (0% near) |
+| 636 | river | Dâmbovnic | Giurgiu | Râul Neajlov | touches Râul Neajlov at mouth only (6% near) |
+| 637 | river | Dâmbul | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (2% near) |
+| 638 | river | Dălghiu | Brașov | Râul Buzău | touches Râul Buzău at mouth only (7% near) |
+| 639 | river | Dămuc | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (4% near) |
+| 640 | river | Dăneasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (12% near) |
+| 641 | river | Eghersec | Harghita | Râul Uzul | touches Râul Uzul at mouth only (17% near) |
+| 642 | river | Eliseni | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
+| 643 | river | Ercea | Mureș | Pârâul Sar | touches Pârâul Sar at mouth only (33% near) |
+| 644 | river | Estelnic | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
+| 645 | river | Fagul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (25% near) |
+| 646 | river | Falcău | Suceava | Râul Brodina | touches Râul Brodina at mouth only (33% near) |
+| 647 | river | Feernic | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (3% near) |
+| 648 | river | Fehér-Körös | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (25% near) |
+| 649 | river | Fehér-Körös | Arad | Râul Crișul Alb, cu afluenții | touches Râul Crișul Alb, cu afluenții at mouth only (17% near) |
+| 650 | river | Fehér-Körös | Arad | Râul Zimbru | touches Râul Zimbru at mouth only (0% near) |
+| 651 | river | Fehér-Körös | Arad | Canalul Morilor | touches Canalul Morilor at mouth only (2% near) |
+| 652 | river | Fehéres-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
+| 653 | river | Feiurdeni | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
+| 654 | river | Feldrișel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
+| 655 | river | Feldrișel | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
+| 656 | river | Felmer | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 657 | river | Fiad | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (7% near) |
+| 658 | river | Fiadțel | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (8% near) |
+| 659 | river | Filipea | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (14% near) |
+| 660 | river | Finiș | Bihor | Râul Vl. Finiş (Finişului) | touches Râul Vl. Finiş (Finişului) at mouth only (33% near) |
+| 661 | river | Fitod | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 662 | river | Fleț | Mureș | Pârâul Lut | touches Pârâul Lut at mouth only (6% near) |
+| 663 | river | Floarea | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (25% near) |
+| 664 | river | Florei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
+| 665 | river | Fotoș | Covasna | Râul Olt | touches Râul Olt at mouth only (8% near) |
+| 666 | river | Fotoș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 667 | river | Francul | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (33% near) |
+| 668 | river | Francul | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (33% near) |
+| 669 | river | Frasinul | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
+| 670 | river | Frumușaua | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (11% near) |
+| 671 | river | Frumușica | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (9% near) |
+| 672 | river | Frăsinet | Buzău | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (11% near) |
+| 673 | river | Furul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (17% near) |
+| 674 | river | Fânațele | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
+| 675 | river | Fântâna lui Gal | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
+| 676 | river | Fânâna Rece | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (33% near) |
+| 677 | river | Făgetul Oltului | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 678 | river | Fărău | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
+| 679 | river | Gabru | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (25% near) |
+| 680 | river | Gacinoiul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 681 | river | Gagi | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
+| 682 | river | Galbena | Hunedoara | Râul Mare inferior II  | touches Râul Mare inferior II  at mouth only (6% near) |
+| 683 | river | Galbena | Hunedoara | Râul Mare Superior | touches Râul Mare Superior at mouth only (6% near) |
+| 684 | river | Galbena | Bihor | Râul Crişul Pietros | touches Râul Crişul Pietros at mouth only (14% near) |
+| 685 | river | Galda | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
+| 686 | river | Galeșu | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (25% near) |
+| 687 | river | Galu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 688 | river | Garán-patak | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (14% near) |
+| 689 | river | Geru | Galați | Râul Siret | touches Râul Siret at mouth only (3% near) |
+| 690 | river | Geru | Galați | Râul Siret | touches Râul Siret at mouth only (3% near) |
+| 691 | river | Ghemeș | Bistrița-Năsăud | Pârâul Lechința | touches Pârâul Lechința at mouth only (10% near) |
+| 692 | river | Ghemeș | Bistrița-Năsăud | Pârâul Lechința (Comlod) | touches Pârâul Lechința (Comlod) at mouth only (10% near) |
+| 693 | river | Ghepes | Bihor | Râul Barcău | touches Râul Barcău at mouth only (5% near) |
+| 694 | river | Ghepes | Bihor | Valea Barcăului | touches Valea Barcăului at mouth only (5% near) |
+| 695 | river | Ghimbășel | Brașov | Râul Olt | touches Râul Olt at mouth only (2% near) |
+| 696 | river | Ghimbășel | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (2% near) |
+| 697 | river | Ghimbășel | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (5% near) |
+| 698 | river | Ghimbășel | Brașov | Râul Olt | touches Râul Olt at mouth only (2% near) |
+| 699 | river | Ghimbășel | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
+| 700 | river | Ghinda | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (33% near) |
+| 701 | river | Ghipeș | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (12% near) |
+| 702 | river | Gingineasa | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (20% near) |
+| 703 | river | Gingineasa | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (20% near) |
+| 704 | river | Gioroc (Valea Morilor) | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (6% near) |
+| 705 | river | Gioroc (Valea Morilor) | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (6% near) |
+| 706 | river | Giurcuța | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (11% near) |
+| 707 | river | Gladna | Timiș | Râul Bega | touches Râul Bega at mouth only (4% near) |
+| 708 | river | Glavița-Bega | Timiș | Râul Bega | touches Râul Bega at mouth only (33% near) |
+| 709 | river | Glavița-Bega | Timiș | Pârâul Glavița | touches Pârâul Glavița at mouth only (33% near) |
+| 710 | river | Glodeasa | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
+| 711 | river | Gologan | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 712 | river | Gorul | Vrancea | Râul Zăbala mijlocie | touches Râul Zăbala mijlocie at mouth only (20% near) |
+| 713 | river | Gorul | Vrancea | Râul Zăbala Superioară | touches Râul Zăbala Superioară at mouth only (20% near) |
+| 714 | river | Goșmanu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (20% near) |
+| 715 | river | Graben | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
+| 716 | river | Grid | Hunedoara | Valea Luncanilor | touches Valea Luncanilor at mouth only (20% near) |
+| 717 | river | Grindu | Alba | Râul Mureș | touches Râul Mureș at mouth only (6% near) |
+| 718 | river | Grințieșul Mare | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
+| 719 | river | Groapa | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
+| 720 | river | Groapa Seacă | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (33% near) |
+| 721 | river | Grohotișul | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (25% near) |
+| 722 | river | Grohotișul | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (0% near) |
+| 723 | river | Gropșoara | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (25% near) |
+| 724 | river | Grosul | Arad | Râul Mureș | touches Râul Mureș at mouth only (21% near) |
+| 725 | river | Gruiu | Ilfov | Râul Snagov | touches Râul Snagov at mouth only (12% near) |
+| 726 | river | Gubaș | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 727 | river | Guga | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (20% near) |
+| 728 | river | Guranda | Botoșani | Râul Jijia | touches Râul Jijia at mouth only (7% near) |
+| 729 | river | Gurasada | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (11% near) |
+| 730 | river | Gurgui | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (12% near) |
+| 731 | river | Gușatul Mare | Bistrița-Năsăud | Râul Rebra | touches Râul Rebra at mouth only (6% near) |
+| 732 | river | Gânțaga | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (9% near) |
+| 733 | river | Gârbova | Alba | Râul Secaș | touches Râul Secaș at mouth only (3% near) |
+| 734 | river | Gârbova | Alba | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
+| 735 | river | Gârbău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
+| 736 | river | Gârbăul Dejului | Cluj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (10% near) |
+| 737 | river | Gârcin | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (25% near) |
+| 738 | river | Gârliște | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (11% near) |
+| 739 | river | Gîrla Mică | Iași | Râul Prut | touches Râul Prut at mouth only (3% near) |
+| 740 | river | Gădălin | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (5% near) |
+| 741 | river | Găureni | Bistrița-Năsăud | Râul Țibleș | touches Râul Țibleș at mouth only (6% near) |
+| 742 | river | Găureni | Bistrița-Năsăud | Râul Țibleș | touches Râul Țibleș at mouth only (6% near) |
+| 743 | river | Hadoș | Harghita | Râul Cașin | touches Râul Cașin at mouth only (17% near) |
+| 744 | river | Haiducul | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (17% near) |
+| 745 | river | Haneș | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (29% near) |
+| 746 | river | Highieșee | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (33% near) |
+| 747 | river | Hobana | Galați | Râul Bârlad | touches Râul Bârlad at mouth only (11% near) |
+| 748 | river | Hodrângușa | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
+| 749 | river | Holló-patak | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
+| 750 | river | Hollók patak | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 751 | river | Homorodul Cârbunos | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (8% near) |
+| 752 | river | Homorodul Vechi | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (3% near) |
+| 753 | river | Homorodul Vechi | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (8% near) |
+| 754 | river | Horgász | Covasna | Râul Covasna | touches Râul Covasna at mouth only (10% near) |
+| 755 | river | Horincea | Galați | Râul Prut | touches Râul Prut at mouth only (17% near) |
+| 756 | river | Hosu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (5% near) |
+| 757 | river | Hotarul | Brașov | Râul Olt | touches Râul Olt at mouth only (7% near) |
+| 758 | river | Hotarul | Brașov | Râul Olt | touches Râul Olt at mouth only (7% near) |
+| 759 | river | Hotarul | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 760 | river | Hoteag | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (8% near) |
+| 761 | river | Hoteag | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
+| 762 | river | Husuer | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (9% near) |
+| 763 | river | Huza | Cluj | Valea Ierii Superioară | touches Valea Ierii Superioară at mouth only (33% near) |
+| 764 | river | Huza | Cluj | Valea Ierii Mijlocie | touches Valea Ierii Mijlocie at mouth only (33% near) |
+| 765 | river | Hâciogosul | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (25% near) |
+| 766 | river | Hăghig | Covasna | Râul Olt | touches Râul Olt at mouth only (9% near) |
+| 767 | river | Hăghig | Covasna | Râul Olt | touches Râul Olt at mouth only (9% near) |
+| 768 | river | Hăghig | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
+| 769 | river | Hălmaș | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (7% near) |
+| 770 | river | Hăpria | Alba | Râul Mureș | touches Râul Mureș at mouth only (0% near) |
+| 771 | river | Hășdate | Cluj | Râul Arieș | touches Râul Arieș at mouth only (3% near) |
+| 772 | river | Hășdățel | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (33% near) |
+| 773 | river | Hășmaș | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (10% near) |
+| 774 | river | Iad | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (23% near) |
+| 775 | river | Ialomicioara | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (7% near) |
+| 776 | river | Ieduțul | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
+| 777 | river | Ierța | Cluj | Valea Ierii Superioară | touches Valea Ierii Superioară at mouth only (33% near) |
+| 778 | river | Ierța | Cluj | Valea Ierii Mijlocie | touches Valea Ierii Mijlocie at mouth only (33% near) |
+| 779 | river | Ighiu | Alba | Râul Ampoi | touches Râul Ampoi at mouth only (6% near) |
+| 780 | river | Ilișoara | Mureș | Râul Ilva | touches Râul Ilva at mouth only (33% near) |
+| 781 | river | Imper | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 782 | river | Inuc | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (5% near) |
+| 783 | river | Iovanu | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (20% near) |
+| 784 | river | Irișoara | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (9% near) |
+| 785 | river | Irugă | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
+| 786 | river | Ismar | Giurgiu | Râul Câlniștea | touches Râul Câlniștea at mouth only (3% near) |
+| 787 | river | Iuhodul Cald | Mureș | Râul Iuhod | touches Râul Iuhod at mouth only (12% near) |
+| 788 | river | Ivancic | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
+| 789 | river | Ivăneasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (8% near) |
+| 790 | river | Izvoare | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (5% near) |
+| 791 | river | Izvodia | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (33% near) |
+| 792 | river | Izvorul Budislavului | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (33% near) |
+| 793 | river | Izvorul Caprei | Argeș | Râul Capra | touches Râul Capra at mouth only (11% near) |
+| 794 | river | Izvorul Curpănului | Vâlcea | Valea Curpenului | touches Valea Curpenului at mouth only (25% near) |
+| 795 | river | Izvorul Furului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
+| 796 | river | Izvorul Gugu | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
+| 797 | river | Izvorul Malului | Suceava | Râul Moldova | touches Râul Moldova at mouth only (10% near) |
+| 798 | river | Izvorul Morarului | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
+| 799 | river | Izvorul Scării | Vâlcea | Râul Topologul superior | touches Râul Topologul superior at mouth only (20% near) |
+| 800 | river | Izvorul Surului | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (33% near) |
+| 801 | river | Jdimir | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
+| 802 | river | Jdimir | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
+| 803 | river | Jebuc | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (17% near) |
+| 804 | river | Jghiab | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
+| 805 | river | Jidvei | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
+| 806 | river | Jișa | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (17% near) |
+| 807 | river | Judele | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (15% near) |
+| 808 | river | Jupâneasa | Hunedoara | Râul Bănița | touches Râul Bănița at mouth only (33% near) |
+| 809 | river | Jărosul | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (20% near) |
+| 810 | river | Karaš | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (18% near) |
+| 811 | river | Kecskés patak | Harghita | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (33% near) |
+| 812 | river | Kraszna | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (5% near) |
+| 813 | river | Kraszna | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (5% near) |
+| 814 | river | La Hotar | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
+| 815 | river | Lala | Bistrița-Năsăud | Râul Bistrița Aurie | touches Râul Bistrița Aurie at mouth only (14% near) |
+| 816 | river | Lapoș | Neamț | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (17% near) |
+| 817 | river | Larga | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (6% near) |
+| 818 | river | Laslea | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (7% near) |
+| 819 | river | Lazu | Dolj | Râul Terpezița | touches Râul Terpezița at mouth only (11% near) |
+| 820 | river | Lazu | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (8% near) |
+| 821 | river | Leghia | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (4% near) |
+| 822 | river | Lela | Suceava | Râul Moldova | touches Râul Moldova at mouth only (20% near) |
+| 823 | river | Lelești | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 824 | river | Lemnia | Covasna | Râul Negru I | touches Râul Negru I at mouth only (3% near) |
+| 825 | river | Leșul | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (5% near) |
+| 826 | river | Leșul | Bistrița-Năsăud | Pârâul Valea Leșului | touches Pârâul Valea Leșului at mouth only (0% near) |
+| 827 | river | Limbășelul | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
+| 828 | river | Lișava | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (6% near) |
+| 829 | river | Lonea | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (20% near) |
+| 830 | river | Lopatnic | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (3% near) |
+| 831 | river | Lotrișorul de Cozia | Vâlcea | Râul Olt | touches Râul Olt at mouth only (25% near) |
+| 832 | river | Lotrișorul de Cozia | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 833 | river | Lozna | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (1% near) |
+| 834 | river | Loznișoara | Caraș-Severin | Râul Pleșu Rusca | touches Râul Pleșu Rusca at mouth only (20% near) |
+| 835 | river | Luda Bara | Timiș | Pârâul Măgheruș | touches Pârâul Măgheruș at mouth only (17% near) |
+| 836 | river | Luizoaia | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (10% near) |
+| 837 | river | Lujerdiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (2% near) |
+| 838 | river | Lunca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 839 | river | Lunca Mare (Varșaraia) | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 840 | river | Lunca Meteșului | Alba | Râul Ampoita | touches Râul Ampoita at mouth only (9% near) |
+| 841 | river | Luncavicioara | Vâlcea | Râul Luncavăț | touches Râul Luncavăț at mouth only (11% near) |
+| 842 | river | Luncavicioara | Vâlcea | Râul Urșani  | touches Râul Urșani  at mouth only (11% near) |
+| 843 | river | Lungșoara | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (33% near) |
+| 844 | river | Lungșoara | Sibiu | Pârâul Tălmaciu | touches Pârâul Tălmaciu at mouth only (0% near) |
+| 845 | river | Lungșoara | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (33% near) |
+| 846 | river | Lungșoara | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (33% near) |
+| 847 | river | Lungșoara | Sibiu | Râul Sadu Inferior | touches Râul Sadu Inferior at mouth only (33% near) |
+| 848 | river | Lungșoara | Sibiu | Pârâul Tălmăcuț | touches Pârâul Tălmăcuț at mouth only (0% near) |
+| 849 | river | Luntrișoara | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (33% near) |
+| 850 | river | Luntrișoara | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
+| 851 | river | Lupsa | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
+| 852 | river | Lutoasa | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (33% near) |
+| 853 | river | Lókod-patak | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (8% near) |
+| 854 | river | Lăpușna | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (11% near) |
+| 855 | river | Lăpușnic | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
+| 856 | river | Macău | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (6% near) |
+| 857 | river | Madicea | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 858 | river | Maieru | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (25% near) |
+| 859 | river | Malnaș | Covasna | Râul Olt | touches Râul Olt at mouth only (20% near) |
+| 860 | river | Malnaș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 861 | river | Malnoves | Harghita | Râul Vârghișul superior | touches Râul Vârghișul superior at mouth only (8% near) |
+| 862 | river | Malomárok | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (25% near) |
+| 863 | river | Marița | Vâlcea | Râul Cerna | touches Râul Cerna at mouth only (8% near) |
+| 864 | river | Martonca | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (12% near) |
+| 865 | river | Mediașul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 866 | river | Megheș | Harghita | Râul Uzul | touches Râul Uzul at mouth only (33% near) |
+| 867 | river | Meghis | Sibiu | Râul Olt | touches Râul Olt at mouth only (32% near) |
+| 868 | river | Meghis | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (32% near) |
+| 869 | river | Mera | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (9% near) |
+| 870 | river | Mermezeu | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (4% near) |
+| 871 | river | Miclusa | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
+| 872 | river | Milcov | Vrancea | Râul Putna | touches Râul Putna at mouth only (2% near) |
+| 873 | river | Milova | Arad | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
+| 874 | river | Mintiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
+| 875 | river | Mircea | Argeș | Râul Buda | touches Râul Buda at mouth only (11% near) |
+| 876 | river | Mirăslău | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 877 | river | Misica | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (8% near) |
+| 878 | river | Mitarca | Dâmbovița | Râul Brătei | touches Râul Brătei at mouth only (33% near) |
+| 879 | river | Mizieș | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (14% near) |
+| 880 | river | Mizieș | Bihor | Râul Crișul Negru inferior | touches Râul Crișul Negru inferior at mouth only (14% near) |
+| 881 | river | Mociu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (3% near) |
+| 882 | river | Mogoș | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (17% near) |
+| 883 | river | Monoroștia | Arad | Râul Mureș | touches Râul Mureș at mouth only (8% near) |
+| 884 | river | Morii | Suceava | Râul Moldova | touches Râul Moldova at mouth only (25% near) |
+| 885 | river | Morișca | Botoșani | Râul Sitna | touches Râul Sitna at mouth only (4% near) |
+| 886 | river | Mostiștea | Călărași | Canalul Scoiceni | touches Canalul Scoiceni at mouth only (0% near) |
+| 887 | river | Motnău | Vrancea | Râul Râmnicu Sărat | touches Râul Râmnicu Sărat at mouth only (10% near) |
+| 888 | river | Movile | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (17% near) |
+| 889 | river | Moșna | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (9% near) |
+| 890 | river | Muereasca | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 891 | river | Muncel | Cluj | Râul Someș | touches Râul Someș at mouth only (5% near) |
+| 892 | river | Muncel | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (12% near) |
+| 893 | river | Mureșel | Arad | Râul Mureș | touches Râul Mureș at mouth only (10% near) |
+| 894 | river | Mureșul Mort | Arad | Râul Mureș | touches Râul Mureș at mouth only (2% near) |
+| 895 | river | Murgașul Mare | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (33% near) |
+| 896 | river | Murgașul Mare | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (33% near) |
+| 897 | river | Mușița | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (8% near) |
+| 898 | river | Mândra | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 899 | river | Mânăileasa | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (4% near) |
+| 900 | river | Mânăileasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (4% near) |
+| 901 | river | Mârdanu | Vrancea | Râul Zăbala mijlocie | touches Râul Zăbala mijlocie at mouth only (25% near) |
+| 902 | river | Mârdanu | Vrancea | Râul Zăbala Superioară | touches Râul Zăbala Superioară at mouth only (25% near) |
+| 903 | river | Mârza | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (9% near) |
+| 904 | river | Mârșa | Sibiu | Râul Olt | touches Râul Olt at mouth only (12% near) |
+| 905 | river | Mârșa | Sibiu | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
+| 906 | river | Mădăraș | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (12% near) |
+| 907 | river | Mădăraș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (19% near) |
+| 908 | river | Măgura | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (11% near) |
+| 909 | river | Măgura | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (20% near) |
+| 910 | river | Mălaiul | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (25% near) |
+| 911 | river | Mălin | Bistrița-Năsăud | Pârâul Meleș | touches Pârâul Meleș at mouth only (12% near) |
+| 912 | river | Mălăiești | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (20% near) |
+| 913 | river | Măria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (10% near) |
+| 914 | river | Mărăloiu | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (10% near) |
+| 915 | river | Nadășa | Mureș | Pârâul Beica | touches Pârâul Beica at mouth only (33% near) |
+| 916 | river | Neagra Șarului | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (3% near) |
+| 917 | river | Neamț (Ozana) | Neamț | Râul Moldova | touches Râul Moldova at mouth only (3% near) |
+| 918 | river | Nechit | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (6% near) |
+| 919 | river | Negoescu Mare | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
+| 920 | river | Negoiul | Mureș | Râul Ilva | touches Râul Ilva at mouth only (20% near) |
+| 921 | river | Negraș | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
+| 922 | river | Negrișoara | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (12% near) |
+| 923 | river | Nermed | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (9% near) |
+| 924 | river | Nima | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (0% near) |
+| 925 | river | Nișcov | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (3% near) |
+| 926 | river | Nișcov | Buzău | Râul Buzău | touches Râul Buzău at mouth only (3% near) |
+| 927 | river | Nádas patak;Sós-kút | Covasna | Râul Cormoș | touches Râul Cormoș at mouth only (8% near) |
+| 928 | river | Nădrab | Hunedoara | Râul Govăjdia | touches Râul Govăjdia at mouth only (4% near) |
+| 929 | river | Nădrăgel | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (17% near) |
+| 930 | river | Oancea | Galați | Râul Prut | touches Râul Prut at mouth only (33% near) |
+| 931 | river | Oanța | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (12% near) |
+| 932 | river | Oanțu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
+| 933 | river | Obârșia | Mehedinți | Râul Brebena - Bulba | touches Râul Brebena - Bulba at mouth only (20% near) |
+| 934 | river | Ohaba | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (6% near) |
+| 935 | river | Ohaba | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (20% near) |
+| 936 | river | Ohaba | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (3% near) |
+| 937 | river | Olpret | Cluj | Râul Someș | touches Râul Someș at mouth only (5% near) |
+| 938 | river | Olteana | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (5% near) |
+| 939 | river | Orjogoaia | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
+| 940 | river | Orman | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (12% near) |
+| 941 | river | Ormeniș | Alba | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
+| 942 | river | Ortoița | Suceava | Râul Neagra Superioară | touches Râul Neagra Superioară at mouth only (14% near) |
+| 943 | river | Otasău | Vâlcea | Pârâul Bistrița | touches Pârâul Bistrița at mouth only (3% near) |
+| 944 | river | P Boului | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
+| 945 | river | Padina | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (9% near) |
+| 946 | river | Padina lui Calinet | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (20% near) |
+| 947 | river | Paraul Lunii | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (20% near) |
+| 948 | river | Paraul Plostina | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
+| 949 | river | Paraul Poienii Greului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
+| 950 | river | Paraul Puscariei | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
+| 951 | river | Paraul Sarcea | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
+| 952 | river | Paraul Seciului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (25% near) |
+| 953 | river | Paraul Varteju | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (13% near) |
+| 954 | river | Paraul Vizuinii | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (7% near) |
+| 955 | river | Paraul Zaganului | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (33% near) |
+| 956 | river | Paraué Mare | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
+| 957 | river | Paroş (Valea Mateşcilor) | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (8% near) |
+| 958 | river | Pasărea | Ilfov | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (0% near) |
+| 959 | river | Patul cel Mare | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 960 | river | Paulic | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (17% near) |
+| 961 | river | Pe Vale | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (11% near) |
+| 962 | river | Pentaia | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (12% near) |
+| 963 | river | Pesceana | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
+| 964 | river | Peșteana | Vâlcea | Râul Olteț | touches Râul Olteț at mouth only (20% near) |
+| 965 | river | Peștiș | Timiș | Râul Mureș | touches Râul Mureș at mouth only (10% near) |
+| 966 | river | Pețe | Timiș | Râul Bega | touches Râul Bega at mouth only (20% near) |
+| 967 | river | Pietrele | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (33% near) |
+| 968 | river | Pietriș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
+| 969 | river | Pietroasa | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (14% near) |
+| 970 | river | Pietrosu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (9% near) |
+| 971 | river | Pietrosu | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
+| 972 | river | Pietrosu | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (25% near) |
+| 973 | river | Pietrosul | Mureș | Râul Ilva | touches Râul Ilva at mouth only (17% near) |
+| 974 | river | Pilug | Hunedoara | Râul Jiul de vest – superior cu afluenții | touches Râul Jiul de vest – superior cu afluenții at mouth only (11% near) |
+| 975 | river | Pintic | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (9% near) |
+| 976 | river | Plăiuț | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (14% near) |
+| 977 | river | Pochivnica | Neamț | Râul Izvoarele Cracăului | touches Râul Izvoarele Cracăului at mouth only (33% near) |
+| 978 | river | Pociovaliștea | Alba | Râul Ocoliș | touches Râul Ocoliș at mouth only (20% near) |
+| 979 | river | Podvesochi | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (33% near) |
+| 980 | river | Poenari | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
+| 981 | river | Poienari | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (20% near) |
+| 982 | river | Poienari | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
+| 983 | river | Ponor | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (25% near) |
+| 984 | river | Popești | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (3% near) |
+| 985 | river | Porcul | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (33% near) |
+| 986 | river | Porcăreț | Hunedoara | Valea Luncanilor | touches Valea Luncanilor at mouth only (25% near) |
+| 987 | river | Porumbele | Covasna | Râul Olt | touches Râul Olt at mouth only (12% near) |
+| 988 | river | Porumbele | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
+| 989 | river | Porumbăcel | Sibiu | Râul Mare Porumbacu | touches Râul Mare Porumbacu at mouth only (11% near) |
+| 990 | river | Potoc | Timiș | Râul Bega | touches Râul Bega at mouth only (6% near) |
+| 991 | river | Potoc | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (17% near) |
+| 992 | river | Potoci | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (11% near) |
+| 993 | river | Pr. Buneasa | Mureș | Râul Gudea | touches Râul Gudea at mouth only (25% near) |
+| 994 | river | Pr. Gudea mică | Mureș | Râul Gudea | touches Râul Gudea at mouth only (14% near) |
+| 995 | river | Pr. Schwartz (Schwartz-patak) | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (4% near) |
+| 996 | river | Praid | Harghita | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
+| 997 | river | Precista | Bacău | Râul Siret | touches Râul Siret at mouth only (8% near) |
+| 998 | river | Priba | Argeș | Râul Argeș | touches Râul Argeș at mouth only (17% near) |
+| 999 | river | Prigoana | Alba | Râul Sebeș | touches Râul Sebeș at mouth only (8% near) |
+| 1000 | river | Printre Văi | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (4% near) |
+| 1001 | river | Priporul | Vâlcea | Râul Lotrișor Drăgănești | touches Râul Lotrișor Drăgănești at mouth only (33% near) |
+| 1002 | river | Prislop | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (12% near) |
+| 1003 | river | Prodae | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (17% near) |
+| 1004 | river | Provița | Prahova | Râul Cricov | touches Râul Cricov at mouth only (2% near) |
+| 1005 | river | Prut | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (14% near) |
+| 1006 | river | Puini | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (4% near) |
+| 1007 | river | Purcaru | Brașov | Râul Comana | touches Râul Comana at mouth only (20% near) |
+| 1008 | river | Purcăreț | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (7% near) |
+| 1009 | river | Pustiosu | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (20% near) |
+| 1010 | river | Pângărăcior | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (12% near) |
+| 1011 | river | Pârvei | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (12% near) |
+| 1012 | river | Pârârul Roșu | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
+| 1013 | river | Pârârul Roșu | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
+| 1014 | river | pârâu | Alba | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
+| 1015 | river | pârâu | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (25% near) |
+| 1016 | river | pârâu | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 1017 | river | Pârâu Ciornovăt | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (5% near) |
+| 1018 | river | Pârâu Gârliște | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (10% near) |
+| 1019 | river | Pârâul Aldămaș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
+| 1020 | river | Pârâul Aluniș | Bacău | Râul Uzul | touches Râul Uzul at mouth only (7% near) |
+| 1021 | river | Pârâul Apa Lină | Covasna | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (8% near) |
+| 1022 | river | Pârâul Ardanului | Bistrița-Năsăud | Râul Șieu | touches Râul Șieu at mouth only (25% near) |
+| 1023 | river | Pârâul Argintăria | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (17% near) |
+| 1024 | river | Pârâul Ascuns | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1025 | river | Pârâul Balogsás | Harghita | Râul Fișag | touches Râul Fișag at mouth only (25% near) |
+| 1026 | river | Pârâul Becaș | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
+| 1027 | river | Pârâul Belciu | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
+| 1028 | river | Pârâul Beliș | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (5% near) |
+| 1029 | river | Pârâul Beta | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1030 | river | Pârâul Beșa | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 1031 | river | Pârâul Bivolari | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 1032 | river | Pârâul Blojului | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
+| 1033 | river | Pârâul Blojului | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
+| 1034 | river | Pârâul Bogat | Harghita | Râul Vârghișul superior | touches Râul Vârghișul superior at mouth only (8% near) |
+| 1035 | river | Pârâul Boiu | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (33% near) |
+| 1036 | river | Pârâul Bolovăniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (11% near) |
+| 1037 | river | Pârâul Bongar | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (33% near) |
+| 1038 | river | Pârâul Boșor | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (14% near) |
+| 1039 | river | Pârâul Brebu | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (17% near) |
+| 1040 | river | Pârâul Brebu | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (8% near) |
+| 1041 | river | Pârâul Brătcuța | Bihor | Râul Crișul Repede inferior | touches Râul Crișul Repede inferior at mouth only (10% near) |
+| 1042 | river | Pârâul Brătcuța | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (10% near) |
+| 1043 | river | Pârâul Budiu | Mureș | Râul Mureș | touches Râul Mureș at mouth only (3% near) |
+| 1044 | river | Pârâul Buha | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (17% near) |
+| 1045 | river | Pârâul Bădenilor | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (12% near) |
+| 1046 | river | Pârâul Băilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1047 | river | Pârâul Băilor | Harghita | Râul Homorodul Mare | touches Râul Homorodul Mare at mouth only (7% near) |
+| 1048 | river | Pârâul Băilor Mari | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (20% near) |
+| 1049 | river | Pârâul Cad | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
+| 1050 | river | Pârâul Cet | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1051 | river | Pârâul Cetății | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1052 | river | Pârâul Chiara | Olt | Râul Dârjov | touches Râul Dârjov at mouth only (17% near) |
+| 1053 | river | Pârâul Chighenilor | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (8% near) |
+| 1054 | river | Pârâul Chiliilor | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (25% near) |
+| 1055 | river | Pârâul Chinteni | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (3% near) |
+| 1056 | river | Pârâul Chiojdeanca | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (33% near) |
+| 1057 | river | Pârâul Ciclova | Caraș-Severin | Râul Carașul Superior | touches Râul Carașul Superior at mouth only (4% near) |
+| 1058 | river | Pârâul Ciobotani | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (8% near) |
+| 1059 | river | Pârâul Ciubotei | Bacău | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (9% near) |
+| 1060 | river | Pârâul Ciubotei | Bacău | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
+| 1061 | river | Pârâul Ciurgheș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (10% near) |
+| 1062 | river | Pârâul Cladova | Arad | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
+| 1063 | river | Pârâul Coacăza | Bacău | Râul Tazlăul Sărat | touches Râul Tazlăul Sărat at mouth only (25% near) |
+| 1064 | river | Pârâul Cocoș | Mureș | Râul Mureș | touches Râul Mureș at mouth only (4% near) |
+| 1065 | river | Pârâul Colina Mică | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (17% near) |
+| 1066 | river | Pârâul Cotârgași | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (11% near) |
+| 1067 | river | Pârâul Craiova | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (8% near) |
+| 1068 | river | Pârâul Crintei | Brașov | Valea Sâmbetei | touches Valea Sâmbetei at mouth only (33% near) |
+| 1069 | river | Pârâul Crucii1 | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
+| 1070 | river | Pârâul Crușitu | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (7% near) |
+| 1071 | river | Pârâul Cuchiniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
+| 1072 | river | Pârâul Curmăturii | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 1073 | river | Pârâul Câinelui | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
+| 1074 | river | Pârâul Căboaiei | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 1075 | river | Pârâul Căpriței | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1076 | river | Pârâul Dalei | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (33% near) |
+| 1077 | river | Pârâul Dalei | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (33% near) |
+| 1078 | river | Pârâul Delnița | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1079 | river | Pârâul Dignacea | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (33% near) |
+| 1080 | river | Pârâul Ditrău | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (2% near) |
+| 1081 | river | Pârâul Domoș | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (12% near) |
+| 1082 | river | Pârâul Drept | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
+| 1083 | river | Pârâul Drăcoiu | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (5% near) |
+| 1084 | river | Pârâul Ecem | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (33% near) |
+| 1085 | river | Pârâul Eghersec | Harghita | Râul Uzul | touches Râul Uzul at mouth only (17% near) |
+| 1086 | river | Pârâul Fagul Ciobanului | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1087 | river | Pârâul Fierarilor | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 1088 | river | Pârâul Firei | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (17% near) |
+| 1089 | river | Pârâul Galbena | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (33% near) |
+| 1090 | river | Pârâul Ghiduț | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (3% near) |
+| 1091 | river | Pârâul Ghiorfaș | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
+| 1092 | river | Pârâul Glodghilești | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (33% near) |
+| 1093 | river | Pârâul Gradina | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (17% near) |
+| 1094 | river | Pârâul Grasul | Neamț | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (33% near) |
+| 1095 | river | Pârâul Grindeni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (9% near) |
+| 1096 | river | Pârâul Gropșoara | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
+| 1097 | river | Pârâul Gârbău | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (6% near) |
+| 1098 | river | Pârâul Hancker | Harghita | Râul Mesteacănu | touches Râul Mesteacănu at mouth only (0% near) |
+| 1099 | river | Pârâul Hidegag | Mureș | Râul Sălard | touches Râul Sălard at mouth only (11% near) |
+| 1100 | river | Pârâul Horezu | Olt | Râul Geamărtălui  | touches Râul Geamărtălui  at mouth only (7% near) |
+| 1101 | river | Pârâul Hotaru | Harghita | Râul Șicasău | touches Râul Șicasău at mouth only (25% near) |
+| 1102 | river | Pârâul Hotarului | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (25% near) |
+| 1103 | river | Pârâul Hévíz | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
+| 1104 | river | Pârâul Iordăcheanu | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (17% near) |
+| 1105 | river | Pârâul Iovului | Alba | Râul Mureș | touches Râul Mureș at mouth only (28% near) |
+| 1106 | river | Pârâul Izărel | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
+| 1107 | river | Pârâul Jepilor | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
+| 1108 | river | Pârâul Jirca | Mureș | Râul Sălard | touches Râul Sălard at mouth only (20% near) |
+| 1109 | river | Pârâul Jombor | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1110 | river | Pârâul Kolos | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 1111 | river | Pârâul Lespezi | Argeș | Râul Capra | touches Râul Capra at mouth only (25% near) |
+| 1112 | river | Pârâul lui Chelemec | Covasna | Râul Negru II | touches Râul Negru II at mouth only (25% near) |
+| 1113 | river | Pârâul lui Melot | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (20% near) |
+| 1114 | river | Pârâul lui Molnar | Bacău | Râul Sulta | touches Râul Sulta at mouth only (33% near) |
+| 1115 | river | Pârâul Lunca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1116 | river | Pârâul Lupul | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (20% near) |
+| 1117 | river | Pârâul Lupul | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (20% near) |
+| 1118 | river | Pârâul Lupului | Bacău | Râul Sulta | touches Râul Sulta at mouth only (11% near) |
+| 1119 | river | Pârâul Lăzarea | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (0% near) |
+| 1120 | river | Pârâul Maleia | Hunedoara | Râul Jiul de est Inferior | touches Râul Jiul de est Inferior at mouth only (10% near) |
+| 1121 | river | Pârâul Martonca | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
+| 1122 | river | Pârâul Merila | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (20% near) |
+| 1123 | river | Pârâul Merilor | Harghita | Pârâul Vermet | touches Pârâul Vermet at mouth only (14% near) |
+| 1124 | river | Pârâul Meșterhazul | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
+| 1125 | river | Pârâul Milova | Arad | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
+| 1126 | river | Pârâul Mircea | Argeș | Râul Buda | touches Râul Buda at mouth only (17% near) |
+| 1127 | river | Pârâul Mitaciul Mic | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (17% near) |
+| 1128 | river | Pârâul Miștea | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (12% near) |
+| 1129 | river | Pârâul Mițului | Hunedoara | Râul Lăpuşnicul Mic | touches Râul Lăpuşnicul Mic at mouth only (25% near) |
+| 1130 | river | Pârâul Morii | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
+| 1131 | river | Pârâul Moșna | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (11% near) |
+| 1132 | river | Pârâul Mueruș | Bacău | Râul Ciobănuș | touches Râul Ciobănuș at mouth only (17% near) |
+| 1133 | river | Pârâul Mușețel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 1134 | river | Pârâul Mădărașul Mic | Harghita | Râul Mădărașul Mare | touches Râul Mădărașul Mare at mouth only (10% near) |
+| 1135 | river | Pârâul Nagyos | Harghita | Pârâul Mic | touches Pârâul Mic at mouth only (17% near) |
+| 1136 | river | Pârâul Nagyos | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 1137 | river | Pârâul Naiba | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (20% near) |
+| 1138 | river | Pârâul Neagra Călin | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
+| 1139 | river | Pârâul Neamțului | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
+| 1140 | river | Pârâul Negrei | Suceava | Râul Moldova | touches Râul Moldova at mouth only (17% near) |
+| 1141 | river | Pârâul Negruța | Bihor | Râul Crișul Repede inferior | touches Râul Crișul Repede inferior at mouth only (17% near) |
+| 1142 | river | Pârâul Negruța | Bihor | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (17% near) |
+| 1143 | river | Pârâul Nilveș | Harghita | Pârâul Vermet | touches Pârâul Vermet at mouth only (14% near) |
+| 1144 | river | Pârâul Ocnei | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (8% near) |
+| 1145 | river | Pârâul Olanu | Gorj | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (8% near) |
+| 1146 | river | Pârâul Pascu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
+| 1147 | river | Pârâul Peșcoasa Mare | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (20% near) |
+| 1148 | river | Pârâul Peșcoasa Mare | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
+| 1149 | river | Pârâul Peștilor | Sibiu | Râul Săliște | touches Râul Săliște at mouth only (33% near) |
+| 1150 | river | Pârâul Piatra Albă | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 1151 | river | Pârâul Piatra Caprei | Brașov | Valea Sâmbetei | touches Valea Sâmbetei at mouth only (25% near) |
+| 1152 | river | Pârâul Piatra Șoimilor | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1153 | river | Pârâul Pietrei | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (5% near) |
+| 1154 | river | Pârâul Pietroasa | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (20% near) |
+| 1155 | river | Pârâul Pietros | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1156 | river | Pârâul Plopilor | Vâlcea | Râul Cerna | touches Râul Cerna at mouth only (9% near) |
+| 1157 | river | Pârâul Poliștoaca | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (9% near) |
+| 1158 | river | Pârâul Popoiu | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (25% near) |
+| 1159 | river | Pârâul Potoci | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1160 | river | Pârâul Puturos | Harghita | Valea Topliței | touches Valea Topliței at mouth only (9% near) |
+| 1161 | river | Pârâul Puturos | Harghita | Râul Șugo | touches Râul Șugo at mouth only (33% near) |
+| 1162 | river | Pârâul Radna | Arad | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
+| 1163 | river | Pârâul Radului | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (20% near) |
+| 1164 | river | Pârâul Ravasz | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (26% near) |
+| 1165 | river | Pârâul Rece | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (10% near) |
+| 1166 | river | Pârâul Rece | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (4% near) |
+| 1167 | river | Pârâul Repede | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (12% near) |
+| 1168 | river | Pârâul Roua | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
+| 1169 | river | Pârâul Roua | Mureș | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (17% near) |
+| 1170 | river | Pârâul Répád | Harghita | Râul Fișag | touches Râul Fișag at mouth only (8% near) |
+| 1171 | river | Pârâul Saldoboș | Covasna | Râul Olt | touches Râul Olt at mouth only (7% near) |
+| 1172 | river | Pârâul Saldoboș | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1173 | river | Pârâul Scroafei | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (3% near) |
+| 1174 | river | Pârâul Scurta | Gorj | Valea Sadului | touches Valea Sadului at mouth only (25% near) |
+| 1175 | river | Pârâul Sec | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (33% near) |
+| 1176 | river | Pârâul Sedloca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 1177 | river | Pârâul Siloș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 1178 | river | Pârâul Socilor | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci at mouth only (33% near) |
+| 1179 | river | Pârâul Socilor | Vâlcea | Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor | touches Valea Călinești cu pâraiele Călinești, Sulița, Soci și Lotrișor at mouth only (33% near) |
+| 1180 | river | Pârâul Sorniac | Tulcea | Japșa Stanca | touches Japșa Stanca at mouth only (10% near) |
+| 1181 | river | Pârâul Strunga | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
+| 1182 | river | Pârâul Sugura | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (20% near) |
+| 1183 | river | Pârâul Sânmartin | Harghita | Râul Fișag | touches Râul Fișag at mouth only (25% near) |
+| 1184 | river | Pârâul Sărat | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (10% near) |
+| 1185 | river | Pârâul Sărat | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1186 | river | Pârâul Sărmașului | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (11% near) |
+| 1187 | river | Pârâul Talea | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
+| 1188 | river | Pârâul Talnic (Reitec) | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (14% near) |
+| 1189 | river | Pârâul Tare | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (3% near) |
+| 1190 | river | Pârâul Tompád | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1191 | river | Pârâul Trestiei | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (8% near) |
+| 1192 | river | Pârâul Trestiei | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1193 | river | Pârâul Trinkbach | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (0% near) |
+| 1194 | river | Pârâul Trinkbach | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (0% near) |
+| 1195 | river | Pârâul Trinkbach | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (0% near) |
+| 1196 | river | Pârâul Turia | Olt | Râul Dârjov | touches Râul Dârjov at mouth only (14% near) |
+| 1197 | river | Pârâul Turzii | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (11% near) |
+| 1198 | river | Pârâul Tușnad | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (11% near) |
+| 1199 | river | Pârâul Tușnad | Harghita | Râul Șugo | touches Râul Șugo at mouth only (11% near) |
+| 1200 | river | Pârâul Tók | Covasna | Râul Olt | touches Râul Olt at mouth only (33% near) |
+| 1201 | river | Pârâul Tók | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1202 | river | Pârâul Ulieș | Harghita | Pârâul Aszo Mitacs | touches Pârâul Aszo Mitacs at mouth only (8% near) |
+| 1203 | river | Pârâul Ursului | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (25% near) |
+| 1204 | river | Pârâul Ursului | Sibiu | Râul Măgura Cisnădiei | touches Râul Măgura Cisnădiei at mouth only (10% near) |
+| 1205 | river | Pârâul Valea Cărbunarilor | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (12% near) |
+| 1206 | river | Pârâul Valea Gârbovii | Alba | Râul Secaș | touches Râul Secaș at mouth only (3% near) |
+| 1207 | river | Pârâul Valea Joiței | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (12% near) |
+| 1208 | river | Pârâul Valea Seacă | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (3% near) |
+| 1209 | river | Pârâul Vinului | Harghita | Râul Bistricioara tronson I | touches Râul Bistricioara tronson I at mouth only (10% near) |
+| 1210 | river | Pârâul Vladului | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (12% near) |
+| 1211 | river | Pârâul Vârful Mare | Mureș | Râul Sălard | touches Râul Sălard at mouth only (25% near) |
+| 1212 | river | Pârâul Vârful Mic | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
+| 1213 | river | Pârâul Văcăriei | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1214 | river | Pârâul Vădana | Timiș | Râul Bega | touches Râul Bega at mouth only (14% near) |
+| 1215 | river | Pârâul Zălan | Covasna | Râul Olt | touches Râul Olt at mouth only (14% near) |
+| 1216 | river | Pârâul Zălan | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1217 | river | Pârâul Zăpodie | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (7% near) |
+| 1218 | river | Pârâul Întortochiat | Harghita | Râul Cașin | touches Râul Cașin at mouth only (14% near) |
+| 1219 | river | Pârâul Între Pietre | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
+| 1220 | river | Pârâul Șeștina | Mureș | Râul Sălard | touches Râul Sălard at mouth only (20% near) |
+| 1221 | river | Pârâul Șoimoș | Arad | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
+| 1222 | river | Pârâul Șolea | Mureș | Râul Sălard | touches Râul Sălard at mouth only (14% near) |
+| 1223 | river | Pârâul Știuca | Timiș | Pârâul Cernabora | touches Pârâul Cernabora at mouth only (17% near) |
+| 1224 | river | Pârâul Șumuleu | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1225 | river | Pârâul Țiba Mare | Mureș | Râul Sălard | touches Râul Sălard at mouth only (33% near) |
+| 1226 | river | Pâstrâvului | Harghita | Râul Șicasău | touches Râul Șicasău at mouth only (7% near) |
+| 1227 | river | Păisul Mare | Vâlcea | Râul Malaia  | touches Râul Malaia  at mouth only (20% near) |
+| 1228 | river | Păltinoasa | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (33% near) |
+| 1229 | river | Păltinoasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
+| 1230 | river | Pănicel | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (29% near) |
+| 1231 | river | Pănuleț | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (9% near) |
+| 1232 | river | Păpăuți | Covasna | Râul Covasna | touches Râul Covasna at mouth only (9% near) |
+| 1233 | river | Părvu | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1234 | river | Părău Iclejii | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
+| 1235 | river | Părău Iclejii | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
+| 1236 | river | Părău Iclejii | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (33% near) |
+| 1237 | river | Păscoaia | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (4% near) |
+| 1238 | river | Rachotiaș | Mureș | Valea Soveții | touches Valea Soveții at mouth only (17% near) |
+| 1239 | river | Racovița | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1240 | river | Racoș | Cluj | Valea Lonei | touches Valea Lonei at mouth only (8% near) |
+| 1241 | river | Racul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (11% near) |
+| 1242 | river | Rakottyás patak | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1243 | river | Rakta-ér | Satu Mare | Râul Someș | touches Râul Someș at mouth only (11% near) |
+| 1244 | river | Ramura Mică | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (20% near) |
+| 1245 | river | Raznic | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (5% near) |
+| 1246 | river | Raznic | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (5% near) |
+| 1247 | river | Rașcova | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (20% near) |
+| 1248 | river | Redișoara | Olt | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (2% near) |
+| 1249 | river | Remetea | Brașov | Râul Olt | touches Râul Olt at mouth only (12% near) |
+| 1250 | river | Remetea | Brașov | Râul Olt | touches Râul Olt at mouth only (12% near) |
+| 1251 | river | Remetea | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
+| 1252 | river | Remezeu | Suceava | Râul Suceava | touches Râul Suceava at mouth only (25% near) |
+| 1253 | river | Repatu | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 1254 | river | Repede | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (10% near) |
+| 1255 | river | Retevoiu | Brașov | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
+| 1256 | river | Reussbach | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (14% near) |
+| 1257 | river | Reviaca Mare | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
+| 1258 | river | Ribița | Hunedoara | Râul Crișul Alb, cu afluenții | touches Râul Crișul Alb, cu afluenții at mouth only (8% near) |
+| 1259 | river | Rica | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (25% near) |
+| 1260 | river | Richieiul | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
+| 1261 | river | Rituria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
+| 1262 | river | Rituria | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (20% near) |
+| 1263 | river | Robaia | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (17% near) |
+| 1264 | river | Robaia | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (17% near) |
+| 1265 | river | Robaia | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (17% near) |
+| 1266 | river | Romoș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
+| 1267 | river | Ronișoara | Maramureș | Râul Iza | touches Râul Iza at mouth only (7% near) |
+| 1268 | river | Roșușul | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
+| 1269 | river | Rudarul | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (8% near) |
+| 1270 | river | Rudarul | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
+| 1271 | river | Runc | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1272 | river | Runc | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1273 | river | Rusciori | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (6% near) |
+| 1274 | river | Rușor | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (33% near) |
+| 1275 | river | Râmeț (Geoagiu) | Alba | Råul Geoagiu Inferior | touches Råul Geoagiu Inferior at mouth only (8% near) |
+| 1276 | river | Râmeț (Geoagiu) | Alba | Râul Mogoș - Cotu | touches Râul Mogoș - Cotu at mouth only (8% near) |
+| 1277 | river | Râmna | Vrancea | Râul Putna | touches Râul Putna at mouth only (2% near) |
+| 1278 | river | Râul Agăș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (11% near) |
+| 1279 | river | Râul Argetoaia | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (11% near) |
+| 1280 | river | Râul Argetoaia | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (11% near) |
+| 1281 | river | Râul Beghei | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (14% near) |
+| 1282 | river | Râul Bizdidel | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (5% near) |
+| 1283 | river | Râul Bolătău | Neamț | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1284 | river | Râul Bârlui | Olt | Râul Olteț | touches Râul Olteț at mouth only (7% near) |
+| 1285 | river | Râul Bârlui | Olt | Râul Olteț | touches Râul Olteț at mouth only (7% near) |
+| 1286 | river | Râul Cernat | Covasna | Râul Negru II | touches Râul Negru II at mouth only (8% near) |
+| 1287 | river | Râul Cernat | Covasna | Râul Negru I | touches Râul Negru I at mouth only (8% near) |
+| 1288 | river | Râul Chilișca | Bacău | Râul Bărzăuța | touches Râul Bărzăuța at mouth only (25% near) |
+| 1289 | river | Râul Ciumârna | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (20% near) |
+| 1290 | river | Râul Clănița | Teleorman | Râul Teleorman | touches Râul Teleorman at mouth only (14% near) |
+| 1291 | river | Râul Copăceoasa | Brașov | Valea Berivoi | touches Valea Berivoi at mouth only (14% near) |
+| 1292 | river | Râul Cotumba | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (20% near) |
+| 1293 | river | Râul Câinelui | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (25% near) |
+| 1294 | river | Râul Călata | Cluj | Râul Crișul Repede | touches Râul Crișul Repede at mouth only (4% near) |
+| 1295 | river | Râul Demăcușa | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (11% near) |
+| 1296 | river | Râul Glavacioc | Giurgiu | Râul Câlniștea | touches Râul Câlniștea at mouth only (2% near) |
+| 1297 | river | Râul Hălmăgel | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (14% near) |
+| 1298 | river | Râul Hălmăgel | Arad | Râul Hălmagiu | touches Râul Hălmagiu at mouth only (14% near) |
+| 1299 | river | Râul Mare - Cugir | Alba | Raul Mare | touches Raul Mare at mouth only (3% near) |
+| 1300 | river | Râul Moșna | Iași | Râul Prut | touches Râul Prut at mouth only (3% near) |
+| 1301 | river | Râul Obrezanului | Alba | Râul Secaș | touches Râul Secaș at mouth only (7% near) |
+| 1302 | river | Râul Pasărea | Teleorman | Râul Vedea | touches Râul Vedea at mouth only (3% near) |
+| 1303 | river | Râul Porcului | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
+| 1304 | river | Râul Pănătău | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (33% near) |
+| 1305 | river | Râul Pănătău | Buzău | Râul Buzău | touches Râul Buzău at mouth only (33% near) |
+| 1306 | river | Râul Racovița | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (14% near) |
+| 1307 | river | Râul Rebricea | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (8% near) |
+| 1308 | river | Râul Robului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
+| 1309 | river | Râul Romosului | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
+| 1310 | river | Râul Răstolț | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (7% near) |
+| 1311 | river | Râul Satului | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
+| 1312 | river | Râul Seaca | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
+| 1313 | river | Râul Sec | Vâlcea | Râul Olt | touches Râul Olt at mouth only (20% near) |
+| 1314 | river | Râul Sec | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 1315 | river | Râul Senced | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (25% near) |
+| 1316 | river | Râul Soveto | Bacău | Râul Uzul | touches Râul Uzul at mouth only (12% near) |
+| 1317 | river | Râul Urmeniș | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (6% near) |
+| 1318 | river | Râul Valea Săpunului | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (4% near) |
+| 1319 | river | Râul Valea Săpunului | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (4% near) |
+| 1320 | river | Râul Valea Săpunului | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (4% near) |
+| 1321 | river | Râul Vilia | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (1% near) |
+| 1322 | river | Râul Vulcana | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (20% near) |
+| 1323 | river | Râul Vulcanu | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
+| 1324 | river | Râul Văidei | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (4% near) |
+| 1325 | river | Râul Vălenilor | Maramureș | Râul Iza | touches Râul Iza at mouth only (14% near) |
+| 1326 | river | Râul Înfundăturii | Sibiu | Pârâul Hârtibaciu | touches Pârâul Hârtibaciu at mouth only (33% near) |
+| 1327 | river | Râușorul | Argeș | Râul Târgului inferior | touches Râul Târgului inferior at mouth only (11% near) |
+| 1328 | river | Râșca | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (4% near) |
+| 1329 | river | Râșca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
+| 1330 | river | Râșca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
+| 1331 | river | Râșca | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (33% near) |
+| 1332 | river | Râșca Mare | Cluj | Someșul Rece Inferior | touches Someșul Rece Inferior at mouth only (5% near) |
+| 1333 | river | Răcad | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (10% near) |
+| 1334 | river | Răcad | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (10% near) |
+| 1335 | river | Răchitiș | Bacău | Râul Tazlău | touches Râul Tazlău at mouth only (25% near) |
+| 1336 | river | Răcăștie | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (9% near) |
+| 1337 | river | Răul Gârbou | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (9% near) |
+| 1338 | river | Saca | Maramureș | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (17% near) |
+| 1339 | river | Sacovăț | Vaslui | Râul Bârlad | touches Râul Bârlad at mouth only (3% near) |
+| 1340 | river | Sadova | Suceava | Râul Moldova | touches Râul Moldova at mouth only (12% near) |
+| 1341 | river | Sadu lui Sân | Gorj | Valea Sadului | touches Valea Sadului at mouth only (17% near) |
+| 1342 | river | Sadău | Suceava | Râul Brodina | touches Râul Brodina at mouth only (17% near) |
+| 1343 | river | Salca | Cluj | Râul Someș | touches Râul Someș at mouth only (9% near) |
+| 1344 | river | Salcia | Timiș | Pârâul Șurgani | touches Pârâul Șurgani at mouth only (4% near) |
+| 1345 | river | Sarchii | Mureș | Pârâul de Câmpie | touches Pârâul de Câmpie at mouth only (6% near) |
+| 1346 | river | Sașa Mândrei | Vâlcea | Valea Urii cu pâraiele Uria și Murgoci | touches Valea Urii cu pâraiele Uria și Murgoci at mouth only (33% near) |
+| 1347 | river | Seaca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
+| 1348 | river | Seaca | Suceava | Râul Moldova | touches Râul Moldova at mouth only (8% near) |
+| 1349 | river | Sebiș | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (20% near) |
+| 1350 | river | Sebiș | Arad | Râul Moneasa Superioară | touches Râul Moneasa Superioară at mouth only (20% near) |
+| 1351 | river | Secu Mâhlit | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (25% near) |
+| 1352 | river | Secuieu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (17% near) |
+| 1353 | river | Secul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (14% near) |
+| 1354 | river | Segheș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1355 | river | Seinel | Maramureș | Râul Someș | touches Râul Someș at mouth only (4% near) |
+| 1356 | river | Seinel | Maramureș | Râul Someș | touches Râul Someș at mouth only (4% near) |
+| 1357 | river | Semeria | Covasna | Râul Olt | touches Râul Olt at mouth only (5% near) |
+| 1358 | river | Semeria | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
+| 1359 | river | Seviș | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (7% near) |
+| 1360 | river | Seviș | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (7% near) |
+| 1361 | river | Seviș | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (7% near) |
+| 1362 | river | Sicu | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (2% near) |
+| 1363 | river | Silaș | Harghita | Râul Iuhod | touches Râul Iuhod at mouth only (33% near) |
+| 1364 | river | Silhoasa | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (12% near) |
+| 1365 | river | Simeria | Covasna | Râul Olt | touches Râul Olt at mouth only (8% near) |
+| 1366 | river | Simeria | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1367 | river | Simina | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (19% near) |
+| 1368 | river | Sineu | Harghita | Râul Mureș I | touches Râul Mureș I at mouth only (16% near) |
+| 1369 | river | Slamna | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 1370 | river | Slatina | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (3% near) |
+| 1371 | river | Slivețul | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (25% near) |
+| 1372 | river | Slănic | Argeș | Râul Bratia Inferior | touches Râul Bratia Inferior at mouth only (10% near) |
+| 1373 | river | Slănic | Dâmbovița | Râul Ialomița | touches Râul Ialomița at mouth only (25% near) |
+| 1374 | river | Slănic | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (12% near) |
+| 1375 | river | Slătinița | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (11% near) |
+| 1376 | river | Slătioara | Maramureș | Râul Iza | touches Râul Iza at mouth only (10% near) |
+| 1377 | river | Socolău | Maramureș | Râul Ruscova Superioară | touches Râul Ruscova Superioară at mouth only (20% near) |
+| 1378 | river | Solona | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1379 | river | Somonița | Arad | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 1380 | river | Spânu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
+| 1381 | river | Spătac | Alba | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (29% near) |
+| 1382 | river | Stogu | Vrancea | Râul Putna | touches Râul Putna at mouth only (33% near) |
+| 1383 | river | Stoia | Vâlcea | Râul Olănești cu pâraiele Cheia, Bacea și Mânza | touches Râul Olănești cu pâraiele Cheia, Bacea și Mânza at mouth only (25% near) |
+| 1384 | river | Stoienița | Hunedoara | Valea Polatiște | touches Valea Polatiște at mouth only (12% near) |
+| 1385 | river | Stolna | Cluj | Valea Lonei | touches Valea Lonei at mouth only (8% near) |
+| 1386 | river | Stremț | Alba | Råul Geoagiu Inferior | touches Råul Geoagiu Inferior at mouth only (2% near) |
+| 1387 | river | Stremț | Alba | Râul Mogoș - Cotu | touches Râul Mogoș - Cotu at mouth only (2% near) |
+| 1388 | river | Stremț | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
+| 1389 | river | Strâmbu | Brașov | Râul Buzău | touches Râul Buzău at mouth only (11% near) |
+| 1390 | river | Strâmtosu | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (33% near) |
+| 1391 | river | Strâmșoara | Brașov | Râul Strâmba | touches Râul Strâmba at mouth only (0% near) |
+| 1392 | river | Stâlpul | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (20% near) |
+| 1393 | river | Stânișoara | Hunedoara | Râul Sibişel | touches Râul Sibişel at mouth only (17% near) |
+| 1394 | river | Stăuini | Alba | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 1395 | river | Suceag | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (12% near) |
+| 1396 | river | Suceava River | Suceava | Râul Brodina | touches Râul Brodina at mouth only (4% near) |
+| 1397 | river | Suciuaș | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (7% near) |
+| 1398 | river | Sudriaș | Timiș | Râul Timiș | touches Râul Timiș at mouth only (12% near) |
+| 1399 | river | Sugasău | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 1400 | river | Suha | Suceava | Râul Moldova | touches Râul Moldova at mouth only (3% near) |
+| 1401 | river | Suha Mare | Suceava | Râul Moldova | touches Râul Moldova at mouth only (4% near) |
+| 1402 | river | Suha Mare | Suceava | Râul Moldova | touches Râul Moldova at mouth only (4% near) |
+| 1403 | river | Suha Mică | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
+| 1404 | river | Suha Mică | Suceava | Râul Moldova | touches Râul Moldova at mouth only (6% near) |
+| 1405 | river | Suhard | Harghita | Râul Bicazul Superior | touches Râul Bicazul Superior at mouth only (25% near) |
+| 1406 | river | Suliniș | Arad | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
+| 1407 | river | Sultan | Teleorman | Râul Olt | touches Râul Olt at mouth only (4% near) |
+| 1408 | river | Sultan | Teleorman | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (4% near) |
+| 1409 | river | Susai | Brașov | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
+| 1410 | river | Suseni | Gorj | Râul Șușița Seacă | touches Râul Șușița Seacă at mouth only (6% near) |
+| 1411 | river | Suseni | Gorj | Râul Șușița Verde | touches Râul Șușița Verde at mouth only (6% near) |
+| 1412 | river | Suseni | Gorj | Râul Șușița | touches Râul Șușița at mouth only (6% near) |
+| 1413 | river | Szamos | Satu Mare | Râul Someș | touches Râul Someș at mouth only (3% near) |
+| 1414 | river | Szász-patak | Harghita | Izvorul Mureș | touches Izvorul Mureș at mouth only (33% near) |
+| 1415 | river | Sár-Éger-csatorna | Satu Mare | Râul Tur | touches Râul Tur at mouth only (3% near) |
+| 1416 | river | Sáros-patak | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (12% near) |
+| 1417 | river | Sâmboleni | Cluj | Râul Fizeș | touches Râul Fizeș at mouth only (6% near) |
+| 1418 | river | Sâmnic | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (5% near) |
+| 1419 | river | Sângătin | Sibiu | Râul Secaș | touches Râul Secaș at mouth only (17% near) |
+| 1420 | river | Sânmartin de Beiuș | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (17% near) |
+| 1421 | river | Sânmartin de Beiuș | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (17% near) |
+| 1422 | river | Sârbi | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
+| 1423 | river | Sâva | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (25% near) |
+| 1424 | river | Sükő-pataka | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (17% near) |
+| 1425 | river | Săbășița | Neamț | Râul Sabasa | touches Râul Sabasa at mouth only (25% near) |
+| 1426 | river | Săcrieș | Suceava | Râul Moldoviţa Superioară | touches Râul Moldoviţa Superioară at mouth only (14% near) |
+| 1427 | river | Săcămaș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (14% near) |
+| 1428 | river | Sălaș | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (8% near) |
+| 1429 | river | Sălciva | Hunedoara | Râul Mureș | touches Râul Mureș at mouth only (14% near) |
+| 1430 | river | Sălătruc | Cluj | Râul Someș | touches Râul Someș at mouth only (3% near) |
+| 1431 | river | Sălătrucel | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1432 | river | Săpânța | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (6% near) |
+| 1433 | river | Sărat | Mureș | Valea Soveții | touches Valea Soveții at mouth only (12% near) |
+| 1434 | river | Sărmaș | Harghita | Râul Mureș II | touches Râul Mureș II at mouth only (11% near) |
+| 1435 | river | Sărăcelu | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
+| 1436 | river | Sărăcinul | Vâlcea | Râul Olt | touches Râul Olt at mouth only (7% near) |
+| 1437 | river | Sărăcinul | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1438 | river | Sărățel | Buzău | Râul Buzăul inferior | touches Râul Buzăul inferior at mouth only (4% near) |
+| 1439 | river | Sărățel | Buzău | Râul Buzău | touches Râul Buzău at mouth only (4% near) |
+| 1440 | river | Sărățica | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (17% near) |
+| 1441 | river | Săvăstreni | Brașov | Valea Dejani (Săvăstreni) | touches Valea Dejani (Săvăstreni) at mouth only (17% near) |
+| 1442 | river | Tarvezul | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (25% near) |
+| 1443 | river | Tejac | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (20% near) |
+| 1444 | river | Tejac | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (20% near) |
+| 1445 | river | Telcișor | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (9% near) |
+| 1446 | river | Teliu | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (14% near) |
+| 1447 | river | Terebici | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 1448 | river | Teuz | Arad | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (1% near) |
+| 1449 | river | Teuz | Arad | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (1% near) |
+| 1450 | river | Teșna | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (11% near) |
+| 1451 | river | Teșnița | Suceava | Râul Dorna inferioară | touches Râul Dorna inferioară at mouth only (17% near) |
+| 1452 | river | Ticoș | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (33% near) |
+| 1453 | river | Tifánpataka | Harghita | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (20% near) |
+| 1454 | river | Tigheci | Vaslui | Râul Prut și revărsări | touches Râul Prut și revărsări at mouth only (10% near) |
+| 1455 | river | Tihul | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (11% near) |
+| 1456 | river | Tihul Ilvei | Mureș | Râul Ilva | touches Râul Ilva at mouth only (17% near) |
+| 1457 | river | Tireu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (14% near) |
+| 1458 | river | Tisieu | Mureș | Râul Gurghiul superior | touches Râul Gurghiul superior at mouth only (14% near) |
+| 1459 | river | Tisza | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (0% near) |
+| 1460 | river | Tisza | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (0% near) |
+| 1461 | river | Tiva | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 1462 | river | Tocile | Sibiu | Râul Cibinul Mic  | touches Râul Cibinul Mic  at mouth only (6% near) |
+| 1463 | river | Tocile | Sibiu | Râul Cibinul Mare  | touches Râul Cibinul Mare  at mouth only (6% near) |
+| 1464 | river | Tocile | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (6% near) |
+| 1465 | river | Tomoroga | Mureș | Râul Mureș IV | touches Râul Mureș IV at mouth only (25% near) |
+| 1466 | river | Tomoroga | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (25% near) |
+| 1467 | river | Trepteanca | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1468 | river | Trestia | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (25% near) |
+| 1469 | river | Treznea | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (10% near) |
+| 1470 | river | Turcinul Mare | Vâlcea | Râul Latorița Inferioară | touches Râul Latorița Inferioară at mouth only (25% near) |
+| 1471 | river | Turcu | Brașov | Râul Bârsa | touches Râul Bârsa at mouth only (11% near) |
+| 1472 | river | Turdaș | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (5% near) |
+| 1473 | river | Turia | Covasna | Pârâu Cașin | touches Pârâu Cașin at mouth only (9% near) |
+| 1474 | river | Turnișoara | Sibiu | Râul Sebeș | touches Râul Sebeș at mouth only (33% near) |
+| 1475 | river | Tâmpa | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (33% near) |
+| 1476 | river | Târgul | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
+| 1477 | river | Târgul | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (12% near) |
+| 1478 | river | Târnava Seacă | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (33% near) |
+| 1479 | river | Tâșla | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (6% near) |
+| 1480 | river | Tóbükke-patak | Harghita | Râul Uzul | touches Râul Uzul at mouth only (20% near) |
+| 1481 | river | Tănase | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (8% near) |
+| 1482 | river | Tărcuța | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (14% near) |
+| 1483 | river | Tărhăuși | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (14% near) |
+| 1484 | river | Tărpiu | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (6% near) |
+| 1485 | river | Tărtărău | Alba | Râul Sebeș | touches Râul Sebeș at mouth only (9% near) |
+| 1486 | river | Tătărul | Sibiu | Râul Sebeșul de Sus | touches Râul Sebeșul de Sus at mouth only (17% near) |
+| 1487 | river | Ucișoara | Brașov | Valea Ucea Mare | touches Valea Ucea Mare at mouth only (17% near) |
+| 1488 | river | Ugruțiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (20% near) |
+| 1489 | river | Uila | Mureș | Pârâul Lut | touches Pârâul Lut at mouth only (8% near) |
+| 1490 | river | Ulieș | Mureș | Pârâul Lechința | touches Pârâul Lechința at mouth only (12% near) |
+| 1491 | river | Ungurelul | Gorj | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
+| 1492 | river | Unirea | Cluj | Râul Mureș | touches Râul Mureș at mouth only (7% near) |
+| 1493 | river | Unu | Timiș | Pârâul Behela | touches Pârâul Behela at mouth only (23% near) |
+| 1494 | river | Urlatul Mare | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (17% near) |
+| 1495 | river | Urlătoarea | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (6% near) |
+| 1496 | river | Urlătoarea | Brașov | Râul Buzău | touches Râul Buzău at mouth only (12% near) |
+| 1497 | river | Urlățelul | Prahova | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (25% near) |
+| 1498 | river | Urlățelul | Prahova | Râul 4 Doftana Superioara | touches Râul 4 Doftana Superioara at mouth only (25% near) |
+| 1499 | river | Ursoaia | Bistrița-Năsăud | Râul Valea Ilvei | touches Râul Valea Ilvei at mouth only (12% near) |
+| 1500 | river | V. Dracului | Gorj | Râul Olteț | touches Râul Olteț at mouth only (25% near) |
+| 1501 | river | Vad | Cluj | Râul Someș | touches Râul Someș at mouth only (7% near) |
+| 1502 | river | Vaidei | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (4% near) |
+| 1503 | river | Valcălița | Mureș | Râul Răstolița | touches Râul Răstolița at mouth only (10% near) |
+| 1504 | river | Valea Agăstău | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (25% near) |
+| 1505 | river | Valea Agăstău | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (25% near) |
+| 1506 | river | Valea Aiudului | Alba | Râul Izvoarele Ampoiului | touches Râul Izvoarele Ampoiului at mouth only (9% near) |
+| 1507 | river | Valea Aiudului | Alba | Râul Mureș | touches Râul Mureș at mouth only (5% near) |
+| 1508 | river | Valea Albă | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (10% near) |
+| 1509 | river | Valea Albă | Teleorman | Râul Câlniștea | touches Râul Câlniștea at mouth only (12% near) |
+| 1510 | river | Valea Albă | Teleorman | Râul Câlniștea | touches Râul Câlniștea at mouth only (12% near) |
+| 1511 | river | Valea Albă | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (25% near) |
+| 1512 | river | Valea Albă | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (25% near) |
+| 1513 | river | Valea Albă | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (33% near) |
+| 1514 | river | Valea Aurului | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (9% near) |
+| 1515 | river | Valea Babei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
+| 1516 | river | Valea Banului | Sălaj | Râul Crasna | touches Râul Crasna at mouth only (25% near) |
+| 1517 | river | Valea Banului | Sălaj | Râul Crasna | touches Râul Crasna at mouth only (25% near) |
+| 1518 | river | Valea Banului | Sălaj | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (25% near) |
+| 1519 | river | Valea Bisericii | Dolj | Râul Jiu și afluenții săi | touches Râul Jiu și afluenții săi at mouth only (5% near) |
+| 1520 | river | Valea Bisericii | Dolj | Râul Jiu  | touches Râul Jiu  at mouth only (5% near) |
+| 1521 | river | Valea Bisericii | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
+| 1522 | river | Valea Blăjenilor | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (9% near) |
+| 1523 | river | Valea Borcutului | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (4% near) |
+| 1524 | river | Valea Boului | Brașov | Râul Homorod | touches Râul Homorod at mouth only (7% near) |
+| 1525 | river | Valea Boului | Brașov | Râul Geamăna | touches Râul Geamăna at mouth only (13% near) |
+| 1526 | river | Valea Boului | Brașov | Valea Homorod | touches Valea Homorod at mouth only (7% near) |
+| 1527 | river | Valea Boții | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (33% near) |
+| 1528 | river | Valea Brădetului | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (20% near) |
+| 1529 | river | Valea Brătoaia | Argeș | Râul Dambovicioara | touches Râul Dambovicioara at mouth only (33% near) |
+| 1530 | river | Valea Budacului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (20% near) |
+| 1531 | river | Valea Bârnii | Alba | Râul Vîltori - Feneș | touches Râul Vîltori - Feneș at mouth only (25% near) |
+| 1532 | river | Valea Băbiu | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (6% near) |
+| 1533 | river | Valea Bătrână | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (25% near) |
+| 1534 | river | Valea Caldă | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (8% near) |
+| 1535 | river | Valea Calului | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (11% near) |
+| 1536 | river | Valea Carelor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1537 | river | Valea Carelor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (6% near) |
+| 1538 | river | Valea Cascadelor | Hunedoara | Râul Lăpuşnicul Mare | touches Râul Lăpuşnicul Mare at mouth only (25% near) |
+| 1539 | river | Valea Ceaușoaiei | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
+| 1540 | river | Valea Cerbului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (4% near) |
+| 1541 | river | Valea Cetăți | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (25% near) |
+| 1542 | river | Valea Cetății | Brașov | Râul Olt | touches Râul Olt at mouth only (6% near) |
+| 1543 | river | Valea Cetății | Brașov | Râul Olt | touches Râul Olt at mouth only (6% near) |
+| 1544 | river | Valea Cetății | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (6% near) |
+| 1545 | river | Valea Cetății | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (10% near) |
+| 1546 | river | Valea Cetății | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (10% near) |
+| 1547 | river | Valea Cheii | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (4% near) |
+| 1548 | river | Valea Ciripa | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
+| 1549 | river | Valea Ciripa | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
+| 1550 | river | Valea Coacăzei | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (17% near) |
+| 1551 | river | Valea Colbului | Suceava | Râul Bistrița Aurie II | touches Râul Bistrița Aurie II at mouth only (33% near) |
+| 1552 | river | Valea Comisului | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (33% near) |
+| 1553 | river | Valea Cornetului | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (9% near) |
+| 1554 | river | Valea Crișului | Covasna | Râul Olt | touches Râul Olt at mouth only (9% near) |
+| 1555 | river | Valea Crișului | Covasna | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (9% near) |
+| 1556 | river | Valea Crăciunului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (14% near) |
+| 1557 | river | Valea Crăciunului | Bihor | Drăgan | touches Drăgan at mouth only (14% near) |
+| 1558 | river | Valea cu Arini | Maramureș | Râul Runcu | touches Râul Runcu at mouth only (25% near) |
+| 1559 | river | Valea Cucerdea | Mureș | Râul Mureș | touches Râul Mureș at mouth only (12% near) |
+| 1560 | river | Valea Câinelui | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
+| 1561 | river | Valea Câinelui | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (20% near) |
+| 1562 | river | Valea Căldărilor | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (12% near) |
+| 1563 | river | Valea Căprăreasa | Vâlcea | Râul Cheia | touches Râul Cheia at mouth only (33% near) |
+| 1564 | river | Valea de Brădet | Vâlcea | Râul Olănești  | touches Râul Olănești  at mouth only (8% near) |
+| 1565 | river | Valea Doamnele | Dâmbovița | Râul Ialomița superioară | touches Râul Ialomița superioară at mouth only (25% near) |
+| 1566 | river | Valea Dracului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (11% near) |
+| 1567 | river | Valea Dragostei | Alba | Râul Ariesul Mic | touches Râul Ariesul Mic at mouth only (17% near) |
+| 1568 | river | Valea Dragului | Sălaj | Valea Almașului | touches Valea Almașului at mouth only (33% near) |
+| 1569 | river | Valea Drojdiei | Sibiu | Râul Săliște | touches Râul Săliște at mouth only (11% near) |
+| 1570 | river | Valea Drăcoița | Bihor | Râul Leuca | touches Râul Leuca at mouth only (25% near) |
+| 1571 | river | Valea Fetei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
+| 1572 | river | Valea Feții | Cluj | Valea Lonei | touches Valea Lonei at mouth only (33% near) |
+| 1573 | river | Valea Firei | Cluj | Râul 1 Someșul Cald superior | touches Râul 1 Someșul Cald superior at mouth only (7% near) |
+| 1574 | river | Valea Fratelui | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
+| 1575 | river | Valea Fratelui | Vâlcea | Râul Olt | touches Râul Olt at mouth only (14% near) |
+| 1576 | river | Valea Fratelui | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (29% near) |
+| 1577 | river | Valea Furcilor | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (20% near) |
+| 1578 | river | Valea Fânații | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (17% near) |
+| 1579 | river | Valea Fântânel | Mureș | Râul Mureş III | touches Râul Mureş III at mouth only (20% near) |
+| 1580 | river | Valea Fântânii | Gorj | Valea Sadului | touches Valea Sadului at mouth only (33% near) |
+| 1581 | river | Valea Fărnicioarei | Arad | Râul Leuca | touches Râul Leuca at mouth only (25% near) |
+| 1582 | river | Valea Galbena | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (25% near) |
+| 1583 | river | Valea Ghegheșului | Bihor | Râul Leuca | touches Râul Leuca at mouth only (33% near) |
+| 1584 | river | Valea Ghimbav | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (7% near) |
+| 1585 | river | Valea Ghinzii | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (14% near) |
+| 1586 | river | Valea Goblii | Alba | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
+| 1587 | river | Valea Hotarului | Vâlcea | Râul Olănești  | touches Râul Olănești  at mouth only (10% near) |
+| 1588 | river | Valea Hotarului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
+| 1589 | river | Valea Hrăii | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (9% near) |
+| 1590 | river | valea Huta | Sălaj | Valea Barcăului | touches Valea Barcăului at mouth only (25% near) |
+| 1591 | river | valea Huta | Sălaj | Râul Barcăul Superior | touches Râul Barcăul Superior at mouth only (25% near) |
+| 1592 | river | Valea Hăigașului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (12% near) |
+| 1593 | river | Valea Hăigașului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (12% near) |
+| 1594 | river | Valea Iașului | Argeș | Râul Argeș | touches Râul Argeș at mouth only (33% near) |
+| 1595 | river | Valea Izvorul Sec | Argeș | Râul Dambovicioara | touches Râul Dambovicioara at mouth only (6% near) |
+| 1596 | river | Valea Izvorul Sec | Argeș | Râul Capra | touches Râul Capra at mouth only (33% near) |
+| 1597 | river | Valea Izvorului | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (12% near) |
+| 1598 | river | Valea Izvorului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
+| 1599 | river | Valea Jepilor | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (9% near) |
+| 1600 | river | Valea Jighil | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
+| 1601 | river | Valea Jighil | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
+| 1602 | river | Valea Lacul Roșu | Prahova | Valea Azugii | touches Valea Azugii at mouth only (33% near) |
+| 1603 | river | Valea Largă | Cluj | Râul Arieș | touches Râul Arieș at mouth only (7% near) |
+| 1604 | river | Valea Largă | Alba | Râul Arieș | touches Râul Arieș at mouth only (17% near) |
+| 1605 | river | Valea Largă | Hunedoara | Râul Grădiștea superioară | touches Râul Grădiștea superioară at mouth only (33% near) |
+| 1606 | river | Valea Lazului | Maramureș | Râul Mara | touches Râul Mara at mouth only (33% near) |
+| 1607 | river | Valea lui Andraş | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (25% near) |
+| 1608 | river | Valea lui Andraş | Bihor | Drăgan | touches Drăgan at mouth only (25% near) |
+| 1609 | river | Valea lui Anghel | Vâlcea | Râul Luncavăț | touches Râul Luncavăț at mouth only (17% near) |
+| 1610 | river | Valea lui Bibarț | Alba | Râul Ampoi | touches Râul Ampoi at mouth only (17% near) |
+| 1611 | river | Valea lui Bogdan | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (14% near) |
+| 1612 | river | Valea lui Coman | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (17% near) |
+| 1613 | river | Valea lui Dan | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 1614 | river | Valea lui Dan | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 1615 | river | Valea lui Dobre | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (14% near) |
+| 1616 | river | Valea lui Fătul | Sibiu | Râul Sebeșul de Jos | touches Râul Sebeșul de Jos at mouth only (25% near) |
+| 1617 | river | Valea lui Ilie | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (25% near) |
+| 1618 | river | Valea lui Ionelu | Sibiu | Râul Sebeșul de Jos | touches Râul Sebeșul de Jos at mouth only (25% near) |
+| 1619 | river | Valea lui Ivan | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (17% near) |
+| 1620 | river | Valea lui Liman | Timiș | Râul Bega superior - Luncani | touches Râul Bega superior - Luncani at mouth only (17% near) |
+| 1621 | river | Valea lui Nan | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (33% near) |
+| 1622 | river | Valea lui Odobescu | Galați | Râul Siret | touches Râul Siret at mouth only (14% near) |
+| 1623 | river | Valea lui Odobescu | Galați | Râul Siret | touches Râul Siret at mouth only (14% near) |
+| 1624 | river | Valea lui Stan | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (10% near) |
+| 1625 | river | Valea Luncilor | Bihor | Valea Mișidului | touches Valea Mișidului at mouth only (33% near) |
+| 1626 | river | Valea Lungă | Brașov | Râul Olt | touches Râul Olt at mouth only (33% near) |
+| 1627 | river | Valea Lungă | Brașov | Râul Olt | touches Râul Olt at mouth only (33% near) |
+| 1628 | river | Valea Lungă | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1629 | river | Valea Lungă | Bistrița-Năsăud | Pârâul Rosua | touches Pârâul Rosua at mouth only (8% near) |
+| 1630 | river | Valea Lungă | Bistrița-Năsăud | Râul Ilișua | touches Râul Ilișua at mouth only (5% near) |
+| 1631 | river | Valea Lupului | Sibiu | Râul Cibin | touches Râul Cibin at mouth only (10% near) |
+| 1632 | river | Valea Lupului | Bihor | Valea Iadului Superior | touches Valea Iadului Superior at mouth only (25% near) |
+| 1633 | river | Valea Lupului | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
+| 1634 | river | Valea Lupului | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
+| 1635 | river | Valea Luțele | Argeș | Râul Izvoarele Dâmboviței | touches Râul Izvoarele Dâmboviței at mouth only (25% near) |
+| 1636 | river | Valea Maria | Satu Mare | Râul Crasna | touches Râul Crasna at mouth only (7% near) |
+| 1637 | river | Valea Maria | Satu Mare | Râul Crasna (Frumușaua) | touches Râul Crasna (Frumușaua) at mouth only (7% near) |
+| 1638 | river | Valea Mesteacănului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
+| 1639 | river | Valea Milea | Buzău | Râul Siriul | touches Râul Siriul at mouth only (25% near) |
+| 1640 | river | Valea Miții | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (11% near) |
+| 1641 | river | Valea Moara Dracului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
+| 1642 | river | Valea Moara Dracului | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
+| 1643 | river | Valea Morii | Mureș | Pârâul de Câmpie | touches Pârâul de Câmpie at mouth only (17% near) |
+| 1644 | river | Valea Morii | Maramureș | Râul Iza | touches Râul Iza at mouth only (20% near) |
+| 1645 | river | Valea Morii | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (17% near) |
+| 1646 | river | Valea Morii | Sălaj | Valea Zalău | touches Valea Zalău at mouth only (33% near) |
+| 1647 | river | Valea Muntelui | Maramureș | Râul Iza | touches Râul Iza at mouth only (25% near) |
+| 1648 | river | Valea Mușeteica | Argeș | Râul Buda | touches Râul Buda at mouth only (14% near) |
+| 1649 | river | Valea Mânării | Alba | Raul Mic | touches Raul Mic at mouth only (33% near) |
+| 1650 | river | Valea Mâzgavul | Vâlcea | Râul Topologul superior | touches Râul Topologul superior at mouth only (17% near) |
+| 1651 | river | Valea Mănăstirii | Dolj | Râul Amaradia | touches Râul Amaradia at mouth only (0% near) |
+| 1652 | river | Valea Mărului | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
+| 1653 | river | Valea Mărului | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (5% near) |
+| 1654 | river | Valea Nimăieștilor | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (20% near) |
+| 1655 | river | Valea Nimăieștilor | Bihor | Râul Crișul Negru inferior | touches Râul Crișul Negru inferior at mouth only (20% near) |
+| 1656 | river | Valea Nimăieștilor | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (20% near) |
+| 1657 | river | Valea Noghieiului | Cluj | Râul Căpuș | touches Râul Căpuș at mouth only (25% near) |
+| 1658 | river | Valea Nucetului | Dâmbovița | Râul Ialomița superioară | touches Râul Ialomița superioară at mouth only (17% near) |
+| 1659 | river | Valea Obielei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
+| 1660 | river | Valea Ortelecului | Sălaj | Valea Agrij | touches Valea Agrij at mouth only (10% near) |
+| 1661 | river | Valea Orății | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
+| 1662 | river | Valea Pacăului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (33% near) |
+| 1663 | river | Valea Pacăului | Bihor | Râul Crișul Negru | touches Râul Crișul Negru at mouth only (33% near) |
+| 1664 | river | Valea Padeșului | Timiș | Râul Nădrag (Valea Nădragului) | touches Râul Nădrag (Valea Nădragului) at mouth only (17% near) |
+| 1665 | river | Valea Paltinului | Sibiu | Pârâul Valea Strâmbii | touches Pârâul Valea Strâmbii at mouth only (33% near) |
+| 1666 | river | Valea Paltinului | Sibiu | Pârâul Valea Rîndiboului | touches Pârâul Valea Rîndiboului at mouth only (33% near) |
+| 1667 | river | Valea Pietrelor | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (14% near) |
+| 1668 | river | Valea Pietricelelor | Vâlcea | Pâraiele Boia Mare | touches Pâraiele Boia Mare at mouth only (33% near) |
+| 1669 | river | Valea Pietrii | Prahova | Râul Vărbilău  | touches Râul Vărbilău  at mouth only (33% near) |
+| 1670 | river | Valea Pleșcuței | Cluj | Valea Lonei | touches Valea Lonei at mouth only (25% near) |
+| 1671 | river | Valea Poienii | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (25% near) |
+| 1672 | river | Valea Poienii | Bihor | Drăgan | touches Drăgan at mouth only (25% near) |
+| 1673 | river | Valea Popii | Maramureș | Râul Cosău | touches Râul Cosău at mouth only (25% near) |
+| 1674 | river | Valea Priborului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (25% near) |
+| 1675 | river | Valea Prihodistei | Alba | Raul Mic | touches Raul Mic at mouth only (33% near) |
+| 1676 | river | Valea Prisacina | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (17% near) |
+| 1677 | river | Valea Puturoasa | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 1678 | river | Valea Păltinişului | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
+| 1679 | river | Valea Păltinişului | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
+| 1680 | river | Valea Pănăzii | Alba | Râul Târnava Mică | touches Râul Târnava Mică at mouth only (25% near) |
+| 1681 | river | Valea Părușului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (33% near) |
+| 1682 | river | Valea Păstăilor | Maramureș | Râul Iza | touches Râul Iza at mouth only (11% near) |
+| 1683 | river | Valea Racilor | Cluj | Râul Arieș | touches Râul Arieș at mouth only (3% near) |
+| 1684 | river | Valea Rea | Satu Mare | Râul Tur | touches Râul Tur at mouth only (5% near) |
+| 1685 | river | Valea Rea | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (25% near) |
+| 1686 | river | Valea Rea | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (25% near) |
+| 1687 | river | Valea Rea | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (6% near) |
+| 1688 | river | Valea Reaua Mare | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (11% near) |
+| 1689 | river | Valea Reaua Mică | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (20% near) |
+| 1690 | river | Valea Rogoazei | Brașov | Râul Sbircioara | touches Râul Sbircioara at mouth only (33% near) |
+| 1691 | river | Valea Runcului | Argeș | Râul Dâmbovița | touches Râul Dâmbovița at mouth only (14% near) |
+| 1692 | river | Valea Rusului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (25% near) |
+| 1693 | river | Valea Râtului | Alba | Râul Mureș | touches Râul Mureș at mouth only (33% near) |
+| 1694 | river | Valea Râșnoavei | Brașov | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (11% near) |
+| 1695 | river | Valea Răchițelii | Hunedoara | Râul Govăjdia | touches Râul Govăjdia at mouth only (25% near) |
+| 1696 | river | Valea Satului | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (33% near) |
+| 1697 | river | Valea Satului | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (33% near) |
+| 1698 | river | Valea Satului | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (33% near) |
+| 1699 | river | Valea Satului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (17% near) |
+| 1700 | river | Valea Satului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (6% near) |
+| 1701 | river | Valea Satului | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (7% near) |
+| 1702 | river | Valea Satului | Bistrița-Năsăud | Râul Rebra | touches Râul Rebra at mouth only (11% near) |
+| 1703 | river | Valea Seacă | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (17% near) |
+| 1704 | river | Valea Seacă | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (17% near) |
+| 1705 | river | Valea Seacă | Suceava | Râul Moldova | touches Râul Moldova at mouth only (25% near) |
+| 1706 | river | Valea Seacă | Alba | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
+| 1707 | river | Valea Sigmirului | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (10% near) |
+| 1708 | river | Valea Stanciului | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (17% near) |
+| 1709 | river | Valea Stanciului | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (17% near) |
+| 1710 | river | Valea Sterminoasă | Vâlcea | Râul Boia Mică | touches Râul Boia Mică at mouth only (17% near) |
+| 1711 | river | Valea Streicicea | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (17% near) |
+| 1712 | river | Valea Sturu | Caraș-Severin | Râul Bistra Mărului inferior | touches Râul Bistra Mărului inferior at mouth only (17% near) |
+| 1713 | river | Valea Sturu | Caraș-Severin | Râul Bistrița Mărului superior | touches Râul Bistrița Mărului superior at mouth only (17% near) |
+| 1714 | river | Valea Stâlpului | Timiș | Râul Bega superior - Luncani | touches Râul Bega superior - Luncani at mouth only (17% near) |
+| 1715 | river | Valea Stânei | Prahova | Râul Telejenel | touches Râul Telejenel at mouth only (12% near) |
+| 1716 | river | Valea Sândulești | Cluj | Râul Arieș | touches Râul Arieș at mouth only (14% near) |
+| 1717 | river | Valea Săbii | Bistrița-Năsăud | Râul Sălăuța Inferioară | touches Râul Sălăuța Inferioară at mouth only (10% near) |
+| 1718 | river | Valea Sării | Buzău | Valea Slănicului | touches Valea Slănicului at mouth only (6% near) |
+| 1719 | river | Valea Sărății | Cluj | Valea Lonei | touches Valea Lonei at mouth only (9% near) |
+| 1720 | river | Valea Teiului | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (33% near) |
+| 1721 | river | Valea Teleleu | Vâlcea | Valea Curpenului | touches Valea Curpenului at mouth only (25% near) |
+| 1722 | river | Valea Tigăi | Brașov | Râul Comana | touches Râul Comana at mouth only (25% near) |
+| 1723 | river | Valea Titișorului | Bihor | Râul Leuca | touches Râul Leuca at mouth only (33% near) |
+| 1724 | river | Valea Tufa | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (25% near) |
+| 1725 | river | Valea Turcului | Prahova | Valea Azugii | touches Valea Azugii at mouth only (25% near) |
+| 1726 | river | Valea Turnul | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (8% near) |
+| 1727 | river | Valea Tăcășelelor | Arad | Râul Crișul Alb | touches Râul Crișul Alb at mouth only (5% near) |
+| 1728 | river | Valea Tărpiu | Bistrița-Năsăud | Râul Bistrița | touches Râul Bistrița at mouth only (17% near) |
+| 1729 | river | Valea Unghia Mare | Prahova | Valea Azugii | touches Valea Azugii at mouth only (25% near) |
+| 1730 | river | Valea Untului | Alba | Râul Canciu- Bosorogu | touches Râul Canciu- Bosorogu at mouth only (17% near) |
+| 1731 | river | Valea Urlieșu | Sibiu | Râul Sebeș | touches Râul Sebeș at mouth only (20% near) |
+| 1732 | river | Valea Ursului | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (12% near) |
+| 1733 | river | Valea Viilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 1734 | river | Valea Viilor | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (8% near) |
+| 1735 | river | Valea Vinului | Bistrița-Năsăud | Râul Cormaia | touches Râul Cormaia at mouth only (17% near) |
+| 1736 | river | Valea Vinului | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (12% near) |
+| 1737 | river | Valea Voievodeni | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (14% near) |
+| 1738 | river | Valea Vultureasa | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (8% near) |
+| 1739 | river | Valea Văiosu | Bihor | Valea Drăganului | touches Valea Drăganului at mouth only (33% near) |
+| 1740 | river | Valea Văiosu | Bihor | Drăgan | touches Drăgan at mouth only (33% near) |
+| 1741 | river | Valea Zamora | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
+| 1742 | river | Valea Zgarburei | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (33% near) |
+| 1743 | river | Valea Zorilor | Arad | Pârâul Apa Mare | touches Pârâul Apa Mare at mouth only (9% near) |
+| 1744 | river | Valea Zălanului | Covasna | Râul Aita | touches Râul Aita at mouth only (6% near) |
+| 1745 | river | Valea Șaeșului | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (7% near) |
+| 1746 | river | Valea Șarpelui | Dolj | Râul Amaradia | touches Râul Amaradia at mouth only (20% near) |
+| 1747 | river | Valea Șipa | Prahova | Râul Prahova inferioară | touches Râul Prahova inferioară at mouth only (20% near) |
+| 1748 | river | Valea Țigăilor | Brașov | Râul Doftana Gârcin | touches Râul Doftana Gârcin at mouth only (25% near) |
+| 1749 | river | Varnița | Botoșani | Râul Miletin | touches Râul Miletin at mouth only (14% near) |
+| 1750 | river | Vaserul | Maramureș | Marele Novat | touches Marele Novat at mouth only (3% near) |
+| 1751 | river | Vaserul | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (3% near) |
+| 1752 | river | Vasilatu | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (6% near) |
+| 1753 | river | Vaslui | Iași | Râul Vasluieț | touches Râul Vasluieț at mouth only (3% near) |
+| 1754 | river | Vetea Mare | Neamț | Râul Bicăjel | touches Râul Bicăjel at mouth only (33% near) |
+| 1755 | river | Veza | Alba | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
+| 1756 | river | Viemeșu | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (20% near) |
+| 1757 | river | Vilia | Botoșani | Prut– fără lacul Stânca | touches Prut– fără lacul Stânca at mouth only (2% near) |
+| 1758 | river | Vinești | Arad | Râul Mureș | touches Râul Mureș at mouth only (11% near) |
+| 1759 | river | Vinul | Harghita | Râul Cașin | touches Râul Cașin at mouth only (33% near) |
+| 1760 | river | Vinț | Alba | Râul Mureș | touches Râul Mureș at mouth only (25% near) |
+| 1761 | river | Vitroape | Sălaj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (5% near) |
+| 1762 | river | Vizăuți | Vrancea | Râul Putna | touches Râul Putna at mouth only (5% near) |
+| 1763 | river | Vișa | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (6% near) |
+| 1764 | river | Vișag | Cluj | Săcuieul Inferior | touches Săcuieul Inferior at mouth only (33% near) |
+| 1765 | river | Vișag | Cluj | Săcuieul Superior | touches Săcuieul Superior at mouth only (33% near) |
+| 1766 | river | Viștișoara | Brașov | Valea Viștea Mare | touches Valea Viștea Mare at mouth only (33% near) |
+| 1767 | river | Vlășinescu | Maramureș | Râul Runcu | touches Râul Runcu at mouth only (33% near) |
+| 1768 | river | Voineasa Mică | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
+| 1769 | river | Voineasa Mică | Olt | Râul Olteț | touches Râul Olteț at mouth only (33% near) |
+| 1770 | river | Voineșița | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (7% near) |
+| 1771 | river | Voineșița | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (7% near) |
+| 1772 | river | Voiniceni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (20% near) |
+| 1773 | river | Voitinel | Suceava | Râul Suceava | touches Râul Suceava at mouth only (8% near) |
+| 1774 | river | Voroneț | Suceava | Râul Moldova | touches Râul Moldova at mouth only (20% near) |
+| 1775 | river | Vulcănița | Brașov | Râul Homorod | touches Râul Homorod at mouth only (0% near) |
+| 1776 | river | Vulcănița | Brașov | Valea Homorod | touches Valea Homorod at mouth only (0% near) |
+| 1777 | river | Vâna | Timiș | Pârâul Șurgani | touches Pârâul Șurgani at mouth only (5% near) |
+| 1778 | river | Văleanca | Prahova | Râul Teleajen superior | touches Râul Teleajen superior at mouth only (4% near) |
+| 1779 | river | Văleni | Mureș | Râul Mureș | touches Râul Mureș at mouth only (17% near) |
+| 1780 | river | Vălerița | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (17% near) |
+| 1781 | river | Văratec | Hunedoara | Râul Streiul montan inferior | touches Râul Streiul montan inferior at mouth only (5% near) |
+| 1782 | river | Văratica | Vâlcea | Râul Olt | touches Râul Olt at mouth only (8% near) |
+| 1783 | river | Văratica | Vâlcea | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (8% near) |
+| 1784 | river | Vărbila | Prahova | Râul Cricovul Sărat | touches Râul Cricovul Sărat at mouth only (10% near) |
+| 1785 | river | Vărmaga | Hunedoara | Râul Mureș, cu afluenții | touches Râul Mureș, cu afluenții at mouth only (7% near) |
+| 1786 | river | Văsălatu | Argeș | Râul Doamnei inferior | touches Râul Doamnei inferior at mouth only (33% near) |
+| 1787 | river | Vătafu | Vâlcea | Râul Lotru Superior | touches Râul Lotru Superior at mouth only (10% near) |
+| 1788 | river | Vătafu | Vâlcea | Râul Lotru mijlociu | touches Râul Lotru mijlociu at mouth only (10% near) |
+| 1789 | river | Zagon | Covasna | Râul Covasna | touches Râul Covasna at mouth only (11% near) |
+| 1790 | river | Zeletin | Prahova | Râul Bâsca Chiojdului | touches Râul Bâsca Chiojdului at mouth only (11% near) |
+| 1791 | river | Zizin | Brașov | Râul Tărlungul superior | touches Râul Tărlungul superior at mouth only (5% near) |
+| 1792 | river | Zlagna | Caraș-Severin | Râul Timiș | touches Râul Timiș at mouth only (7% near) |
+| 1793 | river | Zlata | Hunedoara | Râul Mare inferior II  | touches Râul Mare inferior II  at mouth only (25% near) |
+| 1794 | river | Zlata | Hunedoara | Râul Mare Superior | touches Râul Mare Superior at mouth only (25% near) |
+| 1795 | river | Zlaști | Hunedoara | Râul Cerna superioară Obârșia | touches Râul Cerna superioară Obârșia at mouth only (3% near) |
+| 1796 | river | Zmeul | Iași | Râul Siret | touches Râul Siret at mouth only (33% near) |
+| 1797 | river | Zârna | Cluj | Valea Drăganului | touches Valea Drăganului at mouth only (20% near) |
+| 1798 | river | Zârna | Cluj | Drăgan | touches Drăgan at mouth only (20% near) |
+| 1799 | river | Zăbrăuți | Vrancea | Râul Siret | touches Râul Siret at mouth only (6% near) |
+| 1800 | river | Zăbrăuți | Vrancea | Râul Siret | touches Râul Siret at mouth only (6% near) |
+| 1801 | river | Zăpodie | Cluj | Râul Someșul Mic | touches Râul Someșul Mic at mouth only (4% near) |
+| 1802 | river | Între Hotare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
+| 1803 | river | Între Hotare | Bistrița-Năsăud | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (14% near) |
+| 1804 | river | Șanțul | Bacău | Râul Trotuș | touches Râul Trotuș at mouth only (8% near) |
+| 1805 | river | Șapartoc | Mureș | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
+| 1806 | river | Șcheiul | Caraș-Severin | Râul Şes | touches Râul Şes at mouth only (33% near) |
+| 1807 | river | Șerbăneasa | Vâlcea | Râul Topolog  | touches Râul Topolog  at mouth only (25% near) |
+| 1808 | river | Șimișna | Cluj | Râul Someșul Mare | touches Râul Someșul Mare at mouth only (0% near) |
+| 1809 | river | Șinca | Brașov | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (3% near) |
+| 1810 | river | Șinca | Brașov | Râul Strâmba | touches Râul Strâmba at mouth only (6% near) |
+| 1811 | river | Șincai | Mureș | Pârâul Lechința | touches Pârâul Lechința at mouth only (33% near) |
+| 1812 | river | Șipoș | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (33% near) |
+| 1813 | river | Șmig | Sibiu | Râul Târnava Mare | touches Râul Târnava Mare at mouth only (33% near) |
+| 1814 | river | Șoarecul | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (17% near) |
+| 1815 | river | Șomtelec | Cluj | Râul Nadăș | touches Râul Nadăș at mouth only (5% near) |
+| 1816 | river | Șoptana | Argeș | Râul Vâlsan Inferior | touches Râul Vâlsan Inferior at mouth only (25% near) |
+| 1817 | river | Șoptana | Argeș | Râul Vâlsan superior | touches Râul Vâlsan superior at mouth only (25% near) |
+| 1818 | river | Șoptana | Argeș | Râul Vâslan mijlociu | touches Râul Vâslan mijlociu at mouth only (25% near) |
+| 1819 | river | Știuca | Harghita | Râul Olt și afluenții săi | touches Râul Olt și afluenții săi at mouth only (20% near) |
+| 1820 | river | Șuculețu | Caraș-Severin | Râul Șucu | touches Râul Șucu at mouth only (33% near) |
+| 1821 | river | Șugău | Maramureș | Râul Iza | touches Râul Iza at mouth only (12% near) |
+| 1822 | river | Țapu | Neamț | Râul Tarcău Superior | touches Râul Tarcău Superior at mouth only (33% near) |
+| 1823 | river | Țepeșeni | Neamț | Râul Bicaz | touches Râul Bicaz at mouth only (33% near) |
+| 1824 | river | Țerova | Caraș-Severin | Râul Bârzava | touches Râul Bârzava at mouth only (10% near) |
+| 1825 | river | Țiganul | Hunedoara | Râul Jieţ | touches Râul Jieţ at mouth only (33% near) |
+| 1826 | river | Țigănești | Brașov | Valea Mare – Crizbav | touches Valea Mare – Crizbav at mouth only (25% near) |
+| 1827 | river | Țăsna | Caraș-Severin | Râul Cerna Superioară | touches Râul Cerna Superioară at mouth only (30% near) |
+| 1828 | river | Апшиця | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (3% near) |
+| 1829 | river | Косівська | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (3% near) |
+| 1830 | river | Лаура | Suceava | Valea Putnei | touches Valea Putnei at mouth only (11% near) |
+| 1831 | river | Тиса - Tisa | Maramureș | Râul Vișeul superior | touches Râul Vișeul superior at mouth only (25% near) |
+| 1832 | river | Шопурка | Maramureș | Râul Tisa | touches Râul Tisa at mouth only (11% near) |
 
 ## NAME COLLISIONS
 
 | # | kind | uncontracted | judet | contracted water | note |
 |---|------|--------------|-------|------------------|------|
-| 1803 | lake | Acumularea Galbenu | Brăila | Galbenu | same name as Galbenu but 380775 m away |
-| 1804 | lake | Acumularea Potcoava | Olt | Balta Potcoava | same name as Balta Potcoava but 279067 m away |
-| 1805 | river | Aranca | Timiș | Râul Aranca | same name as Râul Aranca but 68221 m away |
-| 1806 | lake | Balta Roșu | Călărași | Lacul Roșu | same name as Lacul Roșu but 281949 m away |
-| 1807 | lake | Balta Salcia | Mehedinți | Baraj Salcia | same name as Baraj Salcia but 219515 m away |
-| 1808 | lake | Balta Valea Mare | Covasna | Valea Mare | same name as Valea Mare but 419198 m away |
-| 1809 | lake | Balta Valea Mare | Covasna | Balta Valea Mare | same name as Balta Valea Mare but 193082 m away |
-| 1810 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 467466 m away |
-| 1811 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465103 m away |
-| 1812 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465635 m away |
-| 1813 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 469277 m away |
-| 1814 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 464252 m away |
-| 1815 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 466182 m away |
-| 1816 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 464634 m away |
-| 1817 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 463766 m away |
-| 1818 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465803 m away |
-| 1819 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 468326 m away |
-| 1820 | lake | Iezer | Maramureș | Iezer | same name as Iezer but 88244 m away |
-| 1821 | lake | Iezer | Vâlcea | Iezer | same name as Iezer but 265667 m away |
-| 1822 | lake | Iezer | Suceava | Iezer | same name as Iezer but 60165 m away |
-| 1823 | lake | Lacul Florica | Tulcea | Florica | same name as Florica but 746929 m away |
-| 1824 | lake | Lacul Iezer | Caraș-Severin | Iezer | same name as Iezer but 362440 m away |
-| 1825 | lake | Lacul Iezer | Argeș | Iezer | same name as Iezer but 184367 m away |
-| 1826 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 220272 m away |
-| 1827 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 251236 m away |
-| 1828 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 277723 m away |
-| 1829 | lake | Lacul Roșu | Tulcea | Lacul Roșu | same name as Lacul Roșu but 457663 m away |
-| 1830 | lake | Lacul Roșu | Mureș | Lacul Roșu | same name as Lacul Roșu but 80113 m away |
-| 1831 | lake | Lacul Roșu | Argeș | Lacul Roșu | same name as Lacul Roșu but 169735 m away |
-| 1832 | lake | Lacul Tarnita | Bacău | Lacul Tarnița | same name as Lacul Tarnița but 357833 m away |
-| 1833 | river | Prut | Botoșani | Râul Prut | same name as Râul Prut but 288107 m away |
-| 1834 | river | Prut | Botoșani | Râul Prut | same name as Râul Prut but 110781 m away |
-| 1835 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 70486 m away |
-| 1836 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 17598 m away |
-| 1837 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 127328 m away |
-| 1838 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 87456 m away |
-| 1839 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 160996 m away |
-| 1840 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 177722 m away |
-| 1841 | lake | Tismana | Constanța | Râul Tismana | same name as Râul Tismana but 619450 m away |
-| 1842 | lake | Tău | Hunedoara | Acumulare Tău | same name as Acumulare Tău but 33600 m away |
-| 1843 | lake | Tăul Țapului | Alba | Tăul Ţapului | same name as Tăul Ţapului but 103692 m away |
-| 1844 | river | Valea Lacul Roșu | Prahova | Lacul Roșu | same name as Lacul Roșu but 143379 m away |
-| 1845 | lake | Valea Roșia | Bihor | Râul Roșia | same name as Râul Roșia but 11137 m away |
+| 1833 | lake | Acumularea Galbenu | Brăila | Galbenu | same name as Galbenu but 380775 m away |
+| 1834 | lake | Acumularea Potcoava | Olt | Balta Potcoava | same name as Balta Potcoava but 279067 m away |
+| 1835 | river | Aranca | Timiș | Râul Aranca | same name as Râul Aranca but 68221 m away |
+| 1836 | lake | Balta Roșu | Călărași | Lacul Roșu | same name as Lacul Roșu but 281949 m away |
+| 1837 | lake | Balta Salcia | Mehedinți | Baraj Salcia | same name as Baraj Salcia but 219515 m away |
+| 1838 | lake | Balta Valea Mare | Covasna | Valea Mare | same name as Valea Mare but 419198 m away |
+| 1839 | lake | Balta Valea Mare | Covasna | Balta Valea Mare | same name as Balta Valea Mare but 193082 m away |
+| 1840 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 467466 m away |
+| 1841 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465103 m away |
+| 1842 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465635 m away |
+| 1843 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 469277 m away |
+| 1844 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 464252 m away |
+| 1845 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 466182 m away |
+| 1846 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 464634 m away |
+| 1847 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 463766 m away |
+| 1848 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 465803 m away |
+| 1849 | lake | Dumbrăvița | Brașov | Lacul Dumbrăvița | same name as Lacul Dumbrăvița but 468326 m away |
+| 1850 | lake | Iezer | Maramureș | Iezer | same name as Iezer but 88244 m away |
+| 1851 | lake | Iezer | Vâlcea | Iezer | same name as Iezer but 265667 m away |
+| 1852 | lake | Iezer | Suceava | Iezer | same name as Iezer but 60165 m away |
+| 1853 | lake | Lacul Florica | Tulcea | Florica | same name as Florica but 746929 m away |
+| 1854 | lake | Lacul Iezer | Caraș-Severin | Iezer | same name as Iezer but 362440 m away |
+| 1855 | lake | Lacul Iezer | Argeș | Iezer | same name as Iezer but 184367 m away |
+| 1856 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 220272 m away |
+| 1857 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 251236 m away |
+| 1858 | lake | Lacul Potcoava | Tulcea | Balta Potcoava | same name as Balta Potcoava but 277723 m away |
+| 1859 | lake | Lacul Roșu | Tulcea | Lacul Roșu | same name as Lacul Roșu but 457663 m away |
+| 1860 | lake | Lacul Roșu | Mureș | Lacul Roșu | same name as Lacul Roșu but 80113 m away |
+| 1861 | lake | Lacul Roșu | Argeș | Lacul Roșu | same name as Lacul Roșu but 169735 m away |
+| 1862 | lake | Lacul Tarnita | Bacău | Lacul Tarnița | same name as Lacul Tarnița but 357833 m away |
+| 1863 | river | Prut | Botoșani | Râul Prut | same name as Râul Prut but 288107 m away |
+| 1864 | river | Prut | Botoșani | Râul Prut | same name as Râul Prut but 110781 m away |
+| 1865 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 70486 m away |
+| 1866 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 17598 m away |
+| 1867 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 127328 m away |
+| 1868 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 87456 m away |
+| 1869 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 160996 m away |
+| 1870 | lake | Siret | Galați | Râul Siret | same name as Râul Siret but 177722 m away |
+| 1871 | lake | Tismana | Constanța | Râul Tismana | same name as Râul Tismana but 619450 m away |
+| 1872 | lake | Tău | Hunedoara | Acumulare Tău | same name as Acumulare Tău but 33600 m away |
+| 1873 | lake | Tăul Țapului | Alba | Tăul Ţapului | same name as Tăul Ţapului but 103692 m away |
+| 1874 | river | Valea Lacul Roșu | Prahova | Lacul Roșu | same name as Lacul Roșu but 143379 m away |
+| 1875 | lake | Valea Roșia | Bihor | Râul Roșia | same name as Râul Roșia but 11137 m away |

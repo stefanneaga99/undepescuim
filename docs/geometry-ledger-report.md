@@ -5,7 +5,7 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 ## Scope and semantics
 
 - Canonical waters: **1013** (761 rivers, 252 lakes).
-- Canonical geometry: **796 present**, **217 absent**.
+- Canonical geometry: **799 present**, **214 absent**.
 - Unresolved inventory: **312**; classes `{"2": 163, "3": 13, "4": 6, "5": 12, "6": 118}`.
 - Class2 physical source: **148 records / 161 candidates / 74 all-candidate `(riverGroup, geometryHash)` keys**.
 - Current runtime validates every exact candidate identity and deduplicates all candidates to **74 representatives**.
@@ -23,11 +23,11 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 - `data/processed/mures_harghita_covasna_endpoint_audit.json`: `065872997c7c05b0a96b33637e39fe7053bd034c79b34c48eff0faa9ec2e8dae` (before = after)
 - `data/processed/permit_enrichment.json`: `e7035af369c726b1f24b32d5041814742aec2ed4ca00ce02da3e70d006110d75` (before = after)
 - `data/processed/permit_overrides.json`: `4d25281bc7b3cbf7b254a235aaf77f4a05c843da4e565e92fd2da0de36f015fa` (before = after)
-- `data/processed/river_segment_audit.json`: `3aaffcfdd7e4cb93cab52a32082bf04a9d2d83caed27b18e34930d07b7ea8527` (before = after)
+- `data/processed/river_segment_audit.json`: `c2a0a40f14765ffc0edb733ae2bd012a9dea0eac0a9809480e97ec82d5543830` (before = after)
 - `public/data/association_locations.json`: `bc54ab5ce74c07e282ac2d1f51b16247180d2d5bfd5e3389f2c11735a9c6b9a7` (before = after)
 - `public/data/associations.json`: `388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9` (before = after)
-- `public/data/waters.json`: `1e578a42e8a395d2f8bbe569a42792e5d9a63abb5ab1e9f97d15e3aa34dbb40c` (before = after)
-- `public/data/waters_county_clips.json`: `5f780b9366fa3d91c0eb034e8750a316b6694ffc92ef6731d0709c7d0c4e8153` (before = after)
+- `public/data/waters.json`: `a51fc1c14ebb7e635b11c90770ace3c16dd6eba8fbda11e2cabfa66776d2221b` (before = after)
+- `public/data/waters_county_clips.json`: `faed28555a28c8cd1f4235c8c634608a2257ec2525d6a16e15f45dd2e245a387` (before = after)
 
 ## Historical audit refs
 
@@ -57,8 +57,8 @@ The four prior `RENDERING_FIX` rows remain `NOT_REPRODUCED` and ineligible in th
 
 ## Classification totals
 
-- `preview-only`: 95
-- `repaired`: 794
+- `preview-only`: 92
+- `repaired`: 797
 - `unresolved`: 124
 
 ## Source-backed render repair provenance
