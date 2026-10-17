@@ -1,0 +1,3566 @@
+{
+ "blocked_groups": [
+  {
+   "blockers": [
+    "romsilva-alba-ariesul-mare-inferior",
+    "romsilva-alba-ariesul-mare-mijlociu",
+    "romsilva-alba-ariesul-mare-superior"
+   ],
+   "members": [
+    "romsilva-alba-ariesul-mare",
+    "romsilva-alba-ariesul-mare-inferior",
+    "romsilva-alba-ariesul-mare-mijlociu",
+    "romsilva-alba-ariesul-mare-superior"
+   ],
+   "riverGroup": "aries-mare"
+  },
+  {
+   "blockers": [
+    "romsilva-covasna-barzauta"
+   ],
+   "members": [
+    "romsilva-bacau-barzauta",
+    "romsilva-covasna-barzauta"
+   ],
+   "riverGroup": "barzauta"
+  },
+  {
+   "blockers": [
+    "anpa-bn-bistrita-28"
+   ],
+   "members": [
+    "7oju77qb",
+    "anpa-bn-bistrita-28"
+   ],
+   "riverGroup": "bistrita-bn"
+  },
+  {
+   "blockers": [
+    "u1frrl08"
+   ],
+   "members": [
+    "gvmaf2tz",
+    "u1frrl08"
+   ],
+   "riverGroup": "budacul"
+  },
+  {
+   "blockers": [
+    "romsilva-caras-severin-cerna-mijlocie",
+    "romsilva-mehedinti-cerna",
+    "romsilva-mehedinti-cerna-superioara"
+   ],
+   "members": [
+    "romsilva-caras-severin-cerna-inferioara",
+    "romsilva-caras-severin-cerna-mijlocie",
+    "romsilva-mehedinti-cerna",
+    "romsilva-mehedinti-cerna-superioara"
+   ],
+   "riverGroup": "cerna-herculane"
+  },
+  {
+   "blockers": [
+    "djkvkzv6"
+   ],
+   "members": [
+    "djkvkzv6",
+    "f553avch"
+   ],
+   "riverGroup": "colentina"
+  },
+  {
+   "blockers": [
+    "romsilva-maramures-crasna-frumusaua"
+   ],
+   "members": [
+    "anpa-salaj-crasna-65",
+    "romsilva-maramures-crasna-frumusaua"
+   ],
+   "riverGroup": "crasna"
+  },
+  {
+   "blockers": [
+    "bv8qho87",
+    "do8k78x0",
+    "n7cuf5cs",
+    "xzrr6do0"
+   ],
+   "members": [
+    "bv8qho87",
+    "do8k78x0",
+    "n7cuf5cs",
+    "u84uqnip",
+    "xzrr6do0"
+   ],
+   "riverGroup": "crisul-repede"
+  },
+  {
+   "blockers": [
+    "d5xhbhta",
+    "romsilva-arges-doamnei-mijlociu"
+   ],
+   "members": [
+    "5pomav1f",
+    "d5xhbhta",
+    "romsilva-arges-doamnei-mijlociu"
+   ],
+   "riverGroup": "doamnei"
+  },
+  {
+   "blockers": [
+    "3ek8e82l",
+    "anpa-anpa-0388"
+   ],
+   "members": [
+    "3ek8e82l",
+    "anpa-anpa-0388",
+    "romsilva-dambovita-ialomita-superioara"
+   ],
+   "riverGroup": "ialomita"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0280",
+    "fanvixkg",
+    "qrjybswm"
+   ],
+   "members": [
+    "anpa-anpa-0280",
+    "anpa-romsilva-0239",
+    "fanvixkg",
+    "qrjybswm"
+   ],
+   "riverGroup": "jiu"
+  },
+  {
+   "blockers": [
+    "dcomrepi"
+   ],
+   "members": [
+    "6vsle29k",
+    "dcomrepi"
+   ],
+   "riverGroup": "jiul-de-vest"
+  },
+  {
+   "blockers": [
+    "1v83tpdy",
+    "aty62qwm"
+   ],
+   "members": [
+    "0d29kh5i",
+    "1v83tpdy",
+    "aty62qwm"
+   ],
+   "riverGroup": "malaia"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0377",
+    "anpa-anpa-0426",
+    "anpa-anpa-0453",
+    "anpa-anpa-0584",
+    "hmd3pa0v",
+    "romsilva-mures-mures-iii",
+    "yu63lkif"
+   ],
+   "members": [
+    "anpa-anpa-0323",
+    "anpa-anpa-0337",
+    "anpa-anpa-0377",
+    "anpa-anpa-0426",
+    "anpa-anpa-0453",
+    "anpa-anpa-0584",
+    "hmd3pa0v",
+    "romsilva-mures-mures-iii",
+    "yu63lkif"
+   ],
+   "riverGroup": "mures"
+  },
+  {
+   "blockers": [
+    "3gl3r1sa",
+    "anpa-anpa-0192",
+    "anpa-anpa-0250",
+    "anpa-anpa-0339",
+    "anpa-anpa-0519",
+    "ehwpvgwh",
+    "y6i6nikh"
+   ],
+   "members": [
+    "3e8t20hn",
+    "3gl3r1sa",
+    "anpa-anpa-0192",
+    "anpa-anpa-0250",
+    "anpa-anpa-0339",
+    "anpa-anpa-0519",
+    "anpa-anpa-0581",
+    "ehwpvgwh",
+    "y6i6nikh"
+   ],
+   "riverGroup": "olt"
+  },
+  {
+   "blockers": [
+    "dvhkx2a2",
+    "romsilva-gorj-oltet"
+   ],
+   "members": [
+    "dvhkx2a2",
+    "e8r6r01g",
+    "romsilva-gorj-oltet"
+   ],
+   "riverGroup": "oltet"
+  },
+  {
+   "blockers": [
+    "0a4d89le",
+    "2g9hg98a"
+   ],
+   "members": [
+    "0a4d89le",
+    "2g9hg98a",
+    "53mzatrd"
+   ],
+   "riverGroup": "prahova"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0297",
+    "anpa-anpa-0622",
+    "o4sf1fah"
+   ],
+   "members": [
+    "anpa-anpa-0297",
+    "anpa-anpa-0389",
+    "anpa-anpa-0622",
+    "o4sf1fah"
+   ],
+   "riverGroup": "prut"
+  },
+  {
+   "blockers": [
+    "anpa-vrancea-ramnicu-sarat"
+   ],
+   "members": [
+    "anpa-anpa-0215",
+    "anpa-vrancea-ramnicu-sarat"
+   ],
+   "riverGroup": "ramnicu-sarat"
+  },
+  {
+   "blockers": [
+    "romsilva-arges-rausor-2"
+   ],
+   "members": [
+    "romsilva-arges-rausor",
+    "romsilva-arges-rausor-2"
+   ],
+   "riverGroup": "rausor"
+  },
+  {
+   "blockers": [
+    "romsilva-alba-sebesul-mijlociu",
+    "romsilva-sibiu-sebesul-superior",
+    "uyzo7o3j"
+   ],
+   "members": [
+    "romsilva-alba-sebesul-inferior",
+    "romsilva-alba-sebesul-mijlociu",
+    "romsilva-sibiu-sebesul-superior",
+    "uyzo7o3j"
+   ],
+   "riverGroup": "sebes"
+  },
+  {
+   "blockers": [
+    "9m2irr6m",
+    "anpa-anpa-0066",
+    "anpa-anpa-0296",
+    "anpa-anpa-0552",
+    "anpa-anpa-0674",
+    "sopv2vba"
+   ],
+   "members": [
+    "9m2irr6m",
+    "anpa-anpa-0066",
+    "anpa-anpa-0296",
+    "anpa-anpa-0390",
+    "anpa-anpa-0469",
+    "anpa-anpa-0552",
+    "anpa-anpa-0674",
+    "sopv2vba"
+   ],
+   "riverGroup": "siret"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0496",
+    "lagsqhtl"
+   ],
+   "members": [
+    "anpa-anpa-0402",
+    "anpa-anpa-0496",
+    "anpa-salaj-somesul-mare-93",
+    "lagsqhtl"
+   ],
+   "riverGroup": "somes"
+  },
+  {
+   "blockers": [
+    "44plkztf",
+    "c1gifahb",
+    "yfzdgchv"
+   ],
+   "members": [
+    "0wn4yfsa",
+    "44plkztf",
+    "c1gifahb",
+    "yfzdgchv"
+   ],
+   "riverGroup": "teleajen"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0221"
+   ],
+   "members": [
+    "anpa-anpa-0221",
+    "anpa-anpa-0582"
+   ],
+   "riverGroup": "timis"
+  },
+  {
+   "blockers": [
+    "hmidzduu"
+   ],
+   "members": [
+    "hmidzduu",
+    "zryn07zh"
+   ],
+   "riverGroup": "valea-robesti"
+  },
+  {
+   "blockers": [
+    "anpa-anpa-0676",
+    "anpa-anpa-0677"
+   ],
+   "members": [
+    "anpa-anpa-0676",
+    "anpa-anpa-0677",
+    "romsilva-vrancea-zabala-superioara"
+   ],
+   "riverGroup": "zabala"
+  }
+ ],
+ "kept_legacy": [
+  {
+   "reason": "status_unresolved",
+   "slug": "gvhqgri8"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "gm4m7sjj"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "w28fp1za"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "n7cuf5cs"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "bv8qho87"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "8y7mmtyb"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "uv7try13"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ewp217d3"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "1xqpi6rz"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "19468k28"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "hnftqiry"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ii25s9zo"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "gxjd56ii"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "1f162p36"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "8us87abu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "xxuzkw7u"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "e7mppal8"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "xypzp6q7"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "fzusfkv6"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "1xe7y7xg"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "o4sf1fah"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "4pouq9sd"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ynroput7"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "csn7z0u6"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "5ew0xpab"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "7nc9pf1u"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "fouqynmq"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "3614s8es"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "0hxo4zi3"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "0djgr9l8"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "fme4ypnv"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "3s4b1wip"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "evp4346r"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "wmx33tho"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "6ofvb2jf"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "7oju77qb"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ey1b2yfy"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "2uxod40o"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "tjs59g3d"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "k1ryxmx0"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "mj58pdxp"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "zb5lg4fc"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "yxpriayu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "u1frrl08"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "gvmaf2tz"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ufdigh4c"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "phmbrdj5"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "gtg7ujy9"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "hs5cqibu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "mcwn5ffm"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "0zai84fg"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "f553avch"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "djkvkzv6"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "08xhs12s"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "mc9jqwje"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "4bvpixot"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "4hfgyus1"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "kig4khn8"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "zulbiam0"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "9mfds2yv"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "w69nse7i"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "jw9il5yo"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "7ull4jnk"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "xzrr6do0"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "u84uqnip"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "do8k78x0"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "81tznz3i"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "ggka27ea"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "fo3h8cp6"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "2tehod7w"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "5pomav1f"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "d5xhbhta"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "hinw6jpr"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "cw2vs7u3"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "cr5lqpzw"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "z8u6g69z"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "aksrc2lo"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "3ek8e82l"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "q0k04upr"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "g39ohi12"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "qrjybswm"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "6vsle29k"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "dcomrepi"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "fanvixkg"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "llq1olij"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "rw5qqi3t"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "teziodii"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "0700jcip"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "0d29kh5i"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "dam55ga5"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "65cb7tk8"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "yu63lkif"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "hmd3pa0v"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "iscuniu8"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "qbekhag4"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "y6i6nikh"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "3e8t20hn"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "3gl3r1sa"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ehwpvgwh"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "e8r6r01g"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "dvhkx2a2"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "n5g2q7tx"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "pjcgjuq0"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "j1a5je6v"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "dre11dij"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "494vi834"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "53mzatrd"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "0a4d89le"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "2g9hg98a"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "tozghzao"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "rhiyz8ya"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "jia5k09f"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "y2wjgy7w"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ug8h7f1s"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ee2ppm7f"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "xivzc8yg"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "uyzo7o3j"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "f02xtxw1"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "qsvhz93s"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "d4ffuckm"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "sopv2vba"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "9m2irr6m"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "okzevg19"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "2yxhr1b0"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "8rd9jm0l"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "lagsqhtl"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "wv8ykggg"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "a2qs9hkg"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "hao8h0b2"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "b3r64r3x"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "bpo0h9m6"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "rv08w2ty"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "2dxykcpr"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "k44320iw"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ks2vsbaf"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "hj594dti"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "44plkztf"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "c1gifahb"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "0wn4yfsa"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "yfzdgchv"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "icwtim2p"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "rcd7lya2"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "eql8hwtl"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "fee3lhad"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "4q90yrk2"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "tbkzoyda"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "eebjo69e"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "w9ifusdl"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "kk57xc78"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "q531xrka"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "9y116j3m"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "i9uffwbx"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "89j19sek"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "zdjui15p"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "1zqkhha4"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "ys4a4vw8"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "nb7yzcmh"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "0kaweera"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "6btp0y2a"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "kc8rset6"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "m4kw26nh"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "sm0sogwd"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "z6x8mxh5"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "20u2sj3u"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "mbt9h9rq"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "q2agyhcl"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "zryn07zh"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "hmidzduu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "m2x1jtkp"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "h75ngnsv"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "msh7jb28"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "5tzotexl"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "j41ylelt"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0011"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0013"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0015"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0018"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0019"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0020"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0023"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0026"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0040"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0056"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0091"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0094"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0097"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0098"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0125"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0131"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0134"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0135"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0141"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0147"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0152"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0154"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0156"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0157"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0158"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0159"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0163"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0164"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0165"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0166"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0167"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0168"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0178"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0179"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0180"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0181"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0182"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0183"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0184"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0185"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0186"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0187"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0188"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0189"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0190"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0191"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0206"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0207"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0208"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0209"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0210"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0211"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0212"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0213"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0214"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0215"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0216"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0217"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0219"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0220"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0221"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0222"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0223"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0224"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0226"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0227"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0228"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0229"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0231"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0235"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0236"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0247"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0248"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0249"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0252"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0253"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0254"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0255"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0257"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0261"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0262"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0278"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0279"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0280"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0281"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0282"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0283"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0284"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0291"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0293"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0294"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0295"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0297"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0300"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0301"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0302"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0303"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0304"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0310"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0323"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0326"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0327"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0328"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0329"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0331"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0332"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0333"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0334"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0335"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0337"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0338"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0339"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0341"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0343"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0346"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0347"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0348"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0349"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0350"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0351"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0355"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0356"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0370"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0372"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0373"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0374"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0376"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0377"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0378"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0387"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0391"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0392"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0393"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0398"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0399"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0400"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0401"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0404"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0405"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0407"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0408"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0409"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0410"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0415"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0416"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0417"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0418"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0419"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0420"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0421"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0423"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0429"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0430"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0434"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0435"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0437"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0438"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0439"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0440"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0445"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0446"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0447"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0448"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0450"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0451"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0453"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0455"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0463"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0494"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0495"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0502"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0503"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0504"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0505"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0506"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0508"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0512"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0514"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0515"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0520"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0530"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0538"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0539"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0554"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0555"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0561"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0562"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0563"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0565"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0566"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0567"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0568"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0569"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0570"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0574"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0578"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0582"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0583"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0586"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0591"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0592"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0593"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0594"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0595"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0598"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0599"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0600"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0601"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0602"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0604"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0605"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0606"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0607"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0611"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0612"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0613"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0614"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0615"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0616"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0617"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0618"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0621"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0622"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0623"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0624"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0626"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0627"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0631"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0644"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0650"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0655"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0669"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0671"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0676"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0677"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0680"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0681"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0250"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0192"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0519"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0581"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0426"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0584"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0552"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0066"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0469"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0390"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0674"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0296"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0389"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-anpa-0402"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0496"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0230"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0298"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-anpa-0388"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0454"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0521"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-anpa-0585"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "basca-mare"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "basca-mica"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "basca-mare-covasna"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-alba-ariesul-mare-superior"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-alba-ariesul-mare"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-ariesul-mare-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-valea-mare"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-ariesul-mare-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-valea-galzii"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-fenesasa"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-viltori-fenes"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-izvoarele-ampoiului"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-salane"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-sebesul-mijlociu"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-alba-sebesul-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-canciu-bosorogu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-alba-raul-mare"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-beliu"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-arad-moneasa-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-moneasa-inferioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-iacobini"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-avram-iancu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-leuca"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-halmagiu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-toc"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arad-pamesti"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-arges-rausor"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arges-doamnei-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arges-valsan-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arges-izvoarele-dambovitei"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arges-dambovicioara"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-arges-rausor-2"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-arges-buda"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-arges-capra"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-bacau-barzauta"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bacau-casinul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-valea-draganului"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-valea-iadului-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-crisul-pietros"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-vl-finis-finisului"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-valea-iadului-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-bihor-dragan"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-bistrita-nasaud-ilisua"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-bistrita-nasaud-rebra"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-bistrita-nasaud-somesul-mare-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-brasov-comana"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-brasov-sbircioara"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-brasov-buzaul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-valea-beiului"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-carasul-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-caras-severin-barzava-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-izvoarele-timisului"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-caras-severin-bistrita-marului-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-bistra-marului-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-plesu-rusca"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-higeg"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-higigel"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-caras-severin-cerna-mijlocie"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-caras-severin-cerna-inferioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-cernisoara-iardastrita"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-caras-severin-nera-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-caras-severin-ponesca"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-cluj-1-somesul-cald-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-cluj-2-somesul-cald-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-cluj-somesul-rece-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-cluj-somesul-rece-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-covasna-baraolt-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-covasna-sugo"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-covasna-aita"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-covasna-barzauta"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-covasna-basca-mica"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-dambovita-ialomita-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-dambovita-bratei"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-dambovita-runcu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-gorj-motru-mare"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-gorj-tismana-i"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-gorj-bistricioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-gorj-galbenu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-gorj-oltet"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-harghita-bicazul-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-harghita-bicazul-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-harghita-bistricioara-tronson-i"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-harghita-bistricioara-tronson-ii"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-harghita-valea-toplitei"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-hunedoara-valea-dobrei"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-sibisel"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-lapusnicul-mare"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-raul-ses"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-lapusnicul-mic"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-raul-mare-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-nucsorul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-nucsorul-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-raul-barbat-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-raul-barbat-inferior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-hunedoara-streiul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-hunedoara-jiet"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-cavnic"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-tibaul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-bistrita-aurie"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-viseul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-fantana"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-maramures-baicu"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-maramures-ruscova-superioara"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-maramures-ruscova-inferioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-crasna-frumusaua"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-viseul-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-baita-nistru"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-faina-wasser"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-maramures-viseul-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mehedinti-brebena-bulba"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mehedinti-cerna"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mehedinti-cerna-superioara"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-mures-isticeu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mures-gurghiul-mijlociu"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mures-gurghiul-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-mures-gudea"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mures-mures-iii"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-mures-salard"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-mures-iod"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mures-valea-sovetii"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-mures-nirajul-mare-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-neamt-tarcau-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-neamt-tarcau"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-neamt-bistrita-iv"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-neamt-izvoarele-cracaului"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-prahova-valea-azugii"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-prahova-4-doftana-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-salaj-barcaul-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-salaj-barcaul-mijlociu"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-salaj-barcaul-inferior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-sibiu-sadu-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-sibiu-sadu-mijlociu"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-sibiu-arpas"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-sibiu-laita"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-sibiu-raul-mare-porumbacu"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-sibiu-bistra"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-sibiu-ciban"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-sibiu-sebesul-superior"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-brodina"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-neagra-inferioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-neagra-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-izvoarele-dornei"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-suceava-barnar"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-dornisoara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-moldovita-superioara"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-suceava-giumalau"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-suceava-valea-putnei"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-suceava-putna"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-suceava-afluentii-suhei"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-timis-bega-superior-luncani"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-valcea-lotrisor-draganesti"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-valcea-izvoarele-latoritei"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-valcea-paraul-bistrita"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-valcea-izvorul-lotrului"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-valcea-lotru-superior"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-vrancea-putna-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "romsilva-vrancea-putna-mijlocie"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "romsilva-vrancea-coza"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "romsilva-vrancea-zabala-superioara"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-neamt-bistrita-32"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-bacau-bistrita-39"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-neamt-moldova-bradul"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-neamt-moldova-roman"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-suceava-moldova-59"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-bn-bistrita-28"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-harghita-tarnava-mica-5"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-mures-tarnava-mica-96"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-bn-somesul-mare-61"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-salaj-somesul-mare-93"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-salaj-crasna-65"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-vaslui-crasna-43"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-mures-sebes-21"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-maramures-tibles-27"
+  },
+  {
+   "reason": "review_without_override",
+   "slug": "anpa-teleorman-calmatui"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-vrancea-susita-61"
+  },
+  {
+   "reason": "status_unresolved",
+   "slug": "anpa-vrancea-ramnicu-sarat"
+  },
+  {
+   "reason": "d8_group_blocked",
+   "slug": "anpa-romsilva-0239"
+  }
+ ],
+ "kept_legacy_count": 608,
+ "mode": "write",
+ "preview_groups_replaced": [
+  "aries",
+  "crisul-alb",
+  "latorita",
+  "negru"
+ ],
+ "switched": [
+  {
+   "riverGroup": null,
+   "slug": "uerba1xr",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "0rc761a8",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "aries",
+   "slug": "9h06oubr",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "aries",
+   "slug": "qtebe8c3",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "q9lm4uey",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "pgabr5sd",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "tgvv500v",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "f81mov86",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "p2lc5wx6",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "15tafiir",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "cerna-valcea",
+   "slug": "5bbhtdfc",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "cibin",
+   "slug": "n0810toy",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "cibin",
+   "slug": "gutqod71",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "1dy2bzbz",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "crisul-alb",
+   "slug": "aoja7n5d",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "ikpdjomr",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "geamartalui",
+   "slug": "vb2p0152",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "2bj7imws",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "91bhbi8d",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "ecgdxky1",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "0dsbiw28",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "jiul-de-est",
+   "slug": "dmswvndo",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "lotrioara",
+   "slug": "c4o6lkrr",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "maierus",
+   "slug": "1w5ajm9s",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "ygy2n7uz",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "l7t0jgqj",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "a3g6wcqj",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "3p16514b",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "o35qm79k",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "v3sgxtco",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "ebhj5eyj",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "17ad076y",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "rudarie",
+   "slug": "9h0azllr",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "hvhkix3r",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "o0375dc2",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "5r9kzhq8",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "414x091y",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "susita",
+   "slug": "zunmc5yk",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "tazlau",
+   "slug": "gs9etwp4",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "tazlaul-sarat",
+   "slug": "634a3yyb",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "4nvqiliq",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "ab4t7anb",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "topolog",
+   "slug": "u7ipqokl",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "gh2c5vh3",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "8r9ebkew",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "xd7hnzzl",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "t0jj4tlm",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "p3puv4bx",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "yjbfm1tc",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "nz1rw5qw",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "gunskubl",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "0b5imfgi",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "nalohz4y",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "cglgploz",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "7jpc32e8",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "1i81o3wj",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0142",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0160",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0161",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0162",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0193",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0194",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "negru",
+   "slug": "anpa-anpa-0251",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0256",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0258",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0259",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0260",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0263",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "negru",
+   "slug": "anpa-anpa-0264",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "cormos",
+   "slug": "anpa-anpa-0265",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0290",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0319",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0320",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0321",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0322",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "homorod-mic",
+   "slug": "anpa-anpa-0324",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "homorodul-mare",
+   "slug": "anpa-anpa-0325",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "fisag",
+   "slug": "anpa-anpa-0340",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "casin",
+   "slug": "anpa-anpa-0342",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0353",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0354",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0371",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0375",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "crisul-alb",
+   "slug": "anpa-anpa-0379",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0397",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0406",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0412",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0413",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0422",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0425",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0427",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0428",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0431",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0432",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0433",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0441",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0442",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0444",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0461",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0462",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0509",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0510",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0511",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0516",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0553",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0577",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0580",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0596",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0597",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0603",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0608",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0609",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0610",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": null,
+   "slug": "anpa-anpa-0678",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ariesul-mic",
+   "slug": "romsilva-alba-ariesul-mic",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ighiel",
+   "slug": "romsilva-alba-ighiel",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ampoita",
+   "slug": "romsilva-alba-ampoita",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "mic",
+   "slug": "romsilva-alba-raul-mic",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "zimbru",
+   "slug": "romsilva-arad-zimbru",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "petris",
+   "slug": "romsilva-arad-petris",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "troas",
+   "slug": "romsilva-arad-troas",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "stejar",
+   "slug": "romsilva-arad-stejar",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "julita",
+   "slug": "romsilva-arad-julita",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "bratia",
+   "slug": "romsilva-arges-bratia",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "topologul-superior",
+   "slug": "romsilva-arges-topologul-superior",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "dofteana",
+   "slug": "romsilva-bacau-dofteana",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "bogata",
+   "slug": "romsilva-brasov-bogata",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "sucu",
+   "slug": "romsilva-caras-severin-sucu",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "sirinia",
+   "slug": "romsilva-caras-severin-sirinia",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "bratcului",
+   "slug": "romsilva-gorj-valea-bratcului",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "sadului",
+   "slug": "romsilva-gorj-valea-sadului",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "gradistea-superioara",
+   "slug": "romsilva-hunedoara-gradistea-superioara",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "chiuzbaia",
+   "slug": "romsilva-maramures-chiuzbaia",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ieud",
+   "slug": "romsilva-maramures-ieud",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "botiza",
+   "slug": "romsilva-maramures-botiza",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "repedea",
+   "slug": "romsilva-maramures-repedea",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "fancel",
+   "slug": "romsilva-mures-fancel",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "ilva",
+   "slug": "romsilva-mures-ilva",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "zebrac",
+   "slug": "romsilva-mures-zebrac",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "iapa",
+   "slug": "romsilva-neamt-iapa",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "borca",
+   "slug": "romsilva-neamt-borca",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "sabasa",
+   "slug": "romsilva-neamt-sabasa",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "telejenel",
+   "slug": "romsilva-prahova-telejenel",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "barnarel",
+   "slug": "romsilva-suceava-barnarel",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "humorul",
+   "slug": "romsilva-suceava-humorul",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "bega-poieni",
+   "slug": "romsilva-timis-bega-poieni",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "latorita",
+   "slug": "romsilva-valcea-latorita-superioara",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "latorita",
+   "slug": "romsilva-valcea-latorita-inferioara",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "lepsa",
+   "slug": "romsilva-vrancea-lepsa",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "tisita",
+   "slug": "romsilva-vrancea-tisita",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "miletin",
+   "slug": "anpa-iasi-miletin-35",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "neajlov",
+   "slug": "anpa-giurgiu-neajlov",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "calnistea",
+   "slug": "anpa-teleorman-calnistea",
+   "status": "resolved"
+  }
+ ],
+ "switched_count": 153
+}

@@ -4,7 +4,7 @@
  *
  *   M7  Total data JSON transferred (gzip)        < 2.5 MB
  *   M8  waters.json gzip size (compact)           < 1.5 MB
- *   M9  JSON text parsed on main thread (compact) < 6 MB
+ *   M9  JSON text parsed on main thread (compact) < 6.5 MB (owner override 2026-10-17, river geometry v2 cutover)
  *   +   Allowlist: public/data may contain ONLY the files listed in
  *       scripts/lib/data-budget.mjs (anything else is shipped to every
  *       visitor but never fetched — e.g. backups, geocoder intermediates).
@@ -46,7 +46,9 @@ const MB = 1024 * 1024;
 const LIMITS = {
   M7: 2.5 * MB,
   M8: 1.5 * MB,
-  M9: 6 * MB,
+  // Raised from 6 MB by explicit owner decision (2026-10-17): the pre-cut river
+  // sectors (plan T4.4) keep the 5 m simplification; the cutover measured 6.40 MB.
+  M9: 6.5 * MB,
 };
 
 /** Minified serialization — the bytes JSON.parse actually walks. */
@@ -100,7 +102,7 @@ check(
 );
 check(
   totalCompact < LIMITS.M9,
-  `M9 main-thread parse (compact) < ${(LIMITS.M9 / MB).toFixed(0)} MB`,
+  `M9 main-thread parse (compact) < ${(LIMITS.M9 / MB).toFixed(1)} MB`,
   `${(totalCompact / MB).toFixed(2)} MB`,
 );
 

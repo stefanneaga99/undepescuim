@@ -73,12 +73,8 @@ INPUTS = [
     "data/processed/river_segment_exceptions.json",
     "data/processed/river_segment_audit_baseline.json",
     "data/processed/association_locations.json",
-    # river geometry v2: `rivernet publish` (FULL_STEPS) also reads
-    # data/rivernet/{input,fallback}_manifest.json, courses.jsonl.gz and
-    # data/sectors/{sectors.jsonl,*_overrides.json}. They are pinned here at the
-    # cutover (plan T4.4): pinning changes pipeline_manifest.json, which the
-    # geometry ledger hashes, so it ships with the ledger regeneration.
 ]
+# river geometry v2 (plan T4.4): what `rivernet publish` (FULL_STEPS) reads.
 RIVERNET_INPUTS = [
     "data/rivernet/input_manifest.json",
     "data/rivernet/fallback_manifest.json",
@@ -87,6 +83,7 @@ RIVERNET_INPUTS = [
     "data/sectors/course_overrides.json",
     "data/sectors/endpoint_overrides.json",
 ]
+INPUTS += RIVERNET_INPUTS
 
 # committed OUTPUTS whose determinism we assert
 OUTPUTS = [

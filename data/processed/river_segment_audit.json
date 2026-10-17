@@ -17,12 +17,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 17,
+      "missing_geometry": 16,
       "overlay": {
         "lakes": 112,
         "rivers": 132
       },
-      "with_geometry": 32
+      "with_geometry": 33
     },
     {
       "contracted": 34,
@@ -30,12 +30,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 12,
+      "missing_geometry": 10,
       "overlay": {
         "lakes": 138,
         "rivers": 41
       },
-      "with_geometry": 22
+      "with_geometry": 24
     },
     {
       "contracted": 36,
@@ -72,12 +72,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 18,
+      "missing_geometry": 14,
       "overlay": {
         "lakes": 280,
-        "rivers": 138
+        "rivers": 136
       },
-      "with_geometry": 23
+      "with_geometry": 27
     },
     {
       "contracted": 31,
@@ -101,12 +101,12 @@
         "sector_mismatch": 5
       },
       "finding_count": 6,
-      "missing_geometry": 14,
+      "missing_geometry": 10,
       "overlay": {
         "lakes": 128,
         "rivers": 25
       },
-      "with_geometry": 14
+      "with_geometry": 18
     },
     {
       "contracted": 33,
@@ -188,12 +188,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 9,
+      "missing_geometry": 8,
       "overlay": {
         "lakes": 156,
         "rivers": 218
       },
-      "with_geometry": 33
+      "with_geometry": 34
     },
     {
       "contracted": 3,
@@ -216,12 +216,12 @@
         "missing_segment": 1
       },
       "finding_count": 1,
-      "missing_geometry": 9,
+      "missing_geometry": 8,
       "overlay": {
         "lakes": 87,
         "rivers": 68
       },
-      "with_geometry": 13
+      "with_geometry": 14
     },
     {
       "contracted": 9,
@@ -259,12 +259,12 @@
         "truncated_mouth": 2
       },
       "finding_count": 10,
-      "missing_geometry": 5,
+      "missing_geometry": 4,
       "overlay": {
         "lakes": 151,
         "rivers": 51
       },
-      "with_geometry": 12
+      "with_geometry": 13
     },
     {
       "contracted": 2,
@@ -301,12 +301,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 7,
+      "missing_geometry": 6,
       "overlay": {
         "lakes": 58,
         "rivers": 49
       },
-      "with_geometry": 19
+      "with_geometry": 20
     },
     {
       "contracted": 44,
@@ -316,12 +316,12 @@
         "missing_segment": 1
       },
       "finding_count": 1,
-      "missing_geometry": 15,
+      "missing_geometry": 14,
       "overlay": {
         "lakes": 72,
         "rivers": 429
       },
-      "with_geometry": 29
+      "with_geometry": 30
     },
     {
       "contracted": 70,
@@ -329,12 +329,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 10,
+      "missing_geometry": 8,
       "overlay": {
         "lakes": 120,
-        "rivers": 139
+        "rivers": 138
       },
-      "with_geometry": 60
+      "with_geometry": 62
     },
     {
       "contracted": 6,
@@ -388,12 +388,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 18,
+      "missing_geometry": 13,
       "overlay": {
         "lakes": 58,
         "rivers": 129
       },
-      "with_geometry": 32
+      "with_geometry": 37
     },
     {
       "contracted": 4,
@@ -502,12 +502,12 @@
         "sector_mismatch": 5
       },
       "finding_count": 6,
-      "missing_geometry": 18,
+      "missing_geometry": 17,
       "overlay": {
         "lakes": 62,
         "rivers": 103
       },
-      "with_geometry": 18
+      "with_geometry": 19
     },
     {
       "contracted": 15,
@@ -547,12 +547,12 @@
         "truncated_mouth": 1
       },
       "finding_count": 4,
-      "missing_geometry": 7,
+      "missing_geometry": 6,
       "overlay": {
         "lakes": 236,
         "rivers": 48
       },
-      "with_geometry": 34
+      "with_geometry": 35
     },
     {
       "contracted": 0,
@@ -606,12 +606,12 @@
         "truncated_mouth": 1
       },
       "finding_count": 4,
-      "missing_geometry": 12,
+      "missing_geometry": 11,
       "overlay": {
         "lakes": 97,
         "rivers": 306
       },
-      "with_geometry": 62
+      "with_geometry": 63
     }
   ],
   "gate": {
@@ -43617,13 +43617,6 @@
       "classification": "uncontracted",
       "county": "Bihor",
       "kind": "river",
-      "name": "Cicer",
-      "slug": "unc-69ca8505f5"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Bihor",
-      "kind": "river",
       "name": "Pârâul Brătcuța",
       "slug": "unc-6e41b20859"
     },
@@ -43885,13 +43878,6 @@
       "kind": "river",
       "name": "Valea Meziad",
       "slug": "unc-a70f043e82"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Bihor",
-      "kind": "river",
-      "name": "Valea Boiului",
-      "slug": "unc-a74a090e80"
     },
     {
       "classification": "uncontracted",
@@ -55379,13 +55365,6 @@
       "kind": "river",
       "name": "Canal de Aducțune Râul Strei",
       "slug": "unc-62bc7bd748"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Hunedoara",
-      "kind": "river",
-      "name": "Orăștie",
-      "slug": "unc-651474bff7"
     },
     {
       "classification": "uncontracted",
@@ -70415,7 +70394,7 @@
     {
       "coverage": {
         "osm_to_published": 1.0,
-        "published_to_osm": 1.0
+        "published_to_osm": 0.0054005400540054005
       },
       "findings": [],
       "osm": {
@@ -70430,6 +70409,9 @@
         ]
       },
       "owner_slug": "414x091y",
+      "precut_sectors": [
+        "414x091y"
+      ],
       "registry": {
         "alias_used": false
       },
