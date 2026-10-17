@@ -179,6 +179,18 @@ export interface Water {
   sectorStart?: number;
   sectorEnd?: number;
   /**
+   * River geometry v2 (docs/plans/river-geometry-v2.md D7/§3.6): `'sector'`
+   * means `geometry` is this contract's OWN pre-cut sector, resolved from its
+   * `limite` by the rivernet pipeline. It is rendered and selected directly —
+   * never sliced from a group owner by `sectorStart`/`course_frac`
+   * (see utils/precut-sector.ts). Absent for legacy geometry.
+   */
+  geometryKind?: 'sector';
+  /** Pre-cut sector state: `resolved` = both endpoints source-backed; `review` = drawn but unverified (§3.5). */
+  sectorStatus?: 'resolved' | 'review';
+  /** Pipeline confidence of a pre-cut sector (§3.5). */
+  sectorConfidence?: 'high' | 'medium' | 'low';
+  /**
    * True for OSM rivers with NO contract (t_471dad64) — rendered as a thin
    * teal overlay, click opens a 'Necontractat' card instead of an association.
    */

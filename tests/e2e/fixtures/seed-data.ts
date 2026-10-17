@@ -232,6 +232,59 @@ export const UNVERIFIED_FOCUS_WATERS: Water[] = [
   },
 ];
 
+/** River geometry v2 pre-cut sectors (T4.1): two members of ONE river group,
+ * each carrying its OWN sector geometry. The short sector lies on top of the
+ * long one; a click there must select the short sector, and focusing either
+ * must paint only its own line. Not part of `seed` — the spec adds them. */
+export const PRECUT_LONG_SLUG = 'precut-test-long';
+export const PRECUT_SHORT_SLUG = 'precut-test-short';
+export const PRECUT_REVIEW_SLUG = 'precut-test-review';
+const precutBase: Water = {
+  ...raulSomesulTest,
+  riverGroup: 'precut-test',
+  geometryByCounty: undefined,
+  geometryKind: 'sector',
+  sectorStatus: 'resolved',
+  sectorConfidence: 'high',
+};
+export const PRECUT_WATERS: Water[] = [
+  {
+    ...precutBase,
+    slug: PRECUT_LONG_SLUG,
+    name: 'Râul Precut Lung',
+    dimensiune: '40 km',
+    coordinates: [24.5, 45.5],
+    bbox: [24.2, 45.45, 24.8, 45.55],
+    geometry: { type: 'LineString', coordinates: [[24.2, 45.5], [24.5, 45.5], [24.8, 45.5]] },
+    sectorStart: 0,
+    sectorEnd: 0.8,
+  },
+  {
+    ...precutBase,
+    slug: PRECUT_SHORT_SLUG,
+    name: 'Râul Precut Scurt',
+    dimensiune: '8 km',
+    coordinates: [24.5, 45.5],
+    bbox: [24.45, 45.45, 24.55, 45.55],
+    // overlaps the middle of the long sector
+    geometry: { type: 'LineString', coordinates: [[24.45, 45.5], [24.5, 45.5], [24.55, 45.5]] },
+    sectorStart: 0.4,
+    sectorEnd: 0.5,
+  },
+  {
+    ...precutBase,
+    slug: PRECUT_REVIEW_SLUG,
+    name: 'Râul Precut Neverificat',
+    dimensiune: '10 km',
+    coordinates: [24.5, 45.7],
+    bbox: [24.4, 45.65, 24.6, 45.75],
+    geometry: { type: 'LineString', coordinates: [[24.4, 45.7], [24.5, 45.7], [24.6, 45.7]] },
+    riverGroup: 'precut-test-review',
+    sectorStatus: 'review',
+    sectorConfidence: 'low',
+  },
+];
+
 /** Non-overlapping A → B transition fixtures. These stay test-only so pointer
  * transitions do not depend on the production dataset's current geometry. */
 const transitionSingleA: Water = {

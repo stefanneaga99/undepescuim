@@ -96,3 +96,15 @@ describe('countyRenderGeometry', () => {
     expect(countyRenderGeometry(w)).toBe(fullGeom);
   });
 });
+describe('countyRenderGeometry for pre-cut sectors (T4.1)', () => {
+  it('a pre-cut water with a county clip renders the clip', () => {
+    const clip = { type: 'LineString', coordinates: [[25, 46], [25.05, 46]] } as GeoJSON.LineString;
+    const w = {
+      slug: 'pre', name: 'Râul Test', judet: 'Alba', type: 'ape', subtype: 'rau', coordinates: [25, 46],
+      bbox: [24, 45, 26, 47], asociatie: null, geometryKind: 'sector', sectorStatus: 'resolved',
+      geometry: { type: 'LineString', coordinates: [[25, 46], [25.2, 46]] },
+      geometryByCounty: { alba: clip },
+    } as unknown as Water;
+    expect(countyRenderGeometry(w)).toBe(clip);
+  });
+});
