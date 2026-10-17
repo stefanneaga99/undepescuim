@@ -393,3 +393,15 @@ def test_confluence_uses_course_index_for_courses_outside_the_subset():
     ctx.names = {"rel:424242": ["mures"]}
     out = res(ep("CONFLUENCE", target="Mureș"), ctx, c)
     assert out and out[0].method == "outlet_into_named"
+
+
+def test_confluence_base_name_lower_confidence():
+    c = course(receives_into="name:aries:n9")
+    ctx = ctx_for([c], extra=[course("name:aries:n9", "Arieș")])
+    out = res(ep("CONFLUENCE", target="Arieșul Mare"), ctx, c)
+    assert out and out[0].method == "outlet_into_base_name" and out[0].confidence == 0.7
+    # an unrelated parent is still rejected
+    c2 = course(receives_into="name:mures:n9")
+    assert res(ep("CONFLUENCE", target="Arieșul Mare"), ctx_for([c2], extra=[course("name:mures:n9", "Mureș")]), c2) == []
+    # 'Valea X' never collapses to 'valea'
+    assert R._base_keys({"valea mare"}) == set()

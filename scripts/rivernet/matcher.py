@@ -105,6 +105,7 @@ def match(
     overrides: Mapping[str, Mapping[str, Any]] | None = None,
     spec: Mapping[str, Any] | None = None,
     county_ok: Callable[..., bool] | None = None,
+    mention_hook: Callable[[Mapping[str, Any], Mapping[str, Any]], bool] | None = None,
     by_key: Mapping[str, list[Mapping[str, Any]]] | None = None,
 ) -> MatchResult:
     """Pick the course for one water; see the module docstring for the rules."""
@@ -154,6 +155,8 @@ def match(
         if not ok:
             continue
         mention = 1.0 if targets and (_tributary_keys(c) & targets) else 0.0
+        if not mention and mention_hook is not None and spec:
+            mention = 1.0 if mention_hook(c, spec) else 0.0
         length_m = float(c.get("length_m") or 0.0)
         if km is None or km <= 0 or tribs:
             fit = 1.0
@@ -208,6 +211,8 @@ def cli(argv: list[str]) -> int:
     ap.add_argument("--parsed", default="data/sectors/limits_parsed.jsonl")
     ap.add_argument("--overrides", default="data/sectors/course_overrides.json")
     ap.add_argument("--out", default="data/sectors/matches.jsonl")
+    ap.add_argument("--extract", default=None, help="OSM extract; enables the endpoint-evidence term")
+    ap.add_argument("--counties", default="public/data/counties.geojson")
     ns = ap.parse_args(argv)
 
     cp = Path(ns.courses)
@@ -225,13 +230,28 @@ def cli(argv: list[str]) -> int:
             r = json.loads(line)
             parsed[r["slug"]] = r["spec"]
     ov = load_course_overrides(ns.overrides)
+    hook = None
+    if ns.extract:
+        from .extract_schema import load_extract
+        from .resolvers import build_context, resolve_endpoint
+
+        cj = json.loads(Path(ns.counties).read_text(encoding="utf-8")) if Path(ns.counties).exists() else None
+        ctx = build_context(load_extract(ns.extract), courses, cj)
+
+        def hook(course, spec):  # noqa: E306
+            for end in ("from", "to"):
+                e = spec.get(end)
+                if e and e.get("kind") in ("LOCALITY", "DAM", "BRIDGE", "WATERFALL") and e.get("target"):
+                    if resolve_endpoint(e, course, ctx, role=end):
+                        return True
+            return False
 
     counts: dict[str, int] = {}
     out = Path(ns.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8", newline="\n") as f:
         for w in sorted((w for w in waters if w.get("subtype") == "rau"), key=lambda w: w["slug"]):
-            r = match(w, [], ov, parsed.get(w["slug"]), by_key=idx)
+            r = match(w, [], ov, parsed.get(w["slug"]), mention_hook=hook, by_key=idx)
             counts[r.method] = counts.get(r.method, 0) + 1
             f.write(json.dumps({"slug": w["slug"], **r.to_dict()}, ensure_ascii=False, sort_keys=True) + "\n")
     print(json.dumps(dict(sorted(counts.items())), ensure_ascii=False))
