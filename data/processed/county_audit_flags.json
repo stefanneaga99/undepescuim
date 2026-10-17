@@ -1029,15 +1029,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-suceava-moldova-59",
-   "name": "Râul Moldova",
-   "judet": "Suceava",
-   "asociatie": "AJVPS BOTOȘANI",
-   "riverGroup": "moldova",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-bn-bistrita-28",
    "name": "Râul Bistrița",
    "judet": "Bistrița-Năsăud",
@@ -1052,15 +1043,6 @@
    "judet": "Harghita",
    "asociatie": "AVPS TÂRNAVA MARE",
    "riverGroup": "tarnava-mica",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-bn-somesul-mare-61",
-   "name": "Râul Someșul Mare",
-   "judet": "Bistrița-Năsăud",
-   "asociatie": "AJVPS BISTRIȚA-NĂSĂUD",
-   "riverGroup": "somesul-mare",
    "fallback": null,
    "justified": true
   }

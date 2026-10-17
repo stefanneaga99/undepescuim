@@ -2,7 +2,7 @@
  "checked": {
   "waters": 1013,
   "associations": 96,
-  "rivers": 4136,
+  "rivers": 4133,
   "lakes": 5687,
   "species": 29,
   "association_locations": 11
@@ -708,22 +708,7 @@
   },
   {
    "check": "overlay.rivers.non_latin_name",
-   "slug": "unc-105586aee9",
-   "name": "Тиса - Tisa"
-  },
-  {
-   "check": "overlay.rivers.non_latin_name",
    "slug": "unc-701b965397",
-   "name": "Тиса - Tisa"
-  },
-  {
-   "check": "overlay.rivers.non_latin_name",
-   "slug": "unc-8fcaa78520",
-   "name": "Тиса - Tisa"
-  },
-  {
-   "check": "overlay.rivers.non_latin_name",
-   "slug": "unc-47b50e35a5",
    "name": "Тиса - Tisa"
   },
   {

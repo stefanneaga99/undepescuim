@@ -82,12 +82,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 9,
+      "missing_geometry": 8,
       "overlay": {
         "lakes": 49,
         "rivers": 108
       },
-      "with_geometry": 22
+      "with_geometry": 23
     },
     {
       "contracted": 28,
@@ -368,7 +368,7 @@
       "missing_geometry": 12,
       "overlay": {
         "lakes": 58,
-        "rivers": 129
+        "rivers": 126
       },
       "with_geometry": 38
     },
@@ -473,12 +473,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 15,
+      "missing_geometry": 14,
       "overlay": {
         "lakes": 62,
         "rivers": 103
       },
-      "with_geometry": 21
+      "with_geometry": 22
     },
     {
       "contracted": 15,
@@ -56577,13 +56577,6 @@
       "classification": "uncontracted",
       "county": "Maramureș",
       "kind": "river",
-      "name": "Тиса - Tisa",
-      "slug": "unc-105586aee9"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Maramureș",
-      "kind": "river",
       "name": "Reviaca Mică",
       "slug": "unc-12c32e5770"
     },
@@ -56829,13 +56822,6 @@
       "classification": "uncontracted",
       "county": "Maramureș",
       "kind": "river",
-      "name": "Тиса - Tisa",
-      "slug": "unc-47b50e35a5"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Maramureș",
-      "kind": "river",
       "name": "Vicleanu Mare",
       "slug": "unc-4e6876adc9"
     },
@@ -57048,13 +57034,6 @@
       "kind": "river",
       "name": "Valea Rea",
       "slug": "unc-8af58ad471"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Maramureș",
-      "kind": "river",
-      "name": "Тиса - Tisa",
-      "slug": "unc-8fcaa78520"
     },
     {
       "classification": "uncontracted",
