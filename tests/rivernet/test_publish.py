@@ -175,3 +175,71 @@ def test_cli_shadow_and_write(tmp_path):
     assert P.cli(args + ["--mode", "write"]) == 0
     assert json.loads(wp.read_text(encoding="utf-8"))[0]["geometryKind"] == "sector"
     assert P.cli(["--waters", str(tmp_path / "none")]) == 1
+
+
+# ------------------------------------------------- class-2 preview (T4.2)
+
+from rivernet import preview as PV  # noqa: E402
+
+
+def preview_payload():
+    rec = lambda slug, group: {"slug": slug, "riverGroup": group, "legalStatus": "legal sector unverified",
+                               "disclosure": "Traseu fizic experimental", "physicalCandidates": [{"id": "old", "geometry": None}]}
+    return {"artifact": "class2-physical-preview-aggregate", "candidateCount": 3,
+            "records": [rec("anpa-anpa-0134", "colibita"), rec("anpa-anpa-0135", "colibita"), rec("aoja7n5d", "crisul-alb")]}
+
+
+def test_switched_group_preview_is_the_rivernet_course():
+    sectors = [sec("anpa-anpa-0134", f=0, t=5000), sec("anpa-anpa-0135", f=5000, t=15000)]
+    new, _ = run(sectors)
+    payload = preview_payload()
+    out, replaced = PV.rivernet_preview(payload, new, {s["slug"]: s for s in sectors}, {COURSE["course_id"]: COURSE})
+    assert replaced == ["colibita"]
+    a, b, other = out["records"]
+    (cand,) = a["physicalCandidates"]
+    assert cand["kind"] == "rivernet-course" and cand["id"] == COURSE["course_id"]
+    assert cand["source"] == "rivernet:ro-water-20261015" and cand["geometry"]["type"] == "LineString"
+    assert len(cand["geometryHash"]) == 64 and b["physicalCandidates"] == [cand]
+    assert a["disclosure"] == "Traseu fizic experimental" and a["legalStatus"] == "legal sector unverified"
+    assert other["physicalCandidates"] == [{"id": "old", "geometry": None}]  # not switched
+    assert out["candidateCount"] == 3 and payload["records"][0]["physicalCandidates"][0]["id"] == "old"
+
+
+def test_preview_needs_every_member_switched_on_one_course():
+    sectors = [sec("anpa-anpa-0134", f=0, t=5000), sec("anpa-anpa-0135", f=5000, t=15000)]
+    new, _ = run(sectors)
+    by = {s["slug"]: s for s in sectors}
+    assert PV.switched_group_courses(new, by) == {"colibita": COURSE["course_id"]}
+    split = {**by, "anpa-anpa-0135": {**by["anpa-anpa-0135"], "course": {"course_id": "other"}}}
+    assert PV.switched_group_courses(new, split) == {}
+    legacy, _ = run([sec("1xqpi6rz")])
+    assert PV.switched_group_courses(legacy, by) == {}
+
+
+def test_anar_course_is_named_in_source_detail():
+    anar = {**COURSE, "source": "anar"}
+    new, _ = run([sec("1xqpi6rz")], courses={COURSE["course_id"]: anar})
+    assert by_slug(new)["1xqpi6rz"]["source_detail"] == "rivernet:ro-water-20261015;geometry:anar-hidrografie"
+
+
+def test_cli_preview_shadow_and_write(tmp_path):
+    wp = tmp_path / "waters.json"
+    wp.write_text(P.dumps_waters(WATERS), encoding="utf-8")
+    pv = tmp_path / "preview_class2_physical.json"
+    pv.write_text(json.dumps(preview_payload()), encoding="utf-8")
+    sp = tmp_path / "s.jsonl"
+    sp.write_text("\n".join(json.dumps(s) for s in [sec("anpa-anpa-0134", f=0, t=5000), sec("anpa-anpa-0135", f=5000, t=15000)]) + "\n")
+    cp = tmp_path / "c.jsonl.gz"
+    with gzip.open(cp, "wt", encoding="utf-8") as f:
+        f.write(json.dumps(COURSE) + "\n")
+    args = ["--waters", str(wp), "--sectors", str(sp), "--courses", str(cp), "--out-dir", str(tmp_path / "o")]
+    before = pv.read_text(encoding="utf-8")
+    assert P.cli(args) == 0  # default preview path = beside --waters
+    assert pv.read_text(encoding="utf-8") == before
+    shadow = json.loads((tmp_path / "o" / "preview_class2_physical.shadow.json").read_text(encoding="utf-8"))
+    assert shadow["records"][0]["physicalCandidates"][0]["kind"] == "rivernet-course"
+    assert json.loads((tmp_path / "o" / "publish_report.json").read_text())["preview_groups_replaced"] == ["colibita"]
+    assert P.cli(args + ["--mode", "write"]) == 0
+    assert json.loads(pv.read_text(encoding="utf-8"))["records"][0]["physicalCandidates"][0]["kind"] == "rivernet-course"
+    assert P.cli(args + ["--preview", ""]) == 0
+    assert "preview_groups_replaced" not in json.loads((tmp_path / "o" / "publish_report.json").read_text())

@@ -234,6 +234,17 @@ def runtime_preview_keys(preview: dict[str, Any]) -> set[tuple[str, str]]:
 def endpoint_evidence(water: dict[str, Any], canonical_source: dict[str, Any]) -> dict[str, Any]:
     start, end = water.get("sectorStart"), water.get("sectorEnd")
     detail = water.get("source_detail")
+    if water.get("geometryKind") == "sector":
+        # river geometry v2 (plan T4.2): the geometry IS the sector, cut by
+        # `rivernet publish` from endpoints resolved out of the `limite` text;
+        # the evidence per endpoint lives in data/sectors/sectors.jsonl.
+        return {
+            "status": "resolved-limite",
+            "start": start,
+            "end": end,
+            "citations": [{**canonical_source, "sourceDetail": detail}],
+            "rationale": "Pre-cut sector resolved from the contract limite (rivernet); start/end are course fractions kept for compatibility.",
+        }
     explicit = (
         isinstance(start, (int, float))
         and not isinstance(start, bool)

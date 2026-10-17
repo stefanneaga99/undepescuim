@@ -90,7 +90,7 @@ def annotate_size(w, g):
 
 
 stats = {"simplified": 0, "kept_full_res": 0, "polys_simplified": 0,
-         "round_only": 0, "no_geom": 0, "annotated_size": 0}
+         "round_only": 0, "no_geom": 0, "annotated_size": 0, "sector_skipped": 0}
 
 
 def _round_coords(c):
@@ -146,6 +146,10 @@ def process_pool(pool: list, simplify: bool = True, multi_rg: Optional[dict] = N
             continue
         if not simplify:
             w["geometry"] = round_only_geometry(g)
+        elif w.get("geometryKind") == "sector":
+            # river geometry v2 (plan T4.2): `rivernet publish` already wrote a
+            # 5 m-simplified, 5 dp sector line and its lengthKm — leave both.
+            stats["sector_skipped"] += 1
         else:
             annotate_size(w, g)
             stats["annotated_size"] += 1

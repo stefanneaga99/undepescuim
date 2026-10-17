@@ -208,3 +208,16 @@ def test_every_geometry_variant_has_required_evidence_and_valid_identity():
             assert variant["geometry"]["valid"] is True
             assert variant["geometry"]["coordinateCount"] > 0
             assert len(variant["geometry"]["bbox"]) == 4
+
+
+def test_precut_sector_endpoint_evidence_is_resolved_limite():
+    mod = load_module()
+    canonical = {"evidenceSourceId": "src:x", "path": "public/data/waters.json"}
+    sector = {"slug": "s", "geometryKind": "sector", "sectorStart": 0.1234, "sectorEnd": 0.5,
+              "source": "rivernet", "source_detail": "rivernet:ro-water-20261016"}
+    ev = mod.endpoint_evidence(sector, canonical)
+    assert ev["status"] == "resolved-limite" and (ev["start"], ev["end"]) == (0.1234, 0.5)
+    assert ev["citations"] == [{**canonical, "sourceDetail": "rivernet:ro-water-20261016"}]
+    # a legacy explicit interval is unchanged
+    legacy = {k: v for k, v in sector.items() if k != "geometryKind"}
+    assert mod.endpoint_evidence(legacy, canonical)["status"] == "source-backed-explicit"

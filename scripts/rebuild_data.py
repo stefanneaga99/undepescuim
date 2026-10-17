@@ -73,6 +73,19 @@ INPUTS = [
     "data/processed/river_segment_exceptions.json",
     "data/processed/river_segment_audit_baseline.json",
     "data/processed/association_locations.json",
+    # river geometry v2: `rivernet publish` (FULL_STEPS) also reads
+    # data/rivernet/{input,fallback}_manifest.json, courses.jsonl.gz and
+    # data/sectors/{sectors.jsonl,*_overrides.json}. They are pinned here at the
+    # cutover (plan T4.4): pinning changes pipeline_manifest.json, which the
+    # geometry ledger hashes, so it ships with the ledger regeneration.
+]
+RIVERNET_INPUTS = [
+    "data/rivernet/input_manifest.json",
+    "data/rivernet/fallback_manifest.json",
+    "data/rivernet/courses.jsonl.gz",
+    "data/sectors/sectors.jsonl",
+    "data/sectors/course_overrides.json",
+    "data/sectors/endpoint_overrides.json",
 ]
 
 # committed OUTPUTS whose determinism we assert
@@ -98,6 +111,8 @@ SCRATCH_COPY_DIRS = (
     "data/processed",
     "data/raw/county_boundaries",
     "data/raw/localities",
+    "data/rivernet",
+    "data/sectors",
 )
 
 # canonical in-place derivation sequence (deterministic given pinned inputs)
@@ -111,6 +126,7 @@ VERIFY_STEPS = [
 # post-build fixes that the committed files incorporate
 FULL_STEPS = [
     "scripts/merge_anpa_waters.py",           # anpa + romsilva + abp -> waters.json
+    "scripts/rivernet_publish.py",            # river geometry v2: pre-cut sectors (T4.2)
     "scripts/audit_missing_rivers.py",        # attach OSM geometry to fixable rows
     "scripts/build_uncontracted_rivers.py",
     "scripts/build_uncontracted_lakes.py",

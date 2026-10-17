@@ -174,7 +174,8 @@ def publish(
             "sectorStart": round(s["from"]["m"] / c["length_m"], 4),
             "sectorEnd": round(s["to"]["m"] / c["length_m"], 4),
             "source": "rivernet",
-            "source_detail": f"rivernet:{s.get('network_version', '')}",
+            "source_detail": f"rivernet:{s.get('network_version', '')}"
+            + (";geometry:anar-hidrografie" if c.get("source") == "anar" else ""),
         })
         if not out.get("coordinates"):
             whole = Line.from_coords([tuple(p) for ln in lines for p in ln])
@@ -208,7 +209,12 @@ def cli(argv: list[str]) -> int:
     ap.add_argument("--sectors", default="data/sectors/sectors.jsonl")
     ap.add_argument("--courses", default="data/rivernet/courses.jsonl.gz")
     ap.add_argument("--out-dir", default="data/sectors")
+    ap.add_argument("--preview", default=None,
+                    help="class-2 preview aggregate (default: preview_class2_physical.json beside --waters); "
+                         "switched groups get their rivernet course ('' to skip)")
     ns = ap.parse_args(argv)
+    if ns.preview is None:
+        ns.preview = str(Path(ns.waters).parent / "preview_class2_physical.json")
     for p in (ns.waters, ns.sectors, ns.courses):
         if not Path(p).exists():
             print(f"rivernet publish: {p} missing", file=sys.stderr)
@@ -220,10 +226,23 @@ def cli(argv: list[str]) -> int:
     new, report = publish(waters, sectors, courses, mode=ns.mode)
     out = Path(ns.out_dir)
     out.mkdir(parents=True, exist_ok=True)
+    preview_text = None
+    if ns.preview and Path(ns.preview).exists():
+        from .preview import rivernet_preview
+
+        payload = json.loads(Path(ns.preview).read_text(encoding="utf-8"))
+        new_preview, replaced = rivernet_preview(payload, new, sectors, courses)
+        report["preview_groups_replaced"] = replaced
+        # same serialisation as scripts/build_class2_aggregate.py
+        preview_text = json.dumps(new_preview, ensure_ascii=False, separators=(",", ":"))
     (out / "publish_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     if ns.mode == "write":
         Path(ns.waters).write_text(dumps_waters(new), encoding="utf-8", newline="\n")
+        if preview_text is not None:
+            Path(ns.preview).write_text(preview_text, encoding="utf-8", newline="\n")
     else:
         (out / "waters.shadow.json").write_text(dumps_waters(new), encoding="utf-8", newline="\n")
+        if preview_text is not None:
+            (out / "preview_class2_physical.shadow.json").write_text(preview_text, encoding="utf-8", newline="\n")
     print(json.dumps({k: report[k] for k in ("mode", "switched_count", "kept_legacy_count")}))
     return 0
