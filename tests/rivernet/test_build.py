@@ -100,3 +100,13 @@ def test_is_candidate_uses_aliases_and_article_variants():
     assert is_candidate({"name_key": "gurghiul", "aliases": []}, {"gurghiu"})
     assert is_candidate({"name_key": "maros", "aliases": ["Mureș"]}, {"mures"})
     assert not is_candidate({"name_key": "olt", "aliases": []}, {"jiu"})
+
+
+def test_course_index_covers_all_and_includes_alias_keys(tmp_path):
+    from rivernet.build import course_index, write_course_index
+
+    recs = [{"course_id": "rel:1", "name_key": "olt", "aliases": ["Aluta"]},
+            {"course_id": "name:x:n2", "name_key": "x", "aliases": []}]
+    assert course_index(recs) == {"rel:1": ["olt", "aluta"], "name:x:n2": ["x"]}
+    write_course_index(tmp_path / "i.json", recs)
+    assert json.loads((tmp_path / "i.json").read_text(encoding="utf-8"))["rel:1"] == ["olt", "aluta"]

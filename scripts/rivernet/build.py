@@ -44,6 +44,23 @@ def is_candidate(rec: dict[str, Any], keys: set[str]) -> bool:
     return any(k in keys for a in rec.get("aliases") or [] for k in river_match_keys(a))
 
 
+def course_index(records: Iterable[dict[str, Any]]) -> dict[str, list[str]]:
+    """course_id -> [name_key, alias keys...] for *every* course, so references
+    to courses outside the committed candidate subset can still be named."""
+    out: dict[str, list[str]] = {}
+    for r in records:
+        keys = [r["name_key"]]
+        for a in r.get("aliases") or []:
+            keys += [k for k in river_keys(a) if k not in keys]
+        out[r["course_id"]] = keys
+    return out
+
+
+def write_course_index(path: Path, records: Iterable[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(course_index(records), ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
 def write_jsonl_gz(path: Path, records: Iterable[dict[str, Any]]) -> int:
     """Deterministic gzip JSONL; returns the file size in bytes."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -70,6 +87,7 @@ def build(
 
     write_qa(out / "qa.json", qa_report(wg, courses, extract))
     all_size = write_jsonl_gz(out / "courses_all.jsonl.gz", records)
+    write_course_index(out / "course_index.json", records)
 
     subset = records
     candidate_keys: set[str] | None = None

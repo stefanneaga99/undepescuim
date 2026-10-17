@@ -1,18 +1,18 @@
 {
  "by_status": {
-  "resolved": 99,
+  "resolved": 103,
   "review": 89,
-  "unresolved": 573
+  "unresolved": 569
  },
  "by_status_confidence": {
-  "resolved/high": 33,
-  "resolved/medium": 66,
+  "resolved/high": 35,
+  "resolved/medium": 68,
   "review/low": 87,
   "review/medium": 2,
-  "unresolved/low": 573
+  "unresolved/low": 569
  },
  "chord_check": {
-  "checked": 99,
+  "checked": 103,
   "max_segment_m": 988.4,
   "worst": [
    [
@@ -58,12 +58,12 @@
   ]
  },
  "km_ratio_histogram": {
-  "0.5-0.8": 40,
-  "0.8-1.25": 69,
+  "0.5-0.8": 42,
+  "0.8-1.25": 71,
   "1.25-2": 26,
   "<0.5": 32,
   ">2": 12,
-  "unknown": 582
+  "unknown": 578
  },
  "per_county": {
   "Alba": {
@@ -79,7 +79,7 @@
    "total": 24
   },
   "Bacău": {
-   "resolved": 7,
+   "resolved": 8,
    "total": 16
   },
   "Bihor": {
@@ -107,7 +107,7 @@
    "total": 13
   },
   "Caraș-Severin": {
-   "resolved": 1,
+   "resolved": 2,
    "total": 27
   },
   "Cluj": {
@@ -175,11 +175,11 @@
    "total": 3
   },
   "Mureș": {
-   "resolved": 5,
+   "resolved": 6,
    "total": 39
   },
   "Neamț": {
-   "resolved": 6,
+   "resolved": 7,
    "total": 15
   },
   "Olt": {
@@ -228,7 +228,7 @@
   }
  },
  "shadow": {
-  "compared": 188,
+  "compared": 192,
   "rows": [
    {
     "hausdorff_m": 808.9,
@@ -637,6 +637,13 @@
     "slug": "anpa-anpa-0428"
    },
    {
+    "hausdorff_m": 37773.9,
+    "legacy_approx": false,
+    "new_km": 10.11,
+    "old_km": 58.42,
+    "slug": "anpa-anpa-0431"
+   },
+   {
     "hausdorff_m": 10739.9,
     "legacy_approx": false,
     "new_km": 8.08,
@@ -684,6 +691,13 @@
     "new_km": 19.06,
     "old_km": 16.76,
     "slug": "anpa-anpa-0461"
+   },
+   {
+    "hausdorff_m": 9853.3,
+    "legacy_approx": false,
+    "new_km": 19.71,
+    "old_km": 30.71,
+    "slug": "anpa-anpa-0462"
    },
    {
     "hausdorff_m": null,
@@ -1183,6 +1197,13 @@
     "slug": "romsilva-arges-topologul-superior"
    },
    {
+    "hausdorff_m": 9695.2,
+    "legacy_approx": false,
+    "new_km": 13.15,
+    "old_km": 42.31,
+    "slug": "romsilva-bacau-barzauta"
+   },
+   {
     "hausdorff_m": 90.3,
     "legacy_approx": false,
     "new_km": 22.64,
@@ -1237,6 +1258,13 @@
     "new_km": 13.22,
     "old_km": 12.35,
     "slug": "romsilva-caras-severin-bistrita-marului-superior"
+   },
+   {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 11.77,
+    "old_km": 0.0,
+    "slug": "romsilva-caras-severin-cerna-inferioara"
    },
    {
     "hausdorff_m": null,
@@ -1551,7 +1579,7 @@
  "top_reasons": [
   [
    "endpoint_unresolved",
-   266
+   260
   ],
   [
    "course_no_candidate",

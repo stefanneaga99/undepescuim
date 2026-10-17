@@ -329,6 +329,7 @@ def cli(argv: list[str]) -> int:
     ap.add_argument("--matches", default="data/sectors/matches.jsonl")
     ap.add_argument("--overrides", default="data/sectors/endpoint_overrides.json")
     ap.add_argument("--counties", default="public/data/counties.geojson")
+    ap.add_argument("--course-index", default="data/rivernet/course_index.json")
     ap.add_argument("--out", default="data/sectors/sectors.jsonl")
     ns = ap.parse_args(argv)
 
@@ -341,6 +342,8 @@ def cli(argv: list[str]) -> int:
         courses = [json.loads(x) for x in f if x.strip()]
     cj = json.loads(Path(ns.counties).read_text(encoding="utf-8")) if Path(ns.counties).exists() else None
     ctx = build_context(ex, courses, cj)
+    if Path(ns.course_index).exists():
+        ctx.names = json.loads(Path(ns.course_index).read_text(encoding="utf-8"))
     ts = (ex.meta.osm_timestamp or "")[:10].replace("-", "")
     version = f"ro-water-{ts}" if ts else "ro-water-unknown"
     parsed = {r["slug"]: r["spec"] for r in map(json.loads, Path(ns.parsed).read_text(encoding="utf-8").splitlines())}
