@@ -1,6 +1,7 @@
 import type { Water } from '@/types/data';
 import type { RuntimeSelectedFocus } from '@/types/geometry-ledger';
 import { contractGroup, contractInterval, partLength, pointAtFraction, sliceMultiLine } from '@/utils/river-course';
+import { isPrecutSector, precutFocus, precutLengthKm } from '@/utils/precut-sector';
 
 export type SectorMeasurementMethod = 'explicit-interval' | 'voronoi-fallback' | 'unmeasurable';
 
@@ -50,6 +51,8 @@ export function resolveMapSelectionFocus(
   selectedPhysicalSegmentId: string | null = null,
 ): MapSelectionFocus {
   if (selected.uncontracted) return { kind: 'whole-feature-focus' };
+  // River geometry v2: a pre-cut sector IS its own geometry (T4.1).
+  if (isPrecutSector(selected)) return precutFocus(selected);
   const matchingCourses = physicalPreview.filter((preview) =>
     selectedPhysicalSegmentId
       ? preview.physicalSegmentId === selectedPhysicalSegmentId
@@ -93,6 +96,15 @@ export function resolveMapSelectionFocus(
  * course_frac locates a contract but does not prove contractual endpoints.
  */
 export function measureContractSector(selected: Water, allWaters: Water[]): SectorMeasurement {
+  if (isPrecutSector(selected)) {
+    return {
+      selectedSlug: selected.slug,
+      ownerSlug: selected.slug,
+      interval: [0, 1],
+      renderedKm: precutLengthKm(selected),
+      method: 'explicit-interval',
+    };
+  }
   const group = contractGroup(selected, allWaters);
   const owner = group.find((w) => lineParts(w) !== null) ?? null;
   const method: SectorMeasurementMethod = hasExplicitSectorInterval(selected)

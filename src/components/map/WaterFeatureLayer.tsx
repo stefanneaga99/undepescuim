@@ -9,10 +9,8 @@ import { getFeatureStyle, getPointFallbackStyle, COVERED_COLOR } from '@/utils/c
 
 import { cullWatersForView, lodThresholds, viewSuffix } from '@/utils/lod';
 import {
-  contractAtFraction,
   contractGroup,
   contractInterval,
-  fractionAtPoint,
   groupKeyOf,
   sliceMultiLine,
   waterKey,
@@ -21,6 +19,8 @@ import type { Water, WaterFeature, WaterFeatureProperties } from '@/types/data';
 import { hasExplicitSectorInterval } from '@/utils/contract-sector';
 import type { MapSelectionFocus } from '@/utils/contract-sector';
 import { dedupePhysicalPreview } from '@/utils/physical-preview';
+import { clickSelection, isPrecutSector, orderForRender } from '@/utils/precut-sector';
+import { countyRenderGeometry } from '@/utils/county-clip';
 
 interface WaterFeatureLayerProps {
   waters: Water[];
@@ -127,7 +127,9 @@ export function WaterFeatureLayer({
     return cullWatersForView(waters, lod, view.bounds, pinned);
   }, [waters, allWaters, view, lod, coverageSlug, selectedWaterSlug]);
 
-  const featureCollection = useMemo(() => watersToFeatureCollection(visibleWaters), [visibleWaters]);
+  // Pre-cut sectors are drawn after legacy waters, longest first, so short
+  // sectors sit on top and win clicks where they overlap (T4.1).
+  const featureCollection = useMemo(() => watersToFeatureCollection(orderForRender(visibleWaters)), [visibleWaters]);
 
   const layerKey = `${viewSuffix(view.zoom, view.bounds)}|${coverageSlug ?? 'neutral'}|${visibleWaters.map((w) => w.slug).join(',')}`;
 
@@ -141,37 +143,23 @@ export function WaterFeatureLayer({
     return w ? groupKeyOf(w) : waterKey(focusKey);
   }, [allWaters, focusKey]);
 
-  // Click on a river: resolve the fraction along the course, then select the
-  // contract (association) that owns that sector — not just the first one.
+  // Click on a river: a pre-cut sector selects itself; otherwise resolve the
+  // fraction along the course and select the contract (association) that owns
+  // that sector — not just the first one (utils/precut-sector clickSelection).
   // NOTE: the rendered geometry may be the per-county clip (t_117f0b99), whose
-  // fractions are NOT full-course fractions — always resolve against the
+  // fractions are NOT full-course fractions — resolution always uses the
   // ORIGINAL full-course geometry (allWaters) so sectorStart/sectorEnd
   // intervals stay correct.
   const handleClick = useCallback(
     (feature: WaterFeature, latlng?: L.LatLng) => {
-      if (latlng) {
-        const original = allWaters.find((w) => w.slug === feature.properties.slug);
-        const g = original?.geometry ?? feature.geometry;
-        if (g && (g.type === 'MultiLineString' || g.type === 'LineString')) {
-          const parts =
-            g.type === 'MultiLineString'
-              ? (g.coordinates as [number, number][][])
-              : [g.coordinates as [number, number][]];
-          const frac = fractionAtPoint(parts, [latlng.lng, latlng.lat]);
-          if (frac !== null) {
-            const contract = contractAtFraction(
-              { slug: feature.properties.slug, name: feature.properties.name },
-              frac,
-              allWaters,
-            );
-            if (contract) {
-              selectWater(contract.slug);
-              return;
-            }
-          }
-        }
-      }
-      selectWater(feature.properties.slug);
+      selectWater(
+        clickSelection(
+          { slug: feature.properties.slug, name: feature.properties.name },
+          latlng ? [latlng.lng, latlng.lat] : null,
+          allWaters,
+          feature.geometry as Water['geometry'],
+        ),
+      );
     },
     [selectWater, allWaters],
   );
@@ -197,6 +185,18 @@ export function WaterFeatureLayer({
   // contract whose shared course is off-screen must keep its orange highlight.
   const focusFeatures = useMemo(() => {
     if (!focusGroupKey || (focus.kind !== 'verified-sector-focus' && focus.kind !== 'whole-feature-focus')) return null;
+    // A pre-cut sector is focused as its own geometry — never the group's
+    // other members sliced by the [0, 1] interval (T4.1).
+    const selectedWater = selectedWaterSlug ? allWaters.find((w) => w.slug === selectedWaterSlug) : undefined;
+    if (isPrecutSector(selectedWater)) {
+      const g = countyFilter.length > 0 ? countyRenderGeometry(selectedWater) : selectedWater.geometry;
+      if (!g) return null;
+      return [{
+        type: 'Feature',
+        properties: { slug: selectedWater.slug, name: selectedWater.name },
+        geometry: g as GeoJSON.Geometry,
+      } as GeoJSON.Feature];
+    }
     const [f0, f1] = focus.kind === 'verified-sector-focus' ? focus.interval : [0, 1];
     const features: GeoJSON.Feature[] = [];
     const focusCourses = focus.kind === 'verified-sector-focus' && focus.geometryHash
@@ -227,7 +227,7 @@ export function WaterFeatureLayer({
       }
     }
     return features.length ? features : null;
-  }, [focusGroupKey, focus, allWaters, previewCourses]);
+  }, [focusGroupKey, focus, allWaters, previewCourses, selectedWaterSlug, countyFilter]);
 
   // react-leaflet v5 does not reliably replace a GeoJSON layer when only its
   // data prop changes.  The base layer already has a lifecycle key; the focus
@@ -264,6 +264,8 @@ export function WaterFeatureLayer({
     const out: GeoJSON.Feature[] = [];
     for (const w of allWaters) {
       if ((w.asociatie?.slug ?? null) !== coverageSlug) continue;
+      // A pre-cut sector is colored by the base layer like any single water.
+      if (isPrecutSector(w)) continue;
       // A course_frac only locates a record; it never proves contractual
       // endpoints. Never paint an inferred Voronoi slice as an association
       // sector (notably Buzău 0207/0210/0211/0214).
@@ -328,11 +330,14 @@ export function WaterFeatureLayer({
       const lineGeom =
         !!water?.geometry &&
         (water.geometry.type === 'LineString' || water.geometry.type === 'MultiLineString');
+      // A pre-cut member carries only its own sector, so coloring it by its
+      // association cannot leak onto other contracts' stretches (T4.1).
       const multiContractMember =
         coverageSlug !== null &&
         countyFilter.length === 0 &&
         lineGeom &&
         !!water &&
+        !isPrecutSector(water) &&
         contractGroup(water, allWaters).length > 1;
       // t_cdb614de: bbox-fallback waters (no real OSM geometry) render as
       // discreet point dots — distinct style (violet dot, coverage-aware).

@@ -10,6 +10,7 @@ import { getPhysicalPreviewStyle } from '@/utils/colors';
 import { useMapStore } from '@/stores/map-store';
 import type { Water, WaterFeature } from '@/types/data';
 import { fractionAtPoint } from '@/utils/river-course';
+import { isPrecutSector } from '@/utils/precut-sector';
 
 /** Preview-only physical lines. This layer never participates in legal contract resolution. */
 export function PhysicalPreviewLayer({ waters: previewWaters }: { waters: Water[] }) {
@@ -46,8 +47,10 @@ export function PhysicalPreviewLayer({ waters: previewWaters }: { waters: Water[
           ? geometry.coordinates as [number, number][][]
           : null;
       const measuredFraction = parts ? fractionAtPoint(parts, [event.latlng.lng, event.latlng.lat]) : null;
+      // Pre-cut sectors are drawn and clicked in the main layer (T4.1).
       const candidates = waters.filter((water) =>
-        water.riverGroup === (preview?.riverGroup ?? f.properties.riverGroup ?? undefined) && aliases.includes(water.slug),
+        water.riverGroup === (preview?.riverGroup ?? f.properties.riverGroup ?? undefined) && aliases.includes(water.slug) &&
+        !isPrecutSector(water),
       );
       const selected = measuredFraction === null || candidates.length === 0
         ? null

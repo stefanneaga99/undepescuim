@@ -164,3 +164,49 @@ describe('measureContractSector', () => {
     });
   });
 });
+
+describe('pre-cut sectors (river geometry v2, T4.1)', () => {
+  const line: [number, number][] = [[25, 46], [25.1, 46], [25.2, 46]];
+  const precut = (over: Partial<Water>) => water({
+    slug: 'pre',
+    riverGroup: 'test',
+    geometry: { type: 'LineString', coordinates: line },
+    geometryKind: 'sector',
+    sectorStatus: 'resolved',
+    sectorStart: 0.2,
+    sectorEnd: 0.3,
+    course_frac: 0.25,
+    ...over,
+  });
+  // another member of the same group, so the legacy path would treat it as multi-contract
+  const sibling = water({ slug: 'sib', riverGroup: 'test', geometry: { type: 'LineString', coordinates: line } });
+
+  it('resolved → verified focus over its own geometry, whatever sectorStart/End say', () => {
+    const w = precut({});
+    expect(resolveMapSelectionFocus(w, [w, sibling])).toEqual({ kind: 'verified-sector-focus', interval: [0, 1] });
+  });
+
+  it('review → unverified focus with the reference marker on its own geometry', () => {
+    const w = precut({ sectorStatus: 'review' });
+    const focus = resolveMapSelectionFocus(w, [w, sibling]);
+    expect(focus.kind).toBe('feature-selected-unverified-sector');
+    if (focus.kind !== 'feature-selected-unverified-sector') throw new Error('unreachable');
+    expect(focus.referencePoint![0]).toBeCloseTo(25.1, 6);
+  });
+
+  it('legacy members of the same group are unchanged', () => {
+    const legacy = water({ slug: 'leg', riverGroup: 'test', sectorStart: 0.4, sectorEnd: 0.6 });
+    expect(resolveMapSelectionFocus(legacy, [legacy, sibling])).toEqual({
+      kind: 'verified-sector-focus',
+      interval: [0.4, 0.6],
+    });
+  });
+
+  it('measureContractSector reports the sector as its own explicit owner', () => {
+    const w = precut({});
+    const m = measureContractSector(w, [w, sibling]);
+    expect(m).toMatchObject({ selectedSlug: 'pre', ownerSlug: 'pre', interval: [0, 1], method: 'explicit-interval' });
+    expect(m.renderedKm).toBeGreaterThan(15);
+    expect(m.renderedKm).toBeLessThan(16);
+  });
+});
