@@ -68,3 +68,28 @@ def test_cli_passes_keep_going_flag(tmp_path, monkeypatch):
     monkeypatch.setattr(sys, "argv", ["rebuild_data.py", "--to", str(tmp_path / "d"), "--keep-going"])
     rebuild_data.main()
     assert seen["keep_going"] is True
+
+
+def test_rivernet_publish_runs_right_after_the_merge_and_its_inputs_exist():
+    steps = rebuild_data.FULL_STEPS
+    assert steps.index("scripts/rivernet_publish.py") == steps.index("scripts/merge_anpa_waters.py") + 1
+    assert steps.index("scripts/rivernet_publish.py") < steps.index("scripts/build_locality_assignment.py")
+    for rel in rebuild_data.RIVERNET_INPUTS:  # pinned into INPUTS at the cutover (T4.4)
+        assert (rebuild_data.ROOT / rel).exists()
+    assert {"data/rivernet", "data/sectors"} <= set(rebuild_data.SCRATCH_COPY_DIRS)
+    assert (rebuild_data.ROOT / "scripts/rivernet_publish.py").exists()
+
+
+def test_rivernet_publish_shim_writes_from_the_committed_inputs(monkeypatch):
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("rivernet_publish_shim", rebuild_data.ROOT / "scripts/rivernet_publish.py")
+    shim = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(shim)
+    seen = {}
+    monkeypatch.setattr(shim, "cli", lambda argv: seen.setdefault("argv", argv) and 0)
+    assert shim.main() == 0
+    argv = seen["argv"]
+    assert argv[:2] == ["--mode", "write"]
+    assert argv[argv.index("--waters") + 1].replace("\\", "/").endswith("public/data/waters.json")
+    assert argv[argv.index("--sectors") + 1].replace("\\", "/").endswith("data/sectors/sectors.jsonl")

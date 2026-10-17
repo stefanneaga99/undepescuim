@@ -61,6 +61,8 @@ BUFFER_DEG = 0.002
 # be simplified at the same 0.002° (~200 m) used by the uncontracted overlay
 # without any visible loss. Cuts the clip payload ~50%.
 SIMPLIFY_DEG = 0.002
+# river geometry v2 (plan T4.2): a pre-cut sector's clip keeps sector detail
+SECTOR_SIMPLIFY_DEG = 0.0001
 # Coordinate rounding for stored clips (5 dp ≈ 1 m — plenty for a fishing map).
 ROUND_DP = 5
 
@@ -261,8 +263,12 @@ def build_clip_for_water(w: dict, source_geom: dict, county_polys: dict, buffere
         return None
     shapely_line = shape(source_geom)
 
+    # A pre-cut sector (geometryKind "sector") already IS its own interval:
+    # its sectorStart/End are compatibility fields relative to the course and
+    # must not slice it again (plan T4.2).
+    precut = w.get("geometryKind") == "sector"
     s0, s1 = w.get("sectorStart"), w.get("sectorEnd")
-    has_sector = isinstance(s0, (int, float)) and isinstance(s1, (int, float))
+    has_sector = not precut and isinstance(s0, (int, float)) and isinstance(s1, (int, float))
     if has_sector:
         sliced = slice_multiline(parts, float(s0), float(s1))
         if not sliced:
@@ -291,7 +297,7 @@ def build_clip_for_water(w: dict, source_geom: dict, county_polys: dict, buffere
     # Render-only clips are simplified (click resolution uses the ORIGINAL
     # geometry) — same 0.002° tolerance as the uncontracted overlay.
     if source_geom["type"] in ("LineString", "MultiLineString"):
-        clip = clip.simplify(SIMPLIFY_DEG, preserve_topology=True)
+        clip = clip.simplify(SECTOR_SIMPLIFY_DEG if precut else SIMPLIFY_DEG, preserve_topology=True)
         out = _as_lines(clip)
         if out is None:
             return (own, None)
