@@ -52,7 +52,7 @@ jobs:
           PYTHONPATH=scripts python -m rivernet parse
           courses=data/rivernet/courses.jsonl.gz
           if [ ! -f "$courses" ]; then courses=data/rivernet/courses_all.jsonl.gz; fi
-          PYTHONPATH=scripts python -m rivernet match --courses "$courses"
+          PYTHONPATH=scripts python -m rivernet match --courses "$courses" --extract work/water-extract.jsonl.gz
           PYTHONPATH=scripts python -m rivernet resolve --extract work/water-extract.jsonl.gz --courses "$courses"
           PYTHONPATH=scripts python -m rivernet report --courses "$courses"
       - name: Open pull request

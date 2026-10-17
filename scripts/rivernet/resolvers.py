@@ -35,6 +35,7 @@ C_MOUTH = 0.95
 C_CONF_OUTLET_INTO = 0.95
 C_CONF_JUNCTION = 0.95
 C_CONF_NEAR_OUTLET = 0.8
+C_CONF_BASE_NAME = 0.7  # target 'Arieșul Mare' vs OSM course 'Arieș'
 C_LAKE_NAMED = 0.9
 C_LAKE_UNNAMED = 0.7
 C_DAM_NAMED = 0.9
@@ -349,6 +350,20 @@ def _mouth(spec, course, ctx, **_):
     return [Candidate(course["length_m"], C_MOUTH, "mouth")]
 
 
+def _base_keys(keys: set[str]) -> set[str]:
+    """Shorter names a longer target may stand for: first token (+article variants)
+    of a multi-word key, e.g. 'ariesul mare' -> {'ariesul', 'aries'}."""
+    from .textnorm import article_variants
+
+    out: set[str] = set()
+    for k in keys:
+        toks = k.split(" ")
+        if len(toks) >= 2 and toks[0] not in ("valea", "vl"):
+            out.add(toks[0])
+            out.update(article_variants(toks[0]))
+    return out - keys
+
+
 def _confluence(spec, course, ctx, **_):
     target = spec.get("target")
     keys = set(river_keys(target))
@@ -362,6 +377,16 @@ def _confluence(spec, course, ctx, **_):
         if _course_keys_of(ctx, j.get("tributary_course_id")) & keys:
             out.append(Candidate(j["m"], C_CONF_JUNCTION, "tributary_junction",
                                  {"type": "node", "id": j.get("node"), "name": target}))
+    if not out:
+        base = _base_keys(keys)
+        if base:
+            if _course_keys_of(ctx, course.get("receives_into")) & base:
+                out.append(Candidate(course["length_m"], C_CONF_BASE_NAME, "outlet_into_base_name",
+                                     {"type": "course", "id": course["receives_into"]}))
+            for j in course.get("junctions") or []:
+                if _course_keys_of(ctx, j.get("tributary_course_id")) & base:
+                    out.append(Candidate(j["m"], C_CONF_BASE_NAME, "tributary_junction_base_name",
+                                         {"type": "node", "id": j.get("node"), "name": target}))
     if not out:
         line = ctx.line(course)
         for other in ctx.courses_named(keys):

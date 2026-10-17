@@ -1,18 +1,18 @@
 {
  "by_status": {
-  "resolved": 103,
-  "review": 89,
-  "unresolved": 569
+  "resolved": 104,
+  "review": 97,
+  "unresolved": 560
  },
  "by_status_confidence": {
   "resolved/high": 35,
-  "resolved/medium": 68,
-  "review/low": 87,
-  "review/medium": 2,
-  "unresolved/low": 569
+  "resolved/medium": 69,
+  "review/low": 93,
+  "review/medium": 4,
+  "unresolved/low": 560
  },
  "chord_check": {
-  "checked": 103,
+  "checked": 104,
   "max_segment_m": 988.4,
   "worst": [
    [
@@ -58,16 +58,16 @@
   ]
  },
  "km_ratio_histogram": {
-  "0.5-0.8": 42,
-  "0.8-1.25": 71,
-  "1.25-2": 26,
-  "<0.5": 32,
-  ">2": 12,
-  "unknown": 578
+  "0.5-0.8": 44,
+  "0.8-1.25": 73,
+  "1.25-2": 27,
+  "<0.5": 34,
+  ">2": 14,
+  "unknown": 569
  },
  "per_county": {
   "Alba": {
-   "resolved": 4,
+   "resolved": 3,
    "total": 41
   },
   "Arad": {
@@ -187,7 +187,7 @@
    "total": 4
   },
   "Prahova": {
-   "resolved": 2,
+   "resolved": 4,
    "total": 14
   },
   "Satu Mare": {
@@ -211,7 +211,7 @@
    "total": 6
   },
   "Timiș": {
-   "resolved": 7,
+   "resolved": 6,
    "total": 35
   },
   "Vaslui": {
@@ -223,12 +223,12 @@
    "total": 14
   },
   "Vâlcea": {
-   "resolved": 6,
+   "resolved": 7,
    "total": 42
   }
  },
  "shadow": {
-  "compared": 192,
+  "compared": 201,
   "rows": [
    {
     "hausdorff_m": 808.9,
@@ -243,6 +243,13 @@
     "new_km": 5.3,
     "old_km": 4.37,
     "slug": "0d29kh5i"
+   },
+   {
+    "hausdorff_m": 28221.2,
+    "legacy_approx": true,
+    "new_km": 20.31,
+    "old_km": 55.35,
+    "slug": "0wn4yfsa"
    },
    {
     "hausdorff_m": 104.7,
@@ -299,6 +306,13 @@
     "new_km": 25.33,
     "old_km": 29.31,
     "slug": "4nvqiliq"
+   },
+   {
+    "hausdorff_m": 15010.3,
+    "legacy_approx": true,
+    "new_km": 85.42,
+    "old_km": 148.65,
+    "slug": "53mzatrd"
    },
    {
     "hausdorff_m": 1279.7,
@@ -756,6 +770,13 @@
     "slug": "anpa-anpa-0553"
    },
    {
+    "hausdorff_m": null,
+    "legacy_approx": false,
+    "new_km": 24.89,
+    "old_km": 0.0,
+    "slug": "anpa-anpa-0565"
+   },
+   {
     "hausdorff_m": 48310.1,
     "legacy_approx": false,
     "new_km": 107.54,
@@ -782,6 +803,13 @@
     "new_km": 145.82,
     "old_km": 364.17,
     "slug": "anpa-anpa-0582"
+   },
+   {
+    "hausdorff_m": 56588.2,
+    "legacy_approx": false,
+    "new_km": 140.66,
+    "old_km": 206.28,
+    "slug": "anpa-anpa-0583"
    },
    {
     "hausdorff_m": null,
@@ -1034,6 +1062,13 @@
     "new_km": 44.16,
     "old_km": 172.07,
     "slug": "hj594dti"
+   },
+   {
+    "hausdorff_m": 75426.9,
+    "legacy_approx": false,
+    "new_km": 601.23,
+    "old_km": 786.15,
+    "slug": "hmd3pa0v"
    },
    {
     "hausdorff_m": 21873.7,
@@ -1337,6 +1372,13 @@
     "slug": "romsilva-maramures-repedea"
    },
    {
+    "hausdorff_m": 6304.5,
+    "legacy_approx": false,
+    "new_km": 32.37,
+    "old_km": 47.14,
+    "slug": "romsilva-maramures-ruscova-superioara"
+   },
+   {
     "hausdorff_m": 103.2,
     "legacy_approx": false,
     "new_km": 16.14,
@@ -1449,11 +1491,25 @@
     "slug": "romsilva-suceava-humorul"
    },
    {
+    "hausdorff_m": 88.7,
+    "legacy_approx": false,
+    "new_km": 24.66,
+    "old_km": 23.01,
+    "slug": "romsilva-timis-bega-poieni"
+   },
+   {
     "hausdorff_m": null,
     "legacy_approx": false,
     "new_km": 22.66,
     "old_km": 0.0,
     "slug": "romsilva-valcea-latorita-inferioara"
+   },
+   {
+    "hausdorff_m": 17654.3,
+    "legacy_approx": false,
+    "new_km": 4.45,
+    "old_km": 69.29,
+    "slug": "romsilva-valcea-latorita-superioara"
    },
    {
     "hausdorff_m": null,
@@ -1519,6 +1575,13 @@
     "slug": "w69nse7i"
    },
    {
+    "hausdorff_m": 85864.6,
+    "legacy_approx": false,
+    "new_km": 12.21,
+    "old_km": 126.19,
+    "slug": "wv8ykggg"
+   },
+   {
     "hausdorff_m": 14555.1,
     "legacy_approx": false,
     "new_km": 34.6,
@@ -1579,7 +1642,7 @@
  "top_reasons": [
   [
    "endpoint_unresolved",
-   260
+   259
   ],
   [
    "course_no_candidate",
@@ -1591,11 +1654,11 @@
   ],
   [
    "km_ratio_out_of_band",
-   68
+   73
   ],
   [
    "course_ambiguous",
-   52
+   41
   ],
   [
    "contract_km_missing",
@@ -1607,22 +1670,22 @@
   ],
   [
    "invariant:segment_gt_1km",
-   22
+   24
   ],
   [
    "endpoint_ambiguous",
-   15
+   19
   ],
   [
    "overlap",
-   12
-  ],
-  [
-   "contract_unit_ha",
-   8
+   16
   ],
   [
    "overlap_gt_50pct",
+   11
+  ],
+  [
+   "contract_unit_ha",
    8
   ],
   [
@@ -1630,11 +1693,11 @@
    6
   ],
   [
-   "endpoint_confidence_low",
-   5
+   "swapped_order",
+   6
   ],
   [
-   "swapped_order",
+   "endpoint_confidence_low",
    5
   ]
  ],
