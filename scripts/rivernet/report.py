@@ -196,6 +196,6 @@ def cli(argv: list[str]) -> int:
             waters = {w["slug"]: w for w in json.loads(Path(ns.waters).read_text(encoding="utf-8"))}
     prog = build_progress(sectors, waters, courses)
     Path(ns.out).parent.mkdir(parents=True, exist_ok=True)
-    Path(ns.out).write_text(json.dumps(prog, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    Path(ns.out).write_text(json.dumps(prog, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print(markdown(prog))
     return 0

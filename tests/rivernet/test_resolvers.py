@@ -405,3 +405,37 @@ def test_confluence_base_name_lower_confidence():
     assert res(ep("CONFLUENCE", target="Arieșul Mare"), ctx_for([c2], extra=[course("name:mures:n9", "Mureș")]), c2) == []
     # 'Valea X' never collapses to 'valea'
     assert R._base_keys({"valea mare"}) == set()
+
+
+# ----------------------------------------------- ANAR tributary outlet (T6.5)
+
+
+def anar_trib(cid, name, outlet_lon, outlet_dlat):
+    pts = [[outlet_lon, LAT + 0.05], [outlet_lon, LAT + outlet_dlat]]
+    return {"course_id": cid, "source": "anar", "name": name, "name_key": river_key(name), "aliases": [],
+            "length_m": 5000.0, "geometry": {"type": "LineString", "coordinates": pts},
+            "junctions": [], "receives_into": None, "counties": []}
+
+
+def test_confluence_falls_back_to_anar_outlet():
+    near = anar_trib("anar:RO1", "Tărcăița", 24.2, 0.002)  # outlet ~220 m from the course
+    ctx = ctx_for(extra=[near])
+    (c,) = res(ep("CONFLUENCE", target="Pârâul Tărcăița"), ctx)
+    assert c.method == "anar_outlet" and c.confidence == R.C_CONF_ANAR_OUTLET == 0.75
+    assert c.anchor == {"type": "course", "id": "anar:RO1"} and meas(c) == round(m_at(24.2))
+    assert 150 < c.dist_m < 300
+
+
+def test_anar_outlet_matches_by_stem_and_respects_distance():
+    ok = anar_trib("anar:RO1", "Pojorâta", 24.1, 0.001)
+    far = anar_trib("anar:RO2", "Pojorâta", 24.3, 0.01)  # ~1.1 km away
+    ctx = ctx_for(extra=[ok, far])
+    cands = res(ep("CONFLUENCE", target="Valea Pojorâtei"), ctx)
+    assert [c.anchor["id"] for c in cands] == ["anar:RO1"]
+
+
+def test_near_outlet_ignores_fallback_courses():
+    # 30 m away would satisfy the 50 m OSM rule; it must answer as anar_outlet instead
+    t = anar_trib("anar:RO1", "Tărcăița", 24.2, 0.00027)
+    (c,) = res(ep("CONFLUENCE", target="Tărcăița"), ctx_for(extra=[t]))
+    assert c.method == "anar_outlet"

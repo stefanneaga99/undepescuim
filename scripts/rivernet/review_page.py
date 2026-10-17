@@ -108,6 +108,6 @@ def cli(argv: list[str]) -> int:
     counties = sorted({s.get("judet") for s in sectors if s.get("judet")}) if ns.all else [ns.county]
     for c in counties:
         name = fold(c).replace(" ", "-") or "county"
-        (out / f"{name}.html").write_text(render(sectors, waters, courses, c), encoding="utf-8")
+        (out / f"{name}.html").write_text(render(sectors, waters, courses, c), encoding="utf-8", newline="\n")
     print(f"wrote {len(counties)} page(s) to {out}")
     return 0

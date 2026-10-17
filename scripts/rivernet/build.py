@@ -24,22 +24,34 @@ from .courses import build_courses
 from .extract_schema import load_extract
 from .graph import build_graph
 from .qa import qa_report, write_qa
-from .textnorm import article_variants, river_keys, river_match_keys
+from .textnorm import article_variants, river_keys, river_match_keys, stem_key
 
 DEFAULT_MAX_COMMIT_MB = 25.0
 
 
+STEM_PREFIX = "stem:"  # stem keys share the candidate-key set, namespaced
+
+
 def river_candidate_keys(waters: Iterable[dict[str, Any]]) -> set[str]:
+    """Name keys of river waters plus their ``stem:``-prefixed stem keys
+    (matcher tier 2 looks courses up by stem)."""
     keys: set[str] = set()
     for w in waters:
         if w.get("subtype") == "rau":
             keys.update(river_match_keys(w.get("name")))
+            st = stem_key(w.get("name"))
+            if st:
+                keys.add(STEM_PREFIX + st)
     return keys
 
 
 def is_candidate(rec: dict[str, Any], keys: set[str]) -> bool:
-    """A course is a candidate when its name key or any alias key is wanted."""
+    """A course is a candidate when its name key, any alias key, or the stem
+    of its name or an alias is wanted."""
     if rec["name_key"] in keys or any(v in keys for v in article_variants(rec["name_key"])):
+        return True
+    names = [rec.get("name"), *(rec.get("aliases") or [])]
+    if any(STEM_PREFIX + stem_key(n) in keys for n in names if stem_key(n)):
         return True
     return any(k in keys for a in rec.get("aliases") or [] for k in river_match_keys(a))
 
@@ -58,7 +70,7 @@ def course_index(records: Iterable[dict[str, Any]]) -> dict[str, list[str]]:
 
 def write_course_index(path: Path, records: Iterable[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(course_index(records), ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(course_index(records), ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
 
 
 def write_jsonl_gz(path: Path, records: Iterable[dict[str, Any]]) -> int:
@@ -107,15 +119,14 @@ def build(
         "osm_timestamp": extract.meta.osm_timestamp,
         "courses_total": len(records),
         "courses_candidates": len(subset),
-        "candidate_filter": "river_keys(water.name) of subtype rau" if candidate_keys is not None else "none",
+        "candidate_filter": "river_keys + stem_key(water.name) of subtype rau" if candidate_keys is not None else "none",
         "courses_all_bytes": all_size,
         "courses_bytes": subset_size,
         "commit_courses": commit,
         "max_commit_mb": max_commit_mb,
     }
     (out / "build_summary.json").write_text(
-        json.dumps(summary, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8"
-    )
+        json.dumps(summary, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8", newline="\n")
     return summary
 
 

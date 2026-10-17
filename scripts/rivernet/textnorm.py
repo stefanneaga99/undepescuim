@@ -195,6 +195,40 @@ def article_variants(key: str) -> list[str]:
     return [(head + " " + v).strip() for v in out]
 
 
+# Leading words that name the *kind* of watercourse, not the watercourse
+# ("Valea Sâmbetei", "Izvorul Mureș", "Gârla Huțani"), for ``stem_key`` only.
+_STEM_GENERIC = _GENERIC_PREFIXES | {"valea", "izvorul", "garla", "paraiele", "canal"}
+# Romanian inflection endings, longest first (genitive/article forms).
+_STEM_SUFFIXES = ("ilor", "ului", "ul", "ei", "ii", "ua", "ea", "ia", "ie", "a", "e", "i", "u", "o")
+_STEM_MIN = 3
+
+
+def stem_key(name: str | None) -> str:
+    """Inflection-insensitive key used only by the fallback matcher tiers.
+
+    ``Valea Sâmbetei`` and ``Sâmbăta`` still differ (vowel change), but
+    ``Valea Pojorâtei`` / ``Pojorâta`` -> ``pojorat`` and ``Râul Lesuntu`` /
+    ``Lesuntul`` -> ``lesunt`` agree.
+
+    >>> stem_key("Valea Pojorâtei"), stem_key("Pojorâta")
+    ('pojorat', 'pojorat')
+    """
+    tokens = fold(name).replace("-", " ").split()
+    while len(tokens) > 1 and tokens[0] in _STEM_GENERIC:
+        tokens = tokens[1:]
+    end = len(tokens)
+    while end > 1 and tokens[end - 1] in _TRAILING_QUALIFIERS:
+        end -= 1
+    out = []
+    for tok in tokens[:end]:
+        for suf in _STEM_SUFFIXES:
+            if tok.endswith(suf) and len(tok) - len(suf) >= _STEM_MIN:
+                tok = tok[: -len(suf)]
+                break
+        out.append(tok)
+    return " ".join(out)
+
+
 def river_match_keys(name: str | None) -> list[str]:
     """``river_keys`` plus the article variants (lowest priority, no duplicates)."""
     keys = river_keys(name)

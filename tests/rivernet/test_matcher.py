@@ -229,3 +229,59 @@ def test_definite_article_variant_matches():
     assert r.course_id == "a" and r.score < 1.0
     assert match(water("Râul Gurghiu", "Mureș"), [course("b", "Gurghiul", ["Mureș"])], by_key=None).course_id == "b"
     assert match(water("Gurghiu", "Mureș"), [], by_key=index_courses([course("b", "Gurghiul", ["Mureș"])])).course_id == "b"
+
+
+# ------------------------------------------------- fallback tiers (T6.5)
+
+from rivernet.matcher import index_stems  # noqa: E402
+
+
+def anar(cid, name, counties, **kw):
+    return {**course(cid, name, counties, **kw), "source": "anar"}
+
+
+def tiered(w, cs):
+    return match(w, [], by_key=index_courses(cs), by_stem=index_stems(cs))
+
+
+def test_tier1_osm_name_beats_fallback():
+    cs = [course("osm", "Lisa", ["Brașov"]), anar("anar:RO1", "Lisa", ["Brașov"])]
+    r = tiered(water("Râul Lisa", "Brașov"), cs)
+    assert r.course_id == "osm" and r.method == "name+county"
+    assert all(c[0] != "anar:RO1" for c in r.candidates)
+
+
+def test_tier2_osm_by_stem():
+    cs = [course("osm", "Pojorâta", ["Brașov"]), anar("anar:RO1", "Pojorâta", ["Brașov"])]
+    r = tiered(water("Valea Pojorâtei", "Brașov"), cs)
+    assert r.course_id == "osm" and r.method == "stem+county"
+
+
+def test_tier3_fallback_by_stem_and_county():
+    cs = [anar("anar:RO1", "Pojorâta", ["Brașov"]), anar("anar:RO2", "Pojorâta", ["Suceava"])]
+    r = tiered(water("Valea Pojorâtei", "Brașov"), cs)
+    assert r.course_id == "anar:RO1" and r.method == "anar+county"
+
+
+def test_tier3_fuzzy_stem():
+    cs = [anar("anar:RO1", "Sighisel", ["Bihor"])]
+    r = tiered(water("Valea Sighiștelului", "Bihor"), cs)
+    assert r.course_id == "anar:RO1" and r.method == "anar_fuzzy+county"
+
+
+def test_tiers_report_county_mismatch_and_no_candidate():
+    cs = [anar("anar:RO1", "Pojorâta", ["Suceava"])]
+    assert tiered(water("Valea Pojorâtei", "Brașov"), cs).method == "no_county_match"
+    assert tiered(water("Râul Nimic", "Brașov"), cs).method == "no_candidate"
+
+
+def test_ambiguous_tier1_is_final():
+    cs = [course("a", "Lisa", ["Brașov"]), course("b", "Lisa", ["Brașov"]), anar("anar:RO1", "Lisa", ["Brașov"])]
+    assert tiered(water("Valea Lisei", "Brașov"), cs).method == "ambiguous"
+
+
+def test_fallback_courses_are_ignored_without_stem_index():
+    cs = [anar("anar:RO1", "Lisa", ["Brașov"])]
+    assert match(water("Lisa", "Brașov"), cs).method == "no_candidate"
+    assert index_courses(cs) == {}
+    assert set(index_stems(cs + [course("x", "Lisa", ["Alba"], aliases=["Lisa Mare"])])) == {"lis", "lis mar"}

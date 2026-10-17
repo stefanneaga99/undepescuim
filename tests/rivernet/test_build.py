@@ -110,3 +110,12 @@ def test_course_index_covers_all_and_includes_alias_keys(tmp_path):
     assert course_index(recs) == {"rel:1": ["olt", "aluta"], "name:x:n2": ["x"]}
     write_course_index(tmp_path / "i.json", recs)
     assert json.loads((tmp_path / "i.json").read_text(encoding="utf-8"))["rel:1"] == ["olt", "aluta"]
+
+
+def test_candidate_filter_accepts_stem_matches():
+    river_candidate_keys, is_candidate = bd.river_candidate_keys, bd.is_candidate
+    keys = river_candidate_keys([{"subtype": "rau", "name": "Valea Pojorâtei"}, {"subtype": "lac", "name": "Lacul Z"}])
+    assert "stem:pojorat" in keys and not any("lacul" in k or k == "stem:z" for k in keys)
+    assert is_candidate({"name_key": "pojorata", "name": "Pojorâta", "aliases": []}, keys)
+    assert is_candidate({"name_key": "x", "name": "X", "aliases": ["Pojorâta"]}, keys)
+    assert not is_candidate({"name_key": "putna", "name": "Putna", "aliases": []}, keys)

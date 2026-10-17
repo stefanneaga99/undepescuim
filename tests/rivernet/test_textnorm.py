@@ -1,6 +1,7 @@
 import pytest
 
 from rivernet.textnorm import fix_diacritics, fold, river_key, river_keys
+from rivernet import textnorm
 
 
 @pytest.mark.parametrize(
@@ -120,3 +121,23 @@ def test_article_variants_and_match_keys():
     assert article_variants("olt") == [] and article_variants("") == []
     assert river_match_keys("Râul Gurghiul mijlociu")[0] == "gurghiul"
     assert "gurghiu" in river_match_keys("Râul Gurghiul mijlociu")
+
+
+@pytest.mark.parametrize("a,b", [
+    ("Valea Pojorâtei", "Pojorâta"),
+    ("Râul Lesuntu", "Lesuntul"),
+    ("Valea Slănicului", "Slanic"),
+    ("Gârla Huțanilor", "Huțani"),
+    ("Râul Bistricioara II", "Bistricioara"),
+    ("Pâraiele Boia Mare", "Boia Mare"),
+    ("Izvorul Mureș", "Mureș"),
+])
+def test_stem_key_agrees_across_inflections(a, b):
+    assert textnorm.stem_key(a) == textnorm.stem_key(b) != ""
+
+
+def test_stem_key_keeps_distinct_names_apart_and_short_tokens():
+    assert textnorm.stem_key("Valea Sâmbetei") != textnorm.stem_key("Sâmbăta")  # vowel change: fuzzy tier
+    assert textnorm.stem_key("Valea") == "val"  # a lone generic word is the name
+    assert textnorm.stem_key("Ier") == "ier"  # never shorter than 3 letters
+    assert textnorm.stem_key("") == "" and textnorm.stem_key(None) == ""

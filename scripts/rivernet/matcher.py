@@ -21,12 +21,14 @@ from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from typing import Any, Callable, Iterable, Mapping
 
-from .textnorm import article_variants, fold, river_key, river_keys, river_match_keys
+from .textnorm import article_variants, fold, river_key, river_keys, river_match_keys, stem_key
 
 W_NAME, W_MENTION, W_LENGTH = 0.6, 0.2, 0.2
 FUZZY_MIN = 0.88
 AMBIGUITY_GAP = 0.1
 NAME_EXACT, NAME_ALT_KEY = 1.0, 0.9
+NAME_STEM = 0.85  # tiers 2/3: inflection-insensitive stem equality
+FALLBACK_SOURCE = "anar"  # course records from rivernet.hidrografie
 
 KM_RE = re.compile(r"(\d+(?:[.,]\d+)?)\s*km", re.I)
 
@@ -35,7 +37,9 @@ KM_RE = re.compile(r"(\d+(?:[.,]\d+)?)\s*km", re.I)
 class MatchResult:
     course_id: str | None
     score: float
-    method: str  # override | name+county | fuzzy+county | ambiguous | no_candidate | no_county_match
+    # override | name+county | fuzzy+county | stem+county | anar+county | anar_fuzzy+county
+    # | ambiguous | no_candidate | no_county_match
+    method: str
     candidates: list[tuple[str, float, str]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -99,6 +103,10 @@ def _endpoint_targets(spec: Mapping[str, Any] | None) -> set[str]:
     return out
 
 
+def is_fallback(c: Mapping[str, Any]) -> bool:
+    return c.get("source") == FALLBACK_SOURCE
+
+
 def match(
     water: Mapping[str, Any],
     courses: Iterable[Mapping[str, Any]],
@@ -107,9 +115,21 @@ def match(
     county_ok: Callable[..., bool] | None = None,
     mention_hook: Callable[[Mapping[str, Any], Mapping[str, Any]], bool] | None = None,
     by_key: Mapping[str, list[Mapping[str, Any]]] | None = None,
+    by_stem: Mapping[str, list[Mapping[str, Any]]] | None = None,
 ) -> MatchResult:
-    """Pick the course for one water; see the module docstring for the rules."""
-    courses = list(courses) if by_key is None else []
+    """Pick the course for one water; see the module docstring for the rules.
+
+    Tiers, each tried only when the previous one finds no course in the
+    water's county (``no_candidate`` / ``no_county_match``; ``ambiguous`` is
+    final):
+
+    1. OSM courses by name key (exact, then fuzzy) - the plan's T3.2 rule;
+    2. OSM courses by ``stem_key`` ("Valea Pojorâtei" = "Pojorâta");
+    3. fallback-source courses (ANAR cadastre) by stem, then fuzzy stem.
+
+    Tiers 2-3 need ``by_stem`` (see ``index_stems``).
+    """
+    courses = [c for c in courses if not is_fallback(c)] if by_key is None else []
     slug = water.get("slug")
     if overrides and slug in overrides:
         return MatchResult(overrides[slug]["course_id"], 1.0, "override", [(overrides[slug]["course_id"], 1.0, "override")])
@@ -143,9 +163,46 @@ def match(
             if r >= FUZZY_MIN:
                 hits[c["course_id"]] = (c, r, "fuzzy")
         method_prefix = "fuzzy"
+    res = _score(hits, water, spec, county_ok, mention_hook, method_prefix)
+    if res.method not in _MISSES or by_stem is None:
+        return res
+
+    st = stem_key(water.get("name"))
+    stem_hits = list(by_stem.get(st, ())) if st else []
+    osm = {c["course_id"]: (c, NAME_STEM, "stem") for c in stem_hits if not is_fallback(c)}
+    res2 = _score(osm, water, spec, county_ok, mention_hook, "stem")
+    if res2.method not in _MISSES:
+        return res2
+    anar = {c["course_id"]: (c, NAME_STEM, "anar") for c in stem_hits if is_fallback(c)}
+    prefix = "anar"
+    if not anar and st:
+        for k in sorted(by_stem):
+            r = SequenceMatcher(None, st, k).ratio()
+            if r >= FUZZY_MIN:
+                for c in by_stem[k]:
+                    if is_fallback(c):
+                        anar[c["course_id"]] = (c, NAME_STEM * r, "anar_fuzzy")
+        prefix = "anar_fuzzy"
+    res3 = _score(anar, water, spec, county_ok, mention_hook, prefix)
+    if res3.method not in _MISSES:
+        return res3
+    # report the most informative miss: a county mismatch beats "no candidate"
+    return next((r for r in (res, res2, res3) if r.method == "no_county_match"), res)
+
+
+_MISSES = ("no_candidate", "no_county_match")
+
+
+def _score(
+    hits: Mapping[str, tuple[Mapping[str, Any], float, str]],
+    water: Mapping[str, Any],
+    spec: Mapping[str, Any] | None,
+    county_ok: Callable[..., bool] | None,
+    mention_hook: Callable[[Mapping[str, Any], Mapping[str, Any]], bool] | None,
+    method_prefix: str,
+) -> MatchResult:
     if not hits:
         return MatchResult(None, 0.0, "no_candidate")
-
     km = contract_km(water.get("dimensiune"))
     tribs = bool((spec or {}).get("includes_tributaries"))
     targets = _endpoint_targets(spec)
@@ -183,12 +240,25 @@ def by_key_values(by_key: Mapping[str, list[Mapping[str, Any]]]) -> Iterable[Map
 
 
 def index_courses(courses: Iterable[Mapping[str, Any]]) -> dict[str, list[Mapping[str, Any]]]:
-    """key (primary + alias keys) -> courses, for O(1) candidate lookup."""
+    """key (primary + alias keys) -> OSM courses, for O(1) candidate lookup.
+    Fallback-source courses are left out (they only answer tier 3)."""
     idx: dict[str, list[Mapping[str, Any]]] = {}
     for c in courses:
+        if is_fallback(c):
+            continue
         primary, alt = _course_keys(c)
         for k in {primary} | alt:
             idx.setdefault(k, []).append(c)
+    return idx
+
+
+def index_stems(courses: Iterable[Mapping[str, Any]]) -> dict[str, list[Mapping[str, Any]]]:
+    """stem_key (name + aliases) -> courses of every source (tiers 2-3)."""
+    idx: dict[str, list[Mapping[str, Any]]] = {}
+    for c in courses:
+        for st in sorted({stem_key(c.get("name"))} | {stem_key(a) for a in c.get("aliases") or []}):
+            if st:
+                idx.setdefault(st, []).append(c)
     return idx
 
 
@@ -222,6 +292,7 @@ def cli(argv: list[str]) -> int:
     with gzip.open(cp, "rt", encoding="utf-8") as f:
         courses = [json.loads(line) for line in f if line.strip()]
     idx = index_courses(courses)
+    sidx = index_stems(courses)
     waters = json.loads(Path(ns.waters).read_text(encoding="utf-8"))
     parsed = {}
     pp = Path(ns.parsed)
@@ -251,7 +322,7 @@ def cli(argv: list[str]) -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8", newline="\n") as f:
         for w in sorted((w for w in waters if w.get("subtype") == "rau"), key=lambda w: w["slug"]):
-            r = match(w, [], ov, parsed.get(w["slug"]), mention_hook=hook, by_key=idx)
+            r = match(w, [], ov, parsed.get(w["slug"]), mention_hook=hook, by_key=idx, by_stem=sidx)
             counts[r.method] = counts.get(r.method, 0) + 1
             f.write(json.dumps({"slug": w["slug"], **r.to_dict()}, ensure_ascii=False, sort_keys=True) + "\n")
     print(json.dumps(dict(sorted(counts.items())), ensure_ascii=False))

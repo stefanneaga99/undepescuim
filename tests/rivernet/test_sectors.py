@@ -281,3 +281,20 @@ def test_cli_end_to_end(tmp_path):
     rows = [json.loads(x) for x in out.read_text(encoding="utf-8").splitlines()]
     assert len(rows) == 1 and rows[0]["status"] == "resolved" and rows[0]["network_version"] == "ro-water-20261015"
     assert S.cli(["--extract", str(ex_path), "--courses", str(tmp_path / "missing.gz")]) == 1
+
+
+# ------------------------------------------------- fallback source cap (T6.5)
+
+
+def test_anar_course_is_never_high_confidence():
+    c = course(source="anar")
+    r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]))
+    assert r["status"] == "resolved" and r["confidence"] == "medium"
+    assert "fallback_source:anar" in r["reasons"]
+
+
+def test_anar_fuzzy_match_goes_to_review():
+    c = course(source="anar")
+    m = {**MATCH, "method": "anar_fuzzy+county"}
+    r = rs(interval(ep("SOURCE"), ep("MOUTH")), ctx_for([c]), match=m)
+    assert r["status"] == "review" and "fallback_fuzzy_match" in r["reasons"]

@@ -543,7 +543,6 @@ def cli(argv: list[str]) -> int:
         "unparsedOrUnknownShare": round(bad / total, 4) if total else 0.0,
     }
     (out / "limits_parsed_summary.json").write_text(
-        json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-    )
+        json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     print(json.dumps(summary, ensure_ascii=False))
     return 0

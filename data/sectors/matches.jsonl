@@ -1,26 +1,26 @@
 {"candidates": [["rel:6262921", 0.8, "name+county;mention=0;fit=1.00"], ["name:luncavat:n8873912379", 0.6015, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6262921", "method": "name+county", "score": 0.8, "slug": "0700jcip"}
 {"candidates": [["name:corhana:n4792927857", 0.681, "name+county;mention=0;fit=0.41"]], "course_id": "name:corhana:n4792927857", "method": "name+county", "score": 0.681, "slug": "08xhs12s"}
 {"candidates": [["rel:6148897:2", 1.0, "name+county;mention=1;fit=1.00"], ["name:prahova:n181305837", 0.81, "name+county;mention=1;fit=0.05"], ["name:prahova:n181304650", 0.8063, "name+county;mention=1;fit=0.03"], ["name:prahova:n181304179", 0.8056, "name+county;mention=1;fit=0.03"], ["name:prahova:n181305917", 0.8014, "name+county;mention=1;fit=0.01"]], "course_id": "rel:6148897:2", "method": "name+county", "score": 1.0, "slug": "0a4d89le"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "0b5imfgi"}
+{"candidates": [["rel:18031899", 0.91, "stem+county;mention=1;fit=1.00"]], "course_id": "rel:18031899", "method": "stem+county", "score": 0.91, "slug": "0b5imfgi"}
 {"candidates": [["name:malaia:n4209736650", 0.718, "name+county;mention=0;fit=0.59"]], "course_id": "name:malaia:n4209736650", "method": "name+county", "score": 0.718, "slug": "0d29kh5i"}
 {"candidates": [["rel:6214980", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214980", "method": "name+county", "score": 0.8, "slug": "0djgr9l8"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "0dsbiw28"}
+{"candidates": [["anar:RO3-1-42-22-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO3-1-42-22-0-0-0", "method": "anar+county", "score": 0.91, "slug": "0dsbiw28"}
 {"candidates": [["rel:6214980", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214980", "method": "name+county", "score": 0.8, "slug": "0hxo4zi3"}
 {"candidates": [["name:valea caselor:n3522305693", 0.6393, "name+county;mention=0;fit=0.20"], ["name:caselor:n1880742537", 0.5663, "name+county;mention=0;fit=0.13"]], "course_id": null, "method": "ambiguous", "score": 0.6393, "slug": "0kaweera"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "0rc761a8"}
+{"candidates": [["anar:RO12-1-14-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO12-1-14-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "0rc761a8"}
 {"candidates": [["name:teleajen:n178943796", 1.0, "name+county;mention=1;fit=1.00"], ["name:teleajen:n178509054", 0.8, "name+county;mention=0;fit=1.00"], ["name:teleajen:n178970615", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:teleajen:n178943796", "method": "name+county", "score": 1.0, "slug": "0wn4yfsa"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "0zai84fg"}
 {"candidates": [["name:capus:n2212624528", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:capus:n2212624528", "method": "name+county", "score": 0.8, "slug": "15tafiir"}
 {"candidates": [["rel:6258971", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6258971", "method": "name+county", "score": 0.8, "slug": "17ad076y"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "19468k28"}
 {"candidates": [["rel:18012661", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012661", "method": "name+county", "score": 0.8, "slug": "1dy2bzbz"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "1f162p36"}
+{"candidates": [["anar:RO8-1-125-0-0-0-0", 0.6292, "anar+county;mention=0;fit=0.60"]], "course_id": "anar:RO8-1-125-0-0-0-0", "method": "anar+county", "score": 0.6292, "slug": "1f162p36"}
 {"candidates": [["rel:13900818", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13900818", "method": "name+county", "score": 0.8, "slug": "1i81o3wj"}
 {"candidates": [["name:maierus:n10796727165", 0.7106, "name+county;mention=0;fit=0.55"]], "course_id": "name:maierus:n10796727165", "method": "name+county", "score": 0.7106, "slug": "1w5ajm9s"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "1xe7y7xg"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "1xqpi6rz"}
+{"candidates": [["name:stramba:n6071859552", 0.6343, "stem+county;mention=0;fit=0.62"], ["name:stramba:n6071860125", 0.5889, "stem+county;mention=0;fit=0.39"], ["name:stramba:n1143732062", 0.5449, "stem+county;mention=0;fit=0.17"]], "course_id": null, "method": "ambiguous", "score": 0.6343, "slug": "1xe7y7xg"}
+{"candidates": [["rel:6258172", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "rel:6258172", "method": "stem+county", "score": 0.71, "slug": "1xqpi6rz"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "1zqkhha4"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "20u2sj3u"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "20u2sj3u"}
 {"candidates": [["rel:18921026", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18921026", "method": "name+county", "score": 0.8, "slug": "2bj7imws"}
 {"candidates": [["rel:6214986", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214986", "method": "name+county", "score": 0.8, "slug": "2dxykcpr"}
 {"candidates": [["rel:6148897:1", 1.0, "name+county;mention=1;fit=1.00"], ["rel:6148897:2", 0.8, "name+county;mention=0;fit=1.00"], ["rel:6148897:3", 0.6427, "name+county;mention=0;fit=0.21"], ["name:prahova:n181305837", 0.6313, "name+county;mention=0;fit=0.16"], ["name:prahova:n181304650", 0.6196, "name+county;mention=0;fit=0.10"]], "course_id": "rel:6148897:1", "method": "name+county", "score": 1.0, "slug": "2g9hg98a"}
@@ -52,7 +52,7 @@
 {"candidates": [["name:calinesti:n7036091132", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:calinesti:n7036091132", "method": "name+county", "score": 0.74, "slug": "6btp0y2a"}
 {"candidates": [["rel:6259861", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6259861", "method": "name+county", "score": 0.8, "slug": "6ofvb2jf"}
 {"candidates": [["name:jiul de vest:n2089801990", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:jiul de vest:n2089801990", "method": "name+county", "score": 1.0, "slug": "6vsle29k"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "7jpc32e8"}
+{"candidates": [["name:valea boiului:n3523989969", 0.728, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "name:valea boiului:n3523989969", "method": "fuzzy+county", "score": 0.728, "slug": "7jpc32e8"}
 {"candidates": [["rel:9810966", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:9810966", "method": "name+county", "score": 0.8, "slug": "7nc9pf1u"}
 {"candidates": [["rel:10904141", 0.8, "name+county;mention=0;fit=1.00"], ["rel:7761773", 0.8, "name+county;mention=0;fit=1.00"], ["name:bistrita:n254303176", 0.6029, "name+county;mention=0;fit=0.01"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "7oju77qb"}
 {"candidates": [["rel:89465", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:89465", "method": "name+county", "score": 1.0, "slug": "7ull4jnk"}
@@ -64,20 +64,20 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "8y7mmtyb"}
 {"candidates": [["rel:18007451", 0.8, "name+county;mention=0;fit=1.00"], ["name:gilort:n4779713715", 0.6004, "name+county;mention=0;fit=0.00"]], "course_id": "rel:18007451", "method": "name+county", "score": 0.8, "slug": "91bhbi8d"}
 {"candidates": [["rel:6271046", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6271046", "method": "name+county", "score": 1.0, "slug": "9h06oubr"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "9h0azllr"}
+{"candidates": [["anar:RO6-1-5-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO6-1-5-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "9h0azllr"}
 {"candidates": [["rel:7689581", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:7689581", "method": "name+county", "score": 0.8, "slug": "9m2irr6m"}
 {"candidates": [["rel:89465", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89465", "method": "name+county", "score": 0.8, "slug": "9mfds2yv"}
 {"candidates": [["rel:13900230", 0.7739, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "rel:13900230", "method": "fuzzy+county", "score": 0.7739, "slug": "9y116j3m"}
 {"candidates": [["rel:10900823", 0.8, "name+county;mention=0;fit=1.00"], ["name:somesul mare:n3537606443", 0.6132, "name+county;mention=0;fit=0.07"]], "course_id": "rel:10900823", "method": "name+county", "score": 0.8, "slug": "a2qs9hkg"}
 {"candidates": [["rel:13880953", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13880953", "method": "name+county", "score": 0.8, "slug": "a3g6wcqj"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ab4t7anb"}
+{"candidates": [["anar:RO3-1-42-10-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO3-1-42-10-0-0-0", "method": "anar+county", "score": 0.71, "slug": "ab4t7anb"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "aksrc2lo"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0011"}
+{"candidates": [["anar:RO4-1-81-24-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-24-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0011"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0013"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0015"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0018"}
+{"candidates": [["anar:RO4-1-81-7-2-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-7-2-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0018"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0019"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0020"}
+{"candidates": [["name:pianu:n2388442884", 0.6357, "fuzzy+county;mention=0;fit=0.51"]], "course_id": "name:pianu:n2388442884", "method": "fuzzy+county", "score": 0.6357, "slug": "anpa-anpa-0020"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0023"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0026"}
 {"candidates": [["name:ier:n10157553018", 0.74, "name+county;mention=0;fit=1.00"], ["name:ier:n1917393506", 0.5941, "name+county;mention=0;fit=0.27"]], "course_id": "name:ier:n10157553018", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0040"}
@@ -86,23 +86,23 @@
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0091"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0094"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0097"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0098"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0098"}
 {"candidates": [["rel:18008322", 0.7116, "name+county;mention=0;fit=0.56"]], "course_id": "rel:18008322", "method": "name+county", "score": 0.7116, "slug": "anpa-anpa-0125"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0131"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0134"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0135"}
 {"candidates": [["rel:18933307", 0.8, "name+county;mention=0;fit=1.00"], ["rel:6267433", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "anpa-anpa-0141"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0142"}
+{"candidates": [["rel:18010597", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "rel:18010597", "method": "stem+county", "score": 0.71, "slug": "anpa-anpa-0142"}
 {"candidates": [["name:siretel:n11873684721", 0.6486, "name+county;mention=0;fit=0.24"]], "course_id": "name:siretel:n11873684721", "method": "name+county", "score": 0.6486, "slug": "anpa-anpa-0147"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0152"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0154"}
+{"candidates": [["anar:RO13-1-7-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-7-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0152"}
+{"candidates": [["anar:RO13-1-11-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-11-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0154"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0156"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0157"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0158"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0158"}
 {"candidates": [["name:sarata:n5641438655", 0.8, "name+county_unknown;mention=0;fit=1.00"]], "course_id": "name:sarata:n5641438655", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0159"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0160"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0161"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0162"}
+{"candidates": [["anar:RO13-1-10-8-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-10-8-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0160"}
+{"candidates": [["anar:RO13-1-10-4-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-10-4-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0161"}
+{"candidates": [["anar:RO13-1-10-6-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-10-6-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0162"}
 {"candidates": [["rel:13451326:1", 1.0, "name+county;mention=1;fit=1.00"], ["name:jijia:n1104276805", 0.601, "name+county;mention=0;fit=0.01"], ["name:jijia:n1104270060", 0.6007, "name+county;mention=0;fit=0.00"]], "course_id": "rel:13451326:1", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0163"}
 {"candidates": [["rel:18016327", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18016327", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0164"}
 {"candidates": [["rel:18016343", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18016343", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0165"}
@@ -119,25 +119,25 @@
 {"candidates": [["rel:6256437", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6256437", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0185"}
 {"candidates": [["name:berivoi:n1925541604", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:berivoi:n1925541604", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0186"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0187"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0188"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0188"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0189"}
 {"candidates": [["name:vistea mare:n2953834245", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:vistea mare:n2953834245", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0190"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0191"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0192"}
 {"candidates": [["name:venetia:n11351327828", 0.6954, "name+county;mention=0;fit=0.48"]], "course_id": "name:venetia:n11351327828", "method": "name+county", "score": 0.6954, "slug": "anpa-anpa-0193"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0194"}
+{"candidates": [["name:lisa:n6292096355", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:lisa:n6292096355", "method": "stem+county", "score": 0.71, "slug": "anpa-anpa-0194"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0206"}
 {"candidates": [["rel:12800074", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:12800074", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0207"}
 {"candidates": [["name:siriu:n10713073803", 0.5847, "name+county;mention=0;fit=0.22"]], "course_id": "name:siriu:n10713073803", "method": "name+county", "score": 0.5847, "slug": "anpa-anpa-0208"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0209"}
 {"candidates": [["rel:12800074", 0.94, "name+county;mention=1;fit=1.00"]], "course_id": "rel:12800074", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0210"}
 {"candidates": [["rel:12800074", 0.94, "name+county;mention=1;fit=1.00"]], "course_id": "rel:12800074", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0211"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0212"}
+{"candidates": [["anar:RO12-1-82-19-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-82-19-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0212"}
 {"candidates": [["name:calmatui:n1000733658", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:calmatui:n1000733658", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0213"}
 {"candidates": [["rel:12800074", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:12800074", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0214"}
 {"candidates": [["rel:18012095", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012095", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0215"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0216"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0217"}
+{"candidates": [["name:slanic:n264328793", 0.7538, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "name:slanic:n264328793", "method": "fuzzy+county", "score": 0.7538, "slug": "anpa-anpa-0216"}
+{"candidates": [["name:basca chiojd:n263917090", 0.776, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "name:basca chiojd:n263917090", "method": "fuzzy+county", "score": 0.776, "slug": "anpa-anpa-0217"}
 {"candidates": [["rel:16151672", 1.0, "name+county;mention=1;fit=1.00"], ["name:nera:n2884953999", 0.7366, "name+county;mention=0;fit=0.68"]], "course_id": "rel:16151672", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0219"}
 {"candidates": [["rel:4450692", 0.8, "name+county;mention=0;fit=1.00"], ["name:barzava:n2635435230", 0.6001, "name+county;mention=0;fit=0.00"]], "course_id": "rel:4450692", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0220"}
 {"candidates": [["rel:1567519", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:1567519", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0221"}
@@ -152,8 +152,8 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0231"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0235"}
 {"candidates": [["name:milotina:n403790418", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:milotina:n403790418", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0236"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0247"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0248"}
+{"candidates": [["name:dunare-marea neagra:n1215993154", 0.71, "stem+county;mention=0;fit=1.00"], ["name:dunare-marea neagra:n1215993282", 0.71, "stem+county;mention=0;fit=1.00"], ["name:dunare-marea neagra:n144316471", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.71, "slug": "anpa-anpa-0247"}
+{"candidates": [["name:poarta alba-midia navodari:n144326448", 0.71, "stem+county;mention=0;fit=1.00"], ["name:poarta alba-midia-navodari:n10253014481", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.71, "slug": "anpa-anpa-0248"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0249"}
 {"candidates": [["rel:1567969", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:1567969", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0250"}
 {"candidates": [["rel:6252172", 0.8, "name+county;mention=0;fit=1.00"], ["name:negru:n10821416826", 0.6059, "name+county;mention=0;fit=0.03"]], "course_id": "rel:6252172", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0251"}
@@ -171,7 +171,7 @@
 {"candidates": [["rel:6252170", 0.7548, "name+county;mention=0;fit=0.77"]], "course_id": "rel:6252170", "method": "name+county", "score": 0.7548, "slug": "anpa-anpa-0263"}
 {"candidates": [["rel:6252172", 1.0, "name+county;mention=1;fit=1.00"], ["name:negru:n10821416826", 0.6098, "name+county;mention=0;fit=0.05"]], "course_id": "rel:6252172", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0264"}
 {"candidates": [["rel:6256432", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6256432", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0265"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0278"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0278"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0279"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0280"}
 {"candidates": [["name:balasan:n4456417663", 0.9579, "name+county;mention=1;fit=0.79"], ["name:balasan:n4222617917", 0.8668, "name+county;mention=1;fit=0.33"], ["name:balasan:n4455479289", 0.8634, "name+county;mention=1;fit=0.32"], ["name:balasan:n7602572294", 0.6001, "name+county;mention=0;fit=0.00"]], "course_id": null, "method": "ambiguous", "score": 0.9579, "slug": "anpa-anpa-0281"}
@@ -191,13 +191,13 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0302"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0303"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0304"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0310"}
+{"candidates": [["anar:RO7-1-31-7-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO7-1-31-7-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0310"}
 {"candidates": [["name:goagiu:n142165993", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:goagiu:n142165993", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0319"}
 {"candidates": [["rel:6274654", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6274654", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0320"}
 {"candidates": [["name:magherus:n3547486604", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:magherus:n3547486604", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0321"}
 {"candidates": [["name:calimanel:n612783944", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:calimanel:n612783944", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0322"}
 {"candidates": [["rel:89325", 0.8, "name+county;mention=0;fit=1.00"], ["name:mures:n2954465698", 0.6439, "name+county;mention=0;fit=0.22"], ["name:mures:n612783388", 0.6022, "name+county;mention=0;fit=0.01"]], "course_id": "rel:89325", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0323"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0324"}
+{"candidates": [["rel:6256434", 0.95, "fuzzy+county;mention=1;fit=1.00"]], "course_id": "rel:6256434", "method": "fuzzy+county", "score": 0.95, "slug": "anpa-anpa-0324"}
 {"candidates": [["rel:6256433", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6256433", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0325"}
 {"candidates": [["rel:6275128", 1.0, "name+county;mention=1;fit=1.00"], ["name:tarnava mare:n4464192705", 0.6031, "name+county;mention=0;fit=0.02"], ["name:tarnava mare:n142165965", 0.601, "name+county;mention=0;fit=0.01"], ["name:tarnava mare:n4464192592", 0.6009, "name+county;mention=0;fit=0.00"], ["name:tarnava mare:n4966202446", 0.6008, "name+county;mention=0;fit=0.00"]], "course_id": "rel:6275128", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0326"}
 {"candidates": [["name:varsag:n10058072327", 0.664, "name+county;mention=0;fit=0.32"]], "course_id": "name:varsag:n10058072327", "method": "name+county", "score": 0.664, "slug": "anpa-anpa-0327"}
@@ -209,7 +209,7 @@
 {"candidates": [["rel:6275128", 0.8, "name+county;mention=0;fit=1.00"], ["name:tarnava mare:n4464192705", 0.6029, "name+county;mention=0;fit=0.01"], ["name:tarnava mare:n142165965", 0.601, "name+county;mention=0;fit=0.00"], ["name:tarnava mare:n4464192592", 0.6009, "name+county;mention=0;fit=0.00"], ["name:tarnava mare:n4966202446", 0.6007, "name+county;mention=0;fit=0.00"]], "course_id": "rel:6275128", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0334"}
 {"candidates": [["rel:6256436", 0.8896, "name+county;mention=1;fit=0.75"], ["name:varghis:n10033459535", 0.5513, "name+county;mention=0;fit=0.06"], ["name:varghis:n11384538824", 0.5445, "name+county;mention=0;fit=0.02"], ["name:varghis:n1845521342", 0.5405, "name+county;mention=0;fit=0.00"]], "course_id": "rel:6256436", "method": "name+county", "score": 0.8896, "slug": "anpa-anpa-0335"}
 {"candidates": [["rel:89325", 0.8, "name+county;mention=0;fit=1.00"], ["name:mures:n2954465698", 0.6337, "name+county;mention=0;fit=0.17"], ["name:mures:n612783388", 0.6017, "name+county;mention=0;fit=0.01"]], "course_id": "rel:89325", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0337"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0338"}
+{"candidates": [["rel:89325", 0.91, "stem+county;mention=1;fit=1.00"], ["name:mures:n2954465698", 0.5331, "stem+county;mention=0;fit=0.12"], ["name:mures:n612783388", 0.5112, "stem+county;mention=0;fit=0.01"]], "course_id": "rel:89325", "method": "stem+county", "score": 0.91, "slug": "anpa-anpa-0338"}
 {"candidates": [["rel:1567969", 0.74, "name+county;mention=0;fit=1.00"], ["name:olt:n1316494972", 0.5411, "name+county;mention=0;fit=0.01"]], "course_id": "rel:1567969", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0339"}
 {"candidates": [["name:fisag:n303705450", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:fisag:n303705450", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0340"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0341"}
@@ -222,14 +222,14 @@
 {"candidates": [["name:mare:n11019585496", 0.6467, "name+county;mention=0;fit=0.23"], ["name:mare:n3555075794", 0.6452, "name+county;mention=0;fit=0.23"], ["name:mare:n11581934252", 0.6421, "name+county;mention=0;fit=0.21"]], "course_id": null, "method": "ambiguous", "score": 0.6467, "slug": "anpa-anpa-0350"}
 {"candidates": [["name:mic:n3530554729", 0.6689, "name+county;mention=0;fit=0.34"], ["name:mic:n9403549175", 0.6648, "name+county;mention=0;fit=0.32"]], "course_id": null, "method": "ambiguous", "score": 0.6689, "slug": "anpa-anpa-0351"}
 {"candidates": [["name:jolotca:n657826009", 0.6695, "name+county;mention=0;fit=0.35"]], "course_id": "name:jolotca:n657826009", "method": "name+county", "score": 0.6695, "slug": "anpa-anpa-0353"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0354"}
+{"candidates": [["anar:RO12-1-53-40-8-0-0", 0.6579, "anar+county;mention=0;fit=0.74"]], "course_id": "anar:RO12-1-53-40-8-0-0", "method": "anar+county", "score": 0.6579, "slug": "anpa-anpa-0354"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0355"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0356"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0370"}
 {"candidates": [["rel:6281633", 0.94, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6281633", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0371"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0372"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0373"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0374"}
+{"candidates": [["anar:RO3-1-7-1-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO3-1-7-1-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0373"}
+{"candidates": [["anar:RO4-1-114-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-114-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0374"}
 {"candidates": [["rel:18011629", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18011629", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0375"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0376"}
 {"candidates": [["rel:89325", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89325", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0377"}
@@ -242,9 +242,9 @@
 {"candidates": [["rel:6164192", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6164192", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0391"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0392"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0393"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0397"}
+{"candidates": [["anar:RO11-1-18-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO11-1-18-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0397"}
 {"candidates": [["name:sasar:n243288884", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:sasar:n243288884", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0398"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0399"}
+{"candidates": [["anar:RO2-1-66-17-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-66-17-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0399"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0400"}
 {"candidates": [["rel:10899316", 1.0, "name+county;mention=1;fit=1.00"], ["name:lapus:n2868073652", 0.617, "name+county;mention=0;fit=0.09"]], "course_id": "rel:10899316", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0401"}
 {"candidates": [["rel:89135", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:89135", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0402"}
@@ -256,28 +256,28 @@
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0409"}
 {"candidates": [["name:runcu:n5581104844", 0.6399, "name+county;mention=0;fit=0.20"]], "course_id": "name:runcu:n5581104844", "method": "name+county", "score": 0.6399, "slug": "anpa-anpa-0410"}
 {"candidates": [["rel:18008463", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18008463", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0412"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0413"}
+{"candidates": [["anar:RO2-1-66-18-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-66-18-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0413"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0415"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0416"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0417"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0418"}
+{"candidates": [["anar:RO2-1-66-2-0-0-0", 0.6349, "anar+county;mention=0;fit=0.62"]], "course_id": "anar:RO2-1-66-2-0-0-0", "method": "anar+county", "score": 0.6349, "slug": "anpa-anpa-0418"}
 {"candidates": [["name:bloaja:n1873282103", 0.8455, "name+county;mention=1;fit=0.23"]], "course_id": "name:bloaja:n1873282103", "method": "name+county", "score": 0.8455, "slug": "anpa-anpa-0419"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0420"}
 {"candidates": [["name:suciu:n2462043602", 0.9192, "name+county;mention=1;fit=0.60"]], "course_id": "name:suciu:n2462043602", "method": "name+county", "score": 0.9192, "slug": "anpa-anpa-0421"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0422"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0423"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0425"}
+{"candidates": [["anar:RO2-1-66-6-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-66-6-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0422"}
+{"candidates": [["anar:RO2-1-66-9-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-66-9-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0423"}
+{"candidates": [["anar:RO2-1-66-10-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-66-10-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0425"}
 {"candidates": [["rel:89325", 0.8, "name+county;mention=0;fit=1.00"], ["rel:6266727", 0.6128, "name+county;mention=0;fit=0.06"]], "course_id": "rel:89325", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0426"}
 {"candidates": [["rel:6267070", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6267070", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0427"}
 {"candidates": [["rel:6266879", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6266879", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0428"}
 {"candidates": [["rel:6267143", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6267143", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0429"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0430"}
 {"candidates": [["rel:6267601", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6267601", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0431"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0432"}
+{"candidates": [["anar:RO4-1-77-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-77-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0432"}
 {"candidates": [["rel:6267382", 0.8, "name+county;mention=0;fit=1.00"], ["name:niraj:n1792313320", 0.6017, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6267382", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0433"}
 {"candidates": [["name:nirajul mic:n10039041042", 0.8, "name+county;mention=0;fit=1.00"], ["rel:6267383", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "anpa-anpa-0434"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0435"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0437"}
+{"candidates": [["anar:RO4-1-96-52-5-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-96-52-5-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0437"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0438"}
 {"candidates": [["rel:6274654", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6274654", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0439"}
 {"candidates": [["name:vetca:n1256864709", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:vetca:n1256864709", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0440"}
@@ -301,15 +301,15 @@
 {"candidates": [["rel:89140", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89140", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0495"}
 {"candidates": [["rel:89135", 0.8, "name+county;mention=0;fit=1.00"], ["name:somes:n3535801121", 0.6013, "name+county;mention=0;fit=0.01"]], "course_id": "rel:89135", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0496"}
 {"candidates": [["name:talna:n1924031625", 0.7203, "name+county;mention=0;fit=0.60"]], "course_id": "name:talna:n1924031625", "method": "name+county", "score": 0.7203, "slug": "anpa-anpa-0502"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0503"}
+{"candidates": [["anar:RO2-1-75a-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO2-1-75a-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0503"}
 {"candidates": [["rel:89121", 0.8, "name+county;mention=0;fit=1.00"], ["name:tur:n8257416752", 0.6092, "name+county;mention=0;fit=0.05"], ["name:tur:n8290210736", 0.6036, "name+county;mention=0;fit=0.02"]], "course_id": "rel:89121", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0504"}
 {"candidates": [["rel:89121", 0.8, "name+county;mention=0;fit=1.00"], ["name:tur:n8257416752", 0.6092, "name+county;mention=0;fit=0.05"], ["name:tur:n8290210736", 0.6036, "name+county;mention=0;fit=0.02"]], "course_id": "rel:89121", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0505"}
 {"candidates": [["name:talna mare:n3543606199", 0.6759, "name+county;mention=0;fit=0.38"]], "course_id": "name:talna mare:n3543606199", "method": "name+county", "score": 0.6759, "slug": "anpa-anpa-0506"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0508"}
 {"candidates": [["rel:18008858", 0.94, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18008858", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0509"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0510"}
+{"candidates": [["rel:8905164", 0.91, "stem+county;mention=1;fit=1.00"]], "course_id": "rel:8905164", "method": "stem+county", "score": 0.91, "slug": "anpa-anpa-0510"}
 {"candidates": [["rel:18007865", 0.94, "name+county;mention=1;fit=1.00"], ["name:agrij:n9285647403", 0.54, "name+county;mention=0;fit=0.00"]], "course_id": "rel:18007865", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0511"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0512"}
+{"candidates": [["anar:RO2-1-60-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-60-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0512"}
 {"candidates": [["rel:89330", 0.74, "name+county;mention=0;fit=1.00"], ["name:barcau:n1837578015", 0.5405, "name+county;mention=0;fit=0.00"]], "course_id": "rel:89330", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0514"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0515"}
 {"candidates": [["rel:18008423", 0.94, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18008423", "method": "name+county", "score": 0.94, "slug": "anpa-anpa-0516"}
@@ -318,7 +318,7 @@
 {"candidates": [["rel:6275128", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6275128", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0521"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0530"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0538"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0539"}
+{"candidates": [["name:stramba:n6071859552", 0.6343, "stem+county;mention=0;fit=0.62"], ["name:stramba:n6071860125", 0.5889, "stem+county;mention=0;fit=0.39"], ["name:stramba:n1143732062", 0.5449, "stem+county;mention=0;fit=0.17"]], "course_id": null, "method": "ambiguous", "score": 0.6343, "slug": "anpa-anpa-0539"}
 {"candidates": [["rel:7689581", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:7689581", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0552"}
 {"candidates": [["rel:7691126", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:7691126", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0553"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0554"}
@@ -341,10 +341,10 @@
 {"candidates": [["rel:4450591", 1.0, "name+county;mention=1;fit=1.00"], ["rel:17925018", 0.7012, "name+county;mention=0;fit=0.51"]], "course_id": "rel:4450591", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0583"}
 {"candidates": [["rel:89325", 1.0, "name+county;mention=1;fit=1.00"], ["name:mures:n612775949", 0.6065, "name+county;mention=0;fit=0.03"]], "course_id": "rel:89325", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0584"}
 {"candidates": [["rel:4450692", 0.8, "name+county;mention=0;fit=1.00"], ["name:barzava:n459477913", 0.6534, "name+county;mention=0;fit=0.27"]], "course_id": "rel:4450692", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0585"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0586"}
+{"candidates": [["rel:9810966", 0.91, "stem+county;mention=1;fit=1.00"]], "course_id": "rel:9810966", "method": "stem+county", "score": 0.91, "slug": "anpa-anpa-0586"}
 {"candidates": [["rel:18007528", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18007528", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0591"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0592"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0593"}
+{"candidates": [["name:timisul mort:n2196495610", 0.9739, "fuzzy+county;mention=1;fit=1.00"], ["name:timisul mort:n2196497891", 0.5883, "fuzzy+county;mention=0;fit=0.07"]], "course_id": "name:timisul mort:n2196495610", "method": "fuzzy+county", "score": 0.9739, "slug": "anpa-anpa-0593"}
 {"candidates": [["rel:17247208", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:17247208", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0594"}
 {"candidates": [["rel:15992518", 1.0, "name+county;mention=1;fit=1.00"], ["name:poganis:n2428238034", 0.6365, "name+county;mention=0;fit=0.18"]], "course_id": "rel:15992518", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0595"}
 {"candidates": [["name:glavita:n6419304059", 0.9289, "name+county;mention=1;fit=0.64"], ["name:glavita:n2426845589", 0.8131, "name+county;mention=1;fit=0.07"]], "course_id": "name:glavita:n6419304059", "method": "name+county", "score": 0.9289, "slug": "anpa-anpa-0596"}
@@ -360,27 +360,27 @@
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0606"}
 {"candidates": [["rel:20175224", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:20175224", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0607"}
 {"candidates": [["rel:20175233", 1.0, "name+county;mention=1;fit=1.00"], ["name:surduc:n8898251653", 0.6208, "name+county;mention=0;fit=0.10"]], "course_id": "rel:20175233", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0608"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0609"}
+{"candidates": [["anar:RO5-2-29c-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO5-2-29c-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0609"}
 {"candidates": [["name:timisana:n2270739936", 0.948, "name+county;mention=1;fit=0.74"]], "course_id": "name:timisana:n2270739936", "method": "name+county", "score": 0.948, "slug": "anpa-anpa-0610"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0611"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0612"}
+{"candidates": [["anar:RO5-2-32-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO5-2-32-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0612"}
 {"candidates": [["rel:20162030", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:20162030", "method": "name+county", "score": 1.0, "slug": "anpa-anpa-0613"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0614"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0615"}
+{"candidates": [["anar:RO5-2-36-3-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO5-2-36-3-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0614"}
+{"candidates": [["anar:RO5-2-38-11-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO5-2-38-11-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0615"}
 {"candidates": [["name:semnita:n10196993170", 0.7241, "name+county;mention=0;fit=0.62"]], "course_id": "name:semnita:n10196993170", "method": "name+county", "score": 0.7241, "slug": "anpa-anpa-0616"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0617"}
 {"candidates": [["name:timisat:n9913456613", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:timisat:n9913456613", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0618"}
 {"candidates": [["rel:13451904", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13451904", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0621"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0622"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0623"}
+{"candidates": [["anar:RO12-1-78-14a-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO12-1-78-14a-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-anpa-0623"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0624"}
 {"candidates": [["name:tutova:n6262477898", 0.6862, "name+county;mention=0;fit=0.43"]], "course_id": "name:tutova:n6262477898", "method": "name+county", "score": 0.6862, "slug": "anpa-anpa-0626"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0627"}
+{"candidates": [["anar:RO13-1-22-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO13-1-22-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-anpa-0627"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0631"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0644"}
 {"candidates": [["rel:6259022", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6259022", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0650"}
 {"candidates": [["name:calinesti:n7036091132", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:calinesti:n7036091132", "method": "name+county", "score": 0.74, "slug": "anpa-anpa-0655"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-anpa-0669"}
+{"candidates": [["name:valea izvorului:n8039931996", 0.5724, "stem+county;mention=0;fit=0.31"]], "course_id": "name:valea izvorului:n8039931996", "method": "stem+county", "score": 0.5724, "slug": "anpa-anpa-0669"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "anpa-anpa-0671"}
 {"candidates": [["rel:7689581", 0.8, "name+county;mention=0;fit=1.00"], ["name:siret:n175040623", 0.612, "name+county;mention=0;fit=0.06"], ["name:siret:n2972001725", 0.6033, "name+county;mention=0;fit=0.02"], ["name:siret:n2396976715", 0.6019, "name+county;mention=0;fit=0.01"]], "course_id": "rel:7689581", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0674"}
 {"candidates": [["rel:18012054", 0.8, "name+county;mention=0;fit=1.00"], ["name:zabala:n3723043466", 0.6886, "name+county;mention=0;fit=0.44"]], "course_id": "rel:18012054", "method": "name+county", "score": 0.8, "slug": "anpa-anpa-0676"}
@@ -394,7 +394,7 @@
 {"candidates": [["rel:6215257", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6215257", "method": "name+county", "score": 1.0, "slug": "anpa-giurgiu-neajlov"}
 {"candidates": [["rel:6274658", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6274658", "method": "name+county", "score": 0.8, "slug": "anpa-harghita-tarnava-mica-5"}
 {"candidates": [["rel:18016343", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18016343", "method": "name+county", "score": 1.0, "slug": "anpa-iasi-miletin-35"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-maramures-tibles-27"}
+{"candidates": [["anar:RO2-1-20-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"], ["anar:RO2-1-66-7-1-1-0", 0.5619, "anar+county;mention=0;fit=0.26"]], "course_id": "anar:RO2-1-20-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "anpa-maramures-tibles-27"}
 {"candidates": [["name:sebes:n3571348053", 0.7592, "name+county;mention=0;fit=0.80"]], "course_id": "name:sebes:n3571348053", "method": "name+county", "score": 0.7592, "slug": "anpa-mures-sebes-21"}
 {"candidates": [["rel:6274658", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6274658", "method": "name+county", "score": 0.8, "slug": "anpa-mures-tarnava-mica-96"}
 {"candidates": [["rel:7761773", 0.8, "name+county;mention=0;fit=1.00"], ["name:bistrita:n1891184133", 0.6079, "name+county;mention=0;fit=0.04"], ["name:bistrita:n5249291498", 0.6063, "name+county;mention=0;fit=0.03"], ["name:bistrita:n3601251902", 0.6028, "name+county;mention=0;fit=0.01"]], "course_id": "rel:7761773", "method": "name+county", "score": 0.8, "slug": "anpa-neamt-bistrita-32"}
@@ -402,7 +402,7 @@
 {"candidates": [["rel:6164192", 0.8, "name+county;mention=0;fit=1.00"], ["name:moldova:n175127940", 0.6043, "name+county;mention=0;fit=0.02"], ["name:moldova:n154679956", 0.6017, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6164192", "method": "name+county", "score": 0.8, "slug": "anpa-neamt-moldova-roman"}
 {"candidates": [["rel:7691863", 1.0, "name+county;mention=1;fit=1.00"], ["name:jiu:n2281140510", 0.6078, "name+county;mention=0;fit=0.04"], ["name:jiu:n2281149012", 0.6021, "name+county;mention=0;fit=0.01"], ["name:jiu:n2324583741", 0.6012, "name+county;mention=0;fit=0.01"], ["name:jiu:n2324585734", 0.6011, "name+county;mention=0;fit=0.01"]], "course_id": "rel:7691863", "method": "name+county", "score": 1.0, "slug": "anpa-romsilva-0239"}
 {"candidates": [["rel:89140", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:89140", "method": "name+county", "score": 1.0, "slug": "anpa-salaj-crasna-65"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "anpa-salaj-somesul-mare-93"}
+{"candidates": [["anar:RO2-1-0-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO2-1-0-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "anpa-salaj-somesul-mare-93"}
 {"candidates": [["rel:6164192", 0.8, "name+county;mention=0;fit=1.00"], ["name:moldova:n3101914942", 0.6044, "name+county;mention=0;fit=0.02"], ["name:moldova:n3050938879", 0.6024, "name+county;mention=0;fit=0.01"], ["name:moldova:n1623390572", 0.6023, "name+county;mention=0;fit=0.01"], ["name:moldova:n369239243", 0.6022, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6164192", "method": "name+county", "score": 0.8, "slug": "anpa-suceava-moldova-59"}
 {"candidates": [["rel:6263478", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6263478", "method": "name+county", "score": 0.8, "slug": "anpa-teleorman-calmatui"}
 {"candidates": [["rel:6215253", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6215253", "method": "name+county", "score": 0.8, "slug": "anpa-teleorman-calnistea"}
@@ -418,7 +418,7 @@
 {"candidates": [["rel:89339:1", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89339:1", "method": "name+county", "score": 0.8, "slug": "bv8qho87"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "c1gifahb"}
 {"candidates": [["name:lotrioara:n3500938887", 0.6636, "name+county;mention=0;fit=0.32"]], "course_id": "name:lotrioara:n3500938887", "method": "name+county", "score": 0.6636, "slug": "c4o6lkrr"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "cglgploz"}
+{"candidates": [["name:misid:n2071772185", 0.7455, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "name:misid:n2071772185", "method": "fuzzy+county", "score": 0.7455, "slug": "cglgploz"}
 {"candidates": [["rel:6256375", 0.6597, "name+county;mention=0;fit=0.30"], ["name:geamana:n1893269502", 0.645, "name+county;mention=0;fit=0.22"]], "course_id": null, "method": "ambiguous", "score": 0.6597, "slug": "cr5lqpzw"}
 {"candidates": [["rel:6277786", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6277786", "method": "name+county", "score": 1.0, "slug": "csn7z0u6"}
 {"candidates": [["rel:13880798", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13880798", "method": "name+county", "score": 0.8, "slug": "cw2vs7u3"}
@@ -429,40 +429,40 @@
 {"candidates": [["rel:6214017", 0.8, "name+county;mention=0;fit=1.00"], ["name:colentina:n6525637084", 0.601, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6214017", "method": "name+county", "score": 0.8, "slug": "djkvkzv6"}
 {"candidates": [["name:jiul de est:n2089801990", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:jiul de est:n2089801990", "method": "name+county", "score": 1.0, "slug": "dmswvndo"}
 {"candidates": [["rel:89339:1", 0.8, "name+county;mention=0;fit=1.00"], ["rel:89339:2", 0.6405, "name+county;mention=0;fit=0.20"]], "course_id": "rel:89339:1", "method": "name+county", "score": 0.8, "slug": "do8k78x0"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "dre11dij"}
+{"candidates": [["anar:RO3-1-42-22-2-1-0", 0.5697, "anar+county;mention=0;fit=0.30"], ["anar:RO3-1-44-33-25-0a-0", 0.5584, "anar+county;mention=0;fit=0.24"]], "course_id": null, "method": "ambiguous", "score": 0.5697, "slug": "dre11dij"}
 {"candidates": [["rel:6263059", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6263059", "method": "name+county", "score": 0.8, "slug": "dvhkx2a2"}
 {"candidates": [["name:uria:n7553260351", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:uria:n7553260351", "method": "name+county", "score": 0.8, "slug": "e7mppal8"}
 {"candidates": [["rel:6263059", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6263059", "method": "name+county", "score": 1.0, "slug": "e8r6r01g"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ebhj5eyj"}
+{"candidates": [["anar:RO10-1-24-2-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO10-1-24-2-0-0-0", "method": "anar+county", "score": 0.71, "slug": "ebhj5eyj"}
 {"candidates": [["rel:6285566", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6285566", "method": "name+county", "score": 0.8, "slug": "ecgdxky1"}
 {"candidates": [["rel:18008322", 0.7195, "name+county;mention=0;fit=0.60"]], "course_id": "rel:18008322", "method": "name+county", "score": 0.7195, "slug": "ee2ppm7f"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "eebjo69e"}
+{"candidates": [["anar:RO13-1-08-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO13-1-08-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "eebjo69e"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ehwpvgwh"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "eql8hwtl"}
 {"candidates": [["rel:18016354", 1.0, "name+county;mention=1;fit=1.00"], ["name:baseu:n3413915742", 0.8203, "name+county;mention=1;fit=0.10"]], "course_id": "rel:18016354", "method": "name+county", "score": 1.0, "slug": "evp4346r"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ewp217d3"}
+{"candidates": [["name:valea jelnei:n5043502679", 0.515, "stem+county;mention=0;fit=0.03"]], "course_id": "name:valea jelnei:n5043502679", "method": "stem+county", "score": 0.515, "slug": "ewp217d3"}
 {"candidates": [["name:bistrita:n3483769771", 1.0, "name+county;mention=1;fit=1.00"], ["name:bistrita:n3483774132", 0.8227, "name+county;mention=1;fit=0.11"]], "course_id": "name:bistrita:n3483769771", "method": "name+county", "score": 1.0, "slug": "ey1b2yfy"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "f02xtxw1"}
 {"candidates": [["rel:6214017", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214017", "method": "name+county", "score": 0.8, "slug": "f553avch"}
 {"candidates": [["rel:6214981", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214981", "method": "name+county", "score": 0.8, "slug": "f81mov86"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "fanvixkg"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "fee3lhad"}
+{"candidates": [["anar:RO4-1-81-7-2-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-7-2-0-0", "method": "anar+county", "score": 0.71, "slug": "fee3lhad"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "fme4ypnv"}
 {"candidates": [["rel:6213935", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6213935", "method": "name+county", "score": 0.8, "slug": "fo3h8cp6"}
 {"candidates": [["rel:5815028:1", 1.0, "name+county;mention=1;fit=1.00"], ["rel:5815028:2", 0.8555, "name+county;mention=1;fit=0.28"], ["name:arges:n2261148437", 0.8016, "name+county;mention=1;fit=0.01"], ["name:arges:n2261148422", 0.8016, "name+county;mention=1;fit=0.01"], ["name:arges:n3282152776", 0.6086, "name+county;mention=0;fit=0.04"]], "course_id": "rel:5815028:1", "method": "name+county", "score": 1.0, "slug": "fouqynmq"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "fzusfkv6"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "g39ohi12"}
+{"candidates": [["anar:RO7-1-33-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO7-1-33-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "g39ohi12"}
 {"candidates": [["rel:6213935", 1.0, "name+county;mention=1;fit=1.00"], ["name:dambovita:n10109747036", 0.6012, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6213935", "method": "name+county", "score": 1.0, "slug": "ggka27ea"}
 {"candidates": [["rel:13451884", 0.8, "name+county;mention=0;fit=1.00"], ["name:trotus:n7150913787", 0.6007, "name+county;mention=0;fit=0.00"]], "course_id": "rel:13451884", "method": "name+county", "score": 0.8, "slug": "gh2c5vh3"}
 {"candidates": [["rel:17928038", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:17928038", "method": "name+county", "score": 1.0, "slug": "gm4m7sjj"}
 {"candidates": [["rel:18012820", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012820", "method": "name+county", "score": 0.8, "slug": "gs9etwp4"}
 {"candidates": [["name:calmatui:n1000733658", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:calmatui:n1000733658", "method": "name+county", "score": 0.8, "slug": "gtg7ujy9"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "gunskubl"}
+{"candidates": [["anar:RO3-1-44-16-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO3-1-44-16-0-0-0", "method": "anar+county", "score": 0.71, "slug": "gunskubl"}
 {"candidates": [["rel:6257621", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6257621", "method": "name+county", "score": 0.74, "slug": "gutqod71"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "gvhqgri8"}
 {"candidates": [["rel:18008466", 0.74, "name+county;mention=0;fit=1.00"], ["name:budac:n8204224862", 0.5422, "name+county;mention=0;fit=0.01"], ["name:budac:n8204224836", 0.541, "name+county;mention=0;fit=0.01"], ["name:budac:n8204225083", 0.541, "name+county;mention=0;fit=0.01"], ["name:budac:n5069366835", 0.5409, "name+county;mention=0;fit=0.00"]], "course_id": "rel:18008466", "method": "name+county", "score": 0.74, "slug": "gvmaf2tz"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "gxjd56ii"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "h75ngnsv"}
+{"candidates": [["rel:6271266", 0.5791, "fuzzy+county;mention=0;fit=0.13"]], "course_id": "rel:6271266", "method": "fuzzy+county", "score": 0.5791, "slug": "h75ngnsv"}
 {"candidates": [["rel:6156396", 0.8, "name+county;mention=0;fit=1.00"], ["name:somesul mic:n3503331458", 0.6144, "name+county;mention=0;fit=0.07"], ["name:somesul mic:n3503332779", 0.6109, "name+county;mention=0;fit=0.05"], ["name:somesul mic:n3503335055", 0.6068, "name+county;mention=0;fit=0.03"], ["name:somesul mic:n3503330707", 0.6064, "name+county;mention=0;fit=0.03"]], "course_id": "rel:6156396", "method": "name+county", "score": 0.8, "slug": "hao8h0b2"}
 {"candidates": [["rel:6278025", 0.8, "name+county;mention=0;fit=1.00"], ["name:dobra:n13238770548", 0.6293, "name+county;mention=0;fit=0.15"]], "course_id": "rel:6278025", "method": "name+county", "score": 0.8, "slug": "hinw6jpr"}
 {"candidates": [["rel:6274658", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6274658", "method": "name+county", "score": 1.0, "slug": "hj594dti"}
@@ -489,7 +489,7 @@
 {"candidates": [["rel:18007410", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18007410", "method": "name+county", "score": 1.0, "slug": "l7t0jgqj"}
 {"candidates": [["rel:89135", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89135", "method": "name+county", "score": 0.8, "slug": "lagsqhtl"}
 {"candidates": [["name:lopatna:n11117591773", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:lopatna:n11117591773", "method": "name+county", "score": 1.0, "slug": "llq1olij"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "m2x1jtkp"}
+{"candidates": [["name:sighistel:n1991415713", 0.7684, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "name:sighistel:n1991415713", "method": "fuzzy+county", "score": 0.7684, "slug": "m2x1jtkp"}
 {"candidates": [["rel:13900425", 0.7538, "fuzzy+county;mention=0;fit=1.00"]], "course_id": "rel:13900425", "method": "fuzzy+county", "score": 0.7538, "slug": "m4kw26nh"}
 {"candidates": [["name:polatiste:n13522986025", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:polatiste:n13522986025", "method": "name+county", "score": 0.74, "slug": "mbt9h9rq"}
 {"candidates": [["rel:18920259", 0.7138, "name+county;mention=0;fit=0.57"]], "course_id": "rel:18920259", "method": "name+county", "score": 0.7138, "slug": "mc9jqwje"}
@@ -501,16 +501,16 @@
 {"candidates": [["rel:89339:1", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:89339:1", "method": "name+county", "score": 0.8, "slug": "n7cuf5cs"}
 {"candidates": [["rel:13880659", 0.7329, "name+county;mention=0;fit=0.66"]], "course_id": "rel:13880659", "method": "name+county", "score": 0.7329, "slug": "nalohz4y"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "nb7yzcmh"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "nz1rw5qw"}
+{"candidates": [["anar:RO12-1-53-8-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-53-8-0-0-0", "method": "anar+county", "score": 0.71, "slug": "nz1rw5qw"}
 {"candidates": [["name:stramba:n3431590957", 0.6898, "name+county;mention=0;fit=0.45"]], "course_id": "name:stramba:n3431590957", "method": "name+county", "score": 0.6898, "slug": "o0375dc2"}
 {"candidates": [["rel:6271264", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6271264", "method": "name+county", "score": 0.8, "slug": "o35qm79k"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "o4sf1fah"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "okzevg19"}
 {"candidates": [["rel:6214982", 0.7271, "name+county;mention=0;fit=0.64"]], "course_id": "rel:6214982", "method": "name+county", "score": 0.7271, "slug": "p2lc5wx6"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "p3puv4bx"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "pgabr5sd"}
+{"candidates": [["anar:RO4-1-81-11-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-11-0-0-0", "method": "anar+county", "score": 0.71, "slug": "p3puv4bx"}
+{"candidates": [["anar:RO12-1-8-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"], ["anar:RO13-1-15-3-1-0-0", 0.8434, "anar+county;mention=1;fit=0.67"], ["anar:RO12-1-4-0-0-0-0", 0.5958, "anar+county;mention=0;fit=0.43"]], "course_id": null, "method": "ambiguous", "score": 0.91, "slug": "pgabr5sd"}
 {"candidates": [["rel:18012950", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012950", "method": "name+county", "score": 0.74, "slug": "phmbrdj5"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "pjcgjuq0"}
+{"candidates": [["name:valea plescioarei:n9031993863", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:valea plescioarei:n9031993863", "method": "stem+county", "score": 0.71, "slug": "pjcgjuq0"}
 {"candidates": [["rel:18012357", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18012357", "method": "name+county", "score": 1.0, "slug": "q0k04upr"}
 {"candidates": [["rel:13900761", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13900761", "method": "name+county", "score": 0.74, "slug": "q2agyhcl"}
 {"candidates": [["rel:13900307", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13900307", "method": "name+county", "score": 0.74, "slug": "q531xrka"}
@@ -540,19 +540,19 @@
 {"candidates": [["name:valea mare:n13614921992", 0.643, "name+county;mention=0;fit=0.22"], ["name:mare:n3855216881", 0.5846, "name+county;mention=0;fit=0.22"]], "course_id": null, "method": "ambiguous", "score": 0.643, "slug": "romsilva-alba-valea-mare"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-alba-viltori-fenes"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-avram-iancu"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-beliu"}
+{"candidates": [["anar:RO3-1-42-26a-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"], ["anar:RO3-1-42-28-4-0-0", 0.5351, "anar+county;mention=0;fit=0.13"]], "course_id": "anar:RO3-1-42-26a-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-arad-beliu"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-halmagiu"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-iacobini"}
 {"candidates": [["name:julita:n612777038", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:julita:n612777038", "method": "name+county", "score": 0.8, "slug": "romsilva-arad-julita"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-leuca"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-moneasa-inferioara"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-moneasa-superioara"}
+{"candidates": [["name:valea leucii:n2068643820", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:valea leucii:n2068643820", "method": "stem+county", "score": 0.71, "slug": "romsilva-arad-leuca"}
+{"candidates": [["anar:RO3-1-33-1-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO3-1-33-1-0-0-0", "method": "anar+county", "score": 0.91, "slug": "romsilva-arad-moneasa-inferioara"}
+{"candidates": [["anar:RO3-1-33-1-0-0-0", 0.8031, "anar+county;mention=1;fit=0.47"]], "course_id": "anar:RO3-1-33-1-0-0-0", "method": "anar+county", "score": 0.8031, "slug": "romsilva-arad-moneasa-superioara"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-pamesti"}
 {"candidates": [["name:petris:n2392038024", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:petris:n2392038024", "method": "name+county", "score": 0.8, "slug": "romsilva-arad-petris"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-stejar"}
+{"candidates": [["anar:RO4-1-147-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-147-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-arad-stejar"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-arad-toc"}
 {"candidates": [["name:troas:n612777099", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:troas:n612777099", "method": "name+county", "score": 0.8, "slug": "romsilva-arad-troas"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-arad-zimbru"}
+{"candidates": [["anar:RO3-1-22-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO3-1-22-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-arad-zimbru"}
 {"candidates": [["rel:6214981", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6214981", "method": "name+county", "score": 0.8, "slug": "romsilva-arges-bratia"}
 {"candidates": [["rel:6214555", 0.7082, "name+county;mention=0;fit=0.54"]], "course_id": "rel:6214555", "method": "name+county", "score": 0.7082, "slug": "romsilva-arges-buda"}
 {"candidates": [["rel:6214556", 0.7373, "name+county;mention=0;fit=0.69"]], "course_id": "rel:6214556", "method": "name+county", "score": 0.7373, "slug": "romsilva-arges-capra"}
@@ -569,8 +569,8 @@
 {"candidates": [["name:crisul pietros:n3370635056", 0.6718, "name+county;mention=0;fit=0.36"]], "course_id": "name:crisul pietros:n3370635056", "method": "name+county", "score": 0.6718, "slug": "romsilva-bihor-crisul-pietros"}
 {"candidates": [["name:dragan:n1152777251", 0.8, "name+county;mention=0;fit=1.00"], ["rel:13900425", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "romsilva-bihor-dragan"}
 {"candidates": [["rel:13900425", 0.7538, "fuzzy+county;mention=0;fit=1.00"], ["name:dragan:n1152777251", 0.6186, "fuzzy+county;mention=0;fit=0.32"]], "course_id": "rel:13900425", "method": "fuzzy+county", "score": 0.7538, "slug": "romsilva-bihor-valea-draganului"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-bihor-valea-iadului-inferior"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-bihor-valea-iadului-superior"}
+{"candidates": [["name:iada:n3731780894", 0.91, "stem+county;mention=1;fit=1.00"], ["name:iada:n3441211704", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:iada:n3731780894", "method": "stem+county", "score": 0.91, "slug": "romsilva-bihor-valea-iadului-inferior"}
+{"candidates": [["name:iada:n3441211704", 0.71, "stem+county;mention=0;fit=1.00"], ["name:iada:n3731780894", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": null, "method": "ambiguous", "score": 0.71, "slug": "romsilva-bihor-valea-iadului-superior"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-bihor-vl-finis-finisului"}
 {"candidates": [["rel:18008291", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18008291", "method": "name+county", "score": 0.8, "slug": "romsilva-bistrita-nasaud-ilisua"}
 {"candidates": [["rel:18921023", 0.7192, "name+county;mention=0;fit=0.60"]], "course_id": "rel:18921023", "method": "name+county", "score": 0.7192, "slug": "romsilva-bistrita-nasaud-rebra"}
@@ -592,9 +592,9 @@
 {"candidates": [["rel:16151672", 0.8, "name+county;mention=0;fit=1.00"], ["name:nera:n2884953999", 0.6601, "name+county;mention=0;fit=0.30"]], "course_id": "rel:16151672", "method": "name+county", "score": 0.8, "slug": "romsilva-caras-severin-nera-superioara"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-caras-severin-plesu-rusca"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-caras-severin-ponesca"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-caras-severin-sirinia"}
+{"candidates": [["name:sirina:n2788596885", 0.5634, "fuzzy+county;mention=0;fit=0.05"]], "course_id": "name:sirina:n2788596885", "method": "fuzzy+county", "score": 0.5634, "slug": "romsilva-caras-severin-sirinia"}
 {"candidates": [["name:sucu:n3602645291", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:sucu:n3602645291", "method": "name+county", "score": 1.0, "slug": "romsilva-caras-severin-sucu"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-caras-severin-valea-beiului"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-caras-severin-valea-beiului"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-cluj-1-somesul-cald-superior"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-cluj-2-somesul-cald-mijlociu"}
 {"candidates": [["rel:13900230", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:13900230", "method": "name+county", "score": 0.8, "slug": "romsilva-cluj-somesul-rece-mijlociu"}
@@ -602,27 +602,27 @@
 {"candidates": [["name:aita:n6250525301", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:aita:n6250525301", "method": "name+county", "score": 0.8, "slug": "romsilva-covasna-aita"}
 {"candidates": [["rel:18012511", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012511", "method": "name+county", "score": 0.8, "slug": "romsilva-covasna-baraolt-superior"}
 {"candidates": [["rel:18012664", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:18012664", "method": "name+county", "score": 0.8, "slug": "romsilva-covasna-barzauta"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-covasna-basca-mica"}
+{"candidates": [["anar:RO12-1-82-15-12-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-82-15-12-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-covasna-basca-mica"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-covasna-sugo"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-dambovita-bratei"}
+{"candidates": [["anar:RO11-1-1-0-0-0-0", 0.6034, "anar+county;mention=0;fit=0.47"]], "course_id": "anar:RO11-1-1-0-0-0-0", "method": "anar+county", "score": 0.6034, "slug": "romsilva-dambovita-bratei"}
 {"candidates": [["rel:6153744", 0.8, "name+county;mention=0;fit=1.00"], ["name:ialomita:n180099226", 0.6405, "name+county;mention=0;fit=0.20"], ["name:ialomita:n181291562", 0.6255, "name+county;mention=0;fit=0.13"], ["name:ialomita:n180136096", 0.6112, "name+county;mention=0;fit=0.06"], ["name:ialomita:n3747843412", 0.6092, "name+county;mention=0;fit=0.05"]], "course_id": "rel:6153744", "method": "name+county", "score": 0.8, "slug": "romsilva-dambovita-ialomita-superioara"}
 {"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-dambovita-runcu"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-gorj-bistricioara"}
+{"candidates": [["anar:RO7-1-31-6b-3-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO7-1-31-6b-3-0-0", "method": "anar+county", "score": 0.91, "slug": "romsilva-gorj-bistricioara"}
 {"candidates": [["name:galbenu:n2837609956", 0.7284, "name+county;mention=0;fit=0.64"], ["name:galbenul:n13566944872", 0.6867, "name+county;mention=0;fit=0.43"]], "course_id": null, "method": "ambiguous", "score": 0.7284, "slug": "romsilva-gorj-galbenu"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-gorj-motru-mare"}
 {"candidates": [["rel:6263059", 0.8, "name+county;mention=0;fit=1.00"], ["name:oltet:n2551570492", 0.6065, "name+county;mention=0;fit=0.03"], ["name:oltet:n2338256314", 0.6048, "name+county;mention=0;fit=0.02"]], "course_id": "rel:6263059", "method": "name+county", "score": 0.8, "slug": "romsilva-gorj-oltet"}
 {"candidates": [["name:tismana:n266667736", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:tismana:n266667736", "method": "name+county", "score": 0.8, "slug": "romsilva-gorj-tismana-i"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-gorj-valea-bratcului"}
+{"candidates": [["anar:RO7-1-19-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO7-1-19-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-gorj-valea-bratcului"}
 {"candidates": [["name:sadu:n2281282728", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:sadu:n2281282728", "method": "name+county", "score": 0.74, "slug": "romsilva-gorj-valea-sadului"}
 {"candidates": [["rel:10948628", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:10948628", "method": "name+county", "score": 0.74, "slug": "romsilva-harghita-bicazul-mijlociu"}
 {"candidates": [["rel:10948628", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:10948628", "method": "name+county", "score": 0.74, "slug": "romsilva-harghita-bicazul-superior"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-harghita-bistricioara-tronson-i"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-harghita-bistricioara-tronson-ii"}
 {"candidates": [["name:valea toplitei:n2760377779", 0.7137, "name+county;mention=0;fit=0.57"]], "course_id": "name:valea toplitei:n2760377779", "method": "name+county", "score": 0.7137, "slug": "romsilva-harghita-valea-toplitei"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-hunedoara-gradistea-superioara"}
+{"candidates": [["anar:RO4-1-114-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-114-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-hunedoara-gradistea-superioara"}
 {"candidates": [["name:jiet:n2626894995", 0.6971, "name+county;mention=0;fit=0.49"]], "course_id": "name:jiet:n2626894995", "method": "name+county", "score": 0.6971, "slug": "romsilva-hunedoara-jiet"}
 {"candidates": [["rel:6281634", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6281634", "method": "name+county", "score": 0.8, "slug": "romsilva-hunedoara-lapusnicul-mare"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-hunedoara-lapusnicul-mic"}
+{"candidates": [["name:lapusnicu mic:n4222773790", 0.6439, "fuzzy+county;mention=0;fit=0.33"]], "course_id": "name:lapusnicu mic:n4222773790", "method": "fuzzy+county", "score": 0.6439, "slug": "romsilva-hunedoara-lapusnicul-mic"}
 {"candidates": [["rel:6281638", 0.6921, "name+county;mention=0;fit=0.76"]], "course_id": "rel:6281638", "method": "name+county", "score": 0.6921, "slug": "romsilva-hunedoara-nucsorul-inferior"}
 {"candidates": [["rel:6281638", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6281638", "method": "name+county", "score": 0.74, "slug": "romsilva-hunedoara-nucsorul-superior"}
 {"candidates": [["rel:6281755", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6281755", "method": "name+county", "score": 0.8, "slug": "romsilva-hunedoara-raul-barbat-inferior"}
@@ -631,13 +631,13 @@
 {"candidates": [["rel:6281642", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6281642", "method": "name+county", "score": 0.8, "slug": "romsilva-hunedoara-raul-ses"}
 {"candidates": [["rel:6278942", 0.8, "name+county;mention=0;fit=1.00"], ["rel:6281638", 0.7478, "name+county;mention=0;fit=0.74"], ["name:sibisel:n2623909880", 0.6158, "name+county;mention=0;fit=0.08"], ["name:sibisel:n1811003966", 0.6029, "name+county;mention=0;fit=0.01"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "romsilva-hunedoara-sibisel"}
 {"candidates": [["rel:6281639", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6281639", "method": "name+county", "score": 0.74, "slug": "romsilva-hunedoara-streiul-superior"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-hunedoara-valea-dobrei"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-maramures-baicu"}
+{"candidates": [["name:dobra:n2284809418", 0.6007, "stem+county;mention=0;fit=0.45"]], "course_id": "name:dobra:n2284809418", "method": "stem+county", "score": 0.6007, "slug": "romsilva-hunedoara-valea-dobrei"}
+{"candidates": [["name:izvorul baicului:n5579839672", 0.5342, "stem+county;mention=0;fit=0.12"]], "course_id": "name:izvorul baicului:n5579839672", "method": "stem+county", "score": 0.5342, "slug": "romsilva-maramures-baicu"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-maramures-baita-nistru"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-maramures-bistrita-aurie"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-maramures-botiza"}
+{"candidates": [["anar:RO1-1-2-6-0-0-0", 0.6438, "anar+county;mention=0;fit=0.67"], ["anar:RO2-1-66-3-0-0-0", 0.5946, "anar+county;mention=0;fit=0.42"], ["anar:RO1-1-1-8-5-0-0", 0.5663, "anar+county;mention=0;fit=0.28"]], "course_id": null, "method": "ambiguous", "score": 0.6438, "slug": "romsilva-maramures-botiza"}
 {"candidates": [["rel:18008437", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18008437", "method": "name+county", "score": 1.0, "slug": "romsilva-maramures-cavnic"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-maramures-chiuzbaia"}
+{"candidates": [["anar:RO2-1-66-19-1-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO2-1-66-19-1-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-maramures-chiuzbaia"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-maramures-crasna-frumusaua"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-maramures-faina-wasser"}
 {"candidates": [["rel:18029556", 0.629, "name+county;mention=0;fit=0.14"]], "course_id": "rel:18029556", "method": "name+county", "score": 0.629, "slug": "romsilva-maramures-fantana"}
@@ -662,7 +662,7 @@
 {"candidates": [["rel:89325", 1.0, "name+county;mention=1;fit=1.00"], ["rel:6266727", 0.6837, "name+county;mention=0;fit=0.42"]], "course_id": "rel:89325", "method": "name+county", "score": 1.0, "slug": "romsilva-mures-mures-iii"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-mures-nirajul-mare-superior"}
 {"candidates": [["name:salard:n2966193856", 0.7102, "name+county;mention=0;fit=0.55"]], "course_id": "name:salard:n2966193856", "method": "name+county", "score": 0.7102, "slug": "romsilva-mures-salard"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-mures-valea-sovetii"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-mures-valea-sovetii"}
 {"candidates": [["name:zebrac:n9979465541", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:zebrac:n9979465541", "method": "name+county", "score": 0.8, "slug": "romsilva-mures-zebrac"}
 {"candidates": [["rel:7761773", 1.0, "name+county;mention=1;fit=1.00"], ["name:bistrita:n1891184133", 0.6169, "name+county;mention=0;fit=0.08"], ["name:bistrita:n5249291498", 0.6135, "name+county;mention=0;fit=0.07"], ["name:bistrita:n3601251902", 0.606, "name+county;mention=0;fit=0.03"]], "course_id": "rel:7761773", "method": "name+county", "score": 1.0, "slug": "romsilva-neamt-bistrita-iv"}
 {"candidates": [["name:borca:n9789535439", 0.7344, "name+county;mention=0;fit=0.67"]], "course_id": "name:borca:n9789535439", "method": "name+county", "score": 0.7344, "slug": "romsilva-neamt-borca"}
@@ -673,22 +673,22 @@
 {"candidates": [["rel:18015702", 1.0, "name+county;mention=1;fit=1.00"], ["name:tarcaul:n1967441619", 0.6043, "name+county;mention=0;fit=0.02"]], "course_id": "rel:18015702", "method": "name+county", "score": 1.0, "slug": "romsilva-neamt-tarcau-superior"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-prahova-4-doftana-superioara"}
 {"candidates": [["name:telejenel:n4215414354", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:telejenel:n4215414354", "method": "name+county", "score": 0.8, "slug": "romsilva-prahova-telejenel"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-prahova-valea-azugii"}
+{"candidates": [["name:azuga:n1867549679", 0.6057, "stem+county;mention=0;fit=0.48"]], "course_id": "name:azuga:n1867549679", "method": "stem+county", "score": 0.6057, "slug": "romsilva-prahova-valea-azugii"}
 {"candidates": [["rel:89330", 0.74, "name+county;mention=0;fit=1.00"], ["name:barcau:n1837578015", 0.5407, "name+county;mention=0;fit=0.00"]], "course_id": "rel:89330", "method": "name+county", "score": 0.74, "slug": "romsilva-salaj-barcaul-inferior"}
 {"candidates": [["rel:89330", 0.94, "name+county;mention=1;fit=1.00"], ["name:barcau:n1837578015", 0.5412, "name+county;mention=0;fit=0.01"]], "course_id": "rel:89330", "method": "name+county", "score": 0.94, "slug": "romsilva-salaj-barcaul-mijlociu"}
 {"candidates": [["rel:89330", 0.74, "name+county;mention=0;fit=1.00"], ["name:barcau:n1837578015", 0.5413, "name+county;mention=0;fit=0.01"]], "course_id": "rel:89330", "method": "name+county", "score": 0.74, "slug": "romsilva-salaj-barcaul-superior"}
 {"candidates": [["rel:6257257", 0.7138, "name+county;mention=0;fit=0.57"], ["name:arpas:n2401258826", 0.6017, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6257257", "method": "name+county", "score": 0.7138, "slug": "romsilva-sibiu-arpas"}
-{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "romsilva-sibiu-bistra"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-sibiu-ciban"}
+{"candidates": [["anar:RO4-1-102-9-0-0-0", 0.6398, "anar+county;mention=0;fit=0.65"]], "course_id": "anar:RO4-1-102-9-0-0-0", "method": "anar+county", "score": 0.6398, "slug": "romsilva-sibiu-bistra"}
+{"candidates": [["anar:RO4-1-102-5-0-0-0", 0.5905, "anar+county;mention=0;fit=0.40"]], "course_id": "anar:RO4-1-102-5-0-0-0", "method": "anar+county", "score": 0.5905, "slug": "romsilva-sibiu-ciban"}
 {"candidates": [["name:laita:n1132345709", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:laita:n1132345709", "method": "name+county", "score": 0.8, "slug": "romsilva-sibiu-laita"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-sibiu-raul-mare-porumbacu"}
 {"candidates": [["rel:6257617", 0.7261, "name+county;mention=0;fit=0.63"], ["name:sadu:n820102412", 0.6278, "name+county;mention=0;fit=0.14"]], "course_id": null, "method": "ambiguous", "score": 0.7261, "slug": "romsilva-sibiu-sadu-mijlociu"}
 {"candidates": [["rel:6257617", 0.8, "name+county;mention=0;fit=1.00"], ["name:sadu:n820102412", 0.6678, "name+county;mention=0;fit=0.34"]], "course_id": "rel:6257617", "method": "name+county", "score": 0.8, "slug": "romsilva-sibiu-sadu-superior"}
 {"candidates": [["rel:6278027", 0.74, "name+county;mention=0;fit=1.00"], ["rel:6257988", 0.6128, "name+county;mention=0;fit=0.36"], ["name:sebes:n4966382570", 0.5649, "name+county;mention=0;fit=0.12"]], "course_id": "rel:6278027", "method": "name+county", "score": 0.74, "slug": "romsilva-sibiu-sebesul-superior"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-suceava-afluentii-suhei"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-suceava-barnar"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-suceava-barnarel"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-suceava-brodina"}
+{"candidates": [["name:barnaru:n10727280751", 0.6523, "fuzzy+county;mention=0;fit=0.49"]], "course_id": "name:barnaru:n10727280751", "method": "fuzzy+county", "score": 0.6523, "slug": "romsilva-suceava-barnar"}
+{"candidates": [["anar:RO12-1-53-25-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-53-25-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-suceava-barnarel"}
+{"candidates": [["anar:RO12-1-17-7-0-0-0", 0.6285, "anar+county;mention=0;fit=0.59"]], "course_id": "anar:RO12-1-17-7-0-0-0", "method": "anar+county", "score": 0.6285, "slug": "romsilva-suceava-brodina"}
 {"candidates": [["name:dornisoara:n11432965155", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "name:dornisoara:n11432965155", "method": "name+county", "score": 0.8, "slug": "romsilva-suceava-dornisoara"}
 {"candidates": [["name:giumalau:n365870861", 0.6904, "name+county;mention=0;fit=0.45"]], "course_id": "name:giumalau:n365870861", "method": "name+county", "score": 0.6904, "slug": "romsilva-suceava-giumalau"}
 {"candidates": [["name:humor:n2561978169", 0.74, "name+county;mention=0;fit=1.00"]], "course_id": "name:humor:n2561978169", "method": "name+county", "score": 0.74, "slug": "romsilva-suceava-humorul"}
@@ -697,17 +697,17 @@
 {"candidates": [["rel:10966934", 0.8, "name+county;mention=0;fit=1.00"], ["name:neagra:n13197177510", 0.6132, "name+county;mention=0;fit=0.07"]], "course_id": "rel:10966934", "method": "name+county", "score": 0.8, "slug": "romsilva-suceava-neagra-inferioara"}
 {"candidates": [["rel:10966934", 0.6789, "name+county;mention=0;fit=0.39"], ["name:neagra:n13197177510", 0.6035, "name+county;mention=0;fit=0.02"]], "course_id": null, "method": "ambiguous", "score": 0.6789, "slug": "romsilva-suceava-neagra-superioara"}
 {"candidates": [["name:putna:n3535529363", 0.6636, "name+county;mention=0;fit=0.32"], ["name:putna:n8346091724", 0.6286, "name+county;mention=0;fit=0.14"]], "course_id": null, "method": "ambiguous", "score": 0.6636, "slug": "romsilva-suceava-putna"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-suceava-valea-putnei"}
+{"candidates": [["name:putna:n3535529363", 0.5885, "stem+county;mention=0;fit=0.39"], ["name:putna:n8346091724", 0.5454, "stem+county;mention=0;fit=0.18"]], "course_id": null, "method": "ambiguous", "score": 0.5885, "slug": "romsilva-suceava-valea-putnei"}
 {"candidates": [["name:bega poieni:n2429248707", 0.7174, "name+county;mention=0;fit=0.59"]], "course_id": "name:bega poieni:n2429248707", "method": "name+county", "score": 0.7174, "slug": "romsilva-timis-bega-poieni"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-timis-bega-superior-luncani"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-valcea-izvoarele-latoritei"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-valcea-izvorul-lotrului"}
+{"candidates": [["rel:6258970", 0.71, "stem+county;mention=0;fit=1.00"], ["name:lotru:n2620069105", 0.5155, "stem+county;mention=0;fit=0.03"], ["name:lotru:n2713066240", 0.5119, "stem+county;mention=0;fit=0.01"], ["name:lotru:n8826536937", 0.5116, "stem+county;mention=0;fit=0.01"], ["name:lotru:n8749127176", 0.5115, "stem+county;mention=0;fit=0.01"]], "course_id": "rel:6258970", "method": "stem+county", "score": 0.71, "slug": "romsilva-valcea-izvorul-lotrului"}
 {"candidates": [["rel:6258969", 1.0, "name+county;mention=1;fit=1.00"], ["name:latorita:n2713044470", 0.6487, "name+county;mention=0;fit=0.24"], ["name:latorita:n2709265326", 0.6126, "name+county;mention=0;fit=0.06"], ["name:latorita:n9595049252", 0.6018, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6258969", "method": "name+county", "score": 1.0, "slug": "romsilva-valcea-latorita-inferioara"}
 {"candidates": [["rel:6258969", 1.0, "name+county;mention=1;fit=1.00"], ["name:latorita:n2713044470", 0.8, "name+county;mention=0;fit=1.00"], ["name:latorita:n2709265326", 0.6524, "name+county;mention=0;fit=0.26"], ["name:latorita:n9595049252", 0.6075, "name+county;mention=0;fit=0.04"]], "course_id": "rel:6258969", "method": "name+county", "score": 1.0, "slug": "romsilva-valcea-latorita-superioara"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-valcea-lotrisor-draganesti"}
 {"candidates": [["rel:6258970", 1.0, "name+county;mention=1;fit=1.00"], ["name:lotru:n2620069105", 0.6066, "name+county;mention=0;fit=0.03"], ["name:lotru:n2713066240", 0.6022, "name+county;mention=0;fit=0.01"], ["name:lotru:n8826536937", 0.602, "name+county;mention=0;fit=0.01"], ["name:lotru:n8749127176", 0.6018, "name+county;mention=0;fit=0.01"]], "course_id": "rel:6258970", "method": "name+county", "score": 1.0, "slug": "romsilva-valcea-lotru-superior"}
 {"candidates": [["rel:6259862", 0.7357, "name+county;mention=0;fit=0.68"]], "course_id": "rel:6259862", "method": "name+county", "score": 0.7357, "slug": "romsilva-valcea-paraul-bistrita"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "romsilva-vrancea-coza"}
+{"candidates": [["anar:RO12-1-79-5-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-79-5-0-0-0", "method": "anar+county", "score": 0.71, "slug": "romsilva-vrancea-coza"}
 {"candidates": [["name:lepsa:n2943956362", 0.6596, "name+county;mention=0;fit=0.30"]], "course_id": "name:lepsa:n2943956362", "method": "name+county", "score": 0.6596, "slug": "romsilva-vrancea-lepsa"}
 {"candidates": [["rel:10962757", 0.8, "name+county;mention=0;fit=1.00"], ["name:putna:n139371421", 0.6228, "name+county;mention=0;fit=0.11"], ["name:putna:n139137173", 0.6143, "name+county;mention=0;fit=0.07"], ["name:putna:n139606337", 0.6086, "name+county;mention=0;fit=0.04"]], "course_id": "rel:10962757", "method": "name+county", "score": 0.8, "slug": "romsilva-vrancea-putna-mijlocie"}
 {"candidates": [["rel:10962757", 1.0, "name+county;mention=1;fit=1.00"], ["name:putna:n139371421", 0.6063, "name+county;mention=0;fit=0.03"], ["name:putna:n139137173", 0.6039, "name+county;mention=0;fit=0.02"], ["name:putna:n139606337", 0.6024, "name+county;mention=0;fit=0.01"]], "course_id": "rel:10962757", "method": "name+county", "score": 1.0, "slug": "romsilva-vrancea-putna-superioara"}
@@ -722,11 +722,11 @@
 {"candidates": [["rel:6258970", 0.74, "name+county;mention=0;fit=1.00"], ["name:lotru:n2620069105", 0.5536, "name+county;mention=0;fit=0.07"], ["name:lotru:n2713066240", 0.5446, "name+county;mention=0;fit=0.02"], ["name:lotru:n8826536937", 0.5441, "name+county;mention=0;fit=0.02"], ["name:lotru:n8749127176", 0.5437, "name+county;mention=0;fit=0.02"]], "course_id": "rel:6258970", "method": "name+county", "score": 0.74, "slug": "teziodii"}
 {"candidates": [["name:berzasca:n2788669352", 0.6625, "name+county;mention=0;fit=0.31"]], "course_id": "name:berzasca:n2788669352", "method": "name+county", "score": 0.6625, "slug": "tgvv500v"}
 {"candidates": [["name:blahnita:n3065404182", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "name:blahnita:n3065404182", "method": "name+county", "score": 1.0, "slug": "tjs59g3d"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "tozghzao"}
+{"candidates": [["anar:RO8-1-152-2-1-0-0", 0.6605, "anar+county;mention=0;fit=0.75"]], "course_id": "anar:RO8-1-152-2-1-0-0", "method": "anar+county", "score": 0.6605, "slug": "tozghzao"}
 {"candidates": [["rel:18008466", 0.74, "name+county;mention=0;fit=1.00"], ["name:budac:n8204224862", 0.5464, "name+county;mention=0;fit=0.03"], ["name:budac:n8204224836", 0.543, "name+county;mention=0;fit=0.02"], ["name:budac:n8204225083", 0.543, "name+county;mention=0;fit=0.01"], ["name:budac:n5069366835", 0.5426, "name+county;mention=0;fit=0.01"]], "course_id": "rel:18008466", "method": "name+county", "score": 0.74, "slug": "u1frrl08"}
 {"candidates": [["rel:6262842", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:6262842", "method": "name+county", "score": 1.0, "slug": "u7ipqokl"}
 {"candidates": [["rel:89339:1", 1.0, "name+county;mention=1;fit=1.00"], ["rel:89339:2", 0.6482, "name+county;mention=0;fit=0.24"]], "course_id": "rel:89339:1", "method": "name+county", "score": 1.0, "slug": "u84uqnip"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "uerba1xr"}
+{"candidates": [["anar:RO3-1-43-0-0-0-0", 0.91, "anar+county;mention=1;fit=1.00"]], "course_id": "anar:RO3-1-43-0-0-0-0", "method": "anar+county", "score": 0.91, "slug": "uerba1xr"}
 {"candidates": [["rel:12800074", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:12800074", "method": "name+county", "score": 0.8, "slug": "ufdigh4c"}
 {"candidates": [["rel:6257617", 0.7471, "name+county;mention=0;fit=0.74"], ["name:sadu:n820102412", 0.6325, "name+county;mention=0;fit=0.16"]], "course_id": "rel:6257617", "method": "name+county", "score": 0.7471, "slug": "ug8h7f1s"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "uv7try13"}
@@ -735,10 +735,10 @@
 {"candidates": [["name:geamartalui:n460004376", 0.6937, "name+county;mention=0;fit=0.47"]], "course_id": "name:geamartalui:n460004376", "method": "name+county", "score": 0.6937, "slug": "vb2p0152"}
 {"candidates": [["rel:17925047", 0.8, "name+county;mention=0;fit=1.00"], ["name:morilor:n6585232958", 0.6031, "name+county;mention=0;fit=0.02"], ["name:morilor:n8933841122", 0.6004, "name+county;mention=0;fit=0.00"]], "course_id": "rel:17925047", "method": "name+county", "score": 0.8, "slug": "w28fp1za"}
 {"candidates": [["rel:89465", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:89465", "method": "name+county", "score": 1.0, "slug": "w69nse7i"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "w9ifusdl"}
+{"candidates": [["anar:RO12-1-16-0-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO12-1-16-0-0-0-0", "method": "anar+county", "score": 0.71, "slug": "w9ifusdl"}
 {"candidates": [["rel:4450692", 0.8, "name+county;mention=0;fit=1.00"], ["name:barzava:n2635435230", 0.6001, "name+county;mention=0;fit=0.00"]], "course_id": "rel:4450692", "method": "name+county", "score": 0.8, "slug": "wmx33tho"}
 {"candidates": [["rel:10900823", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:10900823", "method": "name+county", "score": 0.8, "slug": "wv8ykggg"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "xd7hnzzl"}
+{"candidates": [["rel:13372716", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "rel:13372716", "method": "stem+county", "score": 0.71, "slug": "xd7hnzzl"}
 {"candidates": [["rel:6257987", 0.6824, "name+county;mention=0;fit=0.41"]], "course_id": "rel:6257987", "method": "name+county", "score": 0.6824, "slug": "xivzc8yg"}
 {"candidates": [["name:talmacut:n2609748690", 0.697, "name+county;mention=0;fit=0.49"]], "course_id": "name:talmacut:n2609748690", "method": "name+county", "score": 0.697, "slug": "xxuzkw7u"}
 {"candidates": [["rel:18920791", 0.646, "name+county;mention=0;fit=0.53"]], "course_id": "rel:18920791", "method": "name+county", "score": 0.646, "slug": "xypzp6q7"}
@@ -747,12 +747,12 @@
 {"candidates": [["rel:1567969", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:1567969", "method": "name+county", "score": 1.0, "slug": "y6i6nikh"}
 {"candidates": [["name:teleajen:n178943796", 0.74, "name+county;mention=0;fit=1.00"], ["name:teleajen:n178970615", 0.74, "name+county;mention=0;fit=1.00"], ["name:teleajen:n178509054", 0.6746, "name+county;mention=0;fit=0.67"]], "course_id": null, "method": "ambiguous", "score": 0.74, "slug": "yfzdgchv"}
 {"candidates": [["rel:18021484", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:18021484", "method": "name+county", "score": 1.0, "slug": "ygy2n7uz"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "yjbfm1tc"}
+{"candidates": [["name:bistra:n3895082015", 0.71, "stem+county;mention=0;fit=1.00"]], "course_id": "name:bistra:n3895082015", "method": "stem+county", "score": 0.71, "slug": "yjbfm1tc"}
 {"candidates": [["rel:18007463", 0.8, "name+county;mention=0;fit=1.00"], ["name:amaradia:n262816675", 0.7357, "name+county;mention=0;fit=0.68"]], "course_id": null, "method": "ambiguous", "score": 0.8, "slug": "ynroput7"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "ys4a4vw8"}
+{"candidates": [["anar:RO4-1-81-11-0-0-0", 0.71, "anar+county;mention=0;fit=1.00"]], "course_id": "anar:RO4-1-81-11-0-0-0", "method": "anar+county", "score": 0.71, "slug": "ys4a4vw8"}
 {"candidates": [["rel:89325", 1.0, "name+county;mention=1;fit=1.00"]], "course_id": "rel:89325", "method": "name+county", "score": 1.0, "slug": "yu63lkif"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "yxpriayu"}
-{"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "z6x8mxh5"}
+{"candidates": [], "course_id": null, "method": "no_county_match", "score": 0.0, "slug": "z6x8mxh5"}
 {"candidates": [["rel:6274350", 0.8, "name+county;mention=0;fit=1.00"]], "course_id": "rel:6274350", "method": "name+county", "score": 0.8, "slug": "z8u6g69z"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "zb5lg4fc"}
 {"candidates": [], "course_id": null, "method": "no_candidate", "score": 0.0, "slug": "zdjui15p"}

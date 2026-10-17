@@ -22,6 +22,8 @@ PLANNED: dict[str, str] = {
     "report": "T3.5",
     "review-page": "T3.5",
     "publish": "T4.2",
+    "normalise-hidrografie": "T6.5",
+    "fallback": "T6.5",
 }
 
 # command -> callable(list_of_remaining_args) -> exit status
@@ -83,6 +85,20 @@ def _publish(args: list[str]) -> int:
     return cli(args)
 
 
+def _normalise_hidrografie(args: list[str]) -> int:
+    from .hidrografie import cli_normalise
+
+    return cli_normalise(args)
+
+
+def _fallback(args: list[str]) -> int:
+    from .hidrografie import cli_fallback
+
+    return cli_fallback(args)
+
+
+HANDLERS["normalise-hidrografie"] = _normalise_hidrografie
+HANDLERS["fallback"] = _fallback
 HANDLERS["publish"] = _publish
 HANDLERS["resolve"] = _resolve
 HANDLERS["report"] = _report

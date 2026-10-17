@@ -220,10 +220,10 @@ def cli(argv: list[str]) -> int:
     new, report = publish(waters, sectors, courses, mode=ns.mode)
     out = Path(ns.out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    (out / "publish_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    (out / "publish_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     if ns.mode == "write":
-        Path(ns.waters).write_text(dumps_waters(new), encoding="utf-8")
+        Path(ns.waters).write_text(dumps_waters(new), encoding="utf-8", newline="\n")
     else:
-        (out / "waters.shadow.json").write_text(dumps_waters(new), encoding="utf-8")
+        (out / "waters.shadow.json").write_text(dumps_waters(new), encoding="utf-8", newline="\n")
     print(json.dumps({k: report[k] for k in ("mode", "switched_count", "kept_legacy_count")}))
     return 0
