@@ -75,7 +75,7 @@
       "missing_geometry": 14,
       "overlay": {
         "lakes": 280,
-        "rivers": 138
+        "rivers": 136
       },
       "with_geometry": 27
     },
@@ -332,7 +332,7 @@
       "missing_geometry": 8,
       "overlay": {
         "lakes": 120,
-        "rivers": 139
+        "rivers": 138
       },
       "with_geometry": 62
     },
@@ -43617,13 +43617,6 @@
       "classification": "uncontracted",
       "county": "Bihor",
       "kind": "river",
-      "name": "Cicer",
-      "slug": "unc-69ca8505f5"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Bihor",
-      "kind": "river",
       "name": "Pârâul Brătcuța",
       "slug": "unc-6e41b20859"
     },
@@ -43885,13 +43878,6 @@
       "kind": "river",
       "name": "Valea Meziad",
       "slug": "unc-a70f043e82"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Bihor",
-      "kind": "river",
-      "name": "Valea Boiului",
-      "slug": "unc-a74a090e80"
     },
     {
       "classification": "uncontracted",
@@ -55379,13 +55365,6 @@
       "kind": "river",
       "name": "Canal de Aducțune Râul Strei",
       "slug": "unc-62bc7bd748"
-    },
-    {
-      "classification": "uncontracted",
-      "county": "Hunedoara",
-      "kind": "river",
-      "name": "Orăștie",
-      "slug": "unc-651474bff7"
     },
     {
       "classification": "uncontracted",

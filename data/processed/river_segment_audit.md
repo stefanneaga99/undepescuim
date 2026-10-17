@@ -33,7 +33,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Arad | 34 | 24 | 10 | 0 | 41 | 138 | partial |
 | Argeș | 36 | 27 | 9 | 0 | 154 | 183 | partial |
 | Bacău | 24 | 21 | 3 | 6 | 79 | 62 | blocked |
-| Bihor | 41 | 27 | 14 | 0 | 138 | 280 | partial |
+| Bihor | 41 | 27 | 14 | 0 | 136 | 280 | partial |
 | Bistrița-Năsăud | 31 | 21 | 10 | 0 | 108 | 49 | partial |
 | Botoșani | 28 | 18 | 10 | 6 | 25 | 128 | blocked |
 | Brașov | 33 | 28 | 5 | 3 | 270 | 123 | blocked |
@@ -51,7 +51,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Giurgiu | 5 | 3 | 2 | 0 | 14 | 268 | partial |
 | Gorj | 26 | 20 | 6 | 0 | 49 | 58 | partial |
 | Harghita | 44 | 30 | 14 | 1 | 429 | 72 | blocked |
-| Hunedoara | 70 | 62 | 8 | 0 | 139 | 120 | partial |
+| Hunedoara | 70 | 62 | 8 | 0 | 138 | 120 | partial |
 | Ialomița | 6 | 3 | 3 | 5 | 4 | 113 | blocked |
 | Iași | 6 | 2 | 4 | 6 | 76 | 244 | blocked |
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
@@ -6267,7 +6267,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-63b2b18c62` — river / uncontracted / Bihor / Crăiasa
 - `unc-66f2c64356` — river / uncontracted / Bihor / Pârâul Negruța
 - `unc-692575a641` — river / uncontracted / Bihor / Valea Luncilor
-- `unc-69ca8505f5` — river / uncontracted / Bihor / Cicer
 - `unc-6e41b20859` — river / uncontracted / Bihor / Pârâul Brătcuța
 - `unc-6f373f0b25` — river / uncontracted / Bihor / Paraul Glavoaie
 - `unc-711732b5f7` — river / uncontracted / Bihor / Barát-ér
@@ -6306,7 +6305,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-a38e287290` — river / uncontracted / Bihor / Valea Titișorului
 - `unc-a53cdddd65` — river / uncontracted / Bihor / Crișul Mic
 - `unc-a70f043e82` — river / uncontracted / Bihor / Valea Meziad
-- `unc-a74a090e80` — river / uncontracted / Bihor / Valea Boiului
 - `unc-a756969f84` — river / uncontracted / Bihor / Valea Poienii
 - `unc-a814649ba4` — river / uncontracted / Bihor / Pârâul Iacoboaia
 - `unc-a865b17077` — river / uncontracted / Bihor / Valea Boii
@@ -7948,7 +7946,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-6152e3d496` — river / uncontracted / Hunedoara / Pârâul Vânătorului
 - `unc-6280cea898` — river / uncontracted / Hunedoara / Săcămaș
 - `unc-62bc7bd748` — river / uncontracted / Hunedoara / Canal de Aducțune Râul Strei
-- `unc-651474bff7` — river / uncontracted / Hunedoara / Orăștie
 - `unc-6551b05e68` — river / uncontracted / Hunedoara / Baleia
 - `unc-67f997e7ef` — river / uncontracted / Hunedoara / Galbena
 - `unc-68b39738c9` — river / uncontracted / Hunedoara / Hășdățel
