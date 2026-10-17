@@ -14,6 +14,7 @@ const REASON_LABELS: Record<string, string> = {
   water_invalid: 'Această apă nu mai există / nu se poate pescui',
   association_changed: 'Asociația s-a schimbat',
   wrong_coordinates: 'Coordonatele sunt greșite',
+  wrong_sector: 'Sector greșit (limitele desenate nu corespund)',
   other: 'Altă problemă',
 };
 const REASONS = new Set(Object.keys(REASON_LABELS));

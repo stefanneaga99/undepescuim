@@ -68,3 +68,14 @@ describe('public/data allowlist', () => {
     expect(findUnexpectedFiles(resolve(process.cwd(), 'public', 'data'))).toEqual([]);
   });
 });
+
+describe('blocking lazy-file caps', () => {
+  it('caps sector-evidence.json at 300 KB gzip (plan T4.3)', async () => {
+    const { LAZY_GZIP_CAPS, lazyCapViolation } = await import('../../scripts/lib/data-budget.mjs');
+    expect(LAZY_GZIP_CAPS['sector-evidence.json']).toBe(300 * 1024);
+    expect(lazyCapViolation('sector-evidence.json', 300 * 1024)).toBeNull();
+    expect(lazyCapViolation('sector-evidence.json', 300 * 1024 + 1)).toMatch(/> cap 300 KB/);
+    expect(lazyCapViolation('waters_county_clips.json', 10 * 1024 * 1024)).toBeNull(); // uncapped: INFO only
+    expect(LAZY_DATA_FILES).toContain('sector-evidence.json');
+  });
+});

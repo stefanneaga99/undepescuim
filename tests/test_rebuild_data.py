@@ -88,7 +88,13 @@ def test_rivernet_publish_shim_writes_from_the_committed_inputs(monkeypatch):
     spec.loader.exec_module(shim)
     seen = {}
     monkeypatch.setattr(shim, "cli", lambda argv: seen.setdefault("argv", argv) and 0)
+    monkeypatch.setattr(shim, "evidence_cli", lambda argv: seen.setdefault("evidence", argv) and 0)
     assert shim.main() == 0
+    ev = seen["evidence"]
+    assert ev[ev.index("--out") + 1].replace("\\", "/").endswith("public/data/sector-evidence.json")
+    monkeypatch.setattr(shim, "cli", lambda argv: 1)  # a failed publish stops before the evidence
+    seen.pop("evidence")
+    assert shim.main() == 1 and "evidence" not in seen
     argv = seen["argv"]
     assert argv[:2] == ["--mode", "write"]
     assert argv[argv.index("--waters") + 1].replace("\\", "/").endswith("public/data/waters.json")

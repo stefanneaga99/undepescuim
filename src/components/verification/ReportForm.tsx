@@ -17,6 +17,7 @@ const REASON_OPTIONS: { value: ReportReason; labelKey: `report.reasons.${ReportR
   { value: 'water_invalid', labelKey: 'report.reasons.water_invalid' },
   { value: 'association_changed', labelKey: 'report.reasons.association_changed' },
   { value: 'wrong_coordinates', labelKey: 'report.reasons.wrong_coordinates' },
+  { value: 'wrong_sector', labelKey: 'report.reasons.wrong_sector' },
   { value: 'other', labelKey: 'report.reasons.other' },
 ];
 

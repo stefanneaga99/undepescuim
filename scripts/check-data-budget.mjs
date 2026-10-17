@@ -25,7 +25,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LAZY_DATA_FILES, findUnexpectedFiles } from './lib/data-budget.mjs';
+import { LAZY_DATA_FILES, LAZY_GZIP_CAPS, findUnexpectedFiles, lazyCapViolation } from './lib/data-budget.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dataDir = join(root, 'public', 'data');
@@ -126,6 +126,10 @@ for (const file of LAZY_DATA_FILES) {
   console.log(
     `  INFO  ${file.padEnd(32)} raw=${(raw.length / MB).toFixed(2).padStart(6)} MB  gzip-9=${(gzip / MB).toFixed(2).padStart(6)} MB`,
   );
+  if (file in LAZY_GZIP_CAPS) {
+    const violation = lazyCapViolation(file, gzip);
+    check(violation === null, `${file} gzip < ${(LAZY_GZIP_CAPS[file] / 1024).toFixed(0)} KB (blocking)`, violation ?? 'ok');
+  }
 }
 
 console.log(failures === 0 ? '\nDATA BUDGET PASSED' : `\nDATA BUDGET FAILED (${failures} failing)`);

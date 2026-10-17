@@ -285,6 +285,20 @@ export const PRECUT_WATERS: Water[] = [
   },
 ];
 
+/** sector-evidence.json for PRECUT_WATERS (T4.3); the spec routes it. */
+export const PRECUT_EVIDENCE = {
+  schema: 1,
+  network_version: 'ro-water-20261016',
+  osm_timestamp: '2026-10-16T20:21:21Z',
+  sectors: {
+    [PRECUT_LONG_SLUG]: {
+      from: { kind: 'SOURCE', label: 'izvoare', anchor: null, confidence: 0.9 },
+      to: { kind: 'CONFLUENCE', label: 'confluența cu Testăuț', anchor: { type: 'course', id: 'rel:1' }, confidence: 0.95 },
+      lengthKm: 47.2, contractKm: 40, status: 'resolved', confidence: 'medium',
+    },
+  },
+};
+
 /** Non-overlapping A → B transition fixtures. These stay test-only so pointer
  * transitions do not depend on the production dataset's current geometry. */
 const transitionSingleA: Water = {
