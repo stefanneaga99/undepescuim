@@ -13,7 +13,9 @@ def test_class2_preview_aggregate_schema_and_scope():
     assert payload["canonicalMutation"] is False
     assert payload["excludedChunks"] == ["CLASS2-01"]
     assert payload["recordCount"] == 148
-    assert payload["candidateCount"] == 168
+    # 168 before river geometry v2; switched groups preview one rivernet course each
+    assert payload["candidateCount"] == 162
+    assert payload["candidateCount"] == sum(len(r["physicalCandidates"]) for r in payload["records"])
     assert len({record["slug"] for record in payload["records"]}) == 148
     for record in payload["records"]:
         assert record["legalStatus"] == "legal sector unverified"
