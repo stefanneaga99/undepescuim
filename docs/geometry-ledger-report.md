@@ -5,7 +5,7 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 ## Scope and semantics
 
 - Canonical waters: **1013** (761 rivers, 252 lakes).
-- Canonical geometry: **714 present**, **299 absent**.
+- Canonical geometry: **740 present**, **273 absent**.
 - Unresolved inventory: **312**; classes `{"2": 163, "3": 13, "4": 6, "5": 12, "6": 118}`.
 - Class2 physical source: **148 records / 168 candidates / 76 all-candidate `(riverGroup, geometryHash)` keys**.
 - Current runtime validates every exact candidate identity and deduplicates all candidates to **76 representatives**.
@@ -26,8 +26,8 @@ Locked `origin/main`: `62974d0f050b265a27dcc7ea30c6b356eb3a3454`.
 - `data/processed/river_segment_audit.json`: `9232fbadaa9ee3c80b0718cb9ea49eef61e1cab954c5c25b0eed0d8a2093ef35` (before = after)
 - `public/data/association_locations.json`: `bc54ab5ce74c07e282ac2d1f51b16247180d2d5bfd5e3389f2c11735a9c6b9a7` (before = after)
 - `public/data/associations.json`: `388ff8ef7efc267914d3a67a20f2f5a9230dd6bc0a0fdf9b87188b8f2fbaafa9` (before = after)
-- `public/data/waters.json`: `56380740bbc6a9f91a49b1f4f57ee8465821e9d144eaa39822e9d19d8caab7c0` (before = after)
-- `public/data/waters_county_clips.json`: `4bf26bb9d352bc112782f5dc2bc9950e5c341ee369493d39b7b84ebe2eda5e92` (before = after)
+- `public/data/waters.json`: `5ef6e23f1f4f07e9dcf831f71e1f1d27167bf8e5a171511ae5d8feedba70502e` (before = after)
+- `public/data/waters_county_clips.json`: `ccf05403aee81f8329d6ef6ef7c6b232ad9aaa388b02cb364e44f71057cb41b7` (before = after)
 
 ## Historical audit refs
 
@@ -57,9 +57,9 @@ The four prior `RENDERING_FIX` rows remain `NOT_REPRODUCED` and ineligible in th
 
 ## Classification totals
 
-- `preview-only`: 148
-- `repaired`: 712
-- `unresolved`: 153
+- `preview-only`: 144
+- `repaired`: 738
+- `unresolved`: 131
 
 ## Source-backed render repair provenance
 

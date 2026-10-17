@@ -10,4 +10,11 @@ describe('MapAttribution', () => {
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveClass('underline');
   });
+
+  it('credits the ANAR cadastral network used as fallback sector geometry (CC BY 4.0)', () => {
+    render(<MapAttribution />);
+    const link = screen.getByRole('link', { name: /ANAR/ });
+    expect(link).toHaveAttribute('href', 'https://data.gov.ro/dataset/hidrografie');
+    expect(link).toHaveTextContent('CC BY 4.0');
+  });
 });

@@ -19,6 +19,16 @@ export function MapAttribution() {
       >
         OpenStreetMap copyright
       </a>
+      {/* River geometry v2: some pre-cut sectors use the ANAR cadastral network (CC BY 4.0). */}
+      <span> · </span>
+      <a
+        className="underline underline-offset-2"
+        href="https://data.gov.ro/dataset/hidrografie"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Hidrografie © ANAR (CC BY 4.0)
+      </a>
     </div>
   );
 }

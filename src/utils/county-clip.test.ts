@@ -49,7 +49,16 @@ describe('countyRenderGeometry', () => {
 
   it('matches the audited lazy-clip sentinels without changing the data artifact', () => {
     const clips = JSON.parse(readFileSync('public/data/waters_county_clips.json', 'utf8')) as Record<string, Record<string, unknown>>;
+    const waters = JSON.parse(readFileSync('public/data/waters.json', 'utf8')) as Water[];
     for (const slug of CLASS4_RENDERING_REPAIR_SLUGS) {
+      const w = waters.find((x) => x.slug === slug)!;
+      if (w.geometryKind === 'sector') {
+        // River geometry v2 cutover: the stale sentinel's water now carries its own
+        // pre-cut sector inside its county — no clip entry, its geometry renders.
+        expect(clips[slug]).toBeUndefined();
+        expect(countyRenderGeometry(w)).toBe(w.geometry);
+        continue;
+      }
       expect(Object.values(clips[slug] ?? {})).toEqual([null]);
     }
   });

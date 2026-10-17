@@ -22,13 +22,14 @@ describe('OSM/ODbL source-lineage ledger', () => {
       'public/data/counties.geojson',
       'public/data/association_locations.json',
       'public/data/preview_class2_physical.json',
+      'public/data/sector-evidence.json',
     ]) {
       expect(paths, path).toContain(path);
     }
 
     for (const artifact of ledger.artifacts) {
       expect(artifact.source_urls.length).toBeGreaterThan(0);
-      expect(artifact.accessed_at).toMatch(/^2026-08-/);
+      expect(artifact.accessed_at).toMatch(/^2026-(08|10)-/);
       expect(artifact.sha256).toMatch(/^[a-f0-9]{64}$/);
       expect(artifact.transformations.length).toBeGreaterThan(0);
       expect(['odbl', 'mixed', 'unknown']).toContain(artifact.license_classification);

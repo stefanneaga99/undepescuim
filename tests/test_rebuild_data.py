@@ -74,8 +74,8 @@ def test_rivernet_publish_runs_right_after_the_merge_and_its_inputs_exist():
     steps = rebuild_data.FULL_STEPS
     assert steps.index("scripts/rivernet_publish.py") == steps.index("scripts/merge_anpa_waters.py") + 1
     assert steps.index("scripts/rivernet_publish.py") < steps.index("scripts/build_locality_assignment.py")
-    for rel in rebuild_data.RIVERNET_INPUTS:  # pinned into INPUTS at the cutover (T4.4)
-        assert (rebuild_data.ROOT / rel).exists()
+    for rel in rebuild_data.RIVERNET_INPUTS:
+        assert (rebuild_data.ROOT / rel).exists() and rel in rebuild_data.INPUTS
     assert {"data/rivernet", "data/sectors"} <= set(rebuild_data.SCRATCH_COPY_DIRS)
     assert (rebuild_data.ROOT / "scripts/rivernet_publish.py").exists()
 

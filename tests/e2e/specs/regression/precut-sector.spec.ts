@@ -67,3 +67,29 @@ test.describe('pre-cut river sectors @seeded', () => {
     await expect(page.getByTestId('water-focus-status')).toContainText('Geometria exactă a sectorului nu este verificată');
   });
 });
+
+/** T4.4: a real resolved pre-cut sector in the shipped data (no seeded routes). */
+test.describe('pre-cut river sectors on the real data @data', () => {
+  test.skip(!!process.env.LIVE_PROD, 'local build only');
+
+  test('Râul Arieș (Alba) renders as its own sector with its limits on the card', async ({ page }) => {
+    const slug = 'qtebe8c3';
+    await page.goto('/');
+    await waitForMapReady(page);
+    const waters = (await (await page.request.get('/data/waters.json')).json()) as Array<{ slug: string; bbox: number[]; geometryKind?: string }>;
+    const water = waters.find((w) => w.slug === slug)!;
+    expect(water.geometryKind).toBe('sector');
+    await page.evaluate((bb) => {
+      const map = (window as unknown as { __UNDEPESCUIM_MAP__?: { fitBounds: (b: number[][]) => void } }).__UNDEPESCUIM_MAP__;
+      map?.fitBounds([[bb[1], bb[0]], [bb[3], bb[2]]]);
+    }, water.bbox);
+    await page.waitForTimeout(800);
+    await clickWaterBySlugAtFraction(page, slug, 0.5);
+    const map = new MapPage(page);
+    await expect(map.waterCard.card).toContainText('Râul Arieș');
+    const snapshot = await map.focusSnapshot();
+    expect(snapshot.kind).toBe('verified-sector-focus');
+    expect(snapshot.orangePaths).toBe(1);
+    await expect(page.getByTestId('sector-limits')).toContainText('Baia de Arieș');
+  });
+});
