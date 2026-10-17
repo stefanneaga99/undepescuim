@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { useI18n } from '@/i18n/provider';
 import { NATIONAL_PERMIT_URL } from '@/lib/permit';
 import { safeEmail, safeExternalUrl, safeTelephone } from '@/lib/safe-url';
+import { useSectorEvidence } from '@/hooks/use-sector-evidence';
 import type { Association, PermitIssuer, ReportReason, Water } from '@/types/data';
 
 interface WaterDetailCardProps {
@@ -30,6 +31,7 @@ interface WaterDetailCardProps {
  */
 export function WaterDetailCard({ water, association, onReport, compact = false }: WaterDetailCardProps) {
   const { t } = useI18n();
+  const evidence = useSectorEvidence(water);
   const isLake = water.subtype === 'lac';
   const isUncontracted = water.uncontracted === true;
   const isPhysicalPreview = water.physicalPreview === true;
@@ -116,6 +118,46 @@ export function WaterDetailCard({ water, association, onReport, compact = false 
           </div>
         )}
       </dl>
+
+      {/* River geometry v2 (T4.3): how a pre-cut sector's limits were resolved.
+          Hidden for legacy waters and for sectors missing from the evidence file. */}
+      {evidence && (
+        <div data-testid="sector-limits" className="rounded-md border bg-muted/30 p-2.5 text-sm">
+          <p className="text-xs font-medium text-muted-foreground">{t('card.sectorLimits.title')}</p>
+          <p className="mt-0.5">
+            {t('card.sectorLimits.from')}: <span data-testid="sector-limits-from">{evidence.entry.from.label}</span>
+            {' · '}
+            {t('card.sectorLimits.to')}: <span data-testid="sector-limits-to">{evidence.entry.to.label}</span>
+          </p>
+          {evidence.entry.lengthKm !== null && (
+            <p className="text-xs text-muted-foreground" data-testid="sector-limits-km">
+              {evidence.entry.contractKm !== null
+                ? t('card.sectorLimits.drawnContract', { drawn: evidence.entry.lengthKm, contract: evidence.entry.contractKm })
+                : t('card.sectorLimits.drawnOnly', { drawn: evidence.entry.lengthKm })}
+            </p>
+          )}
+          {evidence.entry.status === 'review' && (
+            <p className="mt-1 text-xs text-amber-700 dark:text-amber-400">{t('card.sectorLimits.review')}</p>
+          )}
+          <details className="mt-1.5 text-xs">
+            <summary className="cursor-pointer text-muted-foreground">{t('card.sectorLimits.how')}</summary>
+            <ul className="mt-1 flex flex-col gap-0.5 text-muted-foreground">
+              <li>{t('card.sectorLimits.confidence', { level: t(`card.sectorLimits.levels.${evidence.entry.confidence}`) })}</li>
+              {evidence.osmDate && <li>{t('card.sectorLimits.source', { date: evidence.osmDate })}</li>}
+            </ul>
+            {onReport && (
+              <button
+                type="button"
+                onClick={() => onReport('wrong_sector')}
+                data-testid="report-wrong-sector"
+                className="mt-1 text-primary underline-offset-2 hover:underline"
+              >
+                {t('card.sectorLimits.reportWrong')}
+              </button>
+            )}
+          </details>
+        </div>
+      )}
 
       {/* Association (the resolved one for this clicked sector) */}
       {!isUncontracted && !isPhysicalPreview && (

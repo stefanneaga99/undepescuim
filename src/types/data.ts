@@ -275,6 +275,7 @@ export type ReportReason =
   | 'water_invalid'         // "Această apă nu mai există / nu se poate pescui"
   | 'association_changed'   // "Asociația s-a schimbat"
   | 'wrong_coordinates'     // "Coordonatele sunt greșite"
+  | 'wrong_sector'          // "Sector greșit" — drawn pre-cut sector limits are wrong (T4.3)
   | 'other';                // "Altă problemă"
 
 /** Report form submission payload (client → POST /api/report). */

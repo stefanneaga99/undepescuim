@@ -41,6 +41,21 @@ export const LAZY_DATA_FILES = Object.freeze([
 ]);
 
 /**
+ * BLOCKING gzip-9 caps (bytes) for lazy files. A lazy file without a cap is
+ * INFO only.
+ */
+export const LAZY_GZIP_CAPS = Object.freeze({
+  'sector-evidence.json': 300 * 1024, // river geometry v2, plan T4.3
+});
+
+/** `null` when within its cap (or uncapped), else a FAIL detail string. */
+export function lazyCapViolation(file, gzipBytes, caps = LAZY_GZIP_CAPS) {
+  const cap = caps[file];
+  if (cap === undefined || gzipBytes <= cap) return null;
+  return `${file} gzip-9 ${(gzipBytes / 1024).toFixed(1)} KB > cap ${(cap / 1024).toFixed(0)} KB`;
+}
+
+/**
  * Names present in `dataDir` that are not on the allowlist (directories
  * included), sorted. A missing directory yields an empty list.
  */

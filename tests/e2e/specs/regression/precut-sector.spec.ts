@@ -3,6 +3,7 @@ import { routeData } from '../../fixtures/routes';
 import {
   PRECUT_LONG_SLUG,
   PRECUT_REVIEW_SLUG,
+  PRECUT_EVIDENCE,
   PRECUT_SHORT_SLUG,
   PRECUT_WATERS,
   seed,
@@ -20,6 +21,7 @@ test.describe('pre-cut river sectors @seeded', () => {
 
   test.beforeEach(async ({ page }) => {
     await routeData(page, { ...seed, waters: [...seed.waters, ...PRECUT_WATERS] });
+    await page.route('**/data/sector-evidence.json', (r) => r.fulfill({ json: PRECUT_EVIDENCE }));
     await page.goto('/');
     await waitForMapReady(page);
     await page.evaluate(() => {
@@ -49,6 +51,9 @@ test.describe('pre-cut river sectors @seeded', () => {
     // the river group (long + short) with the [0, 1] interval.
     expect(snapshot.orangePaths).toBe(1);
     expect(snapshot.unverifiedMarkerCount).toBe(0);
+    // T4.3: the card explains the resolved limits
+    await expect(page.getByTestId('sector-limits')).toContainText('confluența cu Testăuț');
+    await expect(page.getByTestId('sector-limits-km')).toContainText('km în contract');
   });
 
   test('a review sector keeps the unverified presentation', async ({ page }) => {
