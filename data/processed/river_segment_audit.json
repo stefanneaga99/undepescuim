@@ -243,13 +243,9 @@
     {
       "contracted": 17,
       "county": "Dâmbovița",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 6,
-        "truncated_head": 2,
-        "truncated_mouth": 2
-      },
-      "finding_count": 10,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
       "missing_geometry": 1,
       "overlay": {
         "lakes": 151,
@@ -317,29 +313,25 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 8,
+      "missing_geometry": 7,
       "overlay": {
         "lakes": 120,
         "rivers": 138
       },
-      "with_geometry": 62
+      "with_geometry": 63
     },
     {
       "contracted": 6,
       "county": "Ialomița",
-      "coverage_status": "blocked",
-      "finding_codes": {
-        "missing_segment": 3,
-        "truncated_head": 1,
-        "truncated_mouth": 1
-      },
-      "finding_count": 5,
-      "missing_geometry": 3,
+      "coverage_status": "partial",
+      "finding_codes": {},
+      "finding_count": 0,
+      "missing_geometry": 2,
       "overlay": {
         "lakes": 113,
         "rivers": 4
       },
-      "with_geometry": 3
+      "with_geometry": 4
     },
     {
       "contracted": 6,
@@ -399,12 +391,12 @@
       "coverage_status": "partial",
       "finding_codes": {},
       "finding_count": 0,
-      "missing_geometry": 10,
+      "missing_geometry": 7,
       "overlay": {
         "lakes": 142,
         "rivers": 198
       },
-      "with_geometry": 31
+      "with_geometry": 34
     },
     {
       "contracted": 22,
@@ -69760,67 +69752,10 @@
     },
     {
       "coverage": {
-        "osm_to_published": 0.9588533541341654,
-        "published_to_osm": 0.35386119257087
+        "osm_to_published": 0.8379485179407177,
+        "published_to_osm": 0.9397031539888683
       },
-      "findings": [
-        {
-          "code": "missing_segment",
-          "end_fraction": 0.13,
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
-          },
-          "length_m": 39401.861728674776,
-          "midpoint": [
-            25.4284591804039,
-            45.08159500696998
-          ],
-          "start_fraction": 0.05
-        },
-        {
-          "code": "missing_segment",
-          "end_fraction": 0.2,
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
-          },
-          "length_m": 14775.69814825304,
-          "midpoint": [
-            25.60586621976741,
-            44.876208273716394
-          ],
-          "start_fraction": 0.17
-        },
-        {
-          "code": "missing_segment",
-          "end_fraction": 1.0,
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
-          },
-          "length_m": 349691.5228419886,
-          "midpoint": [
-            26.061667487725543,
-            41.9681192709235
-          ],
-          "start_fraction": 0.29
-        },
-        {
-          "code": "truncated_head",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
-          }
-        },
-        {
-          "code": "truncated_mouth",
-          "gate_exception": {
-            "expires_on": "2027-12-31",
-            "id": "osm-snapshot-v1-ambiguous-waterbody-topology"
-          }
-        }
-      ],
+      "findings": [],
       "osm": {
         "match_status": "confirmed",
         "osm_id": 1308445,
@@ -69852,6 +69787,10 @@
         ]
       },
       "owner_slug": "3ek8e82l",
+      "precut_sectors": [
+        "3ek8e82l",
+        "anpa-anpa-0388"
+      ],
       "registry": {
         "alias_used": false
       },
@@ -69886,7 +69825,7 @@
           ],
           "length_m": 492523.272,
           "segment_id": "1308445:main",
-          "status": "UNRESOLVED_NO_OSM_MATCH"
+          "status": "PASS_CONTRACTED"
         }
       ],
       "source_rows": [
@@ -69896,35 +69835,7 @@
       ],
       "topology": {
         "components": 1,
-        "internal_gaps": [
-          {
-            "end_fraction": 0.13,
-            "length_m": 39401.861728674776,
-            "midpoint": [
-              25.4284591804039,
-              45.08159500696998
-            ],
-            "start_fraction": 0.05
-          },
-          {
-            "end_fraction": 0.2,
-            "length_m": 14775.69814825304,
-            "midpoint": [
-              25.60586621976741,
-              44.876208273716394
-            ],
-            "start_fraction": 0.17
-          },
-          {
-            "end_fraction": 1.0,
-            "length_m": 349691.5228419886,
-            "midpoint": [
-              26.061667487725543,
-              41.9681192709235
-            ],
-            "start_fraction": 0.29
-          }
-        ]
+        "internal_gaps": []
       }
     },
     {
@@ -71266,11 +71177,11 @@
   "schema_version": 1,
   "snapshot_sha256": "a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4",
   "summary": {
-    "PASS_CONTRACTED": 3,
-    "UNRESOLVED_NO_OSM_MATCH": 16,
-    "missing_segment": 24,
-    "truncated_head": 6,
-    "truncated_mouth": 6
+    "PASS_CONTRACTED": 4,
+    "UNRESOLVED_NO_OSM_MATCH": 15,
+    "missing_segment": 21,
+    "truncated_head": 5,
+    "truncated_mouth": 5
   },
   "thresholds": {
     "coverage_tol_m": 125,

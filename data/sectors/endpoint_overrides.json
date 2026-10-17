@@ -209,6 +209,149 @@
       "reason": "'Galați, conf. Dunărea': the Siret's mouth into the Danube = end of course rel:7689581 (Siret, OSM extract 2026-10-16) (receives_into Danube relation 89652). Buciumeni -> Danube = 153 km vs 120 km contract.",
       "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
       "date": "2026-10-17"
+    },
+    {
+      "slug": "romsilva-mures-mures-iii",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 87197.2
+      },
+      "reason": "'Ciubotani': not an OSM place; Ciubotani lies at the Harghita/Mureș county border, where the river enters Mureș county at m 87.2 km of course rel:89325 (Mureș, OSM extract 2026-10-16), right below the Harghita 'Mureș II' sector (ends at the county limit). -> Andreneasa (m 113.2 km) = 25.5 km vs 23 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0453",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 460361628
+      },
+      "reason": "'Tunel Sălard': the rail tunnel at Sălard; Sălard (Mureș), OSM place node 164 m from the river at m 107.2 km of course rel:89325 (Mureș, OSM extract 2026-10-16).",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0453",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 460355154
+      },
+      "reason": "'pod Deda': Deda (Mureș), OSM place node 830 m from the river at m 128.8 km of course rel:89325 (Mureș, OSM extract 2026-10-16). Sălard -> Deda = 21.6 km vs 25 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0426",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 460355154
+      },
+      "reason": "'CFR comuna Deda': Deda (Mureș), OSM place node at m 128.8 km of course rel:89325 (Mureș, OSM extract 2026-10-16) (end of 'Mureș IV').",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0426",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 280138.5
+      },
+      "reason": "'limită jud. comuna Chețani': the Mureș/Alba county limit (last crossing) at m 280.1 km of course rel:89325 (Mureș), next to Chețani (m 274.0 km) and Stâna de Mureș (Alba contract start, m 279.2 km). Deda -> limit = 151 km vs 150 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0377",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 461630219
+      },
+      "reason": "'Aurel Vlaicu-Zam' (bare hyphen, unparseable): Aurel Vlaicu (Hunedoara), OSM place node 1.4 km from the river at m 416.4 km of course rel:89325 (Mureș, OSM extract 2026-10-16).",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0377",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 34088359
+      },
+      "reason": "Zam (Hunedoara), OSM place node 716 m from the river at m 519.3 km of course rel:89325 (Mureș, OSM extract 2026-10-16). 103 km vs 66 km contract, which includes tributaries ('cu afluenții').",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "hmd3pa0v",
+      "end": "from",
+      "anchor": {
+        "type": "measure",
+        "m": 521287.4
+      },
+      "reason": "'Localitatea Pietriș': the resolver matched Pietriș in Mureș county (m 131.7 km, outside Arad); there is no Pietriș on the Arad stretch, so the contract starts where the river enters Arad county, m 521.3 km of course rel:89325 (Mureș, OSM extract 2026-10-16) (below the Hunedoara contract's end at Zam).",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "hmd3pa0v",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 732898.2
+      },
+      "reason": "'Frontieră cu Ungaria': where the river leaves Romania (country boundary), m 732.9 km of course rel:89325 (Mureș) - the same point as the Timiș contract's border endpoint. Arad entry -> border = 212 km vs 208 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0338",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 30193.5
+      },
+      "reason": "Accepting the resolved endpoint: 'conf. pârâul Borzont' = the Borzont tributary junction (OSM node 9523468792) at m 30.2 km of course rel:89325 (Mureș), confidence 0.95; from = source. 30 km drawn vs 57 km contract: the contract evidently counts the headwater tributaries ('Izvorul Mureș'); both endpoints match the text exactly.",
+      "reviewer": "Claude Code (proposed in the Mureș PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0388",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 460204637
+      },
+      "reason": "'baraj Dridu' (bare hyphen to 'vărsare', unparseable): the Dridu dam at Dridu (Ialomița), OSM place node 1.1 km from the river at m 202.0 km of course rel:6153744 (Ialomița); the Dridu-Hagiești canal intake is at m 203.4 km.",
+      "reviewer": "Claude Code (proposed in the Mureș/Ialomița PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0388",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 405798.2
+      },
+      "reason": "'vărsare în Borcea': the Ialomița's mouth into the Borcea branch = end of course rel:6153744 (receives_into rel:18007662 Brațul Borcea). Dridu -> mouth = 204 km vs 150 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș/Ialomița PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "3ek8e82l",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 137356.2
+      },
+      "reason": "'Buftea': Buftea (Ilfov) is 19.5 km from the river; the Dâmbovița contract ends where the Ialomița leaves Dâmbovița county toward Ilfov/Buftea, m 137.4 km of course rel:6153744. Fieni (m 40.9 km) -> exit = 96.5 km vs 95 km contract.",
+      "reviewer": "Claude Code (proposed in the Mureș/Ialomița PR; owner to confirm)",
+      "date": "2026-10-17"
     }
   ]
 }
