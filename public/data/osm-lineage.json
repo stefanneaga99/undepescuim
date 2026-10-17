@@ -30,7 +30,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-12",
       "transformations": ["Excluded courses matched to contracted waters", "Removed duplicate contracted runs", "Simplified and rounded geometry", "Assigned Romanian county by boundary containment"],
-      "sha256": "06414eb6c569770513c10d90d8a68d3338d7f4508ef5c7d76cb20add195db4dd",
+      "sha256": "6cbe81663967bc5500f8255a4961591e942e16d088f5b992b33bdb1aff1b7613",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },
@@ -48,7 +48,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-12",
       "transformations": ["Selected major uncontracted waterways from the OSM-derived overlay", "Simplified geometry for low-zoom rendering"],
-      "sha256": "d3a0d657d28fa74cadbd8e0ab28ae78f15eac756993e4190071d94889101256c",
+      "sha256": "cd2cb93efa6d7c59f30a67afd1d41f0135601d86928f7cb60fa8a3afc93ab45d",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },

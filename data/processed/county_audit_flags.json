@@ -246,15 +246,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0264",
-   "name": "Râul Negru I",
-   "judet": "Covasna",
-   "asociatie": "AJVPS COVASNA",
-   "riverGroup": "negru",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0280",
    "name": "Râul Jiu și afluenții săi",
    "judet": "Dolj",
@@ -386,15 +377,6 @@
    "judet": "Hunedoara",
    "asociatie": "AJVPS HUNEDOARA",
    "riverGroup": "streiul",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0379",
-   "name": "Râul Crișul Alb, cu afluenții",
-   "judet": "Hunedoara",
-   "asociatie": "AJVPS HUNEDOARA",
-   "riverGroup": "crisul-alb",
    "fallback": null,
    "justified": true
   },
@@ -1119,15 +1101,6 @@
    "justified": true
   },
   {
-   "slug": "romsilva-gorj-valea-bratcului",
-   "name": "Valea Bratcului",
-   "judet": "Gorj",
-   "asociatie": "Direcția Silvică Gorj",
-   "riverGroup": "bratcului",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "romsilva-gorj-oltet",
    "name": "Râul Olteț",
    "judet": "Gorj",
@@ -1151,15 +1124,6 @@
    "judet": "Harghita",
    "asociatie": "Direcția Silvică Harghita",
    "riverGroup": "bistricioara-harghita",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "romsilva-hunedoara-gradistea-superioara",
-   "name": "Râul Grădiștea superioară",
-   "judet": "Hunedoara",
-   "asociatie": "Direcția Silvică Hunedoara",
-   "riverGroup": "gradistea-superioara",
    "fallback": null,
    "justified": true
   },
@@ -1331,15 +1295,6 @@
    "judet": "Suceava",
    "asociatie": "Direcția Silvică Suceava",
    "riverGroup": "afluentii-suhei",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "romsilva-valcea-latorita-inferioara",
-   "name": "Râul Latorița Inferioară",
-   "judet": "Vâlcea",
-   "asociatie": "Direcția Silvică Vâlcea",
-   "riverGroup": "latorita",
    "fallback": null,
    "justified": true
   },
