@@ -65,7 +65,7 @@
   "data/rivernet/courses.jsonl.gz": "13384cdadc35e70c951cf58560b585cc531eb6038471cda561ce56a5bf711754",
   "data/sectors/sectors.jsonl": "393c4a45147fd4ad36c90606a0364d3b0b85ce6adb24e050daad16aa8ba8af34",
   "data/sectors/course_overrides.json": "308cce550dc246242367555d8e71f785e07e3a82691f369583f9d3d61d7f30d7",
-  "data/sectors/endpoint_overrides.json": "5d5447067b910adf7a25589ce89e78bf05f61ffbefba72980fbeea0209052e79"
+  "data/sectors/endpoint_overrides.json": "28339e5142351ba52383d4c3ea04db99844fd6480fef0dd7d68a983b1e1f3455"
  },
  "outputs": {
   "public/data/waters.json": "a51fc1c14ebb7e635b11c90770ace3c16dd6eba8fbda11e2cabfa66776d2221b",
