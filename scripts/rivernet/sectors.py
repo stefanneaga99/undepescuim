@@ -242,9 +242,17 @@ def resolve_sector(
         ivs = [(c["m_from"], c["m_to"]) for c in course.get("counties") or [] if fold(c.get("county")) == want]
         if not ivs:
             return _unresolved(rec, "county_not_on_course")
+        a, b = max(ivs, key=lambda x: x[1] - x[0])
         if len(ivs) > 1:
             rec["reasons"].append("county_interval_multiple")
-        a, b = max(ivs, key=lambda x: x[1] - x[0])
+            # A border river leaves and re-enters the county; its stretch is
+            # the span from first entry to last exit when that fits the
+            # contract length better than the longest single interval.
+            span = (min(x[0] for x in ivs), max(x[1] for x in ivs))
+            km = rec["contract_km"]
+            if km and abs((span[1] - span[0]) - km * 1000) < abs((b - a) - km * 1000):
+                a, b = span
+                rec["reasons"].append("county_interval_span")
         rec["from"] = _ep("COUNTY", Candidate(a, 0.9, "county_interval"))
         rec["to"] = _ep("COUNTY", Candidate(b, 0.9, "county_interval"))
     elif scope == "locality_list":
@@ -401,8 +409,9 @@ def flag_overlaps(records: list[dict[str, Any]]) -> None:
                     for x, y in ((a, b), (b, a)):
                         x["reasons"] = sorted(set(x["reasons"]) | {"overlap_gt_50pct"})
                         # an implausible partner (its own km_ratio outside the resolved
-                        # band, so it is already in review) cannot demote x
-                        if x["status"] == "resolved" and _plausible(y):
+                        # band, so it is already in review) cannot demote x; nor can a
+                        # contract from another county (border rivers are leased per bank)
+                        if x["status"] == "resolved" and _plausible(y) and fold(x.get("judet")) == fold(y.get("judet")):
                             x["status"] = "review"
 
 

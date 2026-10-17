@@ -80,7 +80,7 @@ def test_whole_county_single_and_multiple():
     assert (r["from"]["m"], r["to"]["m"]) == (1000.0, 9000.0)
     c2 = course(counties=[{"county": "Alba", "m_from": 0.0, "m_to": 1000.0},
                           {"county": "Alba", "m_from": 5000.0, "m_to": 9000.0}])
-    r2 = rs({"scope": "whole_county", "county": "Alba"}, ctx_for([c2]))
+    r2 = rs({"scope": "whole_county", "county": "Alba"}, ctx_for([c2]), w=water(km="4 km"))
     assert "county_interval_multiple" in r2["reasons"] and (r2["from"]["m"], r2["to"]["m"]) == (5000.0, 9000.0)
     r3 = rs({"scope": "whole_county", "county": "Cluj"}, ctx_for([c]))
     assert r3["status"] == "unresolved" and "county_not_on_course" in r3["reasons"]
@@ -410,3 +410,23 @@ def test_two_plausible_overlapping_sectors_still_demote_each_other():
     a, b = rec_on("a", 0, 10_000, 1.0), rec_on("b", 1_000, 11_000, 1.0)
     S.flag_overlaps([a, b])
     assert a["status"] == b["status"] == "review"
+
+
+def test_whole_county_on_a_border_river_uses_the_span_when_it_fits_better():
+    ivs = [{"county": "Vrancea", "m_from": 1000.0, "m_to": 3000.0},
+           {"county": "Vrancea", "m_from": 5000.0, "m_to": 6000.0},
+           {"county": "Vrancea", "m_from": 7000.0, "m_to": 9500.0}]
+    c = course(counties=ivs)
+    r = rs({"scope": "whole_county", "county": "Vrancea"}, ctx_for([c]), w=water(km="8.2 km"))
+    assert (r["from"]["m"], r["to"]["m"]) == (1000.0, 9500.0)
+    assert {"county_interval_multiple", "county_interval_span"} <= set(r["reasons"])
+    r2 = rs({"scope": "whole_county", "county": "Vrancea"}, ctx_for([c]), w=water(km="2.5 km"))
+    assert (r2["from"]["m"], r2["to"]["m"]) == (7000.0, 9500.0) and "county_interval_span" not in r2["reasons"]
+
+
+def test_overlap_across_counties_does_not_demote():
+    a, b = rec_on("a", 0, 10_000, 1.0), rec_on("b", 1_000, 11_000, 1.0)
+    a["judet"], b["judet"] = "Suceava", "Botoșani"  # the Siret is their border
+    S.flag_overlaps([a, b])
+    assert a["status"] == b["status"] == "resolved"
+    assert "overlap:b" in a["reasons"] and "overlap_gt_50pct" in a["reasons"]

@@ -13,7 +13,9 @@ def test_class2_preview_aggregate_schema_and_scope():
     assert payload["canonicalMutation"] is False
     assert payload["excludedChunks"] == ["CLASS2-01"]
     assert payload["recordCount"] == 148
-    assert payload["candidateCount"] == 168
+    # 168 before river geometry v2; switched groups preview one rivernet course each
+    assert payload["candidateCount"] == 162
+    assert payload["candidateCount"] == sum(len(r["physicalCandidates"]) for r in payload["records"])
     assert len({record["slug"] for record in payload["records"]}) == 148
     for record in payload["records"]:
         assert record["legalStatus"] == "legal sector unverified"
@@ -32,7 +34,7 @@ def test_class2_preview_aggregate_schema_and_scope():
 def test_class2_preview_hash_is_stable_for_checked_in_artifact():
     digest = hashlib.sha256(ARTIFACT.read_bytes()).hexdigest()
     # re-pinned at the river geometry v2 cutover (T4.4): switched groups preview their rivernet course
-    assert digest == "37ed9de0f3864af4289b16e622253f42a93c6e2aec5e223ab9394aa802ee5c44"
+    assert digest == "f0dc60a7805eff4c55eb7682041fe666c06502af31a17864947d2f2b044758cf"
 
 
 def test_buzau_preview_keeps_physical_course_separate_from_unverified_contracts():

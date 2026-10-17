@@ -132,6 +132,83 @@
       "reason": "'Dunăre': the Jiu's mouth into the Danube = end of course rel:7691863 (receives_into the Danube relation 89652). Bâlta -> Danube = 135 km vs 110 km contract.",
       "reviewer": "Claude Code (proposed in the Prut PR; owner to confirm)",
       "date": "2026-10-17"
+    },
+    {
+      "slug": "sopv2vba",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 464512093
+      },
+      "reason": "'Văscăuți – Turbata - Tudora' (three names, unparseable): Vășcăuți, OSM place node 1.6 km from the river at m 53.2 km of course rel:7689581 (Siret, OSM extract 2026-10-16) - where the Siret enters Romania.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "sopv2vba",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 447928099
+      },
+      "reason": "Tudora (Botoșani), OSM place node at m 174.3 km of course rel:7689581 (Siret, OSM extract 2026-10-16); Turbata is an intermediate point. Vășcăuți -> Tudora = 121 km vs 107 km contract.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0552",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 198821.7
+      },
+      "reason": "'limită județ Suceava (comuna Dolhasca)': the Siret leaves Suceava for Iași at m 198.8 km of course rel:7689581 (Siret, OSM extract 2026-10-16), below Dolhasca (m 183.9 km); the resolver had taken an early county crossing (m 62.5 km). Border -> limit = 138 km vs 123 km contract.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "9m2irr6m",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 460062533
+      },
+      "reason": "'Corbu Vechi km 527' (river-km marker, unparseable): Corbu Vechi (Brăila), OSM place node 456 m from the river at m 547.8 km of course rel:7689581 (Siret, OSM extract 2026-10-16).",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "9m2irr6m",
+      "end": "to",
+      "anchor": {
+        "type": "node",
+        "id": 461617103
+      },
+      "reason": "'Șendreni km 576': Șendreni, OSM place node 611 m from the river at m 588.0 km of course rel:7689581 (Siret, OSM extract 2026-10-16). 40 km drawn; the markers give 576-527 = 49 km = the contract length.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0296",
+      "end": "from",
+      "anchor": {
+        "type": "node",
+        "id": 461618614
+      },
+      "reason": "'comuna Buciumeni': Buciumeni (Galați) projects onto m 445.1 km of course rel:7689581 (Siret, OSM extract 2026-10-16), at the head of the Galați stretch (Galați county from m 443.2 km); the village itself is 5.3 km from the river, beyond the resolver's 3 km place limit.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anpa-anpa-0296",
+      "end": "to",
+      "anchor": {
+        "type": "measure",
+        "m": 597667.7
+      },
+      "reason": "'Galați, conf. Dunărea': the Siret's mouth into the Danube = end of course rel:7689581 (Siret, OSM extract 2026-10-16) (receives_into Danube relation 89652). Buciumeni -> Danube = 153 km vs 120 km contract.",
+      "reviewer": "Claude Code (proposed in the Siret PR; owner to confirm)",
+      "date": "2026-10-17"
     }
   ]
 }

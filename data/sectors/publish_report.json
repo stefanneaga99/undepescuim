@@ -373,26 +373,6 @@
   },
   {
    "blockers": [
-    "9m2irr6m",
-    "anpa-anpa-0296",
-    "anpa-anpa-0552",
-    "anpa-anpa-0674",
-    "sopv2vba"
-   ],
-   "members": [
-    "9m2irr6m",
-    "anpa-anpa-0066",
-    "anpa-anpa-0296",
-    "anpa-anpa-0390",
-    "anpa-anpa-0469",
-    "anpa-anpa-0552",
-    "anpa-anpa-0674",
-    "sopv2vba"
-   ],
-   "riverGroup": "siret"
-  },
-  {
-   "blockers": [
     "8rd9jm0l"
    ],
    "members": [
@@ -901,14 +881,6 @@
   {
    "reason": "status_unresolved",
    "slug": "d4ffuckm"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "sopv2vba"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "9m2irr6m"
   },
   {
    "reason": "status_unresolved",
@@ -1999,18 +1971,6 @@
    "slug": "anpa-anpa-0426"
   },
   {
-   "reason": "review_without_override",
-   "slug": "anpa-anpa-0552"
-  },
-  {
-   "reason": "review_without_override",
-   "slug": "anpa-anpa-0674"
-  },
-  {
-   "reason": "status_unresolved",
-   "slug": "anpa-anpa-0296"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0496"
   },
@@ -2699,14 +2659,15 @@
    "slug": "anpa-vrancea-ramnicu-sarat"
   }
  ],
- "kept_legacy_count": 559,
+ "kept_legacy_count": 554,
  "mode": "write",
  "preview_groups_replaced": [
   "aries",
   "crisul-alb",
   "latorita",
   "negru",
-  "prut"
+  "prut",
+  "siret"
  ],
  "switched": [
   {
@@ -2934,6 +2895,16 @@
   {
    "riverGroup": null,
    "slug": "hvhkix3r",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "siret",
+   "slug": "sopv2vba",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "siret",
+   "slug": "9m2irr6m",
    "status": "resolved"
   },
   {
@@ -3457,21 +3428,33 @@
    "status": "resolved"
   },
   {
-   "d8": "partial",
+   "riverGroup": "siret",
+   "slug": "anpa-anpa-0552",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "siret",
    "slug": "anpa-anpa-0066",
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "siret",
    "slug": "anpa-anpa-0469",
    "status": "resolved"
   },
   {
-   "d8": "partial",
    "riverGroup": "siret",
    "slug": "anpa-anpa-0390",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "siret",
+   "slug": "anpa-anpa-0674",
+   "status": "resolved"
+  },
+  {
+   "riverGroup": "siret",
+   "slug": "anpa-anpa-0296",
    "status": "resolved"
   },
   {
@@ -3752,5 +3735,5 @@
    "status": "resolved"
   }
  ],
- "switched_count": 202
+ "switched_count": 207
 }
