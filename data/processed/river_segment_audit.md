@@ -33,7 +33,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Argeș | 36 | 28 | 8 | 0 | 154 | 183 | partial |
 | Bacău | 24 | 23 | 1 | 0 | 79 | 62 | partial |
 | Bihor | 41 | 28 | 13 | 0 | 136 | 280 | partial |
-| Bistrița-Năsăud | 31 | 22 | 9 | 0 | 108 | 49 | partial |
+| Bistrița-Năsăud | 31 | 23 | 8 | 0 | 108 | 49 | partial |
 | Botoșani | 28 | 19 | 9 | 0 | 25 | 128 | partial |
 | Brașov | 33 | 29 | 4 | 3 | 270 | 123 | blocked |
 | Brăila | 8 | 5 | 3 | 0 | 11 | 70 | partial |
@@ -54,7 +54,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Ialomița | 6 | 4 | 2 | 0 | 4 | 113 | partial |
 | Iași | 6 | 4 | 2 | 0 | 76 | 244 | partial |
 | Ilfov | 3 | 3 | 0 | 0 | 11 | 150 | covered |
-| Maramureș | 50 | 38 | 12 | 0 | 129 | 58 | partial |
+| Maramureș | 50 | 38 | 12 | 0 | 126 | 58 | partial |
 | Mehedinți | 4 | 3 | 1 | 0 | 92 | 63 | partial |
 | Mureș | 41 | 35 | 6 | 0 | 198 | 142 | partial |
 | Neamț | 22 | 14 | 8 | 0 | 382 | 53 | partial |
@@ -62,7 +62,7 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 | Prahova | 16 | 11 | 5 | 0 | 192 | 112 | partial |
 | Satu Mare | 11 | 8 | 3 | 0 | 20 | 72 | partial |
 | Sibiu | 48 | 39 | 9 | 1 | 89 | 169 | blocked |
-| Suceava | 36 | 21 | 15 | 0 | 103 | 62 | partial |
+| Suceava | 36 | 22 | 14 | 0 | 103 | 62 | partial |
 | Sălaj | 15 | 12 | 3 | 0 | 37 | 40 | partial |
 | Teleorman | 6 | 6 | 0 | 1 | 34 | 160 | blocked |
 | Timiș | 41 | 37 | 4 | 4 | 47 | 236 | blocked |
@@ -8105,7 +8105,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-0aac462877` — river / uncontracted / Maramureș / Valea Părușului
 - `unc-0bea494e31` — river / uncontracted / Maramureș / Drahmirov
 - `unc-0c74d531f8` — river / uncontracted / Maramureș / Ronișoara
-- `unc-105586aee9` — river / uncontracted / Maramureș / Тиса - Tisa
 - `unc-12c32e5770` — river / uncontracted / Maramureș / Reviaca Mică
 - `unc-1374520622` — river / uncontracted / Maramureș / Corneșița
 - `unc-13b1781390` — river / uncontracted / Maramureș / Tulburea
@@ -8141,7 +8140,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-4568183cb7` — river / uncontracted / Maramureș / Saca
 - `unc-456a0ca5bf` — river / uncontracted / Maramureș / Oanța
 - `unc-45dddde932` — river / uncontracted / Maramureș / Pârâul Pietroșul
-- `unc-47b50e35a5` — river / uncontracted / Maramureș / Тиса - Tisa
 - `unc-4e6876adc9` — river / uncontracted / Maramureș / Vicleanu Mare
 - `unc-4f0f1b1616` — river / uncontracted / Maramureș / Шопурка
 - `unc-51d7fc05c1` — river / uncontracted / Maramureș / Sec
@@ -8173,7 +8171,6 @@ Snapshot: `a6f13fd420f5ea6f451a31d77b2890a49f64cd45e55cc7dcc1acc8626525e4d4`
 - `unc-8962f06eb0` — river / uncontracted / Maramureș / Valea Rea
 - `unc-8a169fa495` — river / uncontracted / Maramureș / Valea Stejarului
 - `unc-8af58ad471` — river / uncontracted / Maramureș / Valea Rea
-- `unc-8fcaa78520` — river / uncontracted / Maramureș / Тиса - Tisa
 - `unc-901aadba74` — river / uncontracted / Maramureș / Rica
 - `unc-9198f709ec` — river / uncontracted / Maramureș / Izvorul cu Scări
 - `unc-91f7215738` — river / uncontracted / Maramureș / Valea cu Arini
