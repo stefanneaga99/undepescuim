@@ -30,7 +30,7 @@
         "type": "measure",
         "m": 71803.6
       },
-      "reason": "'barajul Siriu – vărsare', 12 km: the first confluence 12 km below the Siriu dam (m 59.98 km) is the Nehoiu stream (ANAR RO12-1-82-16, OSM junction node 1598439867 at m 71803.6, course rel:12800074 (Buzău, OSM extract 2026-10-16)) = 11.8 km. Interpretation of 'vărsare'; owner to confirm.",
+      "reason": "'barajul Siriu – vărsare', 12 km: the first confluence 12 km below the Siriu dam (m 59.98 km) is the Nehoiu stream (ANAR RO12-1-82-16, OSM junction node 1598439867 at m 71803.6, course rel:12800074 (Buzău, OSM extract 2026-10-16)) = 11.8 km. Interpretation of 'vărsare'; confirmed by the owner.",
       "reviewer": "Claude Code (proposed in the Buzău PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
@@ -581,7 +581,7 @@
         "m": 7409.1
       },
       "reason": "'Dersca': village node 447924200 lies 5393 m off the Jijia; its projection is m 7.4 km of course rel:13451326:1.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -592,7 +592,7 @@
         "m": 153499.0
       },
       "reason": "'Rediu': Rediu (Botoșani) node 412699808, 1239 m off, projects to m 153.5 km. Dersca -> Rediu = 146.1 km vs 139 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -603,7 +603,7 @@
         "id": 274678293
       },
       "reason": "'Băcești' (limite 'Băcești-Tutova' is unparsed: no spaces around the dash): Băcești node 274678293, m 13.3 km of course rel:13451904.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -614,7 +614,7 @@
         "id": 463300080
       },
       "reason": "'Tutova': Tutova node 463300080, m 143.4 km. Băcești -> Tutova = 130.2 km vs 165 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -625,7 +625,7 @@
         "m": 93943.0
       },
       "reason": "'Românești': the Bașeu enters the Prut at Românești (node 385256365, 5.9 km from the river, projects to m 92.2 km); the contract runs to the mouth, end of course rel:18016354 (m 93.9 km).",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -636,7 +636,7 @@
         "id": 350013712
       },
       "reason": "'Barajul Gilău': OSM dam way 350013712 'Barajul Gilău', m 1.5 km of course rel:6156396.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -647,7 +647,7 @@
         "m": 72714.3
       },
       "reason": "'conf. cu V. Orman': the junction (node 2363131619) where course rel:18033130 (Orman) joins, m 72.7 km. Dam -> Orman = 71.2 km vs 74.8 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -658,7 +658,7 @@
         "m": 0.0
       },
       "reason": "'Vlădeni': Vlădeni (Botoșani) node 447928444 is 6.6 km from the Miletin's OSM source (m 0 of course rel:18016343); the upper course is not mapped further.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -669,7 +669,7 @@
         "id": 447926995
       },
       "reason": "'Miletin': Miletin node 447926995, m 54.5 km. Start -> Miletin = 54.5 km vs 78 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -680,7 +680,7 @@
         "m": 0.0
       },
       "reason": "'Bucecea': the Sitna's OSM course rel:18016327 starts 14.5 km from Bucecea (its upper course is not mapped); start at m 0. To Todireni (resolved) = 50.9 km vs 65 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -691,7 +691,7 @@
         "m": 89916.0
       },
       "reason": "'conf. cu râul Olt': the Hârtibaciu ends in the Cibin just above the Olt; end of course rel:6257614, m 89.9 km. Brădeni -> end = 78 km vs 68 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -702,7 +702,7 @@
         "m": 44803.5
       },
       "reason": "'Secu': village node 460376837, 3424 m off the Bârzava, projects to m 44.8 km of course rel:4450692. To the county limit (m 108.6 km) = 63.8 km vs 70 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -713,7 +713,7 @@
         "m": 38983.5
       },
       "reason": "'Suplacul de Barcău': Suplacu de Barcău node 280526255 is 1303 m off the river; its projection m 39.0 km of course rel:89330. To the Hungarian border (m 115.1 km) = 76.1 km vs 65 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -724,7 +724,7 @@
         "id": 262454116
       },
       "reason": "'Pod Feldru' (limite 'Pod Feldru-Ciceu Mihăiești' unparsed): Feldru node 262454116, m 54.6 km of course rel:10900823.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -735,7 +735,7 @@
         "m": 115113.3
       },
       "reason": "'Ciceu Mihăiești': the last Bistrița-Năsăud commune on the river; the contract ends where the Someșul Mare leaves the county, m 115.1 km (the village node projects 2.4 km off, past the limit). Feldru -> limit = 60.5 km vs 61 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -746,7 +746,7 @@
         "m": 88388.7
       },
       "reason": "'conf. cu pârâul Umor': the junction (node 2561978169) where the Humor (Umor) joins the Moldova at Gura Humorului, m 88.4 km of course rel:6164192.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -757,7 +757,7 @@
         "m": 149959.2
       },
       "reason": "'limită județ (comuna Drăgușeni)': the Moldova leaves Suceava at m 150.0 km (Drăgușeni node at m 149.6 km). Umor -> limit = 61.6 km vs 59 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -768,7 +768,7 @@
         "id": 259191743
       },
       "reason": "'Valea Vișeului' (limite 'Valea Vișeului-Huta' unparsed): village node 259191743, m 26.2 km of course rel:88555.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -779,7 +779,7 @@
         "m": 89540.1
       },
       "reason": "'Huta': the Tisa's Romanian reach in Maramureș ends at m 89.5 km (Huta is not in OSM as a place on this river). Valea Vișeului -> 89.5 km = 63.3 km vs 60 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -790,7 +790,7 @@
         "m": 0.0
       },
       "reason": "'Comuna Lapoș': course name:cricovul sarat:n1608890921 starts 3.9 km from Lapoș (place projection m 0); pin the start.",
-      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-4 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -801,7 +801,7 @@
         "id": 262776537
       },
       "reason": "'Piatra Găurită': the Lyukas-kő rock of the Tușnad–Malnaș Olt defile, at Malnaș-Băi; village node 262776537 projects to m 100.2 km of course rel:1567969 (the rock itself is not in OSM).",
-      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -812,7 +812,7 @@
         "id": 460101901
       },
       "reason": "'Augustin': OSM place node 460101901, m 202.6 km; shared endpoint with the Brașov contract 3gl3r1sa. Malnaș-Băi -> Augustin = 102.4 km vs 90 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -823,7 +823,7 @@
         "m": 50882.0
       },
       "reason": "'Beiuș': Beiuș town node 137940520 (921 m off) projects to m 50.9 km of course rel:89465; the UAT edge (m 48.5 km) overlapped most of the inner contract jw9il5yo (Crișul Pietros -> Valea Finișului, m 45.5–53.4 km).",
-      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -834,7 +834,7 @@
         "m": 0.0
       },
       "reason": "'Cleanov': the Desnățui's OSM course name:desnatui:n9772507206 starts 13.3 km below Cleanov (its upper course is not mapped); start at m 0.",
-      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     },
     {
@@ -845,7 +845,7 @@
         "m": 90960.5
       },
       "reason": "'Plosca': Plosca node 461612680 (1225 m off) projects to m 91.0 km, the end of the course. Start -> Plosca = 91.0 km vs 80 km contract.",
-      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; owner to confirm)",
+      "reviewer": "Claude Code (proposed in the P5 batch-5 PR; confirmed by the owner 2026-10-17)",
       "date": "2026-10-17"
     }
   ]
