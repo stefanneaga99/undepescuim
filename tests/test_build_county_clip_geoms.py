@@ -43,3 +43,13 @@ def test_precut_sector_fully_inside_its_county_needs_no_clip():
     inside = [[24.0 + i * 0.001, 46.0] for i in range(100)]
     w = water(geometryKind="sector", geometry={"type": "LineString", "coordinates": inside})
     assert bc.build_clip_for_water(w, w["geometry"], POLYS, BUFFERED, skip_if_inside=True) is None
+
+
+def test_group_owner_is_never_a_precut_sector():
+    sector = {"slug": "s", "riverGroup": "g", "subtype": "rau", "geometryKind": "sector",
+              "geometry": {"type": "LineString", "coordinates": [[24.0, 46.0], [24.1, 46.0]]}}
+    owner = {"slug": "o", "riverGroup": "g", "subtype": "rau", "geometry": {"type": "LineString", "coordinates": LINE}}
+    member = {"slug": "m", "riverGroup": "g", "subtype": "rau"}
+    by_slug = {"s": sector, "o": owner, "m": member}
+    assert bc.find_group_owner(by_slug, member) is owner
+    assert bc.find_group_owner({"s": sector, "m": member}, member) is None

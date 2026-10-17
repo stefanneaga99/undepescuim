@@ -4,6 +4,13 @@ Only the keys in ``ALLOWED`` may change; a test enforces it. Deviation: the
 5 m simplification is a plain Douglas-Peucker in degrees (shapely is not
 available to the authoring sandbox); on a single river line the result is the
 same up to vertex choice.
+
+D8 as amended by the owner on 2026-10-17: a multi-contract group still switches
+as a whole only when every member is eligible, except that an eligible member
+with no line geometry of its own switches on its own ("partial"). Such a member
+was only ever drawn as a slice of the group owner's line; the owner and every
+member with a legacy line stay untouched, and the partial member keeps its
+owner-relative fraction fields (course_frac, sectorStart/End).
 """
 
 from __future__ import annotations
@@ -115,6 +122,12 @@ def eligible(water: Mapping[str, Any], sector: Mapping[str, Any] | None) -> tupl
     return False, f"status_{st}"
 
 
+def has_legacy_line(water: Mapping[str, Any]) -> bool:
+    """A legacy (not pre-cut) line geometry of the water's own."""
+    g = water.get("geometry") or {}
+    return water.get("geometryKind") != "sector" and g.get("type") in ("LineString", "MultiLineString")
+
+
 def publish(
     waters: Sequence[Mapping[str, Any]],
     sectors: Mapping[str, Mapping[str, Any]],
@@ -136,14 +149,23 @@ def publish(
     for w in waters:
         if w.get("riverGroup"):
             groups[w["riverGroup"]].append(w["slug"])
+    by_slug = {w["slug"]: w for w in waters}
     blocked: dict[str, list[str]] = {}
+    partial: set[str] = set()
     for g, members in groups.items():
         bad = [m for m in members if not ok[m]]
         if bad and len(bad) < len(members):
             blocked[g] = sorted(bad)
             for m in members:
-                if ok[m]:
+                if not ok[m]:
+                    continue
+                if has_legacy_line(by_slug[m]):
                     ok[m], why[m] = False, "d8_group_blocked"
+                else:
+                    # D8 amendment (owner, 2026-10-17): a member with no line of its
+                    # own is only ever drawn as a slice of the group owner; giving it
+                    # its own sector cuts nothing the legacy members rely on.
+                    partial.add(m)
         # a group where nobody is eligible simply stays legacy for its own reasons
 
     new_waters: list[dict[str, Any]] = []
@@ -162,8 +184,9 @@ def publish(
         xs = [p[0] for ln in lines for p in ln]
         ys = [p[1] for ln in lines for p in ln]
         out = dict(w)
-        for k in REMOVE_KEYS:
-            out.pop(k, None)
+        if slug not in partial:
+            for k in REMOVE_KEYS:
+                out.pop(k, None)
         out.update({
             "geometry": geom,
             "bbox": [min(xs), min(ys), max(xs), max(ys)],
@@ -177,6 +200,15 @@ def publish(
             "source_detail": f"rivernet:{s.get('network_version', '')}"
             + (";geometry:anar-hidrografie" if c.get("source") == "anar" else ""),
         })
+        if slug in partial:
+            # The legacy group members still resolve clicks on the owner's line
+            # by owner-relative fractions; keep this water's legacy fraction fields
+            # (course_frac stays, sectorStart/End as they were or absent).
+            for k in ("sectorStart", "sectorEnd"):
+                if k in w:
+                    out[k] = w[k]
+                else:
+                    out.pop(k, None)
         if not out.get("coordinates"):
             whole = Line.from_coords([tuple(p) for ln in lines for p in ln])
             mid = whole.point_at(whole.length_m / 2)
@@ -184,7 +216,8 @@ def publish(
         if not out.get("driving"):
             out["driving"] = out["coordinates"]
         new_waters.append(out)
-        switched.append({"slug": slug, "riverGroup": w.get("riverGroup"), "status": s["status"]})
+        switched.append({"slug": slug, "riverGroup": w.get("riverGroup"), "status": s["status"],
+                         **({"d8": "partial"} if slug in partial else {})})
     report = {
         "mode": mode, "switched": switched, "switched_count": len(switched),
         "kept_legacy": kept, "kept_legacy_count": len(kept),

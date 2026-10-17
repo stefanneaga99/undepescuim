@@ -243,3 +243,36 @@ def test_cli_preview_shadow_and_write(tmp_path):
     assert json.loads(pv.read_text(encoding="utf-8"))["records"][0]["physicalCandidates"][0]["kind"] == "rivernet-course"
     assert P.cli(args + ["--preview", ""]) == 0
     assert "preview_groups_replaced" not in json.loads((tmp_path / "o" / "publish_report.json").read_text())
+
+
+# ------------------------------------------- D8 amendment: partial switch
+
+
+def test_geometryless_member_switches_alone_when_the_owner_is_blocked():
+    # crisul-alb: aoja7n5d owns the line; anpa-anpa-0379 has no geometry of its own
+    waters = copy.deepcopy(WATERS)
+    by = {w["slug"]: w for w in waters}
+    by["anpa-anpa-0379"].update({"course_frac": 0.42, "sectorStart": 0.3, "sectorEnd": 0.5})
+    new, rep = run([sec("aoja7n5d", "unresolved", "low"), sec("anpa-anpa-0379")], waters=waters)
+    d = by_slug(new)
+    assert "geometryKind" not in d["aoja7n5d"] and d["aoja7n5d"] == by["aoja7n5d"]  # owner untouched
+    part = d["anpa-anpa-0379"]
+    assert part["geometryKind"] == "sector" and part["geometry"]["type"] == "LineString"
+    assert (part["course_frac"], part["sectorStart"], part["sectorEnd"]) == (0.42, 0.3, 0.5)  # owner-relative kept
+    assert {"slug": "anpa-anpa-0379", "riverGroup": "crisul-alb", "status": "resolved", "d8": "partial"} in rep["switched"]
+    assert rep["blocked_groups"][0]["riverGroup"] == "crisul-alb"
+
+
+def test_partial_switch_adds_no_fraction_fields_the_water_did_not_have():
+    new, _ = run([sec("aoja7n5d", "unresolved", "low"), sec("anpa-anpa-0379")])
+    part = by_slug(new)["anpa-anpa-0379"]
+    assert "sectorStart" not in part and "sectorEnd" not in part
+
+
+def test_member_with_its_own_legacy_line_still_waits_for_the_group():
+    new, rep = run([sec("aoja7n5d"), sec("anpa-anpa-0379", "unresolved", "low")])
+    assert "geometryKind" not in by_slug(new)["aoja7n5d"]
+    assert {k["slug"]: k["reason"] for k in rep["kept_legacy"]}["aoja7n5d"] == "d8_group_blocked"
+    assert P.has_legacy_line({"geometry": {"type": "LineString"}})
+    assert not P.has_legacy_line({"geometryKind": "sector", "geometry": {"type": "LineString"}})
+    assert not P.has_legacy_line({"geometry": None})

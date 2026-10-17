@@ -210,3 +210,28 @@ describe('pre-cut sectors (river geometry v2, T4.1)', () => {
     expect(m.renderedKm).toBeLessThan(16);
   });
 });
+
+describe('D8 partial switch: legacy members keep slicing the legacy owner', () => {
+  const ownerLine: [number, number][] = [[25, 46], [25.5, 46], [26, 46]];
+  const owner = water({ slug: 'owner', name: 'Râul Test', riverGroup: 'g', geometry: { type: 'LineString', coordinates: ownerLine } });
+  // a pre-cut member listed BEFORE the owner: it must never be taken as the shared course
+  const precut = water({
+    slug: 'pre', name: 'Râul Test superior', riverGroup: 'g', geometryKind: 'sector', sectorStatus: 'resolved',
+    geometry: { type: 'LineString', coordinates: [[25.1, 46.2], [25.2, 46.2]] }, course_frac: 0.2,
+  });
+  const legacy = water({ slug: 'leg', name: 'Râul Test inferior', riverGroup: 'g', sectorStart: 0.5, sectorEnd: 1 });
+
+  it('measures a legacy member against the legacy owner, not a pre-cut sibling', () => {
+    const m = measureContractSector(legacy, [precut, owner, legacy]);
+    expect(m.ownerSlug).toBe('owner');
+    expect(m.renderedKm).toBeGreaterThan(35); // half of the ~78 km owner line, not of the 7.7 km sector
+  });
+
+  it('places a legacy member\'s reference marker on the legacy owner', () => {
+    const voronoi = water({ slug: 'vor', name: 'Râul Test mijlociu', riverGroup: 'g', course_frac: 0.5 });
+    const focus = resolveMapSelectionFocus(voronoi, [precut, owner, voronoi]);
+    expect(focus.kind).toBe('feature-selected-unverified-sector');
+    if (focus.kind !== 'feature-selected-unverified-sector') throw new Error('unreachable');
+    expect(focus.referencePoint![1]).toBeCloseTo(46, 6); // on the owner line (lat 46), not the sector (46.2)
+  });
+});
