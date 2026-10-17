@@ -19,7 +19,7 @@ TEMPLATE = """<!doctype html><html lang="ro"><head><meta charset="utf-8"><title>
 #list{width:340px;overflow:auto;border-right:1px solid #ccc;padding:8px}#map{flex:1}
 .it{padding:6px;border-bottom:1px solid #eee;cursor:pointer}.it:hover{background:#f3f3f3}
 .s-resolved{border-left:4px solid #d32f2f}.s-review{border-left:4px solid #f57c00}.s-unresolved{border-left:4px solid #9e9e9e}
-small{color:#555}.tiles-light{filter:grayscale(1) brightness(1.12) contrast(.75) opacity(.85)}.lg{font-size:12px;margin:6px 0 10px;line-height:1.7}
+small{color:#555}.lg{font-size:12px;margin:6px 0 10px;line-height:1.7}
 .lg i{display:inline-block;width:22px;height:0;vertical-align:middle;margin-right:4px}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #333;vertical-align:middle;margin-right:4px}</style></head><body><div id="app"><div id="list">
 <h3>__TITLE__</h3>
@@ -33,12 +33,14 @@ small{color:#555}.tiles-light{filter:grayscale(1) brightness(1.12) contrast(.75)
 <script>
 const DATA = __DATA__;
 const map = L.map('map').setView([45.9, 24.9], 7);
-// OSM tiles, washed out (greyscale, light) so the sector lines stand out;
-// the layer control switches back to full colour when names are needed.
-const tiles = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', attr = '&copy; OpenStreetMap';
-const light = L.tileLayer(tiles, {maxZoom: 19, attribution: attr, className: 'tiles-light'}).addTo(map);
-const osm = L.tileLayer(tiles, {maxZoom: 19, attribution: attr});
-L.control.layers({'Hartă deschisă': light, 'OpenStreetMap color': osm}).addTo(map);
+// Esri basemaps: they load from file:// pages and previews (no Referer), unlike
+// tile.openstreetmap.org, whose usage policy blocks those. Light grey by
+// default so the sector lines stand out; topographic map for place names.
+const esri = (svc) => `https://server.arcgisonline.com/ArcGIS/rest/services/${svc}/MapServer/tile/{z}/{y}/{x}`;
+const light = L.tileLayer(esri('Canvas/World_Light_Gray_Base'), {maxZoom: 16, attribution: 'Tiles &copy; Esri'}).addTo(map);
+const labels = L.tileLayer(esri('Canvas/World_Light_Gray_Reference'), {maxZoom: 16}).addTo(map);
+const topo = L.tileLayer(esri('World_Topo_Map'), {maxZoom: 19, attribution: 'Tiles &copy; Esri'});
+L.control.layers({'Hartă deschisă': light, 'Hartă topografică': topo}, {'Nume localități': labels}).addTo(map);
 const layers = {};
 const items = document.getElementById('items');
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
