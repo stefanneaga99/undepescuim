@@ -477,3 +477,36 @@ def test_confluence_target_with_trailing_place_and_genitive():
     ctx2 = ctx_for([trib], extra=[receiver("name:lotru:n1", "Lotru", 30.0)])
     (c2,) = res(ep("CONFLUENCE", target="Lotrului"), ctx2, c=trib)
     assert c2.method == "outlet_into_named"
+
+
+# ------------------------------- untyped bridges (extract kept no highway/railway)
+
+
+def untyped_bridge(wid, lon, tags=None):
+    return (wid, [(wid * 10, lon, LAT - 0.0003), (wid * 10 + 1, lon, LAT + 0.0003)], {"bridge": "yes", **(tags or {})})
+
+
+def test_untyped_bridge_way_is_a_crossing():
+    ctx = ctx_for(nodes=[place(1, "Cristian", 24.2, LAT + 0.003)], ways=[untyped_bridge(50, 24.2)])
+    (c,) = res(ep("BRIDGE", locality_hint="Cristian"), ctx)
+    assert c.anchor["id"] == 50 and c.confidence == R.C_BRIDGE_ONE and meas(c) == round(m_at(24.2))
+
+
+@pytest.mark.parametrize("tags", [{"bridge": "no"}, {"bridge": "aqueduct"}, {"bridge": "abandoned"},
+                                  {"bridge": "yes", "waterway": "canal"}])
+def test_non_crossing_bridge_values_are_ignored(tags):
+    assert not R.is_crossing_bridge(tags)
+    ctx = ctx_for(nodes=[place(1, "Cristian", 24.2, LAT + 0.003)], ways=[untyped_bridge(50, 24.2, tags)])
+    assert res(ep("BRIDGE", locality_hint="Cristian"), ctx) == []
+
+
+def test_cfr_bridge_accepts_rail_or_unknown_but_not_road():
+    ways = [untyped_bridge(50, 24.24), untyped_bridge(51, 24.25, {"highway": "primary"}),
+            untyped_bridge(52, 24.26, {"railway": "rail"})]
+    ctx = ctx_for(nodes=[place(1, "Leordina", 24.25, LAT + 0.003)], ways=ways)
+    cands = res(ep("BRIDGE", road_ref="CFR", locality_hint="Leordina"), ctx)
+    by_id = {c.anchor["id"]: c for c in cands}
+    assert 51 not in by_id  # a road bridge is never "pod CFR"
+    assert by_id[52].confidence == R.C_BRIDGE_REF_PLACE  # typed rail + place
+    assert by_id[50].confidence == R.C_BRIDGE_ONE  # unknown type: place only
+    assert R.Bridge(1, {"highway": "x"}, []).rail is False and R.Bridge(1, {}, []).rail is None
