@@ -531,10 +531,6 @@
    "slug": "u1frrl08"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "gvmaf2tz"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "ufdigh4c"
   },
@@ -557,10 +553,6 @@
   {
    "reason": "status_unresolved",
    "slug": "0zai84fg"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "f553avch"
   },
   {
    "reason": "status_unresolved",
@@ -609,10 +601,6 @@
   {
    "reason": "review_without_override",
    "slug": "xzrr6do0"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "u84uqnip"
   },
   {
    "reason": "status_unresolved",
@@ -739,20 +727,12 @@
    "slug": "y6i6nikh"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "3e8t20hn"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "3gl3r1sa"
   },
   {
    "reason": "status_unresolved",
    "slug": "ehwpvgwh"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "e8r6r01g"
   },
   {
    "reason": "status_unresolved",
@@ -1267,10 +1247,6 @@
    "slug": "anpa-anpa-0214"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0215"
-  },
-  {
    "reason": "review_without_override",
    "slug": "anpa-anpa-0216"
   },
@@ -1443,10 +1419,6 @@
    "slug": "anpa-anpa-0310"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0323"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0326"
   },
@@ -1481,10 +1453,6 @@
   {
    "reason": "review_without_override",
    "slug": "anpa-anpa-0335"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0337"
   },
   {
    "reason": "review_without_override",
@@ -2007,10 +1975,6 @@
    "slug": "anpa-anpa-0519"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0581"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0426"
   },
@@ -2027,28 +1991,12 @@
    "slug": "anpa-anpa-0066"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0469"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0390"
-  },
-  {
    "reason": "review_without_override",
    "slug": "anpa-anpa-0674"
   },
   {
    "reason": "status_unresolved",
    "slug": "anpa-anpa-0296"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0389"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-anpa-0402"
   },
   {
    "reason": "status_unresolved",
@@ -2095,10 +2043,6 @@
    "slug": "romsilva-alba-ariesul-mare-superior"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "romsilva-alba-ariesul-mare"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "romsilva-alba-ariesul-mare-mijlociu"
   },
@@ -2133,10 +2077,6 @@
   {
    "reason": "status_unresolved",
    "slug": "romsilva-alba-sebesul-mijlociu"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "romsilva-alba-sebesul-inferior"
   },
   {
    "reason": "status_unresolved",
@@ -2311,10 +2251,6 @@
    "slug": "romsilva-caras-severin-cerna-mijlocie"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "romsilva-caras-severin-cerna-inferioara"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "romsilva-caras-severin-cernisoara-iardastrita"
   },
@@ -2361,10 +2297,6 @@
   {
    "reason": "status_unresolved",
    "slug": "romsilva-covasna-basca-mica"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "romsilva-dambovita-ialomita-superioara"
   },
   {
    "reason": "status_unresolved",
@@ -2711,10 +2643,6 @@
    "slug": "romsilva-vrancea-coza"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "romsilva-vrancea-zabala-superioara"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-neamt-bistrita-32"
   },
@@ -2751,14 +2679,6 @@
    "slug": "anpa-bn-somesul-mare-61"
   },
   {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-salaj-somesul-mare-93"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-salaj-crasna-65"
-  },
-  {
    "reason": "status_unresolved",
    "slug": "anpa-vaslui-crasna-43"
   },
@@ -2781,13 +2701,9 @@
   {
    "reason": "status_unresolved",
    "slug": "anpa-vrancea-ramnicu-sarat"
-  },
-  {
-   "reason": "d8_group_blocked",
-   "slug": "anpa-romsilva-0239"
   }
  ],
- "kept_legacy_count": 608,
+ "kept_legacy_count": 587,
  "mode": "write",
  "preview_groups_replaced": [
   "aries",
@@ -2837,6 +2753,12 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "budacul",
+   "slug": "gvmaf2tz",
+   "status": "resolved"
+  },
+  {
    "riverGroup": null,
    "slug": "p2lc5wx6",
    "status": "resolved"
@@ -2867,8 +2789,20 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "colentina",
+   "slug": "f553avch",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "crisul-alb",
    "slug": "aoja7n5d",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "crisul-repede",
+   "slug": "u84uqnip",
    "status": "resolved"
   },
   {
@@ -2939,6 +2873,18 @@
   {
    "riverGroup": null,
    "slug": "o35qm79k",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "olt",
+   "slug": "3e8t20hn",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "oltet",
+   "slug": "e8r6r01g",
    "status": "resolved"
   },
   {
@@ -3107,6 +3053,12 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "ramnicu-sarat",
+   "slug": "anpa-anpa-0215",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "negru",
    "slug": "anpa-anpa-0251",
    "status": "resolved"
@@ -3172,6 +3124,12 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "mures",
+   "slug": "anpa-anpa-0323",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "homorod-mic",
    "slug": "anpa-anpa-0324",
    "status": "resolved"
@@ -3179,6 +3137,12 @@
   {
    "riverGroup": "homorodul-mare",
    "slug": "anpa-anpa-0325",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "mures",
+   "slug": "anpa-anpa-0337",
    "status": "resolved"
   },
   {
@@ -3367,6 +3331,42 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "olt",
+   "slug": "anpa-anpa-0581",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "siret",
+   "slug": "anpa-anpa-0469",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "siret",
+   "slug": "anpa-anpa-0390",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "prut",
+   "slug": "anpa-anpa-0389",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "somes",
+   "slug": "anpa-anpa-0402",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "aries-mare",
+   "slug": "romsilva-alba-ariesul-mare",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "ariesul-mic",
    "slug": "romsilva-alba-ariesul-mic",
    "status": "resolved"
@@ -3379,6 +3379,12 @@
   {
    "riverGroup": "ampoita",
    "slug": "romsilva-alba-ampoita",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "sebes",
+   "slug": "romsilva-alba-sebesul-inferior",
    "status": "resolved"
   },
   {
@@ -3437,8 +3443,20 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "cerna-herculane",
+   "slug": "romsilva-caras-severin-cerna-inferioara",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "sirinia",
    "slug": "romsilva-caras-severin-sirinia",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "ialomita",
+   "slug": "romsilva-dambovita-ialomita-superioara",
    "status": "resolved"
   },
   {
@@ -3547,6 +3565,24 @@
    "status": "resolved"
   },
   {
+   "d8": "partial",
+   "riverGroup": "zabala",
+   "slug": "romsilva-vrancea-zabala-superioara",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "somes",
+   "slug": "anpa-salaj-somesul-mare-93",
+   "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "crasna",
+   "slug": "anpa-salaj-crasna-65",
+   "status": "resolved"
+  },
+  {
    "riverGroup": "miletin",
    "slug": "anpa-iasi-miletin-35",
    "status": "resolved"
@@ -3560,7 +3596,13 @@
    "riverGroup": "calnistea",
    "slug": "anpa-teleorman-calnistea",
    "status": "resolved"
+  },
+  {
+   "d8": "partial",
+   "riverGroup": "jiu",
+   "slug": "anpa-romsilva-0239",
+   "status": "resolved"
   }
  ],
- "switched_count": 153
+ "switched_count": 174
 }

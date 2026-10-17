@@ -319,7 +319,8 @@ def find_group_owner(waters_by_slug: dict, water: dict) -> Optional[dict]:
     fallback = None
     for w in waters_by_slug.values():
         g = w.get("geometry")
-        if w.get("riverGroup") != rg or not g:
+        # a pre-cut member carries only its own sector, never the shared course
+        if w.get("riverGroup") != rg or not g or w.get("geometryKind") == "sector":
             continue
         is_line = g.get("type") in ("LineString", "MultiLineString")
         if want_line and is_line:

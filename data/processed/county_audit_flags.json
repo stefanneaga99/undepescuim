@@ -165,15 +165,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0215",
-   "name": "Râul Râmnicu Sărat",
-   "judet": "Buzău",
-   "asociatie": "AJVPS BUZĂU",
-   "riverGroup": "ramnicu-sarat",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0220",
    "name": "Râul Bârzava inferioară",
    "judet": "Caraș-Severin",
@@ -273,15 +264,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0323",
-   "name": "Râul Mureș II",
-   "judet": "Harghita",
-   "asociatie": "AVPS TOPLIȚA",
-   "riverGroup": "mures",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0326",
    "name": "Târnava Mare",
    "judet": "Harghita",
@@ -323,15 +305,6 @@
    "judet": "Harghita",
    "asociatie": "AVPS TÂRNAVA MARE",
    "riverGroup": "tarnava-mare",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0337",
-   "name": "Râul Mureș I",
-   "judet": "Harghita",
-   "asociatie": "AVPS TÂRNAVA MARE",
-   "riverGroup": "mures",
    "fallback": null,
    "justified": true
   },
@@ -678,15 +651,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0581",
-   "name": "Râul Olt",
-   "judet": "Teleorman",
-   "asociatie": "AJVPS TELEORMAN",
-   "riverGroup": "olt",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0426",
    "name": "Râul Mureș",
    "judet": "Mureș",
@@ -723,24 +687,6 @@
    "justified": true
   },
   {
-   "slug": "anpa-anpa-0469",
-   "name": "Râul Siret",
-   "judet": "Neamț",
-   "asociatie": "AVPS ROMAN",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0390",
-   "name": "Râul Siret",
-   "judet": "Iași",
-   "asociatie": "AVPS IAȘI",
-   "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-anpa-0674",
    "name": "Râul Siret",
    "judet": "Vrancea",
@@ -755,24 +701,6 @@
    "judet": "Galați",
    "asociatie": "AJVPS GALAȚI",
    "riverGroup": "siret",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0389",
-   "name": "Râul Prut",
-   "judet": "Iași",
-   "asociatie": "AVPS IAȘI",
-   "riverGroup": "prut",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-anpa-0402",
-   "name": "Râul Someș",
-   "judet": "Maramureș",
-   "asociatie": "AJVPS MARAMUREȘ",
-   "riverGroup": "somes",
    "fallback": null,
    "justified": true
   },
@@ -849,15 +777,6 @@
    "justified": true
   },
   {
-   "slug": "romsilva-alba-ariesul-mare",
-   "name": "Râul Ariesul Mare",
-   "judet": "Alba",
-   "asociatie": "Direcția Silvică Alba",
-   "riverGroup": "aries-mare",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "romsilva-alba-ariesul-mare-mijlociu",
    "name": "Râul Arieșul Mare Mijlociu",
    "judet": "Alba",
@@ -887,15 +806,6 @@
   {
    "slug": "romsilva-alba-sebesul-mijlociu",
    "name": "Râul Sebesul Mijlociu",
-   "judet": "Alba",
-   "asociatie": "Direcția Silvică Alba",
-   "riverGroup": "sebes",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "romsilva-alba-sebesul-inferior",
-   "name": "Râul Sebeșul Inferior",
    "judet": "Alba",
    "asociatie": "Direcția Silvică Alba",
    "riverGroup": "sebes",
@@ -1011,15 +921,6 @@
    "justified": true
   },
   {
-   "slug": "romsilva-caras-severin-cerna-inferioara",
-   "name": "Râul Cerna inferioară",
-   "judet": "Caraș-Severin",
-   "asociatie": "Direcția Silvică Caraș-Severin",
-   "riverGroup": "cerna-herculane",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "romsilva-caras-severin-cernisoara-iardastrita",
    "name": "Râul Cernișoara (Iardaștrița)",
    "judet": "Caraș-Severin",
@@ -1070,15 +971,6 @@
    "judet": "Covasna",
    "asociatie": "Direcția Silvică Covasna",
    "riverGroup": "basca-mica",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "romsilva-dambovita-ialomita-superioara",
-   "name": "Râul Ialomița superioară",
-   "judet": "Dâmbovița",
-   "asociatie": "Direcția Silvică Dâmbovița",
-   "riverGroup": "ialomita",
    "fallback": null,
    "justified": true
   },
@@ -1335,15 +1227,6 @@
    "justified": true
   },
   {
-   "slug": "romsilva-vrancea-zabala-superioara",
-   "name": "Râul Zăbala Superioară",
-   "judet": "Vrancea",
-   "asociatie": "Direcția Silvică Vrancea",
-   "riverGroup": "zabala",
-   "fallback": null,
-   "justified": true
-  },
-  {
    "slug": "anpa-neamt-bistrita-32",
    "name": "Râul Bistrița",
    "judet": "Neamț",
@@ -1421,33 +1304,6 @@
    "judet": "Bistrița-Năsăud",
    "asociatie": "AJVPS BISTRIȚA-NĂSĂUD",
    "riverGroup": "somesul-mare",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-salaj-somesul-mare-93",
-   "name": "Râul Someșul Mare",
-   "judet": "Sălaj",
-   "asociatie": "AJVPS SĂLAJ",
-   "riverGroup": "somes",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-salaj-crasna-65",
-   "name": "Râul Crasna",
-   "judet": "Sălaj",
-   "asociatie": "AJVPS SĂLAJ",
-   "riverGroup": "crasna",
-   "fallback": null,
-   "justified": true
-  },
-  {
-   "slug": "anpa-romsilva-0239",
-   "name": "Râul Jiu",
-   "judet": "Gorj",
-   "asociatie": "Direcția Silvică Gorj",
-   "riverGroup": "jiu",
    "fallback": null,
    "justified": true
   }

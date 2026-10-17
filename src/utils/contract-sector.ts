@@ -76,7 +76,8 @@ export function resolveMapSelectionFocus(
   if (hasExplicitSectorInterval(selected)) {
     return { kind: 'verified-sector-focus', interval: [selected.sectorStart!, selected.sectorEnd!] };
   }
-  const owner = group.find((w) => lineParts(w) !== null) ??
+  // The shared course is a legacy line; a pre-cut member only carries its own sector.
+  const owner = group.find((w) => lineParts(w) !== null && !isPrecutSector(w)) ??
     (matchingCourses.length === 1 ? matchingCourses[0] : null);
   const referencePoint =
     owner && typeof selected.course_frac === 'number' && Number.isFinite(selected.course_frac)
@@ -106,7 +107,7 @@ export function measureContractSector(selected: Water, allWaters: Water[]): Sect
     };
   }
   const group = contractGroup(selected, allWaters);
-  const owner = group.find((w) => lineParts(w) !== null) ?? null;
+  const owner = group.find((w) => lineParts(w) !== null && !isPrecutSector(w)) ?? null;
   const method: SectorMeasurementMethod = hasExplicitSectorInterval(selected)
     ? 'explicit-interval'
     : group.length > 1

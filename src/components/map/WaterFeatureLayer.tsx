@@ -204,6 +204,9 @@ export function WaterFeatureLayer({
       : [...allWaters, ...previewCourses];
     for (const x of focusCourses) {
       if (groupKeyOf(x) !== focusGroupKey) continue;
+      // A pre-cut member's line is its own sector, not the shared course that
+      // a legacy member's interval refers to (D8 partial switch).
+      if (isPrecutSector(x)) continue;
       const g = x.geometry;
       if (!g) continue;
       if (g.type === 'MultiLineString') {
@@ -285,6 +288,7 @@ export function WaterFeatureLayer({
           (x) =>
             x.slug !== w.slug &&
             groupKeyOf(x) === gk &&
+            !isPrecutSector(x) &&
             !!x.geometry &&
             (x.geometry.type === 'LineString' || x.geometry.type === 'MultiLineString'),
         ) ||

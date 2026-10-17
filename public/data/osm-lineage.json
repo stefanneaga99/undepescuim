@@ -21,7 +21,7 @@
       "source_urls": ["https://data.gov.ro/dataset/hidrografie", "https://data.humdata.org/dataset/hotosm_rou_waterways", "https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz", "https://nominatim.openstreetmap.org/", "https://overpass-api.de/api/interpreter"],
       "accessed_at": "2026-08-11",
       "transformations": ["Matched contracted source records to OSM waterways", "Ordered and deduplicated river courses", "Attached OSM geometry to contractual water records", "rivernet-v2: pinned OSM extract https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz (sha256 1e1373150909fc0debe5bd98cb5dcf84d71643517d3ff7b76123a4cc66f3a246, OSM 2026-10-16T20:21:21Z)", "rivernet-v2: directed waterway graph from shared OSM node ids, course stitching, linear referencing", "rivernet-v2: contract limite parsed and resolved to OSM anchors (confluences, places, bridges, dams, lakes, county limits)", "rivernet-v2: sector substring per contract, Douglas-Peucker simplify 5 m, 5 dp", "rivernet-v2: fallback geometry for courses missing from OSM from ANAR Hidrografie (anar-hidrografie-20250212, CC BY 4.0)"],
-      "sha256": "5ef6e23f1f4f07e9dcf831f71e1f1d27167bf8e5a171511ae5d8feedba70502e",
+      "sha256": "0154621d747d0ae0dc3fe684fabedf805ba668b1af2cd3a6e0ad4fe14955f408",
       "license_classification": "mixed",
       "required_notice": "OSM-derived geometry: © OpenStreetMap contributors, ODbL; contractual and association fields retain their source-specific status. See https://www.openstreetmap.org/copyright. Sectors marked geometry:anar-hidrografie use © Administrația Națională Apele Române (ANAR), data.gov.ro, CC BY 4.0."
     },
@@ -57,7 +57,7 @@
       "source_urls": ["https://overpass-api.de/api/interpreter", "https://nominatim.openstreetmap.org/"],
       "accessed_at": "2026-08-12",
       "transformations": ["Clipped OSM-derived water geometry to county boundaries", "Normalized county keys for lazy map rendering", "rivernet-v2: pre-cut sectors clipped to their county (buffer 0.002 deg), simplified 0.0001 deg"],
-      "sha256": "ccf05403aee81f8329d6ef6ef7c6b232ad9aaa388b02cb364e44f71057cb41b7",
+      "sha256": "82e24fda3ec63f1622bd10b78906a6b4127beece53a226fe4dcb8aacff15d73e",
       "license_classification": "odbl",
       "required_notice": "© OpenStreetMap contributors, data available under ODbL. https://www.openstreetmap.org/copyright"
     },
@@ -93,7 +93,7 @@
       "source_urls": ["https://github.com/stefanneaga99/undepescuim/releases/download/osm-extract-20261017/water-extract.jsonl.gz", "https://data.gov.ro/dataset/hidrografie"],
       "accessed_at": "2026-10-17",
       "transformations": ["rivernet-v2: per-sector endpoint evidence (kind, OSM anchor id, confidence, Romanian label from the contract limite)"],
-      "sha256": "85270bc5cf24e3fb2ab7978a4916ad16818cb2b9a47bce7f8a0a386daef808fb",
+      "sha256": "7a2188fa6fd2d79e31600a8cf376bc586281592b7327c5feca1233b854e525c8",
       "license_classification": "mixed",
       "required_notice": "OSM anchors: © OpenStreetMap contributors, ODbL, https://www.openstreetmap.org/copyright; endpoint labels derive from contract limite texts. Sectors marked geometry:anar-hidrografie use © Administrația Națională Apele Române (ANAR), data.gov.ro, CC BY 4.0."
     }

@@ -109,15 +109,15 @@ Reference device tiers (Web Vitals convention):
 | M5 | CLS on filter/sheet change (targeted) | **0.00** | ≤ 0.05 | > 0.05 | Playwright `page.evaluate` CLS sampler |
 | M6 | Time-to-first-map-paint (Fast 3G) | < 5.0 s | 5–10 s | > 10 s | Playwright trace / `dataLoaded` marker |
 | M7 | Total data JSON transferred (gzip) | < 2.5 MB | 2.5–3.0 MB | > 3.0 MB | `curl -I` + `Content-Encoding` check / build script |
-| M8 | `waters.json` gzip size | < 1.5 MB | 1.5–2.0 MB | > 2.0 MB | `gzip -9` of compact file |
-| M9 | JSON text parsed on main thread | < 6.5 MB¹ | 6.5–10 MB | > 10 MB | build/CI script (sum of compact sizes) |
+| M8 | `waters.json` gzip size | < 1.65 MB¹ | 1.65–2.0 MB | > 2.0 MB | `gzip -9` of compact file |
+| M9 | JSON text parsed on main thread | < 7 MB¹ | 7–10 MB | > 10 MB | build/CI script (sum of compact sizes) |
 | M10 | Initial JS (gzip, home route) | < 300 KB | 300–400 KB | > 400 KB | `@next/bundle-analyzer` / `next build` size output |
 | M11 | Data fetch + parse (first-load, no cache) | < 2.5 s | 2.5–5 s | > 5 s | Playwright `performance.getEntriesByType('resource')` |
 | M12 | Tile render at zoom 7 → 12 | no long task > 100 ms on pan/zoom | — | any > 100 ms | Playwright trace (long tasks) |
 | M13 | Peak JS heap (full dataset, zoom 12) | < 200 MB | 200–300 MB | > 300 MB | `performance.memory` / CDP `HeapProfiler` |
 | M14 | LOD/culling effectiveness | total overlay ≤ 1000 paths at zoom 7 | 1000–2000 | > 2000 | Playwright `count` of `.leaflet-overlay-pane path` |
 
-¹ Raised from < 6 MB by explicit owner decision on 2026-10-17 for the river geometry v2 cutover (docs/plans/river-geometry-v2.md T4.4): pre-cut sectors keep the plan's 5 m simplification, which measured M9 = 6.40 MB (25 m would have kept it at 5.74 MB).
+¹ Raised by explicit owner decision on 2026-10-17 for river geometry v2 (docs/plans/river-geometry-v2.md T4.4): pre-cut sectors keep the plan's 5 m simplification. M9 < 6 MB → < 7 MB (cutover 6.40 MB; with the D8 partial switch 6.58 MB; 10 m would give 6.19 MB) and M8 < 1.5 MB → < 1.65 MB (1.49 MB), leaving headroom for the next big-river batches.
 
 Budgets M6–M14 are **lab-only gates** (deterministic, run in CI). M1–M5 are the user-facing
 contract and are the ones reported to stakeholders.
