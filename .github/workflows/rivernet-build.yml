@@ -52,6 +52,9 @@ jobs:
           PYTHONPATH=scripts python -m rivernet parse
           courses=data/rivernet/courses.jsonl.gz
           if [ ! -f "$courses" ]; then courses=data/rivernet/courses_all.jsonl.gz; fi
+          # ANAR cadastral fallback layer (T6.5): fetched from fallback_manifest.json, sha256-checked
+          PYTHONPATH=scripts python -m rivernet fallback --courses "$courses" \
+            --extract work/anar-hidrografie.jsonl.gz
           PYTHONPATH=scripts python -m rivernet match --courses "$courses" --extract work/water-extract.jsonl.gz
           PYTHONPATH=scripts python -m rivernet resolve --extract work/water-extract.jsonl.gz --courses "$courses"
           PYTHONPATH=scripts python -m rivernet report --courses "$courses"
